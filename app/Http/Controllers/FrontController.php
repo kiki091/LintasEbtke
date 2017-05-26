@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Custom\RouteMenuLocation;
 use App\Http\Controllers\Controller;
-use App\Services\Bridge\Front\Navigation as NavigationService;
 
 use LaravelLocalization;
 use URL;
@@ -14,28 +12,16 @@ use JavaScript;
 
 class FrontController extends Controller
 {
-	protected $navigation;
     protected $currentLanguage;
 
-	const URL_BLADE_FRONT_SITE = 'pusri.front.pages';
+	const URL_BLADE_FRONT_SITE = 'ebtke.front.pages';
 
-	public function __construct(NavigationService $navigation)
+	public function __construct()
 	{
-		$this->navigation = $navigation;
 
 		$this->_init();
-        $this->getMenuNavigation();
         $this->setJavascriptVariable();
 	}
-
-    
-
-    public function getMenuNavigation()
-    {
-        $menu = $this->navigation->getNavigation();
-
-        return $menu;
-    }
 
 	/**
      * Initial function
@@ -64,11 +50,4 @@ class FrontController extends Controller
             'token' => csrf_token()
         ]);
     }
-
-	public function getTopNavigation()
-	{
-		$top_menu = $this->navigation->getTopNavigation();
-
-		return $top_menu;
-	}
 }

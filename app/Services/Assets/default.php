@@ -13,4 +13,4 @@ define('DEFAULT_IMAGE_DIRECTORY', 'bin/db/images/default_images/image-default.jp
 define('DEFAULT_THUMBNAIL_IMAGE_DIRECTORY', 'bin/db/images/default_images/thumbnail.jpg');
 define('DEFAULT_THUMBNAIL_MINI_IMAGE_DIRECTORY', 'bin/db/images/default_images/thumbnail-mini.jpg');
 
-define('DEFAULT_IMAGE_FOOTER_SVG', 'themes/pusri/front/svg/trip-advisor.svg');
+define('DEFAULT_IMAGE_FOOTER_SVG', 'themes/ebtke/front/svg/trip-advisor.svg');

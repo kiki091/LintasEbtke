@@ -17,7 +17,7 @@ define('MAIN_BANNER_TRANS_IMAGE_DIRECTORY', 'bin/db/images/banner/');
 
 // Instagram Images Directory
 
-define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/pusri/front/images/instagram/');
+define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/ebtke/front/images/instagram/');
 
 // Category Thumbnail Images
 

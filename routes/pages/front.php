@@ -19,12 +19,7 @@ Route::group(['middleware' => ['web']], function ()
 		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize', 'localeSessionRedirect', 'localizationRedirect']], function ()
 		{
 
-			Route::get('/', 'Pusri\Front\Pages\MainController@index')->name('MainPage');
-
-			Route::group(['prefix' => RouteMenuLocation::setMenuLocation()], function () {
-
-				Route::get(LaravelLocalization::transRoute('/{slug}'), 'Pusri\Front\Pages\CompanyController@profile')->name('CompanyProfile');
-			});
+			Route::get('/', 'Ebtke\Front\Pages\MainController@index')->name('MainPage');
 
 		});
 
