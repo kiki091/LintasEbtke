@@ -1,0 +1,150 @@
+/* Gallery Style Landing Page */
+
+#group-landing-instagram-section {
+    overflow: hidden;
+}
+
+#group-landing-instagram-item-container, #group-landing-instagram-item-container-02 {
+    font-size: 0;
+    height: 236px;
+    overflow: hidden;
+    margin-left: -3px;
+    margin-right: -3px;
+    height: 215.333px;
+}
+
+.group-landing-instagram-item {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    position: relative;
+    width: 16.666%;
+    height: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 6px;
+}
+.group-landing-instagram-item .group-landing-instagram-title-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    background: url(../../images/instagram/group-instagram-01-title-bg.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.instagram-bg-transparent {
+    background: rgba(0, 0, 0, 0.48);
+    height: 100%;
+}
+
+.group-landing-instagram-item .group-landing-instagram-title-container .group-landing-instagram-title-center {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    margin-top: -72px;
+}
+
+.group-landing-instagram-item .group-landing-instagram-title-container h3.title {
+    font-size: 25px;
+    line-height: 28px;
+    margin-bottom: 6px;
+}
+
+.group-landing-instagram-item .group-landing-instagram-title-container h3 {
+    font-family: "Harriet Display",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+    font-size: 16px;
+    line-height: 21px;
+}
+.group-landing-instagram-item .group-landing-instagram-title-container h4 {
+    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #fff;
+    position: absolute;
+    bottom: 14px;
+    bottom: 28px;
+    left: 0;
+    width: 100%;
+}
+
+.group-landing-instagram-item .group-landing-instagram-title-container:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border: 2px solid #fff;
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    -webkit-opacity: .5;
+    opacity: .5;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    filter: alpha(opacity=50);
+}
+
+.group-landing-instagram-item {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    position: relative;
+    width: 16.666%;
+    height: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 6px;
+        width: 16.666%;
+}
+
+.group-landing-instagram-item .manic-image-container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.manic-image-container {
+    background: #d7d7d7;
+}
+
+.manic-image-container {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    height: 150px;
+}
+
+.manic-image-container.image-loaded-version img {
+    /*opacity: 1;*/
+    display: block;
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    width: auto;
+    height: 320px;
+}
+
+.manic-image-container img {
+    opacity: 0;
+    -webkit-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    -moz-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    -o-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+.opacity {
+    opacity: 1;
+}

@@ -10,5 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+include __DIR__.'/pages/front.php';
 
-include __DIR__.'/application/front.php';
+

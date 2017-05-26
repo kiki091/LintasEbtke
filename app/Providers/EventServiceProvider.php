@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Route;
+use LaravelLocalization;
+use App\Models\NavigationTrans;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -13,8 +16,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        'App\Events\LocalizationEvent' => [
+            'App\Listeners\LocalizationEventListener',
         ],
     ];
 
@@ -27,6 +30,14 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Event::listen('routes.translation', function ($locale, $attributes)
+        {
+            foreach ($attributes as $name => $value)
+            {
+                $attributes[$name] = $translatedValue; // get the transated attribute for the given $locale
+            }
+
+            return $attributes;
+        });
     }
 }

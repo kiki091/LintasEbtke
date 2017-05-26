@@ -6,13 +6,20 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "ignasbernotas/laravel-model-generator": "^1",
+        "laracasts/utilities": "~2.0",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "lord/laroute": "2.*",
+        "mcamara/laravel-localization": "1.2.*",
+        "predis/predis": "~1.1",
+        "spatie/laravel-translatable": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7",
+        "xethron/migrations-generator": "^2.0"
     },
     "autoload": {
         "classmap": [
@@ -20,7 +27,11 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/Services/Assets/default.php",
+            "app/Services/Assets/main.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -45,7 +56,6 @@
     },
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
+        "sort-packages": true
     }
 }

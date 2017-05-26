@@ -1,0 +1,31 @@
+/* Font Family Style */
+
+.first-letter {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 56px;
+    color: #464646;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 8px;
+    margin-bottom: -4px;
+}
+
+.font-philosopher {
+	font-family: 'Philosopher', sans-serif;
+    font-style: normal;
+}
+
+.font-slabo {
+	font-family: 'Slabo 27px', serif;
+}
+
+.font-handle {
+	font-family: 'Handlee', cursive;
+}
+
+.font-courgette {
+	font-family: 'Courgette', cursive;
+}

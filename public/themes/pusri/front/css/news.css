@@ -1,0 +1,121 @@
+.row-fluid {
+    border-bottom: 0px;
+}
+.row-fluid:after, .row-fluid:before {
+    display: table; line-height: 0; content: "";
+}
+
+.news_landing_grid {
+    position: relative; padding: 50px; width: 50%; display: block; float: left; min-height: 20px; box-sizing: border-box; padding-top: 0px;
+}
+.news_landing_grid h2 {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.news_landing_grid img {
+	max-width: 100%; height: auto; outline: 0; opacity: 0.6;
+}
+
+.news_landing_grid p {
+	color: #626262; font-size: 14px; line-height: 24px; margin-top: 3%; text-align: center; font-family: 'Philosopher', sans-serif;
+}
+
+.news_landing_grid: after {
+    content: ''; position: absolute; top: 0; bottom: 0; right: 0; margin: auto; height: 90%; border-right: 1px solid #eaeaea;
+}
+
+#content__bottom p {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+    text-align: justify;
+}
+
+#content__bottom__image {
+    width: auto;
+    margin-right: 19px;
+    height: 358px;
+    margin-left: 19px;
+}
+
+#content__bottom__image .content__bottom__container {
+    height: 358px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.content__bottom__image__container {
+    background: #d7d7d7;
+}
+.content__bottom__image__container {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    height: 358px;
+}
+
+.content__bottom__image__container img {
+    opacity: 0.7;
+    -webkit-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    -moz-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    -o-transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+    transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+.content__footer__middle {
+    padding-top: 12px;
+    width: 100%;
+    margin: 0px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.left__logo {
+    width: 48%;
+    float: left;
+    text-align: center;
+    background: #e4e4e4;
+    border: 1px solid #b9b9b9;
+    padding: 10px;
+}
+
+.right__logo {
+    width: 48%;
+    float: right;
+    text-align: center;
+    background: #e4e4e4;
+    border: 1px solid #b9b9b9;
+    padding: 10px;
+}
+.center__logo {
+    width: 99.5%;
+    float: left;
+    text-align: center;
+    background: #e4e4e4;
+    border: 1px solid #b9b9b9;
+    padding: 3px 0;
+    margin-top: 15px;
+}
+
+h3.footer__title {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: .1em;
+    margin-bottom: 10px;
+    color: #464646;
+    text-align: center;
+}
+.content__footer__middle img {
+    margin-top: 10px;
+}
+

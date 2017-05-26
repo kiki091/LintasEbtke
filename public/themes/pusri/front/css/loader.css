@@ -1,0 +1,4 @@
+.preloader_hide {opacity:0;}
+#preloader {position:fixed; left:50%; top:50%; width:64px; height:65px; margin:-16px 0 0 -16px; display:block;}
+
+#top-menu{height: 40px; width: 100%; background-color: #eee; padding: 10px;overflow: hidden;}

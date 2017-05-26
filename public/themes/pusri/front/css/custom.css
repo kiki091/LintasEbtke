@@ -1,0 +1,545 @@
+/** Your theme modifications here **/
+
+/** Section Style Landing Page About **/
+@import url('https://fonts.googleapis.com/css?family=Courgette|Libre+Baskerville');
+
+.img-rounded {
+    border-radius: 6px;
+}
+
+.breadcrum_box {
+    width: 100%;
+    height: 30px;
+    margin: 30px 0 10px 0;
+}
+
+.breadcrum_box a.home {
+    text-indent: -999em;
+    background: url(../images/breadcrum_home.png) no-repeat left bottom;
+    height: 18px;
+    width: 20px;
+    padding-left: 0px;
+}
+style.css:424
+.breadcrum_box a {
+    font-size: 13px;
+    color: #525252;
+    display: block;
+    float: left;
+    position: relative;
+    padding-left: 18px;
+    background: url(../images/breadcrum_next.png) no-repeat left bottom;
+    padding-right: 9px;
+    line-height: 15px;
+}
+
+.page {
+    overflow: hidden;background-color: #fff;padding: 50px 0;
+}
+
+.banner-images {
+    margin-top: 5%;background-size: cover;min-height: 300px;opacity: 0.6;
+}
+
+.img-with-opacity {
+    opacity: 0.6;
+}
+
+.images__banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pull-right {
+    float: right;
+}
+
+.margin-top {
+    margin-top: 2%;
+}
+
+.margin-bottom {
+    margin-bottom: 2%;
+}
+
+.container:before {
+	display: table;content: " ";
+}
+
+.page-header { 
+	margin: 0 0 20px 0; padding: 0; border: none;visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;
+}
+
+.page-header h2 {
+    text-transform: uppercase; font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
+}
+
+.devider {
+    width: 100%; height: 23px; background: url(../../images/devider.png) no-repeat center center; margin: 5px 0 10px;
+}
+
+h3.subtitle {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
+}
+
+#home-introduction-content {
+    padding-top: 6px; padding-right: 20px;
+}
+
+.default-content {
+    position: relative;
+}
+
+.default-content:before {
+	display: table; content: ""; line-height: 0;
+}
+
+.default-content .arrow-cta {
+    margin-top: 23px;
+}
+
+.arrow-cta.float-right-version {
+    float: right;
+}
+
+.arrow-cta.float-center-version {
+    display: table;
+}
+
+.arrow-cta.float-left-version {
+    float: left;
+}
+
+.arrow-cta {
+    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;font-style: normal;font-weight: 500;font-size: 13px;line-height: 21px;text-transform: uppercase;letter-spacing: .075em;color: #464646;display: inline-block;vertical-align: top;zoom: 1;padding-right: 18px;position: relative;cursor: pointer;text-decoration: none;
+}
+
+.arrow-cta:after {
+    font: normal normal normal 14px/1 FontAwesome;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;content: "\f138";display: block;color: #464646;position: absolute;top: 0;right: 0;font-size: 14px;line-height: 21px;-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;
+}
+
+.default-content p {
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
+}
+
+.default-content p .first-letter {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
+}
+
+.group-landing-news-item {
+    position: relative;
+    padding-left: 60px;
+    min-height: 55px;
+    padding-top: 5px;
+    margin-bottom: 35px;
+}
+
+.group-landing-news-item .news-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 50px;
+    background: #acbfc6;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.group-landing-news-item .news-icon img {
+    display: block;
+    height: 54px;
+    position: absolute;
+    top: -2px;
+    left: -2.5px;
+}
+
+.group-landing-news-item h2 {
+    font-family: "Harriet Display Medium",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: .05em;
+    color: #707070;
+    margin-top: 0px;
+    margin-bottom: -1px;
+}
+
+.group-landing-news-item p {
+    color: #707070;
+}
+
+#category-landing-pages p {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+    text-align: justify;
+}
+
+#category-landing-pages blockquote {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+    text-align: justify;
+}
+
+.visible-md {
+    display: block!important;
+}
+
+#desktop-footer .top-footer {
+    background: #f6f4f1;
+    /*margin-top: 50px;*/
+    padding-bottom: 38px;
+}
+
+#desktop-footer .top-footer .container {
+    position: relative;
+}
+
+.container .has-breakpoint {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+#desktop-footer .desktop-footer-block.footer-block-01 {
+    padding-top: 8px;
+}
+
+#desktop-footer .bottom-footer {
+    background: #555555;
+}
+
+.container-fluid.has-breakpoint {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+#desktop-footer .desktop-footer-copywrite {
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    padding-top: 17px;
+}
+#desktop-footer .desktop-footer-trip-advisor-container {
+    text-align: right;
+}
+#desktop-footer .desktop-footer-trip-advisor {
+    margin-top: 12px;
+    margin-bottom: 11px;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+}
+#desktop-footer .desktop-footer-trip-advisor img {
+    display: block;
+}
+.container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.footer-daily-stock {
+    width: 100%;
+    float: left;
+}
+
+.footer-daily-stock h3 {
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: .1em;
+    margin-bottom: 2px;
+    color: #464646;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.footer-daily-stock-content {
+    height: 205px;
+    width: 100%;
+    position: relative;
+}
+
+.footer-daily-stock-content a {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #464646;
+    font-size: 12px;
+}
+
+.daily-stock-desc {
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    position: relative;
+    color: #464646;
+    font-size: 14px;
+    background: url(../../images/ic_stok_home.png) center left no-repeat;
+    line-height: 18px;
+    padding-left: 24px;
+}
+
+.daily-stock-map {
+    filter: alpha(opacity=30);
+    position: absolute;
+    bottom: 50px;
+    right: 12px;
+    margin-left: 20px;
+}
+
+.production-h3 {
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: .1em;
+    margin-bottom: 2px;
+    color: #464646;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.footer-production {
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    position: relative;
+    color: #464646;
+    font-family: 'dincond';
+    font-size: 28px;
+    line-height: 90px;
+    margin-bottom: 5px;
+}
+
+.footer-production span {
+    display: block;
+    color: #b56e36;
+    font-size: 15px;
+    font-family: 'helvetica77';
+    line-height: 14px;
+}
+
+.footer-production span.top {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.footer-production span.bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#desktop-footer .desktop-footer-block {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #464646;
+}
+
+#desktop-footer-logo-container {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+}
+
+#desktop-footer-logo-container .desktop-footer-logo {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    margin-bottom: 16px;
+}
+
+#desktop-footer-logo-container .desktop-footer-logo img {
+    display: block;
+}
+
+#desktop-footer-logo-container p {
+    font-family: 'Handlee', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #464646;
+    transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+#desktop-footer .desktop-footer-block.footer-block-03 {
+    padding-right: 0;
+    padding-top: 12px;
+    width: 100%;
+}
+
+
+#desktop-footer .desktop-footer-block {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #464646;
+}
+
+#desktop-footer-mailing-list h4 {
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: .1em;
+    margin-bottom: 2px;
+    color: #464646;
+}
+
+#desktop-footer-mailing-list p {
+    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 12px;
+    color: #464646;
+}
+
+#desktop-footer-mailing-list-form {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: #ede9e4;
+    margin-left: -1px;
+    margin-bottom: 16px;
+}
+
+#desktop-footer-mailing-list-form input[type=text] {
+    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 30px;
+    width: 100%;
+    height: 30px;
+    color: #464646;
+    outline: 0;
+    border: none;
+    background: 0 0;
+    padding-left: 13px;
+    padding-right: 33px;
+}
+
+.form--error--message {
+    font-size: 12px;
+    color: #DE6060;
+    text-align: right;
+    margin: 5px 0 0 0;
+}
+
+#desktop-footer-mailing-list-form input[type=submit] {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 30px;
+    color: #464646;
+    outline: 0;
+    border: none;
+    background: 0 0;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+}
+
+#desktop-footer-social-links {
+    position: relative;
+}
+
+#desktop-footer-social-links h4 {
+    font-size: 12px;
+    line-height: 28px;
+    color: #464646;
+    letter-spacing: .1em;
+    margin-bottom: -1px;
+}
+
+#desktop-footer-social-links ul {
+    font-size: 0;
+    margin-left: -5px;
+}
+
+#desktop-footer-social-links ul li {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    height: 28px;
+    width: 24px;
+    text-align: center;
+}
+
+#desktop-footer-social-links ul li a {
+    font-size: 17px;
+    line-height: 28px;
+    color: #464646;
+}
+
+.icon-instagram:before {
+    content: "\e02e";
+}
+
+.icon-facebook:before {
+    content: "\e00d";
+}
+
+.icon-twitter:before {
+    content: "\e00c";
+}
+
+.icon-youtube:before {
+    content: "\e02f";
+}
+
+.breadcrum_box {
+    width: 100%;
+    height: 30px;
+    margin: 30px 0 10px 0;
+}
+
+.breadcrum_box a.home {
+    text-indent: -999em;
+    background: url(../../images/breadcrum_home.png) no-repeat left bottom;
+    height: 18px;
+    width: 20px;
+    padding-left: 0px;
+}
+
+.breadcrum_box a {
+    font-size: 13px;
+    color: #525252;
+    display: block;
+    float: left;
+    position: relative;
+    padding-left: 18px;
+    background: url(../../images/breadcrum_next.png) no-repeat left bottom;
+    padding-right: 9px;
+    line-height: 15px;
+}
+
+.add_fix:after {
+    display: block;
+    content: "";
+    clear: both;
+}
