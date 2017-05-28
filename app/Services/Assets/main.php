@@ -19,24 +19,13 @@ define('MAIN_BANNER_TRANS_IMAGE_DIRECTORY', 'bin/db/images/banner/');
 
 define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/ebtke/front/images/instagram/');
 
-// Category Thumbnail Images
-
-define('CATEGORY_THUMBNAIL_DIRECTORY', 'bin/db/images/category/');
-
-
 // News And Event Thumbnail Images
 
 define('NEWS_THUMBNAIL_DIRECTORY', 'bin/db/images/news/');
 define('NEWS_IMAGES_DIRECTORY', 'bin/db/images/news/');
 
 
-// GCG Thumbnail Images
 
-define('GCG_THUMBNAIL_DIRECTORY', 'bin/db/images/gcg/');
-define('GCG_IMAGES_DIRECTORY', 'bin/db/images/gcg/');
+// Services Thumbnail Images
 
-
-// GP3K Thumbnail Images
-
-define('GP3K_THUMBNAIL_DIRECTORY', 'bin/db/images/gp3k/');
-define('GP3K_IMAGES_DIRECTORY', 'bin/db/images/gp3k/');
+define('SERVICES_IMAGES_DIRECTORY', 'bin/db/images/services/');

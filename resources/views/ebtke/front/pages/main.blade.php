@@ -1,12 +1,12 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ 'PT Pupuk Sriwidjaja Palembang (Pusri)' }}
+    {{ 'Kementerian ESDM Republik Indonesia' }}
 @stop
 
 @section('seo')
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="Kementerian ESDM Republik Indonesia" />
+    <meta name="description" content="Kementerian ESDM Republik Indonesia" />
 @stop
 
 @section('content')
@@ -16,25 +16,141 @@
 	<!-- Slider -->
     <div id="slider">
       	<div class="slides">
-      		
+      		@foreach($main_banner as $key=> $val_banner)
 	        <div class="slider">
 	          	<div class="legend"></div>
 	          	<div class="content">
 	            	<div class="content-txt">
-	              		<h1>title</h1>
-	              		<h2>description</h2>
+	              		<h1>{{ $val_banner['title'] or '' }}</h1>
+	              		<h2>{{ $val_banner['description'] or '' }}</h2>
 	            	</div>
 	          	</div>
 	          	<div class="image">
-	            	<img src="image_url">
+	            	<img src="{{ $val_banner['image_url'] or '' }}">
 	          	</div>
 	        </div>
-	        
+	        @endforeach
       	</div>
     </div>
 </section>
 
 <!-- END MAIN BANNER -->
+<div class="wrapper row6 wow fadeInUp" data-wow-delay="0.3s">
+	<section id="cta" class="clear"> 
+    	<!-- ################################################################################################ -->
+    	<div class="three_quarter first">
+      		<h2 class="heading">
+      			{{ trans('pages/main_page.title_we_do') }}
+      		</h2>
+      		<p>
+      			{{ trans('pages/main_page.sub_desc_we_do') }}
+      		</p>
+    	</div>
+    	<div class="one_quarter">
+    		<a class="btn" href="#">
+    			{{ trans('global_page.global_page_lable_link_cta') }} 
+    			<span class="fa fa-arrow-right"></span>
+    		</a>
+    	</div>
+    	<!-- ################################################################################################ -->
+  	</section>
+</div>
+<section>
+	
+	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
+	    <!-- ################################################################################################ -->
+	    <ul class="nospace group">
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'consulting_services.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		            	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_consulting_services') }}
+		            	</p>
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news_&_event.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		            	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_news_&_events') }}
+		            	</p>
+		            	
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		            	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_investment_serrvices') }}
+		            	</p>
+		            	
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'libraries_lms.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		            	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_libraries') }}
+		            	</p>
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		            	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_tools') }}
+		            	</p>
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	    </ul>
+	    <!-- ################################################################################################ -->
+	</div>
+</section>
 
 <!-- COMPANY PROFILE OVERVIEW -->
 
@@ -43,9 +159,11 @@
     <div class="page-header-wrapper">
         <div class="container">
             <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                <h2>title</h2>
-                <div class="devider"></div>
-                <h3 class="subtitle">side_description</h3>
+                <h2>{!! trans('pages/main_page.title') !!}</h2>
+                <hr/>
+                <h3 class="subtitle">
+                	{{ trans('pages/main_page.introduction') }}
+                </h3>
             </div>
         </div>
     </div>
@@ -54,9 +172,7 @@
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				
-	    				description_left
-	    				
+	    				{!! trans('pages/main_page.introduction_left') !!}
 	    			</div>
 	    		</div>
 	    	</div>
@@ -64,12 +180,8 @@
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInRight" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				<p>
-	    					description_right
-	    					<a href="#" class="arrow-cta float-right-version">
-	    						{{ trans('global_page.global_page_lable_link_cta') }}
-	    					</a>
-	    				</p>
+	    				{!! trans('pages/main_page.introduction_right') !!}
+	    				
 	    			</div>
 	    		</div>
 	    	</div>
@@ -77,127 +189,31 @@
     </div>
 </section>
 
-<!-- END COMPANY PROFILE OVERVIEW -->
-
-<!-- TOTAL PRODUCTION INFORMATION -->
-<section class="banner-images" style="background:url('bin/db/images/produksi/banner.jpg');">
-	<div class="container full__width absolute">
-		<div class="row">
-			<div class="page-header text-center">
-	            <h2 class="font-courgette font-white wow fadeInUp" data-wow-delay="0.3s">TOTAL PRODUKSI</h2>
-	            <div class="devider"></div>
-	            <div class="content__production__urea col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-		            <h3 class="font-white">
-		            	UREA
-		            	<br/>
-		            	<span class="count__number"><b>1671160</b></span>
-		            	<br/>
-		            	TON
-		            </h3>
-	            </div>
-	            <div class="content__production__amoniak col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-		            <h3 class="font-white">
-		            	AMONIAK
-		            	<br/>
-		            	<span class="count__number"><b>1221900</b></span>
-		            	<br/>
-		            	TON
-		            </h3>
-	            </div>
-	        </div>
-		</div>
-	</div>
-	<div class="bg__second__section"></div>
-</section>
-<!-- END TOTAL PRODUCTION INFORMATION -->
-
-<!-- GP3K OVERVIEW -->
-
-<section id="content__bottom">
-	<div class="container">
-		<div class="row">
-			<div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-	            <h2 class="font-courgette font-black">
-	            	title
-	            </h2>
-	            <div class="devider"></div>
-	        </div>
-	    </div>
-	    <div class="row">
-	    	<div class="col-md-4">
-	    		description_left
-	    		
-	    	</div>
-	    	<!-- DESKTOP VIEW -->
-	    	<div id="desktop__content" class="col-md-4">
-	    		<div id="content__bottom__image">
-	    			<div class="content__bottom__container">
-	    				<div class="content__bottom__image__container">
-	    					<img src="thumbnail_url">
-	    				</div>
-	    			</div>
-	    		</div>
-	    	</div>
-	    	<!-- END DESKTOP VIEW -->
-	    	<!-- MOBILE VIEW -->
-	    	<div id="mobile__content" class="col-mobile-4 col-md-4">
-	    		<img class="images__banner" src="filename_url">
-
-	    	</div>
-	    	<!-- END MOBILE VIEW -->
-	    	<div class="col-md-4 margin-bottom">
-	    		description_right
-	    		<a href="#" class="arrow-cta float-center-version text-center pull-right">
-	    			{{ trans('global_page.global_page_lable_link_cta') }}
-	    		</a>
-	    	</div>
-	    </div>
-</section>
-<!-- END GP3K OVERVIEW -->
-
-
-<!-- LATEST NEWS -->
-
+<!-- EVENT AND NEWS -->
 <section id="latest-news" class="bg-gray-transparant">
 	<div class="container">
 		<div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-            <h2>Berita Terkini</h2>
+            <h2>{{ trans('pages/main_page.title_news') }}</h2>
             <div class="devider"></div>
         </div>
-       
-		<div class="row-fluid skill-bar wow slideInLeft" data-wow-delay="0.4s">
+        @foreach($latest_news as $key=> $news)
+		<div class="row-fluid skill-bar wow fadeInUp" data-wow-delay="0.4s">
 			<div class="news_landing_grid">
-				<img src="thumbnail_url" alt="title">
-				<h2>title</h2>
+				<img src="{{ $news['thumbnail_url'] }}" class="img-responsive" alt="{{ $news['title'] }}">
+				<h2>{{ $news['title'] }}</h2>
 				<p>
-				side_description
+				{{ $news['introduction'] }}
 				</p>
 				<center>
-				<a href="slug" class="arrow-cta float-center-version text-center">
+				<a href="{{ $news['slug'] }}" class="arrow-cta float-center-version text-center">
 	    			{{ trans('global_page.global_page_lable_link_cta') }}
 	    		</a>
 	    		</center>
 			</div>
 		</div>
-		
-		<div class="row-fluid skill-bar wow slideInRight" data-wow-delay="0.4s">
-			<div class="news_landing_grid">
-				<img src="thumbnail_url" alt="title">
-				<h2>title'</h2>
-				<p>
-				side_description
-				</p>
-				<center>
-				<a href="#" class="arrow-cta float-center-version text-center">
-	    			{{ trans('global_page.global_page_lable_link_cta') }}
-	    		</a>
-	    		</center>
-			</div>
-		</div>
+		@endforeach
 	</div>
 </section>
-<!-- END LATEST NEWS -->
-
 <!--
    ___ _   _ ____ _____  _    ____ ____      _    __  __
   |_ _| \ | / ___|_   _|/ \  / ___|  _ \    / \  |  \/  |
@@ -216,9 +232,7 @@
 						<h3>Instagrammable places,  <br>insta-worthy memories.</h3>
 					</div>
 					<h4>
-				        Follow us @ayanaresort  <br>
-				        @rimbajimbaran  <br>
-				        @rockbarbali
+				        Follow us @djebtke_kesdm  <br>
 			        </h4>
 			    </div>
 			</div>

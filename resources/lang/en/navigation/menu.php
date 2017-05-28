@@ -1,18 +1,16 @@
 <?php
 
 	/*
-	 * Page Static Navigation English
+	 * Page Static English
 	 *
 	*/
 
 	return [
-
-		'menu_company'	 		=> 'COMPANY',
-		'menu_product'			=> 'PRODUCT',
-		'menu_distribution'		=> 'DISTRIBUTION & MARKETING',
-		'menu_report'			=> 'REPORT',
-		'menu_gcg'				=> 'GCG',
-		'menu_csr'				=> 'CSR',
-		'menu_news_&_event'		=> 'NEWS & EVENT',
-		'menu_contact_us'		=> 'CONTACT US',
+		'menu_about_us'				=> 'ABOUT US',
+		'menu_news_and_event'		=> 'NEWS & EVENTS',
+		'menu_investment_services'	=> 'INVESTMENT SERVICES',
+		'menu_renewable_energi'		=> 'RENEWABLE ENERGY',
+		'menu_energi_conservation'	=> 'ENERGY CONSERVATION',
+		'menu_resource'				=> 'RESOURCES',
+		'menu_link'					=> 'LINK',
 	];

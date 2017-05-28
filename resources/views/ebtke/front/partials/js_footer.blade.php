@@ -1,6 +1,9 @@
 
 <script src="{{ asset('themes/ebtke/front/build/js/animation.js') }}"></script>
 <script type="text/javascript">
+
+	var _current_url = 'http://www.ebtke.esdm.go.id';
+	var _base_url = 'http://www.ebtke.esdm.go.id';
 	
 	$( function() {
 		
@@ -14,3 +17,4 @@
 	});
 
 </script>
+<script src="http://www.ebtke.esdm.go.id/assets/js/analytic.js"></script>

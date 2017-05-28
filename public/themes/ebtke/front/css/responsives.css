@@ -5,11 +5,11 @@
 }
 @media (min-width: 1025px) {
 	.news_landing_grid {
-		padding: 45px;
+		padding: 20px;
 	}
 	.news_landing_grid h2 {
-        font-size: 22px;
-        line-height: 40px;
+        font-size: 16px;
+        line-height: 28px;
     }
     .news_landing_grid p {
     	font-size: 16px;
@@ -75,6 +75,10 @@
 	.content__production__amoniak {
 		float: right;
 		margin-right: 5%;
+	}
+	.news_landing_grid h2 {
+	    font-size: 14px;
+	    line-height: 17px;
 	}
 }
 

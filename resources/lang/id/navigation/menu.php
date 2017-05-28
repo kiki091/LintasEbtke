@@ -1,18 +1,16 @@
 <?php
 
 	/*
-	 * Page Static Navigation Indonesia
+	 * Page Static Navigation English
 	 *
 	*/
 
 	return [
-
-		'menu_company'	 		=> 'PERUSAHAAN',
-		'menu_product'			=> 'PRODUK',
-		'menu_distribution'		=> 'DISTRIBUSI & PENJUALAN',
-		'menu_report'			=> 'LAPORAN',
-		'menu_gcg'				=> 'GCG',
-		'menu_csr'				=> 'CSR',
-		'menu_news_&_event'		=> 'BERITA & KEGIATAN',
-		'menu_contact_us'		=> 'HUBUNGI KAMI',
+		'menu_about_us'				=> 'TENTANG KAMI',
+		'menu_news_and_event'		=> 'BERITA & LAYANAN',
+		'menu_investment_services'	=> 'LAYANAN INVESTASI',
+		'menu_renewable_energi'		=> 'ENERGI TERBARUKAN',
+		'menu_energi_conservation'	=> 'KONSERVASI ENERGI',
+		'menu_resource'				=> 'SUMBER DAYA',
+		'menu_link'					=> 'TAUTAN',
 	];

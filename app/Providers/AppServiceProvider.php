@@ -28,7 +28,8 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(\Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class);
         }
 
-        // $this->app->bind('App\Repositories\Contracts\Front\Navigation', 'App\Repositories\Implementation\Front\Navigation');
+        $this->app->bind('App\Repositories\Contracts\Front\MainBanner', 'App\Repositories\Implementation\Front\MainBanner');
+        $this->app->bind('App\Repositories\Contracts\Front\News', 'App\Repositories\Implementation\Front\News');
     }
 
     /**
@@ -40,7 +41,8 @@ class AppServiceProvider extends ServiceProvider
     {
         return array(
 
-            // 'App\Repositories\Contracts\Front\Navigation',
+            'App\Repositories\Contracts\Front\MainBanner',
+            'App\Repositories\Contracts\Front\News',
 
         );
     }

@@ -13,46 +13,46 @@ const { mix } = require('laravel-mix');
 
 // for plugin css
 mix.styles([
-    'public/themes/pusri/front/css/bootstrap.css',
-    'public/themes/pusri/front/css/bootstrap.min.css',
-    'public/themes/pusri/front/css/animate.min.css',
-    'public/themes/pusri/front/css/loader.css',
-    'public/themes/pusri/front/css/style.default.css',
-    'public/themes/pusri/front/css/custom.css',
-    'public/themes/pusri/front/css/slider-def.css',
-    'public/themes/pusri/front/css/gallery.css',
-    'public/themes/pusri/front/css/news.css',
-    'public/themes/pusri/front/css/font.css',
-    'public/themes/pusri/front/css/owl.carousel.css',
-    'public/themes/pusri/front/css/owl.theme.css',
-    'public/themes/pusri/front/css/icomoon.css',
-    'public/themes/pusri/front/css/custom-slider.css',
-    'public/themes/pusri/front/css/style-slider.css',
-    'public/themes/pusri/front/css/responsives.css',
-], 'public/themes/pusri/front/build/css/plugins.css');
+    'public/themes/ebtke/front/css/bootstrap.css',
+    //'public/themes/ebtke/front/css/bootstrap.min.css',
+    'public/themes/ebtke/front/css/animate.min.css',
+    'public/themes/ebtke/front/css/loader.css',
+    'public/themes/ebtke/front/css/style.default.css',
+    'public/themes/ebtke/front/css/custom.css',
+    'public/themes/ebtke/front/css/slider-def.css',
+    'public/themes/ebtke/front/css/gallery.css',
+    'public/themes/ebtke/front/css/news.css',
+    'public/themes/ebtke/front/css/font.css',
+    'public/themes/ebtke/front/css/owl.carousel.css',
+    'public/themes/ebtke/front/css/owl.theme.css',
+    'public/themes/ebtke/front/css/icomoon.css',
+    'public/themes/ebtke/front/css/custom-slider.css',
+    'public/themes/ebtke/front/css/style-slider.css',
+    'public/themes/ebtke/front/css/responsives.css',
+], 'public/themes/ebtke/front/build/css/plugins.css');
 
 
 /* script compile */
 
 mix.scripts([
-	'public/themes/pusri/front/js/jquery-1-8-2.min.js',
-	'public/themes/pusri/front/js/modernizr.custom.79639.js',
-	'public/themes/pusri/front/js/bootstrap.min.js',
-	'public/themes/pusri/front/js/scroll-menu.js',
-	'public/themes/pusri/front/js/respond.min.js',
-	'public/themes/pusri/front/js/jquery.cookie.js',
-	'public/themes/pusri/front/js/front.js',
-	'public/themes/pusri/front/js/myscript.js',
-], 'public/themes/pusri/front/build/js/plugins.js');
+	'public/themes/ebtke/front/js/jquery-1-8-2.min.js',
+	'public/themes/ebtke/front/js/modernizr.custom.79639.js',
+	'public/themes/ebtke/front/js/bootstrap.min.js',
+	'public/themes/ebtke/front/js/scroll-menu.js',
+	'public/themes/ebtke/front/js/respond.min.js',
+	'public/themes/ebtke/front/js/jquery.cookie.js',
+	'public/themes/ebtke/front/js/front.js',
+	'public/themes/ebtke/front/js/myscript.js',
+], 'public/themes/ebtke/front/build/js/plugins.js');
 
 mix.scripts([
-	'public/themes/pusri/front/js/jquery.ba-cond.min.js',
-	'public/themes/pusri/front/js/jquery.slitslider.js',
-	'public/themes/pusri/front/js/plugins-slider.js',
-	'public/themes/pusri/front/js/owl.carousel.min.js',
-	'public/themes/pusri/front/js/jquery.stellar.min.js',
-	'public/themes/pusri/front/js/wow.min.js',
-	'public/themes/pusri/front/js/waypoints.min.js',
-	'public/themes/pusri/front/js/smoothscroll.js',
-	'public/themes/pusri/front/js/theme.js',
-], 'public/themes/pusri/front/build/js/animation.js');
+	//'public/themes/ebtke/front/js/jquery.ba-cond.min.js',
+	'public/themes/ebtke/front/js/jquery.slitslider.js',
+	'public/themes/ebtke/front/js/plugins-slider.js',
+	'public/themes/ebtke/front/js/owl.carousel.min.js',
+	'public/themes/ebtke/front/js/jquery.stellar.min.js',
+	'public/themes/ebtke/front/js/wow.min.js',
+	'public/themes/ebtke/front/js/waypoints.min.js',
+	'public/themes/ebtke/front/js/smoothscroll.js',
+	'public/themes/ebtke/front/js/theme.js',
+], 'public/themes/ebtke/front/build/js/animation.js');

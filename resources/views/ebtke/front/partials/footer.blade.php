@@ -45,7 +45,7 @@
                                 </h4>
                             	<ul>
                                     <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
+                                        <a href="https://www.instagram.com/djebtke_kesdm/" target="_blank">
                                             <span class="icon icon-instagram"></span>
                                         </a>
                                     </li>
@@ -56,7 +56,7 @@
                                     </li>
                                       
                                     <li>
-                                        <a href="http://www.twitter.com/pusripalembang" target="_blank">
+                                        <a href="https://twitter.com/DitjenEBTKE" target="_blank">
                                             <span class="icon icon-twitter"></span>
                                         </a>
                                     </li>

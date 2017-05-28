@@ -8,84 +8,49 @@
 	return [
 
 		'lable_company_profile' 		=> 'PROFILE',
-		'lable_company_history'			=> 'HISTORY',
-		'lable_company_product'			=> 'COMPANY PRODUCT',
-		'lable_company_distribution'	=> 'DISTRIBUTION & MARKETING',
-		'lable_company_report'			=> 'REPORT',
-		'lable_company_gcg'				=> 'GOOD CORPORATE GOVERNANCE',
-		'lable_company_csr'				=> 'CSR PROGRAM',
-		'lable_company_news_&_event'	=> 'NEWS & EVENT',
-		'lable_company_contact_us'		=> 'CONTACT US',
+		'lable_media'					=> 'MEDIA',
+		'lable_publication'				=> 'PUBLICATION',
+		'lable_services'				=> 'SERVICES',
 
 		'company'	 				=> 
 		[
 
-			'company_profile' 			=> 'PROFILE',
-			'company_value' 			=> 'COMPANY VALUES',
-			'corporate_identity' 		=> 'COMPANY IDENTITY',
-			'management' 				=> 'MANAGEMENT',
-			'procurement' 				=> 'PROCUREMENT',
-			'company_vision_mision' 	=> 'VISION, MISSION & COMPANYPURPOSE',
-			'logo_meaning' 				=> 'LOGO MEANING',
-			'our_journey' 				=> 'OUR JOURNEY',
-			'certification' 			=> 'CERTIFICATION',
-			'subsidiary_company' 		=> 'SUBSIDIARY COMPANY',
+			'organization_value' 		=> 'ORGANIZATION VALUES',
+			'job_and_function' 			=> 'JOB AND FUNCTION',
+			'organization_structure' 		=> 'ORGANIZATIONAL STRUCTURE',
 		],
 
-		'product'			=> 
+		'media'		=>
 		[
-			'urea'			=> 'UREA',
-			'npk_fusion'	=> 'NPK FUSION',
-			'ammonia'		=> 'AMMONIA',
-			'research'		=> 'RESEARCH',
+			'media_archives' 		=> 'NEWS ARCHIVES',
+			'announcement'	 		=> 'ANNOUNCEMENT',
+			'press_conference' 		=> 'PRESS CONFERENCE',
+			'gallery_photo' 			=> 'PHOTO GALLERY',
+			'gallery_video' 			=> 'GALLERY VIDEO',
 		],
 
-		'distribution_&_marketing'		=>
+		'publication'			=>
 		[
-			'distribution' 		=> 'DISTRIBUTION',
-			'distributor' 		=> 'DISTRIBUTOR',
-			'marketing' 		=> 'MARKETING',
-			'retailer' 			=> 'RETAILER',
+			'energy_conservation'			=> 'ENERGY CONSERVATION SERVICE COMPANY LIST',
+			'exposure_and_materials'		=> 'EXPOSURE AND MATERIALS',
+			'bulletin'						=> 'BULLETIN',
+			'books_lakip'					=> 'BOOKS LAKIP',
+			'statistic_book'				=> 'EBTKE STATISTICS BOOK',
+			'guidebook'						=> 'GUIDEBOOK',
+			'hip_bbn'						=> 'HIP BBN',
+			'potentials_and_opportunities'	=> 'POTENTIALS AND OPPORTUNITIES OF EBTKE INVESTMENT',
+			'rensta_ditjen'					=> 'RENSTA DITJEN'
 		],
 
-		'report'			=>
+		'services'			=>
 		[
-			'production'			=> 'PRODUCTION',
-			'finance'				=> 'FINANCE',
-			'sale'					=> 'SALE',
-			'annual_report'			=> 'ANNUAL REPORT',
+			'skt_conservation_services' 			=> 'SKT CONSERVATION SERVICES',
+			'energy_calculator'						=> 'ENERGY CALCULATOR',
+			'aplication_safe_energy'				=> 'ENERGY SAFE PRODUCT APPLICATIONS (PROHEGI)',
+			'database_biomassa'						=> 'BIOMASS DATABASE',
+			'bbn_services'							=> 'BBN SERVICES',
+			'peen'									=> 'PEEN',
+			'online_management_energy_reporting'	=> 'ONLINE MANAGEMENT REPORTING ENERGY',
+			'online_management_water_reporting'		=> 'ONLINE REPORTING ENERGY AND WATER SAVING',
 		],
-
-		'gcg'			=>
-		[
-			'good_corporate_governance_overview' 		=> 'GOOD CORPORATE GOVERNANCE OVERVIEW',
-			'code_of_conduct'							=> 'CODE OF CONDUCT',
-			'integrity_pack'							=> 'INTEGRITY PACK',
-			'internal_control_system'					=> 'INTERNAL CONTROL SYSTEM',
-			'komitmen_anti_gratifikasi'					=> 'KOMITMEN ANTI GRATIFIKASI',
-			'code_of_corporate_governance'				=> 'CODE OF CORPORATE GOVERNANCE',
-			'board_of_commisioners_&_directors_manual'	=> 'BOARD OF COMMISIONERS & DIRECTOR MANUAL',
-			'whistle_blowing_system'					=> 'WHISTLE BLOWING SYSTEM',
-			'risk_management'							=> 'RISK MANAGEMENT',
-		],
-
-		'csr'					=> 
-		[
-			'csr_progrram'		=> 'CSR PROGRAM',
-			'gallery_csr'		=> 'GALLERY CSR',
-			'csr_news'			=> 'CSR NEWS',
-		],
-
-		'news_&_event'			=> 
-		[
-			'latest_news'		=> 'LATEST NEWS',
-			'mass_media'		=> 'MASS MEDIA',
-		],
-
-		'contact_us' 			=>
-		[
-			'company_address'		=> 'COMPANY ADDRESS',
-			'representative_office' => 'REPRESENTATIVE OFFICE',
-			'inquiry_form'			=> 'INQUIRY FORM',
-		]
 	];

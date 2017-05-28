@@ -43,8 +43,8 @@
 
 /* Legend */
 .legend{
-  border:500px solid transparent;
-  border-left:800px solid rgba(52, 73, 94, .7);
+  border:1200px solid transparent;
+  border-left:800px solid rgba(23, 2, 2, 0.58);
   border-bottom:0;
   position:absolute;
   bottom:0;

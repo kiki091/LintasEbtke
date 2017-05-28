@@ -7,85 +7,50 @@
 
 	return [
 
-		'lable_company_profile' 		=> 'PROFIL PERUSAHAAN',
-		'lable_company_history'			=> 'SEJARAH PERUSAHAAN',
-		'lable_company_product'			=> 'PRODUK PERUSAHAAN',
-		'lable_company_distribution'	=> 'DISTRIBUSI & PENJUALAN',
-		'lable_company_report'			=> 'LAPORAN',
-		'lable_company_gcg'				=> 'GOOD CORPORATE GOVERNANCE',
-		'lable_company_csr'				=> 'PROGRAM CSR',
-		'lable_company_news_&_event'	=> 'BERITA & KEGIATAN',
-		'lable_company_contact_us'		=> 'HUBUNGI KAMI',
+		'lable_company_profile' 		=> 'PROFIL',
+		'lable_media'					=> 'MEDIA',
+		'lable_publication'				=> 'PUBLIKASI',
+		'lable_services'				=> 'LAYANAN',
 
 		'company'	 				=> 
 		[
 
-			'company_profile' 			=> 'PROFIL',
-			'company_value' 			=> 'TATA NILAI PERUSAHAAN',
-			'corporate_identity' 		=> 'IDENTIRAS PERUSAHAAN',
-			'management' 				=> 'MANAJEMENT',
-			'procurement' 				=> 'PENGADAAN',
-			'company_vision_mision' 	=> 'VISI, MISI & MAKNA PERUSAHAAN',
-			'logo_meaning' 				=> 'MAKNA LOGO',
-			'our_journey'			 	=> 'PERJALANAN KAMI',
-			'certification' 			=> 'SERTIFIKASI',
-			'subsidiary_company' 		=> 'ANAK PERUSAHAAN',
+			'organization_value' 		=> 'NILAI ORGANISASI',
+			'job_and_function' 			=> 'TUGAS DAN FUNGSI',
+			'organization_structure' 		=> 'STRUKTUR ORGANISASI',
 		],
 
-		'product'			=> 
+		'media'		=>
 		[
-			'urea'			=> 'UREA',
-			'npk_fusion'	=> 'NPK FUSION',
-			'ammonia'		=> 'AMMONIA',
-			'research'		=> 'RESEARCH',
+			'media_archives' 		=> 'ARSIP BERITA',
+			'announcement'	 		=> 'PENGUMUMAN',
+			'press_conference' 		=> 'SIARAN PERS',
+			'gallery_photo' 			=> 'GALERI FOTO',
+			'gallery_video' 			=> 'GALERI VIDEO',
 		],
 
-		'distribution_&_marketing'		=>
+		'publication'			=>
 		[
-			'distribution' 		=> 'DISTRIBUTION',
-			'distributor' 		=> 'DISTRIBUTOR',
-			'marketing' 		=> 'MARKETING',
-			'retailer' 			=> 'RETAILER',
+			'energy_conservation'			=> 'DAFTAR PERUSAHAAN JASA KONSERVASI ENERGI',
+			'exposure_and_materials'		=> 'PAPARAN DAN MATERI',
+			'bulletin'						=> 'BULETIN',
+			'books_lakip'					=> 'BUKU LAKIP',
+			'statistic_book'				=> 'BUKU STATISTIK EBTKE',
+			'guidebook'						=> 'BUKU PANDUAN',
+			'hip_bbn'						=> 'HIP BBN',
+			'potentials_and_opportunities'	=> 'POTENSI DAN PELUANG INVESTASI EBTKE',
+			'rensta_ditjen'					=> 'RENSTA DITJEN EBTKE'
 		],
 
-		'report'			=>
+		'services'			=>
 		[
-			'production'			=> 'PRODUCTION',
-			'finance'				=> 'FINANCE',
-			'sale'					=> 'SALE',
-			'annual_report'			=> 'ANNUAL REPORT',
+			'skt_conservation_services' 			=> 'SKT JASA KONSERVASI',
+			'energy_calculator'						=> 'KALKULATOR ENERGI',
+			'aplication_safe_energy'				=> 'APLIKASI PRODUK HEMAT ENERGI (PROHEGI)',
+			'database_biomassa'						=> 'DATABASE BIOMASSA',
+			'bbn_services'							=> 'LAYANAN BBN',
+			'peen'									=> 'PEEN',
+			'online_management_energy_reporting'	=> 'PELAPORAN ONLINE MANAJEMENT ENERGI',
+			'online_management_water_reporting'		=> 'PELAPORAN ONLINE PENGHEMATAN ENERGI DAN AIR',
 		],
-
-		'gcg'			=>
-		[
-			'good_corporate_governance_overview' 		=> 'GOOD CORPORATE GOVERNANCE OVERVIEW',
-			'code_of_conduct'							=> 'CODE OF CONDUCT',
-			'integrity_pack'							=> 'INTEGRITY PACK',
-			'internal_control_system'					=> 'INTERNAL CONTROL SYSTEM',
-			'komitmen_anti_gratifikasi'					=> 'KOMITMEN ANTI GRATIFIKASI',
-			'code_of_corporate_governance'				=> 'CODE OF CORPORATE GOVERNANCE',
-			'board_of_commisioners_&_directors_manual'	=> 'BOARD OF COMMISIONERS & DIRECTOR MANUAL',
-			'whistle_blowing_system'					=> 'WHISTLE BLOWING SYSTEM',
-			'risk_management'							=> 'RISK MANAGEMENT',
-		],
-
-		'csr'					=> 
-		[
-			'csr_progrram'		=> 'CSR PROGRAM',
-			'gallery_csr'		=> 'GALLERY CSR',
-			'csr_news'			=> 'CSR NEWS',
-		],
-
-		'news_&_event'			=> 
-		[
-			'latest_news'		=> 'LATEST NEWS',
-			'mass_media'		=> 'MASS MEDIA',
-		],
-
-		'contact_us' 			=>
-		[
-			'company_address'		=> 'COMPANY ADDRESS',
-			'representative_office' => 'REPRESENTATIVE OFFICE',
-			'inquiry_form'			=> 'INQUIRY FORM',
-		]
 	];
