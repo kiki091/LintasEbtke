@@ -1,5 +1,5 @@
 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-    <div class="container">
+    <div class="container-menu">
         <div class="navbar-header">
 
             <a class="navbar-brand home" href="{{ route('MainPage') }}">
@@ -7,16 +7,16 @@
                 
                 <img src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" title="Kementerian ESDM Republik Indonesia" class="visible-xs" style="height: 100%;">
             </a>
-            <div class="navbar-buttons">
+        </div>
+        <!--/.navbar-header -->
+        <div id="search">
+
+            <div class="navbar-buttons pull-left">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fa fa-align-justify"></i>
                 </button>
             </div>
-        </div>
-        <!--/.navbar-header -->
-        <div id="search">
-
             <form class="navbar-form" role="search">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">

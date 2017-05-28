@@ -7467,7 +7467,7 @@ h1 {
   }
 }
 .navbar-toggle {
-  padding: 9px 10px !important;
+  padding: 6px 5px !important;
   margin-right: 15px;
   border-radius: 4px;
   margin-top: 18px;
@@ -11386,9 +11386,7 @@ you can use the generic selector below, but it's slower:
 	    position: relative;
 	    overflow: hidden;
 	}
-	.content-txt {
-	    top: 35%;
-	}
+
 	.galleryItem {width: 29%; margin: 2%;}
 	.content_footer_mailing {
 		width: 100%;
@@ -11422,6 +11420,11 @@ you can use the generic selector below, but it's slower:
 	}
 	.group-landing-instagram-item {
 		width: 32.666%;display: inline-table;
+	}
+	.content-txt {
+		top: 60%;
+	    width: 348px;
+	    height: auto;
 	}
 }
 

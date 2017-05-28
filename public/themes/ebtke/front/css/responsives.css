@@ -169,9 +169,7 @@
 	    position: relative;
 	    overflow: hidden;
 	}
-	.content-txt {
-	    top: 35%;
-	}
+
 	.galleryItem {width: 29%; margin: 2%;}
 	.content_footer_mailing {
 		width: 100%;
@@ -205,6 +203,11 @@
 	}
 	.group-landing-instagram-item {
 		width: 32.666%;display: inline-table;
+	}
+	.content-txt {
+		top: 60%;
+	    width: 348px;
+	    height: auto;
 	}
 }
 
