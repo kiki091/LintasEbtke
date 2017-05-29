@@ -8077,7 +8077,7 @@ style.css:424
 }
 
 .page-header { 
-	margin: 0 0 20px 0; padding: 0; border: none;visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;
+	margin: 15px 0 20px 0; padding: 0; border: none;visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;
 }
 
 .page-header h2 {
@@ -8557,15 +8557,15 @@ h3.subtitle {
 /* Latest Main Pages
 ---------------------------------------------------------------------------------------------------------------*/
 .latest{display:block; width:100%; max-width:2000px; margin:0 auto;}
-.latest ul{}
+.latest ul{overflow: hidden;}
 .latest ul li{display:block; float:left; width:20%; min-height:100%;}
 .latest ul li:first-child, .latest ul li:nth-child(5n+1){margin-left:-1px; clear:left;}
 
 .latest ul li figure{display:block; max-width:100%; border:solid; border-width:0 0 0 1px;}
 .latest ul li figure img{
-    width:100%;
-    max-width: 100%;
-    height: auto;
+    /*width:100%;
+    max-width: 100%;*/
+    height: 210px;
     margin: 0;
     padding: 0;
     border: none;
@@ -8638,7 +8638,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 /* Max Wrapper Width - Laptop, Desktop etc.
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width:978px) {
-    #header, #services, #cta, #breadcrumb, .container, #footer, #copyright{max-width:978px;}
+    #cta, #breadcrumb {max-width:978px;}
 }
 
 /* Grid
@@ -8671,10 +8671,10 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:650px) {
     .latest{width:90%; max-width:none; padding:30px 0;}
-    .latest ul li{float:none; width:auto; margin:0 0 30px 0;}
+    .latest ul li{float:left; width:47%; margin:0 15px 30px 0;}
     .latest ul li:last-child{margin:0;}
     .latest ul li figure{display:inline-block; border-width:0 1px 1px 1px;}
-    .latest ul li figure img{width:100%;}
+    /*.latest ul li figure img{width:100%;}*/
     .latest ul li figure figcaption{padding:15px 30px;}
 }
 /* Smartphone + Tablet
@@ -9009,6 +9009,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 
 #group-landing-instagram-section {
     overflow: hidden;
+    padding-top: 15px;
 }
 
 #group-landing-instagram-item-container, #group-landing-instagram-item-container-02 {
@@ -11259,7 +11260,7 @@ you can use the generic selector below, but it's slower:
 
 @media (min-width:769px) {
 	#desktop__content {
-		display: inline-table;
+		display: block;
 	}
 
 	#mobile__content {

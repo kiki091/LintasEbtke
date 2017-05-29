@@ -1,26 +1,10 @@
 <footer id="desktop-footer" class="visible-md">
-	<div class="top-footer">
+	<div id="desktop__content" class="top-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
 					
 				</div>
-				{{--
-				<div class="col-md-3">
-                    <div class="content__footer__middle">
-                        <h3 class="footer__title">SUBSIDIARY OF</h3>
-                        <div class="left__logo">
-    					   <img class="pull-left" src="{{ asset('bin/db/images/content_bottom/pic_3BE8935B147684B314A35F8A01705CA4.jpg') }}">
-                        </div>
-                        <div class="right__logo">
-                            <img class="pull-right" src="{{ asset('bin/db/images/content_bottom/pic_3BE8935B147684B314A35F8A01705CA4.jpg') }}">
-                        </div>
-                        <div class="center__logo">
-                            <img src="{{ asset('bin/db/images/content_bottom/pic_565FE15B71176D013D34E37EDF06CE23.jpg') }}">
-                        </div>
-                    </div>
-				</div>
-                --}}
 				<div class="content_footer_mailing col-md-4 pull-right">
 					<div id="footer-content-js">
 						<div class="desktop-footer-block footer-block-03">

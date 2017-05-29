@@ -11,7 +11,14 @@
 
 @section('content')
 <!-- MAIN BANNER -->
+<!--
+   ____    _    _   _ _   _ _____ ____
+  | __ )  / \  | \ | | \ | | ____|  _ \
+  |  _ \ / _ \ |  \| |  \| |  _| | |_) |
+  | |_) / ___ \| |\  | |\  | |___|  _ <
+  |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
+-->
 <section id="desktop image-slider">
 	<!-- Slider -->
     <div id="slider">
@@ -55,7 +62,7 @@
     	<!-- ################################################################################################ -->
   	</section>
 </div>
-<section>
+<section id="desktop__content">
 	
 	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
 	    <!-- ################################################################################################ -->
@@ -80,7 +87,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news_&_event.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">

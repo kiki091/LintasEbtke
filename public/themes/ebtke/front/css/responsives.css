@@ -42,7 +42,7 @@
 
 @media (min-width:769px) {
 	#desktop__content {
-		display: inline-table;
+		display: block;
 	}
 
 	#mobile__content {
