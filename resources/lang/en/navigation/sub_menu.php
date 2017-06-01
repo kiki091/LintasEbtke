@@ -7,50 +7,48 @@
 
 	return [
 
-		'lable_company_profile' 		=> 'PROFILE',
-		'lable_media'					=> 'MEDIA',
-		'lable_publication'				=> 'PUBLICATION',
-		'lable_services'				=> 'SERVICES',
+		// About Menu
 
-		'company'	 				=> 
-		[
+		'lintas_history'			=> 'Lintas History',
+		'vision_mission'			=> 'Vision, Mission and Objectives',
+		'organization_structure' 	=> 'Organization Structure',
+		'lintas_scope'				=> 'Lintas Scope Of Service',
 
-			'organization_value' 		=> 'ORGANIZATION VALUES',
-			'job_and_function' 			=> 'JOB AND FUNCTION',
-			'organization_structure' 		=> 'ORGANIZATIONAL STRUCTURE',
-		],
+		// News and Events
 
-		'media'		=>
-		[
-			'media_archives' 		=> 'NEWS ARCHIVES',
-			'announcement'	 		=> 'ANNOUNCEMENT',
-			'press_conference' 		=> 'PRESS CONFERENCE',
-			'gallery_photo' 			=> 'PHOTO GALLERY',
-			'gallery_video' 			=> 'GALLERY VIDEO',
-		],
+		'news' 						=> 'News',
+		'events'					=> 'Events',
 
-		'publication'			=>
-		[
-			'energy_conservation'			=> 'ENERGY CONSERVATION SERVICE COMPANY LIST',
-			'exposure_and_materials'		=> 'EXPOSURE AND MATERIALS',
-			'bulletin'						=> 'BULLETIN',
-			'books_lakip'					=> 'BOOKS LAKIP',
-			'statistic_book'				=> 'EBTKE STATISTICS BOOK',
-			'guidebook'						=> 'GUIDEBOOK',
-			'hip_bbn'						=> 'HIP BBN',
-			'potentials_and_opportunities'	=> 'POTENTIALS AND OPPORTUNITIES OF EBTKE INVESTMENT',
-			'rensta_ditjen'					=> 'RENSTA DITJEN'
-		],
+		// Investment Services
 
-		'services'			=>
-		[
-			'skt_conservation_services' 			=> 'SKT CONSERVATION SERVICES',
-			'energy_calculator'						=> 'ENERGY CALCULATOR',
-			'aplication_safe_energy'				=> 'ENERGY SAFE PRODUCT APPLICATIONS (PROHEGI)',
-			'database_biomassa'						=> 'BIOMASS DATABASE',
-			'bbn_services'							=> 'BBN SERVICES',
-			'peen'									=> 'PEEN',
-			'online_management_energy_reporting'	=> 'ONLINE MANAGEMENT REPORTING ENERGY',
-			'online_management_water_reporting'		=> 'ONLINE REPORTING ENERGY AND WATER SAVING',
-		],
+		'procedure'					=> 'Procedure',
+		'potentials'				=> 'Potentials',
+		'green_pages'				=> 'Green Pages',
+
+		// Reneable Energy
+
+		'gheotermal'				=> 'Geothermal',
+		'bio_energy'				=> 'Bio Energy',
+		'others'					=> 'Others',
+
+		// Energy Conservation
+
+		'industry'					=> 'Industry',
+		'commercial_building'		=> 'Commercial Building',
+		'transportation'			=> 'Transportation',
+		'residentials'				=> 'Residentials',
+
+		// Resources
+
+		'tools'						=> 'Tools',
+		'white_papers'				=> 'White Papers',
+		'publications'				=> 'Publications',
+		'featibility_studies'		=> 'Feasibility Studies',
+
+		// Link 
+
+		'nreec_institutions'		=> 'NREEC Institutions',
+		'nreec_resources'			=> 'NREEC Resources',
+		'nreec_events'				=> 'NREEC Events',
+
 	];

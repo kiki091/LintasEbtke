@@ -7,50 +7,48 @@
 
 	return [
 
-		'lable_company_profile' 		=> 'PROFIL',
-		'lable_media'					=> 'MEDIA',
-		'lable_publication'				=> 'PUBLIKASI',
-		'lable_services'				=> 'LAYANAN',
+		// About Menu
 
-		'company'	 				=> 
-		[
+		'lintas_history'			=> 'Sejarah lintas',
+		'vision_mission'			=> 'Visi, Misi dan Tujuan',
+		'organization_structure' 	=> 'Struktur organisasi',
+		'lintas_scope'				=> 'Cakupan Pelayanan Lintas',
 
-			'organization_value' 		=> 'NILAI ORGANISASI',
-			'job_and_function' 			=> 'TUGAS DAN FUNGSI',
-			'organization_structure' 		=> 'STRUKTUR ORGANISASI',
-		],
+		// News and Events
 
-		'media'		=>
-		[
-			'media_archives' 		=> 'ARSIP BERITA',
-			'announcement'	 		=> 'PENGUMUMAN',
-			'press_conference' 		=> 'SIARAN PERS',
-			'gallery_photo' 			=> 'GALERI FOTO',
-			'gallery_video' 			=> 'GALERI VIDEO',
-		],
+		'news' 						=> 'Berita',
+		'events'					=> 'Acara',
 
-		'publication'			=>
-		[
-			'energy_conservation'			=> 'DAFTAR PERUSAHAAN JASA KONSERVASI ENERGI',
-			'exposure_and_materials'		=> 'PAPARAN DAN MATERI',
-			'bulletin'						=> 'BULETIN',
-			'books_lakip'					=> 'BUKU LAKIP',
-			'statistic_book'				=> 'BUKU STATISTIK EBTKE',
-			'guidebook'						=> 'BUKU PANDUAN',
-			'hip_bbn'						=> 'HIP BBN',
-			'potentials_and_opportunities'	=> 'POTENSI DAN PELUANG INVESTASI EBTKE',
-			'rensta_ditjen'					=> 'RENSTA DITJEN EBTKE'
-		],
+		// Investment Services
 
-		'services'			=>
-		[
-			'skt_conservation_services' 			=> 'SKT JASA KONSERVASI',
-			'energy_calculator'						=> 'KALKULATOR ENERGI',
-			'aplication_safe_energy'				=> 'APLIKASI PRODUK HEMAT ENERGI (PROHEGI)',
-			'database_biomassa'						=> 'DATABASE BIOMASSA',
-			'bbn_services'							=> 'LAYANAN BBN',
-			'peen'									=> 'PEEN',
-			'online_management_energy_reporting'	=> 'PELAPORAN ONLINE MANAJEMENT ENERGI',
-			'online_management_water_reporting'		=> 'PELAPORAN ONLINE PENGHEMATAN ENERGI DAN AIR',
-		],
+		'procedure'					=> 'Prosedur',
+		'potentials'				=> 'Potensi',
+		'green_pages'				=> 'Halaman hijau',
+
+		// Reneable Energy
+
+		'gheotermal'				=> 'Panas bumi',
+		'bio_energy'				=> 'Bio Energi',
+		'others'					=> 'Lainnya',
+
+		// Energy Conservation
+
+		'industry'					=> 'Industri',
+		'commercial_building'		=> 'Bangunan komersial',
+		'transportation'			=> 'Transportasi',
+		'residentials'				=> 'Residentials',
+
+		// Resources
+
+		'tools'						=> 'Alat Bantu',
+		'white_papers'				=> 'Kertas putih',
+		'publications'				=> 'Publikasi',
+		'featibility_studies'		=> 'Studi kelayakan',
+
+		// Link 
+
+		'nreec_institutions'		=> 'NREEC Institusi',
+		'nreec_resources'			=> 'NREEC Sumber daya',
+		'nreec_events'				=> 'NREEC Acara',
+
 	];

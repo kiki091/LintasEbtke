@@ -237,7 +237,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'EbtkeHelper'=> App\Custom\Facades\PusriHelper::class,
+        'EbtkeHelper'=> App\Custom\Facades\EbtkeHelper::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'RouteMenuLocation'=> App\Custom\Facades\RouteMenuLocation::class,
         'NavigationHelper'=> App\Custom\Facades\NavigationHelper::class,

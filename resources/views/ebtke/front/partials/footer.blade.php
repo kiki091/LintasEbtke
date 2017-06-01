@@ -65,15 +65,6 @@
                         {{ trans('global_page.footer_title_copyright') }}
                     </p>
                 </div>
-                <div id="desktop__content" class="pull-right col-md-3>
-
-                    <div class="desktop-footer-trip-advisor-container">
-                        <a class="desktop-footer-trip-advisor" style="cursor: default;">
-                            <img src="{{ asset(DEFAULT_IMAGE_FOOTER_SVG) }}" width="151" height="32">
-                        </a>
-                    </div>
-
-                </div>
             </div>
         </div>
   </div>

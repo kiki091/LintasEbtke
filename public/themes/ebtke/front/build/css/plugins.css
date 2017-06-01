@@ -3795,8 +3795,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 @media (min-width: 768px) {
+  
   .navbar-header {
     float: left;
+    margin-top: 5%;
   }
 }
 .navbar-collapse {
@@ -3897,7 +3899,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 90px;
-  padding: 15px 15px;
+  padding: 0px 15px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -6283,7 +6285,12 @@ h1 {
     position: absolute;
     z-index: 99999;
 }
-
+#navigation-menu {
+  background-color: #2d2d2d;
+  height: 75px;
+  display: inline-table;
+  width: 100%;
+}
 .f-nav{ 
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; background: #FFF;-webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-webkit-box-shadow: 0 0 10px rgba(70,70,70,.2);box-shadow: 0 0 10px rgba(70,70,70,.2);
 }
@@ -6470,8 +6477,8 @@ h1 {
 }
 @media (max-width: 768px) {
   .navbar #search .navbar-form {
-    float: none;
-    width: auto;
+    float: right;
+    width: 90%;
   }
 }
 .navbar #basket-overview {
@@ -7485,6 +7492,7 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu > li > a,
@@ -7595,12 +7603,12 @@ h1 {
   /*line-height: 50px;*/
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: #777777;
+  color: #fff100;
   display: block;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #FFFFFF;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -7627,12 +7635,14 @@ h1 {
 }
 .navbar-default .navbar-collapse {
   border-color: #e6e6e6;clear: both;
+  margin-left: -2%;
+  margin-right: -2%;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: rgba(231, 231, 231, 0.22);
-  color: #777777;
+  background-color: #fff100;
+  color: #2d2d2d;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -8207,7 +8217,7 @@ h3.subtitle {
 
 #desktop-footer .top-footer {
     background: #f6f4f1;
-    /*margin-top: 50px;*/
+    padding-top: 35px;
     padding-bottom: 38px;
 }
 
@@ -11244,6 +11254,7 @@ you can use the generic selector below, but it's slower:
 }
 
 @media (max-width: 1024px) {
+
 	.news_landing_grid {
         padding: 10px;
 	 }
@@ -11270,6 +11281,12 @@ you can use the generic selector below, but it's slower:
 }
 
 @media (max-width: 768px) {
+	#navigation-menu {
+	    height: auto;
+	  }
+	.navbar-nav > li > a {
+		padding-left: 4%;
+	}
 	#desktop__content {
 		display: none; visibility: hidden;
 	}

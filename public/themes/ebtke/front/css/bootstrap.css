@@ -3795,8 +3795,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 @media (min-width: 768px) {
+  
   .navbar-header {
     float: left;
+    margin-top: 5%;
   }
 }
 .navbar-collapse {
@@ -3897,7 +3899,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 90px;
-  padding: 15px 15px;
+  padding: 0px 15px;
   font-size: 18px;
   line-height: 20px;
 }
