@@ -53,6 +53,10 @@
 }
 
 @media (max-width: 768px) {
+	#logo__header__mobile {
+		width: 70%;
+    	margin-top: 2%;
+	}
 	#navigation-menu {
 	    height: auto;
 	  }
@@ -231,6 +235,10 @@
 
 
 @media (max-width: 480px) {
+	#logo__header__mobile {
+		width: 90%;
+    	margin-top: 4%;
+	}
 	#home-introduction-content {
 		padding-right:0px;
 	}

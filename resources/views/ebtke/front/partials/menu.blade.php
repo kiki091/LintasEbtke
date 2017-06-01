@@ -6,7 +6,7 @@
                 <!-- DESKTOP LOGO -->
                 <img src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" class="hidden-xs" title="Kementerian ESDM Republik Indonesia" style="height: 100%">
                 <!-- MOBILE LOGO -->
-                <img src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" title="Kementerian ESDM Republik Indonesia" class="visible-xs" style="width: 70%;margin-top: 2%;">
+                <img id="logo__header__mobile" src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" title="Kementerian ESDM Republik Indonesia" class="visible-xs">
             </a>
         </div>
         <!--/.navbar-header -->

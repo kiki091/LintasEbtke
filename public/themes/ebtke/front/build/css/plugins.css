@@ -11281,6 +11281,10 @@ you can use the generic selector below, but it's slower:
 }
 
 @media (max-width: 768px) {
+	#logo__header__mobile {
+		width: 70%;
+    	margin-top: 2%;
+	}
 	#navigation-menu {
 	    height: auto;
 	  }
@@ -11459,6 +11463,10 @@ you can use the generic selector below, but it's slower:
 
 
 @media (max-width: 480px) {
+	#logo__header__mobile {
+		width: 90%;
+    	margin-top: 4%;
+	}
 	#home-introduction-content {
 		padding-right:0px;
 	}
