@@ -9,5 +9,6 @@
 	return [
 
 		'menu_home' 		=> 'BERANDA',
-		'menu_contact_us'	=> 'HUBUNGI KAMI',
+		'menu_login'		=> 'Masuk',
+		'menu_register'		=> 'Daftar',
 	];

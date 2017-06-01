@@ -47,7 +47,12 @@
                       </span>
                 </div>
                 <b id="desktop__content" style="margin-top: 5px">
-                    <a style="color: #2d2d2d" href="javascript:void();">Login</a> || <a style="color: #2d2d2d" href="javascript:void();">Register</a>
+                    <a style="color: #2d2d2d" href="javascript:void();">
+                        {{ trans('navigation/top_menu.menu_login') }}
+                    </a> || 
+                    <a style="color: #2d2d2d" href="javascript:void();">
+                    {{ trans('navigation/top_menu.menu_register') }}
+                    </a>
                 </b>
             </form>
 
