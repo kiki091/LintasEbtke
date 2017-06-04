@@ -27,21 +27,38 @@ class RouteMenuLocation {
     {
         $menuLocation = Request::segment(1);
 
-        $menuLocationCollection     = $this->getSessionMenuLocationList();
+        $redisKey                   = MenuLocationRedis::MENU_LOCATION;
+        $menuLocationCollection     = Cache::rememberForever($redisKey, function() {
+
+            return LocationModels::get()->toArray();
+
+        });
         
         if(empty($menuLocationCollection))
             return null;
 
         foreach ($menuLocationCollection as $key => $value) {
            
-            $menuLocation = $value['slug'];
-            $menuLocationUrl = $menuLocation;
+            if($value['slug'] == $menuLocation) {
+                $isExists = true;
+                break;
+            }
+            $isExists = false;
+        }
+
+        if(!$isExists) {
+
+            Session::forget('current_menu_location');
+
+            $this->setSessionCurrentMenuLocation('');
+
+            return self::DEFAULT_USER_MENU;
         }
 
 
-        $this->setSessionCurrentMenuLocation($menuLocationUrl);
+        $this->setSessionCurrentMenuLocation($menuLocation);
 
-        return $menuLocationUrl;
+        return $menuLocation;
 
     }
 
