@@ -27,4 +27,26 @@ class AuthServiceProvider extends ServiceProvider
 
         //
     }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind('App\Repositories\Contracts\Auth\Users', 'App\Repositories\Implementation\Auth\Users');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array(
+            'App\Repositories\Contracts\Auth\Users',
+        );
+    }
 }

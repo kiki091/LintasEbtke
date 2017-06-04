@@ -162,6 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        App\Providers\DataHelperServiceProvider::class,
 
         /*
          * Custom Service Providers...
@@ -178,7 +179,6 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Spatie\Translatable\TranslatableServiceProvider::class,
         App\Providers\RouteMenuLocationServiceProvider::class,
-        App\Providers\NavigationHelperServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -240,7 +240,7 @@ return [
         'EbtkeHelper'=> App\Custom\Facades\EbtkeHelper::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'RouteMenuLocation'=> App\Custom\Facades\RouteMenuLocation::class,
-        'NavigationHelper'=> App\Custom\Facades\NavigationHelper::class,
+        'DataHelper'=> App\Custom\Facades\DataHelper::class,
 
     ],
 
