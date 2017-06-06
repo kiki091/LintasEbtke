@@ -145,6 +145,24 @@ trait AuthenticatesUsers
         return 'email';
     }
 
+    protected function isUsingThrottlesLoginsTrait()
+    {
+        return in_array(
+            ThrottlesLogins::class, class_uses_recursive(static::class)
+        );
+    }
+
+    /**
+     * Get the failed login message.
+     *
+     * @return string
+     */
+
+    protected function getFailedLoginMessage()
+    {
+        return trans('message.failed');
+    }
+
     /**
      * Log the user out of the application.
      *
@@ -170,30 +188,5 @@ trait AuthenticatesUsers
     protected function guard()
     {
         return Auth::guard();
-    }
-
-
-    /**
-     * Get the failed login message.
-     *
-     * @return string
-     */
-
-    protected function getFailedLoginMessage()
-    {
-        return trans('message.failed');
-    }
-
-    /**
-     * Using Throttles Logins Trait
-     *
-     * @return string
-     */
-
-    protected function isUsingThrottlesLoginsTrait()
-    {
-        return in_array(
-            ThrottlesLogins::class, class_uses_recursive(static::class)
-        );
     }
 }

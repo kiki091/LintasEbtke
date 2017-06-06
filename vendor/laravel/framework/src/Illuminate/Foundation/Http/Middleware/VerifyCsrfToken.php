@@ -64,8 +64,8 @@ class VerifyCsrfToken
         ) {
             return $this->addCookieToResponse($request, $next($request));
         }
-        return response()->json(['message' => 'Token Mismatch', 'status' => false]);
-        //throw new TokenMismatchException;
+
+        throw new TokenMismatchException;
     }
 
     /**

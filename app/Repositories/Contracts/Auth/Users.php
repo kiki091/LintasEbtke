@@ -11,6 +11,12 @@ interface Users
      * @return mixed
      */
     public function setAuthSession($params);
+    
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function registered($params);
 
     /**
      * @param $params

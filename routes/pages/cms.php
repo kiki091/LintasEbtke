@@ -17,6 +17,8 @@ Route::group(['middleware' => ['web']], function ()
 	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('ACCOUNT_DOMAIN_PREFIX') . env('APP_DOMAIN')], function()
 	{
 		Route::get('/', 'Ebtke\Cms\MainController@index')->name('login');
+		Route::get('register', 'Ebtke\Cms\AuthController@register')->name('register');
+		Route::post('registered', 'Ebtke\Cms\AuthController@registered')->name('registered');
 
 		Route::post('auth', 'Ebtke\Cms\AuthController@authenticate')->name('authenticate');
 		Route::post('change-password', 'Ebtke\Cms\AuthController@changePassword')->name('ChangePassword');

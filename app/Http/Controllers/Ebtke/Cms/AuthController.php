@@ -69,6 +69,39 @@ class AuthController extends CmsBaseController
 
     }
 
+    /**
+     *
+     * Registration User
+     * @return array
+     */
+    
+    public function register(Request $request)
+    {
+        $blade = self::URL_BLADE_CMS. '.auth.register';
+        
+        if(view()->exists($blade)) {
+        
+            return view($blade);
+
+        }
+
+        return abort(404);
+    }
+
+    public function registered(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->validateRegistrationUser($request));
+
+        if ($validator->fails()) {
+            //TODO: case fail
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
+
+        } else {
+            //TODO: case pass
+            return $this->user->registered($request->except(['_token']));
+        }
+    }
+
     /*
 
     protected function isUsingThrottlesLoginsTrait()
@@ -129,6 +162,23 @@ class AuthController extends CmsBaseController
         Session::flush();
 
         return redirect(route('login'));
+    }
+
+
+
+    /**
+     * Validate Offers Dining
+     */
+    private function validateRegistrationUser($request = array())
+    {
+        $rules = [
+            'name'             => 'required|max:30',
+            'email'            => 'required|email|max:30',
+            'password'         => 'required|min:10|max:20',
+            'confirm_password' => 'required|same:password|min:10|max:20',
+        ];
+
+        return $rules;
     }
 
     /**

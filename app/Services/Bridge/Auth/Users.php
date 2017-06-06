@@ -29,6 +29,15 @@ class Users {
      * @param $params
      * @return mixed
      */
+    public function registered($params = array())
+    {
+        return $this->user->registered($params);
+    }
+
+    /**
+     * @param $params
+     * @return mixed
+     */
     public function changePassword($params = array())
     {
         return $this->user->changePassword($params);

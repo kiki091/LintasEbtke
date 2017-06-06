@@ -47,7 +47,9 @@ class Users extends BaseImplementation implements UserInterface
         $params = [
             'id' => $userId,
             'is_active' => true,
+            'current_location_slug' => true,
         ];
+
         $userData = $this->user($params, 'asc', 'array', true);
 
         if(empty($userData))
@@ -60,6 +62,33 @@ class Users extends BaseImplementation implements UserInterface
 
         
         return $data;
+    }
+
+    /**
+     * Registered User Account
+     * Warning: this function doesn't redis cache
+     * @param $params
+     * @return array
+     */
+    
+    public function registered($data)
+    {
+        try {
+            DB::beginTransaction();
+
+            if ($this->registeredUser($data)) {
+                //TODO: send mail first
+                DB::commit();
+                return $this->setResponse(trans('message.user_success_created'), true);
+            }
+
+            DB::rollBack();
+            return $this->setResponse(trans('message.user_failed_created'), false);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $this->setResponse($e->getMessage(), false);
+        }
     }
 
     /**
@@ -141,5 +170,40 @@ class Users extends BaseImplementation implements UserInterface
         } catch (Exception $e) {
             return $this->setResponse($e->getMessage(), false);
         }
+    }
+
+    /**
+     * Registration User
+     * @param $data
+     */
+
+    protected function registeredUser($data)
+    {
+        try {
+
+            $store                       = $this->user;
+
+            $store->name                 = isset($data['name']) ? $data['name'] : '';
+            $store->email                = isset($data['email']) ? $data['email'] : '';
+            $store->is_active            = false;
+            $store->location_id          = "1";
+
+            if(Hash::check($data['password'], $users['confirm_password']))
+            {
+                $store->password      = Hash::make($data['confirm_password']);
+
+                $save = $store->save();
+
+                return $save;  
+            }
+            else {
+                return false;
+            }
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+
     }
 }

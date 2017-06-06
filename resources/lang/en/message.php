@@ -20,4 +20,6 @@
       'cms_success_store_subscribe' => 'Success subscribe mail',
       'user_success_change_password' => 'Success change password',
       'user_failed_change_password' => 'Failed change password',
+      'user_success_created' => 'Success add user',
+      'user_failed_created' => 'Failed add user',
   ];

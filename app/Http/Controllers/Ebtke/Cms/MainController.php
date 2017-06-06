@@ -28,7 +28,7 @@ class MainController extends CmsController
            return redirect()->route('CmsDashboardPage');
         }
 
-        $blade = self::MAIN_BLADE_CMS. '.main';
+        $blade = self::MAIN_BLADE_CMS. '.auth.login';
         
         if(view()->exists($blade)) {
         
@@ -38,4 +38,6 @@ class MainController extends CmsController
 
         return abort(404);
     }
+
+    
 }

@@ -3,6 +3,7 @@
 namespace App\Repositories\Implementation;
 
 use LaravelLocalization;
+use RouteMenuLocation;
 use Request;
 use Session;
 use Cache;
@@ -12,6 +13,19 @@ use Auth;
 class BaseImplementation
 {
     protected $currentLocation;
+
+    function __construct()
+    {
+        $this->_init();
+    }
+
+    /**
+     * Initial function
+     */
+    private function _init()
+    {
+        $this->currentLocation = RouteMenuLocation::setMenuLocation();
+    }
 
     /**
      * Generate Redis Key Base On reference Key ex: banner key, seo key etc and current Location
