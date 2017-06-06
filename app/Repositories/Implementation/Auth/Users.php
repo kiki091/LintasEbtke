@@ -188,17 +188,11 @@ class Users extends BaseImplementation implements UserInterface
             $store->is_active            = false;
             $store->location_id          = "1";
 
-            if(Hash::check($data['password'], $users['confirm_password']))
-            {
-                $store->password      = Hash::make($data['confirm_password']);
+            $store->password      = Hash::make($data['confirm_password']);
 
-                $save = $store->save();
+            $save = $store->save();
 
-                return $save;  
-            }
-            else {
-                return false;
-            }
+            return $save;
 
         } catch (\Exception $e) {
             $this->message = $e->getMessage();

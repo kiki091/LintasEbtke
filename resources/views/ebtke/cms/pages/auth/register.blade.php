@@ -42,7 +42,7 @@
       		<div class="login_wrapper">
         		<div class="animate form login_form">
           			<section class="login_content">
-              			<form role="form" method="POST" action="{{ route('authenticate') }}">
+              			<form role="form" method="POST" action="{{ route('registered') }}">
             				<h1>Registration Form</h1>
                     		@if (count($errors) > 0)
                           		@foreach ($errors->all() as $error)
