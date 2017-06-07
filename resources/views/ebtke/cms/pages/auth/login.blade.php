@@ -1,44 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="PT. Asia Resource System">
-		<meta name="author" content="Kementerian ESDM Republik Indonesia" />
-		<meta name="publisher" content="www.ebtke.esdm.go.id" />
-		<meta name="copyright" content="www.ebtke.esdm.go.id" />
-		<meta name="host" content="www.ebtke.esdm.go.id" />
-		<meta name="geo.position" content="-6.196985,106.84060099999999" />    
-		<meta name="geo.region" content="ID-JB" />
-		<meta name="geo.country" content="ID"/>
-		<meta name="geo.placename" content="Jakarta, Indonesia" />
-		<meta name="ICBM" content="0.18597,117.47865" />    
-		<meta name="DC.title" content="Kementerian ESDM Republik Indonesia" />
+	@include('ebtke.cms.partials.header')
+	<body class="login">
 
-		<meta Http-Equiv="Cache-Control" Content="no-cache">
-		<meta Http-Equiv="Pragma" Content="no-cache">
-		<meta Http-Equiv="Expires" Content="0">
-		<!-- OG CONTENT -->
-		<meta property="og:url" content="http://www.ebtke.esdm.go.id/" />
-		<meta property="og:title" content="Kementerian ESDM Republik Indonesia" />
-		<meta property="og:description" content="Kementerian ESDM Republik Indonesia" />
-		<meta property="og:image" content="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" />
-		<meta property="og:type"  content="article" />
-		<title>Login Page</title>
+		<div>
+      		<a class="hiddenanchor" id="signup"></a>
+      		<a class="hiddenanchor" id="signin"></a>
 
-		<!-- Bootstrap -->
-		<link href="{{ asset('themes/ebtke/cms/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('themes/ebtke/cms/css/custom.css') }}" rel="stylesheet">
-		<!-- Font Awesome -->
-		<link href="{{ asset('themes/ebtke/cms/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
-		<!-- Custom Theme Style -->
-		<link href="{{ asset('themes/ebtke/cms/build/css/custom.min.css') }}" rel="stylesheet">
-	</head>
-	<body>
-
-		<div class="login__background">
       		<div class="login_wrapper">
         		<div class="animate form login_form">
           			<section class="login_content">
@@ -51,17 +20,59 @@
                     		@else
                         		<p>Please enter your username and password to login</p>
                     		@endif
-            				<div class="form-group">
+            				<div>
               					<input type="email" class="form-control" placeholder="Email" value="{{ old('email') }}" name="email" required="required" />
             				</div>
             				
-            				<div class="form-group">
+            				<div>
               					<input type="password" class="form-control" placeholder="Password" name="password" required="required" />
             				</div>
                           	<input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          	<button class="btn__submit__login">Submit</button>
-                        	<p><a href="{{ route('register') }}">Registration</a></p>
+                          	<div>
+			                	<button class="btn btn-default submit" type="submit">Log in</button>
+			                	<a class="reset_pass" href="#">Lost your password?</a>
+			              	</div>
+			              	<div class="clearfix"></div>
+			              	<div class="separator">
+                				<p class="change_link">New to site?
+                  					<a href="#signup" class="to_register"> Create Account </a>
+                				</p>
+                			</div>
                   		</form>
+          			</section>
+        		</div>
+
+        		<div id="register" class="animate form registration_form">
+          			<section class="login_content">
+            			<form role="form" method="POST" action="{{ route('registered') }}" id="UserFormRegistration">
+              				<h1>Create Account</h1>
+			              	<div>
+			                	<input type="text" name="name" class="form-control" placeholder="Fullname" required="" />
+			              	</div>
+              				<div>
+                				<input type="email" name="email" class="form-control" placeholder="Email" required="" />
+              				</div>
+              				<div>
+                				<input type="password" name="password" class="form-control" placeholder="Password" required="" />
+              				</div>
+              				<div>
+                				<input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required="" />
+              				</div>
+              				<div>
+                				<a class="btn btn-default submit" href="index.html">Submit</a>
+              				</div>
+
+              				<div class="clearfix"></div>
+
+              				<div class="separator">
+                				<p class="change_link">Already a member ?
+                  					<a href="#signin" class="to_register"> Log in </a>
+                				</p>
+
+                				<div class="clearfix"></div>
+                				
+              				</div>
+            			</form>
           			</section>
         		</div>
         	</div>
