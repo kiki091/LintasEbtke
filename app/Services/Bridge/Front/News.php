@@ -22,4 +22,14 @@ class News
     {
         return $this->news->getNewsHome($params);
     }
+
+    /**
+     * Get Data News Home
+     * @param $params
+     * @return mixed
+     */
+    public function getNewsDetail($slug)
+    {
+        return $this->news->getNewsDetail($slug);
+    }
 }

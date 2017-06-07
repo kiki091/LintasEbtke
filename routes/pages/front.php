@@ -21,6 +21,12 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::get('/', 'Ebtke\Front\Pages\MainController@index')->name('MainPage');
 
+			Route::group(['prefix' => 'news'], function () {
+
+				Route::get('/', 'Ebtke\Front\Pages\NewsController@landing')->name('landingNews');
+				Route::get('detail/{slug}', 'Ebtke\Front\Pages\NewsController@detail')->name('detailNews');
+			});
+
 		});
 
 	});

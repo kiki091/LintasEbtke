@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind('App\Repositories\Contracts\Front\MainBanner', 'App\Repositories\Implementation\Front\MainBanner');
         $this->app->bind('App\Repositories\Contracts\Front\News', 'App\Repositories\Implementation\Front\News');
+        $this->app->bind('App\Repositories\Contracts\Front\Seo', 'App\Repositories\Implementation\Front\Seo');
     }
 
     /**
@@ -43,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
 
             'App\Repositories\Contracts\Front\MainBanner',
             'App\Repositories\Contracts\Front\News',
+            'App\Repositories\Contracts\Front\Seo',
 
         );
     }

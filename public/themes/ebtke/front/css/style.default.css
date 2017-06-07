@@ -1099,7 +1099,7 @@ h1 {
   list-style: none;
 }
 .nav > li > a {
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {

@@ -33,12 +33,25 @@ class News extends BaseImplementation implements NewsInterface
 
         $params = [
             "is_active" => true,
-            "limit" => 2,
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);
 
         return $this->newsTransformation->getNewsTransform($newsData);
+        
+    }
+
+    public function getNewsDetail($slug)
+    {
+
+        $params = [
+            "slug" => $slug,
+        ];
+
+        $newsData = $this->news($params, 'desc', 'array', true);
+        $addViewer = $this->addViewer($params);
+
+        return $this->newsTransformation->getNewsDetailTransform($newsData);
         
     }
 
@@ -86,6 +99,24 @@ class News extends BaseImplementation implements NewsInterface
                 }
 
             break;
+        }
+    }
+
+    /**
+     * @param $data
+     */
+    public function addViewer($params)
+    {
+        try {
+            $blogKey = 'news_detail_' . $params['slug'];
+
+            if (!Session::has($blogKey)) {
+                $this->news->where('slug', $params['slug'])->increment('total_view');
+                Session::put($blogKey, 1);
+            }
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
         }
     }
 
