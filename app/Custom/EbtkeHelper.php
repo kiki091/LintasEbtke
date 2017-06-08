@@ -47,6 +47,31 @@ class EbtkeHelper
 				'Nov' => 'November',
 				'Des' => 'Desember',
 			);
+
+		} elseif($this->getCurrentLanguageKey() == "da") {
+			$dayList = array(
+				'Sun' => 'Søndag',
+				'Mon' => 'Mandag',
+				'Tue' => 'Tirsdag',
+				'Wed' => 'Onsdag',
+				'Thu' => 'Torsdag',
+				'Fri' => 'Fredag',
+				'Sat' => 'Lørdag'
+			);
+			$monthList = array(
+				'Jan' => 'Januar',
+				'Feb' => 'Februar',
+				'Mar' => 'Marts',
+				'Apr' => 'April',
+				'Mei' => 'Kan',
+				'Jun' => 'Juni',
+				'Jul' => 'Juli',
+				'Ags' => 'August',
+				'Sep' => 'September',
+				'Okt' => 'October',
+				'Nov' => 'November',
+				'Des' => 'December',
+			);
 		} else {
 
 			$dayList = array(
