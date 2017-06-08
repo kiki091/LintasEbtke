@@ -2,9 +2,55 @@
 	<div id="desktop__content" class="top-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
-					
+				<div id="desktop__content" class="col-md-12">
+					<h3 class="footer__contact__us"><b>CONTACT US</b></h3>
+                    <div class="detail__contact__us">
+                        <p><b>Address : </b><i>Jl. Pegangsaan Timur No. 1, Rt.1/Rw.1, Pegangsaan,Menteng, Kota Jakarta Pusat, DKI Jakarta 10320</i></p>
+                        <p><b>Phone :</b> <i>(021) 398300077</i></p>
+                        <p><b>Email :</b> <i>lintas@ebtke.esdm.go.id</i></p>
+                    </div>
+                    <center>
+                        <div id="desktop-footer-social-links">
+                            <h4>
+                                {{ trans('global_page.footer_title_social_media') }}
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="https://www.instagram.com/djebtke_kesdm/" target="_blank">
+                                        <span class="icon icon-instagram"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <span class="icon icon-facebook"></span>
+                                    </a>
+                                </li>
+                                  
+                                <li>
+                                    <a href="https://twitter.com/DitjenEBTKE" target="_blank">
+                                        <span class="icon icon-twitter"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <span class="icon icon-google-plus"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/channel/UC_wRlJ5Vb2QZ8nXercC4dUQ" target="_blank">
+                                        <span class="icon icon-youtube"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </center>
 				</div>
+                {{--
 				<div class="content_footer_mailing col-md-4 pull-right">
 					<div id="footer-content-js">
 						<div class="desktop-footer-block footer-block-03">
@@ -54,6 +100,7 @@
                         </div>
                     </div>
 				</div>
+                --}}
 			</div>
 		</div>
 	</div>

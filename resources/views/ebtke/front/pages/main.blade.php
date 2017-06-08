@@ -82,6 +82,7 @@
 <div class="wrapper row6 wow fadeInUp" data-wow-delay="0.3s">
 	<section id="cta" class="clear"> 
     	<!-- ################################################################################################ -->
+    	<div class="container">
     	<div class="three_quarter first">
       		<h2 class="heading">
       			{{ trans('pages/main_page.title_we_do') }}
@@ -90,17 +91,18 @@
       			{{ trans('pages/main_page.sub_desc_we_do') }}
       		</p>
     	</div>
-    	<div class="one_quarter">
+    	<div class="one_quarter pull-right">
     		<a class="btn" href="#">
     			{{ trans('global_page.global_page_lable_link_cta') }} 
     			<span class="fa fa-arrow-right"></span>
     		</a>
     	</div>
+    	</div>
     	<!-- ################################################################################################ -->
   	</section>
 </div>
 <section id="desktop__content">
-	
+	<div class="container">
 	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
 	    <!-- ################################################################################################ -->
 	    <ul class="nospace group">
@@ -157,6 +159,8 @@
 		          	</figcaption>
 	        	</figure>
 	      	</li>
+	    </ul>
+	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
@@ -191,8 +195,6 @@
 		          	</figcaption>
 	        	</figure>
 	      	</li>
-	    </ul>
-	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
@@ -200,7 +202,7 @@
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_consulting_services') }}
+		            		{{ trans('pages/main_page.title_green_page') }}
 		            	</p>
 		            	<p>
 			            	<a href="#">
@@ -210,6 +212,8 @@
 		          	</figcaption>
 	        	</figure>
 	      	</li>
+	    </ul>
+	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
@@ -217,7 +221,7 @@
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_news_&_events') }}
+		            		{{ trans('pages/main_page.title_link_&_match') }}
 		            	</p>
 		            	
 		            	<p>
@@ -235,7 +239,7 @@
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_investment_serrvices') }}
+		            		{{ trans('pages/main_page.title_nrecc_resource') }}
 		            	</p>
 		            	
 		            	<p>
@@ -253,24 +257,7 @@
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_libraries') }}
-		            	</p>
-		            	<p>
-			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
-		            	</p>
-		          	</figcaption>
-	        	</figure>
-	      	</li>
-	      	<li>
-	        	<figure>
-	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
-	        		</a>
-		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_tools') }}
+		            		{{ trans('pages/main_page.title_dashboards') }}
 		            	</p>
 		            	<p>
 			            	<a href="#">
@@ -282,6 +269,7 @@
 	      	</li>
 	    </ul>
 	    <!-- ################################################################################################ -->
+	</div>
 	</div>
 </section>
 

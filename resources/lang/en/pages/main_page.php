@@ -24,4 +24,8 @@
 		'title_investment_serrvices' 	=> 'Investment Services',
 		'title_libraries' 				=> 'Libraries',
 		'title_tools' 					=> 'Tools',
+		'title_green_page' 				=> 'Green Pages',
+		'title_link_&_match' 			=> 'LINK AND MATCH',
+		'title_nrecc_resource' 			=> 'NRECC RESOURCES',
+		'title_dashboards' 				=> 'DASHBOARD',
 	];

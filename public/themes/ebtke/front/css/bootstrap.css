@@ -1405,12 +1405,22 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.container-menu-navigation {
+    
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
   .container-menu {
     width: 99%;
+  }
+  .container-menu-navigation {
+    width: 95%;
   }
 }
 @media (min-width: 992px) {
@@ -1420,6 +1430,9 @@ pre code {
   .container-menu {
     width: 970px;
   }
+  .container-menu-navigation {
+    width: 95%;
+  }
 }
 @media (min-width: 1200px) {
   .container {
@@ -1427,6 +1440,9 @@ pre code {
   }
   .container-menu {
     width: 1155px;
+  }
+  .container-menu-navigation {
+    width: 95%;
   }
 }
 .container-fluid {
@@ -3902,7 +3918,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 0px 15px;
   font-size: 18px;
   line-height: 20px;
+  position: absolute;
 }
+
+#logo-header {
+  height: 75%;
+  margin-top: -6%;
+}
+
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;

@@ -27,6 +27,20 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get('detail/{slug}', 'Ebtke\Front\Pages\NewsController@detail')->name('detailNews');
 			});
 
+			Route::group(['prefix' => 'event'], function () {
+
+				Route::get('/', 'Ebtke\Front\Pages\EventController@landing')->name('landingEvent');
+				Route::get('detail/{slug}', 'Ebtke\Front\Pages\EventController@detail')->name('detailEvent');
+			});
+
+			Route::group(['prefix' => 'company'], function () {
+
+				Route::get('history', 'Ebtke\Front\Pages\CompanyController@history')->name('CompanyHistory');
+				Route::get('vision-and-mission', 'Ebtke\Front\Pages\CompanyController@visionMision')->name('CompanyVisionMission');
+				Route::get('organization-structure', 'Ebtke\Front\Pages\CompanyController@organizationStructure')->name('CompanyOrganization');
+				Route::get('scope-of-services', 'Ebtke\Front\Pages\CompanyController@scopeServices')->name('CompanyScope');
+			});
+
 		});
 
 	});

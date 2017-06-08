@@ -25,13 +25,15 @@
 		'potentials'				=> 'Potentials',
 		'green_pages'				=> 'Green Pages',
 
-		// Reneable Energy
+
+
+		// Information Services
 
 		'gheotermal'				=> 'Geothermal',
 		'bio_energy'				=> 'Bio Energy',
 		'others'					=> 'Others',
 
-		// Energy Conservation
+		// Reneable Energy
 
 		'industry'					=> 'Industry',
 		'commercial_building'		=> 'Commercial Building',

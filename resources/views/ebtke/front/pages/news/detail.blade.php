@@ -21,14 +21,14 @@
 -->
 
 @if(isset($detail_news) && !empty($detail_news))
-<section id="desktop" class="page">
+<section id="desktop">
 	<!-- Begin page header-->
     <div class="container detail--header">
     	<div class="row">
     		<div class="col-md-12">
-    			<a href="#" class="breadcrumb text-gray">Home</a>
-                <a href="#" class="breadcrumb text-gray">News</a>
-                <a href="#" class="breadcrumb text-gray">{{ $detail_news['title'] or '' }}</a>
+    			<a href="{{ route('MainPage') }}" class="breadcrumb text-gray">Home</a>
+                <a href="{{ route('landingNews') }}" class="breadcrumb text-gray">News</a>
+                <a href="{{ route('detailNews',$detail_news['slug']) }}" class="breadcrumb text-gray">{{ $detail_news['title'] or '' }}</a>
     		</div>
             <div class="col-md-12">
                 <h3 class="latestnews">{{ $detail_news['title'] or '' }}</h3>
@@ -43,8 +43,9 @@
                 <img src="{{ $detail_news['thumbnail_url'] or '' }}" alt="{{ $detail_news['title'] or '' }}">   
             </figure>
         </div>
-        <h3 class="subtitle">
+        <div class="default-content">
             {!! $detail_news['introduction'] or '' !!}
+            {!! $detail_news['description'] or '' !!}
         </h3>
         </div>
     </div>

@@ -13,5 +13,5 @@
 		'footer_desc_mail'			 => 'Jadilah yang pertama untuk tahu penawaran, events, dan promosi Kami!',
 		'footer_placeholder_mail'	 => 'Masukkan alamat email anda',
 		'footer_title_social_media'	 => 'IKUTI KAMI',
-		'footer_title_copyright'	 => '© Hak Cipta, 017 Kementerian Energi dan Sumber Daya Mineral',
+		'footer_title_copyright'	 => '© Hak Cipta, 2017 Kementerian Energi dan Sumber Daya Mineral',
 	];

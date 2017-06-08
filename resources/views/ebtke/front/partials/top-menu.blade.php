@@ -1,7 +1,7 @@
-<div id="mobile__content">
+<div>
     <div id="top">
         <div class="container">
-            <div class="pull-left">
+            <div id="mobile__content" class="pull-left">
                 <div id="top-navigation" class="secondmenu_left">
                     <ul class="add_fix">
                         <li>
@@ -18,6 +18,11 @@
                 <button type="button" class="btn btn-default btn-xs">
                     @include('ebtke.front.svg-icon.ico-flag-indonesia')
                     Indonesia
+                </button>
+                @elseif(Request::segment(1) == "da")
+                <button type="button" class="btn btn-default btn-xs">
+                    @include('ebtke.front.svg-icon.ico-flag-denmark')
+                    Denmark
                 </button>
                 @else
                 <button type="button" class="btn btn-default btn-xs">

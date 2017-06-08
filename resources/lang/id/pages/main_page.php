@@ -26,4 +26,8 @@
 		'title_investment_serrvices' 	=> 'Jasa Investasi',
 		'title_libraries' 				=> 'Perpustakaan',
 		'title_tools' 					=> 'Alat / Aplikasi',
+		'title_green_page' 				=> 'Halaman Hijau',
+		'title_link_&_match' 			=> 'LINK AND MATCH',
+		'title_nrecc_resource' 			=> 'SUMBER DAYA NRECC',
+		'title_dashboards' 				=> 'DASHBOARD',
 	];

@@ -1,0 +1,35 @@
+{
+  "name": "wallop",
+  "version": "2.4.1",
+  "description": "wallop is a minimal 4kb library for showing & hiding things",
+  "main": "js/Wallop.js",
+  "scripts": {
+    "test": "zuul --local 9966 -- test.js",
+    "ci": "zuul -- test.js",
+    "uglify": "./node_modules/.bin/uglifyjs ./js/Wallop.js -o ./js/Wallop.min.js --comments -m -c ",
+    "build": "npm run uglify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peduarte/wallop.git"
+  },
+  "keywords": [
+    "slider",
+    "css",
+    "js",
+    "minimal",
+    "responsive",
+    "wallop"
+  ],
+  "author": "Pedro Duarte <contact@peduarte.com> (http://pedroduarte.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peduarte/wallop/issues"
+  },
+  "homepage": "http://pedroduarte.me/wallop",
+  "devDependencies": {
+    "tape": "^4.2.0",
+    "uglify-js": "^2.4.24",
+    "zuul": "^3.3.0"
+  }
+}

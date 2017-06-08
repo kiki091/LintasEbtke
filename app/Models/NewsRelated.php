@@ -23,8 +23,8 @@ class NewsRelated extends BaseModel
     /**
      * @return mixed
      */
-    public function related()
+    public function related_news()
     {
-        return $this->hasMany('App\Models\NewsRelated', 'news_id', 'news_related_id');
+        return $this->belongsTo('App\Models\News', 'news_related_id', 'id')->with('translation');
     }
 }

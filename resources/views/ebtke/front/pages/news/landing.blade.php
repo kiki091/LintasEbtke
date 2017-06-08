@@ -21,14 +21,18 @@
 -->
 
 @if(isset($latest_news) && !empty($latest_news))
-<section id="desktop" class="page">
+<section id="desktop">
 	<!-- Begin page header-->
     <div class="container">
     	<div class="row">
     		<div class="col-md-8">
     			<div class="card__container padding20">
-    				<h5 class="s15 uppercase margin0 brandon medium spacing1">LATEST ARTICLE</h5>
-    				<small class="text-gray">Most updated articles posted by USERS</small>
+    				<h5 class="s15 uppercase margin0 brandon medium spacing1">
+                        {{ trans('pages/news_page.title_news') }}             
+                    </h5>
+    				<small class="text-gray">
+                        {{ trans('pages/news_page.user_created') }}            
+                    </small>
     				<ul class="article">
     					@foreach($latest_news as $key=> $landing_news)
     					<li class="article--item">
@@ -46,33 +50,47 @@
     							{!! $landing_news['introduction'] or '' !!}
     						</p>
     						<div class="center-align">
-								<a href="{{ route('detailNews',$landing_news['slug']) }}" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">READ MORE</a>
+								<a href="{{ route('detailNews',$landing_news['slug']) }}" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
+                                    {{ trans('global_page.global_page_lable_link_cta') }}                         
+                                </a>
 							</div>
     					</li>
     					@endforeach
     				</ul>
     			</div>
     		</div>
+            @if(isset($popular_news) && !empty($popular_news))
     		<div id="desktop__content" class="col-md-4">
 	    		<div class="card__container padding20">
-	    			<h5 class="s15 uppercase margin0 brandon medium spacing1">POPULAR ARTICLE</h5>
-	    			<small class="text-gray">Articles that read by more viewers</small>
+	    			<h5 class="s15 uppercase margin0 brandon medium spacing1">
+                        {{ trans('pages/news_page.title_popular_news') }}               
+                    </h5>
+	    			<small class="text-gray">
+                        {{ trans('pages/news_page.popular_news_view') }}             
+                    </small>
 	    			<ul class="populararticle">
+                        @foreach($popular_news as $key=> $popular_news)
 	    				<li class="flex vcenter">
-	    					<a href="javascript:void(0);" class="populararticle--img">
-								<img src="http://mhg.ayana.com/images/gm_corner/1196211457_Main-Banner---2.jpg" alt="Learn to Read Minds in 10 Minutes">
+	    					<a href="{{ route('detailNews',$popular_news['slug']) }}" class="populararticle--img">
+								<img src="{{ $popular_news['thumbnail_url']}}" alt="Learn to Read Minds in 10 Minutes">
 							</a>
 							<div class="left-align">
-								<a href="http://mhg.ayana.com/ayana/gm-corner/detail/learn-to-read-minds-in-10-minutes" class="populararticle--link">
-									<small class="semibold">Learn to Read Minds in 10 Minutes</small>
+								<a href="{{ route('detailNews',$popular_news['slug']) }}" class="populararticle--link">
+									<small class="semibold">
+                                    {{ $popular_news['title']}}
+                                    </small>
 								</a>
 								<br/>
-								<small class="s10 text-gray">10 Views</small>
+								<small class="s10 text-gray">
+                                {{ $popular_news['total_view']}} Views
+                                </small>
 							</div>
 	    				</li>
+                        @endforeach
 	    			</ul>
 	    		</div>
     		</div>
+            @endif
     	</div>
     </div>
 </section>

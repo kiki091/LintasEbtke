@@ -55,7 +55,18 @@
 @media (max-width: 768px) {
 	#logo__header__mobile {
 		width: 70%;
-    	margin-top: 2%;
+	}
+
+	#navbar-brand__mobile {
+		position: relative;
+		float: left;
+	    height: 90px;
+	    padding: 0px 15px;
+	    font-size: 18px;
+	    line-height: 20px;
+	    bottom: 80px;
+	    color: #777;
+	    top:10px;
 	}
 	#navigation-menu {
 	    height: auto;
@@ -237,7 +248,17 @@
 @media (max-width: 480px) {
 	#logo__header__mobile {
 		width: 90%;
-    	margin-top: 4%;
+	}
+	#navbar-brand__mobile {
+		position: relative;
+		float: left;
+	    height: 90px;
+	    padding: 0px 15px;
+	    font-size: 18px;
+	    line-height: 20px;
+	    bottom: 80px;
+	    color: #777;
+	    top:10px;
 	}
 	#home-introduction-content {
 		padding-right:0px;

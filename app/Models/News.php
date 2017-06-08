@@ -41,7 +41,15 @@ class News extends BaseModel
      */
     public function related()
     {
-        return $this->belongsTo('App\Models\NewsRelated', 'news_related_id', 'news_id')->with('related');
+        return $this->hasMany('App\Models\NewsRelated', 'news_id', 'id')->with('related_news');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id')->with('translation');
     }
 
     /***************** Scope *****************/
@@ -60,6 +68,15 @@ class News extends BaseModel
     public function scopeSlug($query, $slug)
     {
         return $query->where('slug', $slug);
+    }
+
+
+    /**
+     * @param $query
+     */
+    public function scopePopular($query, $params)
+    {
+        return $query->where('total_view', '>', $params);
     }
 
     /**

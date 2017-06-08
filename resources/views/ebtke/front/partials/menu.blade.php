@@ -2,9 +2,9 @@
     <div class="container-menu">
         <div class="navbar-header">
 
-            <a class="navbar-brand home" href="{{ route('MainPage') }}">
+            <a id="navbar-brand__mobile" class="navbar-brand home" href="{{ route('MainPage') }}">
                 <!-- DESKTOP LOGO -->
-                <img src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" class="hidden-xs" title="Kementerian ESDM Republik Indonesia" style="height: 100%">
+                <img src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" class="hidden-xs" id="logo-header" title="Kementerian ESDM Republik Indonesia">
                 <!-- MOBILE LOGO -->
                 <img id="logo__header__mobile" src="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" alt="Kementerian ESDM Republik Indonesia" title="Kementerian ESDM Republik Indonesia" class="visible-xs">
             </a>
@@ -19,25 +19,7 @@
             </div>
             <form class="navbar-form" role="search">
                 <p id="desktop__content">{{ EbtkeHelper::getDayNow() }}</p>
-                <ul id="desktop__content" style="list-style: none;">
-                    <li style="float: right;width: 60px;">
-                        <b>
-                        <a style="color: #2d2d2d" rel="alternate" href="{{LaravelLocalization::getLocalizedURL('en') }}">
-                            | English
-                        </a>
-                        </b>
-                    </li>
-
-                    <li style="float: right;width: 131px;">
-                        <b>
-                        <a style="color: #2d2d2d" rel="alternate" href="{{LaravelLocalization::getLocalizedURL('id') }}">
-                            Bahasa Indonesia |
-                        </a>
-                        </b>
-                    </li>
-                </ul>
-                <br id="desktop__content">
-                <br id="desktop__content">
+                
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
                     <span class="input-group-btn">
@@ -47,10 +29,10 @@
                       </span>
                 </div>
                 <b id="desktop__content" style="margin-top: 5px">
-                    <a style="color: #2d2d2d" href="javascript:void();">
+                    <a style="color: #2d2d2d" href="{{ route('login') }}">
                         {{ trans('navigation/top_menu.menu_login') }}
                     </a> || 
-                    <a style="color: #2d2d2d" href="javascript:void();">
+                    <a style="color: #2d2d2d" href="{{ route('login') }}#signup">
                     {{ trans('navigation/top_menu.menu_register') }}
                     </a>
                 </b>
@@ -59,11 +41,16 @@
         </div>
     </div>
     <div id="navigation-menu">
-        <div class="container-menu">
+        <div class="container-menu-navigation">
             <!-- MENU HEADER -->
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-center">
+                    <li>
+                        <a href="{{ route('MainPage') }}" data-delay="200">
+                        {{ trans('navigation/menu.menu_home')}}
+                        </a>
+                    </li>
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
                         {{ trans('navigation/menu.menu_about_us')}}
@@ -76,30 +63,25 @@
                                             <div class="col-sm-4">
                                                 <ul>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('CompanyHistory') }}">
                                                             {{ trans('navigation/sub_menu.lintas_history') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('CompanyVisionMission') }}">
                                                             {{ trans('navigation/sub_menu.vision_mission') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <ul>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('CompanyOrganization') }}">
                                                             {{ trans('navigation/sub_menu.organization_structure') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('CompanyScope') }}">
                                                             {{ trans('navigation/sub_menu.lintas_scope') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
@@ -126,13 +108,13 @@
                                             <div class="col-sm-4">
                                                 <ul>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('landingNews') }}">
                                                             {{ trans('navigation/sub_menu.news') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">
+                                                        <a href="{{ route('landingEvent') }}">
                                                             {{ trans('navigation/sub_menu.events') }}
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
@@ -187,9 +169,9 @@
 
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
-                        {{ trans('navigation/menu.menu_renewable_energi')}}
+                        {{ trans('navigation/menu.menu_information_services')}}
                         <b class="caret"></b></a>
-                        
+
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -226,8 +208,9 @@
 
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
-                        {{ trans('navigation/menu.menu_energi_conservation')}}
+                        {{ trans('navigation/menu.menu_renewable_energi')}}
                         <b class="caret"></b></a>
+                        
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -247,10 +230,6 @@
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <ul>
                                                     <li>
                                                         <a href="#">
                                                             {{ trans('navigation/sub_menu.transportation') }}
@@ -295,10 +274,6 @@
                                                             <i class="fa fa-angle-right pull-right"></i>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <ul>
                                                     <li>
                                                         <a href="#">
                                                             {{ trans('navigation/sub_menu.publications') }}

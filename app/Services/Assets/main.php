@@ -24,8 +24,18 @@ define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/ebtke/front/images/instagram/');
 define('NEWS_THUMBNAIL_DIRECTORY', 'bin/db/images/news/');
 define('NEWS_IMAGES_DIRECTORY', 'bin/db/images/news/');
 
+define('EVENT_THUMBNAIL_DIRECTORY', 'bin/db/images/event/');
+define('EVENT_IMAGES_DIRECTORY', 'bin/db/images/event/');
 
 
 // Services Thumbnail Images
 
 define('SERVICES_IMAGES_DIRECTORY', 'bin/db/images/services/');
+
+
+// Company Images
+
+define('COMPANY_HISTORY_IMAGES_DIRECTORY', 'bin/db/images/company/history/');
+define('COMPANY_VISION_AND_MISSION_IMAGES_DIRECTORY', 'bin/db/images/company/vision-mission/');
+define('COMPANY_COMPANY_ORGANIZATION_STRUCTURE_IMAGES_DIRECTORY', 'bin/db/images/company/organization-structure/');
+define('COMPANY_SCOPE_OF_SERVICES_IMAGES_DIRECTORY', 'bin/db/images/company/scope-of-services/');

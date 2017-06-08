@@ -6,7 +6,7 @@
 
 	<body>
 		<!-- PRELOADER -->
-		<img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader.gif') }}" alt="Loading Page" title="Loading Page" />
+		<img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader-full.png') }}" alt="Loading Page" title="Loading Page" />
 
 		<!-- //PRELOADER -->
 		<div class="preloader_hide" style="min-height: 1000px;">

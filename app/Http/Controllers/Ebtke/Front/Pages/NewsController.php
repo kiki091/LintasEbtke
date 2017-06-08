@@ -29,6 +29,7 @@ class NewsController extends FrontController
     public function landing(Request $request)
     {
         $data['latest_news'] = $this->news->getNewsHome();
+        $data['popular_news'] = $this->news->getPopularNews();
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
 
         $blade = self::URL_BLADE_FRONT_SITE. '.news.landing';

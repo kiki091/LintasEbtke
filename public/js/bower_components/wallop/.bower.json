@@ -1,0 +1,15 @@
+{
+  "name": "wallop",
+  "homepage": "https://github.com/peduarte/wallop",
+  "version": "2.4.1",
+  "_release": "2.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.4.1",
+    "commit": "1ad1a6f35686c01829d5e7e0f3112f41406c8e86"
+  },
+  "_source": "https://github.com/peduarte/wallop.git",
+  "_target": "^2.4.1",
+  "_originalSource": "wallop",
+  "_direct": true
+}

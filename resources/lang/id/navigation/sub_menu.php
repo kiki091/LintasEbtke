@@ -25,13 +25,14 @@
 		'potentials'				=> 'Potensi',
 		'green_pages'				=> 'Halaman hijau',
 
-		// Reneable Energy
+
+		// Information Services
 
 		'gheotermal'				=> 'Panas bumi',
 		'bio_energy'				=> 'Bio Energi',
 		'others'					=> 'Lainnya',
 
-		// Energy Conservation
+		// Reneable Energy
 
 		'industry'					=> 'Industri',
 		'commercial_building'		=> 'Bangunan komersial',

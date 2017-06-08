@@ -33,6 +33,53 @@ class News extends BaseImplementation implements NewsInterface
 
         $params = [
             "is_active" => true,
+            "category"  => 'berita'
+        ];
+
+        $newsData = $this->news($params, 'desc', 'array', false);
+
+        return $this->newsTransformation->getNewsTransform($newsData);
+        
+    }
+
+    public function getEventHome($params)
+    {
+
+        $params = [
+            "is_active" => true,
+            "category"  => 'acara'
+        ];
+
+        $newsData = $this->news($params, 'desc', 'array', false);
+
+        return $this->newsTransformation->getNewsTransform($newsData);
+        
+    }
+
+    public function getPopularNews($params)
+    {
+
+        $params = [
+            "is_active" => true,
+            "total_view" => '1',
+            "limit"     => '6',
+            "category"  => 'berita'
+        ];
+
+        $newsData = $this->news($params, 'desc', 'array', false);
+
+        return $this->newsTransformation->getNewsTransform($newsData);
+        
+    }
+
+    public function getPopularEvent($params)
+    {
+
+        $params = [
+            "is_active" => true,
+            "total_view" => '1',
+            "limit"     => '6',
+            "category"  => 'acara'
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);
@@ -66,7 +113,18 @@ class News extends BaseImplementation implements NewsInterface
         $news = $this->news
             ->with('translation')
             ->with('translations')
+            ->with('category')
             ->with('related');
+
+        if(isset($params['category']) && $params['category']) {
+            $news->whereHas('category', function($q) use($params) {
+                $q->slug($params['category']);
+            });
+        }
+
+        if(isset($params['total_view'])) {
+            $news->popular($params['total_view']);
+        }
 
         if(isset($params['slug'])) {
             $news->slug($params['slug']);
