@@ -3,11 +3,22 @@
 		<div class="container">
 			<div class="row">
 				<div id="desktop__content" class="col-md-12">
-					<h3 class="footer__contact__us"><b>CONTACT US</b></h3>
+					<h3 class="footer__contact__us">
+                    <b>{{ trans('global_page.footer_title_contact_us') }}</b>
+                    </h3>
                     <div class="detail__contact__us">
-                        <p><b>Address : </b><i>Jl. Pegangsaan Timur No. 1, Rt.1/Rw.1, Pegangsaan,Menteng, Kota Jakarta Pusat, DKI Jakarta 10320</i></p>
-                        <p><b>Phone :</b> <i>(021) 398300077</i></p>
-                        <p><b>Email :</b> <i>lintas@ebtke.esdm.go.id</i></p>
+                        <p>
+                            <b>{{ trans('global_page.footer_lable_address') }} : </b>
+                            <i>Jl. Pegangsaan Timur No. 1, Rt.1/Rw.1, Pegangsaan,Menteng, Kota Jakarta Pusat, DKI Jakarta 10320</i>
+                        </p>
+                        <p>
+                            <b>{{ trans('global_page.footer_lable_phone') }} :</b> 
+                            <i>(021) 398300077</i>
+                        </p>
+                        <p>
+                            <b>{{ trans('global_page.footer_lable_email') }} :</b> 
+                            <i>lintas@ebtke.esdm.go.id</i>
+                        </p>
                     </div>
                     <center>
                         <div id="desktop-footer-social-links">
