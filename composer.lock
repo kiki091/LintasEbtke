@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "025bfca8a4e3c2c39cc72b965b247b61",
+    "hash": "d5efc76e01b4b1867f4dbdec8aaeee28",
     "content-hash": "ce42fc6df6b196ef6c254fcfbabe87ab",
     "packages": [
         {
@@ -325,16 +325,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.24",
+            "version": "v5.4.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ec8548db26c1b147570f661128649e98f3ac0f29"
+                "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ec8548db26c1b147570f661128649e98f3ac0f29",
-                "reference": "ec8548db26c1b147570f661128649e98f3ac0f29",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a",
+                "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a",
                 "shasum": ""
             },
             "require": {
@@ -450,7 +450,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-30 12:44:32"
+            "time": "2017-06-07 13:35:12"
         },
         {
             "name": "laravel/tinker",

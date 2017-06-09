@@ -72,7 +72,7 @@ h1 {
   text-transform: uppercase;
 }
 .secondmenu_left {
-    position: absolute;
+    float: right;
     top: 13px;
 }
 .secondmenu_left ul {
@@ -116,6 +116,7 @@ h1 {
   #top {
     font-size: 12px;
     text-align: center;
+    height: 40px;
   }
 }
 
@@ -185,16 +186,16 @@ h1 {
 .navbar .yamm-content ul {
   margin: 0;
   padding: 0;
-  width: 70%;
+  width: 100%;
 }
 .navbar .yamm-content ul li {
   list-style-type: none;
-  border-bottom: solid 1px #eeeeee;
+  border-bottom: solid 1px #fff100;
   text-transform: uppercase;
   padding: 4px 0;
 }
 .navbar .yamm-content ul li a {
-  color: #999999;
+  color: #fff100;
   font-size: 12px;
   display: block;
   font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
@@ -1091,7 +1092,7 @@ h1 {
   }
 }
 .yamm .dropdown.yamm-fw .dropdown-menu {
-  left: 0;right: 0;background: rgb(255, 255, 255);-webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+  left: 0;right: 0;background: rgb(45, 45, 45);-webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
 }
 /* Original Boostrap template overwrite */
 /* nav */
@@ -1180,7 +1181,7 @@ h1 {
 }
 .navbar-collapse {
   max-height: 340px;
-  overflow-x: visible;
+  overflow-x: hidden;
   padding-right: 5px;
   padding-left: 5px;
 }

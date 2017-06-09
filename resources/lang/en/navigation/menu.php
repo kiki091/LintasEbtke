@@ -6,6 +6,7 @@
 	*/
 
 	return [
+		'language_selector'			=> 'Language Selector : ',
 		'menu_home'					=> 'HOME',
 		'menu_about_us'				=> 'ABOUT US',
 		'menu_news_and_event'		=> 'NEWS & EVENTS',

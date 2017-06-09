@@ -6,6 +6,7 @@
 	*/
 
 	return [
+		'language_selector'			=> 'Sprog udvalg : ',
 		'menu_home'					=> 'HJEM',
 		'menu_about_us'				=> 'OM OS',
 		'menu_news_and_event'		=> 'NYHEDER OG ARRANGEMENTER',

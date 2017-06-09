@@ -23,9 +23,12 @@ class LaravelLocalizationRoutes extends LaravelLocalizationMiddlewareBase
         }
 
         $app = app();
-
-        $routeName = $app['laravellocalization']->getRouteNameFromAPath($request->getUri());
-
+        if (app()->router->currentRouteName() !== '') {
+            $routeName = 'routes.'.app()->router->currentRouteName();
+        } else {
+            $routeName = $app['laravellocalization']->getRouteNameFromAPath($request->getUri());
+        }
+        
         $app['laravellocalization']->setRouteName($routeName);
 
         return $next($request);

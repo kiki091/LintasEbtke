@@ -6,6 +6,7 @@
 	*/
 
 	return [
+		'language_selector'			=> 'Pilihan Bahasa : ',
 		'menu_home'					=> 'BERANDA',
 		'menu_about_us'				=> 'TENTANG KAMI',
 		'menu_news_and_event'		=> 'BERITA & LAYANAN',

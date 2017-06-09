@@ -28,6 +28,18 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        Event::listen('routes.translation', function($locale, $attributes)
+        {
+            /*$locale = LaravelLocalization::getCurrentLocale();
+            foreach( $attributes as $k => $v ){
+                if($k === 'slug'){
+                    $attributes[$k] = RouteTranslator::translateSlug($v, $locale);
+                }
+            }
+            return $attributes;*/
+
+            return $attributes;
+            
+        });
     }
 }

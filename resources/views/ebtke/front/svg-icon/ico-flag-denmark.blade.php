@@ -12,8 +12,8 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="BevelledDenmark.svg"
-   width="14"
-   height="10">
+   width="16"
+   height="12">
   <metadata
      id="metadata4551">
     <rdf:RDF>

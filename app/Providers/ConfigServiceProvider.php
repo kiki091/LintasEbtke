@@ -9,6 +9,7 @@
 				'laravellocalization.supportedLocales' => [
 					'id' => array( 'name' => 'Indonesian', 'script' => 'Latn', 'native' => 'Bahasa Indonesia' ),
 					'en'  => array( 'name' => 'English', 'script' => 'Latn', 'native' => 'English' ),
+					'da'  => array( 'name' => 'Denmark', 'script' => 'Latn', 'native' => 'Denmark' ),
 				],
 
 				'laravellocalization.useAcceptLanguageHeader' => true,

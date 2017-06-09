@@ -29,6 +29,7 @@ mix.styles([
     'public/themes/ebtke/front/css/custom-slider.css',
     'public/themes/ebtke/front/css/style-slider.css',
     'public/themes/ebtke/front/css/responsives.css',
+    'public/themes/ebtke/front/css/menu.css',
 ], 'public/themes/ebtke/front/build/css/plugins.css');
 
 
@@ -43,6 +44,7 @@ mix.scripts([
 	'public/themes/ebtke/front/js/jquery.cookie.js',
 	'public/themes/ebtke/front/js/front.js',
 	'public/themes/ebtke/front/js/myscript.js',
+	'public/themes/ebtke/front/js/menu.js',
 ], 'public/themes/ebtke/front/build/js/plugins.js');
 
 mix.scripts([
