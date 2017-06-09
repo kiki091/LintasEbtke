@@ -125,6 +125,24 @@
                     </li>
                 </ul>
             </li>
+
+            <li>
+                <a href='#'>{{ trans('navigation/menu.menu_link')}}</a>
+                <ul>
+                    <li>
+                        <a href='#'>{{ trans('navigation/sub_menu.nreec_institutions') }}</a>
+                        
+                    </li>
+                    <li>
+                        <a href=''>{{ trans('navigation/sub_menu.nreec_resources') }}</a>
+                        
+                    </li>
+                    <li>
+                        <a href=''>{{ trans('navigation/sub_menu.nreec_events') }}</a>
+                        
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </div>
