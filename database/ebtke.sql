@@ -73,6 +73,66 @@ INSERT INTO `category_trans` VALUES (1,'id','Berita',NULL,NULL,1),(2,'en','News'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `company_history`
+--
+
+DROP TABLE IF EXISTS `company_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file` varchar(200) DEFAULT NULL,
+  `downloaded` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company_history`
+--
+
+LOCK TABLES `company_history` WRITE;
+/*!40000 ALTER TABLE `company_history` DISABLE KEYS */;
+INSERT INTO `company_history` VALUES (1,'SEKILAS-TENTANG-LINTAS-EBTKE.pdf',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `company_history` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `company_history_trans`
+--
+
+DROP TABLE IF EXISTS `company_history_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company_history_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `introduction` text,
+  `description_left` text,
+  `description_right` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `company_history_id` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_company_history_trans_1_idx` (`company_history_id`),
+  CONSTRAINT `fk_company_history_trans_1` FOREIGN KEY (`company_history_id`) REFERENCES `company_history` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company_history_trans`
+--
+
+LOCK TABLES `company_history_trans` WRITE;
+/*!40000 ALTER TABLE `company_history_trans` DISABLE KEYS */;
+INSERT INTO `company_history_trans` VALUES (1,'en','Whats is lintas ?','LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.','<p>\n			<span class=\"first-letter\">I</span>\n			n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.\n			</p>\n			<p>\n			Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately.. \n			</p>','<p>\n			It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.\n			</p>\n			<p>\n				Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.\n			</p>',NULL,NULL,1),(2,'id','Apa itu lintas ?','LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.','<p>\n			<span class=\"first-letter\">S</span>\n			ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat.\n			Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE. \n			</p>\n			<p>\n			Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana. \n			</p>','<p>\n			Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.\n			</p>\n			<p>\n				Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.\n			</p>',NULL,NULL,1),(3,'da','Hvad er lintas ?','LINTAS EBTKE er en udvidelse af den nye og vedvarende energi informations- og investeringstjeneste og energibesparelse.','<p>\n			<span class=\"first-letter\">G</span>\n			enerelt vil LINTAS EBTKE blive EBTKE-aksen, hvor det anvendte informationsteknologisystem hjælper den besøgende med at finde de oplysninger, de har brug for hurtigt. Desuden giver EBTKE LINTAS-kontoret folk mulighed for at besøge og gennemføre ansigt-til-ansigt-konsultationer med kompetent personale og tildelt EBTKE Traffic.\n			</p>\n			<p>\n			Kun en lille del af Indonesiens vedvarende energipotentiale og energibesparelser er blevet udnyttet. For at optimere udnyttelsen af sådanne potentialer er kommunikation og tæt samarbejde mellem interessenter af afgørende betydning, så EBTKE-aktiviteter / projekter kan implementeres straks.. \n			</p>','<p>\n			Det er mistanke om, at der stadig mangler behov for kommuner, industri, projektudvikling, univeersitas og forskningsinstitutter, investorer, finansielle institutioner og offentligheden for informationspolitik og EBTKE-implementering. Disse interessenter har brug for den bedste og nyeste information om gældende regler, teknologi og implementering, finansiering og investering, samarbejdsmuligheder og endda teknisk bistand til planlægning af implementeringen af EBTKE.\n			</p>\n			<p>\n				Oplysninger fra LINTAS EBTKE forventes at lette samarbejdet mellem disse interessenter, således at brugen og anvendelsen af EBTKE kan øge.\n			</p>',NULL,NULL,1);
+/*!40000 ALTER TABLE `company_history_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `main_banner`
 --
 
@@ -89,7 +149,7 @@ CREATE TABLE `main_banner` (
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +158,7 @@ CREATE TABLE `main_banner` (
 
 LOCK TABLES `main_banner` WRITE;
 /*!40000 ALTER TABLE `main_banner` DISABLE KEYS */;
-INSERT INTO `main_banner` VALUES (1,'banner:landing','filename_001.jpg',1,1,NULL,NULL,NULL),(2,'banner:landing','filename_002.jpg',1,1,NULL,NULL,NULL),(3,'banner:landing','filename_003.jpg',1,1,NULL,NULL,NULL),(4,'banner:landing','filename_004.jpg',1,1,NULL,NULL,NULL);
+INSERT INTO `main_banner` VALUES (1,'banner:landing','filename_001.jpg',1,1,NULL,NULL,NULL),(2,'banner:landing','filename_002.jpg',1,1,NULL,NULL,NULL),(3,'banner:landing','filename_003.jpg',1,1,NULL,NULL,NULL),(4,'banner:landing','filename_004.jpg',1,1,NULL,NULL,NULL),(5,'banner:company:history','banner.jpg',1,1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `main_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +223,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,4,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,1,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,1,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
+INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,9,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,5,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,6 +320,69 @@ INSERT INTO `news_trans` VALUES (1,'id','Edukasi Masyarakat, Zona Panas Bumi Had
 UNLOCK TABLES;
 
 --
+-- Table structure for table `organization_structure`
+--
+
+DROP TABLE IF EXISTS `organization_structure`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `organization_structure` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(100) DEFAULT NULL,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `filename` varchar(150) DEFAULT NULL,
+  `is_active` int(1) DEFAULT NULL,
+  `order` int(1) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `fullname_UNIQUE` (`fullname`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `organization_structure`
+--
+
+LOCK TABLES `organization_structure` WRITE;
+/*!40000 ALTER TABLE `organization_structure` DISABLE KEYS */;
+INSERT INTO `organization_structure` VALUES (1,'Ir. Rida Mulyana, MSc','Ir-Rida-Mulyana-MSc.jpg',NULL,1,1,NULL,NULL,1),(2,'Dr. Ir. Dadan Kusdiana, M,Sc.','Ir-Rida-Mulyana-MSc.jpg','structure_01.jpg',1,2,NULL,NULL,1),(3,'Ir. Yunus Saefulhak, M.M., M.T.','Ir-Rida-Mulyana-MSc.jpg','structure_02.jpg',1,3,NULL,NULL,1);
+/*!40000 ALTER TABLE `organization_structure` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `organization_structure_trans`
+--
+
+DROP TABLE IF EXISTS `organization_structure_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `organization_structure_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `title_position` text,
+  `description` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `organization_structure_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_organization_structure_trans_1_idx` (`organization_structure_id`),
+  CONSTRAINT `fk_organization_structure_trans_1` FOREIGN KEY (`organization_structure_id`) REFERENCES `organization_structure` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `organization_structure_trans`
+--
+
+LOCK TABLES `organization_structure_trans` WRITE;
+/*!40000 ALTER TABLE `organization_structure_trans` DISABLE KEYS */;
+INSERT INTO `organization_structure_trans` VALUES (1,'id','Direktur Jenderal energi baru, terbarukan, dan konservasi energi','<p>\n<h3>DIREKTUR JENDERAL ENERGI BARU, TERBARUKAN, DAN KONSERVASI ENERGI</h3>\n</p>\n<p>\nDirektorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi mempunyai tugas menyelenggarakan perumusan dan pelaksanaan kebijakan di bidang pembinaan, pengendalian, dan pengawasan kegiatan panas bumi, bioenergi, aneka energi baru dan terbarukan, dan\nkonservasi energi.</p>\n<p>\nDirektorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi terdiri dari 6 unit kerja:</p>\n<ul>\n<li>Sekretariat Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi;</li>\n<li>Direktorat Panas Bumi;</li>\n<li>Direktorat Bioenergi;</li>\n<li>Direktorat Aneka Energi Baru dan Energi Terbarukan;</li>\n<li>Direktorat Konservasi Energi;</li>\n<li>Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE</li>\n</ul>',NULL,NULL,1),(2,'en','Director General of new, renewable energy, and energy conservation','<p>\n<h3>DIRECTOR GENERAL OF NEW ENERGY, ENERGY AND ENERGY CONSERVATION</h3>\n</p>\n<p>\nThe Directorate General of New Energy, Renewable Energy and Conservation has the task of organizing the formulation and implementation of policies in the field of fostering, controlling and supervising geothermal, bioenergy, new and renewable energy activities, and\nEnergy conservation.</p>\n<p>\nThe Directorate General of New, Renewable and Energy Conservation consists of 6 work units:</p>\n<ul>\n<li> Secretariat of the Directorate General of New, Renewable Energy and Energy Conservation; </ li>\n<li> Directorate of Geothermal </ li>\n<li> Directorate of Bioenergy; </ li>\n<li> Directorate of New Energy and Renewable Energy </ li>\n<li> Directorate of Energy Conservation; </ li>\n<li> Directorate of Planning and Infrastructure Development EBTKE </ li>\n</ ul>',NULL,NULL,1),(3,'da','Generaldirektør for ny, vedvarende energi og energibesparelse','<p>\n<h3>DIREKTØR GENEREL AF NY ENERGI, ENERGI OG ENERGIBEVARING</h3>\n</p>\n<p>\nGeneraldirektoratet for Ny Energi, Vedvarende Energi og Bevarelse har til opgave at organisere udformningen og gennemførelsen af politikker inden for fremme, kontrol og overvågning af geotermisk, bioenergi, ny og vedvarende energiaktiviteter, og\nEnergibesparelse.</p>\n<p>\nGeneraldirektoratet for ny, vedvarende energi og energibesparelse består af 6 arbejdsenheder:</p>\n<ul>\n<li> Sekretariat for Generaldirektoratet for vedvarende energi og energibesparelser; </ li>\n<li> Direktoratet Geotermisk; </ li>\n<li> Direktoratet Bioenergi; </ li>\n<li> Direktoratet for Kunst, den Nye Energi og Vedvarende Energi </ li>\n<li> Direktoratet for energibesparelser; </ li>\n<li> Direktoratet for Planlægning og Infrastruktur Udvikling EBTKE </ li>\n</ ul>',NULL,NULL,1),(4,'id','Sekretaris Direktorat Jenderal energi baru, terbarukan, dan konservasi energi','<p>\n<h3>SEKRETARIS DIREKTORAT JENDERAL ENERGI BARU, TERBARUKAN, DAN KONSERVASI ENERGI</h3>\n</p>\nSekretariat Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi mempunyai tugas melaksanakan koordinasi pelaksanaan tugas, pembinaan dan pemberian dukungan administrasi kepada seluruh unit organisasi di lingkungan Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi.</p>',NULL,NULL,2),(5,'en','Secretary of Directorate General of new, renewable energy and energy conservation','<p>\n<h3>SECRETARY OF DIRECTORATE GENERAL OF NEW ENERGY, ENERGY AND CONSERVATION</h3>\n</p>\nSecretariat of the Directorate General of New Energy, Renewable Energy and Conservation has the duty to coordinate the implementation of tasks, guidance and administration support to all organizational units within the Directorate General of New Energy, Renewable Energy and Conservation.</p>',NULL,NULL,2),(6,'da','Generalsekretæren for ny energi, vedvarende, og energibesparelser','<p>\n<h3>GENERALDIREKTORAT energiminister NY, VEDVARENDE og energibesparelser</h3>\n</p>\n<p>Sekretariatet for Generaldirektoratet for vedvarende energi og energibesparelser har til opgave at koordinere gennemførelsen af de opgaver, coaching og yde administrativ støtte til alle organisatoriske enheder inden for Generaldirektoratet for vedvarende energi og energibesparelser.</p>',NULL,NULL,2),(7,'id','Direktur Panas Bumi','<p>\n<h3>DIREKTUR PANAS BUMI</h3>\n</p>\n<p>Direktorat Panas Bumi mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan, penyusunan norma, standar, prosedur, dan kriteria, pemberian bimbingan teknis dan supervisi, evaluasi dan pelaporan, serta pengendalian dan pengawasan di bidang penyiapan program, pengawasan eksplorasi dan eksploitasi, pelayanan dan bimbingan usaha, investasi, dan kerja sama, keteknikan dan lingkungan panas bumi.</p>',NULL,NULL,3),(8,'en','Director of Geothermal','<p>\n<h3> DIRECTOR OF HOT EARTH </h3>\n</p>\n<p> The Directorate of Geothermal has the task of executing the formulation and execution of policies, the compilation of norms, standards, procedures and criteria, the provision of technical guidance and supervision, evaluation and reporting, as well as control and supervision in the field of program preparation, exploration and exploitation, Business guidance, investment, and cooperation, engineering and geothermal environments. </p>',NULL,NULL,3),(9,'da','Director Geotermisk','<p>\n<h3> DIREKTØR FOR GEOTERMISK </h3>\n</p>\n<p> Direktoratet Jordvarme har opgaver politikformulering og implementering, udarbejdelse af normer, standarder, procedurer og kriterier, der giver teknisk vejledning og supervision, evaluering og rapportering, samt kontrol og tilsyn inden for områderne forberedelse program, overvågning af efterforskning og udnyttelse, service og vejledning af virksomheder, investeringer og samarbejde, teknik og geotermisk miljø. </p>',NULL,NULL,3);
+/*!40000 ALTER TABLE `organization_structure_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `seo`
 --
 
@@ -272,7 +395,7 @@ CREATE TABLE `seo` (
   `created_at` datetime NOT NULL,
   `created_by` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -281,7 +404,7 @@ CREATE TABLE `seo` (
 
 LOCK TABLES `seo` WRITE;
 /*!40000 ALTER TABLE `seo` DISABLE KEYS */;
-INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',1);
+INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',1),(2,'seo:company:organization-structure','2017-06-07 10:15:33',1),(3,'seo:company:history','2017-06-07 10:15:33',1),(4,'seo:company:vision-mission','2017-06-07 10:15:33',1),(5,'seo:company:scope-of-services','2017-06-07 10:15:33',1);
 /*!40000 ALTER TABLE `seo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,8 +424,10 @@ CREATE TABLE `seo_trans` (
   `seo_id` int(10) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `fk_seo_trans_1_idx` (`seo_id`),
+  CONSTRAINT `fk_seo_trans_1` FOREIGN KEY (`seo_id`) REFERENCES `seo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +436,7 @@ CREATE TABLE `seo_trans` (
 
 LOCK TABLES `seo_trans` WRITE;
 /*!40000 ALTER TABLE `seo_trans` DISABLE KEYS */;
-INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45');
+INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45');
 /*!40000 ALTER TABLE `seo_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,4 +474,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-09  0:38:33
+-- Dump completed on 2017-06-12  1:15:07

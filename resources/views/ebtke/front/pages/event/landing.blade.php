@@ -1,12 +1,12 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ $seo['meta_title'] or '' }}
+    {{ $seo['meta_title'] or 'Kementerian ESDM Republik Indonesia' }}
 @stop
 
 @section('seo')
-    <meta name="keywords" content="{{ $seo['meta_keyword'] or '' }}" />
-    <meta name="description" content="{{ $seo['meta_description'] or '' }}" />
+    <meta name="keywords" content="{{ $seo['meta_keyword'] or 'Kementerian ESDM Republik Indonesia' }}" />
+    <meta name="description" content="{{ $seo['meta_description'] or 'Kementerian ESDM Republik Indonesia' }}" />
 @stop
 
 @section('content')

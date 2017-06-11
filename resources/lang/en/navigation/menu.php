@@ -12,7 +12,6 @@
 		'menu_news_and_event'		=> 'NEWS & EVENTS',
 		'menu_investment_services'	=> 'INVESTMENT SERVICES',
 		'menu_information_services'	=> 'INFORMATION SERVICES',
-		'menu_renewable_energi'		=> 'RENEWABLE ENERGY',
 		'menu_resource'				=> 'RESOURCES',
 		'menu_link'					=> 'LINK',
 	];

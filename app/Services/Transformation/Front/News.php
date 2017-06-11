@@ -75,6 +75,26 @@ class News
         $dataTransform['created_at_home'] = isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '';
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
 
+        $dataTransform['related']   = $this->getYouMighAlsoLike($data['related']);
+
+        return $dataTransform;
+    }
+
+    protected function getYouMighAlsoLike($data) 
+    {
+        $dataTransform = array_map(function($data) {
+
+            return [
+                'related_thumbnail_url' => isset($data['related_news']['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['related_news']['thumbnail'])) : '',
+                'related_slug'          => isset($data['related_news']['slug']) ? $data['related_news']['slug'] : '',
+                'related_view'          => isset($data['related_news']['total_view']) ? $data['related_news']['total_view'] : '',
+                'related_day_ago'          => isset($data['related_news']['created_at']) ?\Carbon\Carbon::createFromTimeStamp(strtotime($data['related_news']['created_at']))->diffForHumans() : '',
+
+                'related_title'         => isset($data['related_news']['translation']['title']) ? $data['related_news']['translation']['title'] : '',
+                'related_introduction'         => isset($data['related_news']['translation']['introduction']) ? $data['related_news']['translation']['introduction'] : '',
+            ];
+        },$data);
+
         return $dataTransform;
     }
 }

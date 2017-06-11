@@ -29,6 +29,7 @@
             "App\\": "app/"
         },
         "files": [
+            "app/Custom/Helper.php",
             "app/Services/Assets/default.php",
             "app/Services/Assets/main.php"
         ]

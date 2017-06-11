@@ -27,7 +27,7 @@
     	<div class="row">
     		<div class="col-md-12">
     			<a href="{{ route('MainPage') }}" class="breadcrumb text-gray">Home</a>
-                <a href="{{ route('landingEvent') }}" class="breadcrumb text-gray">News</a>
+                <a href="{{ route('landingEvent') }}" class="breadcrumb text-gray">Events</a>
                 <a href="{{ route('detailEvent',$detail_event['slug']) }}" class="breadcrumb text-gray">{{ $detail_event['title'] or '' }}</a>
     		</div>
             <div class="col-md-12">
@@ -51,4 +51,42 @@
     </div>
 </section>
 @endif
+
+
+<!-- 
+      _    _     ____   ___    _     ___ _  _______ 
+     / \  | |   / ___| / _ \  | |   |_ _| |/ / ____|
+    / _ \ | |   \___ \| | | | | |    | || ' /|  _|  
+   / ___ \| |___ ___) | |_| | | |___ | || . \| |___ 
+  /_/   \_\_____|____/ \___/  |_____|___|_|\_\_____|
+                                                    
+-->
+
+@if(isset($detail_news['related']) && !empty($detail_news['related']))
+<section id="desktop">
+    <!-- Begin page header-->
+    <div class="container">
+        <hr/>
+        <div class="detail-also-like-title">
+            <h1>You might also like</h1>
+        </div>
+        @foreach($detail_news['related'] as $key=> $related)
+        
+        <div id="related__news" class="col-md-4">
+            <img src="{{ $related['related_thumbnail_url'] }}" class="img-responsive">
+            <p>
+                <a href="{{ route('detailNews',$related['related_slug']) }}">
+                    <h4>{{ $related['related_title'] }}</h4>
+                </a>
+            </p>
+            <ul>
+                <li>{{ $related['related_day_ago'] }}</li>
+                <li>{{ $related['related_view'] }} Views</li>
+            </ul>
+        </div>
+        @endforeach
+    </div>
+</section>
+@endif
+
 @endsection

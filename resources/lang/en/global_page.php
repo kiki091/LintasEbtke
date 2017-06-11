@@ -7,6 +7,8 @@
 
 	return [
 
+		'download'						=> 'DOWNLOAD',
+		'download_pdf'					=> 'DOWNLOAD MANUAL PDF',
 		'footer_title_contact_us'		=> 'CONTACT US',
 		'global_page_lable_visit_here' => 'View Here &raquo;',
 		'global_page_lable_link_cta' => 'Learn More',

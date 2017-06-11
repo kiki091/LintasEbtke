@@ -6,6 +6,8 @@
 	 */
 
 	return [
+		'download'						=> 'DOWNLOAD',
+		'download_pdf'					=> 'DOWNLOAD MANUAL PDF',
 		'footer_title_contact_us'		=> 'KONTAKT OS',
 		'global_page_lable_visit_here' => 'Se her &raquo;',
 		'global_page_lable_link_cta' => 'Lær mere',

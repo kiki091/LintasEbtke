@@ -11,12 +11,7 @@
         </div>
         <!--/.navbar-header -->
         <div id="search">
-            <div class="navbar-buttons pull-left">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-align-justify"></i>
-                </button>
-            </div>
+            
             <form class="navbar-form" role="search">
                 <p id="desktop__content" class="paragraph__date">
                     {{ EbtkeHelper::getDayNow() }}
@@ -61,7 +56,6 @@
     <!-- DESKTOP NAVIGATION MENU -->
     @include('ebtke.front.partials.desktop-navigation')
     <!-- MOBILE NAVIGATION MENU -->
-    @include('ebtke.front.partials.mobile-navigation')
         <!-- /.container -->
 </div>
     <!-- /#navbar -->

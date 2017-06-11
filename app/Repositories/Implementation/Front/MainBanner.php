@@ -28,19 +28,21 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
     	$this->mainBannerTransformation = $mainBannerTransformation;
     }
 
-    public function getMainBanner($params)
+    public function getMainBanner($data)
     {
-        if(!isset($params['key']))
+        if(!isset($data['key']))
             return array();
 
 
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(MainBannerRedis::MAIN_BANNER, $params['key']);
+        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(MainBannerRedis::MAIN_BANNER, $data['key']);
 
-        $mainBanner = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
+        $mainBanner = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
         {
             $params = [
                 "key" => $this->generateBannerKeyFromRedisKey($redisKey),
                 "is_active" => true,
+                "limit_data" => $data['limit_data'],
+                "order_by"  => "order",
             ];
 
             $mainBannerData = $this->mainBanner($params);
@@ -57,7 +59,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
      * @param array $params
      * @return array
      */
-    protected function mainBanner($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+    protected function mainBanner($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
     {
         $mainBanner = $this->mainBanner
             ->with('translation')
@@ -65,6 +67,10 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
 
         if(isset($params['key'])) {
             $mainBanner->key($params['key']);
+        }
+
+        if(isset($params['limit_data'])) {
+            $mainBanner->take($params['limit_data']);
         }
 
         if(isset($params['is_active'])) {

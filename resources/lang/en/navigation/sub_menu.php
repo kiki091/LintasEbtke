@@ -35,6 +35,7 @@
 
 		// Reneable Energy
 
+		'renewable_energi'			=> 'Renewable Energy',
 		'industry'					=> 'Industry',
 		'commercial_building'		=> 'Commercial Building',
 		'transportation'			=> 'Transportation',

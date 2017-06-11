@@ -4,7 +4,7 @@
 		'title_news' => 'BERITA TERKINI',
 		'title_we_do' => 'APA YANG KITA LAKUKAN ?',
 		'sub_desc_we_do' => 'Untuk memenuhi visi dan misi kami, kami menyediakan layanan berikut',
-		'title'  	=> 'Apa itu lintas ? ?',
+		'title'  	=> 'Apa itu lintas ?',
 		'introduction' 	=> 'LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.',
 		'introduction_left' => '<p>
 			<span class="first-letter">S</span>

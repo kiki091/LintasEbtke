@@ -1,3 +1,12 @@
+<!-- 
+   _____ ___   ___ _____ _____ ____  
+  |  ___/ _ \ / _ \_   _| ____|  _ \ 
+  | |_ | | | | | | || | |  _| | |_) |
+  |  _|| |_| | |_| || | | |___|  _ < 
+  |_|   \___/ \___/ |_| |_____|_| \_\
+                                     
+-->
+
 <footer id="desktop-footer" class="visible-md">
 	<div id="desktop__content" class="top-footer">
 		<div class="container">

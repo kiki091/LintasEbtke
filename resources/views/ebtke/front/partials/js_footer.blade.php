@@ -1,3 +1,11 @@
+<!-- 
+         _   ___     ___    ____   ____ ____  ___ ____ _____ 
+        | | / \ \   / / \  / ___| / ___|  _ \|_ _|  _ \_   _|
+     _  | |/ _ \ \ / / _ \ \___ \| |   | |_) || || |_) || |  
+    | |_| / ___ \ V / ___ \ ___) | |___|  _ < | ||  __/ | |  
+     \___/_/   \_\_/_/   \_\____/ \____|_| \_\___|_|    |_|  
+                                                             
+-->
 
 <script src="{{ asset('themes/ebtke/front/build/js/animation.js') }}"></script>
 <script type="text/javascript">
@@ -17,4 +25,5 @@
 	});
 
 </script>
+
 <script src="http://www.ebtke.esdm.go.id/assets/js/analytic.js"></script>

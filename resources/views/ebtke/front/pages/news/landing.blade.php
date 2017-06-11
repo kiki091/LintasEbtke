@@ -1,12 +1,12 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ $seo['meta_title'] or '' }}
+    {{ $seo['meta_title'] or 'Kementerian ESDM Republik Indonesia' }}
 @stop
 
 @section('seo')
-    <meta name="keywords" content="{{ $seo['meta_keyword'] or '' }}" />
-    <meta name="description" content="{{ $seo['meta_description'] or '' }}" />
+    <meta name="keywords" content="{{ $seo['meta_keyword'] or 'Kementerian ESDM Republik Indonesia' }}" />
+    <meta name="description" content="{{ $seo['meta_description'] or 'Kementerian ESDM Republik Indonesia' }}" />
 @stop
 
 @section('content')
@@ -91,6 +91,25 @@
 	    		</div>
     		</div>
             @endif
+            <hr/>
+            <div id="desktop__content" class="col-md-4">
+                <div class="sidepanel widget_tags">
+                    <h3>
+                        <b>Popular</b> Tags
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);">Fashion</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Fashion</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Fashion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     	</div>
     </div>
 </section>

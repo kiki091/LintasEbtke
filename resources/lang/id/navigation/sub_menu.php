@@ -34,6 +34,7 @@
 
 		// Reneable Energy
 
+		'renewable_energi'			=> 'Energi Terbarukan ',
 		'industry'					=> 'Industri',
 		'commercial_building'		=> 'Bangunan komersial',
 		'transportation'			=> 'Transportasi',

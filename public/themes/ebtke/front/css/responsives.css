@@ -39,6 +39,12 @@
   	.content-txt {
     	top: 55%;
   	}
+
+  	.default-after-banner-text {
+  		padding-top: 91px;
+    	padding-bottom: 25px;
+    	text-align: center;
+  	}
 }
 
 @media (min-width:769px) {
@@ -230,6 +236,24 @@
 		top: 60%;
 	    width: 348px;
 	    height: auto;
+	}
+	.default-after-banner-text {
+  		padding-top: 40px;
+    	padding-bottom: 0px;
+    	text-align: center;
+  	}
+  	.default-banner-section {
+  		height: auto;
+  	}
+  	.default-banner-section .default-banner-image {
+	    width: 100%;
+	    height: 185px;
+	}
+  	.default-banner-section .default-banner-image .image-container {
+	    height: 185px;
+	    overflow: hidden;
+	    position: relative;
+	    background: #d7d7d7;
 	}
 }
 

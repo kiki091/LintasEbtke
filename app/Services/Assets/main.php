@@ -35,6 +35,8 @@ define('SERVICES_IMAGES_DIRECTORY', 'bin/db/images/services/');
 
 // Company Images
 
+define('COMPANY_HISTORY_FILE_DIRECTORY', 'bin/db/file/lintas_ebtke/');
+
 define('COMPANY_HISTORY_IMAGES_DIRECTORY', 'bin/db/images/company/history/');
 define('COMPANY_VISION_AND_MISSION_IMAGES_DIRECTORY', 'bin/db/images/company/vision-mission/');
 define('COMPANY_COMPANY_ORGANIZATION_STRUCTURE_IMAGES_DIRECTORY', 'bin/db/images/company/organization-structure/');

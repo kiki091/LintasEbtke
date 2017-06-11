@@ -19,6 +19,7 @@ mix.styles([
     'public/themes/ebtke/front/css/loader.css',
     'public/themes/ebtke/front/css/style.default.css',
     'public/themes/ebtke/front/css/custom.css',
+    'public/themes/ebtke/front/css/w3style.css',
     'public/themes/ebtke/front/css/slider-def.css',
     'public/themes/ebtke/front/css/gallery.css',
     'public/themes/ebtke/front/css/news.css',

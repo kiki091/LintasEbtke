@@ -35,6 +35,7 @@
 
 		// Reneable Energy
 
+		'renewable_energi'			=> 'Vedvarende Energi',
 		'industry'					=> 'Industri',
 		'commercial_building'		=> 'Commercial Building',
 		'transportation'			=> 'Transport',

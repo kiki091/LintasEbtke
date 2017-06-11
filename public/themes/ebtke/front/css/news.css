@@ -317,7 +317,17 @@ small.s10 {
 .breadcrumb:last-child {
     color: #a2a6ad;
 }
-
+#desktop-breadcrumb-menu {
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+#content__date {
+    margin: 10px;
+    width: 100%;
+}
+.text-center {
+    text-align: center;
+}
 h3.latestnews {
     margin: 0;
     line-height: 60px;
@@ -326,6 +336,34 @@ h3.latestnews {
     font-family: 'proximanova-bold';
 }
 
+h3.company__title {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 56px;
+    margin: 10px;
+}
+
+h3.latestnews__title {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 56px;
+    margin: 10px;
+
+}
+.default-large-banner-section {
+    padding-bottom: 80px;
+}
+.page-default-details-intro {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
 .style--texteditor .medium-insert-images {
     margin: 40px 0;
 }
@@ -350,8 +388,438 @@ h3.latestnews {
 }
 
 .style--texteditor p {
-    font-family: Georgia, Times, "Times New Roman", serif;
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+}
+
+#blog {
+    padding-top: 50px;
+}
+
+/* __________ Blog Post __________ */
+.blog_post_img {
+    overflow:hidden;
+    float:left;
+    position:relative;
+    width:470px;
+    height:270px;
+    margin-right:30px;
+    background-color:#FFF;
+}
+.blog_post_img img {
+    width:auto;
+    max-width:none;
+    height:100%;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.blog_post:hover .blog_post_img img {opacity:0.5;}
+
+.blog_post a.zoom {
+    position:absolute;
+    z-index:30;
+    left:50%;
+    bottom:50px;
+    width:60px;
+    height:36px;
+    margin:0 0 -30px -30px;
+    opacity:0;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-size:100% auto;
+    -webkit-background-size:100% auto;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+    -webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.blog_post:hover a.zoom {
+    bottom:50%;
+    opacity:1;
+}
+.blog_post a.zoom:hover {}
+
+.blog_post_descr hr {
+    border-color:#e9e9e9;
+    margin:10px 0;
+}
+.blog_post_date {
+    margin-top:-3px;
+    text-transform:uppercase;
+    line-height:14px;
+    font-size:11px;
+}
+
+.blog_post_title {
+    display:block;
+    padding-bottom:12px;
+    line-height:26px;
+    font-size:20px;
+    color:#333;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.blog_post_title:hover {color:#666;text-decoration: none;}
+
+.blog_post_info li {position:relative; display:inline-block; padding-right:22px;}
+.blog_post_info li:before {content:''; position:absolute; right:9px; top:4px; height:12px; width:1px; background-color:#d3d3d3;}
+.blog_post_info li:last-child:before {display:none;}
+.blog_post_info li a {font-size:14px;}
+.blog_post_content {
+    padding-bottom:18px;
+    line-height:26px;
+    font-size:17px;
+}
+.blog_post_content h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 600;
+}
+.blog_post_content p {
+    text-align: justify;
+    margin: 0px;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    padding-top: 1px;
+}
+.blog_post .read_more_btn {
+    font-weight:500;
+    font-size:16px;
+    color:#333;
+}
+.blog_post .read_more_btn:hover {color:#666;}
+
+
+.margbot50 {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .blog_post_img {
+        width: 400px;
+        height: 314px;
+    }
+    .blog_post_title {
+        font-size: 24px;
+        line-height: 27px;
+    }
+    .blog_post_content {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .blog_post_img {
+        width: 400px;
+        height: 314px;
+    }
+    .blog_post_title {
+        font-size: 24px;
+        line-height: 27px;
+    }
+    .blog_post_content {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog_post_img {
+        width: 200px;
+        height: 157px;
+        margin-right: 20px;
+    }
+    .blog_post_info li {
+        padding-right: 15px;
+    }
+    .blog_post_info li:before {
+        right: 6px;
+    }
+    .blog_post_info li a {
+        font-size: 13px;
+    }
+    .blog_post_content {
+        padding-top: 20px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+}
+
+@media (max-width: 479px) {
+    .blog_post_img {
+        float: none;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 227px;
+    }
+    .blog_post_content {
+        padding-top: 0;
+    }
+}
+
+.detail-also-like-title {
+    margin: 10px;
+    width: 100%;
+}
+
+.detail-also-like-title h1 {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+}
+#related__news {
+    min-height: 310px;
+}
+
+#related__news a {
+    text-decoration: none;
+    color: #2d2d2d;
+}
+#related__news a:hover {
+    text-decoration: none;
+}
+#related__news h4 {
+    font-family: "Harriet Display Medium",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 17px;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    -moz-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    -o-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+#related__news ul {
+    list-style: none;
+}
+#related__news ul li {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    line-height: 21px;
+    letter-spacing: .025em;
+    padding-right: 24px;
+    position: relative;
+    color: #464646;
+}
+#related__news ul li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 11px;
+    width: 0;
+    height: 15px;
+    border-left: 1px solid #464646;
+}
+#related__news ul li:last-child {
+    padding-right: auto;
+}
+
+#related__news img {
+    width: 100%;
+    opacity: 0.6;
+    overflow-y: hidden;
+    max-height: 183px;
+}
+#related__news img:hover {
+    opacity: 1;
+}
+
+.sidepanel {
+    margin-bottom: 25px;
+}
+.widget_meta li {
+    position: relative;
+    padding: 13px 10px 12px 30px;
+    border-top: 1px solid #e9e9e9;
+}
+.widget_meta li::before {
+    content: "°";
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 27px;
+    color: rgb(204, 204, 204);
+    transition: all 0.3s ease-in-out;
+}
+.widget_meta li a {
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    color: #666;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+}
+.widget_meta li a:hover {color:#333;text-decoration: none;}
+
+.widget_tags h3 {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px 0 21px;
+}
+
+.widget_tags li {
+    display: inline-block;
+    margin: 0 3px 5px 0;
+}
+
+.widget_tags li a {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    display: block;
+    padding: 9px 19px;
+    font-size: 16px;
+    border: 1px solid #e9e9e9;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.widget_tags li a:hover {
+    padding:8px 18px;
+    border:2px solid #333;
+    text-decoration: none;
+}
+
+.default-banner-section {
+    position: relative;
+}
+
+.default-banner-section .default-banner-image {
+    width: 100%;
+    height: 550px;
+}
+.default-banner-section .default-banner-image .image-container {
+    height: 550px;
+        overflow: hidden;
+    position: relative;
+    background: #d7d7d7;
+}
+
+.image-container.image-loaded-version img {
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: opacity .4s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+.default-after-content-text {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.default-after-content-text h1 {
+    padding-bottom: 12px;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 42px;
+}
+.default-after-content-text h3 {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: italic;
+    font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
-    color: #303338;
+    line-height: 26px;
+}
+
+.default-after-banner-text {
+    padding-top: 91px;
+    padding-bottom: 93px;
+    text-align: center;
+}
+
+.default-after-banner-text h1 {
+    padding-bottom: 12px;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 42px;
+}
+
+.default-after-banner-text h3 {
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.landing-introduction-section {
+    padding-top: 0px;
+    margin-bottom: 77px;
+}
+.landing-introduction-copy {
+    position: relative;
+    height: 370px;
+    padding-top: 38px;
+}
+.landing-introduction-copy .default-copy {
+    height: 100%;
+}
+.default-copy {
+    position: relative;
+}
+.default-copy:after, .default-copy:before {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.default-copy h1 {
+    margin-bottom: 21px;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 42px;
+}
+.default-copy p+p {
+    margin-top: 28px;
+}
+.default-copy p {
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+}
+
+.landing-introduction-image {
+    height: 470px;
+    margin-left: 40px;
+}
+.landing-introduction-image .image-container {
+    height: 470px;
+    overflow: hidden;
+    position: relative;
+    background: #d7d7d7;
 }
