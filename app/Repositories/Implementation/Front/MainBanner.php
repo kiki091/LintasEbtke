@@ -41,7 +41,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             $params = [
                 "key" => $this->generateBannerKeyFromRedisKey($redisKey),
                 "is_active" => true,
-                "limit_data" => $data['limit_data'],
+                "limit_data" => isset($data['limit_data']) ? $data['limit_data'] : '',
                 "order_by"  => "order",
             ];
 
