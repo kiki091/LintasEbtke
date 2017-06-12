@@ -263,9 +263,18 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src:url(../fonts/fontawesome/fontawesome-webfont.eot?v=4.5.0);src:url(../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'),url(../fonts/fontawesome/fontawesome-webfont.woff2?v=4.5.0) format('woff2');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../fonts/glyphicons-halflings-regular.eot');
+  src:url(../../fonts/fontawesome/fontawesome-webfont.eot?v=4.5.0);src:url(../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'),url(../fonts/fontawesome/fontawesome-webfont.woff2?v=4.5.0) format('woff2');
+  src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@font-face {
+  font-family: 'raleway-bold';
+    src: url('../../fonts/raleway/Raleway-Bold.ttf');
+}
+@font-face {
+  font-family: 'raleway-ExtraBold';
+    src: url('../../fonts/raleway/Raleway-ExtraBold.ttf');
 }
 .glyphicon {
   position: relative;
