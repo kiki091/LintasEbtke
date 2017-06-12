@@ -69,8 +69,8 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             $mainBanner->key($params['key']);
         }
 
-        if(isset($params['limit_data'])) {
-            $mainBanner->take($params['limit_data']);
+        if(isset($params['limit_data']) && !empty($params['limit_data'])) {
+            $mainBanner->skip(0)->take($pparamsarams['limit_data']);
         }
 
         if(isset($params['is_active'])) {
