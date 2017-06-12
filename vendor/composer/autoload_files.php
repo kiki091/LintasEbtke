@@ -14,6 +14,7 @@ return array(
     'e7223560d890eab89cda23685e711e2c' => $vendorDir . '/psy/psysh/src/Psy/functions.php',
     'f0906e6318348a765ffb6eb24e0d0938' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
+    '0a3fb554b9fcbf198e86d7945ee667ad' => $baseDir . '/app/Custom/Helper.php',
     '1086202982095137670b21b1988e96d5' => $baseDir . '/app/Services/Assets/default.php',
     '2a7b115a820943449acb55ac922a420c' => $baseDir . '/app/Services/Assets/main.php',
 );

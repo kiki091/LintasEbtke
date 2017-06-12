@@ -18,29 +18,33 @@
                 </p>
 
                 <p id="desktop__content" class="paragraph__language">
-                    <span class="title__language__selector">
-                        {{ trans('navigation/menu.language_selector')}}
-                    </span>
-                    <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('en') }}">
-                        @include('ebtke.front.svg-icon.ico-flag-english')
-                    </a>
-                    <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('da') }}">
-                        @include('ebtke.front.svg-icon.ico-flag-denmark')
-                    </a>
                     <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('id') }}">
-                        @include('ebtke.front.svg-icon.ico-flag-indonesia')
+                        Bahasa Indonesia || 
+                    </a>
+                    <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('en') }}">
+                        English
                     </a>
 
                 </p>
-                
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
+                <div class="col-md-12 pull-right no__padding__right">
+                        <!-- <div id="mobile__content" class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div> -->
 
-                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        <div class="search-top clearfix  pull-right">
+                            <div class="col-md-10 col-lg-10 col-xs-10 offset-0">
+                                <input name="_search" type="text" placeholder="Pencarian" class="_search">
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xs-2 offset-0">
+                                <button class="fa fa-search pull-right"></button>
+                            </div>
+                        </div>
 
-                      </span>
                 </div>
+                <div class="col-md-12 pull-right">
                 <p id="desktop__content" class="paragraph__navigation" style="margin-top: 5px">
                     <a href="{{ route('login') }}">
                         {{ trans('navigation/top_menu.menu_login') }}
@@ -49,6 +53,7 @@
                     {{ trans('navigation/top_menu.menu_register') }}
                     </a>
                 </p>
+                </div>
             </form>
 
         </div>

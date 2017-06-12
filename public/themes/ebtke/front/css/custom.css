@@ -71,7 +71,7 @@ style.css:424
 }
 
 .page-header h2 {
-    text-transform: uppercase; font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
+    text-transform: uppercase; font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
 }
 
 .devider {
@@ -79,7 +79,7 @@ style.css:424
 }
 
 h3.subtitle {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
+    font-family: "Raleway Webfont"; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
 }
 
 #home-introduction-content {
@@ -119,11 +119,11 @@ h3.subtitle {
 }
 
 .default-content p {
-    font-family: 'Open Sans',Verdana,Geneva,sans-serif; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
+    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
 }
 
 .default-content p .first-letter {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
+    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
 }
 
 .group-landing-news-item {
@@ -196,9 +196,10 @@ h3.subtitle {
 }
 
 #desktop-footer .top-footer {
-    background: #f6f4f1;
+    background: #555555;
     padding-top: 35px;
     padding-bottom: 38px;
+    border-top: 5px #fff100 solid;
 }
 
 #desktop-footer .top-footer .container {
@@ -216,6 +217,7 @@ h3.subtitle {
 
 #desktop-footer .bottom-footer {
     background: #555555;
+    border-top: 1px #fff solid;
 }
 
 .container-fluid.has-breakpoint {
@@ -471,7 +473,7 @@ h3.subtitle {
 #desktop-footer-social-links h4 {
     font-size: 12px;
     line-height: 28px;
-    color: #464646;
+    color: #FFFFFF;
     letter-spacing: .1em;
     margin-bottom: -1px;
 }
@@ -494,7 +496,7 @@ h3.subtitle {
 #desktop-footer-social-links ul li a {
     font-size: 17px;
     line-height: 28px;
-    color: #464646;
+    color: #FFFFFF;
 }
 
 .icon-instagram:before {
@@ -689,7 +691,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
     line-height: 28px;
     letter-spacing: .1em;
     margin-bottom: 2px;
-    color: #464646;
+    color: #FFFFFF;
     padding-top: 12px;
     text-align: center;
 }
@@ -699,14 +701,14 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 }
 
 .detail__contact__us p {
-    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-family: "Raleway Webfont";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 25px;
     padding-bottom: 5px;
     margin:0;
-    color: #464646;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -740,4 +742,43 @@ span.title__language__selector {
     text-decoration: none;
     color: #2d2d2d;
     padding: 5px;
+}
+
+.search-top {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 5px 5px 4px 10px;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.offset-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.search-top input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font: 300 14px/18px 'Raleway', arial;
+    color: #999;
+}
+
+.search-top button {
+    font-size: 18px;
+    color: #999;
+    background: none;
+    border: none;
+}
+
+.no__padding__right {
+    padding-right: 0;
 }

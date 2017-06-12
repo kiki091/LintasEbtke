@@ -220,7 +220,7 @@ h1 {
 }
 .navbar #search .navbar-form {
   float: right;
-  width: 500px;
+  width: 300px;
 }
 .navbar #search .navbar-form .input-group {
   display: table;
@@ -1168,7 +1168,7 @@ h1 {
 }
 /* navbar */
 .navbar {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   min-height: 70px;
   border: none;
   margin-bottom: 0px;
@@ -1427,7 +1427,7 @@ h1 {
 }
 /* scaffolding */
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1479,7 +1479,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: normal;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;

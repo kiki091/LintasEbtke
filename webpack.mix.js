@@ -14,7 +14,7 @@ const { mix } = require('laravel-mix');
 // for plugin css
 mix.styles([
     'public/themes/ebtke/front/css/bootstrap.css',
-    //'public/themes/ebtke/front/css/bootstrap.min.css',
+    'public/themes/ebtke/front/css/raleway-webfont.css',
     'public/themes/ebtke/front/css/animate.min.css',
     'public/themes/ebtke/front/css/loader.css',
     'public/themes/ebtke/front/css/style.default.css',

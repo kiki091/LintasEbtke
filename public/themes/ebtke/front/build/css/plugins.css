@@ -263,18 +263,9 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../../fonts/glyphicons-halflings-regular.eot');
-  src:url(../../fonts/fontawesome/fontawesome-webfont.eot?v=4.5.0);src:url(../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'),url(../fonts/fontawesome/fontawesome-webfont.woff2?v=4.5.0) format('woff2');
-  src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-@font-face {
-  font-family: 'raleway-bold';
-    src: url('../../fonts/raleway/Raleway-Bold.ttf');
-}
-@font-face {
-  font-family: 'raleway-ExtraBold';
-    src: url('../../fonts/raleway/Raleway-ExtraBold.ttf');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src:url(../fonts/fontawesome/fontawesome-webfont.eot?v=4.5.0);src:url(../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'),url(../fonts/fontawesome/fontawesome-webfont.woff2?v=4.5.0) format('woff2');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -905,7 +896,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -6251,6 +6242,70 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-thin.eot');
+  src: url('../../fonts/raleway/raleway-thin.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-thin.woff') format('woff'), url('../../fonts/raleway/raleway-thin.ttf') format('truetype'), url('../../fonts/raleway/raleway-thin.svg#ralewaythin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-extralight.eot');
+  src: url('../../fonts/raleway/raleway-extralight.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-extralight.woff') format('woff'), url('../../fonts/raleway/raleway-extralight.ttf') format('truetype'), url('../../fonts/raleway/raleway-extralight.svg#ralewayextralight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-light.eot');
+  src: url('../../fonts/raleway/raleway-light.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-light.woff') format('woff'), url('../../fonts/raleway/raleway-light.ttf') format('truetype'), url('../../fonts/raleway/raleway-light.svg#ralewaylight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-regular.eot');
+  src: url('../../fonts/raleway/raleway-regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-regular.woff') format('woff'), url('../../fonts/raleway/raleway-regular.ttf') format('truetype'), url('../../fonts/raleway/raleway-regular.svg#ralewayregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-medium.eot');
+  src: url('../../fonts/raleway/raleway-medium.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-medium.woff') format('woff'), url('../../fonts/raleway/raleway-medium.ttf') format('truetype'), url('../../fonts/raleway/raleway-medium.svg#ralewaymedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-semibold.eot');
+  src: url('../../fonts/raleway/raleway-semibold.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-semibold.woff') format('woff'), url('../../fonts/raleway/raleway-semibold.ttf') format('truetype'), url('../../fonts/raleway/raleway-semibold.svg#ralewaysemibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-bold.eot');
+  src: url('../../fonts/raleway/raleway-bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-bold.woff') format('woff'), url('../../fonts/raleway/raleway-bold.ttf') format('truetype'), url('../../fonts/raleway/raleway-bold.svg#ralewaybold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-extrabold.eot');
+  src: url('../../fonts/raleway/raleway-extrabold.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-extrabold.woff') format('woff'), url('../../fonts/raleway/raleway-extrabold.ttf') format('truetype'), url('../../fonts/raleway/raleway-extrabold.svg#ralewayextrabold') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway Webfont";
+  src: url('../../fonts/raleway/raleway-heavy.eot');
+  src: url('../../fonts/raleway/raleway-heavy.eot?#iefix') format('embedded-opentype'), url('../../fonts/raleway/raleway-heavy.woff') format('woff'), url('../../fonts/raleway/raleway-heavy.ttf') format('truetype'), url('../../fonts/raleway/raleway-heavy.svg#ralewayheavy') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @charset "UTF-8";/*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -6489,7 +6544,7 @@ h1 {
 }
 .navbar #search .navbar-form {
   float: right;
-  width: 500px;
+  width: 300px;
 }
 .navbar #search .navbar-form .input-group {
   display: table;
@@ -7437,7 +7492,7 @@ h1 {
 }
 /* navbar */
 .navbar {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   min-height: 70px;
   border: none;
   margin-bottom: 0px;
@@ -7695,7 +7750,13 @@ h1 {
   color: #333333;
 }
 /* scaffolding */
-
+body {
+  font-family: "Raleway Webfont";
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #FFFFFF;
+}
 a {
   color: #4fbfa8;
   text-decoration: none;
@@ -7742,7 +7803,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: normal;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway Webfont";
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -8107,7 +8168,7 @@ style.css:424
 }
 
 .page-header h2 {
-    text-transform: uppercase; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
+    text-transform: uppercase; font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
 }
 
 .devider {
@@ -8115,7 +8176,7 @@ style.css:424
 }
 
 h3.subtitle {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
+    font-family: "Raleway Webfont"; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
 }
 
 #home-introduction-content {
@@ -8155,11 +8216,11 @@ h3.subtitle {
 }
 
 .default-content p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
+    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
 }
 
 .default-content p .first-letter {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
+    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
 }
 
 .group-landing-news-item {
@@ -8232,9 +8293,10 @@ h3.subtitle {
 }
 
 #desktop-footer .top-footer {
-    background: #f6f4f1;
+    background: #555555;
     padding-top: 35px;
     padding-bottom: 38px;
+    border-top: 5px #fff100 solid;
 }
 
 #desktop-footer .top-footer .container {
@@ -8252,6 +8314,7 @@ h3.subtitle {
 
 #desktop-footer .bottom-footer {
     background: #555555;
+    border-top: 1px #fff solid;
 }
 
 .container-fluid.has-breakpoint {
@@ -8260,7 +8323,7 @@ h3.subtitle {
 }
 
 #desktop-footer .desktop-footer-copywrite {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     color: #fff;
@@ -8507,7 +8570,7 @@ h3.subtitle {
 #desktop-footer-social-links h4 {
     font-size: 12px;
     line-height: 28px;
-    color: #464646;
+    color: #FFFFFF;
     letter-spacing: .1em;
     margin-bottom: -1px;
 }
@@ -8530,7 +8593,7 @@ h3.subtitle {
 #desktop-footer-social-links ul li a {
     font-size: 17px;
     line-height: 28px;
-    color: #464646;
+    color: #FFFFFF;
 }
 
 .icon-instagram:before {
@@ -8725,7 +8788,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
     line-height: 28px;
     letter-spacing: .1em;
     margin-bottom: 2px;
-    color: #464646;
+    color: #FFFFFF;
     padding-top: 12px;
     text-align: center;
 }
@@ -8735,14 +8798,14 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 }
 
 .detail__contact__us p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Raleway Webfont";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 25px;
     padding-bottom: 5px;
     margin:0;
-    color: #464646;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -8776,6 +8839,45 @@ span.title__language__selector {
     text-decoration: none;
     color: #2d2d2d;
     padding: 5px;
+}
+
+.search-top {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 5px 5px 4px 10px;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.offset-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.search-top input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font: 300 14px/18px 'Raleway', arial;
+    color: #999;
+}
+
+.search-top button {
+    font-size: 18px;
+    color: #999;
+    background: none;
+    border: none;
+}
+
+.no__padding__right {
+    padding-right: 0;
 }
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
@@ -12537,7 +12639,7 @@ nav{position:relative;width:980px;margin:0 auto;}
 #cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{margin: 0 0 0px;border:0;list-style:none;line-height:2;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 #cssmenu:after,#cssmenu > ul:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
 #cssmenu #head-mobile{display:none}
-#cssmenu{padding-left: 6%;padding-right: 6%;border-bottom: 5px #fff100 solid;font-family:'raleway-bold';background:#333;display: inline-table;width: 100%;position: relative;z-index: 99;margin: 0px auto;max-height: 60px;}
+#cssmenu{padding-left: 6%;padding-right: 6%;border-bottom: 5px #fff100 solid;font-family:"Raleway Webfont";background:#333;display: inline-table;width: 100%;position: relative;z-index: 99;margin: 0px auto;max-height: 60px;}
 #cssmenu > ul > li{float:left}
 #cssmenu > ul > li > a{padding:17px;font-size:10px;letter-spacing:1px;text-decoration:none;color:#ddd;font-weight:700;}
 #cssmenu > ul > li:hover > a,#cssmenu ul li.active a{color:#333}
