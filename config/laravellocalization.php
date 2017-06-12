@@ -33,7 +33,7 @@ return [
         //'sn'          => ['name' => 'Shona',                  'script' => 'Latn', 'native' => 'chiShona', 'regional' => ''],
         //'co'          => ['name' => 'Corsican',               'script' => 'Latn', 'native' => 'corsu', 'regional' => ''],
         //'cy'          => ['name' => 'Welsh',                  'script' => 'Latn', 'native' => 'Cymraeg', 'regional' => 'cy_GB'],
-        'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'Denmark', 'regional' => 'da_DK'],
+        //'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'Denmark', 'regional' => 'da_DK'],
         //'se'          => ['name' => 'Northern Sami',          'script' => 'Latn', 'native' => 'davvisámegiella', 'regional' => 'se_NO'],
         //'de'          => ['name' => 'German',                 'script' => 'Latn', 'native' => 'Deutsch', 'regional' => 'de_DE'],
         //'luo'         => ['name' => 'Luo',                    'script' => 'Latn', 'native' => 'Dholuo', 'regional' => ''],

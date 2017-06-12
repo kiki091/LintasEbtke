@@ -1168,7 +1168,7 @@ h1 {
 }
 /* navbar */
 .navbar {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   min-height: 70px;
   border: none;
   margin-bottom: 0px;
@@ -1426,7 +1426,13 @@ h1 {
   color: #333333;
 }
 /* scaffolding */
-
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #FFFFFF;
+}
 a {
   color: #4fbfa8;
   text-decoration: none;
@@ -1473,7 +1479,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: normal;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
