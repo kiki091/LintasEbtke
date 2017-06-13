@@ -57,8 +57,8 @@ h1 {
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; background: #FFF;-webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-webkit-box-shadow: 0 0 10px rgba(70,70,70,.2);box-shadow: 0 0 10px rgba(70,70,70,.2);
 }
 
-.bg-gray-transparant {
-  background: rgba(0,0,0,0.02);
+.bg-gray {
+  background: #333333;
 }
 
 #top {

@@ -13,6 +13,8 @@
         <div id="search">
             
             <form class="navbar-form" role="search">
+
+                <div class="col-md-12 pull-right">
                 <p id="desktop__content" class="paragraph__date">
                     {{ EbtkeHelper::getDayNow() }}
                 </p>
@@ -26,7 +28,8 @@
                     </a>
 
                 </p>
-                <div class="col-md-12 pull-right no__padding__right">
+                </div>
+                <div class="full__width col-md-12 pull-right no__padding__right">
                         <!-- <div id="mobile__content" class="input-group">
                             <input type="text" class="form-control" placeholder="Search">
                             <span class="input-group-btn">

@@ -47,6 +47,17 @@
   	}
 }
 
+@media (max-width: 990px) and (min-width: 768px) {
+	.img__carousel {
+		width: 24%;
+		display: inline-table;
+		overflow: hidden;
+	}
+	.img__carousel img {
+		width: 100%;
+	}
+}
+
 @media (min-width:769px) {
 	#desktop__content {
 		display: block;

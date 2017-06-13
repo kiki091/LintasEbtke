@@ -16,7 +16,7 @@
 		'footer_desc_mail'			 => 'Be the first to know about Our exclusive perks, events and promotions!',
 		'footer_placeholder_mail'	 => 'Enter your email address',
 		'footer_title_social_media'	 => 'FOLLOW US',
-		'footer_title_copyright'	 => '© 2017 Kementerian Energi dan Sumber Daya Mineral, All Rights Reserved',
+		'footer_title_copyright'	 => '© 2017 Investment Services Information Of EBTKE, All Rights Reserved',
 		'footer_lable_address' => 'Address',
 		'footer_lable_phone' => 'Phone',
 		'footer_lable_email' => 'Email',

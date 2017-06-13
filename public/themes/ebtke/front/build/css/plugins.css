@@ -6381,8 +6381,8 @@ h1 {
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; background: #FFF;-webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;-webkit-box-shadow: 0 0 10px rgba(70,70,70,.2);box-shadow: 0 0 10px rgba(70,70,70,.2);
 }
 
-.bg-gray-transparant {
-  background: rgba(0,0,0,0.02);
+.bg-gray {
+  background: #333333;
 }
 
 #top {
@@ -8295,7 +8295,6 @@ h3.subtitle {
 #desktop-footer .top-footer {
     background: #555555;
     padding-top: 35px;
-    padding-bottom: 38px;
     border-top: 5px #fff100 solid;
 }
 
@@ -8812,6 +8811,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 .paragraph__date {
     margin-bottom: 1%;
     font-size: 12px;
+    padding-right: 7px;
 }
 .paragraph__language {
     margin-bottom: 1%;
@@ -8850,6 +8850,7 @@ span.title__language__selector {
     margin-top: 10px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
+    width: 100%;
 }
 .clearfix:before, .clearfix:after {
     content: " ";
@@ -8878,6 +8879,15 @@ span.title__language__selector {
 
 .no__padding__right {
     padding-right: 0;
+}
+
+.padding__center {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.full__width {
+    width: 100%;
 }
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
@@ -12364,6 +12374,17 @@ div#slider figure {
     	padding-bottom: 25px;
     	text-align: center;
   	}
+}
+
+@media (max-width: 990px) and (min-width: 768px) {
+	.img__carousel {
+		width: 24%;
+		display: inline-table;
+		overflow: hidden;
+	}
+	.img__carousel img {
+		width: 100%;
+	}
 }
 
 @media (min-width:769px) {

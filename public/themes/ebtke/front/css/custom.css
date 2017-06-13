@@ -198,7 +198,6 @@ h3.subtitle {
 #desktop-footer .top-footer {
     background: #555555;
     padding-top: 35px;
-    padding-bottom: 38px;
     border-top: 5px #fff100 solid;
 }
 
@@ -715,6 +714,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 .paragraph__date {
     margin-bottom: 1%;
     font-size: 12px;
+    padding-right: 7px;
 }
 .paragraph__language {
     margin-bottom: 1%;
@@ -753,6 +753,7 @@ span.title__language__selector {
     margin-top: 10px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
+    width: 100%;
 }
 .clearfix:before, .clearfix:after {
     content: " ";
@@ -781,4 +782,13 @@ span.title__language__selector {
 
 .no__padding__right {
     padding-right: 0;
+}
+
+.padding__center {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.full__width {
+    width: 100%;
 }

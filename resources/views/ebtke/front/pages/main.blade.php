@@ -41,7 +41,38 @@
     </div>
 </section>
 
-
+<section id="desktop__content" class="bg-gray page">
+		<div class="row">
+			<div class="img__carousel col-md-3 padding__center">
+			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
+				<a class="services_item" href="javascript:void(0);">
+								<p><b>Easy</b> Customize</p>
+								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
+							</a>
+			</div>
+			<div class="img__carousel col-md-3 padding__center">
+			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
+				<a class="services_item" href="javascript:void(0);">
+								<p><b>Easy</b> Customize</p>
+								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
+							</a>
+			</div>
+			<div class="img__carousel col-md-3 padding__center">
+			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
+				<a class="services_item" href="javascript:void(0);">
+								<p><b>Easy</b> Customize</p>
+								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
+							</a>
+			</div>
+			<div class="img__carousel col-md-3 padding__center">
+			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
+				<a class="services_item" href="javascript:void(0);">
+								<p><b>Easy</b> Customize</p>
+								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
+							</a>
+			</div>
+		</div>
+</section>
 <!-- COMPANY PROFILE OVERVIEW -->
 
 <section id="desktop company-overview" class="page">
