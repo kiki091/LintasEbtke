@@ -141,7 +141,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'consulting_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Consulting-Services.png') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -230,7 +230,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'consulting_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'GreenPages.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -249,7 +249,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'matchlogo.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -267,7 +267,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'resour.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -285,7 +285,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'libraries_lms.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'kpi-dashboard2y.png') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
