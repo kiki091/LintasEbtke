@@ -109,12 +109,13 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'consulting_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_consulting_services') }}
+		            		{{ trans('pages/main_page.title_investment_serrvices') }}
 		            	</p>
+		            	
 		            	<p>
 			            	<a href="#">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
@@ -126,7 +127,7 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news_&_event.png') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -144,13 +145,13 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Consulting.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_investment_serrvices') }}
-		            	</p>
 		            	
+		          	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_consulting_services') }}
+		            	</p>
 		            	<p>
 			            	<a href="#">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
@@ -164,44 +165,10 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'libraries_lms.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'GreenPages.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_libraries') }}
-		            	</p>
-		            	<p>
-			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
-		            	</p>
-		          	</figcaption>
-	        	</figure>
-	      	</li>
-	      	<li>
-	        	<figure>
-	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
-	        		</a>
-		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_tools') }}
-		            	</p>
-		            	<p>
-			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
-		            	</p>
-		          	</figcaption>
-	        	</figure>
-	      	</li>
-	      	<li>
-	        	<figure>
-	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'consulting_services.jpg') }}" alt="">
-	        		</a>
-		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
+		          	<p class="bold uppercase">
 		            		{{ trans('pages/main_page.title_green_page') }}
 		            	</p>
 		            	<p>
@@ -209,15 +176,14 @@
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>
+		          	
 		          	</figcaption>
 	        	</figure>
 	      	</li>
-	    </ul>
-	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'matchlogo.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
@@ -235,13 +201,31 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
-	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'resour.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
 		            	<p class="bold uppercase">
 		            		{{ trans('pages/main_page.title_nrecc_resource') }}
 		            	</p>
-		            	
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	    </ul>
+	    <ul class="nospace group">
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'kpi-dashboard2y.png') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+						<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_dashboards') }}
+		            	</p>
 		            	<p>
 			            	<a href="#">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
@@ -253,11 +237,29 @@
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="#">
+	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
+	        		</a>
+		          	<figcaption class="inspace-30 center">
+		          	<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_tools') }}
+		            	</p>
+		            	<p>
+			            	<a href="#">
+			            		{{ trans('global_page.global_page_lable_visit_here') }} 
+			            	</a>
+		            	</p>
+		            	
+		          	</figcaption>
+	        	</figure>
+	      	</li>
+	      	<li>
+	        	<figure>
+	        		<a class="overlay" href="#">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'libraries_lms.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_dashboards') }}
+						<p class="bold uppercase">
+		            		{{ trans('pages/main_page.title_libraries') }}
 		            	</p>
 		            	<p>
 			            	<a href="#">
