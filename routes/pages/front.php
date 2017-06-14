@@ -21,17 +21,23 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::get('/', 'Ebtke\Front\Pages\MainController@index')->name('MainPage');
 
+			// NEWS ROUTE
+
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.news')], function () {
 
 				Route::get('/', 'Ebtke\Front\Pages\NewsController@landing')->name('landingNews');
 				Route::get(LaravelLocalization::transRoute('routes.news_detail'), 'Ebtke\Front\Pages\NewsController@detail')->name('detailNews');
 			});
 
+			// EVENT ROUTE
+
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.event')], function () {
 
 				Route::get('/', 'Ebtke\Front\Pages\EventController@landing')->name('landingEvent');
 				Route::get(LaravelLocalization::transRoute('routes.event_detail'), 'Ebtke\Front\Pages\EventController@detail')->name('detailEvent');
 			});
+
+			// COMPANY ROUTE
 
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.company')], function () {
 
@@ -44,10 +50,28 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get(LaravelLocalization::transRoute('routes.scope_of_services'), 'Ebtke\Front\Pages\CompanyController@scopeServices')->name('CompanyScope');
 			});
 
+			// WHITE PAPERS  ROUTE
+
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.papers')], function () {
 
 				Route::get('/', 'Ebtke\Front\Pages\WhitePaperController@landing')->name('WhitePapers');
 				Route::get('{slug}', 'Ebtke\Front\Pages\WhitePaperController@detail')->name('DetailWhitePapers');
+				
+			});
+
+			// INVESTMENT SERVICES ROUTE
+
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services')], function () {
+
+				Route::get(LaravelLocalization::transRoute('routes.investment_services_potentials'), 'Ebtke\Front\Pages\InvestmentServicesController@landing')->name('InvestmentServicesPotentials');
+			});
+
+			// TOOLS ROUTE
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.tools')], function () {
+
+				Route::get('/', 'Ebtke\Front\Pages\ToolsController@landing')->name('Tools');
+				Route::get('{slug}', 'Ebtke\Front\Pages\ToolsController@detail')->name('ToolsDetail');
+				
 				
 			});
 

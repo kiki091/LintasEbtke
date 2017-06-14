@@ -14,6 +14,7 @@ const { mix } = require('laravel-mix');
 // for plugin css
 mix.styles([
     'public/themes/ebtke/front/css/bootstrap.css',
+    'public/themes/ebtke/front/css/maps/jquery-jvectormap-2.0.3.css',
     'public/themes/ebtke/front/css/raleway-webfont.css',
     'public/themes/ebtke/front/css/animate.min.css',
     'public/themes/ebtke/front/css/loader.css',
@@ -38,6 +39,11 @@ mix.styles([
 
 mix.scripts([
 	'public/themes/ebtke/front/js/jquery-1-8-2.min.js',
+	'public/themes/ebtke/front/js/maps/jquery-jvectormap-2.0.3.min.js',
+	'public/themes/ebtke/front/js/maps/jquery-jvectormap-us-aea-en.js',
+	'public/themes/ebtke/front/js/maps/jquery-jvectormap-asia-merc.js',
+	'public/themes/ebtke/front/js/maps/jquery-jvectormap-world-mill-en.js',
+	'public/themes/ebtke/front/js/maps/gdp-data.js',
 	'public/themes/ebtke/front/js/modernizr.custom.79639.js',
 	'public/themes/ebtke/front/js/bootstrap.min.js',
 	'public/themes/ebtke/front/js/scroll-menu.js',
@@ -49,7 +55,7 @@ mix.scripts([
 ], 'public/themes/ebtke/front/build/js/plugins.js');
 
 mix.scripts([
-	//'public/themes/ebtke/front/js/jquery.ba-cond.min.js',
+	//'public/themes/ebtke/front/js/jquery-jvectormap-2.0.3.min.js',
 	'public/themes/ebtke/front/js/jquery.slitslider.js',
 	'public/themes/ebtke/front/js/plugins-slider.js',
 	'public/themes/ebtke/front/js/owl.carousel.min.js',

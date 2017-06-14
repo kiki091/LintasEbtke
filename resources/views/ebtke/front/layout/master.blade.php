@@ -14,7 +14,9 @@
 		  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.9";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		
+
+		@yield('maps-vector')
+
 		<img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader-full.png') }}" alt="Loading Page" title="Loading Page" />
 
 		<!-- //PRELOADER -->
@@ -28,12 +30,12 @@
 
 			@include('ebtke.front.partials.footer')
 		</div>
-		@section('scripts')
-
-		@stop
 		
 		@include('ebtke.front.partials.js_footer')
 			
+		@section('scripts')
+
+		@stop
 	</body>
 </html>
 

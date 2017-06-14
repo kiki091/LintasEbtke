@@ -18,4 +18,10 @@
 
 
 		'papers'						=> 'white-papers',
+
+		'investment_services'			=> 'investment-services',
+		'investment_services_potentials'=> 'potentials',
+
+
+		'tools'=> 'tools',
 	];

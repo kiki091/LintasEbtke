@@ -18,4 +18,10 @@
 
 
 		'papers'						=> 'kertas-putih',
+
+		'investment_services'			=> 'layanan-investasi',
+		'investment_services_potentials'=> 'potensi',
+
+
+		'tools'=> 'aplikasi',
 	];

@@ -61,7 +61,7 @@
                     
                 </li>
                 <li>
-                    <a href=''>{{ trans('navigation/sub_menu.potentials') }}</a>
+                    <a href="{{ route('InvestmentServicesPotentials') }}">{{ trans('navigation/sub_menu.potentials') }}</a>
                     
                 </li>
                 <li>
