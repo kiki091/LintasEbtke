@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
--- Host: 127.0.0.1    Database: ebtke
+-- Host: localhost    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.16-MariaDB
+-- Server version	5.7.18-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -223,7 +223,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,10,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,5,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
+INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,11,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,5,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +395,7 @@ CREATE TABLE `seo` (
   `created_at` datetime NOT NULL,
   `created_by` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,7 +404,7 @@ CREATE TABLE `seo` (
 
 LOCK TABLES `seo` WRITE;
 /*!40000 ALTER TABLE `seo` DISABLE KEYS */;
-INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',1),(2,'seo:company:organization-structure','2017-06-07 10:15:33',1),(3,'seo:company:history','2017-06-07 10:15:33',1),(4,'seo:company:vision-mission','2017-06-07 10:15:33',1),(5,'seo:company:scope-of-services','2017-06-07 10:15:33',1);
+INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',1),(2,'seo:company:organization-structure','2017-06-07 10:15:33',1),(3,'seo:company:history','2017-06-07 10:15:33',1),(4,'seo:company:vision-mission','2017-06-07 10:15:33',1),(5,'seo:company:scope-of-services','2017-06-07 10:15:33',1),(6,'seo:white-paper:landing','2017-06-07 10:15:33',1);
 /*!40000 ALTER TABLE `seo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -427,7 +427,7 @@ CREATE TABLE `seo_trans` (
   PRIMARY KEY (`id`),
   KEY `fk_seo_trans_1_idx` (`seo_id`),
   CONSTRAINT `fk_seo_trans_1` FOREIGN KEY (`seo_id`) REFERENCES `seo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -436,7 +436,7 @@ CREATE TABLE `seo_trans` (
 
 LOCK TABLES `seo_trans` WRITE;
 /*!40000 ALTER TABLE `seo_trans` DISABLE KEYS */;
-INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(7,'id','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(8,'en','LINTAS scope of works','LINTAS scope of works','LINTAS scope of works',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(9,'id','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(10,'en','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24');
+INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(7,'id','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(8,'en','LINTAS scope of works','LINTAS scope of works','LINTAS scope of works',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(9,'id','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(10,'en','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(11,'en','white papers','white papers','white papers',6,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(12,'id','kertas putih','kertas putih','kertas putih',6,'2017-06-14 11:36:24','2017-06-14 11:36:24');
 /*!40000 ALTER TABLE `seo_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,6 +463,106 @@ CREATE TABLE `subscribe` (
 LOCK TABLES `subscribe` WRITE;
 /*!40000 ALTER TABLE `subscribe` DISABLE KEYS */;
 /*!40000 ALTER TABLE `subscribe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tools`
+--
+
+DROP TABLE IF EXISTS `tools`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tools` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(80) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `version` varchar(20) DEFAULT NULL,
+  `country` varchar(50) DEFAULT NULL,
+  `tools_type` varchar(20) DEFAULT NULL COMMENT 'free',
+  `platform` varchar(100) DEFAULT NULL,
+  `manufacture` varchar(70) DEFAULT NULL,
+  `download` int(10) DEFAULT NULL,
+  `rating` int(10) DEFAULT NULL,
+  `user_ip` varchar(50) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `file_upload` varchar(150) DEFAULT NULL,
+  `file_size` varchar(10) DEFAULT NULL,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by` int(5) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  UNIQUE KEY `filename_UNIQUE` (`filename`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tools`
+--
+
+LOCK TABLES `tools` WRITE;
+/*!40000 ALTER TABLE `tools` DISABLE KEYS */;
+INSERT INTO `tools` VALUES (1,'CCleaner','ccleaner','5.31.6105','English','free','Windows','System Care',NULL,NULL,NULL,1,'ccleaner.exe','4.5 MB','6067__ccleaner_icon.png',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `tools` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tools_related`
+--
+
+DROP TABLE IF EXISTS `tools_related`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tools_related` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `tools_id` int(10) DEFAULT NULL,
+  `tools_related_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_tools_related_1_idx` (`tools_id`),
+  KEY `fk_tools_related_2_idx` (`tools_related_id`),
+  CONSTRAINT `fk_tools_related_1` FOREIGN KEY (`tools_id`) REFERENCES `tools` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_tools_related_2` FOREIGN KEY (`tools_related_id`) REFERENCES `tools` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tools_related`
+--
+
+LOCK TABLES `tools_related` WRITE;
+/*!40000 ALTER TABLE `tools_related` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tools_related` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tools_trans`
+--
+
+DROP TABLE IF EXISTS `tools_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tools_trans` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `description` text,
+  `tools_id` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_tools_trans_1_idx` (`tools_id`),
+  CONSTRAINT `fk_tools_trans_1` FOREIGN KEY (`tools_id`) REFERENCES `tools` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tools_trans`
+--
+
+LOCK TABLES `tools_trans` WRITE;
+/*!40000 ALTER TABLE `tools_trans` DISABLE KEYS */;
+INSERT INTO `tools_trans` VALUES (1,'en','Probably the most popular freeware cleaner globally with over 2 billion downloads since its launch in 2003. Piriform’s CCleaner is a quick and easy to use program which makes your computer faster, more secure and more reliable. CCleaner removes cookies, temporary files and various other unused data that clogs up your operating system. This frees up valuable hard disk space allowing your system to run faster. Removing this data also protects your anonymity meaning you can browse online more securely. The built in Registry Cleaner fixes errors and broken settings to make your computer more stable. The simple, intuitive UI and rapid but powerful cleaning make CCleaner a favourite among novices and techies alike. Professional, Network, Business and Technician Editions of CCleaner are also available for serious users.',1,NULL,NULL),(2,'id','Mungkin freeware freeware paling populer secara global dengan lebih dari 2 miliar unduhan sejak diluncurkan pada tahun 2003. Piriform\'s CCleaner adalah program yang cepat dan mudah digunakan yang membuat komputer Anda lebih cepat, lebih aman dan lebih dapat diandalkan. CCleaner menghapus cookies, file sementara dan berbagai data lain yang tidak terpakai yang menyumbat sistem operasi Anda. Ini membebaskan ruang hard disk yang berharga yang memungkinkan sistem Anda berjalan lebih cepat. Menghapus data ini juga melindungi anonimitas Anda yang berarti Anda dapat menjelajah secara online dengan lebih aman. Yang dibangun di Registry Cleaner memperbaiki kesalahan dan pengaturan yang rusak agar komputer Anda lebih stabil. UI yang sederhana dan intuitif dan pembersihan yang cepat namun kuat membuat CCleaner menjadi favorit di antara para pemula dan teknisi. Profesional, Jaringan, Bisnis dan Teknisi Edisi CCleaner juga tersedia untuk pengguna yang serius.',1,NULL,NULL);
+/*!40000 ALTER TABLE `tools_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -539,4 +639,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-14 17:58:08
+-- Dump completed on 2017-06-15  0:38:19

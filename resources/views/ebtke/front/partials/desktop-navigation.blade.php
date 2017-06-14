@@ -114,7 +114,7 @@
             <a href='#'>{{ trans('navigation/menu.menu_resource')}}</a>
             <ul>
                 <li>
-                    <a href='#'>{{ trans('navigation/sub_menu.tools') }}</a>
+                    <a href="{{ route('Tools') }}">{{ trans('navigation/sub_menu.tools') }}</a>
                     
                 </li>
                 <li>

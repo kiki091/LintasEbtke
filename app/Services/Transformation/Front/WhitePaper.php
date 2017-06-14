@@ -62,8 +62,8 @@ class WhitePaper
         $dataTransform['description'] = isset($data['translation']['description'])? $data['translation']['description'] : '';
         $dataTransform['file_url'] = isset($data['file'])? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['file'])) : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail'])? asset(PAPERS_IMAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
-        $dataTransform['is_rating'] = isset($data['rating'])? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['rating'])) : 0;
-        $dataTransform['is_downloaded'] = isset($data['downloaded'])? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['downloaded'])) : 0;
+        $dataTransform['is_rating'] = isset($data['rating'])? $data['rating'] : 0;
+        $dataTransform['is_downloaded'] = isset($data['downloaded'])? $data['downloaded'] : 0;
 
         return $dataTransform;
     }
