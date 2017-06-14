@@ -928,7 +928,11 @@ span.title__language__selector {
 }
 
 .bs-example-tabs .nav-tabs {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+#myTabContent {
+    padding-top: 10px;
 }
 
 @media (max-width: 479px) {
