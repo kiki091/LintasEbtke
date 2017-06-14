@@ -15,4 +15,7 @@
 		'vision_and_mission'			=> 'vision-and-mission',
 		'organization_structure'		=> 'organization-structure',
 		'scope_of_services'				=> 'scope-of-services',
+
+
+		'papers'						=> 'white-papers',
 	];

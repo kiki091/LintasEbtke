@@ -8889,6 +8889,150 @@ span.title__language__selector {
 .full__width {
     width: 100%;
 }
+
+.font__normal {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.font__normal a:hover {
+    text-decoration: none;
+}
+
+/**
+ * Responsive Bootstrap Tabs by @hayatbiralem
+ * 15 May 2015
+ */
+
+@mixin ellipsis(){
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+}
+
+@mixin icon-styles(){
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive {
+    > li {
+      display: none;
+      width: 23%;
+      > a {
+        @include ellipsis();
+        width: 100%;
+        text-align: center;
+        vertical-align: top;
+      }
+      &.active {
+        width: 54%;
+        &:first-child {
+          margin-left: 23%;
+        }
+      }
+      &.active,
+      &.prev,
+      &.next {
+        display: block;
+      }
+      &.prev,
+      &.next {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+      &.next > a,
+      &.prev > a {
+        -webkit-transition: none;
+        transition: none;
+        .text {
+          display: none;
+        }
+        &:after,
+        &:after {
+          @include icon-styles();
+        }
+      }
+      &.prev > a:after {
+        content: "\e079";
+      }
+      &.next > a:after {
+        content: "\e080";
+      }
+      &.dropdown {
+        > a > .caret {
+          display: none;
+        }
+        > a:after {
+          content: "\e114";
+        }
+        &.active > a {
+          &:after {
+            display: none;
+          }
+          > .caret {
+            display: inline-block;
+          }
+        }
+
+        .dropdown-menu {
+          &.pull-xs-left {
+            left: 0;
+            right: auto;
+          }
+          &.pull-xs-center {
+            right: auto;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
+          &.pull-xs-right {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Demo Styles
+ */
+
+.wrapper {
+  padding: 15px 0;
+}
+
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
@@ -12657,7 +12801,7 @@ div#slider figure {
 .logo{position:relative;z-index:123;padding:10px;font:18px verdana;color:#6DDB07;float:left;width:15%}
 .logo a{color:#6DDB07;}
 nav{position:relative;width:980px;margin:0 auto;}
-#cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{margin: 0 0 0px;border:0;list-style:none;line-height:2;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{margin: 0px auto;border:0;list-style:none;line-height:2;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 #cssmenu:after,#cssmenu > ul:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
 #cssmenu #head-mobile{display:none}
 #cssmenu{padding-left: 6%;padding-right: 6%;border-bottom: 5px #fff100 solid;font-family:"Raleway Webfont";background:#333;display: inline-table;width: 100%;position: relative;z-index: 99;margin: 0px auto;max-height: 60px;}

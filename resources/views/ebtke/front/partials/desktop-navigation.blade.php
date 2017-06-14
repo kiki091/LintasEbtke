@@ -11,7 +11,7 @@
     
     <div id="head-mobile"></div>
     <div class="button"></div>
-    <ul>
+    <ul class="container">
         <li>
             <a href='{{ route('MainPage') }}'>{{ trans('navigation/menu.menu_home')}}</a>
         </li>
@@ -118,15 +118,15 @@
                     
                 </li>
                 <li>
-                    <a href=''>{{ trans('navigation/sub_menu.white_papers') }}</a>
+                    <a href="{{ route('WhitePapers') }}">{{ trans('navigation/sub_menu.white_papers') }}</a>
                     
                 </li>
                 <li>
-                    <a href=''>{{ trans('navigation/sub_menu.publications') }}</a>
+                    <a href="">{{ trans('navigation/sub_menu.publications') }}</a>
                     
                 </li>
                 <li>
-                    <a href=''>{{ trans('navigation/sub_menu.featibility_studies') }}</a>
+                    <a href="">{{ trans('navigation/sub_menu.featibility_studies') }}</a>
                     
                 </li>
             </ul>

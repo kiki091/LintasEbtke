@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke
+-- Host: 127.0.0.1    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -223,7 +223,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,9,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,5,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
+INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,10,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,5,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -427,7 +427,7 @@ CREATE TABLE `seo_trans` (
   PRIMARY KEY (`id`),
   KEY `fk_seo_trans_1_idx` (`seo_id`),
   CONSTRAINT `fk_seo_trans_1` FOREIGN KEY (`seo_id`) REFERENCES `seo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -436,7 +436,7 @@ CREATE TABLE `seo_trans` (
 
 LOCK TABLES `seo_trans` WRITE;
 /*!40000 ALTER TABLE `seo_trans` DISABLE KEYS */;
-INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45');
+INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(7,'id','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(8,'en','LINTAS scope of works','LINTAS scope of works','LINTAS scope of works',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(9,'id','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(10,'en','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24');
 /*!40000 ALTER TABLE `seo_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -464,6 +464,71 @@ LOCK TABLES `subscribe` WRITE;
 /*!40000 ALTER TABLE `subscribe` DISABLE KEYS */;
 /*!40000 ALTER TABLE `subscribe` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `white_paper`
+--
+
+DROP TABLE IF EXISTS `white_paper`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `white_paper` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `slug` varchar(150) DEFAULT NULL,
+  `file` varchar(150) DEFAULT NULL,
+  `downloaded` int(10) DEFAULT NULL,
+  `rating` int(10) DEFAULT NULL,
+  `user_ip` varchar(100) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `white_paper`
+--
+
+LOCK TABLES `white_paper` WRITE;
+/*!40000 ALTER TABLE `white_paper` DISABLE KEYS */;
+INSERT INTO `white_paper` VALUES (1,'invisible_apps.JPG','invisible-apps','invisible-apps.pdf',NULL,NULL,NULL,1,'2017-06-14 17:33:43','2017-06-14 17:33:43',1);
+/*!40000 ALTER TABLE `white_paper` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `white_paper_trans`
+--
+
+DROP TABLE IF EXISTS `white_paper_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `white_paper_trans` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `description` text,
+  `white_paper_id` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_1_idx` (`white_paper_id`),
+  CONSTRAINT `fk_1` FOREIGN KEY (`white_paper_id`) REFERENCES `white_paper` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `white_paper_trans`
+--
+
+LOCK TABLES `white_paper_trans` WRITE;
+/*!40000 ALTER TABLE `white_paper_trans` DISABLE KEYS */;
+INSERT INTO `white_paper_trans` VALUES (1,'en','The arrival of the Invisible Apps ','<p>Admit it, we have become slaves of our own screens, some even speak of the \'screen generation\' and they are right. <br>\r\n<br>\r\nWith the new devices that are out on the market such as smart watches and Apple TV’s, our screen time increases every day. But how intelligent are and become these screens? Let us tell you all about it! </p>',1,'2017-06-14 05:41:43','2017-06-14 05:41:43'),(2,'id','Kedatangan Aplikasi Yang Memungkinkan','\r\n<p> Akui saja, kita telah menjadi budak layar kita sendiri, beberapa bahkan berbicara tentang \'generasi layar\' dan mereka benar. <br>\r\n<br>\r\nDengan perangkat baru yang beredar di pasaran seperti jam tangan pintar dan Apple TV, waktu layar kita meningkat setiap hari. Tapi seberapa cerdas dan menjadi layar ini? Mari kita ceritakan semuanya tentang itu! </p>',1,'2017-06-14 11:42:35','2017-06-14 11:42:35');
+/*!40000 ALTER TABLE `white_paper_trans` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -474,4 +539,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-12  1:15:07
+-- Dump completed on 2017-06-14 17:58:08

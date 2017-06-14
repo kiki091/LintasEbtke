@@ -37,9 +37,9 @@
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="default-after-content-text">
-                    <h1>Visi Dan Misi Perusahaan</h1>
+                    <h1>{{ trans('pages/vision_mision_page.title_vision') }}</h1>
                     <h3>
-                        Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups.
+                        {{ trans('pages/vision_mision_page.sub_title_vision') }}
                     </h3>
                 </div>
             </div>
@@ -49,15 +49,46 @@
 
     <div class="container landing-introduction-section">
         <div class="row">
-            <div class="col-md-12">
-                <hr/>
-                <div class="landing-introduction-copy">
-                    <div class="default-copy">
-                        <p>
-                            <span class="first-letter">L</span>orem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore. While lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.
-                        </p>
-                    </div>
-                </div>
+            <div class="col-md-8">
+              <h1>{{ trans('pages/vision_mision_page.title_mission') }}
+              
+              <div class="sidepanel widget_meta">
+                <ul>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_mission_1') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_mission_2') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_mission_3') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_mission_4') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_mission_5') }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <h1>{{ trans('pages/vision_mision_page.title_objective') }}
+              
+              <div class="sidepanel widget_meta">
+                <ul>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_objective_1') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_objective_2') }}</a>
+                  </li>
+                  <li>
+                    <a href="">{{ trans('pages/vision_mision_page.description_objective_3') }}</a>
+                  </li>
+                </ul>
+              </div>
             </div>
         </div>
     </div>

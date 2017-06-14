@@ -44,6 +44,13 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get(LaravelLocalization::transRoute('routes.scope_of_services'), 'Ebtke\Front\Pages\CompanyController@scopeServices')->name('CompanyScope');
 			});
 
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.papers')], function () {
+
+				Route::get('/', 'Ebtke\Front\Pages\WhitePaperController@landing')->name('WhitePapers');
+				Route::get('{slug}', 'Ebtke\Front\Pages\WhitePaperController@detail')->name('DetailWhitePapers');
+				
+			});
+
 		});
 
 	});

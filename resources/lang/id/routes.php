@@ -15,4 +15,7 @@
 		'vision_and_mission'			=> 'visi-dan-misi',
 		'organization_structure'		=> 'struktur-organisasi',
 		'scope_of_services'				=> 'lingkup-layanan',
+
+
+		'papers'						=> 'kertas-putih',
 	];

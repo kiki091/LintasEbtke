@@ -41,3 +41,8 @@ define('COMPANY_HISTORY_IMAGES_DIRECTORY', 'bin/db/images/company/history/');
 define('COMPANY_VISION_AND_MISSION_IMAGES_DIRECTORY', 'bin/db/images/company/vision-mission/');
 define('COMPANY_COMPANY_ORGANIZATION_STRUCTURE_IMAGES_DIRECTORY', 'bin/db/images/company/organization-structure/');
 define('COMPANY_SCOPE_OF_SERVICES_IMAGES_DIRECTORY', 'bin/db/images/company/scope-of-services/');
+
+// Papers
+// 
+define('PAPERS_FILE_DIRECTORY', 'bin/db/file/papers/');
+define('PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/');
