@@ -32,7 +32,7 @@ class ToolsController extends FrontController
         
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
         $data['tools_landing'] = $this->tools->getData(["key" => self::REDIS_TOOLS_LANDING_KEY]);
-dd($data);
+
         $blade = self::URL_BLADE_FRONT_SITE. '.tools.landing';
         
         if(view()->exists($blade)) {

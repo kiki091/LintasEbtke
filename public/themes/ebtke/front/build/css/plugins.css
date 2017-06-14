@@ -9173,6 +9173,12 @@ span.title__language__selector {
     display: none;
   }
 }
+
+.info__download {
+    font-size: 10px;
+    margin-bottom: 2px;
+    text-align: center;
+}
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}

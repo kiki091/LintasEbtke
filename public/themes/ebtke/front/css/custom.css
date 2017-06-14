@@ -940,3 +940,9 @@ span.title__language__selector {
     display: none;
   }
 }
+
+.info__download {
+    font-size: 10px;
+    margin-bottom: 2px;
+    text-align: center;
+}
