@@ -1,12 +1,12 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ 'Kementerian ESDM Republik Indonesia' }}
+    {{ $seo['meta_title'] or '' }} Kementerian ESDM Republik Indonesia
 @stop
 
 @section('seo')
-    <meta name="keywords" content="Kementerian ESDM Republik Indonesia" />
-    <meta name="description" content="Kementerian ESDM Republik Indonesia" />
+    <meta name="keywords" content="{{ $seo['meta_keyword'] or '' }} Kementerian ESDM Republik Indonesia" />
+    <meta name="description" content="{{ $seo['meta_description'] or '' }} Kementerian ESDM Republik Indonesia" />
 @stop
 
 @section('content')
@@ -40,40 +40,28 @@
       	</div>
     </div>
 </section>
+<!--
+   ___ _   _ _____ ____   ___  ____  _   _  ____ _____ ___ ___  _   _
+  |_ _| \ | |_   _|  _ \ / _ \|  _ \| | | |/ ___|_   _|_ _/ _ \| \ | |
+   | ||  \| | | | | |_) | | | | | | | | | | |     | |  | | | | |  \| |
+   | || |\  | | | |  _ <| |_| | |_| | |_| | |___  | |  | | |_| | |\  |
+  |___|_| \_| |_| |_| \_\\___/|____/ \___/ \____| |_| |___\___/|_| \_|
 
-
+-->
+@if(isset($latest_news) && !empty($latest_news))
 <section id="desktop__content" class="bg-gray page">
-		<div class="row">
+	<div class="row">
+		@foreach($latest_news as $key=> $latest_news)
 			<div class="img__carousel col-md-3 padding__center">
-			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
-				<a class="services_item" href="javascript:void(0);">
-								<p><b>Easy</b> Customize</p>
-								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
-							</a>
+			<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
+				<a href="{{ route('detailNews',$latest_news['slug']) }}" class="services_item">
+					<p>{{ $latest_news['title'] or '' }}</p>
+				</a>
 			</div>
-			<div class="img__carousel col-md-3 padding__center">
-			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
-				<a class="services_item" href="javascript:void(0);">
-								<p><b>Easy</b> Customize</p>
-								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
-							</a>
-			</div>
-			<div class="img__carousel col-md-3 padding__center">
-			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
-				<a class="services_item" href="javascript:void(0);">
-								<p><b>Easy</b> Customize</p>
-								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
-							</a>
-			</div>
-			<div class="img__carousel col-md-3 padding__center">
-			<img src="http://lintas.ebtke.dev/bin/db/images/banner/filename_003.jpg" class="img-responsive">
-				<a class="services_item" href="javascript:void(0);">
-								<p><b>Easy</b> Customize</p>
-								<span>Quality and very comfortable design, does not hurt the eyes and pleasant to use.</span>
-							</a>
-			</div>
-		</div>
+		@endforeach
+	</div>
 </section>
+@endif
 <!-- COMPANY PROFILE OVERVIEW -->
 
 <section id="desktop company-overview" class="page">
@@ -81,10 +69,10 @@
     <div class="page-header-wrapper">
         <div class="container">
             <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                <h2>{!! trans('pages/main_page.title') !!}</h2>
+                <h2>{{ $history['title'] }}</h2>
                 <hr/>
                 <h3 class="subtitle">
-                	{{ trans('pages/main_page.introduction') }}
+                	{!! $history['introduction'] !!}
                 </h3>
             </div>
         </div>
@@ -94,7 +82,7 @@
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				{!! trans('pages/main_page.introduction_left') !!}
+	    				{!! $history['description_left'] !!}
 	    			</div>
 	    		</div>
 	    	</div>
@@ -102,7 +90,7 @@
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInRight" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				{!! trans('pages/main_page.introduction_right') !!}
+	    				{!! $history['description_right'] !!}
 	    				
 	    			</div>
 	    		</div>
@@ -157,7 +145,7 @@
 	      	</li>
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="{{ route('landingNews') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -166,7 +154,7 @@
 		            	</p>
 		            	
 		            	<p>
-			            	<a href="#">
+			            	<a href="{{ route('landingNews') }}">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>
@@ -212,7 +200,7 @@
 	      	</li>
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="{{ route('Tools') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -220,7 +208,7 @@
 		            		{{ trans('pages/main_page.title_tools') }}
 		            	</p>
 		            	<p>
-			            	<a href="#">
+			            	<a href="{{ route('Tools') }}">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>
@@ -229,7 +217,7 @@
 	      	</li>
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="{{ route('InvestmentServicesGreenPages') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'GreenPages.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -237,7 +225,7 @@
 		            		{{ trans('pages/main_page.title_green_page') }}
 		            	</p>
 		            	<p>
-			            	<a href="#">
+			            	<a href="{{ route('InvestmentServicesGreenPages') }}">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>

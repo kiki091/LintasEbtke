@@ -28,12 +28,13 @@ class News extends BaseImplementation implements NewsInterface
     	$this->newsTransformation = $newsTransformation;
     }
 
-    public function getNewsHome($params)
+    public function getNewsHome($data)
     {
 
         $params = [
             "is_active" => true,
-            "category"  => 'berita'
+            "category"  => 'berita',
+            "limit_data" => isset($data['limit']) ? $data['limit'] : '',
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);
