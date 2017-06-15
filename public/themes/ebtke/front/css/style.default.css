@@ -1770,3 +1770,11 @@ address {
   color: #fff;
   text-decoration: none;
 }
+
+text {
+  display: none; visibility: hidden;
+}
+#map {
+  width: 100%;
+  height: 500px;
+}

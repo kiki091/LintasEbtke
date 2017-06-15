@@ -25,12 +25,12 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-12">
-                <h3 class="latestnews__title text-center">
-                    INVESTMENT SERVICES POTENTIALS GEOTHERMAL
-                </h3>
-    			<div class="wrapper">
-                    <div id="world-map-geothermal" style="width: 100%; height: 400px"></div>
-    	       </div>
+              <h3 class="latestnews__title text-center">
+                  INVESTMENT SERVICES POTENTIALS GEOTHERMAL
+              </h3>
+  			      <div class="wrapper">
+                  <center><div id="map"></div></center>
+  	          </div>
     	   </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
 
 @section('maps-vector')
 
-<script>
+<!-- <script>
     $(function(){
         $('#world-map-geothermal').vectorMap({
             map: 'asia_merc',
@@ -59,5 +59,5 @@
           }
         });
     });
-</script>
+</script> -->
 @endsection

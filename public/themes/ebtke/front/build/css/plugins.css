@@ -8231,6 +8231,13 @@ address {
   text-decoration: none;
 }
 
+text {
+  display: none; visibility: hidden;
+}
+#map {
+  width: 100%;
+  height: 500px;
+}
 /** Your theme modifications here **/
 
 /** Section Style Landing Page About **/
