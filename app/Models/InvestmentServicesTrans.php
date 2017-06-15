@@ -7,9 +7,9 @@ use App\Models\BaseModel;
 /**
  * Class Seo Trans
  */
-class ToolsTrans extends BaseModel
+class InvestmentServicesTrans extends BaseModel
 {
-    protected $table = 'tools_trans';
+    protected $table = 'investment_services_trans';
 
     public $timestamps = true;
 

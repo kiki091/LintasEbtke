@@ -63,6 +63,9 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services')], function () {
 
+				Route::get('/', 'Ebtke\Front\Pages\InvestmentServicesController@landing')->name('InvestmentServicesLanding');
+				Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\InvestmentServicesController@detail')->name('InvestmentServicesDetail');
+
 
 				Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services_potentials')], function () {
 

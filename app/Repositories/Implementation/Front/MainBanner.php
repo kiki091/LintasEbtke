@@ -70,7 +70,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
         }
 
         if(isset($params['limit_data']) && !empty($params['limit_data'])) {
-            $mainBanner->skip(0)->take($pparamsarams['limit_data']);
+            $mainBanner->skip(0)->take($params['limit_data']);
         }
 
         if(isset($params['is_active'])) {

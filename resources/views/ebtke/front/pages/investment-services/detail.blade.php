@@ -1,12 +1,12 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ $detail_news['meta_title'] or '' }}
+    {{ $investment_services['meta_title'] or '' }}
 @stop
 
 @section('seo')
-    <meta name="keywords" content="{{ $detail_news['meta_keyword'] or '' }}" />
-    <meta name="description" content="{{ $detail_news['meta_description'] or '' }}" />
+    <meta name="keywords" content="{{ $investment_services['meta_keyword'] or '' }}" />
+    <meta name="description" content="{{ $investment_services['meta_description'] or '' }}" />
 @stop
 
 @section('content')
@@ -22,22 +22,22 @@
                                             
 -->
 
-@if(isset($detail_news) && !empty($detail_news))
+@if(isset($investment_services) && !empty($investment_services))
 <section id="desktop">
-	<!-- Begin page header-->
+    <!-- Begin page header-->
     <div class="container detail--header default-large-banner-section">
-    	<div class="row">
-    		    <div id="desktop-breadcrumb-menu" class="col-md-12">
-    			     <a href="{{ route('MainPage') }}" class="breadcrumb text-gray">
-                  {{ trans('navigation/menu.menu_home')}}   
+        <div class="row">
+            <div id="desktop-breadcrumb-menu" class="col-md-12">
+                <a href="{{ route('MainPage') }}" class="breadcrumb text-gray">
+                    {{ trans('navigation/menu.menu_home')}}
                 </a>
-                <a href="{{ route('landingNews') }}" class="breadcrumb text-gray">
-                  {{ trans('navigation/sub_menu.news')}}
+                <a href="{{ route('InvestmentServicesLanding') }}" class="breadcrumb text-gray">
+                    {{ trans('navigation/menu.menu_investment_services')}}
                 </a>
-                <a href="{{ route('detailNews',$detail_news['slug']) }}" class="breadcrumb text-gray">{{ $detail_news['title'] or '' }}</a>
-    		    </div>
+                <a href="{{ route('InvestmentServicesDetail',$investment_services['slug']) }}" class="breadcrumb text-gray">{{ $investment_services['title'] or '' }}</a>
+            </div>
             <div class="col-md-12">
-                <h3 class="latestnews__title text-center">{{ $detail_news['title'] or '' }}</h3>
+                <h3 class="latestnews__title text-center">{{ $investment_services['title'] or '' }}</h3>
                 
             </div>
             <!--
@@ -50,7 +50,7 @@
             -->
             <div class="col-md-12">
                 <div class="w3-content w3-display-container">
-                    <img class="mySlides" src="{{ $detail_news['thumbnail_url'] or '' }}" style="width:100%">
+                    <img class="mySlides" src="{{ $investment_services['thumbnail_url'] or '' }}" style="width:100%">
 
                     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -58,14 +58,14 @@
             </div>
 
             
-    	</div>
+        </div>
     </div>
     <div class="container style--texteditor">
 
         <div class="default-content">
-            {!! $detail_news['introduction'] or '' !!}
-            {!! $detail_news['description'] or '' !!}
-        
+            {!! $investment_services['introduction'] or '' !!}
+            {!! $investment_services['description'] or '' !!}
+        </h3>
         </div>
     </div>
 </section>
@@ -80,7 +80,7 @@
                                                     
 -->
 
-@if(isset($detail_news['related']) && !empty($detail_news['related']))
+@if(isset($investment_services['related']) && !empty($investment_services['related']))
 <section id="desktop">
     <!-- Begin page header-->
     <div class="container">
@@ -88,7 +88,7 @@
         <div class="detail-also-like-title">
             <h1>You might also like</h1>
         </div>
-        @foreach($detail_news['related'] as $key=> $related)
+        @foreach($investment_services['related'] as $key=> $related)
         
         <div id="related__news" class="col-md-4">
             <img src="{{ $related['related_thumbnail_url'] }}" class="img-responsive">

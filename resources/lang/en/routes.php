@@ -6,6 +6,8 @@
 	 */
 
 	return [
+
+		'detail'						=> 'detail/{slug}',
 	
 		'news'							=> 'news',
 		'news_detail'					=> 'detail/{slug}',

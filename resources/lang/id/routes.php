@@ -6,6 +6,9 @@
 	 */
 
 	return [
+
+
+		'detail'						=> 'rincian/{slug}',
 	
 		'news'							=> 'berita',
 		'news_detail'					=> 'rincian/{slug}',

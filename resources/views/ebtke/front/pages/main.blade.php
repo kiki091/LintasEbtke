@@ -163,7 +163,7 @@
 	      	</li>
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="{{ route('InvestmentServicesLanding') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -172,7 +172,7 @@
 		            	</p>
 		            	
 		            	<p>
-			            	<a href="#">
+			            	<a href="{{ route('InvestmentServicesLanding') }}">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>

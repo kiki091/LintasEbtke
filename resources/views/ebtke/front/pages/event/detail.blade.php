@@ -26,8 +26,12 @@
     <div class="container detail--header">
     	<div class="row">
     		<div class="col-md-12">
-    			<a href="{{ route('MainPage') }}" class="breadcrumb text-gray">Home</a>
-                <a href="{{ route('landingEvent') }}" class="breadcrumb text-gray">Events</a>
+    			<a href="{{ route('MainPage') }}" class="breadcrumb text-gray">
+                    {{ trans('navigation/menu.menu_home')}}         
+                </a>
+                <a href="{{ route('landingEvent') }}" class="breadcrumb text-gray">
+                    {{ trans('navigation/sub_menu.events')}}
+                </a>
                 <a href="{{ route('detailEvent',$detail_event['slug']) }}" class="breadcrumb text-gray">{{ $detail_event['title'] or '' }}</a>
     		</div>
             <div class="col-md-12">
