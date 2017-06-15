@@ -32,6 +32,7 @@
 		'gheotermal'				=> 'Geothermal',
 		'bio_energy'				=> 'Bio Energy',
 		'others'					=> 'Others',
+		'energy_conservation'		=> 'Energy Conservation',
 
 		// Reneable Energy
 

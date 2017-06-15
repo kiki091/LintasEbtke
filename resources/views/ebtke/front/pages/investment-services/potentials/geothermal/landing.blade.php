@@ -26,7 +26,7 @@
     	<div class="row">
     		<div class="col-md-12">
               <h3 class="latestnews__title text-center">
-                  INVESTMENT SERVICES POTENTIALS GEOTHERMAL
+                  {{ trans('pages/investment_services_page.title')}} {{ trans('pages/investment_services_page.potentials.geothermal')}}
               </h3>
   			      <div class="wrapper">
                   <center><div id="map"></div></center>
@@ -36,28 +36,4 @@
     </div>
 </section>
 
-@endsection
-
-@section('maps-vector')
-
-<!-- <script>
-    $(function(){
-        $('#world-map-geothermal').vectorMap({
-            map: 'asia_merc',
-            backgroundColor: 'transparent',
-            regionsSelectable: true,
-            zoomOnScroll: false,
-            series: {
-            regions: [{
-                values: gdpData,
-                scale: ['#E6F2F0', '#149B7E'],
-                
-            }]
-          },
-          onRegionTipShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-    });
-</script> -->
 @endsection

@@ -47,6 +47,15 @@
   	}
 }
 
+@media only screen and (min-width: 90.063em) {
+	.column, .columns {
+	    position: relative;
+	    padding-left: .46875rem;
+	    padding-right: .46875rem;
+	    float: left;
+	}
+}
+
 @media (max-width: 990px) and (min-width: 768px) {
 	.img__carousel {
 		width: 24%;

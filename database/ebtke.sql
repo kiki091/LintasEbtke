@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke
+-- Host: 127.0.0.1    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -383,6 +383,108 @@ INSERT INTO `organization_structure_trans` VALUES (1,'id','Direktur Jenderal ene
 UNLOCK TABLES;
 
 --
+-- Table structure for table `potentials`
+--
+
+DROP TABLE IF EXISTS `potentials`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `potentials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` int(4) DEFAULT NULL COMMENT 'tahun',
+  `total_population` varchar(30) DEFAULT NULL COMMENT 'jumlah penduduk',
+  `total_waste` varchar(45) DEFAULT NULL COMMENT 'Total Sampah',
+  `potentials_region_id` int(5) DEFAULT NULL,
+  `tpa_name` varchar(45) DEFAULT NULL,
+  `tpa_wide` varchar(45) DEFAULT NULL COMMENT 'luas tpa ',
+  `tpa_capacity` varchar(45) DEFAULT NULL,
+  `tpa_address` text,
+  `tpa_cordinat` varchar(45) DEFAULT NULL,
+  `tpa_schema_management` text,
+  `organic_trash` varchar(45) DEFAULT NULL,
+  `plastic_trash` varchar(45) DEFAULT NULL,
+  `paper_trash` varchar(45) DEFAULT NULL,
+  `textiles_trash` varchar(45) DEFAULT NULL,
+  `rubber_trash` varchar(45) DEFAULT NULL,
+  `logam_trash` varchar(45) DEFAULT NULL,
+  `glass_trash` varchar(45) DEFAULT NULL,
+  `other_trash` varchar(45) DEFAULT NULL,
+  `rdf` varchar(45) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_1_idx` (`potentials_region_id`),
+  CONSTRAINT `fk_potentials_region_1` FOREIGN KEY (`potentials_region_id`) REFERENCES `potentials_region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `potentials`
+--
+
+LOCK TABLES `potentials` WRITE;
+/*!40000 ALTER TABLE `potentials` DISABLE KEYS */;
+/*!40000 ALTER TABLE `potentials` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `potentials_city_region`
+--
+
+DROP TABLE IF EXISTS `potentials_city_region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `potentials_city_region` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city_name` varchar(70) NOT NULL,
+  `potentials_region_id` int(5) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `city_name_UNIQUE` (`city_name`),
+  KEY `fk_1_idx` (`potentials_region_id`),
+  CONSTRAINT `fk_potentials_region` FOREIGN KEY (`potentials_region_id`) REFERENCES `potentials_region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `potentials_city_region`
+--
+
+LOCK TABLES `potentials_city_region` WRITE;
+/*!40000 ALTER TABLE `potentials_city_region` DISABLE KEYS */;
+/*!40000 ALTER TABLE `potentials_city_region` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `potentials_region`
+--
+
+DROP TABLE IF EXISTS `potentials_region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `potentials_region` (
+  `id` int(10) NOT NULL,
+  `region_name` varchar(70) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `region_name_UNIQUE` (`region_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `potentials_region`
+--
+
+LOCK TABLES `potentials_region` WRITE;
+/*!40000 ALTER TABLE `potentials_region` DISABLE KEYS */;
+/*!40000 ALTER TABLE `potentials_region` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `seo`
 --
 
@@ -639,4 +741,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15  0:38:19
+-- Dump completed on 2017-06-15 17:48:18

@@ -31,6 +31,7 @@
 		'gheotermal'				=> 'Panas bumi',
 		'bio_energy'				=> 'Bio Energi',
 		'others'					=> 'Lainnya',
+		'energy_conservation'		=> 'Konservasi Energi',
 
 		// Reneable Energy
 

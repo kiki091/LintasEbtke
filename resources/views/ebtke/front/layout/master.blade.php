@@ -15,7 +15,6 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
-		@yield('maps-vector')
 
 		<img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader-full.png') }}" alt="Loading Page" title="Loading Page" />
 

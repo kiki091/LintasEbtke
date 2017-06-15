@@ -63,7 +63,25 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services')], function () {
 
-				Route::get(LaravelLocalization::transRoute('routes.investment_services_potentials'), 'Ebtke\Front\Pages\InvestmentServicesController@landing')->name('InvestmentServicesPotentials');
+
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services_potentials')], function () {
+
+					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_geothermal'), 'Ebtke\Front\Pages\InvestmentServicesController@potentialsGeothermal')->name('InvestmentServicesPotentialsGeothermal');
+
+					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_bio_energy'), 'Ebtke\Front\Pages\InvestmentServicesController@potentialsBioEnergy')->name('InvestmentServicesPotentialsBioEnergy');
+
+					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_other'), 'Ebtke\Front\Pages\InvestmentServicesController@potentialsOther')->name('InvestmentServicesPotentialsOther');
+
+					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_conservation'), 'Ebtke\Front\Pages\InvestmentServicesController@potentialsEnergyConservation')->name('InvestmentServicesPotentialsEnergyConservation');
+				});
+
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.green_pages')], function () {
+
+					Route::get('/', 'Ebtke\Front\Pages\InvestmentServicesController@greenPages')->name('InvestmentServicesGreenPages');
+					
+				});
+
+				Route::get(LaravelLocalization::transRoute('routes.investment_services_procedure'), 'Ebtke\Front\Pages\InvestmentServicesController@procedure')->name('InvestmentServicesProcedure');
 			});
 
 			// TOOLS ROUTE

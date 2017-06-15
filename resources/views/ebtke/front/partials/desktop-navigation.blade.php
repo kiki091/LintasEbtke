@@ -57,15 +57,38 @@
             <a href='#'>{{ trans('navigation/menu.menu_investment_services')}}</a>
             <ul>
                 <li>
-                    <a href='#'>{{ trans('navigation/sub_menu.procedure') }}</a>
+                    <a href="{{ route('InvestmentServicesProcedure') }}">{{ trans('navigation/sub_menu.procedure') }}</a>
                     
                 </li>
                 <li>
-                    <a href="{{ route('InvestmentServicesPotentials') }}">{{ trans('navigation/sub_menu.potentials') }}</a>
-                    
+                    <a href="#">{{ trans('navigation/sub_menu.potentials') }}</a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('InvestmentServicesPotentialsGeothermal') }}">
+                                {{ trans('navigation/sub_menu.gheotermal') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('InvestmentServicesPotentialsBioEnergy') }}">
+                                {{ trans('navigation/sub_menu.bio_energy') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('InvestmentServicesPotentialsOther') }}">
+                                {{ trans('navigation/sub_menu.others') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('InvestmentServicesPotentialsEnergyConservation') }}">
+                                {{ trans('navigation/sub_menu.energy_conservation') }}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href=''>{{ trans('navigation/sub_menu.green_pages') }}</a>
+                    <a href="{{ route('InvestmentServicesGreenPages') }}">
+                        {{ trans('navigation/sub_menu.green_pages') }}
+                    </a>
                     
                 </li>
             </ul>

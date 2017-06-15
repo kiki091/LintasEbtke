@@ -51,3 +51,9 @@ define('PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/');
 // 
 define('TOOLS_FILE_DIRECTORY', 'bin/db/file/tools/');
 define('TOOLS_IMAGES_DIRECTORY', 'bin/db/images/tools/');
+
+
+
+// INVESTMENT SERVICES 
+// 
+define('INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY', 'bin/db/images/investment_services/green_pages/');
