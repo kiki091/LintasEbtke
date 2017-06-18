@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\WhitePaper', 'App\Repositories\Implementation\Front\WhitePaper');
         $this->app->bind('App\Repositories\Contracts\Front\Tools', 'App\Repositories\Implementation\Front\Tools');
         $this->app->bind('App\Repositories\Contracts\Front\InvestmentServices', 'App\Repositories\Implementation\Front\InvestmentServices');
+        $this->app->bind('App\Repositories\Contracts\Front\GreenPages', 'App\Repositories\Implementation\Front\GreenPages');
     }
 
     /**
@@ -53,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\WhitePaper',
             'App\Repositories\Contracts\Front\Tools',
             'App\Repositories\Contracts\Front\InvestmentServices',
+            'App\Repositories\Contracts\Front\GreenPages',
 
         );
     }

@@ -18,14 +18,8 @@ class InvestmentServicesController extends FrontController
     protected $investmentServices;
 
     const SEO_INVESTMENT_SERVICES_LANDING_KEY = 'investment-services:landing';
-
-    const SEO_INVESTMENT_SERVICES_GREEN_PAGES_KEY = 'investment-services-green-pages:landing';
     const SEO_INVESTMENT_SERVICES_PROCEDURE_KEY = 'investment-services-procesure:landing';
-    const SEO_INVESTMENT_SERVICES_GEOTHERMAL_KEY = 'investment-services-potentials:geothermal';
-    const SEO_INVESTMENT_SERVICES_BIO_ENERGY_KEY = 'investment-services-potentials:bio-energy';
-    const SEO_INVESTMENT_SERVICES_OTHER_KEY = 'investment-services-potentials:other';
-    const SEO_INVESTMENT_SERVICES_ENERGY_CONSERVATION_KEY = 'investment-services-potentials:energy-conservation';
-
+    
     const INVESTMENT_SERVICES_LANDING_REDIS_KEY = 'landing';
     const INVESTMENT_SERVICES_DETAIL_REDIS_KEY = 'detail';
 
@@ -88,104 +82,6 @@ class InvestmentServicesController extends FrontController
         return abort(404);
     }
 
-    /**
-     *
-     * Get Data Potensi Geothermal
-     * @param array
-     * @return array
-     */
-
-    public function potentialsGeothermal(Request $request)
-    {
-        
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_GEOTHERMAL_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.geothermal.landing';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
-
-
-    /**
-     *
-     * Get Data Potensi Bio Energy
-     * @param array
-     * @return array
-     */
-
-
-    public function potentialsBioEnergy(Request $request)
-    {
-        
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_BIO_ENERGY_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.bio-energy.landing';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
-
-
-    /**
-     *
-     * Get Data Potensi Other
-     * @param array
-     * @return array
-     */
-
-
-    public function potentialsOther(Request $request)
-    {
-        
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_OTHER_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.other.landing';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
-
-
-    /**
-     *
-     * Get Data Potensi Energy Conservation
-     * @param array
-     * @return array
-     */
-
-
-    public function EnergyConservation(Request $request)
-    {
-        
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_ENERGY_CONSERVATION_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.energy-conservation.landing';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
-
 
     /**
      *
@@ -210,26 +106,4 @@ class InvestmentServicesController extends FrontController
     }
 
 
-    /**
-     *
-     * Get Data Green Pages
-     * @param array
-     * @return array
-     */
-
-    public function greenPages(Request $request)
-    {
-        
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_GREEN_PAGES_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.green-pages.landing';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
 }
