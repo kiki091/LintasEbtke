@@ -50,115 +50,29 @@
             <div class="col-md-6">
                 <div class="default-after-banner-text">
                     <h1>{{ trans('pages/investment_services_page.green_pages') }}</h1>
-                    <h3>
+                    <!-- <h3>
                         CONNECT WITH GREEN PROFILES
-                    </h3>
+                    </h3> -->
                 </div>
             </div>
+            @if(isset($landing) && !empty($landing))
             <div class="col-md-12">
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
+                @foreach($landing as $key=> $val_landing)
+                    <div id="margin__centered" class="border__gray col-md-3 column sog-tile ">
                         <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_1.png') }}) "></div>
+                            <div class="photo-bg" style="background-image:url({{ $val_landing['thumbnail_url'] }}) "></div>
                             <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
+                                <h1>{{ $val_landing['office_name'] }}</h1>
+                                <h2>{!! $val_landing['introduction'] !!}</h2>
+                                <a href="{{ route('InvestmentServicesGreenPagesDetail',$val_landing['slug']) }}">
+                                    <span class="plush"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
-                        <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_2.jpg') }}) "></div>
-                            <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
-                        <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_3.jpg') }}) "></div>
-                            <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
-                        <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_4.jpg') }}) "></div>
-                            <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
-                        <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_5.jpg') }}) "></div>
-                            <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="margin__centered" class="border__gray col-md-2 column sog-tile ">
-                        <div style="height: 320px;">
-                            <div class="photo-bg" style="background-image:url({{ asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.'logo_6.jpg') }}) "></div>
-                            <div class="tile-text">
-                                <span class="subhead ng-binding">
-                                    Profile
-                                    <span class="type ng-binding">
-                                         Public sector
-                                    </span>
-                                </span>
-                                <h1>Danish Maritime Authority</h1>
-                                <h2>The Danish maritime cluster - Blue Denmark - holds a strong position within green shipping. Through energy efficient and environmentally...</h2>
-                                <span class="plush"></span>
-                            </div>
-                        </div>
-                    </div>
-
+                @endforeach
             </div>
+            @endif
         </div>
     </div>
 </section>

@@ -133,6 +133,66 @@ INSERT INTO `company_history_trans` VALUES (1,'en','Whats is lintas ?','LINTAS E
 UNLOCK TABLES;
 
 --
+-- Table structure for table `file_upload`
+--
+
+DROP TABLE IF EXISTS `file_upload`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `file_upload` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(60) DEFAULT NULL,
+  `filename` varchar(200) NOT NULL,
+  `is_active` int(1) DEFAULT NULL,
+  `order` int(3) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `filename_UNIQUE` (`filename`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file_upload`
+--
+
+LOCK TABLES `file_upload` WRITE;
+/*!40000 ALTER TABLE `file_upload` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file_upload` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `file_upload_trans`
+--
+
+DROP TABLE IF EXISTS `file_upload_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `file_upload_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `file_upload_id` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_file_upload_trans_1_idx` (`file_upload_id`),
+  CONSTRAINT `fk_file_upload_trans_1` FOREIGN KEY (`file_upload_id`) REFERENCES `file_upload` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file_upload_trans`
+--
+
+LOCK TABLES `file_upload_trans` WRITE;
+/*!40000 ALTER TABLE `file_upload_trans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file_upload_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `green_pges`
 --
 
@@ -142,6 +202,7 @@ DROP TABLE IF EXISTS `green_pges`;
 CREATE TABLE `green_pges` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `thumbnail` varchar(150) DEFAULT NULL,
+  `office_name` varchar(100) DEFAULT NULL,
   `slug` varchar(150) NOT NULL,
   `is_active` int(1) DEFAULT NULL,
   `order` int(3) DEFAULT NULL,
@@ -164,8 +225,36 @@ CREATE TABLE `green_pges` (
 
 LOCK TABLES `green_pges` WRITE;
 /*!40000 ALTER TABLE `green_pges` DISABLE KEYS */;
-INSERT INTO `green_pges` VALUES (1,'pt-asia-pragon.jpg','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL);
+INSERT INTO `green_pges` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `green_pges` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `green_pges_images`
+--
+
+DROP TABLE IF EXISTS `green_pges_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `green_pges_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(45) DEFAULT NULL,
+  `green_pges_id` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_green_pges_images_1_idx` (`green_pges_id`),
+  CONSTRAINT `fk_green_pges_images_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `green_pges_images`
+--
+
+LOCK TABLES `green_pges_images` WRITE;
+/*!40000 ALTER TABLE `green_pges_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `green_pges_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -199,7 +288,7 @@ CREATE TABLE `green_pges_trans` (
 
 LOCK TABLES `green_pges_trans` WRITE;
 /*!40000 ALTER TABLE `green_pges_trans` DISABLE KEYS */;
-INSERT INTO `green_pges_trans` VALUES (1,'id','Jalan Kiwi No. 25 Andir - Bandung,\nWest Java, Indonesia.','<p><b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.</p>','<p>\n<b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b> </p>\n1. Business consultant, \n2. Developer, \n3. Construction, \n4. Engineering Management Consultant, \n5. Assessement Engineering, \n6. Organic Farming\n<p>\nProyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering. </p>\n<p>\n<b>Produk/Jasa:</b></p>\n<p>\n(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan\n(2) Survei potensi energi terbarukan\n(3) Studi terkait RAN-GRK\n(4) Pengadaan dan pemasangan generator listrik\n(5) Pengadaan dan pemasangan EnMS (Energy Management System)\n(6) Audit energi di industri dan bangunan\n(7) Kajian akademis terhadap kebijakan dan aturan terkait energi\n(8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya\n</p>\n<p>\n<b>Rekam jejak:</b>\n</p>\n<p>\nPengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p>\n<p>\n1. Feasibility Study Industri PV (Photovoltaic), BPPT\n2. Pengembangan nilai tambah di bidang energi alternatif\n3. Survey Potensi Panasbumi Star Energi\n4. Survey Potensi Panasbumi di Sulawesi\n5. Studi Rencana  Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change\n6. Studi Kelayakan PLTMH Kabupaten Bantaeng\n7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk)\n8. Pemasanggan Lampu PJU tenaga surya di Maluku\n9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam\n10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai\n15. Studi Kelayakan Kincir Angin di Pangkal Pinang\n16. Studi Kelayakan Panasbumi di Aceh\n17. Studi Kelayakan Panasbumi di Jaboi, Sabang\n18. Studi Kelayakan Panasbumi di Sabang\n19. Audit Energi Sektor Industri Kimia dan Makanan\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,NULL,NULL),(2,'en','Kiwi Street No. 25 Andir - Bandung,\nWest Java, Indonesia.','<p> <b> PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields. </P>','<p>\n<b> PT ASIA PARAGON consists of several divisions which include: </b> </p>\n1. Business consultant,\n2. Developer,\n3. Construction,\n4. Engineering Management Consultants,\n5. Assessment Engineering,\n6. Organic Farming\n<p>\nEnergy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering. </p>\n<p>\n<b> Products / Services: </b> </p>\n<p>\n(1) Feasibility study, development and construction of power plant from renewable energy\n(2) Survey of potential renewable energy\n(3) Related studies of RAN-GRK\n(4) Procurement and installation of electrical generators\n(5) Procurement and installation of EnMS (Energy Management System)\n(6) Energy audits in industries and buildings\n(7) Academic review of energy-related policies and rules\n(8) Procurement and installation of energy saving lamps and solar powered lamps\n</p>\n<p>\n<b> Track record: </b>\n</p>\n<p>\nThe experiences of PT Asia Paragon related to the energy sector include: </p>\n<p>\n1. Feasibility Study of PV Industry (Photovoltaic), BPPT\n2. The development of added value in the field of alternative energy\n3. Survey of Potential Star Energy Geothermal\n4. Survey of Geothermal Potential in Sulawesi\n5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change\n6. Feasibility Study of PLTMH of Bantaeng Regency\n7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk)\n8. Pemasanggan PJU lamp solar power in Maluku\n9. PUSRI, Feasibility Study of Power Station and Steam\n10. Feasibility Study for Development of Electricity and Steam at Kujang Plant\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency\n15. Feasibility Study of Windmills in Pangkal Pinang\n16. Feasibility Study of Geothermal in Aceh\n17. Feasibility Study of Geothermal in Jaboi, Sabang\n18. Feasibility Study of Geothermal in Sabang\n19. Energy Audit of Chemical and Food Industry Sectors\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,NULL,NULL);
+INSERT INTO `green_pges_trans` VALUES (1,'id','Jalan Kiwi No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.','<p>\n<b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b> </p>\n1. Business consultant, \n2. Developer, \n3. Construction, \n4. Engineering Management Consultant, \n5. Assessement Engineering, \n6. Organic Farming\n<p>\nProyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering. </p>\n<p>\n<b>Produk/Jasa:</b></p>\n<p>\n(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan\n(2) Survei potensi energi terbarukan\n(3) Studi terkait RAN-GRK\n(4) Pengadaan dan pemasangan generator listrik\n(5) Pengadaan dan pemasangan EnMS (Energy Management System)\n(6) Audit energi di industri dan bangunan\n(7) Kajian akademis terhadap kebijakan dan aturan terkait energi\n(8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya\n</p>\n<p>\n<b>Rekam jejak:</b>\n</p>\n<p>\nPengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p>\n<p>\n1. Feasibility Study Industri PV (Photovoltaic), BPPT\n2. Pengembangan nilai tambah di bidang energi alternatif\n3. Survey Potensi Panasbumi Star Energi\n4. Survey Potensi Panasbumi di Sulawesi\n5. Studi Rencana  Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change\n6. Studi Kelayakan PLTMH Kabupaten Bantaeng\n7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk)\n8. Pemasanggan Lampu PJU tenaga surya di Maluku\n9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam\n10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai\n15. Studi Kelayakan Kincir Angin di Pangkal Pinang\n16. Studi Kelayakan Panasbumi di Aceh\n17. Studi Kelayakan Panasbumi di Jaboi, Sabang\n18. Studi Kelayakan Panasbumi di Sabang\n19. Audit Energi Sektor Industri Kimia dan Makanan\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,NULL,NULL),(2,'en','Kiwi Street No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b> PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields. ','<p>\n<b> PT ASIA PARAGON consists of several divisions which include: </b> </p>\n1. Business consultant,\n2. Developer,\n3. Construction,\n4. Engineering Management Consultants,\n5. Assessment Engineering,\n6. Organic Farming\n<p>\nEnergy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering. </p>\n<p>\n<b> Products / Services: </b> </p>\n<p>\n(1) Feasibility study, development and construction of power plant from renewable energy\n(2) Survey of potential renewable energy\n(3) Related studies of RAN-GRK\n(4) Procurement and installation of electrical generators\n(5) Procurement and installation of EnMS (Energy Management System)\n(6) Energy audits in industries and buildings\n(7) Academic review of energy-related policies and rules\n(8) Procurement and installation of energy saving lamps and solar powered lamps\n</p>\n<p>\n<b> Track record: </b>\n</p>\n<p>\nThe experiences of PT Asia Paragon related to the energy sector include: </p>\n<p>\n1. Feasibility Study of PV Industry (Photovoltaic), BPPT\n2. The development of added value in the field of alternative energy\n3. Survey of Potential Star Energy Geothermal\n4. Survey of Geothermal Potential in Sulawesi\n5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change\n6. Feasibility Study of PLTMH of Bantaeng Regency\n7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk)\n8. Pemasanggan PJU lamp solar power in Maluku\n9. PUSRI, Feasibility Study of Power Station and Steam\n10. Feasibility Study for Development of Electricity and Steam at Kujang Plant\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency\n15. Feasibility Study of Windmills in Pangkal Pinang\n16. Feasibility Study of Geothermal in Aceh\n17. Feasibility Study of Geothermal in Jaboi, Sabang\n18. Feasibility Study of Geothermal in Sabang\n19. Energy Audit of Chemical and Food Industry Sectors\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,NULL,NULL);
 /*!40000 ALTER TABLE `green_pges_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -908,4 +997,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-18  9:05:45
+-- Dump completed on 2017-06-18 20:30:34

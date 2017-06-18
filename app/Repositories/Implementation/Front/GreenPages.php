@@ -78,7 +78,7 @@ class GreenPages extends BaseImplementation implements GreenPagesInterface
     protected function greenPages($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
     {
         $greenPages = $this->greenPages
-            ->with(['translation', 'translations']);
+            ->with(['translation', 'translations', 'images']);
 
         if(isset($params['slug'])) {
             $greenPages->slug($params['slug']);

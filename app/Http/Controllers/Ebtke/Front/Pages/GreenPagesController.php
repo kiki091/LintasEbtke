@@ -65,7 +65,7 @@ class GreenPagesController extends FrontController
     public function detail($slug)
     {
         
-        $data['landing'] = $this->greenPages->getDetail($slug);
+        $data['detail'] = $this->greenPages->getDetail($slug);
 
         $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.green-pages.detail';
         

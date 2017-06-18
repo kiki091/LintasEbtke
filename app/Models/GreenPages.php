@@ -36,6 +36,14 @@ class GreenPages extends BaseModel
         return $this->belongsTo('App\Models\GreenPagesTrans', 'id', 'green_pges_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany('App\Models\GreenPagesImages', 'green_pges_id', 'id');
+    }
+
     
     /***************** Scope *****************/
 

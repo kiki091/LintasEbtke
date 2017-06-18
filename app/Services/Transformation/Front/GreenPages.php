@@ -42,6 +42,7 @@ class GreenPages
                 'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
                 'thumbnail_url' => isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '',
                 
+                'office_name' => isset($data['office_name']) ? $data['office_name'] : '',
                 'slug' => isset($data['slug']) ? $data['slug'] : '',
                 'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],400) : '',
                 'created_at' => isset($data['created_at']) ? date('d/m/Y g:i:s A', strtotime($data['created_at'])) : '',
@@ -62,6 +63,7 @@ class GreenPages
     {
         $dataTransform['locale'] = isset($data['translation']['locale']) ? $data['translation']['locale'] : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
+        $dataTransform['office_name'] = isset($data['office_name']) ? $data['office_name'] : '';
         $dataTransform['slug'] = isset($data['slug']) ? $data['slug'] : '';
         $dataTransform['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : '';
         $dataTransform['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : '';
@@ -74,8 +76,6 @@ class GreenPages
         $dataTransform['meta_description'] = isset($data['translation']['meta_description']) ? $data['translation']['meta_description'] : '';
         $dataTransform['created_at_home'] = isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '';
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
-
-        $dataTransform['related']   = $this->getYouMighAlsoLike($data['related']);
 
         return $dataTransform;
     }
