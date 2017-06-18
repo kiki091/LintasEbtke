@@ -18,7 +18,6 @@ class InvestmentServicesController extends FrontController
     protected $investmentServices;
 
     const SEO_INVESTMENT_SERVICES_LANDING_KEY = 'investment-services:landing';
-    const SEO_INVESTMENT_SERVICES_PROCEDURE_KEY = 'investment-services-procesure:landing';
     
     const INVESTMENT_SERVICES_LANDING_REDIS_KEY = 'landing';
     const INVESTMENT_SERVICES_DETAIL_REDIS_KEY = 'detail';
@@ -72,29 +71,6 @@ class InvestmentServicesController extends FrontController
         $data['investment_services'] = $this->investmentServices->getDetail(["slug" => $slug, "key" => self::INVESTMENT_SERVICES_DETAIL_REDIS_KEY]);
         
         $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.detail';
-        
-        if(view()->exists($blade)) {
-        
-            return view($blade, $data);
-
-        }
-
-        return abort(404);
-    }
-
-
-    /**
-     *
-     * Get Data procedure
-     * @param array
-     * @return array
-     */
-
-    public function procedure(Request $request)
-    {
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_PROCEDURE_KEY]);
-
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.procedure.landing';
         
         if(view()->exists($blade)) {
         
