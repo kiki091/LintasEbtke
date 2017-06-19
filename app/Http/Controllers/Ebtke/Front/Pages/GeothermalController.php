@@ -17,6 +17,7 @@ class GeothermalController extends FrontController
     protected $mainBanner;
     //protected $geothermal;
     const SEO_INVESTMENT_SERVICES_GEOTHERMAL_KEY = 'potentials:geothermal';
+    const SEO_INVESTMENT_SERVICES_GEOTHERMAL_MAPS_KEY = 'potentials:geothermal-maps';
 
 	public function __construct(MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)
     {
@@ -29,7 +30,29 @@ class GeothermalController extends FrontController
 
     /**
      *
-     * Get Data Green Pages
+     * Get Maps Data Geothermal Pages
+     * @param array
+     * @return array
+     */
+
+    public function landing(Request $request)
+    {
+        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_GEOTHERMAL_KEY]);
+
+        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.geothermal.landing';
+        
+        if(view()->exists($blade)) {
+        
+            return view($blade, $data);
+
+        }
+
+        return abort(404);
+    }
+
+    /**
+     *
+     * Get Maps Data Geothermal Pages
      * @param array
      * @return array
      */
@@ -37,7 +60,7 @@ class GeothermalController extends FrontController
     public function maps(Request $request)
     {
         
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_GEOTHERMAL_KEY]);
+        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_INVESTMENT_SERVICES_GEOTHERMAL_MAPS_KEY]);
 
         $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.geothermal.maps';
         

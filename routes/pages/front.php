@@ -66,14 +66,29 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get('/', 'Ebtke\Front\Pages\InvestmentServicesController@landing')->name('InvestmentServicesLanding');
 				Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\InvestmentServicesController@detail')->name('InvestmentServicesDetail');
 
+				// POTENTIALS ROUTE
 
 				Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services_potentials')], function () {
 
-					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_geothermal'), 'Ebtke\Front\Pages\GeothermalController@maps')->name('InvestmentServicesPotentialsGeothermal');
+					// GEOTHERMAL ROUTE
+
+					Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_potentials_geothermal')], function () {
+
+						Route::get('/', 'Ebtke\Front\Pages\GeothermalController@landing')->name('InvestmentServicesPotentialsGeothermalLanding');
+
+						Route::get('maps', 'Ebtke\Front\Pages\GeothermalController@maps')->name('InvestmentServicesPotentialsGeothermal');
+
+					});
+
+					// BIO ENERGY ROUTE
 
 					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_bio_energy'), 'Ebtke\Front\Pages\BioEnergyController@maps')->name('InvestmentServicesPotentialsBioEnergy');
 
+					//OTHER ROUTE
+
 					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_other'), 'Ebtke\Front\Pages\PotentialController@other')->name('InvestmentServicesPotentialsOther');
+
+					// ENERGY CONSERVATION ROUTE
 
 					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_conservation'), 'Ebtke\Front\Pages\EnergyConservationController@maps')->name('InvestmentServicesPotentialsEnergyConservation');
 				});
