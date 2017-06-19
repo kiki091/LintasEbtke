@@ -29,7 +29,7 @@
                   {{ trans('pages/investment_services_page.title')}} {{ trans('pages/investment_services_page.potentials.geothermal')}}
               </h3>
   			      <div class="wrapper">
-                  <iframe src="http://docs.google.com/gview?url={{ asset(COMPANY_HISTORY_FILE_DIRECTORY.'SEKILAS-TENTANG-LINTAS-EBTKE') }}&embedded=true"></iframe>
+                  <iframe id="gDocsPreview" class="sop__detail__preview" src="https://docs.google.com/gview?url={{ asset(COMPANY_HISTORY_FILE_DIRECTORY.'SEKILAS-TENTANG-LINTAS-EBTKE.pdf') }}&embedded=true"></iframe>
   	          </div>
     	   </div>
         </div>
