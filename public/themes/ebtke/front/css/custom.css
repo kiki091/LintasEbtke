@@ -1522,3 +1522,23 @@ span.plush {
     border-width: 26px;
     margin-left: -30px;
 }
+
+iframe {
+    border: none;
+}
+
+.geothermal__detail__body {
+    background-color: #e9e9e9;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.geothermal__detail__preview {
+    height: calc(100vh - 95px);
+    width: 100%;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -24,12 +24,20 @@
 	<!-- Begin page header-->
     <div class="container">
     	<div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="default-after-banner-text">
+                <h1>
+                    {{ trans('pages/investment_services_page.title')}} 
+                </h1>
+                <h3>
+                    {{ trans('pages/investment_services_page.potentials.geothermal')}}
+                </h3>
+            </div>
+        </div>
     		<div class="col-md-12">
-              <h3 class="latestnews__title text-center">
-                  {{ trans('pages/investment_services_page.title')}} {{ trans('pages/investment_services_page.potentials.geothermal')}}
-              </h3>
-  			      <div class="wrapper">
-                  <iframe id="gDocsPreview" class="sop__detail__preview" src="https://docs.google.com/gview?url={{ asset(COMPANY_HISTORY_FILE_DIRECTORY.'SEKILAS-TENTANG-LINTAS-EBTKE.pdf') }}&embedded=true"></iframe>
+  			      <div class="geothermal__detail__body">
+                  <iframe class="geothermal__detail__preview" src="https://docs.google.com/gview?url={{ asset(COMPANY_HISTORY_FILE_DIRECTORY.'SEKILAS-TENTANG-LINTAS-EBTKE.pdf') }}&embedded=true"></iframe>
   	          </div>
     	   </div>
         </div>
