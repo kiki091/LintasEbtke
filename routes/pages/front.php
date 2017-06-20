@@ -76,7 +76,7 @@ Route::group(['middleware' => ['web']], function ()
 
 						Route::get('/', 'Ebtke\Front\Pages\GeothermalController@landing')->name('InvestmentServicesPotentialsGeothermalLanding');
 
-						Route::get('maps', 'Ebtke\Front\Pages\GeothermalController@maps')->name('InvestmentServicesPotentialsGeothermal');
+						Route::get(LaravelLocalization::transRoute('routes.maps'), 'Ebtke\Front\Pages\GeothermalController@maps')->name('InvestmentServicesPotentialsGeothermal');
 
 					});
 

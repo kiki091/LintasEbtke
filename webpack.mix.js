@@ -39,6 +39,7 @@ mix.styles([
 
 mix.scripts([
 	'public/themes/ebtke/front/js/jquery-2.1.1.js',
+	'public/themes/ebtke/front/js/jquery.mixitup.min.js',
 	/*'public/themes/ebtke/front/js/maps/jquery-jvectormap-2.0.3.min.js',
 	'public/themes/ebtke/front/js/maps/jquery-jvectormap-us-aea-en.js',
 	'public/themes/ebtke/front/js/maps/jquery-jvectormap-asia-merc.js',

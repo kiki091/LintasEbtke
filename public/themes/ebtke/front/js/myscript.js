@@ -138,11 +138,6 @@ jQuery(document).ready(function() {
 });
 
 
-
-
-
-
-
 /*-----------------------------------------------------------------------------------*/
 /*	BLOG MIN HEIGHT
 /*-----------------------------------------------------------------------------------*/
@@ -161,11 +156,6 @@ function blogHeight(){
 	}
 	
 }
-
-
-
-
-
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -187,9 +177,6 @@ function contactHeight(){
 	
 
 }
-
-
-
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -257,4 +244,41 @@ jQuery(document).ready(function($){
             tabs.parent('.cd-tabs').removeClass('is-ended');
         }
     }
+});
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	GREEN PAGES SORTIR JS
+/*-----------------------------------------------------------------------------------*/
+
+$(document).ready(function() {
+
+	$(function () {
+
+		var data_target = $('.filter').find('data-filter').val()
+		console.log(data_target)
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#green__pages__list').mixItUp({
+					selectors: {
+		  			  	target: '.green__pages',
+		  			  	filter: '.filter',
+		  		  	},
+		  		  	load: {
+		    		  	filter: this.data_target // show app tab on first load
+		    		}     
+				});								
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+	});
 });

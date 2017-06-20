@@ -57,8 +57,26 @@
             </div>
             @if(isset($landing) && !empty($landing))
             <div class="col-md-12">
+                <ul id="filters" class="clearfix">
+
+                   
+                        <li>
+                            <span class="filter active" data-filter=".{{ trans('pages/green_page.slug_cat_1') }}, .{{ trans('pages/green_page.slug_cat_2') }}, .{{ trans('pages/green_page.slug_cat_3') }}, .{{ trans('pages/green_page.slug_cat_4') }}, .{{ trans('pages/green_page.slug_cat_5') }}">
+                                {{ trans('pages/green_page.all_cat') }}
+                            </span>
+                        </li>
+                        @foreach($landing as $key=> $val_cat)
+                        <li>
+                            <span class="filter" data-filter=".{{ $val_cat['slug_category'] }}">
+                                {{ $val_cat['category'] }}
+                            </span>
+                        </li>
+                        @endforeach
+                </ul>
+                <div id="green__pages__list">
                 @foreach($landing as $key=> $val_landing)
-                    <div id="margin__centered" class="border__gray col-md-3 column sog-tile ">
+                <div class="col-md-3 green__pages {{ $val_landing['slug_category'] }}" data-cat="{{ $val_landing['slug_category'] }}">
+                    <div id="margin__centered" class="border__gray column sog-tile">
                         <div style="height: 320px;">
                             <div class="photo-bg" style="background-image:url({{ $val_landing['thumbnail_url'] }}) "></div>
                             <div class="tile-text">
@@ -70,7 +88,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 @endforeach
+                </div>
             </div>
             @endif
         </div>

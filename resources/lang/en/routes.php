@@ -35,4 +35,6 @@
 		'tools'=> 'tools',
 
 		'green_pages'=> 'green-pages',
+
+		'maps'	=> 'maps',
 	];

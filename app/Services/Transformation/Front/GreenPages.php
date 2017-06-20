@@ -44,11 +44,12 @@ class GreenPages
                 
                 'office_name' => isset($data['office_name']) ? $data['office_name'] : '',
                 'slug' => isset($data['slug']) ? $data['slug'] : '',
-                'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],400) : '',
+                'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],150) : '',
                 'created_at' => isset($data['created_at']) ? date('d/m/Y g:i:s A', strtotime($data['created_at'])) : '',
                 'created_at_home' => isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '',
                 'days_ago' => isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '',
                 'category'  => isset($data['category']['translation']['title']) ? $data['category']['translation']['title'] : '',
+                'slug_category'  => isset($data['category']['translation']['slug']) ? $data['category']['translation']['slug'] : '',
             ];
         }, $data);
 

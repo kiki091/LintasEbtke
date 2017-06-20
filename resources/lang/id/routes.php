@@ -36,4 +36,6 @@
 		'tools'=> 'aplikasi',
 
 		'green_pages'=> 'halaman-hijau',
+
+		'maps'	=> 'peta',
 	];
