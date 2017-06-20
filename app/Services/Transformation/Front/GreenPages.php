@@ -48,9 +48,23 @@ class GreenPages
                 'created_at' => isset($data['created_at']) ? date('d/m/Y g:i:s A', strtotime($data['created_at'])) : '',
                 'created_at_home' => isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '',
                 'days_ago' => isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '',
+                'category'  => isset($data['category']['translation']['title']) ? $data['category']['translation']['title'] : '',
             ];
         }, $data);
-        
+
+        return $dataTransform;
+    }
+
+    /**
+     * Set Green Pages Category Transformation
+     * @param $data
+     * @return array
+     */
+    
+    protected function getGreenPagesCategory($data)
+    {
+        $dataTransform['title'] = isset($data['translation']['title']) ? $data['translation']['title'] : '';
+
         return $dataTransform;
     }
 

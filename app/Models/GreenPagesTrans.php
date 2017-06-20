@@ -9,7 +9,7 @@ use App\Models\BaseModel;
  */
 class GreenPagesTrans extends BaseModel
 {
-    protected $table = 'green_pges_trans';
+    protected $table = 'green_pages_trans';
 
     public $timestamps = true;
 

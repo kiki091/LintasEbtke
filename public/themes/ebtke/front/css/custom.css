@@ -1559,8 +1559,8 @@ iframe {
 .map-cta:before {
     content: "";
     display: inline-block;
-    width: 38px;
-    height: 37px;
+    width: 32px;
+    height: 31px;
     background: url(../../svg/map-icon.svg) center center no-repeat;
     position: relative;
     top: 0;

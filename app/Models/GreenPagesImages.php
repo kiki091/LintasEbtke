@@ -9,7 +9,7 @@ use App\Models\BaseModel;
  */
 class GreenPagesImages extends BaseModel
 {
-    protected $table = 'green_pges_images';
+    protected $table = 'green_pages_images';
 
     public $timestamps = true;
 

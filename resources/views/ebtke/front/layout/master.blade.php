@@ -5,7 +5,7 @@
 	</head>
 
 	<body>
-		<!-- PRELOADER -->
+	
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
@@ -16,10 +16,21 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 
-		<img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader-full.png') }}" alt="Loading Page" title="Loading Page" />
+		<!-- PRELOADER -->
+		<!-- <img id="preloader" src="{{ asset('themes/ebtke/front/images/preloader-full.png') }}" alt="Loading Page" title="Loading Page" />
+		<div class="preloader_hide" style="min-height: 1000px;"> -->
 
 		<!-- //PRELOADER -->
-		<div class="preloader_hide" style="min-height: 1000px;">
+		<div id="loader-wrapper">
+		    <div id="loader"></div>
+		 
+		    <div class="loader-section section-left"></div>
+		    <div class="loader-section section-right"></div>
+		 
+		</div>
+		<!-- //PRELOADER -->
+
+		<div>
 
 			<!-- PAGE -->
 			@include('ebtke.front.partials.top-menu')

@@ -6,7 +6,7 @@ use App\Models\BaseModel;
 
 class GreenPages extends BaseModel
 {
-	protected $table = 'green_pges';
+	protected $table = 'green_pages';
     public $timestamps = false;
 
     protected $fillable = [
@@ -25,7 +25,7 @@ class GreenPages extends BaseModel
      */
     public function category()
     {
-        return $this->hasMany('App\Models\GreenPagesCategory', 'green_pages_category_id', 'id');
+        return $this->belongsTo('App\Models\GreenPagesCategory', 'green_pages_category_id', 'id')->with('translation');
     }
 
     
