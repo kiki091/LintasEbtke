@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke
+-- Host: 127.0.0.1    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -193,13 +193,13 @@ LOCK TABLES `file_upload_trans` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `green_pges`
+-- Table structure for table `green_pages`
 --
 
-DROP TABLE IF EXISTS `green_pges`;
+DROP TABLE IF EXISTS `green_pages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `green_pges` (
+CREATE TABLE `green_pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `thumbnail` varchar(150) DEFAULT NULL,
   `office_name` varchar(100) DEFAULT NULL,
@@ -214,29 +214,90 @@ CREATE TABLE `green_pges` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(10) DEFAULT NULL,
+  `green_pages_category_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `slug_UNIQUE` (`slug`)
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  KEY `greeen_pages_category_idx` (`green_pages_category_id`),
+  CONSTRAINT `greeen_pages_category` FOREIGN KEY (`green_pages_category_id`) REFERENCES `green_pages_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `green_pges`
+-- Dumping data for table `green_pages`
 --
 
-LOCK TABLES `green_pges` WRITE;
-/*!40000 ALTER TABLE `green_pges` DISABLE KEYS */;
-INSERT INTO `green_pges` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL);
-/*!40000 ALTER TABLE `green_pges` ENABLE KEYS */;
+LOCK TABLES `green_pages` WRITE;
+/*!40000 ALTER TABLE `green_pages` DISABLE KEYS */;
+INSERT INTO `green_pages` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `green_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `green_pges_images`
+-- Table structure for table `green_pages_category`
 --
 
-DROP TABLE IF EXISTS `green_pges_images`;
+DROP TABLE IF EXISTS `green_pages_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `green_pges_images` (
+CREATE TABLE `green_pages_category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `is_active` int(1) NOT NULL,
+  `order` int(2) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `green_pages_category`
+--
+
+LOCK TABLES `green_pages_category` WRITE;
+/*!40000 ALTER TABLE `green_pages_category` DISABLE KEYS */;
+INSERT INTO `green_pages_category` VALUES (1,1,1,NULL,NULL),(2,1,2,NULL,NULL),(3,1,3,NULL,NULL),(4,1,4,NULL,NULL),(5,1,5,NULL,NULL);
+/*!40000 ALTER TABLE `green_pages_category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `green_pages_category_trans`
+--
+
+DROP TABLE IF EXISTS `green_pages_category_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `green_pages_category_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) DEFAULT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `slug` varchar(200) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `green_pages_category_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_green_cat_1_idx` (`green_pages_category_id`),
+  CONSTRAINT `fk_green_cat_1` FOREIGN KEY (`green_pages_category_id`) REFERENCES `green_pages_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `green_pages_category_trans`
+--
+
+LOCK TABLES `green_pages_category_trans` WRITE;
+/*!40000 ALTER TABLE `green_pages_category_trans` DISABLE KEYS */;
+INSERT INTO `green_pages_category_trans` VALUES (1,'id','Penyedia jasa konsultan teknik','penyedia-jasa-konsultan-teknik',NULL,NULL,1),(2,'en','Technical consultant services provider','technical-consultant-services-provider',NULL,NULL,1),(3,'id','Penyedia jasa konstruksi (kontraktor)','penyedia-jasa-konstruksi',NULL,NULL,2),(4,'en','Construction service provider','construction-service-provider',NULL,NULL,2),(5,'id','Perusahaan manufaktur','perusahaan-manufaktur',NULL,NULL,3),(6,'en','Manufacturing company','manufacturing-company',NULL,NULL,3),(7,'id','Penyedia jasa pengadaan','penyedia-jasa-pengadaan',NULL,NULL,4),(8,'en','Providers of procurement services','providers-of-procurement-services',NULL,NULL,4),(9,'id','Lembaga keuangan','lembaga-keuangan',NULL,NULL,5),(10,'en','Financial institutions','financial-institutions',NULL,NULL,5);
+/*!40000 ALTER TABLE `green_pages_category_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `green_pages_images`
+--
+
+DROP TABLE IF EXISTS `green_pages_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `green_pages_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(45) DEFAULT NULL,
   `green_pges_id` int(10) DEFAULT NULL,
@@ -244,27 +305,27 @@ CREATE TABLE `green_pges_images` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_green_pges_images_1_idx` (`green_pges_id`),
-  CONSTRAINT `fk_green_pges_images_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_green_pges_images_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `green_pges_images`
+-- Dumping data for table `green_pages_images`
 --
 
-LOCK TABLES `green_pges_images` WRITE;
-/*!40000 ALTER TABLE `green_pges_images` DISABLE KEYS */;
-/*!40000 ALTER TABLE `green_pges_images` ENABLE KEYS */;
+LOCK TABLES `green_pages_images` WRITE;
+/*!40000 ALTER TABLE `green_pages_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `green_pages_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `green_pges_trans`
+-- Table structure for table `green_pages_trans`
 --
 
-DROP TABLE IF EXISTS `green_pges_trans`;
+DROP TABLE IF EXISTS `green_pages_trans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `green_pges_trans` (
+CREATE TABLE `green_pages_trans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `locale` varchar(2) DEFAULT NULL,
   `address` text,
@@ -278,18 +339,18 @@ CREATE TABLE `green_pges_trans` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_green_pges_trans_1_idx` (`green_pges_id`),
-  CONSTRAINT `fk_green_pges_trans_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_green_pges_trans_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `green_pges_trans`
+-- Dumping data for table `green_pages_trans`
 --
 
-LOCK TABLES `green_pges_trans` WRITE;
-/*!40000 ALTER TABLE `green_pges_trans` DISABLE KEYS */;
-INSERT INTO `green_pges_trans` VALUES (1,'id','Jalan Kiwi No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.','<p>\n<b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b> </p>\n1. Business consultant, \n2. Developer, \n3. Construction, \n4. Engineering Management Consultant, \n5. Assessement Engineering, \n6. Organic Farming\n<p>\nProyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering. </p>\n<p>\n<b>Produk/Jasa:</b></p>\n<p>\n(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan\n(2) Survei potensi energi terbarukan\n(3) Studi terkait RAN-GRK\n(4) Pengadaan dan pemasangan generator listrik\n(5) Pengadaan dan pemasangan EnMS (Energy Management System)\n(6) Audit energi di industri dan bangunan\n(7) Kajian akademis terhadap kebijakan dan aturan terkait energi\n(8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya\n</p>\n<p>\n<b>Rekam jejak:</b>\n</p>\n<p>\nPengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p>\n<p>\n1. Feasibility Study Industri PV (Photovoltaic), BPPT\n2. Pengembangan nilai tambah di bidang energi alternatif\n3. Survey Potensi Panasbumi Star Energi\n4. Survey Potensi Panasbumi di Sulawesi\n5. Studi Rencana  Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change\n6. Studi Kelayakan PLTMH Kabupaten Bantaeng\n7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk)\n8. Pemasanggan Lampu PJU tenaga surya di Maluku\n9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam\n10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai\n15. Studi Kelayakan Kincir Angin di Pangkal Pinang\n16. Studi Kelayakan Panasbumi di Aceh\n17. Studi Kelayakan Panasbumi di Jaboi, Sabang\n18. Studi Kelayakan Panasbumi di Sabang\n19. Audit Energi Sektor Industri Kimia dan Makanan\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,NULL,NULL),(2,'en','Kiwi Street No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b> PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields. ','<p>\n<b> PT ASIA PARAGON consists of several divisions which include: </b> </p>\n1. Business consultant,\n2. Developer,\n3. Construction,\n4. Engineering Management Consultants,\n5. Assessment Engineering,\n6. Organic Farming\n<p>\nEnergy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering. </p>\n<p>\n<b> Products / Services: </b> </p>\n<p>\n(1) Feasibility study, development and construction of power plant from renewable energy\n(2) Survey of potential renewable energy\n(3) Related studies of RAN-GRK\n(4) Procurement and installation of electrical generators\n(5) Procurement and installation of EnMS (Energy Management System)\n(6) Energy audits in industries and buildings\n(7) Academic review of energy-related policies and rules\n(8) Procurement and installation of energy saving lamps and solar powered lamps\n</p>\n<p>\n<b> Track record: </b>\n</p>\n<p>\nThe experiences of PT Asia Paragon related to the energy sector include: </p>\n<p>\n1. Feasibility Study of PV Industry (Photovoltaic), BPPT\n2. The development of added value in the field of alternative energy\n3. Survey of Potential Star Energy Geothermal\n4. Survey of Geothermal Potential in Sulawesi\n5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change\n6. Feasibility Study of PLTMH of Bantaeng Regency\n7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk)\n8. Pemasanggan PJU lamp solar power in Maluku\n9. PUSRI, Feasibility Study of Power Station and Steam\n10. Feasibility Study for Development of Electricity and Steam at Kujang Plant\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency\n15. Feasibility Study of Windmills in Pangkal Pinang\n16. Feasibility Study of Geothermal in Aceh\n17. Feasibility Study of Geothermal in Jaboi, Sabang\n18. Feasibility Study of Geothermal in Sabang\n19. Energy Audit of Chemical and Food Industry Sectors\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,NULL,NULL);
-/*!40000 ALTER TABLE `green_pges_trans` ENABLE KEYS */;
+LOCK TABLES `green_pages_trans` WRITE;
+/*!40000 ALTER TABLE `green_pages_trans` DISABLE KEYS */;
+INSERT INTO `green_pages_trans` VALUES (1,'id','Jalan Kiwi No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.','<p>\n<b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b> </p>\n1. Business consultant, \n2. Developer, \n3. Construction, \n4. Engineering Management Consultant, \n5. Assessement Engineering, \n6. Organic Farming\n<p>\nProyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering. </p>\n<p>\n<b>Produk/Jasa:</b></p>\n<p>\n(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan\n(2) Survei potensi energi terbarukan\n(3) Studi terkait RAN-GRK\n(4) Pengadaan dan pemasangan generator listrik\n(5) Pengadaan dan pemasangan EnMS (Energy Management System)\n(6) Audit energi di industri dan bangunan\n(7) Kajian akademis terhadap kebijakan dan aturan terkait energi\n(8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya\n</p>\n<p>\n<b>Rekam jejak:</b>\n</p>\n<p>\nPengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p>\n<p>\n1. Feasibility Study Industri PV (Photovoltaic), BPPT\n2. Pengembangan nilai tambah di bidang energi alternatif\n3. Survey Potensi Panasbumi Star Energi\n4. Survey Potensi Panasbumi di Sulawesi\n5. Studi Rencana  Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change\n6. Studi Kelayakan PLTMH Kabupaten Bantaeng\n7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk)\n8. Pemasanggan Lampu PJU tenaga surya di Maluku\n9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam\n10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai\n15. Studi Kelayakan Kincir Angin di Pangkal Pinang\n16. Studi Kelayakan Panasbumi di Aceh\n17. Studi Kelayakan Panasbumi di Jaboi, Sabang\n18. Studi Kelayakan Panasbumi di Sabang\n19. Audit Energi Sektor Industri Kimia dan Makanan\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,NULL,NULL),(2,'en','Kiwi Street No. 25 Andir - Bandung,\nWest Java, Indonesia.','<b> PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields. ','<p>\n<b> PT ASIA PARAGON consists of several divisions which include: </b> </p>\n1. Business consultant,\n2. Developer,\n3. Construction,\n4. Engineering Management Consultants,\n5. Assessment Engineering,\n6. Organic Farming\n<p>\nEnergy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering. </p>\n<p>\n<b> Products / Services: </b> </p>\n<p>\n(1) Feasibility study, development and construction of power plant from renewable energy\n(2) Survey of potential renewable energy\n(3) Related studies of RAN-GRK\n(4) Procurement and installation of electrical generators\n(5) Procurement and installation of EnMS (Energy Management System)\n(6) Energy audits in industries and buildings\n(7) Academic review of energy-related policies and rules\n(8) Procurement and installation of energy saving lamps and solar powered lamps\n</p>\n<p>\n<b> Track record: </b>\n</p>\n<p>\nThe experiences of PT Asia Paragon related to the energy sector include: </p>\n<p>\n1. Feasibility Study of PV Industry (Photovoltaic), BPPT\n2. The development of added value in the field of alternative energy\n3. Survey of Potential Star Energy Geothermal\n4. Survey of Geothermal Potential in Sulawesi\n5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change\n6. Feasibility Study of PLTMH of Bantaeng Regency\n7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk)\n8. Pemasanggan PJU lamp solar power in Maluku\n9. PUSRI, Feasibility Study of Power Station and Steam\n10. Feasibility Study for Development of Electricity and Steam at Kujang Plant\n11. PDT Sollar Cell Sulawesi\n12. PDT Sollar Cell Jatim\n13. PDT Sollar Cell Bali\n14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency\n15. Feasibility Study of Windmills in Pangkal Pinang\n16. Feasibility Study of Geothermal in Aceh\n17. Feasibility Study of Geothermal in Jaboi, Sabang\n18. Feasibility Study of Geothermal in Sabang\n19. Energy Audit of Chemical and Food Industry Sectors\n</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,NULL,NULL);
+/*!40000 ALTER TABLE `green_pages_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -997,4 +1058,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-18 20:30:34
+-- Dump completed on 2017-06-20 12:52:04

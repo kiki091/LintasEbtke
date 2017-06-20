@@ -23,6 +23,15 @@ class GreenPages extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function category()
+    {
+        return $this->hasMany('App\Models\GreenPagesCategory', 'green_pages_category_id', 'id');
+    }
+
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function translations()
     {
         return $this->hasMany('App\Models\GreenPagesTrans', 'green_pges_id', 'id');

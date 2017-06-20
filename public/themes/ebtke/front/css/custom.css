@@ -1542,3 +1542,36 @@ iframe {
     -ms-user-select: none;
     user-select: none;
 }
+
+.default-after-banner-text h3:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.map-cta a{ text-decoration: none; }
+.map-cta a:hover{ text-decoration: none; }
+
+.map-cta:before {
+    content: "";
+    display: inline-block;
+    width: 38px;
+    height: 37px;
+    background: url(../../svg/map-icon.svg) center center no-repeat;
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    -moz-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    -o-transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+    transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
+}
+
+.map-cta span {
+    display: table-cell;
+    vertical-align: middle;
+}
