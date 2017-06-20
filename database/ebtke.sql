@@ -228,7 +228,7 @@ CREATE TABLE `green_pages` (
 
 LOCK TABLES `green_pages` WRITE;
 /*!40000 ALTER TABLE `green_pages` DISABLE KEYS */;
-INSERT INTO `green_pages` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL,NULL);
+INSERT INTO `green_pages` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `green_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1058,4 +1058,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-20 12:52:04
+-- Dump completed on 2017-06-20 18:53:48
