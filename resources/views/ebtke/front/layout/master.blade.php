@@ -37,7 +37,7 @@
 			@include('ebtke.front.partials.menu')
 			
 			@yield('content')
-
+			@include('ebtke.front.partials.contact_us')
 			@include('ebtke.front.partials.footer')
 		</div>
 		
