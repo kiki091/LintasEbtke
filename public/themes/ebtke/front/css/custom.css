@@ -7,6 +7,23 @@
     display: none;
     visibility: hidden;
 }
+
+.introduction__content {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    height: auto;
+    background: #eee;
+}
+
+.introduction__content a{
+    text-decoration: none;
+}
+.introduction__content a:hover {
+    text-decoration: none;
+}
+
 .img-rounded {
     border-radius: 6px;
 }

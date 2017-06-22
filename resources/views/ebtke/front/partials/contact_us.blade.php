@@ -63,7 +63,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		toastr.options.closeMethod = 'fadeOut';
-	    toastr.options.closeDuration = 3000;
+	    toastr.options.closeButton = true;
 	    toastr.options.closeEasing = 'swing';
 	    toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
 	});

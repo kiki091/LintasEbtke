@@ -49,11 +49,11 @@
 
 -->
 @if(isset($latest_news) && !empty($latest_news))
-<section id="desktop__content" class="bg-gray page">
+<section id="desktop__content" class="bg-gray introduction__content">
 	<div class="row">
 		@foreach($latest_news as $key=> $latest_news)
 			<div class="img__carousel col-md-3 padding__center">
-			<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
+				<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
 				<a href="{{ route('detailNews',$latest_news['slug']) }}" class="services_item">
 					<p>{{ $latest_news['title'] or '' }}</p>
 				</a>
@@ -121,6 +121,18 @@
     	<!-- ################################################################################################ -->
   	</section>
 </div>
+
+<!-- 
+
+    ____  ___________ __ ____________  ____     _    ____________  _____ ________  _   __
+   / __ \/ ____/ ___// //_/_  __/ __ \/ __ \   | |  / / ____/ __ \/ ___//  _/ __ \/ | / /
+  / / / / __/  \__ \/ ,<   / / / / / / /_/ /   | | / / __/ / /_/ /\__ \ / // / / /  |/ / 
+ / /_/ / /___ ___/ / /| | / / / /_/ / ____/    | |/ / /___/ _, _/___/ // // /_/ / /|  /  
+/_____/_____//____/_/ |_|/_/  \____/_/         |___/_____/_/ |_|/____/___/\____/_/ |_/   
+                                                                                         
+
+ -->
+
 <section id="desktop__content">
 	<div class="container">
 	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
@@ -292,5 +304,6 @@
 	</div>
 	</div>
 </section>
+
 
 @endsection

@@ -20,4 +20,5 @@
 		'footer_lable_address' => 'Address',
 		'footer_lable_phone' => 'Phone',
 		'footer_lable_email' => 'Email',
+		'you_migh_also_like'	=> 'You might also like',
 	];

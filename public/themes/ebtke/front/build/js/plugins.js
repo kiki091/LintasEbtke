@@ -11197,9 +11197,11 @@ $(document).ready(function() {
 		$('body').addClass('loaded');
 	}, 3000);
 
+	var window_heigh = jQuery(window).height() - 150;
+
 	$(document).scroll(function() {
 	  	var y = $(this).scrollTop();
-  		if (y > 1600) {
+  		if (y > window_heigh) {
     		$('.ac-container').fadeIn();
     	}else {
     		$('.ac-container').fadeOut();
@@ -11245,6 +11247,23 @@ $(document).ready(function() {
 			return false;
 		});
 	};
+
+	// Accordion For Mobile Content
+
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	    acc[i].onclick = function(){
+	        this.classList.toggle("active");
+	        var panel = this.nextElementSibling;
+	        if (panel.style.display === "block") {
+	            panel.style.display = "none";
+	        } else {
+	            panel.style.display = "block";
+	        }
+	    }
+	}
 	
 })
 

@@ -286,6 +286,11 @@
 	    border-bottom: 1px solid #eaeaea;
 	    width: 100%;
 	}
+
+	h3.latestnews__title {
+		font-size: 21px;
+    	line-height: 42px;
+	}
 }
 
 
