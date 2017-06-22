@@ -21,6 +21,10 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::get('/', 'Ebtke\Front\Pages\MainController@index')->name('MainPage');
 
+			// CONTACT US
+
+			Route::post('/contact-us', 'Ebtke\Front\Pages\ContactUsController@store')->name('StoreContactUs');
+
 			// NEWS ROUTE
 
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.news')], function () {

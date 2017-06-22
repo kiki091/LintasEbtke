@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke
+-- Host: 127.0.0.1    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -130,6 +130,33 @@ LOCK TABLES `company_history_trans` WRITE;
 /*!40000 ALTER TABLE `company_history_trans` DISABLE KEYS */;
 INSERT INTO `company_history_trans` VALUES (1,'en','Whats is lintas ?','LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.','<p>\n			<span class=\"first-letter\">I</span>\n			n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.\n			</p>\n			<p>\n			Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately.. \n			</p>','<p>\n			It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.\n			</p>\n			<p>\n				Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.\n			</p>',NULL,NULL,1),(2,'id','Apa itu lintas ?','LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.','<p>\n			<span class=\"first-letter\">S</span>\n			ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat.\n			Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE. \n			</p>\n			<p>\n			Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana. \n			</p>','<p>\n			Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.\n			</p>\n			<p>\n				Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.\n			</p>',NULL,NULL,1),(3,'da','Hvad er lintas ?','LINTAS EBTKE er en udvidelse af den nye og vedvarende energi informations- og investeringstjeneste og energibesparelse.','<p>\n			<span class=\"first-letter\">G</span>\n			enerelt vil LINTAS EBTKE blive EBTKE-aksen, hvor det anvendte informationsteknologisystem hjælper den besøgende med at finde de oplysninger, de har brug for hurtigt. Desuden giver EBTKE LINTAS-kontoret folk mulighed for at besøge og gennemføre ansigt-til-ansigt-konsultationer med kompetent personale og tildelt EBTKE Traffic.\n			</p>\n			<p>\n			Kun en lille del af Indonesiens vedvarende energipotentiale og energibesparelser er blevet udnyttet. For at optimere udnyttelsen af sådanne potentialer er kommunikation og tæt samarbejde mellem interessenter af afgørende betydning, så EBTKE-aktiviteter / projekter kan implementeres straks.. \n			</p>','<p>\n			Det er mistanke om, at der stadig mangler behov for kommuner, industri, projektudvikling, univeersitas og forskningsinstitutter, investorer, finansielle institutioner og offentligheden for informationspolitik og EBTKE-implementering. Disse interessenter har brug for den bedste og nyeste information om gældende regler, teknologi og implementering, finansiering og investering, samarbejdsmuligheder og endda teknisk bistand til planlægning af implementeringen af EBTKE.\n			</p>\n			<p>\n				Oplysninger fra LINTAS EBTKE forventes at lette samarbejdet mellem disse interessenter, således at brugen og anvendelsen af EBTKE kan øge.\n			</p>',NULL,NULL,1);
 /*!40000 ALTER TABLE `company_history_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contact_us`
+--
+
+DROP TABLE IF EXISTS `contact_us`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact_us` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+LOCK TABLES `contact_us` WRITE;
+/*!40000 ALTER TABLE `contact_us` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contact_us` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1058,4 +1085,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-21  0:27:49
+-- Dump completed on 2017-06-22 19:22:21

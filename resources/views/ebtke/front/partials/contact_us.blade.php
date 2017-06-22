@@ -1,9 +1,64 @@
+<!-- 
+
+   __________  _   ___________   ____________   __  _______
+  / ____/ __ \/ | / /_  __/   | / ____/_  __/  / / / / ___/
+ / /   / / / /  |/ / / / / /| |/ /     / /    / / / /\__ \ 
+/ /___/ /_/ / /|  / / / / ___ / /___  / /    / /_/ /___/ / 
+\____/\____/_/ |_/ /_/ /_/  |_\____/ /_/     \____//____/  
+                                                           
+
+                                                            -->
 <div class="ac-container">
 	<div>
-		<input id="ac-1" name="accordion-1" type="checkbox" />
-		<label for="ac-1">About us</label>
+		<input class="ac" id="ac-1" name="accordion-1" type="checkbox" />
+		<label for="ac-1">Contact Us</label>
 		<article class="ac-small">
-			<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+			<p>
+				Tidak ada pihak yang sedang di tempat saat ini untuk menjawab panggilan anda. Mohon tinggalkan suatu pesan dan kami akan kembali kepada anda sesegera mungkin.
+			</p>
+			<hr/>
+			<form action="{{ route('StoreContactUs') }}" method="POST" id="form__contact__us" class="contact__us__form">
+				<div class="form-group">
+					<span class="form">Full Name</span>
+					<input type="text" class="form-control" name="fullname">
+					<span id="form--error--fullname" class="form--error--message"></span>
+				</div>
+
+				<div class="form-group">
+					<span class="form">Email</span>
+					<input type="text" class="form-control" name="email">
+					<span id="form--error--email" class="form--error--message"></span>
+				</div>
+
+				<div class="form-group">
+					<span class="form">Question</span>
+					<input type="text" class="form-control" name="question">
+					<span id="form--error--question" class="form--error--message"></span>
+				</div>
+				<div class="form-group">
+					<span class="form">Message</span>
+					<textarea class="form-control" name="message"></textarea>
+					<span id="form--error--message" class="form--error--message"></span>
+				</div>
+				<hr/>
+				<div class="form-group">
+					<input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+					<button type="submit" id="submit__form__contact__us" class="btn btn-primary">SEND</button>
+				</div>
+			</form>
 		</article>
 	</div>
 </div>
+<!-- 
+
+    _______   ______     __________  _   ___________   ____________   __  _______
+   / ____/ | / / __ \   / ____/ __ \/ | / /_  __/   | / ____/_  __/  / / / / ___/
+  / __/ /  |/ / / / /  / /   / / / /  |/ / / / / /| |/ /     / /    / / / /\__ \ 
+ / /___/ /|  / /_/ /  / /___/ /_/ / /|  / / / / ___ / /___  / /    / /_/ /___/ / 
+/_____/_/ |_/_____/   \____/\____/_/ |_/ /_/ /_/  |_\____/ /_/     \____//____/  
+                                                                                
+
+ -->
+
+
+<script type="text/javascript" src="{{ asset('js/pages/contact_us.js') }}"></script>

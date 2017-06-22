@@ -11186,10 +11186,16 @@ $(document).ready(function() {
 	setTimeout(function(){
 		$('body').addClass('loaded');
 	}, 3000);
-	
-});
 
-jQuery(document).ready(function(){
+	$(document).scroll(function() {
+	  	var y = $(this).scrollTop();
+  		if (y > 1400) {
+    		$('.ac-container').fadeIn();
+    	}else {
+    		$('.ac-container').fadeOut();
+  		}
+	});
+	
     $('.count__number').each(function () {
         
         var data = $(this).prop('Counter',0).animate({
@@ -11203,9 +11209,7 @@ jQuery(document).ready(function(){
             }
         });
     });
-});
 
-jQuery(document).ready(function() {
 	setTimeout(function(){
 		$('.manic-image-container img').css('opacity','1')
 	}, 3000);
