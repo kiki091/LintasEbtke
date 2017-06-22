@@ -33,6 +33,7 @@ mix.styles([
     'public/themes/ebtke/front/css/style-slider.css',
     'public/themes/ebtke/front/css/responsives.css',
     'public/themes/ebtke/front/css/menu.css',
+    'public/js/bower_components/toastr/toastr.css',
 ], 'public/themes/ebtke/front/build/css/plugins.css');
 
 
@@ -41,6 +42,8 @@ mix.styles([
 mix.scripts([
 	'public/themes/ebtke/front/js/jquery-2.1.1.js',
 	'public/themes/ebtke/front/js/jquery.mixitup.min.js',
+	'public/js/bower_components/toastr/toastr.min.js',
+	'public/js/bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
 	/*'public/themes/ebtke/front/js/maps/jquery-jvectormap-2.0.3.min.js',
 	'public/themes/ebtke/front/js/maps/jquery-jvectormap-us-aea-en.js',
 	'public/themes/ebtke/front/js/maps/jquery-jvectormap-asia-merc.js',

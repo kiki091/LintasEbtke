@@ -3,6 +3,10 @@
 /** Section Style Landing Page About **/
 @import url('https://fonts.googleapis.com/css?family=Courgette|Libre+Baskerville');
 
+.hide__element {
+    display: none;
+    visibility: hidden;
+}
 .img-rounded {
     border-radius: 6px;
 }

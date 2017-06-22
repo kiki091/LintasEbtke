@@ -60,6 +60,7 @@ class ContactUs extends BaseImplementation implements ContactUsInterface
     		$store->email 			= 	isset($params['email']) ? $params['email'] : '';
     		$store->question 		= 	isset($params['question']) ? $params['question'] : '';
     		$store->message 		= 	isset($params['message']) ? $params['message'] : '';
+            $store->created_at      =  $this->mysqlDateTimeFormat();
 
     		$save = $store->save();
 

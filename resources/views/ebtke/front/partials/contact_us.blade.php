@@ -8,14 +8,14 @@
                                                            
 
                                                             -->
-<div class="ac-container">
+<div id="desktop__content" class="ac-container">
 	<div>
 		<input class="ac" id="ac-1" name="accordion-1" type="checkbox" />
 		<label for="ac-1">Contact Us</label>
 		<article class="ac-small">
-			<p>
+			<!-- <p>
 				Tidak ada pihak yang sedang di tempat saat ini untuk menjawab panggilan anda. Mohon tinggalkan suatu pesan dan kami akan kembali kepada anda sesegera mungkin.
-			</p>
+			</p> -->
 			<hr/>
 			<form action="{{ route('StoreContactUs') }}" method="POST" id="form__contact__us" class="contact__us__form">
 				<div class="form-group">
@@ -60,5 +60,12 @@
 
  -->
 
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		toastr.options.closeMethod = 'fadeOut';
+	    toastr.options.closeDuration = 3000;
+	    toastr.options.closeEasing = 'swing';
+	    toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
+	});
+</script>
 <script type="text/javascript" src="{{ asset('js/pages/contact_us.js') }}"></script>
