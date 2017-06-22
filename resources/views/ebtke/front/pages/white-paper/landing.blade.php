@@ -64,11 +64,16 @@
                                                 {{ $recent_papers['title'] }}
                                             </a>
                                         </h3>
+                                        <p>
+                                            {{ $recent_papers['is_rating'] }} Rating || {{ $recent_papers['is_downloaded'] }} Download
+                                        </p>
                                         {!! $recent_papers['description'] !!}
                                         <p>
-                                            <span class="pull-left">{{ $recent_papers['is_rating'] }} Rating || </span> 
-                                            <span class="pull-left"> {{ $recent_papers['is_downloaded'] }} Download</span>
+                                            <a href="{{ route('DetailWhitePapers',$recent_papers['slug']) }}" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
+                                                {{ trans('global_page.global_page_lable_link_cta') }}
+                                            </a>
                                         </p>
+                                        
                                     </div>
                                 </div>
                                 @endforeach

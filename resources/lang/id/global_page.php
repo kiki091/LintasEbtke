@@ -7,6 +7,7 @@
 
 	return [
 		'download'						=> 'UNDUH',
+		'rating'						=> 'RATING',
 		'download_pdf'					=> 'UNDUH PDF',
 		'footer_title_contact_us'		=> 'HUBUNGI KAMI',
 		'global_page_lable_visit_here' => 'Lihat disini &raquo;',

@@ -36,11 +36,17 @@
                 <div class="pull-right col-md-9">
                 
                     {!! $detail_papers['description'] or '' !!}
-                    <a href="{{ $detail_papers['file_url'] or '' }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">Download</a>
                     <p>
-                        <span class="pull-left">{{ $detail_papers['is_rating'] }} Rating || </span> 
-                        <span class="pull-left"> {{ $detail_papers['is_downloaded'] }} Download</span>
+                        {{ $detail_papers['is_rating'] }} 
+                        {{ trans('global_page.rating') }} || 
+                        
+                        {{ $detail_papers['is_downloaded'] }} 
+                        {{ trans('global_page.download') }}
                     </p>
+                    <a href="{{ $detail_papers['file_url'] or '' }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
+                        {{ trans('global_page.download') }}
+                    </a>
+                    
                 </div>
     	   </div>
         </div>

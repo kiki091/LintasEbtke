@@ -51,16 +51,25 @@
                     </div>
                     <div class="col-lg-2 pull-right">
                         <img src="{{ asset(TOOLS_IMAGES_DIRECTORY.'progress_download.jpg') }}" class="img-responsive">
-                        <p class="info__download">{{ $tools_landing['is_rating'] }} Ratings</p>
-                        <p class="info__download">{{ $tools_landing['is_downloaded'] }} Downloads</p>
+                        <p class="info__download">
+                            {{ $tools_landing['is_rating'] }} 
+                            {{ trans('global_page.rating') }}
+                        </p>
+                        <p class="info__download">
+                            {{ $tools_landing['is_downloaded'] }}
+                            {{ trans('global_page.download') }}
+                        </p>
                     </div>
                     <div class="col-lg-7 pull-right">
                         <p>{{ $tools_landing['description'] }}</p>
+                        <p class="pull-left">
+                            <a href="{{ $tools_landing['file_url'] }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
+                                {{ trans('global_page.download') }}
+                            </a>
+                        </p>
                     </div>
                     <div class="col-lg-12">
-                        <p class="pull-right">
-                            <a href="{{ $tools_landing['file_url'] }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">Download</a>
-                        </p>
+                        
                     </div>
                 </div>
                 @endforeach
