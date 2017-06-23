@@ -21,21 +21,6 @@ interface News
      */
     public function getPopularNews($params);
 
-    
-    /**
-     * Get Data Main Banner
-     * @param $params
-     * @return mixed
-     */
-    public function getEventHome($params);
-
-    
-    /**
-     * Get Data Main Banner
-     * @param $params
-     * @return mixed
-     */
-    public function getPopularEvent($params);
 
     /**
      * Get Data Main Banner

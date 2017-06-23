@@ -32,27 +32,6 @@ class News
     {
         return $this->news->getPopularNews($params);
     }
-    
-
-    /**
-     * Get Data News Home
-     * @param $params
-     * @return mixed
-     */
-    public function getEventHome($params = [])
-    {
-        return $this->news->getEventHome($params);
-    }
-
-    /**
-     * Get Data News Home
-     * @param $params
-     * @return mixed
-     */
-    public function getPopularEvent($params = [])
-    {
-        return $this->news->getPopularEvent($params);
-    }
 
     /**
      * Get Data News Home

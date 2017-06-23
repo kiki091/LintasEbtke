@@ -24,8 +24,9 @@ define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/ebtke/front/images/instagram/');
 define('NEWS_THUMBNAIL_DIRECTORY', 'bin/db/images/news/');
 define('NEWS_IMAGES_DIRECTORY', 'bin/db/images/news/');
 
+define('MAIN_BANNER_EVENT_DIRECTORY', 'bin/db/images/event/main_banner/');
 define('EVENT_THUMBNAIL_DIRECTORY', 'bin/db/images/event/');
-define('EVENT_IMAGES_DIRECTORY', 'bin/db/images/event/');
+define('EVENT_IMAGES_DIRECTORY', 'bin/db/images/event/slider/');
 
 
 // Services Thumbnail Images

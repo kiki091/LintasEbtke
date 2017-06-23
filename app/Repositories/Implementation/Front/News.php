@@ -43,20 +43,6 @@ class News extends BaseImplementation implements NewsInterface
         
     }
 
-    public function getEventHome($params)
-    {
-
-        $params = [
-            "is_active" => true,
-            "category"  => 'acara'
-        ];
-
-        $newsData = $this->news($params, 'desc', 'array', false);
-
-        return $this->newsTransformation->getNewsTransform($newsData);
-        
-    }
-
     public function getPopularNews($params)
     {
 
@@ -65,22 +51,6 @@ class News extends BaseImplementation implements NewsInterface
             "total_view" => '1',
             "limit"     => '6',
             "category"  => 'berita'
-        ];
-
-        $newsData = $this->news($params, 'desc', 'array', false);
-
-        return $this->newsTransformation->getNewsTransform($newsData);
-        
-    }
-
-    public function getPopularEvent($params)
-    {
-
-        $params = [
-            "is_active" => true,
-            "total_view" => '1',
-            "limit"     => '6',
-            "category"  => 'acara'
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);

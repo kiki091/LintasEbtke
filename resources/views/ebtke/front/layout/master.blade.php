@@ -41,11 +41,10 @@
 			@include('ebtke.front.partials.footer')
 		</div>
 		
+		@include('ebtke.front.partials.vars')
 		@include('ebtke.front.partials.js_footer')
 			
-		@section('scripts')
-
-		@stop
+		@yield('scripts')
 	</body>
 </html>
 

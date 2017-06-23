@@ -47,7 +47,6 @@ class FrontController extends Controller
         JavaScript::put([
             'current_language' => LaravelLocalization::getCurrentLocale(),
             'app_domain' => env('APP_DOMAIN'),
-            'token' => csrf_token()
         ]);
     }
 }

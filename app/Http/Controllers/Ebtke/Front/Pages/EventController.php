@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Ebtke\Front\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
-use App\Services\Bridge\Front\News as EventServices;
+use App\Services\Bridge\Front\Event as EventServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
 use App\Services\Api\Response as ResponseService;
+
+use Carbon\Carbon;
+use JavaScript;
 
 class EventController extends FrontController
 {
@@ -23,15 +26,21 @@ class EventController extends FrontController
         $this->seo = $seo;
         $this->response = $response;
 
+        JavaScript::put([
+            'event_url' => route('GetDataEvent'),
+        ]);
     }
+
+    /**
+     * Landing pages event services
+     */
 
 
     public function landing(Request $request)
     {
-        $data['latest_event'] = $this->event->getEventHome();
-        $data['popular_event'] = $this->event->getPopularEvent();
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
-
+        /*$data['data'] = $this->event->getData($request->except('_token'));
+        dd($data['data']);*/
         $blade = self::URL_BLADE_FRONT_SITE. '.event.landing';
         
         if(view()->exists($blade)) {
@@ -43,9 +52,22 @@ class EventController extends FrontController
         return abort(404);
     }
 
+    /**
+     * Get data event services
+     */
+
+    public function getData(Request $request)
+    {
+        return $this->event->getData($request->except('_token'));
+    }
+
+    /**
+     * Detail pages event services
+     */
+
     public function detail($slug)
     {
-        $data['detail_event'] = $this->event->getNewsDetail($slug);
+        $data['detail_event'] = $this->event->getDetail($slug);
         
         $blade = self::URL_BLADE_FRONT_SITE. '.event.detail';
         

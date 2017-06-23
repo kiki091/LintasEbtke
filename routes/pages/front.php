@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web']], function ()
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.event')], function () {
 
 				Route::get('/', 'Ebtke\Front\Pages\EventController@landing')->name('landingEvent');
+				Route::get('data', 'Ebtke\Front\Pages\EventController@getData')->name('GetDataEvent');
 				Route::get(LaravelLocalization::transRoute('routes.event_detail'), 'Ebtke\Front\Pages\EventController@detail')->name('detailEvent');
 			});
 

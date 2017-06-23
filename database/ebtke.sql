@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
--- Host: 127.0.0.1    Database: ebtke
+-- Host: localhost    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.16-MariaDB
+-- Server version	5.7.18-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -147,7 +147,7 @@ CREATE TABLE `contact_us` (
   `message` text NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,105 @@ CREATE TABLE `contact_us` (
 
 LOCK TABLES `contact_us` WRITE;
 /*!40000 ALTER TABLE `contact_us` DISABLE KEYS */;
+INSERT INTO `contact_us` VALUES (1,'Nama Lengkap','kiki@gmail.com','test','test','2017-06-22 16:31:51'),(2,'Nama Lengkap','admin@ayana.com','test','test','2017-06-22 17:05:29'),(3,'Nama Lengkap','user@gmail.com','test','test','2017-06-22 17:58:17'),(4,'kiki','sheqbo@gmail.com','Question','Message','2017-06-22 18:02:09');
 /*!40000 ALTER TABLE `contact_us` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(200) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `order` tinyint(3) DEFAULT NULL,
+  `date_start` datetime DEFAULT NULL,
+  `date_end` datetime DEFAULT NULL,
+  `total_view` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event`
+--
+
+LOCK TABLES `event` WRITE;
+/*!40000 ALTER TABLE `event` DISABLE KEYS */;
+INSERT INTO `event` VALUES (1,'thumbnail_002.jpg',1,1,'2017-05-16 08:05:30','2017-05-16 23:05:34',NULL,'2017-05-16 08:05:30','2017-05-16 08:05:30',1);
+/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event_images`
+--
+
+DROP TABLE IF EXISTS `event_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(200) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `event_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_event_images_1_idx` (`event_id`),
+  CONSTRAINT `fk_event_images_1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_images`
+--
+
+LOCK TABLES `event_images` WRITE;
+/*!40000 ALTER TABLE `event_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event_trans`
+--
+
+DROP TABLE IF EXISTS `event_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `introduction` text,
+  `description` text,
+  `meta_title` varchar(100) DEFAULT NULL,
+  `meta_keyword` varchar(150) DEFAULT NULL,
+  `meta_description` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `event_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  KEY `fk_event_trans_1_idx` (`event_id`),
+  CONSTRAINT `fk_event_trans_1` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_trans`
+--
+
+LOCK TABLES `event_trans` WRITE;
+/*!40000 ALTER TABLE `event_trans` DISABLE KEYS */;
+INSERT INTO `event_trans` VALUES (1,'id','Test Event','test-event','<p>\n<span class=\"first-letter\">E</span>BTKE-- Kedutaan Besar Perancis untuk Indonesia, yang diwakili oleh Konsular Ekonomi Pascal Furth beserta kumpulan pengusaha Perancis dibidang Energi dan Energi Terbarukan atau French Renewable Energy for Indonesia (FREGI) mengadakan acara Breakfast Meeting, Rabu, 17 Mei 2017, di Jakarta.</p>','<p>\nDalam kesempatan tersebut, pihak Perancis mengundang Pemerintah Indonesia yang diwakili oleh Direktur Jenderal Energi Baru Terbarukan dan Konservasi Energi (Dirjen EBTKE), Kementerian Energi dan Sumber Daya Mineral (ESDM) Rida Mulyana beserta jajaran antara lain Sekretaris Direktorat Jenderal (Sesditjen) EBTKE Dadan Kusdiana, Direktur Panas Bumi Yunus Yunus Saefulhak dan Kepala Subdirektorat Penyiapan Program Aneka Energi Baru dan Energi Terbarukan Ibu Ida Nuryatin Finahari.</p>\n<p>\nAcara ini menjadi sarana bagi Pemerintah Indonesia dan FREGI untuk berdiskusi dan bertukar informasi terkait pengembangan serta pengusahaan energi terbarukan di Indonesia.</p>\n<p>\nAdapun isu yang dibahas antara lain  implementasi Peraturan Menteri (Permen) nomor 10 dan 12 tahun 2017, mekanisme penghitungan Biaya Pokok Produksi (BPP),  proses penentuan kuota dan sistem lelang pembangkit listrik tenaga surya (PLTS) dan pembangkit listrik tenaga angin (PLTB) potensi insentif untuk pengembang energi baru terbarukan, perbedaan pengusahaan panas bumi serta minyak dan gas (Migas), dan isu-isu menarik lainnya.</p>\n<p>\nBreakfast meeting ini juga dihadiri oleh institusi perancis seperti, Agence Française de Développement (AFD), Business France, Kamar Dagang dan Industri Indonesia (Kadin Indonesia).</p>','Pemerintah dan Stakeholder Diskusikan Pengembangan EBT','Pengembangan EBT','Pemerintah dan Stakeholder Diskusikan Pengembangan EBT',NULL,NULL,1),(2,'en','Event Example','event-example','<p>\n<span class=\"first-letter\">E</span>BTKE-- The French Embassy for Indonesia, represented by the Consular Economy of Pascal Furth and a collection of French entrepreneurs in the Renewable Energy for Indonesia (FREGI) field organized the Breakfast Meeting on Wednesday, May 17, 2017, in Jakarta.</p>','<p>\nOn the occasion, the French invited the Government of Indonesia represented by the Director General of Renewable Energy and Energy Conservation (DG EBTKE), Ministry of Energy and Mineral Resources (ESDM) Rida Mulyana along with Secretary of Directorate General (Sesditjen) EBTKE Dadan Kusdiana, Director of Geothermal Yunus Yunus Saefulhak and Head of Subdirectorate of New Energy and Renewable Energy Renewal Program for Ida Nuryatin Finahari.</p>\n<p>\nThis event is a means for the Government of Indonesia and FREGI to discuss and exchange information related to the development and exploitation of renewable energy in Indonesia.</p>\n<p>\nThe issues discussed include the implementation of Ministerial Regulation (Permen) number 10 and 12 of 2017, the mechanism of calculating Cost of Production (BPP), the process of determining the quota and auction system of solar power plants (PLTS) and wind power plants (PLTB) potential Incentives for renewable energy developers, geothermal and oil and gas (oil and gas) concessions, and other interesting issues.</p>\n<p>\nBreakfast meeting is also attended by french institutions such as, Agence Française de Développement (AFD), Business France, Chamber of Commerce and Industry of Indonesia (Kadin Indonesia).</p>','Government and Stakeholders Discuss Development of EBT','Discuss Development of EBT','Government and Stakeholders Discuss Development of EBT',NULL,NULL,1);
+/*!40000 ALTER TABLE `event_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -567,7 +665,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,12,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,6,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
+INSERT INTO `news` VALUES (1,'thumbnail_002.jpg','edukasi-masyarakat-zona-panas-bumi-hadir-di-taman-pintar-yogyakarta',1,1,13,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg','hemat-energi-upaya-mencapai-energi-berkeadilan',2,1,6,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg','pemerintah-dan-stakeholder-diskusikan-pengembangan-ebt',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1085,4 +1183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-22 19:22:21
+-- Dump completed on 2017-06-23 10:08:49

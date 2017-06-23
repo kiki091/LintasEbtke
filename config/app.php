@@ -169,6 +169,7 @@ return [
          */
 
         App\Providers\EbtkeHelperServiceProvider::class,
+        App\Providers\EbtkeServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -177,7 +178,6 @@ return [
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-        Spatie\Translatable\TranslatableServiceProvider::class,
         App\Providers\RouteMenuLocationServiceProvider::class,
 
         /*
@@ -188,6 +188,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
 
     ],
 
@@ -241,6 +243,7 @@ return [
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'RouteMenuLocation'=> App\Custom\Facades\RouteMenuLocation::class,
         'DataHelper'=> App\Custom\Facades\DataHelper::class,
+        'JavaScript'=> Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
 
     ],
 

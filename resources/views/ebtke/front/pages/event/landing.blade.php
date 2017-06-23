@@ -10,89 +10,45 @@
 @stop
 
 @section('content')
+<div class="banner--main-event" style="background-image: url({{ asset(MAIN_BANNER_EVENT_DIRECTORY.'Event-Calendar1.jpg') }});">
+    
+</div>
+<!-- 
+      _______    _________   ________   _________    __    _______   ______  ___    ____ 
+   / ____/ |  / / ____/ | / /_  __/  / ____/   |  / /   / ____/ | / / __ \/   |  / __ \
+  / __/  | | / / __/ /  |/ / / /    / /   / /| | / /   / __/ /  |/ / / / / /| | / /_/ /
+ / /___  | |/ / /___/ /|  / / /    / /___/ ___ |/ /___/ /___/ /|  / /_/ / ___ |/ _, _/ 
+/_____/  |___/_____/_/ |_/ /_/     \____/_/  |_/_____/_____/_/ |_/_____/_/  |_/_/ |_|  
 
-<!--
-   ____    _    _   _ _   _ _____ ____
-  | __ )  / \  | \ | | \ | | ____|  _ \
-  |  _ \ / _ \ |  \| |  \| |  _| | |_) |
-  | |_) / ___ \| |\  | |\  | |___|  _ <
-  |____/_/   \_\_| \_|_| \_|_____|_| \_\
-
--->
-
-@if(isset($latest_event) && !empty($latest_event))
-<section id="desktop">
-	<!-- Begin page header-->
-    <div class="container">
-    	<div class="row">
-    		<div class="col-md-8">
-    			<div class="card__container padding20">
-    				<h5 class="s15 uppercase margin0 brandon medium spacing1">
-                        {{ trans('pages/news_page.title_news') }}             
-                    </h5>
-    				<small class="text-gray">
-                        {{ trans('pages/news_page.user_created') }}            
-                    </small>
-    				<ul class="article">
-    					@foreach($latest_event as $key=> $landing_event)
-    					<li class="article--item">
-    						<h3 class="semibold margin0">
-    							{{ $landing_event['title'] or '' }}
-    						</h3>
-    						<div class="flex">
-								<small class="text-gray">
-								{{ $landing_event['days_ago'] or '' }} - {{ $landing_event['total_view'] or '' }} views
-								</small>
-								
-							</div>
-							<img src="{{ $landing_event['thumbnail_url'] or '' }}" alt="{{ $landing_event['title'] or '' }}">
-							<p class="news">
-    							{!! $landing_event['introduction'] or '' !!}
-    						</p>
-    						<div class="center-align">
-								<a href="{{ route('detailEvent',$landing_event['slug']) }}" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
-                                    {{ trans('global_page.global_page_lable_link_cta') }}                         
-                                </a>
-							</div>
-    					</li>
-    					@endforeach
-    				</ul>
-    			</div>
-    		</div>
-            @if(isset($popular_event) && !empty($popular_event))
-    		<div id="desktop__content" class="col-md-4">
-	    		<div class="card__container padding20">
-	    			<h5 class="s15 uppercase margin0 brandon medium spacing1">
-                        {{ trans('pages/news_page.title_popular_news') }}               
-                    </h5>
-	    			<small class="text-gray">
-                        {{ trans('pages/news_page.popular_news_view') }}             
-                    </small>
-	    			<ul class="populararticle">
-                        @foreach($popular_event as $key=> $popular_event)
-	    				<li class="flex vcenter">
-	    					<a href="{{ route('detailEvent',$popular_event['slug']) }}" class="populararticle--img">
-								<img src="{{ $popular_event['thumbnail_url']}}" alt="Learn to Read Minds in 10 Minutes">
-							</a>
-							<div class="left-align">
-								<a href="{{ route('detailEvent',$popular_event['slug']) }}" class="populararticle--link">
-									<small class="semibold">
-                                    {{ $popular_event['title']}}
-                                    </small>
-								</a>
-								<br/>
-								<small class="s10 text-gray">
-                                {{ $popular_event['total_view']}} Views
-                                </small>
-							</div>
-	    				</li>
-                        @endforeach
-	    			</ul>
-	    		</div>
-    		</div>
-            @endif
-    	</div>
+ -->
+<section id="desktop" class="page">
+    <div class="container card__container__wrapper">
+        <div class="card__container padding20">
+            <h5 class="s15 uppercase margin0 brandon medium spacing1">
+                {{ trans('pages/event_page.event_calendar_title') }}       
+            </h5>
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <div id='calendar'></div>
+            </div>
+        </div>
+        <div style="display: none;" id="description__event" class="pull-right col-md-4">
+            <p id="title__event"></p>
+            <div id="introduction__event"></div>
+            <p>
+                <a id="link_url" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" target="__blank">
+                    {{ trans('global_page.global_page_lable_link_cta') }}
+                </a>
+            </p>
+        </div>
     </div>
 </section>
-@endif
+<div id="fc_detail"></div>
+
 @endsection
+
+@section('scripts')
+
+    <script type="text/javascript" src="{{ asset('js/pages/calendar.js') }}"></script>
+@stop

@@ -34,6 +34,8 @@ mix.styles([
     'public/themes/ebtke/front/css/responsives.css',
     'public/themes/ebtke/front/css/menu.css',
     'public/js/bower_components/toastr/toastr.css',
+    'public/js/bower_components/fullcalendar/dist/fullcalendar.min.css',
+    'public/js/bower_components/fullcalendar/dist/print.css',
 ], 'public/themes/ebtke/front/build/css/plugins.css');
 
 
@@ -71,4 +73,6 @@ mix.scripts([
 	'public/themes/ebtke/front/js/waypoints.min.js',
 	'public/themes/ebtke/front/js/smoothscroll.js',
 	'public/themes/ebtke/front/js/theme.js',
+	'public/js/bower_components/moment/min/moment.min.js',
+	'public/js/bower_components/fullcalendar/dist/fullcalendar.min.js',
 ], 'public/themes/ebtke/front/build/js/animation.js');
