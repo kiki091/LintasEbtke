@@ -41,6 +41,7 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\GreenPages', 'App\Repositories\Implementation\Front\GreenPages');
         $this->app->bind('App\Repositories\Contracts\Front\GreenPagesCategory', 'App\Repositories\Implementation\Front\GreenPagesCategory');
         $this->app->bind('App\Repositories\Contracts\Front\Event', 'App\Repositories\Implementation\Front\Event');
+        $this->app->bind('App\Repositories\Contracts\Front\Industri', 'App\Repositories\Implementation\Front\Industri');
 
     }
 
@@ -64,6 +65,7 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\GreenPages',
             'App\Repositories\Contracts\Front\GreenPagesCategory',
             'App\Repositories\Contracts\Front\Event',
+            'App\Repositories\Contracts\Front\Industri',
         );
     }
 }
