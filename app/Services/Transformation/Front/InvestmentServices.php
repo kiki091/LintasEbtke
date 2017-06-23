@@ -40,7 +40,7 @@ class InvestmentServices
             return [
                 'locale' => isset($data['translation']['locale']) ? $data['translation']['locale'] : '',
                 'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
-                'thumbnail_url' => isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY,
+                'thumbnail_url' => isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_DIRECTORY.rawurlencode($data['thumbnail'])) : '',
                 
                 'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
                 'title' => isset($data['translation']['title']) ? str_limit($data['translation']['title'],70) : '',
@@ -64,7 +64,7 @@ class InvestmentServices
     {
         $dataTransform['locale'] = isset($data['translation']['locale']) ? $data['translation']['locale'] : '';
         $dataTransform['title'] = isset($data['translation']['title']) ? $data['translation']['title'] : '';
-        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY;
+        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
         $dataTransform['slug'] = isset($data['translation']['slug']) ? $data['translation']['slug'] : '';
         $dataTransform['introduction'] = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['description'] = isset($data['translation']['description']) ? $data['translation']['description'] : '';

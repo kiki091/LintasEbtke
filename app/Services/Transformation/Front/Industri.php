@@ -40,11 +40,11 @@ class Industri
             return [
                 'locale' => isset($data['translation']['locale']) ? $data['translation']['locale'] : '',
                 'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
-                'thumbnail_url' => isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY,
+                'thumbnail_url' => isset($data['thumbnail']) ? asset(INDUSTRI_PAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '',
                 
                 'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
                 'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
-                'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],400) : '',
+                'introduction' => isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '',
                 'created_at' => isset($data['created_at']) ? date('d/m/Y g:i:s A', strtotime($data['created_at'])) : '',
                 'created_at_home' => isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '',
                 'days_ago' => isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '',
@@ -63,7 +63,7 @@ class Industri
     {
         $dataTransform['locale'] = isset($data['translation']['locale']) ? $data['translation']['locale'] : '';
         $dataTransform['title'] = isset($data['translation']['title']) ? $data['translation']['title'] : '';
-        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
+        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(INDUSTRI_PAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
         $dataTransform['slug'] = isset($data['translation']['slug']) ? $data['translation']['slug'] : '';
         $dataTransform['introduction'] = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['description'] = isset($data['translation']['description']) ? $data['translation']['description'] : '';

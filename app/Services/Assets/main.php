@@ -28,11 +28,9 @@ define('MAIN_BANNER_EVENT_DIRECTORY', 'bin/db/images/event/main_banner/');
 define('EVENT_THUMBNAIL_DIRECTORY', 'bin/db/images/event/');
 define('EVENT_IMAGES_DIRECTORY', 'bin/db/images/event/slider/');
 
-
 // Services Thumbnail Images
 
 define('SERVICES_IMAGES_DIRECTORY', 'bin/db/images/services/');
-
 
 // Company Images
 
@@ -44,17 +42,15 @@ define('COMPANY_COMPANY_ORGANIZATION_STRUCTURE_IMAGES_DIRECTORY', 'bin/db/images
 define('COMPANY_SCOPE_OF_SERVICES_IMAGES_DIRECTORY', 'bin/db/images/company/scope-of-services/');
 
 // Papers
-// 
+
 define('PAPERS_FILE_DIRECTORY', 'bin/db/file/papers/');
 define('BANNER_PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/banner/');
 define('PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/');
 
 // TOOLS
-// 
+
 define('TOOLS_FILE_DIRECTORY', 'bin/db/file/tools/');
 define('TOOLS_IMAGES_DIRECTORY', 'bin/db/images/tools/');
-
-
 
 // INVESTMENT SERVICES 
 // 
@@ -62,3 +58,8 @@ define('TOOLS_IMAGES_DIRECTORY', 'bin/db/images/tools/');
 define('INVESTMENT_SERVICES_DIRECTORY', 'bin/db/images/investment_services/');
 
 define('INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY', 'bin/db/images/investment_services/green_pages/');
+
+// INFORMATION SERVICES
+
+define('BANNER_INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/banner/');
+define('INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/');

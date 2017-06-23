@@ -481,6 +481,72 @@ INSERT INTO `green_pages_trans` VALUES (1,'id','Jalan Kiwi No. 25 Andir - Bandun
 UNLOCK TABLES;
 
 --
+-- Table structure for table `industri`
+--
+
+DROP TABLE IF EXISTS `industri`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `industri` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `order` int(3) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `industri`
+--
+
+LOCK TABLES `industri` WRITE;
+/*!40000 ALTER TABLE `industri` DISABLE KEYS */;
+INSERT INTO `industri` VALUES (1,'peen2013.jpg',1,1,'2017-05-16 08:05:30','2017-05-16 08:05:30',1);
+/*!40000 ALTER TABLE `industri` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `industri_trans`
+--
+
+DROP TABLE IF EXISTS `industri_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `industri_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(45) DEFAULT NULL,
+  `title` varchar(150) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `introduction` text,
+  `description` mediumtext,
+  `meta_title` varchar(80) DEFAULT NULL,
+  `meta_keyword` varchar(100) DEFAULT NULL,
+  `meta_description` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `industri_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  KEY `fk_industri_trans_1_idx` (`industri_id`),
+  CONSTRAINT `fk_industri_trans_1` FOREIGN KEY (`industri_id`) REFERENCES `industri` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `industri_trans`
+--
+
+LOCK TABLES `industri_trans` WRITE;
+/*!40000 ALTER TABLE `industri_trans` DISABLE KEYS */;
+INSERT INTO `industri_trans` VALUES (1,'id','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','pencapaian-pelaksanaan-manegemen-energi-di-industri-dan-bangunan-gedung','Database di bawah ini menyediakan daftar informasi lengkap Auditor Energi, Manajer Energi dan National Expert di Indonesia sebagai sumber informasi dan referensi yang bermanfaat.','<p>\n<b>Pelaporan Pelaksanaan Manajemen Energi di Industri dan Bangunan Gedung</b>\n</p>\n<p><span class=\"first-letter\">P</span>ada tahun 2015, tercatat sebanyak 66 industri/bangunan yang telah melaporkan pelaksanaan manajemen energi. Jumlah penghematan energi yang dihasilkan melalui pelaksanaan manajemen energi  adalah sebesar 180 Gjoule atau setara 50,158 GWh. Sehingga dari tahun 2012 hingga 2015 tercatat jumlah industri yang melapor adalah sebanyak 101 perusahaan dengan total penghematan energi mencapai 254 GJoule atau setara 70,570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Perusahaan</td>\n			<td class=\"header\">Sektor</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Industri Pupuk</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Industri Semen</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Ekspl Migas</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast pada toko di beberapa kota</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Kegiatan</td>\n			<td class=\"header\">Lokasi</td>\n			<td class=\"header\">Jadwal</td>\n		</tr>\n		<tr>\n			<td>\n				Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast\n			</td>\n			<td>Manado</td>\n			<td>6 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 Oktober 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Uji Petik dilaksanakan untuk mengetahui kesesuaian tingkat efisiensi energi lampu swabalast yang beredar di pasaran dibandingkan dalam SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Sampel uji petik berjumlah 20 (dua puluh) unit lampu untuk setiap tipe dan diambil dari toko, lokasi produksi, dan/atau di tempat penyimpanan barang milik Produsen Dalam Negeri atau Importir.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Berikut adalah dokumen Hasil Pengawasan Label Tanda Hemat Energi untuk Lampu Swabalast\n	</a>\n</p>','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','2017-05-16 08:05:30','2017-05-16 08:05:30',1),(2,'en','Achievement of Energy Management Implementation in Building Industry and Building','achivement-of-energy-management-implementation-in-building-industry-and-building','The database below provides a complete list of Energy Auditor, Energy Manager and National Expert information in Indonesia as a useful source of information and reference.','<p>\n<b>Reporting on the Implementation of Energy Management in Building Industry and Building</b>\n</p>\n<p><span class=\"first-letter\">I</span>n 2015, there were 66 industrial / building that has been reported on the implementation of energy management. The amount of energy savings generated through the implementation of energy management is 180 Gjoules or 50.158 GWh equivalent. So that from 2012 to 2015 recorded the number of industries that report is as many as 101 companies with a total energy savings of 254 GJoule or equivalent to 70.570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Company</td>\n			<td class=\"header\">Sector</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Fertilizer industry</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Cement Industry</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Oil and Gas Exports</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Supervise by taking samples of Swabalast lamp product test at stores in several cities</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Activities</td>\n			<td class=\"header\">Location</td>\n			<td class=\"header\">Schedule</td>\n		</tr>\n		<tr>\n			<td>\n				To supervise the test sampling ballasted lamp product\n			</td>\n			<td>Manado</td>\n			<td>6 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 October 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Pick test was conducted to determine the suitability of energy efficiency level of swabalast lamps on the market compared to SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Examples of quotation tests are 20 (twenty) light units for each type and taken from a shop, production site, and / or in the storage of goods owned by a Domestic Producer or Importer.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Here are the document Monitoring Results for the Energy Saving Label Signs ballasted lamp\n	</a>\n</p>','Achievement of Energy Management','Achievement of Energy Management Implementation in Building Industry and Building','Achievement of Energy Management Implementation in Building Industry and Building','2017-05-16 08:05:30','2017-05-16 08:05:30',1);
+/*!40000 ALTER TABLE `industri_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `investment_services`
 --
 
@@ -1185,4 +1251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-23 23:18:45
+-- Dump completed on 2017-06-24  2:13:49

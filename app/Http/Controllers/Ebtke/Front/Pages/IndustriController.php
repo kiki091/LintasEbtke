@@ -35,9 +35,9 @@ class IndustriController extends FrontController
     public function landing(Request $request)
     {
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
-        $data['industri'] = $this->industri->getData($request->except('_token'));
-        dd($data);
-        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..industri.landing';
+        $data['landing_industri'] = $this->industri->getData($request->except('_token'));
+        
+        $blade = self::URL_BLADE_FRONT_SITE.'.information-services.renewable.industri.landing';
         
         if(view()->exists($blade)) {
         
@@ -56,7 +56,7 @@ class IndustriController extends FrontController
     {
         $data['detail_industri'] = $this->industri->getDetail($slug);
         
-        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..industri.landing';
+        $blade = self::URL_BLADE_FRONT_SITE. '.information-services.renewable.industri.detail';
         
         if(view()->exists($blade)) {
         
