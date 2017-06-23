@@ -4,25 +4,25 @@ namespace App\Http\Controllers\Ebtke\Front\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
-use App\Services\Bridge\Front\Indusrti as IndusrtiServices;
+use App\Services\Bridge\Front\Industri as IndustriServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
 use App\Services\Api\Response as ResponseService;
 
 use Carbon\Carbon;
 use JavaScript;
 
-class IndusrtiController extends FrontController
+class IndustriController extends FrontController
 {
 
-    protected $indusrti;
+    protected $industri;
     protected $seo;
     protected $response;
 
-    const SEO_KEY = 'landing:indusrti';
+    const SEO_KEY = 'landing:industri';
 
-    public function __construct(IndusrtiServices $indusrti, SeoServices $seo, ResponseService $response)
+    public function __construct(IndustriServices $industri, SeoServices $seo, ResponseService $response)
     {
-        $this->indusrti = $indusrti;
+        $this->industri = $industri;
         $this->seo = $seo;
         $this->response = $response;
     }
@@ -35,9 +35,9 @@ class IndusrtiController extends FrontController
     public function landing(Request $request)
     {
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
-        $data['indusrti'] = $this->indusrti->getData($request->except('_token'));
-        
-        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..indusrti.landing';
+        $data['industri'] = $this->industri->getData($request->except('_token'));
+        dd($data);
+        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..industri.landing';
         
         if(view()->exists($blade)) {
         
@@ -54,9 +54,9 @@ class IndusrtiController extends FrontController
 
     public function detail($slug)
     {
-        $data['detail_indusrti'] = $this->indusrti->getDetail($slug);
+        $data['detail_industri'] = $this->industri->getDetail($slug);
         
-        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..indusrti.landing';
+        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..industri.landing';
         
         if(view()->exists($blade)) {
         

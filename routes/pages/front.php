@@ -14,7 +14,7 @@
 
 Route::group(['middleware' => ['web']], function () 
 {
-	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('DOMAIN_PREFIX') . env('APP_DOMAIN')], function()
+	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('APP_DOMAIN')], function()
 	{
 		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize','localizationRedirect','localeSessionRedirect']], function ()
 		{
@@ -134,8 +134,8 @@ Route::group(['middleware' => ['web']], function ()
 
 					Route::group(['prefix' => LaravelLocalization::transRoute('routes.industry')], function () {
 
-						Route::get('/', 'Ebtke\Front\Pages\IndusrtiController@landing')->name('IndusrtiLanding');
-						Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\IndusrtiController@detail')->name('IndusrtiDetail');
+						Route::get('/', 'Ebtke\Front\Pages\IndustriController@landing')->name('IndusrtiLanding');
+						Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\IndustriController@detail')->name('IndusrtiDetail');
 					});
 					
 				});

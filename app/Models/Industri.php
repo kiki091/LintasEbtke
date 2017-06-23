@@ -32,6 +32,13 @@ class Industri extends BaseModel
         return $this->belongsTo('App\Models\IndustriTrans', 'id', 'industri_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
 
+    /**
+     * @param $query
+     */
+    public function scopeIsActive($query, $params = true)
+    {
+        return $query->where('is_active', $params);
+    }
 
     /**
      * @param $query
