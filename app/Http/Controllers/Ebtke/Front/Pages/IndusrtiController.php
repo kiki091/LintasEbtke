@@ -4,31 +4,27 @@ namespace App\Http\Controllers\Ebtke\Front\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
-use App\Services\Bridge\Front\Event as EventServices;
+use App\Services\Bridge\Front\Indusrti as IndusrtiServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
 use App\Services\Api\Response as ResponseService;
 
 use Carbon\Carbon;
 use JavaScript;
 
-class EventController extends FrontController
+class IndusrtiController extends FrontController
 {
 
-    protected $event;
+    protected $indusrti;
     protected $seo;
     protected $response;
 
-    const SEO_KEY = 'landing:event';
+    const SEO_KEY = 'landing:indusrti';
 
-    public function __construct(EventServices $event, SeoServices $seo, ResponseService $response)
+    public function __construct(IndusrtiServices $indusrti, SeoServices $seo, ResponseService $response)
     {
-        $this->event = $event;
+        $this->indusrti = $indusrti;
         $this->seo = $seo;
         $this->response = $response;
-
-        JavaScript::put([
-            'event_url' => route('GetDataEvent'),
-        ]);
     }
 
     /**
@@ -39,8 +35,9 @@ class EventController extends FrontController
     public function landing(Request $request)
     {
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
+        $data['indusrti'] = $this->indusrti->getData($request->except('_token'));
         
-        $blade = self::URL_BLADE_FRONT_SITE. '.event.landing';
+        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..indusrti.landing';
         
         if(view()->exists($blade)) {
         
@@ -52,23 +49,14 @@ class EventController extends FrontController
     }
 
     /**
-     * Get data event services
-     */
-
-    public function getData(Request $request)
-    {
-        return $this->event->getData($request->except('_token'));
-    }
-
-    /**
      * Detail pages event services
      */
 
     public function detail($slug)
     {
-        $data['detail_event'] = $this->event->getDetail($slug);
+        $data['detail_indusrti'] = $this->indusrti->getDetail($slug);
         
-        $blade = self::URL_BLADE_FRONT_SITE. '.event.detail';
+        $blade = self::URL_BLADE_FRONT_SITE. '.renewable..indusrti.landing';
         
         if(view()->exists($blade)) {
         

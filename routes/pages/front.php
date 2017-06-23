@@ -122,6 +122,25 @@ Route::group(['middleware' => ['web']], function ()
 				
 			});
 
+			// INFORMATION SERVICES ROUTE
+
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.information_services')], function () {
+				
+				// INFORMATION SERVICES RENEWABLE ENERGI ROUTE
+
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.renewable_energi')], function () {
+
+					// INFORMATION SERVICES RENEWABLE ENERGI INDUSTRI ROUTE
+
+					Route::group(['prefix' => LaravelLocalization::transRoute('routes.industry')], function () {
+
+						Route::get('/', 'Ebtke\Front\Pages\IndusrtiController@landing')->name('IndusrtiLanding');
+						Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\IndusrtiController@detail')->name('IndusrtiDetail');
+					});
+					
+				});
+			});
+
 		});
 
 	});

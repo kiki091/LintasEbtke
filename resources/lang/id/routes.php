@@ -29,6 +29,7 @@
 		'tools'								=> 'aplikasi',
 		'green_pages'						=> 'halaman-hijau',
 		'maps'								=> 'peta',
+		'information_services'				=> 'layanan-informasi',
 		'renewable_energi'					=> 'energi-terbarukan',
 		'industry'							=> 'industri',
 	];

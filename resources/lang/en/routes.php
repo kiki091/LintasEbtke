@@ -29,6 +29,7 @@
 		'tools'								=> 'tools',
 		'green_pages'						=> 'green-pages',
 		'maps'								=> 'maps',
+		'information_services'				=> 'information-services',
 		'renewable_energi'					=> 'renewable-energi',
 		'industry'							=> 'industry',
 	];

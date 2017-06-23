@@ -101,7 +101,9 @@
                     <a href='#'>{{ trans('navigation/sub_menu.renewable_energi')}}</a>
                     <ul>
                         <li>
-                            <a href='#'>{{ trans('navigation/sub_menu.industry') }}</a>
+                            <a href="{{ route('IndusrtiLanding') }}">
+                                {{ trans('navigation/sub_menu.industry') }}
+                            </a>
                             
                         </li>
                         <li>
