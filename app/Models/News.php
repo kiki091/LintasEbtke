@@ -62,14 +62,6 @@ class News extends BaseModel
         return $query->where('is_active', $params);
     }
 
-    /**
-     * @param $query
-     */
-    public function scopeSlug($query, $slug)
-    {
-        return $query->where('slug', $slug);
-    }
-
 
     /**
      * @param $query

@@ -15,10 +15,19 @@ class CategoryTrans extends BaseModel
 
     protected $fillable = [
         'locale',
-        'title'
+        'title',
+        'slug'
     ];
 
     protected $guarded = [];
 
-        
+    
+
+    /**
+     * @param $query
+     */
+    public function scopeSlug($query, $slug)
+    {
+        return $query->where('slug', $slug);
+    } 
 }

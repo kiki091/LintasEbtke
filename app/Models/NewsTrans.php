@@ -23,5 +23,13 @@ class NewsTrans extends BaseModel
 
     protected $guarded = [];
 
-        
+    
+
+    /**
+     * @param $query
+     */
+    public function scopeSlug($query, $slug)
+    {
+        return $query->where('slug', $slug);
+    }
 }

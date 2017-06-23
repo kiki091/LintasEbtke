@@ -34,21 +34,15 @@ class Tools extends BaseImplementation implements ToolsInterface
 
     public function getData($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(ToolsRedis::REDIS_TOOLS_LANDING_KEY, $params['key']);
+        
+        $params = [
+            "is_active" => true,
+        ];
 
-        $dataTools = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-            ];
+        $toolsData = $this->tools($params, 'desc', 'array' ,false);
 
-            $toolsData = $this->tools($params, 'desc', 'array' ,false);
-
-            return $this->toolsTransformation->getToolsTransform($toolsData);
-        });
-
-
-        return $dataTools;
+        return $this->toolsTransformation->getToolsTransform($toolsData);
+        
     }
 
 
@@ -61,22 +55,16 @@ class Tools extends BaseImplementation implements ToolsInterface
 
     public function getDataTopRated($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(ToolsRedis::REDIS_TOOLS_TOP_RATING_KEY, $params['key']);
 
-        $dataTools = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "rating" => 20,
-            ];
+        $params = [
+            "is_active" => true,
+            "rating" => 20,
+        ];
 
-            $toolsData = $this->tools($params, 'desc', 'array' ,false);
+        $toolsData = $this->tools($params, 'desc', 'array' ,false);
 
-            return $this->toolsTransformation->getToolsTransform($toolsData);
-        });
-
-
-        return $dataTools;
+        return $this->toolsTransformation->getToolsTransform($toolsData);
+        
     }
 
 
@@ -89,22 +77,16 @@ class Tools extends BaseImplementation implements ToolsInterface
 
     public function getDataDownloaded($data)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(ToolsRedis::REDIS_TOOLS_TOP_DOWNLOADED_KEY, $data['key']);
+        
+        $params = [
+            "is_active" => true,
+            "downloaded" => 20,
+        ];
 
-        $dataTools = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "downloaded" => 20,
-            ];
+        $toolsData = $this->tools($params, 'desc', 'array' ,false);
 
-            $toolsData = $this->tools($params, 'desc', 'array' ,false);
-
-            return $this->toolsTransformation->getToolsTransform($toolsData);
-        });
-
-
-        return $dataTools;
+        return $this->toolsTransformation->getToolsTransform($toolsData);
+        
     }
 
     /**
@@ -116,22 +98,16 @@ class Tools extends BaseImplementation implements ToolsInterface
 
     public function getDetail($data)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(ToolsRedis::REDIS_TOOLS_DETAILS_KEY, $data['key']);
+        
+        $params = [
+            "is_active" => true,
+            "slug" => $data['slug'],
+        ];
 
-        $dataTools = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "slug" => $data['slug'],
-            ];
+        $toolsData = $this->tools($params, 'desc', 'array' ,true);
 
-            $toolsData = $this->tools($params, 'desc', 'array' ,true);
-
-            return $this->toolsTransformation->getSingleToolsTransform($toolsData);
-        });
-
-
-        return $dataTools;
+        return $this->toolsTransformation->getSingleToolsTransform($toolsData);
+        
     }
 
 

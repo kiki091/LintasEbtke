@@ -64,14 +64,6 @@ class WhitePaper extends BaseModel
     /**
      * @param $query
      */
-    public function scopeSlug($query, $params)
-    {
-        return $query->where('slug', $params);
-    }
-
-    /**
-     * @param $query
-     */
     public function scopeId($query, $params)
     {
         return $query->where('id', $params);

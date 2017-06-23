@@ -42,7 +42,7 @@ class News
                 'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
                 'thumbnail_url' => isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY,
                 
-                'slug' => isset($data['slug']) ? $data['slug'] : '',
+                'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
                 'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
                 'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],400) : '',
                 'total_view' => isset($data['total_view']) ? $data['total_view'] : '',
@@ -65,7 +65,7 @@ class News
         $dataTransform['locale'] = isset($data['translation']['locale']) ? $data['translation']['locale'] : '';
         $dataTransform['title'] = isset($data['translation']['title']) ? $data['translation']['title'] : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY;
-        $dataTransform['slug'] = isset($data['slug']) ? $data['slug'] : '';
+        $dataTransform['slug'] = isset($data['translation']['slug']) ? $data['translation']['slug'] : '';
         $dataTransform['introduction'] = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['description'] = isset($data['translation']['description']) ? $data['translation']['description'] : '';
         $dataTransform['meta_title'] = isset($data['translation']['meta_title']) ? $data['translation']['meta_title'] : '';
@@ -86,7 +86,7 @@ class News
 
             return [
                 'related_thumbnail_url' => isset($data['related_news']['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['related_news']['thumbnail'])) : '',
-                'related_slug'          => isset($data['related_news']['slug']) ? $data['related_news']['slug'] : '',
+                'related_slug'          => isset($data['related_news']['translation']['slug']) ? $data['related_news']['translation']['slug'] : '',
                 'related_view'          => isset($data['related_news']['total_view']) ? $data['related_news']['total_view'] : '',
                 'related_day_ago'          => isset($data['related_news']['created_at']) ?\Carbon\Carbon::createFromTimeStamp(strtotime($data['related_news']['created_at']))->diffForHumans() : '',
 

@@ -34,7 +34,6 @@
                 <a href="{{ route('InvestmentServicesLanding') }}" class="breadcrumb text-gray">
                     {{ trans('navigation/menu.menu_investment_services')}}
                 </a>
-                <a href="{{ route('InvestmentServicesDetail',$investment_services['slug']) }}" class="breadcrumb text-gray">{{ $investment_services['title'] or '' }}</a>
             </div>
             <div class="col-md-12">
                 <h3 class="latestnews__title text-center">{{ $investment_services['title'] or '' }}</h3>
@@ -93,7 +92,7 @@
         <div id="related__news" class="col-md-4">
             <img src="{{ $related['related_thumbnail_url'] }}" class="img-responsive">
             <p>
-                <a href="{{ route('detailNews',$related['related_slug']) }}">
+                <a href="{{ route('InvestmentServicesDetail',$related['related_slug']) }}">
                     <h4>{{ $related['related_title'] }}</h4>
                 </a>
             </p>

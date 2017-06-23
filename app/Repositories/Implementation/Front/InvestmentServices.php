@@ -38,25 +38,16 @@ class InvestmentServices extends BaseImplementation implements InvestmentService
 
     public function getData($data)
     {
-        if(!isset($data['key']))
-            return array();
+        
+        $params = [
+            "is_active" => true,
+            "limit_data" => isset($data['limit_data']) ? $data['limit_data'] : '',
+            "order_by"  => "order",
+        ];
 
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(InvestmentServicesRedis::INVESTMENT_SERVICES_LANDING_KEY, $data['key']);
+        $investmentServicesGetData = $this->investmentServices($params, 'desc', 'array', false);
 
-        $investmentServicesData = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "limit_data" => isset($data['limit_data']) ? $data['limit_data'] : '',
-                "order_by"  => "order",
-            ];
-
-            $investmentServicesGetData = $this->investmentServices($params, 'desc', 'array', false);
-
-            return $this->investmentServicesTransformation->getInvestmentServicesTransform($investmentServicesGetData);
-        });
-
-        return $investmentServicesData;
+        return $this->investmentServicesTransformation->getInvestmentServicesTransform($investmentServicesGetData);
         
     }
 
@@ -70,26 +61,16 @@ class InvestmentServices extends BaseImplementation implements InvestmentService
     public function getDetail($data)
     {
 
-        if(!isset($data['key']))
-            return array();
+        $params = [
+            "is_active" => true,
+            "slug" => $data['slug'],
+        ];
 
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(InvestmentServicesRedis::INVESTMENT_SERVICES_DETAIL_KEY, $data['key']);
+        $investmentServicesDetail = $this->investmentServices($params, 'desc', 'array', true);
 
-        $investmentServicesDataDetail = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "slug" => $data['slug'],
-            ];
+        $this->addViewer($params);
 
-            $investmentServicesDetail = $this->investmentServices($params, 'desc', 'array', true);
-
-            $this->addViewer($params);
-
-            return $this->investmentServicesTransformation->getInvestmentServicesDetailTransform($investmentServicesDetail);
-        });
-
-        return $investmentServicesDataDetail;
+        return $this->investmentServicesTransformation->getInvestmentServicesDetailTransform($investmentServicesDetail);
         
     }
 
@@ -106,12 +87,14 @@ class InvestmentServices extends BaseImplementation implements InvestmentService
             ->with('translations')
             ->with('related');
 
-        if(isset($params['total_view'])) {
-            $investmentServices->popular($params['total_view']);
+        if(isset($params['slug']) && $params['slug']) {
+            $investmentServices->whereHas('translation', function($q) use($params) {
+                $q->slug($params['slug']);
+            });
         }
 
-        if(isset($params['slug'])) {
-            $investmentServices->slug($params['slug']);
+        if(isset($params['total_view'])) {
+            $investmentServices->popular($params['total_view']);
         }
 
         if(isset($params['is_active'])) {

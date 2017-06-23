@@ -31,42 +31,29 @@ class Company extends BaseImplementation implements CompanyInterface
 
     public function getCompanyHistory($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(CompanyRedis::COMPANY_HISTORY_KEY, $params['key']);
+        
+        $params = [
+            "is_active" => true,
+            "order_by" => 'order',
+        ];
 
-        $dataCompanyHistory = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "order_by" => 'order',
-            ];
+        $companyHistoryData = $this->companyHistory($params);
 
-            $companyHistoryData = $this->companyHistory($params);
-
-            return $this->companyTransformation->getCompanyHistoryTransform($companyHistoryData);
-        });
-
-
-        return $dataCompanyHistory;
+        return $this->companyTransformation->getCompanyHistoryTransform($companyHistoryData);
     }
 
     public function getOrganizationStructure($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(CompanyRedis::COMPANY_ORGANIZATION_STRUCTURE_KEY, $params['key']);
+        
+        $params = [
+            "is_active" => true,
+            "order_by" => 'order',
+        ];
 
-        $dataOrganizationStructure = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "order_by" => 'order',
-            ];
+        $organizationStructureData = $this->organizationStructure($params, 'asc', 'array', false);
 
-            $organizationStructureData = $this->organizationStructure($params, 'asc', 'array', false);
-
-            return $this->companyTransformation->getOrganizationStructureTransform($organizationStructureData);
-        });
-
-
-        return $dataOrganizationStructure;
+        return $this->companyTransformation->getOrganizationStructureTransform($organizationStructureData);
+        
     }
 
     /**

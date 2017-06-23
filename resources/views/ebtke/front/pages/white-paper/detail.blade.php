@@ -19,14 +19,19 @@
   |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
 -->
+<div class="banner--main-event" style="background-image: url({{ asset(BANNER_PAPERS_IMAGES_DIRECTORY.'whitepapers.png') }});">
+    
+</div>
 
 <section id="desktop" class="page" style="min-height: 500px;">
 	<!-- Begin page header-->
     <div class="container">
     	<div class="row">
     	   <div class="col-md-12">
-                <div class="wrapper">
-                    <h3 class="latestnews__title">{{ $detail_papers['title'] or '' }}</h3>
+                <div class="card__container padding20">
+                    <h5 class="s15 uppercase margin0 brandon medium spacing1">
+                        {{ $detail_papers['title'] or '' }}            
+                    </h5>
                 </div>
 
                 <div class="col-md-3 pull-left">

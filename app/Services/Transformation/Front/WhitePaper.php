@@ -45,7 +45,7 @@ class WhitePaper
             return [
                 'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
                 'description' => isset($data['translation']['description']) ? str_limit($data['translation']['description'],350) : '',
-                'slug' => isset($data['slug']) ? $data['slug'] : '',
+                'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
                 'file_url' => isset($data['file']) ? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['file'])) : '',
                 'is_downloaded' => isset($data['downloaded']) ? $data['downloaded'] : 0,
                 'is_rating' => isset($data['rating']) ? $data['rating'] : 0,

@@ -34,21 +34,15 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
 
     public function getPapaers($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(WhitePaperRedis::WHITE_PAPER_KEY, $params['key']);
+        
+        $params = [
+            "is_active" => true,
+        ];
 
-        $dataWhitePaper = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-            ];
+        $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
 
-            $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
-
-            return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
-        });
-
-
-        return $dataWhitePaper;
+        return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
+        
     }
 
 
@@ -61,22 +55,16 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
 
     public function getPapersTopRated($params)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(WhitePaperRedis::WHITE_PAPER_TOP_RATING_KEY, $params['key']);
+        
+        $params = [
+            "is_active" => true,
+            "rating" => 20,
+        ];
 
-        $dataWhitePaper = Cache::rememberForever($redisKey, function() use ($params, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "rating" => 20,
-            ];
+        $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
 
-            $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
-
-            return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
-        });
-
-
-        return $dataWhitePaper;
+        return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
+        
     }
 
 
@@ -89,22 +77,16 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
 
     public function getPapersTopDownloaded($data)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(WhitePaperRedis::WHITE_PAPER_TOP_DOWNLOADED_KEY, $data['key']);
+        
+        $params = [
+            "is_active" => true,
+            "downloaded" => 20,
+        ];
 
-        $dataWhitePaper = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "downloaded" => 20,
-            ];
+        $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
 
-            $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,false);
-
-            return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
-        });
-
-
-        return $dataWhitePaper;
+        return $this->whitePaperTransformation->getPapaersTransform($whitePaperData);
+       
     }
 
     /**
@@ -116,22 +98,16 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
 
     public function getPapersDetail($data)
     {
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(WhitePaperRedis::WHITE_PAPER_TOP_DOWNLOADED_KEY, $data['key']);
+        
+        $params = [
+            "is_active" => true,
+            "slug" => $data['slug'],
+        ];
 
-        $dataWhitePaper = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "is_active" => true,
-                "slug" => $data['slug'],
-            ];
+        $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,true);
 
-            $whitePaperData = $this->whitePaper($params, 'desc', 'array' ,true);
-
-            return $this->whitePaperTransformation->getSinglePapaersTransform($whitePaperData);
-        });
-
-
-        return $dataWhitePaper;
+        return $this->whitePaperTransformation->getSinglePapaersTransform($whitePaperData);
+        
     }
 
 
@@ -147,6 +123,12 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
             ->with('translation')
             ->with('translations');
 
+        if(isset($params['slug']) && $params['slug']) {
+            $whitePaper->whereHas('translation', function($q) use($params) {
+                $q->slug($params['slug']);
+            });
+        }
+        
         if(isset($params['limit_data'])) {
             $whitePaper->take($params['limit_data']);
         }
@@ -158,11 +140,6 @@ class WhitePaper extends BaseImplementation implements WhitePaperInterface
 
         if(isset($params['downloaded'])) {
             $whitePaper->downloaded($params['downloaded']);
-        }
-
-
-        if(isset($params['slug'])) {
-            $whitePaper->slug($params['slug']);
         }
 
 

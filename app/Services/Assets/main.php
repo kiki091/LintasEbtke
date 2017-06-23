@@ -46,6 +46,7 @@ define('COMPANY_SCOPE_OF_SERVICES_IMAGES_DIRECTORY', 'bin/db/images/company/scop
 // Papers
 // 
 define('PAPERS_FILE_DIRECTORY', 'bin/db/file/papers/');
+define('BANNER_PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/banner/');
 define('PAPERS_IMAGES_DIRECTORY', 'bin/db/images/papers/');
 
 // TOOLS

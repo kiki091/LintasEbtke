@@ -33,7 +33,6 @@ class News extends BaseImplementation implements NewsInterface
 
         $params = [
             "is_active" => true,
-            "category"  => 'berita',
             "limit_data" => isset($data['limit']) ? $data['limit'] : '',
         ];
 
@@ -50,7 +49,6 @@ class News extends BaseImplementation implements NewsInterface
             "is_active" => true,
             "total_view" => '1',
             "limit"     => '6',
-            "category"  => 'berita'
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);
@@ -87,18 +85,14 @@ class News extends BaseImplementation implements NewsInterface
             ->with('category')
             ->with('related');
 
-        if(isset($params['category']) && $params['category']) {
-            $news->whereHas('category', function($q) use($params) {
-                $q->slug($params['category']);
+        if(isset($params['slug']) && $params['slug']) {
+            $news->whereHas('translation', function($q) use($params) {
+                $q->slug($params['slug']);
             });
         }
 
         if(isset($params['total_view'])) {
             $news->popular($params['total_view']);
-        }
-
-        if(isset($params['slug'])) {
-            $news->slug($params['slug']);
         }
 
         if(isset($params['is_active'])) {

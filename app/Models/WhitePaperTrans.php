@@ -20,5 +20,13 @@ class WhitePaperTrans extends BaseModel
 
     protected $guarded = [];
 
-        
+    
+
+    /**
+     * @param $query
+     */
+    public function scopeSlug($query, $params)
+    {
+        return $query->where('slug', $params);
+    }
 }
