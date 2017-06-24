@@ -19,16 +19,15 @@
   |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
 -->
-
-<section id="desktop" class="page" style="min-height: 500px;">
-	<!-- Begin page header-->
-    <div class="container">
-    	<div class="row">
-    		<div class="col-md-8">
-    			<div class="wrapper">
-                    
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+<div class="banner--main-event" style="background-image: url({{ asset(BANNER_PAPERS_IMAGES_DIRECTORY.'whitepapers.png') }});">
+</div>
+<section id="desktop" class="page" style="padding-top:0px;min-height: 500px;">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="wrapper">
+                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <div class="bs-example-nav-tab">
+                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive text-center" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#recent-papers" id="recent-papers-tab" role="tab" data-toggle="tab" aria-controls="recent-papers" aria-expanded="true">
                                     <span class="text">{{ trans('pages/white_papers_page.title_recent_papers') }}</span>
@@ -47,19 +46,25 @@
                                 </a>
                             </li>
                         </ul>
+                    </div>
 
+                    <div class="container">
+                        <h1 class="title1-icon-white-paper">
+                            {{ trans('navigation/sub_menu.white_papers') }}
+                        </h1>
+                        <hr/>
                         <div id="myTabContent" class="tab-content">
                             @if(isset($recent_papers) && !empty($recent_papers))
                             <div role="tabpanel" class="tab-pane fade in active" id="recent-papers" aria-labelledby="recent-papers-tab">
                                 @foreach($recent_papers as $key=> $recent_papers)
-                                <div class="col-lg-12">
+                                <div class="col-md-12">
 
-                                    <div class="col-lg-3">
+                                    <div class="col-md-3">
                                         <img src="{{ $recent_papers['thumbnail_url'] }}" class="img-responsive" alt="{{ $recent_papers['title'] or '' }}">
                                     </div>
 
-                                    <div class="font__normal col-lg-9">
-                                        <h3>
+                                    <div class="font__normal col-md-9">
+                                        <h3 class="title__white__papers">
                                             <a href="{{ route('DetailWhitePapers',$recent_papers['slug']) }}">
                                                 {{ $recent_papers['title'] }}
                                             </a>
@@ -97,10 +102,9 @@
                             @endif
                         </div>
                     </div>
-    	       </div>
-    	   </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
 @endsection

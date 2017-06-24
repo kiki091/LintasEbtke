@@ -40,7 +40,7 @@
     		<div class="col-md-8">
     			<div class="card__container padding20">
     				<h5 class="s15 uppercase margin0 brandon medium spacing1">
-                        {{ trans('pages/news_page.title_news') }}             
+                        {{ trans('navigation/menu.menu_information_services')}}           
                     </h5>
     				<small class="text-gray">
                         {{ trans('pages/news_page.user_created') }}            

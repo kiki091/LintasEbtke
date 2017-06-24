@@ -61,5 +61,8 @@ define('INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY', 'bin/db/images/investment_se
 
 // INFORMATION SERVICES
 
+define('BANNER_RENEWABLE_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/banner/');
+define('RENEWABLE_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/');
+
 define('BANNER_INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/banner/');
 define('INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/');

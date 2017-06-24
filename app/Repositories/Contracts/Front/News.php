@@ -7,7 +7,7 @@ interface News
 {
 
     /**
-     * Get Data Main Banner
+     * Get Data  News Home
      * @param $params
      * @return mixed
      */
@@ -15,7 +15,7 @@ interface News
 
     
     /**
-     * Get Data Main Banner
+     * Get Data  Popular News
      * @param $params
      * @return mixed
      */
@@ -23,7 +23,7 @@ interface News
 
 
     /**
-     * Get Data Main Banner
+     * Get Data  Detail
      * @param $params
      * @return mixed
      */
