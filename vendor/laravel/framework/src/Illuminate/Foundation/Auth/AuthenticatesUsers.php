@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait AuthenticatesUsers
 {
-    use RedirectsUsers, ThrottlesLogins;
+    use RedirectsUsers;
 
     /**
      * Show the application's login form.
@@ -143,6 +143,24 @@ trait AuthenticatesUsers
     public function username()
     {
         return 'email';
+    }
+
+    protected function isUsingThrottlesLoginsTrait()
+    {
+        return in_array(
+            ThrottlesLogins::class, class_uses_recursive(static::class)
+        );
+    }
+
+    /**
+     * Get the failed login message.
+     *
+     * @return string
+     */
+
+    protected function getFailedLoginMessage()
+    {
+        return trans('message.failed');
     }
 
     /**
