@@ -91,25 +91,26 @@
 	    		</div>
     		</div>
             @endif
+
+            @if(isset($tags_news) && !empty($tags_news))
             <hr/>
             <div id="desktop__content" class="col-md-4">
                 <div class="sidepanel widget_tags">
                     <h3>
-                        <b>Popular</b> Tags
+                        {!! trans('global_page.polular_tags') !!}
                     </h3>
                     <ul>
+                        @foreach($tags_news as $key=> $tags)
                         <li>
-                            <a href="javascript:void(0);">Fashion</a>
+                            <a href="{{ route('NewsByCategory',$tags['slug']) }}">
+                                {{ $tags['title'] or '' }}
+                            </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);">Fashion</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">Fashion</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
+            @endif
     	</div>
     </div>
 </section>

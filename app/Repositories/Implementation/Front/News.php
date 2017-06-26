@@ -4,6 +4,8 @@ namespace App\Repositories\Implementation\Front;
 
 use App\Repositories\Contracts\Front\News as NewsInterface;
 use App\Repositories\Implementation\BaseImplementation;
+use App\Models\Tag as TagServices;
+use App\Models\TagTrans as TagTransServices;
 use App\Models\News as NewsServices;
 use App\Models\NewsTrans as NewsTransServices;
 use App\Models\NewsRelated as NewsRelatedServices;
@@ -18,15 +20,26 @@ class News extends BaseImplementation implements NewsInterface
 	protected $message;
     protected $news;
     protected $newsTrans;
+    protected $tag;
+    protected $tagTrans;
     protected $newsTransformation;
 
 
-    function __construct(NewsServices $news, NewsTransServices $newsTrans, NewsTransformation $newsTransformation)
+    function __construct(TagServices $tag, TagTransServices $tagTrans, NewsServices $news, NewsTransServices $newsTrans, NewsTransformation $newsTransformation)
     {
     	$this->news = $news;
         $this->newsTrans = $newsTrans;
+        $this->tag = $tag;
+        $this->tagTrans = $tagTrans;
     	$this->newsTransformation = $newsTransformation;
     }
+
+    /** 
+     * Get News For Landing Pages
+     * @param array
+     * @return array
+     *
+     */
 
     public function getNewsHome($data)
     {
@@ -41,6 +54,13 @@ class News extends BaseImplementation implements NewsInterface
         return $this->newsTransformation->getNewsTransform($newsData);
         
     }
+
+    /** 
+     * Get News Popular
+     * @param array
+     * @return array
+     *
+     */
 
     public function getPopularNews($params)
     {
@@ -57,6 +77,14 @@ class News extends BaseImplementation implements NewsInterface
         
     }
 
+
+    /** 
+     * Get News For Detail Pages
+     * @param array
+     * @return array
+     *
+     */
+
     public function getNewsDetail($slug)
     {
 
@@ -71,6 +99,92 @@ class News extends BaseImplementation implements NewsInterface
         
     }
 
+    /** 
+     * Get News Category
+     * @param array
+     * @return array
+     *
+     */
+
+    public function getNewsCategory($data)
+    {
+        $params = [
+            'is_active' => true,
+            'order' => 'order'
+        ];
+
+        $categoryData = $this->tag($params, 'desc', 'array', false);
+
+        return $this->newsTransformation->getNewsCategoryTransform($categoryData);
+    }
+
+    /** 
+     * Get News Category
+     * @param array
+     * @return array
+     *
+     */
+
+    public function getNewsByCategory($slug)
+    {
+        $params = [
+            'slug' => $slug
+        ];
+
+        $categoryData = $this->tag($params, 'desc', 'array', true);
+
+        return $this->newsTransformation->getNewsByCategory($categoryData);
+    }
+
+    /**
+     * Get All Tag News
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    protected function tag($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+    {
+        $tag = $this->tag
+            ->with('translation')
+            ->with('translations')
+            ->with('news');
+
+        if(isset($params['slug']) && $params['slug']) {
+            $tag->whereHas('translation', function($q) use($params) {
+                $q->slug($params['slug']);
+            });
+        }
+
+        if(isset($params['is_active'])) {
+            $tag->isActive($params['is_active']);
+        }
+
+        if(isset($params['limit'])) {
+            $tag->take($params['limit']);
+        }
+
+        if(isset($params['order_by'])) {
+            $tag->orderBy('order', $orderType);
+        }
+
+        if(!$tag->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) 
+                {
+                    return $tag->get()->toArray();
+                } 
+                else 
+                {
+                    return $tag->first()->toArray();
+                }
+
+            break;
+        }
+    }
+
     /**
      * Get All Data News
      * Warning: this function doesn't redis cache
@@ -82,7 +196,7 @@ class News extends BaseImplementation implements NewsInterface
         $news = $this->news
             ->with('translation')
             ->with('translations')
-            ->with('category')
+            ->with('tags')
             ->with('related');
 
         if(isset($params['slug']) && $params['slug']) {

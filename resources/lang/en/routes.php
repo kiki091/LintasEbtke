@@ -8,7 +8,7 @@
 	return [
 
 		'detail'							=> 'detail/{slug}',
-	
+		'tags'								=> 'tags',
 		'news'								=> 'news',
 		'news_detail'						=> 'detail/{slug}',
 		'event'								=> 'event',

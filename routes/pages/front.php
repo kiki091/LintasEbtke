@@ -31,6 +31,12 @@ Route::group(['middleware' => ['web']], function ()
 
 				Route::get('/', 'Ebtke\Front\Pages\NewsController@landing')->name('landingNews');
 				Route::get(LaravelLocalization::transRoute('routes.news_detail'), 'Ebtke\Front\Pages\NewsController@detail')->name('detailNews');
+
+				// News By Category
+				
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.tags')], function () {
+					Route::get('{slug}', 'Ebtke\Front\Pages\NewsController@getNewsByCategory')->name('NewsByCategory');
+				});
 			});
 
 			// EVENT ROUTE

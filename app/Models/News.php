@@ -47,9 +47,9 @@ class News extends BaseModel
     /**
      * @return mixed
      */
-    public function category()
+    public function tags()
     {
-        return $this->belongsTo('App\Models\Category', 'category_id', 'id')->with('translation');
+        return $this->belongsTo('App\Models\Tag', 'tag_id', 'id')->with('translation');
     }
 
     /***************** Scope *****************/

@@ -5,7 +5,7 @@ namespace App\Services\Transformation\Front;
 class News
 {
 	/**
-     * Get Main Banner Transformation
+     * Get News Transformation
      * @param $data
      * @return array
      */
@@ -17,6 +17,12 @@ class News
         return $this->setNewsTransform($data);
     }
 
+    /**
+     * Get News Detail Transformation
+     * @param $data
+     * @return array
+     */
+
     public function getNewsDetailTransform($data)
     {
         if(!is_array($data) || empty($data))
@@ -26,7 +32,35 @@ class News
     }
 
     /**
-     * Set Main Banner Transformation
+     * Get News Category Transformation
+     * @param $data
+     * @return array
+     */
+
+    public function getNewsCategoryTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setNewsCategoryTransform($data);
+    }
+
+    /**
+     * Get News By Category Transformation
+     * @param $data
+     * @return array
+     */
+
+    public function getNewsByCategory($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setNewsByCategory($data);
+    }
+
+    /**
+     * Set News Transformation
      * @param $data
      * @return array
      */
@@ -56,7 +90,7 @@ class News
     }
 
     /**
-     * Set Main Banner Transformation
+     * Set News Transformation
      * @param $data
      * @return array
      */
@@ -80,6 +114,12 @@ class News
         return $dataTransform;
     }
 
+    /**
+     * Set You Migh Also Like Transformation
+     * @param $data
+     * @return array
+     */
+
     protected function getYouMighAlsoLike($data) 
     {
         $dataTransform = array_map(function($data) {
@@ -95,6 +135,86 @@ class News
             ];
         },$data);
 
+        return $dataTransform;
+    }
+
+
+
+    /**
+     * Set News Category Transformation
+     * @param $data
+     * @return array
+     */
+    protected function setNewsCategoryTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        $dataTransform =  array_map(function($data)
+        {
+            return [
+                'locale' => isset($data['translation']['locale']) ? $data['translation']['locale'] : '',
+                'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
+                'thumbnail_url' => isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY,
+                
+                'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
+                'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
+            ];
+        }, $data);
+        
+        return $dataTransform;
+    }
+
+
+    /**
+     * Set News By Category Transformation
+     * @param $data
+     * @return array
+     */
+    protected function setNewsByCategory($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+
+        $dataTransform['tag_title']     = isset($data['translation']['title']) ? $data['translation']['title'] : '';
+        $dataTransform['tag_slug']      = isset($data['translation']['slug']) ? $data['translation']['slug'] : '';
+        $dataTransform['tag_introduction']     = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
+        $dataTransform['thumbnail']     = isset($data['thumbnail']) ? $data['thumbnail'] : '';
+        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
+        $dataTransform['news']          = $this->setNewsDataByCategory($data['news']);
+        
+        return $dataTransform;
+    }
+
+    /**
+     * Set News Data By Category Transformation
+     * @param $data
+     * @return array
+     */
+
+    protected function setNewsDataByCategory($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        $dataTransform =  array_map(function($data)
+        {
+            return [
+                'thumbnail' => isset($data['thumbnail']) ? $data['thumbnail'] : '',
+                'thumbnail_url' => isset($data['thumbnail']) ? asset(NEWS_THUMBNAIL_DIRECTORY.rawurlencode($data['thumbnail'])) : DEFAULT_IMAGE_DIRECTORY,
+                
+                'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
+                'slug' => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
+                'introduction' => isset($data['translation']['introduction']) ? str_limit($data['translation']['introduction'],300) : '',
+                'total_view' => isset($data['total_view']) ? $data['total_view'] : '',
+                'created_at' => isset($data['created_at']) ? date('d/m/Y g:i:s A', strtotime($data['created_at'])) : '',
+                'created_at_home' => isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '',
+                'days_ago' => isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '',
+            ];
+        }, $data);
+        
+        
         return $dataTransform;
     }
 }

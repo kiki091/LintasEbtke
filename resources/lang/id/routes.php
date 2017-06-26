@@ -10,6 +10,7 @@
 
 		'detail'							=> 'rincian/{slug}',
 		'news'								=> 'berita',
+		'tags'								=> 'tags',
 		'news_detail'						=> 'rincian/{slug}',
 		'event'								=> 'acara',
 		'event_detail'						=> 'rincian/{slug}',

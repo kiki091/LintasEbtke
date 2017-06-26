@@ -467,7 +467,8 @@ h3.latestnews__title {
 .blog_post_info li {position:relative; display:inline-block; padding-right:22px;}
 .blog_post_info li:before {content:''; position:absolute; right:9px; top:4px; height:12px; width:1px; background-color:#d3d3d3;}
 .blog_post_info li:last-child:before {display:none;}
-.blog_post_info li a {font-size:14px;}
+.blog_post_info li a {font-size:14px;text-transform: uppercase;}
+.blog_post_info li a:hover{text-decoration: none;}
 .blog_post_content {
     padding-bottom:18px;
     line-height:26px;

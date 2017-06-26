@@ -7,9 +7,9 @@ use App\Models\BaseModel;
 /**
  * Class News Trans
  */
-class CategoryTrans extends BaseModel
+class TagTrans extends BaseModel
 {
-    protected $table = 'category_trans';
+    protected $table = 'tag_trans';
 
     public $timestamps = true;
 

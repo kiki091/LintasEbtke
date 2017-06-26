@@ -16,63 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `category`
---
-
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `category`
---
-
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,NULL,NULL),(2,NULL,NULL);
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `category_trans`
---
-
-DROP TABLE IF EXISTS `category_trans`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category_trans` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `locale` varchar(2) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `slug` varchar(100) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `slug_UNIQUE` (`slug`),
-  KEY `fk_category_trans_1_idx` (`category_id`),
-  CONSTRAINT `fk_category_trans_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `category_trans`
---
-
-LOCK TABLES `category_trans` WRITE;
-/*!40000 ALTER TABLE `category_trans` DISABLE KEYS */;
-INSERT INTO `category_trans` VALUES (1,'id','Berita',NULL,NULL,NULL,1),(2,'en','News',NULL,NULL,NULL,1),(3,'id','Acara',NULL,NULL,NULL,2),(4,'en','Event',NULL,NULL,NULL,2);
-/*!40000 ALTER TABLE `category_trans` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `company_history`
 --
 
@@ -121,7 +64,7 @@ CREATE TABLE `company_history_trans` (
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_company_history_trans_1_idx` (`company_history_id`),
   CONSTRAINT `fk_company_history_trans_1` FOREIGN KEY (`company_history_id`) REFERENCES `company_history` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -718,10 +661,10 @@ CREATE TABLE `news` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(10) DEFAULT NULL,
-  `category_id` int(10) DEFAULT NULL,
+  `tag_id` int(10) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_news_1_idx` (`category_id`),
-  CONSTRAINT `fk_news_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  KEY `fk_news_1_idx` (`tag_id`),
+  CONSTRAINT `fk_news_1` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -731,7 +674,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'thumbnail_002.jpg',1,1,13,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg',2,1,6,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(3,'thumbnail_002.jpg',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
+INSERT INTO `news` VALUES (1,'thumbnail_002.jpg',1,1,13,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,1),(2,'thumbnail_002.jpg',2,1,6,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2),(3,'thumbnail_002.jpg',3,1,2,'2017-06-07 07:39:45','2017-06-07 07:39:45',NULL,2);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -995,6 +938,70 @@ LOCK TABLES `potentials_region` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `renewable_energy`
+--
+
+DROP TABLE IF EXISTS `renewable_energy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `renewable_energy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `order` tinyint(3) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `renewable_energy`
+--
+
+LOCK TABLES `renewable_energy` WRITE;
+/*!40000 ALTER TABLE `renewable_energy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `renewable_energy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `renewable_energy_trans`
+--
+
+DROP TABLE IF EXISTS `renewable_energy_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `renewable_energy_trans` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `introduction` text,
+  `description` text,
+  `meta_title` varchar(80) DEFAULT NULL,
+  `meta_keyword` varchar(150) DEFAULT NULL,
+  `meta_description` text,
+  `renewable_energy_id` int(10) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  KEY `fk_renewable_energy_trans_1_idx` (`renewable_energy_id`),
+  CONSTRAINT `fk_renewable_energy_trans_1` FOREIGN KEY (`renewable_energy_id`) REFERENCES `renewable_energy` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `renewable_energy_trans`
+--
+
+LOCK TABLES `renewable_energy_trans` WRITE;
+/*!40000 ALTER TABLE `renewable_energy_trans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `renewable_energy_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `seo`
 --
 
@@ -1075,6 +1082,68 @@ CREATE TABLE `subscribe` (
 LOCK TABLES `subscribe` WRITE;
 /*!40000 ALTER TABLE `subscribe` DISABLE KEYS */;
 /*!40000 ALTER TABLE `subscribe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tag`
+--
+
+DROP TABLE IF EXISTS `tag`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tag` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(150) DEFAULT NULL,
+  `order` int(3) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tag`
+--
+
+LOCK TABLES `tag` WRITE;
+/*!40000 ALTER TABLE `tag` DISABLE KEYS */;
+INSERT INTO `tag` VALUES (1,NULL,1,1,'2017-06-22 16:31:51','2017-06-22 16:31:51',NULL),(2,NULL,1,1,'2017-06-22 16:31:51','2017-06-22 16:31:51',NULL);
+/*!40000 ALTER TABLE `tag` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tag_trans`
+--
+
+DROP TABLE IF EXISTS `tag_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tag_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `introduction` text,
+  `slug` varchar(100) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `tag_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug_UNIQUE` (`slug`),
+  KEY `fk_tag_trans_1_idx` (`tag_id`),
+  CONSTRAINT `fk_tag_trans_1` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tag_trans`
+--
+
+LOCK TABLES `tag_trans` WRITE;
+/*!40000 ALTER TABLE `tag_trans` DISABLE KEYS */;
+INSERT INTO `tag_trans` VALUES (1,'id','Berita','Lorem Ipsum adalah teks dummy dari industri percetakan dan typesetting. Lorem Ipsum telah menjadi teks dummy standar industri sejak tahun 1500-an, ketika seorang printer yang tidak dikenal mengambil satu jenis makanan dan mengacaknya untuk membuat buku spesimen tipe.','berita','2017-06-22 16:31:51','2017-06-22 16:31:51',1),(2,'en','News','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ','news','2017-06-22 16:31:51','2017-06-22 16:31:51',1),(3,'id','Acara','Lorem Ipsum adalah teks dummy dari industri percetakan dan typesetting. Lorem Ipsum telah menjadi teks dummy standar industri sejak tahun 1500-an, ketika seorang printer yang tidak dikenal mengambil satu jenis makanan dan mengacaknya untuk membuat buku spesimen tipe.','acara','2017-06-22 16:31:51','2017-06-22 16:31:51',2),(4,'en','Event','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ','event','2017-06-22 16:31:51','2017-06-22 16:31:51',2);
+/*!40000 ALTER TABLE `tag_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1251,4 +1320,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-24  2:13:49
+-- Dump completed on 2017-06-26 13:08:04

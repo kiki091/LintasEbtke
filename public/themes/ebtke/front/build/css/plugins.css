@@ -8680,7 +8680,9 @@ text {
     display: none;
     visibility: hidden;
 }
-
+#font-white {
+    color: #FFFFFF;
+}
 .introduction__content {
     width: 100%;
     padding-top: 30px;
@@ -10478,8 +10480,16 @@ transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
     margin-bottom: 0;
     line-height: 39px;
     color: #2d2d2d;
+    text-transform: uppercase;
 }
-
+.banner--main-event .banner__content .banner__content__copyright {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 10px;
+    letter-spacing: 0;
+    font-family: "Raleway Webfont";
+    margin-bottom: 15px;
+}
 table.table--data-style {
     font-size: 14px;
     margin-bottom: 10px;
@@ -10524,6 +10534,72 @@ ul li.data__table_industri:before {
     top: 10px;
     margin: auto;
 }
+
+.containerfull {
+    width: 100%;
+    margin: auto;
+}
+
+@media (max-width: 1500px) {
+    .section__top {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.section__top {
+    padding: 36px 68px 0 68px;
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.section__top__container,.container--main-latest-news {
+    width: 100%;
+    margin: 0;
+}
+
+.section__top__container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section__top__heading {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 34px;
+}
+
+.border__sizing_none {
+    padding: 0;
+    margin: 0;
+}
+.text__ufo {
+    text-align: center;
+    position: relative;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.text__ufo_line-white:after {
+    background-color: #fff;
+}
+
+.text__ufo:after {
+    content: " ";
+    width: 25px;
+    height: 1px;
+    display: inline-block;
+    background-color: #414141;
+    position: absolute;
+    text-align: center;
+    bottom: -11px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
@@ -11643,7 +11719,8 @@ h3.latestnews__title {
 .blog_post_info li {position:relative; display:inline-block; padding-right:22px;}
 .blog_post_info li:before {content:''; position:absolute; right:9px; top:4px; height:12px; width:1px; background-color:#d3d3d3;}
 .blog_post_info li:last-child:before {display:none;}
-.blog_post_info li a {font-size:14px;}
+.blog_post_info li a {font-size:14px;text-transform: uppercase;}
+.blog_post_info li a:hover{text-decoration: none;}
 .blog_post_content {
     padding-bottom:18px;
     line-height:26px;

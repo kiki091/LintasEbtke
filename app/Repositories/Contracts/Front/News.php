@@ -29,6 +29,17 @@ interface News
      */
     public function getNewsDetail($slug);
 
+    /**
+     * Get Data  Category News
+     * @param $params
+     * @return mixed
+     */
+    public function getNewsCategory($params);
 
-
+    /**
+     * Get Data  News By Category
+     * @param $params
+     * @return mixed
+     */
+    public function getNewsByCategory($params);
 }

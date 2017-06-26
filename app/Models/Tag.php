@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Models\BaseModel;
 
-class Industri extends BaseModel
+class Tag extends BaseModel
 {
-	protected $table = 'industri';
+	protected $table = 'tag';
     public $timestamps = false;
 
     protected $fillable = [
@@ -21,7 +21,7 @@ class Industri extends BaseModel
      */
     public function translations()
     {
-        return $this->hasMany('App\Models\IndustriTrans', 'industri_id', 'id');
+        return $this->hasMany('App\Models\TagTrans', 'tag_id', 'id');
     }
 
     /**
@@ -29,8 +29,19 @@ class Industri extends BaseModel
      */
     public function translation()
     {
-        return $this->belongsTo('App\Models\IndustriTrans', 'id', 'industri_id')->where('locale', '=' , $this->getCurrentLocalize());
+        return $this->belongsTo('App\Models\TagTrans', 'id', 'tag_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
+
+    /**
+     * @return mixed
+     */
+    public function news()
+    {
+        return $this->hasMany('App\Models\News', 'tag_id', 'id')->with('translation');
+    }
+
+
+    /***************** Scope *****************/
 
     /**
      * @param $query
@@ -39,7 +50,7 @@ class Industri extends BaseModel
     {
         return $query->where('is_active', $params);
     }
-
+    
     /**
      * @param $query
      */

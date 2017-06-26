@@ -24,7 +24,7 @@ class News
     }
 
     /**
-     * Get Data News Home
+     * Get Data Popula rNews
      * @param $params
      * @return mixed
      */
@@ -34,12 +34,32 @@ class News
     }
 
     /**
-     * Get Data News Home
+     * Get Data Detail
      * @param $params
      * @return mixed
      */
     public function getNewsDetail($slug)
     {
         return $this->news->getNewsDetail($slug);
+    }
+
+    /**
+     * Get Data Category News
+     * @param $params
+     * @return mixed
+     */
+    public function getNewsCategory($params = [])
+    {
+        return $this->news->getNewsCategory($params);
+    }
+
+    /**
+     * Get Data News By Category
+     * @param $params
+     * @return mixed
+     */
+    public function getNewsByCategory($slug)
+    {
+        return $this->news->getNewsByCategory($slug);
     }
 }
