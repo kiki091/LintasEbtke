@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  @section('pageheadtitle')
+    User Account
+  @endsection
 	@include('ebtke.cms.partials.header')
 	<body class="login">
 

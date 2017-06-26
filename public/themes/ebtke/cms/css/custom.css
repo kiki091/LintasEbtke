@@ -4,7 +4,9 @@ html , body{
  height:100%;
  
 }
- 
+ .bg__gray {
+    background: #eee;
+ }
 .full-width {
 	
  width:100%;
@@ -144,7 +146,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background: #eeeeee
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -165,7 +167,7 @@ html , body{
     visibility: hidden
 }
 .nav-sm .container.body .right_col {
-    padding: 10px 20px;
+    padding: 10px 0px;
     margin-left: 70px;
     z-index: 2
 }
@@ -240,14 +242,13 @@ html , body{
 }
 .menu_section h3 {
     padding-left: 15px;
-    color: #fff;
+    color: #7387a1;
     text-transform: uppercase;
     letter-spacing: .5px;
     font-weight: bold;
     font-size: 11px;
     margin-bottom: 0;
     margin-top: 0;
-    text-shadow: 1px 1px #000
 }
 .menu_section>ul {
     margin-top: 10px
@@ -350,15 +351,17 @@ body .container.body .right_col {
     background: #F7F7F7
 }
 .nav-md .container.body .right_col {
-    padding: 10px 20px 0;
+    padding: 10px 0px 0;
     margin-left: 230px
 }
 .nav_title {
     width: 230px;
     float: left;
-    background: #2A3F54;
+    background: #ededed;
     border-radius: 0;
-    height: 57px
+    height: 140px;
+    border-right: 1px solid #D9DEE4;
+    border-bottom: 1px solid #D9DEE4;
 }
 @media (max-width: 991px) {
     .nav-md .container.body .right_col,
@@ -477,7 +480,7 @@ body .container.body .right_col {
 .navbar-nav>li>a,
 .navbar-brand,
 .navbar-nav>li>a {
-    color: #fff !important
+    color: #8a879c !important
 }
 .top_nav .nav>li>a:focus,
 .top_nav .nav>li>a:hover,
@@ -488,7 +491,6 @@ body .container.body .right_col {
 }
 body {
     color: #73879C;
-    background: #2A3F54;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -503,11 +505,12 @@ body {
 }
 .page-title {
     width: 100%;
-    height: 65px;
-    padding: 10px 0
+    height: 75px;
+    padding: 10px 10px 0;
+    display: inline-table;
 }
 .page-title .title_left {
-    width: 45%;
+    width: 100%;
     float: left;
     display: block
 }
@@ -724,12 +727,12 @@ a:focus {
     margin-bottom: 6px
 }
 .nav.side-menu>li>a:hover {
-    color: #F2F5F7 !important
+    color: #8a879c !important
 }
 .nav.side-menu>li>a:hover,
 .nav>li>a:focus {
     text-decoration: none;
-    background: transparent
+    background: transparent;
 }
 .nav.child_menu {
     display: none
@@ -764,7 +767,7 @@ a:focus {
 }
 .nav.side-menu>li>a,
 .nav.child_menu>li>a {
-    color: #E7E7E7;
+    color: #8a879c;
     font-weight: 500
 }
 .nav.child_menu li li:hover,
@@ -773,7 +776,7 @@ a:focus {
 }
 .nav.child_menu li li a:hover,
 .nav.child_menu li li a.active {
-    color: #fff
+    color: #8a879c
 }
 .nav>li>a {
     position: relative;
@@ -791,11 +794,11 @@ a:focus {
     background: none
 }
 .nav li li.current-page a {
-    color: #fff
+    color: #8a879c
 }
 .nav.side-menu>li.active>a {
-    text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
-    background: linear-gradient(#334556, #2C4257), #2A3F54;
+    
+    background: linear-gradient(#eeeeee, #eeeeee), #eeeeee;
     box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0
 }
 .navbar-brand,
@@ -811,13 +814,15 @@ a:focus {
     font-weight: 400;
     font-size: 22px;
     width: 100%;
-    color: #ECF0F1 !important;
+    color: #D9DEE4 !important
     margin-left: 0 !important;
     line-height: 59px;
     display: block;
     height: 55px;
     margin: 0;
     padding-left: 10px
+    text-transform:uppercase;
+    text-align: center;
 }
 .site_title:hover,
 .site_title:focus {
@@ -861,7 +866,8 @@ a:focus {
 .toggle {
     float: left;
     margin: 0;
-    padding-top: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     width: 70px
 }
 .toggle a {
@@ -873,7 +879,7 @@ a:focus {
     font-size: 26px
 }
 .nav.child_menu>li>a {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgb(118, 144, 166);
     font-size: 12px;
     padding: 9px
 }

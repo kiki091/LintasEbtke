@@ -21,19 +21,11 @@
 <meta property="og:description" content="Kementerian ESDM Republik Indonesia" />
 <meta property="og:image" content="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" />
 <meta property="og:type"  content="article" />
-<title>Registration Page</title>
+<title>@yield('pageheadtitle' , 'CMS | EBTKE')</title>
 
 <meta id="_token" name="_token" value="{{ csrf_token() }}">
 
-<title>@yield('pageheadtitle','CMS | EBTKE')</title>
-
-<!-- Font Awesome -->
-<link href="{{ asset('themes/ebtke/cms/css/font-awesome.css') }}" rel="stylesheet">
-<!-- Bootstrap -->
-<link href="{{ asset('themes/ebtke/cms/css/bootstrap.css') }}" rel="stylesheet">
-<!-- NProgress -->
-<link href="{{ asset('themes/ebtke/cms/css/nprogress.css') }}" rel="stylesheet">
-<!-- Custom Theme Style -->
-<link href="{{ asset('themes/ebtke/cms/css/custom.css') }}" rel="stylesheet">
-<!-- Animate.css -->
-<link href="themes/ebtke/cms/css/animate.css" rel="stylesheet">
+<!-- Plugins -->
+<link href="{{ asset('themes/ebtke/cms/build/css/style.css') }}" rel="stylesheet">
+<!-- Javascrip -->
+<script src="{{ asset('themes/ebtke/cms/build/js/plugins.js') }}"></script>

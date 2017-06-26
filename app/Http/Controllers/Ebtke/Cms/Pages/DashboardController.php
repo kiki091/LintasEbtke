@@ -33,7 +33,17 @@ class DashboardController extends CmsBaseController
      */
     public function index(Request $request)
     {
-        dd(DataHelper::userRole());
+        //dd(DataHelper::userRole());
+
+        $blade = self::URL_BLADE_CMS. '.dashboard';
+        
+        if(view()->exists($blade)) {
+        
+            return view($blade);
+
+        }
+
+        return abort(404);
 
     }
 }

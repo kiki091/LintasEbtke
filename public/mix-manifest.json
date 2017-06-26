@@ -2,5 +2,8 @@
   "/mix.js": "/mix.js",
   "/themes/ebtke/front/build/css/plugins.css": "/themes/ebtke/front/build/css/plugins.css",
   "/themes/ebtke/front/build/js/plugins.js": "/themes/ebtke/front/build/js/plugins.js",
-  "/themes/ebtke/front/build/js/animation.js": "/themes/ebtke/front/build/js/animation.js"
+  "/themes/ebtke/front/build/js/animation.js": "/themes/ebtke/front/build/js/animation.js",
+  "/themes/ebtke/cms/build/css/style.css": "/themes/ebtke/cms/build/css/style.css",
+  "/themes/ebtke/cms/build/js/plugins.js": "/themes/ebtke/cms/build/js/plugins.js",
+  "/themes/ebtke/cms/build/js/core.js": "/themes/ebtke/cms/build/js/core.js"
 }

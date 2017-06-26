@@ -190,6 +190,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Lord\Laroute\LarouteServiceProvider::class,
 
     ],
 

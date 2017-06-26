@@ -76,3 +76,32 @@ mix.scripts([
 	'public/js/bower_components/moment/min/moment.min.js',
 	'public/js/bower_components/fullcalendar/dist/fullcalendar.min.js',
 ], 'public/themes/ebtke/front/build/js/animation.js');
+
+/**
+ * CMS Style And Javascript
+ */
+
+mix.styles([
+    'public/themes/ebtke/cms/css/font-awesome.css',
+    'public/themes/ebtke/cms/css/bootstrap.css',
+    'public/themes/ebtke/cms/css/nprogress.css',
+    'public/themes/ebtke/cms/css/animate.css',
+    'public/themes/ebtke/cms/css/custom.css',
+    'public/js/bower_components/hold-on/dist/HoldOn.min.css',
+    'public/js/bower_components/sweetalert/dist/sweetalert.css',
+], 'public/themes/ebtke/cms/build/css/style.css');
+
+
+mix.scripts([
+	'public/js/bower_components/jquery/dist/jquery.min.js',
+	'public/js/bower_components/jquery/dist/jquery-ui.js',
+	'public/js/bower_components/notifyjs/dist/notify.js',
+	'public/js/bower_components/hold-on/HoldOn.min.js',
+	'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
+], 'public/themes/ebtke/cms/build/js/plugins.js');
+
+mix.scripts([
+	'public/themes/ebtke/cms/js/bootstrap.min.js',
+	'public/themes/ebtke/cms/js/custom.min.js',
+	'public/themes/ebtke/cms/js/nprogress.js',
+], 'public/themes/ebtke/cms/build/js/core.js');
