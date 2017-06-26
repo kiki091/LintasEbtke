@@ -225,7 +225,7 @@ html , body{
     top: 0;
     width: 210px;
     z-index: 4000;
-    background: #3E5367;
+    background: #eeeeee;
     display: none
 }
 .nav-sm ul.nav.child_menu li {
@@ -879,7 +879,7 @@ a:focus {
     font-size: 26px
 }
 .nav.child_menu>li>a {
-    color: rgb(118, 144, 166);
+    color: rgb(115, 135, 156);
     font-size: 12px;
     padding: 9px
 }
