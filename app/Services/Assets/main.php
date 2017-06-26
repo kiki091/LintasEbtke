@@ -22,6 +22,7 @@ define('INSTAGRAM_IMAGES_DIRECTORY', 'themes/ebtke/front/images/instagram/');
 // News And Event Thumbnail Images
 
 define('NEWS_THUMBNAIL_DIRECTORY', 'bin/db/images/news/');
+define('NEWS_BANNER_DIRECTORY', 'bin/db/images/news/banner/');
 define('NEWS_IMAGES_DIRECTORY', 'bin/db/images/news/');
 
 define('MAIN_BANNER_EVENT_DIRECTORY', 'bin/db/images/event/main_banner/');

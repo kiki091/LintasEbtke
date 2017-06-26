@@ -19,7 +19,7 @@
   |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
 -->
-<div class="banner--main-event" style="background-image: url(http://loc.mhg.dev/images/latestnews-main/bgsectiontop1x.png);">
+<div class="banner--main-event" style="background-image: url({{ asset(NEWS_BANNER_DIRECTORY.'bgsectiontop1x.png') }});">
     <div class="banner__content">
         <h1 id="font-white" class="banner__content__heading">
             {{ trans('pages/news_page.tags_title') }}
