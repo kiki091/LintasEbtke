@@ -1,7 +1,7 @@
-<!-- javascript compiled -->
-<script src="{{ asset('themes/ebtke/cms/build/js/core.js') }}"></script>
 <!-- jQuery Ajax Form -->
 <script type="text/javascript" src="{{ asset('themes/ebtke/cms/js/jquery.form.js') }}"></script>
+<!-- javascript compiled -->
+<script src="{{ asset('themes/ebtke/cms/build/js/core.js') }}"></script>
 <!-- Javascript Sortable -->
 <script type="text/javascript" src="{{ asset('js/bower_components/sortable/sortable.js') }}"></script>
 <!-- Javascript CK editor -->
@@ -15,5 +15,8 @@
 <script src="{{ asset('js/bower_components/vue/dist/vue-resource.js') }}"></script>
 
 <!-- Javascript General Configuration -->
+<script src="{{ asset('themes/ebtke/cms/components/main.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/components/general.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/components/menu.js') }}"></script>
+<!-- Javascript Authentication -->
+<script src="{{ asset('themes/ebtke/cms/pages/auth/reset-password.js') }}"></script>

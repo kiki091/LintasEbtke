@@ -192,9 +192,6 @@ Vue.directive("sort", {
 
 //end vue custome directive sortable js
 
-
-
-
 function setSelectedFolder()
 {
     var CURRENT_SLUG = window.location.href.split("#")[1]
@@ -266,36 +263,6 @@ function setupCKEDITOR(){
 	        }
 	    })
 	});
-}
-
-function pushNotifMessage(status,message, validation)
-{
-    
-    var time = '10000';
-    var container = $('.notifyjs-corner');
-    var message_error_title = 'Sorry, there are few missing contents detected, please complete all the required fields.';
-
-    if(status == true)
-    {
-        $('.notifyjs-corner').removeClass('hidden');
-        $('.notif__form').addClass('notif__success');
-        $("#data-value").text(message);
-        $('.notifyjs-corner').slideDown(400).fadeIn('slow');
-    }
-    else
-    {
-        $('.notifyjs-corner').removeClass('hidden');
-        $('.notif__form').addClass('notif__error');
-        $("#data-value").text(message_error_title);
-        $("#data-validation").html(validation);
-        $('.notifyjs-corner').slideDown(400).fadeIn('slow');
-    }
-
-    function remove_notice() {
-        container.stop().fadeOut('slow').remove()
-    }
-    
-    var timer =  setInterval(remove_notice, time);
 }
 
 function pushNotifV2(status, title, message, autoHide, position)
@@ -371,17 +338,17 @@ function pushNotifV3(status, message)
 
 function showLoadingData()
 {
-    var options = {
-        theme:"sk-cube-grid",
-        textColor:"white",
-    };
-    HoldOn.open(options);
+    HoldOn.open({
+      theme:"sk-rect"
+    });
     
 }
 
 function hideLoading()
 {
-    HoldOn.close();
+    setTimeout(function(){
+        HoldOn.close();
+    }, 3000);
 }
 
 function replaceToCkEditor()
@@ -399,23 +366,6 @@ function destroyInstanceCkEditor()
             CKEDITOR.instances[instance].destroy(true);
         }
     }
-}
-
-function showModalDelete()
-{
-    swal({
-        title: "Ajax request example",
-        text: "Submit to run ajax request",
-        type: "info",
-        showCancelButton: true,
-        closeOnConfirm: false,
-        showLoaderOnConfirm: true,
-    },
-    function(){
-        setTimeout(function(){
-            swal("Ajax request finished!");
-        }, 2000);
-    });
 }
 
 function scrollTop()

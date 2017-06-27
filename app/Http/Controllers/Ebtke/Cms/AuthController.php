@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Services\Bridge\Auth\Users as UserServices;
 use App\Custom\Facades\DataHelper;
 use App\Custom\RouteMenuLocation;
+use App\Services\Api\Response as ResponseService;
 use Session;
 use Auth;
 use Validator;
@@ -21,11 +22,13 @@ class AuthController extends CmsBaseController
 
     protected $validationMessage = '';
     protected $validationChangePasswordForm = '';
+    protected $response;
     protected $user;
 
-    public function __construct(UserServices $user)
+    public function __construct(UserServices $user, ResponseService $response)
     {
         $this->user = $user;
+        $this->response = $response;
     }
 
     public function authenticate(Request $request)
@@ -215,20 +218,16 @@ class AuthController extends CmsBaseController
      */
     public function changePassword(Request $request)
     {
-        $validator = Validator::make($request->input(), $this->validationChangePasswordForm());
+
+        $validator = Validator::make($request->all(), $this->validationChangePasswordForm($request));
 
         if ($validator->fails()) {
             //TODO: case fail
-            $old_password = $validator->messages()->first('old_password') ?: '';
-            $new_password = $validator->messages()->first('new_password') ?: '';
-            $confirm_password = $validator->messages()->first('confirm_password') ?: '';
-            $status = '';
-
-            return Response::json(compact('old_password', 'new_password', 'confirm_password', 'status'));
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
 
         } else {
             //TODO: case pass
-            return $this->user->changePassword($request->input());
+            return $this->user->changePassword($request->except(['_token']));
         }
     }
 
