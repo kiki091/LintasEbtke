@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class User
  */
-class UserMenu extends Model
+class MenuGroup extends Model
 {
     protected $connection = 'auth';
-    protected $table = 'user_menu';
+    protected $table = 'menu_group';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'update_at',
@@ -21,17 +21,15 @@ class UserMenu extends Model
 
     protected $guarded = [];
 
+    /***************** Relationship *****************/
 
-    public function user()
+    public function system_menu()
     {
-        return $this->hasMany('App\Models\Auth\Users', 'id', 'user_id');
+        return $this->belongsTo('App\Models\Auth\System', 'system_id', 'id');
     }
 
 
-    public function menu()
-    {
-        return $this->belongsTo('App\Models\Auth\Menu', 'menu_id', 'id')->with('menu_group')->with('sub_menu');
-    }
+    /***************** Scope *****************/
 
     /**
      * @param $query

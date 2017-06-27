@@ -6,11 +6,11 @@ use Session;
 
 class DataHelper {
 
-    
+    const DEFAULT_SYSTEM_LOCATION = 'CONTENT MANAGEMENT SYSTEM';
     /**
      * Get User Info
      */
-    public function userInfo()
+    public static function userInfo()
     {
         return Session::get('user_info');
     }
@@ -99,6 +99,24 @@ class DataHelper {
 
         if (isset($userInfo['user_location']['slug'])) {
             return $userInfo['user_location']['slug'];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get System Location User
+     */
+
+    public static function userSystemLocation()
+    {
+        $userInfo = Session::get('user_info');
+        $userInfo['default_system_location'] = self::DEFAULT_SYSTEM_LOCATION;
+
+        if (isset($userInfo['system_location'])) {
+
+            
+            return $userInfo['system_location'];
         }
 
         return false;

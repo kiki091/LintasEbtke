@@ -10,20 +10,61 @@
     	<!-- sidebar menu -->
     	<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
       		<div class="menu_section">
+            <?php 
+              $userInfo = DataHelper::userInfo();
+            ?>
+
+            @if($userInfo['user_location']['name'] == 'admin')
+            <h3>Account</h3>
+            <ul class="nav side-menu">
+              
+            </ul>
+            @endif
+
+            
         		<h3>General</h3>
+
         		<ul class="nav side-menu">
+                
+            @foreach(DataHelper::userMenu() as $key=> $user_menu)
+                @foreach($user_menu as $key_icon=> $menu)
           			<li>
           				<a>
-          					<i class="fa fa-users"></i> 
-          					Menu <span class="fa fa-chevron-down"></span>
+          					<i class="fa {{ $key_icon }}"></i> 
+          					{{ $key }} <span class="fa fa-chevron-down"></span>
           				</a>
             			<ul class="nav child_menu">
-              				<li>
-              					<a href="#data-pasien" onclick="menuPasien()">SubMenu</a>
-              				</li>
+                      @foreach($menu as $key_menu=> $menu_navigation)
+                          @if($menu_navigation['have_sub_menu'] == '0')
+                  				<li>
+                  					<a href="#{{ $menu_navigation['slug'] }}" onclick="{{ $menu_navigation['url'] }}">
+                                {{ $menu_navigation['title'] }}     
+                            </a>
+                  				</li>
+                          @else
+                          <li>
+                              <a href="#{{ $menu_navigation['slug'] }}">
+                                {{ $menu_navigation['title'] }}
+                                <span class="fa fa-chevron-down"></span>
+                              </a>
+                              <ul class="nav child_menu">
+                                  @foreach($menu_navigation['sub_menu'] as $key=> $sub_menu)
+                                  <li class="sub_menu">
+                                      <a href="#{{ $sub_menu['slugh_sub_menu'] }}" onclick="{{ $sub_menu['url_sub_menu'] }}">
+                                        {{ $sub_menu['title_sub_menu'] }}
+                                      </a>
+                                  </li>
+                                  @endforeach
+                              </ul>
+                          </li>
+                          @endif
+                      @endforeach
             			</ul>
           			</li>
+                @endforeach
+            @endforeach
         		</ul>
+
       		</div>
 
     	</div>

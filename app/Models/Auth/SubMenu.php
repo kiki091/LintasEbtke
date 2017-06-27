@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class User
  */
-class Menu extends Model
+class SubMenu extends Model
 {
     protected $connection = 'auth';
-    protected $table = 'menu';
+    protected $table = 'sub_menu';
 
     public $timestamps = true;
 
@@ -22,17 +22,13 @@ class Menu extends Model
     protected $guarded = [];
 
 
-
     /***************** Relationship *****************/
 
-    public function menu_group()
+    public function menu_sub()
     {
-        return $this->belongsTo('App\Models\Auth\MenuGroup', 'menu_group_id', 'id')->with('system_menu');
+        return $this->belongsTo('App\Models\Auth\Menu', 'menu_id', 'id');
     }
-    public function sub_menu()
-    {
-        return $this->hasMany('App\Models\Auth\SubMenu', 'menu_id', 'id');
-    }
+
 
     /***************** Scope *****************/
 

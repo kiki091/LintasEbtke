@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class User
  */
-class UserMenu extends Model
+class SystemLocation extends Model
 {
     protected $connection = 'auth';
-    protected $table = 'user_menu';
+    protected $table = 'system_location';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'update_at',
@@ -22,15 +22,17 @@ class UserMenu extends Model
     protected $guarded = [];
 
 
-    public function user()
+
+    /***************** Relationship *****************/
+
+    public function system()
     {
-        return $this->hasMany('App\Models\Auth\Users', 'id', 'user_id');
+        return $this->belongsTo('App\Models\Auth\System', 'system_id', 'id');
     }
 
-
-    public function menu()
+    public function users()
     {
-        return $this->belongsTo('App\Models\Auth\Menu', 'menu_id', 'id')->with('menu_group')->with('sub_menu');
+        return $this->belongsTo('App\Models\Auth\Users', 'user_id', 'id');
     }
 
     /**

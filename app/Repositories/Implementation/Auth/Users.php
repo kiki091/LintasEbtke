@@ -99,7 +99,7 @@ class Users extends BaseImplementation implements UserInterface
      */
     protected function user($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
     {
-        $user = $this->user->with(['role','location','user_menu']);
+        $user = $this->user->with(['role','location','user_menu', 'system_location']);
 
         if(isset($params['id'])) {
             $user->userId($params['id']);

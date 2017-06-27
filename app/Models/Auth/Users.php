@@ -51,6 +51,11 @@ class Users extends Model
         return $this->belongsTo('App\Models\Auth\Location', 'location_id', 'id');
     }
 
+    public function system_location()
+    {
+        return $this->hasMany('App\Models\Auth\SystemLocation', 'user_id', 'id')->with('system');
+    }
+
 
     /***************** Scope *****************/
 
