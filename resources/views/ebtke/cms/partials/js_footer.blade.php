@@ -1,3 +1,10 @@
+<!--                                                          
+     _  ___   ___   ___  ___ ___ ___ ___ _____ 
+  _ | |/_\ \ / /_\ / __|/ __| _ \_ _| _ \_   _|
+ | || / _ \ V / _ \\__ \ (__|   /| ||  _/ | |  
+  \__/_/ \_\_/_/ \_\___/\___|_|_\___|_|   |_|  
+                                               
+-->
 <!-- jQuery Ajax Form -->
 <script type="text/javascript" src="{{ asset('themes/ebtke/cms/js/jquery.form.js') }}"></script>
 <!-- javascript compiled -->
@@ -20,3 +27,4 @@
 <script src="{{ asset('themes/ebtke/cms/components/menu.js') }}"></script>
 <!-- Javascript Authentication -->
 <script src="{{ asset('themes/ebtke/cms/pages/auth/reset-password.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/auth/logout.js') }}"></script>

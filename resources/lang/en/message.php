@@ -20,7 +20,7 @@
       'cms_success_store_subscribe' => 'Success subscribe mail',
       'user_success_change_password' => 'Success change password',
       'user_failed_change_password' => 'Failed change password',
-      'user_success_created' => 'Success add user',
-      'user_failed_created' => 'Failed add user',
+      'user_success_created' => 'Success, please wait until admin confirm !!',
+      'user_failed_created' => 'Someting worng, registration failed',
       'success_store_contact_us' => 'Success input contact us'
   ];

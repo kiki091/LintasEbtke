@@ -1,11 +1,10 @@
 $(document).ready(function() {
 
-	$('#FormChangePassword').on('submit',function(event) {
+	$('#UserFormRegistration').on('submit',function(event) {
 		event.preventDefault()
 
-		var url = $('#FormChangePassword').attr('action')
+		var url = $('#UserFormRegistration').attr('action')
 		var data = $(this).serialize()
-
 
 		$.ajax({
 
@@ -51,9 +50,11 @@ $(document).ready(function() {
         $(".form--error--message").text('')
     }
 
-    function resetForm(){
-        $("#old_password").val('')
-        $("#new_password").val('')
-        $("#confirm_password").val('')
+    function resetForm() {
+
+    	$('#fullname').val('')
+    	$('#email').val('')
+    	$('#password').val('')
+    	$('#confirm_password').val('')
     }
-});
+})

@@ -18,7 +18,7 @@
 	                    		Change Password</a>
                     	</li>
                     	<li>
-	                    	<a href="#logout" onclick="showLoadingData()">
+	                    	<a href="#logout" onclick="logout()">
 	                    		<i class="fa fa-sign-out pull-right"></i>
 	                    	 	Log Out
 	                    	</a>

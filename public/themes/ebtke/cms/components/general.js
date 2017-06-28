@@ -4,116 +4,7 @@ Vue.config.debug = true;
 //end true devtools and config vue js
 //function change password
 Vue.http.headers.common['X-CSRF-TOKEN'] = $("#_token").attr("value");
-var vmForm = new Vue({
 
-    el: '#template_change_password',
-    data: {
-        models: {
-            old_password: '',
-            new_password: '',
-            confirm_password: '',
-            _token: ''
-        },
-        notif: '',
-        showModal: false
-    },
-
-    methods: {
-
-        showForm: function() {
-            this.models = { old_password: '', new_password: '', confirm_password: '' }
-            this.refresh()
-            this.showModal = true;
-
-            $('.popup__mask').addClass('is-visible');
-
-            // add class di container saat popup
-            $('.container__main').addClass('popupContainer');
-        },
-
-        refresh: function() {
-            $('#error-old-password').text('')
-            $('#error-new-password').text('')
-            $('#error-confirm-password').text('')
-        },
-
-        closeForm: function() {
-            this.showModal = false;
-
-            // remove class di container saat popup
-             $('.container__main').removeClass('popupContainer');
-
-            // remove class di container saat popup
-            setTimeout(function() {
-              $('.popup__mask').removeClass('is-visible');
-            }, 300);
-        },
-
-        showNotif: function(){
-            $('.popup__notif').addClass('open');
-            $('.submit-form').addClass('btn__disable');
-            setTimeout(function () {
-                $('.popup__notif').removeClass('open');
-                $('.submit-form').removeClass('btn__disable');
-            }, 5000)
-            this.notif = 'Change Password Successful';
-        },
-
-        showErrorNotif: function(){
-            $('#error-old-password').show();
-            $('#error-old-password').text('Wrong old password');
-        },
-
-        changePassword: function () {
-                var domain    = 'change-password';
-                var users     = this.models
-                
-                var old_password     = users.old_password
-                var new_password    = users.new_password
-                var confirm_password     = users.confirm_password
-                var _token     = users._token
-
-                var payload = { old_password: old_password, new_password: new_password, confirm_password: confirm_password, _token: _token }
-                this.refresh()
-
-                this.$http.post(domain, payload).then(function (response) {
-                    if (response.data.status==='') 
-                    {
-                        data = response.data
-                        if(data.old_password)
-                        {
-                            $('#error-old-password').show();
-                            $('#error-old-password').text(data.old_password);
-                        }
-
-                        if(data.new_password)
-                        {
-                            $('#error-new-password').show();
-                            $('#error-new-password').text(data.new_password);
-                        }
-
-                        if(data.confirm_password)
-                        {
-                            $('#error-confirm-password').show();
-                            $('#error-confirm-password').text(data.confirm_password);
-                        }
-                    }
-                    else if (response.data.status === false) 
-                    {
-                        this.showErrorNotif()
-                    } 
-                    else if(response.data.status===true)
-                    {
-                        this.models = { old_password: '', new_password: '', confirm_password: '' }
-                        this.showNotif()
-                    }
-                });
-            },
-
-    },
-
-});
-//end function change password
 //vue custome directive sortable js https://github.com/RubaXa/Sortable
 
 Vue.directive("sort", {
@@ -265,40 +156,9 @@ function setupCKEDITOR(){
 	});
 }
 
-function pushNotifV2(status, title, message, autoHide, position)
+function pushNotif(status, message)
 {
-    if (typeof autoHide == 'undefined') {
-        autoHide = true
-    }
-
-    if (typeof title == 'undefined' || title == '' || title == 'default') {
-        title = 'Sorry, there are few missing contents detected, please complete all the required fields.'
-    }
-
-    if (typeof position == 'undefined') {
-        position = 'bottom left'
-    }
-
-    var className = '';
-    if (status == false) {
-        var className = 'error';
-    }
-
-    $.notify({
-        title: title,
-        message: message,
-    }, {
-        style: 'notif-msg',
-        autoHide: autoHide,
-        clickToHide: false,
-        position: position,
-        className: className
-    });
-}
-
-function pushNotifV3(status, message)
-{
-    var time = '5000';
+    var time = '6000';
     if(status == true)
     {
         new TabbedNotification({
@@ -333,10 +193,7 @@ function pushNotifV3(status, message)
     var timer =  setInterval(hideNotif, time);
 }
 
-
-
-
-function showLoadingData()
+function showLoading()
 {
     HoldOn.open({
       theme:"sk-rect"
@@ -346,9 +203,7 @@ function showLoadingData()
 
 function hideLoading()
 {
-    setTimeout(function(){
-        HoldOn.close();
-    }, 3000);
+    HoldOn.close();
 }
 
 function replaceToCkEditor()
@@ -386,23 +241,5 @@ function initDataRegistration()
 {
     mainGeneral()
     crudDataRegistration();
-    replaceToCkEditor();
-}
-
-
-// INIT FUNCTION WEB CMS
-function initDataRegistrationInpatient()
-{
-    mainGeneral()
-    crudDataRegistrationInpatient();
-    replaceToCkEditor();
-}
-
-
-// INIT FUNCTION WEB CMS
-function initDataDoctor()
-{
-    mainGeneral()
-    crudDataDoctor();
     replaceToCkEditor();
 }

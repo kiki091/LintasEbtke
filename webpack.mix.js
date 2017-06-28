@@ -89,15 +89,17 @@ mix.styles([
     'public/themes/ebtke/cms/css/custom.css',
     'public/js/bower_components/hold-on/HoldOn.min.css',
     'public/js/bower_components/sweetalert/dist/sweetalert.css',
+    'public/js/bower_components/pacejs/pace-theme-flash.css',
 ], 'public/themes/ebtke/cms/build/css/style.css');
 
 
 mix.scripts([
 	'public/js/bower_components/jquery/dist/jquery.min.js',
 	'public/js/bower_components/jquery/dist/jquery-ui.js',
-	'public/js/bower_components/notifyjs/dist/notify.js',
 	'public/js/bower_components/hold-on/HoldOn.min.js',
 	'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
+	'public/js/bower_components/pacejs/pace.min.js',
+    'public/js/bower_components/pnotify/dist/pnotify.js',
 ], 'public/themes/ebtke/cms/build/js/plugins.js');
 
 mix.scripts([

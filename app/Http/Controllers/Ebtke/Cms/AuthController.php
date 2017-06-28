@@ -91,6 +91,11 @@ class AuthController extends CmsBaseController
         return abort(404);
     }
 
+    /**
+     * Registered user
+     * @param Request $request
+     */
+
     public function registered(Request $request)
     {
         $validator = Validator::make($request->all(), $this->validateRegistrationUser($request));
@@ -102,6 +107,25 @@ class AuthController extends CmsBaseController
         } else {
             //TODO: case pass
             return $this->user->registered($request->except(['_token']));
+        }
+    }
+
+    /**
+     * Change Password
+     * @param Request $request
+     */
+    public function changePassword(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), $this->validationChangePasswordForm($request));
+
+        if ($validator->fails()) {
+            //TODO: case fail
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
+
+        } else {
+            //TODO: case pass
+            return $this->user->changePassword($request->except(['_token']));
         }
     }
 
@@ -177,8 +201,8 @@ class AuthController extends CmsBaseController
         $rules = [
             'name'             => 'required|max:30',
             'email'            => 'required|email|max:30',
-            'password'         => 'required|min:10|max:20',
-            'confirm_password' => 'required|same:password|min:10|max:20',
+            'password'         => 'required|min:8|max:20',
+            'confirm_password' => 'required|same:password|min:8|max:20',
         ];
 
         return $rules;
@@ -210,25 +234,6 @@ class AuthController extends CmsBaseController
             'email'            => 'required|email',
             'password'         => 'required',
         );
-    }
-
-    /**
-     * Change Password
-     * @param Request $request
-     */
-    public function changePassword(Request $request)
-    {
-
-        $validator = Validator::make($request->all(), $this->validationChangePasswordForm($request));
-
-        if ($validator->fails()) {
-            //TODO: case fail
-            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
-
-        } else {
-            //TODO: case pass
-            return $this->user->changePassword($request->except(['_token']));
-        }
     }
 
     /**

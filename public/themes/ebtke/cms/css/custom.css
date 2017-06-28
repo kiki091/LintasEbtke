@@ -3411,7 +3411,7 @@ a.hiddenanchor {
     right: 0px;
     margin: 0px auto;
     margin-top: 5%;
-    max-width: 350px;
+    max-width: 400px;
     position: relative
 }
 .registration_form,
@@ -4132,7 +4132,9 @@ ul.notifications {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3)
 }
 .tabbed_notifications div p {
-    display: inline-block
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
 }
 .tabbed_notifications h2 {
     font-weight: bold;
@@ -4245,4 +4247,15 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 .dataTables_wrapper > .row{
   overflow:auto !important; /*prevent datatables overflowing its container*/
+}
+
+/**************************** CUSTON CSS STYLE ****************************/
+.form--error--message {
+    font-size: 12px;
+    color: #DE6060;
+    margin-bottom: 5px;
+}
+
+.text__left {
+    text-align: left;
 }
