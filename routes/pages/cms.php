@@ -29,6 +29,19 @@ Route::group(['middleware' => ['web']], function ()
 			Route::group(['prefix' => RouteMenuLocation::setMenuLocation()], function () {
 
 				Route::get('/', 'Ebtke\Cms\Pages\DashboardController@index')->name('CmsDashboardPage');
+
+			});
+
+			// ACCOUNT MANAGEMENT ROUTE
+
+			Route::group(['prefix' => 'ams'], function () {
+
+				Route::group(['prefix' => 'menu-group'], function ()
+				{
+					Route::get('/', 'Ebtke\Cms\Pages\Auth\MenuGroupController@index')->name('CmsMenuGroupManager');
+					Route::get('data', 'Ebtke\Cms\Pages\Auth\MenuGroupController@getData')->name('CmsMenuGroupManagerGetData');
+					Route::post('change-status', 'Ebtke\Cms\Pages\Auth\MenuGroupController@changeStatus')->name('CmsMenuGroupManagerChangeStatus');
+				});
 			});
 		});
 		

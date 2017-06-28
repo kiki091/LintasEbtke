@@ -90,6 +90,8 @@ mix.styles([
     'public/js/bower_components/hold-on/HoldOn.min.css',
     'public/js/bower_components/sweetalert/dist/sweetalert.css',
     'public/js/bower_components/pacejs/pace-theme-flash.css',
+    'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.min.css',
+    'public/js/bower_components/iCheck/skins/flat/green.css',
 ], 'public/themes/ebtke/cms/build/css/style.css');
 
 
@@ -100,6 +102,8 @@ mix.scripts([
 	'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
 	'public/js/bower_components/pacejs/pace.min.js',
     'public/js/bower_components/pnotify/dist/pnotify.js',
+    'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js',
+    'public/js/bower_components/iCheck/icheck.min.js',
 ], 'public/themes/ebtke/cms/build/js/plugins.js');
 
 mix.scripts([

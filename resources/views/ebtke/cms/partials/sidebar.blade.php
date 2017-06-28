@@ -17,7 +17,65 @@
             @if($userInfo['user_location']['name'] == 'admin')
             <h3>Account</h3>
             <ul class="nav side-menu">
-              
+                <li>
+                    <a>
+                        <i class="fa fa-navicon"></i>
+                        Navigation <span class="fa fa-chevron-down"></span>
+                    </a>
+
+                    <ul class="nav child_menu">
+                        <li>
+                            <a href="#menu-group" onclick="menuGroup()">
+                                Menu Group
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#menu-navigation" onclick="menuNavigation()">
+                                Menu Navigation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#menu-navigation" onclick="menuSubnavigation()">
+                                Sub Navigation
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+
+                <li>
+                    <a>
+                        <i class="fa fa-shield"></i>
+                        User Privilage <span class="fa fa-chevron-down"></span>
+                    </a>
+
+                    <ul class="nav child_menu">
+                        <li>
+                            <a href="#menu-privilage" onclick="menuPrivilage()">
+                                Privilage Authentication
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#menu-role" onclick="menuRole()">
+                                Role Authentication
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+
+                <li>
+                    <a>
+                        <i class="fa fa-user"></i>
+                        User Management <span class="fa fa-chevron-down"></span>
+                    </a>
+
+                    <ul class="nav child_menu">
+                        <li>
+                            <a href="#menu-privilage" onclick="menuUser()">
+                                User Account
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
             </ul>
             @endif
 

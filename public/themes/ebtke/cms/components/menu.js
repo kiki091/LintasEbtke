@@ -1,7 +1,7 @@
-function menuPasien()
+function menuGroup()
 {
-    $('.right_col').load(laroute.url('/dashboard/pasien', []), function()
+    $('.right_col').load(laroute.route('CmsMenuGroupManager', []), function()
     {
-    	initPasien()
+    	initMenuGroup()
     });
 }

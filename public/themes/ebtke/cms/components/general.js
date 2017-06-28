@@ -1,8 +1,9 @@
 //true devtools and config vue js
+
 Vue.config.devtools = true;
 Vue.config.debug = true;
 //end true devtools and config vue js
-//function change password
+
 Vue.http.headers.common['X-CSRF-TOKEN'] = $("#_token").attr("value");
 
 //vue custome directive sortable js https://github.com/RubaXa/Sortable
@@ -79,7 +80,7 @@ Vue.directive("sort", {
     unbind: function () {
         $(this.el).off().sortable('destroy')
     }
-})
+});
 
 //end vue custome directive sortable js
 
@@ -223,6 +224,35 @@ function destroyInstanceCkEditor()
     }
 }
 
+function buttonClickOpen() {
+    $('.content__btn a').click(function(){
+        var id = $(this).attr('id');
+        $('#'+ id + '-content').slideDown('swing');
+        $('.content__btn a').removeClass('btn__disable');
+        $(this).addClass('btn__disable');
+        $('.main__content__form__layer').not($('#'+ id + '-content')).slideUp('swing');
+
+        $('.folder--nav').addClass('folder--hidden');
+
+        var filter = $('#filter-function');
+        filter.fadeOut('swing');
+    });
+}
+
+function buttonClickClose() {
+    $('.form--top__btn a').click(function(){
+
+        $('.content__btn a').removeClass('btn__disable');
+        $(this).closest('.main__content__form__layer').slideUp('swing');
+
+        $('.folder--nav').removeClass('folder--hidden');
+
+        var filter = $('#filter-function');
+        filter.fadeIn('swing');
+    });
+}
+
+
 function scrollTop()
 {
     $('.main__content__layer').scrollTop(0);
@@ -236,10 +266,9 @@ function mainGeneral(){
     buttonClickClose();
 }
 
-// INIT FUNCTION WEB CMS
-function initDataRegistration()
+// INIT FUNCTION ACCOUNT MANAGEMENT CMS
+function initMenuGroup()
 {
     mainGeneral()
-    crudDataRegistration();
-    replaceToCkEditor();
+    crudMenuGroup();
 }

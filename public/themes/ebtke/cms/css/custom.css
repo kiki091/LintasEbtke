@@ -7,15 +7,24 @@ html , body{
  .bg__gray {
     background: #eee;
  }
+
+ .matgin__top {
+    margin-top: 10px;
+ }
+
 .full-width {
-	
- width:100%;
- 
+    width:100%;
  }
  
 .full-height{
- height:100%;
+    height:100%;
  }
+
+#ntf11 h2 {
+    margin-top: 10px;
+    font-size: 26px;
+    color: #FFFFFF;
+}
 
 .daterangepicker .ranges li {
     color: #73879C
@@ -361,7 +370,7 @@ body .container.body .right_col {
     float: left;
     background: #ededed;
     border-radius: 0;
-    height: 140px;
+    height: 155px;
     border-right: 1px solid #D9DEE4;
     border-bottom: 1px solid #D9DEE4;
 }
@@ -517,6 +526,9 @@ body {
     display: block
 }
 .page-title .title_left h3 {
+    margin: 9px 0
+}
+.page-title .title_left p {
     margin: 9px 0
 }
 .page-title .title_right {
@@ -4134,14 +4146,15 @@ ul.notifications {
 .tabbed_notifications div p {
     display: inline-block;
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
+    padding-top: 10px;
 }
 .tabbed_notifications h2 {
     font-weight: bold;
     text-transform: uppercase;
     width: 80%;
     float: left;
-    height: 20px;
+    height: 27px;
     text-overflow: ellipsis;
     overflow: hidden;
     display: block
@@ -4258,4 +4271,295 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 .text__left {
     text-align: left;
+}
+
+.main__content__layer {
+    background: #ffffff;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+    margin: 15px 1% 15px 1%;
+}
+
+.main__content__layer .content__top {
+    padding: 14px 15px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+
+.flex-between {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+h2 {
+    font-family: "harriet_regular";
+    color: #4A4A4A;
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.main__content__layer .content__top .content__btn {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.main__content__layer .content__top .content__btn a:last-child {
+    margin-right: 0;
+}
+
+.main__content__layer .content__top .content__btn a {
+    margin: 0 5px;
+}
+
+.main__content__layer .content__top .content__btn a:hover {
+    color: #FFFFFF;
+}
+
+.btn__add, .btn__add__cancel {
+    height: 26px;
+    padding: 0 15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #5a738e;
+    color: #ffffff;
+    font-family: "brandon_bold";
+    font-size: 11px;
+    text-transform: uppercase;
+    transition: all .3s;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+}
+
+.btn__add, .btn__add__cancel :hover {
+    color: #FFFFFF;
+}
+
+.news__list {
+    position: relative;
+}
+.sortable {
+    position: relative;
+}
+
+.news__list .news__list__wrapper {
+    border-bottom: 1px solid #e9ebee;
+    background: #ffffff;
+    position: relative !important;
+    top: 0px !important;
+}
+.sort-item {
+    position: relative !important;
+    top: 0px !important;
+}
+
+.news__list .news__list__wrapper .news__list__detail {
+    padding: 20px;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.news__list .news__list__wrapper .news__list__detail .drag__control {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    padding: 0 15px 0 0;
+}
+
+.news__list .news__list__wrapper .news__list__detail .drag__control .handle {
+    display: -ms-flexbox;
+    display: flex;
+    cursor: move;
+    color: #dcdfe5;
+}
+.handle {
+    cursor: move;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__left {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__left img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle {
+    padding-right: 15px;
+    width: calc(100% - 150px);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle .news__list__desc .news__name {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle .news__list__desc .news__name .title__name {
+    font-size: 14px;
+    margin: 0;
+    color: #4A4A4A;
+    font-weight: normal;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle .news__list__desc .news__desc {
+    position: relative;
+    top: 1px;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle .news__list__desc .news__desc .news__cat {
+    font-size: 12px;
+    color: #a8a8a8;
+    margin-bottom: 8px;
+    margin-right: 15px;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__middle .news__list__desc .news__desc p {
+    display: block;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__right {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 250px;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    transition: .3s;
+}
+
+.news__list .news__list__wrapper .news__list__detail .news__list__detail__middle-right .news__list__detail__right label {
+    font-size: 12px;
+    color: #adb2bf;
+}
+.content__edit__hover {
+    position: relative;
+}
+
+.content__edit__hover:hover:after {
+    content: "";
+    background: url(/themes/ebtke/cms/svg/ico-pencil.svg) no-repeat;
+    position: absolute;
+    width: 13px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0 auto 5px;
+    font-size: 15px;
+}
+
+
+.switch {
+    position: relative;
+    display: block;
+    vertical-align: top;
+    width: 79px;
+    height: 24px;
+    margin: 0;
+    border-radius: 18px;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.switch .switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.switch .switch-input:checked ~ .switch-label {
+    background: #5a738e;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch .switch-label, .switch .switch-handle {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+}
+.switch .switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 12px;
+    background: #DE6061;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.switch .switch-input:checked ~ .switch-handle {
+    right: 75%;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch .switch-handle {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 17px;
+    height: 17px;
+    background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch .switch-input:checked ~ .switch-label:after {
+    opacity: 1;
+}
+
+.switch .switch-input:checked ~ .switch-label:before {
+    opacity: 0;
+}
+
+.switch .switch-label:before, .switch .switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    transition: inherit;
+}
+
+.switch .switch-label:before {
+    content: attr(data-off);
+    left: 12px;
+    color: #FFFFFF;
+}
+
+.switch .switch-label:after {
+    content: attr(data-on);
+    right: 18px;
+    color: #FFFFFF;
+    opacity: 0;
 }

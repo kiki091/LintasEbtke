@@ -15,7 +15,6 @@
 <script type="text/javascript" src="{{ asset('js/bower_components/ckeditor/ckeditor.js') }}"></script>
 <!-- Javascript Laroute -->
 <script src="{{ asset('themes/ebtke/cms/build/js/laroute.js') }}"></script>
-
 <!-- Javascript VUE -->
 <script src="{{ asset('js/bower_components/vue/dist/vue.js') }}"></script>
 <script src="{{ asset('js/bower_components/vue/dist/vue.min.js') }}"></script>
@@ -28,3 +27,4 @@
 <!-- Javascript Authentication -->
 <script src="{{ asset('themes/ebtke/cms/pages/auth/reset-password.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/logout.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/auth/menu-group.js') }}"></script>

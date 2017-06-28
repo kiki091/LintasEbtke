@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 
-use Laracasts\Utilities\JavaScript\JavaScriptFacade;
+use LaravelLocalization;
+use JavaScript;
 use Auth;
 use Session;
 
@@ -16,8 +17,6 @@ class CmsBaseController extends Controller
 
 	public function __construct()
     {
-        $this->setJavascriptVariable();
-
         if (Auth::check() == null) {
            return redirect()->route('login');
         }
@@ -26,10 +25,21 @@ class CmsBaseController extends Controller
     /**
      * Phars php to Js
      */
-    protected function setJavascriptVariable()
+    protected function setSuportedLanguage()
     {
-        JavaScriptFacade::put([
-            'token' => csrf_token()
-        ]);
+        $supported_locales = LaravelLocalization::getSupportedLocales();
+
+        return $supported_locales;
+    }
+
+    protected function setSuportedLanguageKey()
+    {
+        $supported_language = LaravelLocalization::getSupportedLocales();
+
+        foreach ($supported_language as $key => $value) {
+            $supported_language[$key] = '';
+        }
+
+        return $supported_language;
     }
 }

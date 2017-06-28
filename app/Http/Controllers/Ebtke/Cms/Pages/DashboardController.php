@@ -8,6 +8,8 @@ use App\Custom\DataHelper;
 use App\Services\Bridge\Auth\Users as UserServices;
 use App\Http\Middleware\UserPrivilege as UserPrivilegeServices;
 
+use Carbon\Carbon;
+use JavaScript;
 use Auth;
 use Session;
 use Validator;
@@ -25,6 +27,13 @@ class DashboardController extends CmsBaseController
     {
         $this->user = $user;
         $this->userPrivilege = $userPrivilege;
+
+        JavaScript::put([
+            'supported_language' => $this->setSuportedLanguage(),
+            'supported_language_keys' => $this->setSuportedLanguageKey(),
+            'lintas_default_language' => config('app.locale'),
+            'token' => csrf_token(),
+        ]);
     }
 
     /**
@@ -33,7 +42,7 @@ class DashboardController extends CmsBaseController
      */
     public function index(Request $request)
     {
-        //dd(DataHelper::userInfo());
+        //dd(csrf_token());
 
         $blade = self::URL_BLADE_CMS. '.dashboard';
         

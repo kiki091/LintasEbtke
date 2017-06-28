@@ -36,6 +36,7 @@ class AuthServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('App\Repositories\Contracts\Auth\Users', 'App\Repositories\Implementation\Auth\Users');
+        $this->app->bind('App\Repositories\Contracts\Auth\MenuGroup', 'App\Repositories\Implementation\Auth\MenuGroup');
     }
 
     /**
@@ -47,6 +48,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         return array(
             'App\Repositories\Contracts\Auth\Users',
+            'App\Repositories\Contracts\Auth\MenuGroup',
         );
     }
 }
