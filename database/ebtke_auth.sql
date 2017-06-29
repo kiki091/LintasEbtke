@@ -57,6 +57,7 @@ CREATE TABLE `menu` (
   `url` varchar(55) DEFAULT NULL,
   `menu_group_id` int(5) DEFAULT NULL,
   `have_sub_menu` tinyint(1) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -72,7 +73,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (1,'News','news','menuNews()',1,0,NULL,NULL),(2,'Event','event','menuEvent()',1,0,NULL,NULL),(3,'Lintas History','lintas-history','menuLintasHistory()',2,0,NULL,NULL),(4,'Vision and Mission','vision-and-mission','menuVisionMission()',2,0,NULL,NULL),(5,'Organization Structure','organization-structure','menuOrganizationStructure()',2,0,NULL,NULL),(6,'Lintas Of Scope','lintas-of-scope','menuLintasScope()',2,0,NULL,NULL),(7,'Procedure','procedure','menuProcedure()',3,0,NULL,NULL),(8,'Potentials','potentials','menuPotentials()',3,1,NULL,NULL),(9,'Green Pages','green-pages','menuGreenPages()',3,0,NULL,NULL),(10,'Renewable Energy','renewable-energi','menuRenewableEnergi()',4,1,NULL,NULL),(11,'Geothermal','geothermal','menuGeothermal()',4,0,NULL,NULL),(12,'Bio Energy','bio-energi','menuBioEnergi()',4,0,NULL,NULL),(13,'Others','others','menuOthers()',4,0,NULL,NULL),(14,'Tools','tools','menuTools()',5,0,NULL,NULL),(15,'White Papers','white-papers','menuWhitePapers()',5,0,NULL,NULL),(16,'Publications','publications','menuPublications()',5,0,NULL,NULL),(17,'Feasibility Studies','feasibility-studies','menuFeasibilityStudies()',5,0,NULL,NULL),(18,'NREEC Institution','nreec-institution','menuNreecInstitution()',6,0,NULL,NULL),(19,'NREEC Resources','nreec-resources','menuNreecResources()',6,0,NULL,NULL),(20,'NREEC Events','nreec-events','menuNreecEvents()',6,0,NULL,NULL);
+INSERT INTO `menu` VALUES (1,'News','news','menuNews()',1,0,1,NULL,NULL),(2,'Event','event','menuEvent()',1,0,1,NULL,NULL),(3,'Lintas History','lintas-history','menuLintasHistory()',2,0,1,NULL,NULL),(4,'Vision and Mission','vision-and-mission','menuVisionMission()',2,0,1,NULL,NULL),(5,'Organization Structure','organization-structure','menuOrganizationStructure()',2,0,1,NULL,NULL),(6,'Lintas Of Scope','lintas-of-scope','menuLintasScope()',2,0,1,NULL,NULL),(7,'Procedure','procedure','menuProcedure()',3,0,1,NULL,NULL),(8,'Potentials','potentials','menuPotentials()',3,1,1,NULL,NULL),(9,'Green Pages','green-pages','menuGreenPages()',3,0,1,NULL,NULL),(10,'Renewable Energy','renewable-energi','menuRenewableEnergi()',4,1,1,NULL,NULL),(11,'Geothermal','geothermal','menuGeothermal()',4,0,1,NULL,NULL),(12,'Bio Energy','bio-energi','menuBioEnergi()',4,0,1,NULL,'2017-06-29 02:08:01'),(13,'Others','others','menuOthers()',4,0,1,NULL,NULL),(14,'Tools','tools','menuTools()',5,0,1,NULL,NULL),(15,'White Papers','white-papers','menuWhitePapers()',5,0,1,NULL,NULL),(16,'Publications','publications','menuPublications()',5,0,1,NULL,NULL),(17,'Feasibility Studies','feasibility-studies','menuFeasibilityStudies()',5,0,1,NULL,NULL),(18,'NREEC Institution','nreec-institution','menuNreecInstitution()',6,0,1,NULL,NULL),(19,'NREEC Resources','nreec-resources','menuNreecResources()',6,0,1,NULL,NULL),(20,'NREEC Events','nreec-events','menuNreecEvents()',6,0,1,NULL,NULL);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +106,7 @@ CREATE TABLE `menu_group` (
 
 LOCK TABLES `menu_group` WRITE;
 /*!40000 ALTER TABLE `menu_group` DISABLE KEYS */;
-INSERT INTO `menu_group` VALUES (1,'News & Event','fa-newspaper-o',5,1,1,NULL,NULL),(2,'Company','fa-building-o',1,1,1,NULL,NULL),(3,'Investment Services','fa-bar-chart',3,1,1,NULL,NULL),(4,'Information Services','fa-bullhorn',2,1,1,NULL,NULL),(5,'Resource','fa-folder-o',6,1,1,NULL,NULL),(6,'Link','fa-external-link',4,1,1,NULL,NULL);
+INSERT INTO `menu_group` VALUES (1,'News & Event','fa-newspaper-o',5,1,1,NULL,NULL),(2,'Company','fa-building-o',1,1,1,NULL,'2017-06-28 23:18:49'),(3,'Investment Services','fa-bar-chart',3,1,1,NULL,NULL),(4,'Information Services','fa-bullhorn',2,1,1,NULL,'2017-06-28 23:18:59'),(5,'Resource','fa-folder-o',6,1,1,NULL,NULL),(6,'Link','fa-external-link',4,1,1,NULL,NULL);
 /*!40000 ALTER TABLE `menu_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,6 +181,7 @@ CREATE TABLE `sub_menu` (
   `slug` varchar(100) NOT NULL,
   `url` varchar(100) NOT NULL,
   `menu_id` int(3) NOT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -197,7 +199,7 @@ CREATE TABLE `sub_menu` (
 
 LOCK TABLES `sub_menu` WRITE;
 /*!40000 ALTER TABLE `sub_menu` DISABLE KEYS */;
-INSERT INTO `sub_menu` VALUES (1,'Geothermal','sub-geothermal','subMenuGeothermal()',8,NULL,NULL),(2,'Bio Energy','sub-bio-energy','subMenuBioEnergy()',8,NULL,NULL),(3,'Others','sub-others','subMenuOthers()',8,NULL,NULL),(4,'Energy Conservation','sub-energi-conservation','subMenuEnergiConservation()',8,NULL,NULL),(5,'Industry','sub-industry','subMenuIndustry()',10,NULL,NULL),(6,'Comercial Building','sub-comercial-building','subMenuComercialBuilding()',10,NULL,NULL),(7,'Transportation','sub-transportation','subMenuTransportation()',10,NULL,NULL),(8,'Residentials','sub-residentials','subMenuResidentials()',10,NULL,NULL);
+INSERT INTO `sub_menu` VALUES (1,'Geothermal','sub-geothermal','subMenuGeothermal()',8,1,NULL,NULL),(2,'Bio Energy','sub-bio-energy','subMenuBioEnergy()',8,1,NULL,NULL),(3,'Others','sub-others','subMenuOthers()',8,1,NULL,NULL),(4,'Energy Conservation','sub-energi-conservation','subMenuEnergiConservation()',8,1,NULL,NULL),(5,'Industry','sub-industry','subMenuIndustry()',10,1,NULL,NULL),(6,'Comercial Building','sub-comercial-building','subMenuComercialBuilding()',10,1,NULL,NULL),(7,'Transportation','sub-transportation','subMenuTransportation()',10,1,NULL,NULL),(8,'Residentials','sub-residentials','subMenuResidentials()',10,1,NULL,NULL);
 /*!40000 ALTER TABLE `sub_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,7 +312,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_users_1_idx` (`location_id`),
   CONSTRAINT `fk_users_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -319,7 +321,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','sheqbo@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','Jt19tNOTBKthbbuZgdbQEGKXOq2LreRFQIC06feJ0tJVqmJNLD4yYMr1Y9ZJ',1,2,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(3,'kiki','kiki@gmail.com','$2y$10$wknmDtAPufG9niCxcdmmiOylRhalGLiG1PvWVauWLTVL0qX/ETs.e',NULL,0,1,'2017-06-06 07:24:38','2017-06-06 07:24:38');
+INSERT INTO `users` VALUES (1,'admin','sheqbo@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','k0OhlWooP4KVIhJhwF1W1V5Dk34NWXdZlTwoAsZD8LXKrWBVLMQD92ASTsZo',1,2,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(8,'kiki','kiki@gmail.com','$2y$10$XKc7z44FRzH9H5PnjnBJNOrCXGYjpEEpt/34ONa.VNzvxhLhthoEC',NULL,0,1,'2017-06-27 18:02:24','2017-06-27 18:02:24'),(9,'kiki','admin@ayana.com','$2y$10$R5u4W/.Yw3D.dwjLiYIwUOPJCSWZBvi3q.wYozwUVocrX3mhsp9tO',NULL,0,1,'2017-06-27 18:09:28','2017-06-27 18:09:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -332,4 +334,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-27 17:43:32
+-- Dump completed on 2017-06-29  9:35:21

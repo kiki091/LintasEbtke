@@ -29,4 +29,5 @@
 <script src="{{ asset('themes/ebtke/cms/pages/auth/logout.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/menu-group.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/menu-navigation.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/auth/sub-menu-navigation.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/user-account.js') }}"></script>

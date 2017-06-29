@@ -56,6 +56,15 @@ class Menu extends Model
     /**
      * @param $query
      */
+    public function scopeIsActive($query, $params = true)
+    {
+        return $query->where('is_active', $params);
+    }
+
+
+    /**
+     * @param $query
+     */
     public function scopeId($query, $params)
     {
         return $query->where('id', $params);

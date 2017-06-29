@@ -280,6 +280,13 @@ function initMenuNavigation()
     crudMenuNavigation();
 }
 
+// INIT FUNCTION SUB MENU NAVIGATION ACCOUNT MANAGEMENT CMS
+function initSubMenuNavigation()
+{
+    mainGeneral()
+    crudSubMenuNavigation();
+}
+
 // INIT FUNCTION USER ACCOUNT MANAGEMENT CMS
 function initUserAccount()
 {

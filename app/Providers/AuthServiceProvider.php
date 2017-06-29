@@ -38,6 +38,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Auth\Users', 'App\Repositories\Implementation\Auth\Users');
         $this->app->bind('App\Repositories\Contracts\Auth\MenuGroup', 'App\Repositories\Implementation\Auth\MenuGroup');
         $this->app->bind('App\Repositories\Contracts\Auth\MenuNavigation', 'App\Repositories\Implementation\Auth\MenuNavigation');
+        $this->app->bind('App\Repositories\Contracts\Auth\SubMenuNavigation', 'App\Repositories\Implementation\Auth\SubMenuNavigation');
     }
 
     /**
@@ -51,6 +52,7 @@ class AuthServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Auth\Users',
             'App\Repositories\Contracts\Auth\MenuGroup',
             'App\Repositories\Contracts\Auth\MenuNavigation',
+            'App\Repositories\Contracts\Auth\SubMenuNavigation',
         );
     }
 }

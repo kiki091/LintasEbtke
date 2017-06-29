@@ -18,6 +18,16 @@ function menuNavigation()
     });
 }
 
+// JAVASCRIPT SUB MENU NAVIGATION MANAGER
+
+function menuSubNavigation()
+{
+    $('.right_col').load(laroute.route('CmsSubMenuNavigation', []), function()
+    {
+    	initSubMenuNavigation()
+    });
+}
+
 // JAVASCRIPT USER ACCOUNT MANAGER
 
 function menuUserAccount()

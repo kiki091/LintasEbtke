@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#menu-navigation" onclick="menuSubnavigation()">
+                            <a href="#sub-menu-navigation" onclick="menuSubNavigation()">
                                 Sub Navigation
                             </a>
                         </li>
