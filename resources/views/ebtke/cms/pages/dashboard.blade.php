@@ -16,20 +16,20 @@
 			<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
             	<div class="tile-stats">
               		<div class="icon">
-              			<i class="fa fa-caret-square-o-right"></i>
+              			<i class="fa fa-newspaper-o"></i>
               		</div>
               		<div class="count">179</div>
-              		<h3>New Sign ups</h3>
+              		<h3>News</h3>
               		<p>Lorem ipsum psdea itgum rixt.</p>
             	</div>
           	</div>
           	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   	<div class="icon">
-                  		<i class="fa fa-comments-o"></i>
+                  		<i class="fa fa-calendar"></i>
                   	</div>
                   	<div class="count">179</div>
-                  	<h3>New Sign ups</h3>
+                  	<h3>Event</h3>
                   	<p>Lorem ipsum psdea itgum rixt.</p>
                 </div>
             </div>

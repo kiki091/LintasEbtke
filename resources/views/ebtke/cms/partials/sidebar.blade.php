@@ -70,7 +70,7 @@
 
                     <ul class="nav child_menu">
                         <li>
-                            <a href="#menu-privilage" onclick="menuUser()">
+                            <a href="#menu-privilage" onclick="menuUserAccount()">
                                 User Account
                             </a>
                         </li>

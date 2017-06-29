@@ -28,7 +28,7 @@ class Users extends BaseImplementation implements UserInterface
     }
 
 	/**
-     * Set Ayana Auth Session
+     * Set Auth Session
      * Warning: this function doesn't redis cache
      * @param $params
      * @return array
@@ -65,6 +65,24 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
+     * Get Data
+     * Warning: this function doesn't redis cache
+     * @param $params
+     * @return array
+     */
+
+    public function getData($data)
+    {
+        $params = [
+            'order'     => 'name',
+        ];
+
+        $userData = $this->user($params, 'asc', 'array', false);
+
+        return $this->userTransformation->getUserTransform($userData);
+    }
+
+    /**
      * Registered User Account
      * Warning: this function doesn't redis cache
      * @param $params
@@ -92,34 +110,41 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
-     * Get All User
+     * Change Status Menu Group
      * Warning: this function doesn't redis cache
-     * @param array $params
+     * @param $params
      * @return array
      */
-    protected function user($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+
+    public function changeStatus($data)
     {
-        $user = $this->user->with(['role','location','user_menu', 'system_location']);
+     
+        try {
 
-        if(isset($params['id'])) {
-            $user->userId($params['id']);
-        }
+            if (!isset($data['id']) && empty($data['id']))
 
-        if(isset($params['is_active'])) {
-            $user->isActive($params['is_active']);
-        }
+                return $this->setResponse(trans('message.cms_required_id'), false);
 
-        if(!$user->count())
-            return array();
+            DB::beginTransaction();
 
-        switch ($returnType) {
-            case 'array':
-                if(!$returnSingle) {
-                    return $user->get()->toArray();
-                } else {
-                    return $user->first()->toArray();
-                }
-                break;
+            $oldData = $this->user->userId($data['id'])->first()->toArray();
+
+            $updatedData = [
+                'is_active' => $oldData['is_active'] ? false : true,
+                'updated_at' => $this->mysqlDateTimeFormat()
+            ];
+
+            $changeStatus = $this->user->userId($data['id'])->update($updatedData);
+
+            if($changeStatus) {
+                DB::commit();
+                return $this->setResponse(trans('message.cms_success_update_status_general'), true);
+            }
+
+            DB::rollBack();
+            return $this->setResponse(trans('message.cms_failed_update_status_general'), false);
+        } catch (\Exception $e) {
+            return $this->setResponse($e->getMessage(), false);
         }
     }
 
@@ -156,9 +181,9 @@ class Users extends BaseImplementation implements UserInterface
         $userId = Auth::id();
         
         try {
-            //$matchThese = ['id' => $userId, 'password' => Hash::make($data['old_password']) ];
-            //$users = UserModel::where($matchThese)->get();
+            
             $users = UserModel::find($userId);
+
             if(Hash::check($data['old_password'], $users['password']))
             {
                 $users['password']      = Hash::make($data['new_password']);
@@ -199,5 +224,41 @@ class Users extends BaseImplementation implements UserInterface
             return false;
         }
 
+    }
+
+    /**
+     * Get All User
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    protected function user($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+    {
+        $user = $this->user->with(['role','location','user_menu', 'system_location']);
+
+        if(isset($params['id'])) {
+            $user->userId($params['id']);
+        }
+
+        if(isset($params['is_active'])) {
+            $user->isActive($params['is_active']);
+        }
+
+        if(isset($params['order'])) {
+            $user->orderBy($params['order'], $orderType);
+        }
+
+        if(!$user->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) {
+                    return $user->get()->toArray();
+                } else {
+                    return $user->first()->toArray();
+                }
+                break;
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace App\Services\Transformation\Auth;
 class Users
 {
 	/**
-     * Get Ayana Auth Session Transformation
+     * Get Auth Session Transformation
      * @param $data
      * @return array
      */
@@ -15,6 +15,19 @@ class Users
             return array();
 
         return $this->setAuthSessionTransform($data);
+    }
+
+    /**
+     * Get Data Transformation
+     * @param $data
+     * @return array
+     */
+    public function getUserTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setUserTransform($data);
     }
 
     /**
@@ -143,4 +156,25 @@ class Users
         return $dataTransform;
     }
 
+    /**
+     * Set User Transform
+     * @param array
+     * @return array
+     */
+
+    protected function setUserTransform($data)
+    {
+        $dataTransform = array_map(function($data) {
+
+            return [
+                'id'            => isset($data['id']) ? $data['id'] : '',
+                'name'          => isset($data['name']) ? $data['name'] : '',
+                'email'         => isset($data['email']) ? $data['email'] : '',
+                'is_active'     => isset($data['is_active']) ? $data['is_active'] : '',
+            ];
+            
+        }, $data);
+
+        return $dataTransform;
+    }
 }

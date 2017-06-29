@@ -43,4 +43,22 @@ class Users {
         return $this->user->changePassword($params);
     }
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function getData($params = array())
+    {
+        return $this->user->getData($params);
+    }
+
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function changeStatus($params)
+    {
+        return $this->user->changeStatus($params);
+    }
+
 } 

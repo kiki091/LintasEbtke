@@ -16652,7 +16652,7 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 }
 
 .main__content__layer {
-    background: #ffffff;
+    background: #f7f7f7;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     margin: 15px 1% 15px 1%;
 }
@@ -16727,7 +16727,7 @@ h2 {
 
 .news__list .news__list__wrapper {
     border-bottom: 1px solid #e9ebee;
-    background: #ffffff;
+    background: #f7f7f7;
     position: relative !important;
     top: 0px !important;
 }

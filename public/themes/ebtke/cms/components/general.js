@@ -266,9 +266,16 @@ function mainGeneral(){
     buttonClickClose();
 }
 
-// INIT FUNCTION ACCOUNT MANAGEMENT CMS
+// INIT FUNCTION MENU GROUP ACCOUNT MANAGEMENT CMS
 function initMenuGroup()
 {
     mainGeneral()
     crudMenuGroup();
+}
+
+// INIT FUNCTION USER ACCOUNT MANAGEMENT CMS
+function initUserAccount()
+{
+    mainGeneral()
+    crudUserAccount();
 }

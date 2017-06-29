@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Ebtke\Cms\Pages\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
-use App\Services\Bridge\Auth\MenuGroup as MenuGroupServices;
+use App\Services\Bridge\Auth\Users as UserAccountServices;
 use App\Services\Api\Response as ResponseService;
 use App\Custom\DataHelper;
 
@@ -13,25 +13,25 @@ use Session;
 use Validator;
 use ValidatesRequests;
 
-class MenuGroupController extends CmsBaseController
+class UserAccountController extends CmsBaseController
 {
     protected $response;
-    protected $menuGroup;
+    protected $userAccount;
 
-    public function __construct(MenuGroupServices $menuGroup, ResponseService $response)
+    public function __construct(UserAccountServices $userAccount, ResponseService $response)
     {
         $this->response = $response;
-        $this->menuGroup = $menuGroup;
+        $this->userAccount = $userAccount;
     }
 
     /**
-     * Index Of Menu Grouping
+     * Index Of User Account
      * @return string
      */
 
     public function index(Request $request)
     {
-        $blade = self::URL_BLADE_CMS. '.auth.menu-navigation.group.main';
+        $blade = self::URL_BLADE_CMS. '.auth.user-account.main';
         
         if(view()->exists($blade)) {
         
@@ -43,23 +43,23 @@ class MenuGroupController extends CmsBaseController
     }
 
     /**
-     * Get Data Of Menu Grouping
+     * Get Data Of User Account
      * @return string
      */
 
     public function getData(Request $request)
     {
-        $data['menu_group'] = $this->menuGroup->getData();
+        $data['user_account'] = $this->userAccount->getData();
         return $this->response->setResponse(trans('success_get_data'), true, $data);
     }
 
     /**
-     * Change Status Of Menu Grouping
+     * Change Status Of User Account
      * @return string
      */
 
     public function changeStatus(Request $request)
     {
-        return $this->menuGroup->changeStatus($request->except(['_token']));
+        return $this->userAccount->changeStatus($request->except(['_token']));
     }
 }

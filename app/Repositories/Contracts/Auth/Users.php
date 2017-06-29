@@ -24,5 +24,17 @@ interface Users
      */
     public function changePassword($params);
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function getData($params);
+
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function changeStatus($params);
+
 
 } 
