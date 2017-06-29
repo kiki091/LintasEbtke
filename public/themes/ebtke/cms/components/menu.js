@@ -8,6 +8,16 @@ function menuGroup()
     });
 }
 
+// JAVASCRIPT MENU NAVIGATION MANAGER
+
+function menuNavigation()
+{
+    $('.right_col').load(laroute.route('CmsMenuNavigation', []), function()
+    {
+    	initMenuNavigation()
+    });
+}
+
 // JAVASCRIPT USER ACCOUNT MANAGER
 
 function menuUserAccount()

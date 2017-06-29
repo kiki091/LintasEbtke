@@ -37,6 +37,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Repositories\Contracts\Auth\Users', 'App\Repositories\Implementation\Auth\Users');
         $this->app->bind('App\Repositories\Contracts\Auth\MenuGroup', 'App\Repositories\Implementation\Auth\MenuGroup');
+        $this->app->bind('App\Repositories\Contracts\Auth\MenuNavigation', 'App\Repositories\Implementation\Auth\MenuNavigation');
     }
 
     /**
@@ -49,6 +50,7 @@ class AuthServiceProvider extends ServiceProvider
         return array(
             'App\Repositories\Contracts\Auth\Users',
             'App\Repositories\Contracts\Auth\MenuGroup',
+            'App\Repositories\Contracts\Auth\MenuNavigation',
         );
     }
 }

@@ -273,6 +273,13 @@ function initMenuGroup()
     crudMenuGroup();
 }
 
+// INIT FUNCTION MENU NAVIGATION ACCOUNT MANAGEMENT CMS
+function initMenuNavigation()
+{
+    mainGeneral()
+    crudMenuNavigation();
+}
+
 // INIT FUNCTION USER ACCOUNT MANAGEMENT CMS
 function initUserAccount()
 {

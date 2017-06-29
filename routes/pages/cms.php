@@ -45,6 +45,15 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('change-status', 'Ebtke\Cms\Pages\Auth\MenuGroupController@changeStatus')->name('CmsMenuGroupManagerChangeStatus');
 				});
 
+				// MENU NAVIGATION MANAGEMENT ROUTE
+
+				Route::group(['prefix' => 'menu-navigation'], function ()
+				{
+					Route::get('/', 'Ebtke\Cms\Pages\Auth\MenuNavigationController@index')->name('CmsMenuNavigation');
+					Route::get('data', 'Ebtke\Cms\Pages\Auth\MenuNavigationController@getData')->name('CmsMenuNavigationGetData');
+					Route::post('change-status', 'Ebtke\Cms\Pages\Auth\MenuNavigationController@changeStatus')->name('CmsMenuNavigationChangeStatus');
+				});
+
 				// USER ACCOUNT MANAGEMENT ROUTE
 
 				Route::group(['prefix' => 'user-account'], function ()
