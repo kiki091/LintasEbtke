@@ -4139,7 +4139,7 @@ ul.notifications {
 }
 .tabbed_notifications .text {
     padding: 5px 15px;
-    height: 140px;
+    min-height: 105px;
     border-radius: 7px;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3)
 }
@@ -4154,10 +4154,13 @@ ul.notifications {
     text-transform: uppercase;
     width: 80%;
     float: left;
-    height: 27px;
+    height: 33px;
     text-overflow: ellipsis;
     overflow: hidden;
-    display: block
+    display: block;
+    color: #FFFFFF;
+    padding-top: 10px;
+    font-size: 24px;
 }
 .tabbed_notifications .close {
     padding: 5px;
