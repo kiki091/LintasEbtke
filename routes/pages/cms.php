@@ -70,6 +70,7 @@ Route::group(['middleware' => ['web']], function ()
 					Route::get('/', 'Ebtke\Cms\Pages\Auth\UserAccountController@index')->name('CmsUserAccount');
 					Route::get('data', 'Ebtke\Cms\Pages\Auth\UserAccountController@getData')->name('CmsUserAccountGetData');
 					Route::post('change-status', 'Ebtke\Cms\Pages\Auth\UserAccountController@changeStatus')->name('CmsUserAccountChangeStatus');
+					Route::post('store', 'Ebtke\Cms\Pages\Auth\UserAccountController@store')->name('CmsUserAccountStoreData');
 				});
 			});
 		});

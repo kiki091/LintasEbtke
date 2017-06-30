@@ -227,6 +227,18 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
+     * Store Data
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    public function store($data)
+    {
+        
+    }
+
+    /**
      * Get All User
      * Warning: this function doesn't redis cache
      * @param array $params

@@ -84,7 +84,8 @@ mix.scripts([
 mix.styles([
     'public/themes/ebtke/cms/css/font-awesome.css',
     'public/themes/ebtke/cms/css/bootstrap.css',
-    //'public/themes/ebtke/cms/css/nprogress.css',
+    'public/themes/ebtke/cms/css/notify__custom.css',
+    'public/themes/ebtke/cms/css/nprogress.css',
     'public/themes/ebtke/cms/css/animate.css',
     'public/themes/ebtke/cms/css/custom.css',
     'public/js/bower_components/pacejs/pace-theme-flash.css',
@@ -102,12 +103,14 @@ mix.scripts([
     'public/js/bower_components/iCheck/icheck.min.js',
 	'public/js/bower_components/hold-on/HoldOn.min.js',
 	'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
+    'public/js/bower_components/notifyjs/dist/notify.js',
     'public/js/bower_components/pnotify/dist/pnotify.js',
     'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js',
 ], 'public/themes/ebtke/cms/build/js/plugins.js');
 
 mix.scripts([
 	'public/themes/ebtke/cms/js/bootstrap.min.js',
+	'public/js/bower_components/pacejs/pace.js',
 	'public/themes/ebtke/cms/js/custom.min.js',
-	//'public/themes/ebtke/cms/js/nprogress.js',
+	'public/themes/ebtke/cms/js/nprogress.js',
 ], 'public/themes/ebtke/cms/build/js/core.js');

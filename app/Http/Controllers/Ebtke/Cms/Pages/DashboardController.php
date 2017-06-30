@@ -32,6 +32,7 @@ class DashboardController extends CmsBaseController
             'supported_language' => $this->setSuportedLanguage(),
             'supported_language_keys' => $this->setSuportedLanguageKey(),
             'lintas_default_language' => config('app.locale'),
+            'app_domain' => env('ACCOUNT_DOMAIN_PREFIX'),
             'token' => csrf_token(),
         ]);
     }
@@ -42,7 +43,7 @@ class DashboardController extends CmsBaseController
      */
     public function index(Request $request)
     {
-        //dd(csrf_token());
+        //dd(DataHelper::userInfo());
 
         $blade = self::URL_BLADE_CMS. '.dashboard';
         

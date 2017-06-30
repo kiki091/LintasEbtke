@@ -36,5 +36,11 @@ interface Users
      */
     public function changeStatus($params);
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function store($params);
+
 
 } 

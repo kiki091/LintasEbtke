@@ -61,4 +61,13 @@ class Users {
         return $this->user->changeStatus($params);
     }
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function store($params = array())
+    {
+        return $this->user->store($params);
+    }
+
 } 

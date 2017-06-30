@@ -305,7 +305,10 @@
     };
 
     Bar.prototype.done = function() {
-      return this.progress >= 100;
+      if(this.progress >= 99) {
+        
+        return document.body.className += ' pace-done';
+      }
     };
 
     return Bar;

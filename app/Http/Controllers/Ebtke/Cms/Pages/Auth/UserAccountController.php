@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ebtke\Cms\Pages\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Services\Bridge\Auth\Users as UserAccountServices;
+use App\Services\Bridge\Auth\MenuNavigation as MenuNavigationServices;
 use App\Services\Api\Response as ResponseService;
 use App\Custom\DataHelper;
 
@@ -17,11 +18,14 @@ class UserAccountController extends CmsBaseController
 {
     protected $response;
     protected $userAccount;
+    protected $menuNavigation;
+    protected $validationMessage = '';
 
-    public function __construct(UserAccountServices $userAccount, ResponseService $response)
+    public function __construct(UserAccountServices $userAccount, MenuNavigationServices $menuNavigation, ResponseService $response)
     {
         $this->response = $response;
         $this->userAccount = $userAccount;
+        $this->menuNavigation = $menuNavigation;
     }
 
     /**
@@ -50,6 +54,7 @@ class UserAccountController extends CmsBaseController
     public function getData(Request $request)
     {
         $data['user_account'] = $this->userAccount->getData();
+        $data['menu_navigation'] = $this->menuNavigation->getData();
         return $this->response->setResponse(trans('success_get_data'), true, $data);
     }
 
@@ -61,5 +66,44 @@ class UserAccountController extends CmsBaseController
     public function changeStatus(Request $request)
     {
         return $this->userAccount->changeStatus($request->except(['_token']));
+    }
+
+    /**
+     * Change Status Of User Account
+     * @param array
+     * @return string
+     */
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->validationStore($request));
+
+        if ($validator->fails()) {
+            //TODO: case fail
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
+
+        } else {
+            //TODO: case pass
+            return $this->userAccount->store($request->except(['_token']));
+        }
+    }
+
+    /**
+     * Validation Store 
+     * @return array
+     */
+    private function validationStore($request = array())
+    {
+        $rules = [
+            'name'               => 'required',
+            'email'              => 'required|email|max:30',
+            'password'           => 'required|min:6|max:20',
+            'confirm_password'   => 'required|same:password|min:6|max:20',
+            'menu_id'            => 'required',
+            'location_id'        => 'required',
+            'system_id'          => 'required',
+        ];
+
+        return $rules;
     }
 }

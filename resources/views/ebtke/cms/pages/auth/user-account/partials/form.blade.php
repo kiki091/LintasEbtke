@@ -1,4 +1,4 @@
-<form action="#" method="POST" id="UserAccountManagementFrom" enctype="multipart/form-data" @submit.prevent>
+<form action="{{ route('CmsUserAccountStoreData') }}" method="POST" id="UserAccountManagementFrom" enctype="multipart/form-data" @submit.prevent>
 	<div class="main__content__form__layer" id="toggle-form-content" style="display: none; margin-top: 5%;">
 		<div class="create__form__wrapper">
 			<div class="form--top flex-between">
@@ -12,27 +12,110 @@
 					<div class="form__group__row">
 						<div id="form-accordion">
 							<div class="create__form__row">
-								<span class="form__group__title">General Information</span>
+								<span class="form__group__title">General Information<a href="javascript:void(0);" class="style__accordion" data-accordion="form-accordion-1"><i>@include('ebtke.cms.svg-logo.ico-expand-arrow')</i></a></span>
 							</div>
-							<div class="create__form__row">
-								<div class="new__form__field">
-									<label>Office Name</label>
-									<div class="field__icon">
-										<input name="office_name" type="text" id="office_name" class="form-control" placeholder="Enter here">
-									</div>
-									<div class="form--error--message" id="form--error--message--title"></div>
-								</div>
-							</div>
-							<div class="create__form__row">
-								<div class="new__form__field">
-									<label>Office Name</label>
-									<div class="field__icon">
-										<div class="checkbox icheck-wetasphalt">
-										    <input type="checkbox" checked>
-
+							<div id="form-accordion-1" style="display: block;">
+								<div class="create__form__row">
+									<div class="new__form__field">
+										<label>Name</label>
+										<div class="field__icon">
+											<input v-model="models.name" name="name" type="text" id="name" class="form-control" placeholder="Enter here">
 										</div>
+										<div class="form--error--message--left" id="form--error--message--name"></div>
 									</div>
-									<div class="form--error--message" id="form--error--message--title"></div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field">
+										<label>Email</label>
+										<div class="field__icon">
+											<input v-model="models.email" name="email" type="email" id="email" class="form-control" placeholder="Enter here">
+										</div>
+										<div class="form--error--message--left" id="form--error--message--email"></div>
+									</div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field">
+										<label>Password</label>
+										<div class="field__icon">
+											<input v-model="models.password" name="password" type="password" id="password" class="form-control" placeholder="Enter here">
+										</div>
+										<div class="form--error--message--left" id="form--error--message--password"></div>
+									</div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field">
+										<label>Confirm Password</label>
+										<div class="field__icon">
+											<input v-model="models.confirm_password" name="confirm_password" type="password" id="confirm_password" class="form-control" placeholder="Enter here">
+										</div>
+										<div class="form--error--message--left" id="form--error--message--confirm_password"></div>
+									</div>
+								</div>
+								<hr/>
+							</div>
+							<div class="create__form__row">
+								<span class="form__group__title">User Access Control<a href="javascript:void(0);" class="style__accordion" data-accordion="form-accordion-2"><i>@include('ebtke.cms.svg-logo.ico-expand-arrow')</i></a></span>
+							</div>
+							<div id="form-accordion-2" style="display: block;">
+								<div class="create__form__row">
+									<div class="new__form__field full-width">
+										<label>Location Access</label>
+										<ul class="to_do">
+											<li>
+												<div class="radio icheck-primary">
+	    											<input v-model="models.location_id" type="radio" v-bind:value="1" name="location_id" id="location_id_user" />
+												    <label for="location_id_user">USER</label>
+												</div>
+											</li>
+											<li>
+												<div class="radio icheck-primary">
+	    											<input v-model="models.location_id" type="radio" v-bind:value="2" name="location_id" id="location_id_admin" />
+												    <label for="location_id_admin">ADMIN</label>
+												</div>
+											</li>
+										</ul>
+										<div class="form--error--message--left" id="form--error--message--location_id"></div>
+									</div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field" style="width: 100%">
+										<label>System Access</label>
+										<ul class="to_do">
+											<li>
+												<div class="checkbox icheck-primary">
+												    <input name="system_id[]" v-bind:value="1" type="checkbox" id="system_id_cms" />
+												    <label for="system_id_cms">CONTENT MANAGEMENT SYSTEM</label>
+												</div>
+											</li>
+											<li>
+												<div class="checkbox icheck-primary">
+												    <input name="system_id[]" v-bind:value="2" type="checkbox" id="system_id_ams" />
+												    <label for="system_id_ams">ACCOUNT MANAGEMENT SYSTEM</label>
+												</div>
+											</li>
+										</ul>
+										<div class="form--error--message--left" id="form--error--message--system_id"></div>
+									</div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field" style="width: 100%">
+										<label>Navigation Access</label>
+										<div class="field__icon">
+											<div class="">
+												<ul class="to_do" v-if="edit == false">
+													<li v-for="user_menu in responseData.menu_navigation">
+														<p>
+															<div class="checkbox icheck-primary">
+															    <input type="checkbox" name="menu_id[]" :id=" 'menu_id-' + user_menu.id" :value="user_menu.id"/>
+															    <label :for=" 'menu_id-' + user_menu.id">@{{ user_menu.title }}</label>
+															</div>
+														</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="form--error--message--left" id="form--error--message--menu_id"></div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -45,8 +128,8 @@
 					<div class="create__form__row flex-between">
 						<div class="new__form__btn">
 							<input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-							<input v-model="models.id" type="hidden" name="id">
-							<button class="btn__form" type="submit">Save</button>
+							<input v-model="models.id" v-if="edit == true" type="hidden" name="id">
+							<button class="btn__form" type="submit" @click="storeData">Save</button>
 						</div>
 					</div>
 				</div>
