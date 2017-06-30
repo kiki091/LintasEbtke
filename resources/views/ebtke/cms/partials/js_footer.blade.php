@@ -9,6 +9,8 @@
 <script type="text/javascript" src="{{ asset('themes/ebtke/cms/js/jquery.form.js') }}"></script>
 <!-- javascript compiled -->
 <script src="{{ asset('themes/ebtke/cms/build/js/core.js') }}"></script>
+<!-- pace.js -->
+<script type="text/javascript" src="{{ asset('js/bower_components/pacejs/pace.js') }}"></script>
 <!-- Javascript Sortable -->
 <script type="text/javascript" src="{{ asset('js/bower_components/sortable/sortable.js') }}"></script>
 <!-- Javascript CK editor -->

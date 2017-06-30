@@ -252,6 +252,14 @@ function buttonClickClose() {
     });
 }
 
+function checkBooxCustom()
+{
+  $('input').iCheck({
+      checkboxClass: 'icheckbox_flat',
+      radioClass: 'iradio_flat'
+  });
+}
+
 
 function scrollTop()
 {
@@ -262,8 +270,6 @@ function mainGeneral(){
     scrollTop();
     datePicker();
     setSelectedFolder();
-    buttonClickOpen();
-    buttonClickClose();
 }
 
 // INIT FUNCTION MENU GROUP ACCOUNT MANAGEMENT CMS
@@ -292,4 +298,7 @@ function initUserAccount()
 {
     mainGeneral()
     crudUserAccount();
+    buttonClickOpen();
+    buttonClickClose();
+    checkBooxCustom();
 }
