@@ -6,6 +6,8 @@ use App\Custom\RouteMenuLocation;
 use App\Repositories\Contracts\Auth\Users as UserInterface;
 use App\Repositories\Implementation\BaseImplementation;
 use App\Models\Auth\Users as UserModel;
+use App\Models\Auth\SystemLocation as SystemLocationModel;
+use App\Models\Auth\UserMenu as UserMenuModel;
 use App\Custom\Facades\DataHelper;
 use App\Services\Transformation\Auth\Users as UserTransformation;
 use Cache;
@@ -18,12 +20,19 @@ class Users extends BaseImplementation implements UserInterface
 {
 
     protected $user;
+    protected $userNavigation;
+    protected $userSystemLocation;
     protected $userTransformation;
 
-    function __construct(UserModel $user, UserTransformation $userTransformation)
+    protected $message;
+    protected $lastInsertId;
+
+    function __construct(UserModel $user, SystemLocationModel $userSystemLocation, UserMenuModel $userNavigation, UserTransformation $userTransformation)
     {
 
         $this->user = $user;
+        $this->userNavigation = $userNavigation;
+        $this->userSystemLocation = $userSystemLocation;
         $this->userTransformation = $userTransformation;
     }
 
@@ -198,7 +207,7 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
-     * Registration User
+     * Registration By User
      * @param $data
      */
 
@@ -235,7 +244,179 @@ class Users extends BaseImplementation implements UserInterface
 
     public function store($data)
     {
-        
+        try {
+
+            DB::beginTransaction();
+
+            if ($this->storeUserAccount($data) != true) {
+                DB::rollBack();
+                return $this->setResponse($this->message, false);
+            }
+
+            if ($this->storeUserSystemControl($data) != true) {
+                DB::rollBack();
+                return $this->setResponse($this->message, false);
+            }
+
+            if ($this->storeUserNavigationControl($data) != true) {
+                DB::rollBack();
+                return $this->setResponse($this->message, false);
+            }
+
+            DB::commit();
+            return $this->setResponse(trans('message.cms_success_store_data_general'), true);
+
+        } catch (\Exception $e) {
+            return $this->setResponse($e->getMessage(), false);
+        }
+    }
+
+    /**
+     * Store Data User Account Into Database
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    protected function storeUserAccount($data)
+    {
+        try {
+
+            $store              = $this->user;
+
+            if ($this->isEditMode($data)) {
+                $store          = $this->user->find($data['id']);
+            }
+
+            $store->name        = isset($data['name']) ? $data['name'] : '';
+            $store->email       = isset($data['email']) ? $data['email'] : '';
+            $store->password    = Hash::make($data['confirm_password']);
+            $store->location_id = isset($data['location_id']) ? $data['location_id'] : '';
+
+            if (!$this->isEditMode($data)) {
+                $store->is_active  = true;
+            }
+
+            if($save = $store->save()) {
+                $this->lastInsertId = $store->id;
+            }
+
+            return $save;
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+    }
+
+    /**
+     * Store Data User System Control Into Database
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    protected function storeUserSystemControl($data)
+    {
+        try {
+
+            if(!isset($data['system_id']))
+                    return true;
+
+            if ($this->isEditMode($data)) {
+                $this->removeUserSystemControl($data['id']);
+            }
+
+            $finalData = [];
+                
+            foreach ($data['system_id'] as $key => $value) {
+
+                $finalData[] = [
+                    "user_id" => $this->lastInsertId,
+                    "system_id" => $value,
+                ];
+                
+            }
+
+            if ($this->userSystemLocation->insert($finalData) != true) {
+                $this->message = trans('message.cms_failed_store_data_system_access');
+                return false;
+            }
+
+            return true;
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+    }
+
+    /**
+     * Store Data User Navigation Control Into Database
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    protected function storeUserNavigationControl($data)
+    {
+        try {
+
+            if(!isset($data['menu_id']))
+                    return true;
+
+            if ($this->isEditMode($data)) {
+                $this->removeUserNavigationControl($data['id']);
+            }
+
+            $finalData = [];
+                
+            foreach ($data['menu_id'] as $key => $value) {
+
+                $finalData[] = [
+                    "user_id" => $this->lastInsertId,
+                    "menu_id" => $value,
+                ];
+                
+            }
+
+            if ($this->userNavigation->insert($finalData) != true) {
+                $this->message = trans('message.cms_failed_store_data_navigation_access');
+                return false;
+            }
+
+            return true;
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+    }
+
+    /**
+     * Remove Data User System Control Into Database
+     * @param $diningOfferId
+     * @return bool
+     */
+    protected function removeUserSystemControl($id)
+    {
+        if (empty($id))
+            return false;
+
+        return $this->userSystemLocation->where('user_id', $id)->delete();
+    }
+
+    /**
+     * Remove Data User Navigation Control
+     * @param $diningOfferId
+     * @return bool
+     */
+    protected function removeUserNavigationControl($id)
+    {
+        if (empty($id))
+            return false;
+
+        return $this->userNavigation->where('user_id', $id)->delete();
     }
 
     /**
@@ -272,5 +453,15 @@ class Users extends BaseImplementation implements UserInterface
                 }
                 break;
         }
+    }
+
+    /**
+     * Check need edit Mode or No
+     * @param $data
+     * @return bool
+     */
+    protected function isEditMode($data)
+    {
+        return isset($data['id']) && !empty($data['id']) ? true : false;
     }
 }

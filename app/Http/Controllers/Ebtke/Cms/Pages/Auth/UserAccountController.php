@@ -104,6 +104,28 @@ class UserAccountController extends CmsBaseController
             'system_id'          => 'required',
         ];
 
+        if ($this->isEditMode($request->input())) 
+        {
+            if (is_null($request->file('password'))) {
+                unset($rules['password']);
+            }
+            
+            if (is_null($request->file('confirm_password'))) {
+                unset($rules['confirm_password']);
+            }
+        }
+
+
         return $rules;
+    }
+
+    /**
+     * Check is edit mode or no
+     * @param $data
+     * @return bool
+     */
+    protected function isEditMode($data)
+    {
+        return isset($data['id']) && !empty($data['id']) ? true : false;
     }
 }
