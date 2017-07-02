@@ -18,8 +18,11 @@
     "gulp": "^3.9.1"
   },
   "dependencies": {
+    "express": "^4.15.3",
     "laravel-elixir": "^4.0.0",
     "masonry-layout": "^4.1.1",
+    "redis": "^2.7.1",
+    "socket.io": "^2.0.3",
     "vue": "^2.1.10"
   }
 }

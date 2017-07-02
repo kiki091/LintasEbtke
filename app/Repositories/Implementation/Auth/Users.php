@@ -228,10 +228,15 @@ class Users extends BaseImplementation implements UserInterface
             $store->is_active            = false;
             $store->location_id          = "1";
 
-            $store->password      = Hash::make($data['confirm_password']);
+            $store->password             = Hash::make($data['confirm_password']);
 
-            $save = $store->save();
+            if($save = $store->save()) {
 
+                // Generate event for notification user registration
+                
+                event(new UserRegistrationEvent($data));
+            }
+            
             return $save;
 
         } catch (\Exception $e) {
