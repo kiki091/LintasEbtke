@@ -16748,6 +16748,7 @@ ul.notifications {
     text-align: left;
     font-size: 20px;
     padding-top: 10px;
+    float: left;
 }
 .tabbed_notifications h2 {
     font-weight: bold;
@@ -16761,6 +16762,8 @@ ul.notifications {
     color: #FFFFFF;
     padding-top: 10px;
     font-size: 24px;
+    text-align: left;
+    margin-bottom: 5px;
 }
 .tabbed_notifications .close {
     padding: 5px;

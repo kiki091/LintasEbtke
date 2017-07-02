@@ -23,7 +23,7 @@ class Privilage extends Model
 
     public function role_user()
     {
-        return $this->belongsTo('App\Models\Auth\Role', 'id', 'role_id');
+        return $this->belongsTo('App\Models\Auth\Role', 'id', 'privilage_id');
     }
 
     /***************** Scope *****************/
@@ -31,7 +31,7 @@ class Privilage extends Model
     /**
      * @param $query
      */
-    public function scopeId($query, $params = true)
+    public function scopeId($query, $params)
     {
         return $query->where('id', $params);
     }

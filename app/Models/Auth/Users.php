@@ -67,6 +67,15 @@ class Users extends Model
         return $query->where('is_active', $params);
     }
 
+
+    /**
+     * @param $query
+     */
+    public function scopeEmail($query, $email)
+    {
+        return $query->where('email', $email);
+    }
+
     /**
      * @param $query
      */

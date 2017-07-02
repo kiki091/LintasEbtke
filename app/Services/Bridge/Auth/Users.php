@@ -70,4 +70,13 @@ class Users {
         return $this->user->store($params);
     }
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function edit($params = array())
+    {
+        return $this->user->edit($params);
+    }
+
 } 

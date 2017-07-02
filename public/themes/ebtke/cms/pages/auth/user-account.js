@@ -21,9 +21,20 @@ function crudUserAccount() {
                 name: '',
                 email: '',
                 location_id: '',
+                privilage_id: '',
                 password: '',
                 confirm_password: '',
+                privilage_id: '',
             },
+            user_role: [
+                {privilage_id: ''}
+            ],
+            system_location: [
+                {system_id: ''}
+            ],
+            user_menu: [
+                {menu_id: ''}
+            ],
             system_id: [],
             menu_id: [],
             form_add_title: "User Accounr Manager",
@@ -121,30 +132,88 @@ function crudUserAccount() {
                 $("#UserAccountManagementFrom").submit();
             },
 
-            resetForm: function(setEditToFalse) {
+            editData: function(id) {
 
-                if(setEditToFalse) {
-                    this.edit = false
+                this.edit = true
+                var payload = []
+                payload['id'] = id
+                payload['_token'] = token
+
+                var form = new FormData();
+
+                for (var key in payload) {
+                    form.append(key, payload[key])
                 }
+
+                var domain  = laroute.route('CmsUserAccountEditData', []);
+                this.$http.post(domain, form).then(function(response) {
+
+                    response = response.data
+                    if (response.status) {
+                        this.models = response.data.user;
+                        this.user_role = response.data.user_role
+                        this.user_menu = response.data.menu_navigation
+                        this.system_location = response.data.system_location
+
+                        $.each(response.data.menu_navigation, function(index, key) {
+                            document.getElementById("checkbox-menu_id-"+key.menu_id).checked = true;
+                        });
+
+                        $.each(response.data.user_role, function(index, key) {
+                            document.getElementById("privilage_id_"+key.privilage_id).checked = true;
+                        });
+
+                        $.each(response.data.system_location, function(index, key) {
+                            document.getElementById("checkbox-system_id-"+key.system_id).checked = true;
+                        });
+
+                        this.form_add_title = "Edit User Accounr Manager"
+                        $('.btn__add').click()
+
+                    } else {
+                        pushNotif(response.status,response.message)
+                    }
+                })
+            },
+
+            resetForm: function() {
 
                 this.models.id = ''
                 this.models.name = ''
                 this.models.email = ''
                 this.models.password = ''
                 this.models.confirm_password = ''
+                this.models.location_id = ''
+                this.models.privilage_id = ''
+                this.models.password = ''
+                this.models.confirm_password = ''
 
+                this.user_role = [
+                    {privilage_id: ''}
+                ];
+
+                this.system_location = [
+                    {system_id: ''}
+                ];
+
+                this.user_menu = [
+                    {menu_id: ''}
+                ];
+
+                this.system_id = [];
                 this.menu_id = [];
 
                 this.form_add_title = "User Accounr Manager"
                 document.getElementById("UserAccountManagementFrom");
 
                 this.clearErrorMessage()
+                this.edit = false
 
-                $('.checkbox icheck-wetasphalt input[type=checkbox]').removeAttr('checked');
+                $('.checkbox__data').removeAttr('checked');
             },
 
             clearErrorMessage: function() {
-                $(".form--error--message").text('')
+                $(".form--error--message--left").text('')
             },
 
         },

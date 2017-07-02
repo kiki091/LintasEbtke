@@ -24,6 +24,7 @@
       'cms_failed_store_data_general' => 'Failed store data.',
       'cms_failed_store_data_system_access' => 'Failed store data user system access.',
       'cms_failed_store_data_navigation_access' => 'Failed store data user navigation access.',
+      'cms_failed_store_data_privilage_access' => 'Failed store data user privilage access.',
 
     	'cms_success_delete_data_general' => 'Success delete data.',
     	'cms_failed_delete_data_general' => 'Failed delete data.',
@@ -44,4 +45,6 @@
 
       'success_store_contact_us' => 'Success input contact us',
       'failed_store_contact_us' => 'Failed input contact us',
+
+      'cms_failed_mail_exist' => 'Email already exist',
   ];

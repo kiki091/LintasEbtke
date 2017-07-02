@@ -110,7 +110,7 @@ mix.scripts([
 
 mix.scripts([
 	'public/themes/ebtke/cms/js/bootstrap.min.js',
-	'public/js/bower_components/pacejs/pace.js',
+	//'public/js/bower_components/pacejs/pace.js',
 	'public/themes/ebtke/cms/js/custom.min.js',
 	'public/themes/ebtke/cms/js/nprogress.js',
 ], 'public/themes/ebtke/cms/build/js/core.js');

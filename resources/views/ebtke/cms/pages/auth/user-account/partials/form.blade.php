@@ -4,7 +4,7 @@
 			<div class="form--top flex-between">
 				<div class="form__title"><h2>@{{ form_add_title }}</h2></div>
 				<div class="form--top__btn">
-					<a href="#" class="btn__add__cancel">Cancel</a>
+					<a href="#" class="btn__add__cancel" @click="resetForm">Cancel</a>
 				</div>
 			</div>
 			<div class="form--mid">
@@ -80,21 +80,38 @@
 								<div class="create__form__row">
 									<div class="new__form__field" style="width: 100%">
 										<label>System Access</label>
+										
+										<div class="field__icon">
+											<div class="">
+												<ul class="to_do">
+													<li v-for="system_location in responseData.system_location">
+														<p>
+															<div class="checkbox icheck-primary">
+															    <input class="checkbox__data" type="checkbox" name="system_id[]" :id=" 'checkbox-system_id-' + system_location.system_id" :value="system_location.system_id"/>
+															    <label :for=" 'checkbox-system_id-' + system_location.system_id">@{{ system_location.name }}</label>
+															</div>
+														</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="form--error--message--left" id="form--error--message--system_id"></div>
+									</div>
+								</div>
+								<div class="create__form__row">
+									<div class="new__form__field full-width">
+										<label>Privilage Access</label>
 										<ul class="to_do">
-											<li>
-												<div class="checkbox icheck-primary">
-												    <input name="system_id[]" v-bind:value="1" type="checkbox" id="system_id_cms" />
-												    <label for="system_id_cms">CONTENT MANAGEMENT SYSTEM</label>
-												</div>
-											</li>
-											<li>
-												<div class="checkbox icheck-primary">
-												    <input name="system_id[]" v-bind:value="2" type="checkbox" id="system_id_ams" />
-												    <label for="system_id_ams">ACCOUNT MANAGEMENT SYSTEM</label>
+											<li v-for="user_privilage in responseData.user_role">
+												<div class="radio icheck-primary">
+	    											<input class="checkbox__data" type="radio" v-bind:value="user_privilage.privilage_id" name="privilage_id" :id=" 'privilage_id_' + user_privilage.privilage_id" />
+												    <label :for=" 'privilage_id_' + user_privilage.privilage_id">
+												    	@{{ user_privilage.display_name }}
+												    </label>
 												</div>
 											</li>
 										</ul>
-										<div class="form--error--message--left" id="form--error--message--system_id"></div>
+										<div class="form--error--message--left" id="form--error--message--privilage_id"></div>
 									</div>
 								</div>
 								<div class="create__form__row">
@@ -102,12 +119,12 @@
 										<label>Navigation Access</label>
 										<div class="field__icon">
 											<div class="">
-												<ul class="to_do" v-if="edit == false">
+												<ul class="to_do">
 													<li v-for="user_menu in responseData.menu_navigation">
 														<p>
 															<div class="checkbox icheck-primary">
-															    <input type="checkbox" name="menu_id[]" :id=" 'menu_id-' + user_menu.id" :value="user_menu.id"/>
-															    <label :for=" 'menu_id-' + user_menu.id">@{{ user_menu.title }}</label>
+															    <input class="checkbox__data" type="checkbox" name="menu_id[]" :id=" 'checkbox-menu_id-' + user_menu.id" :value="user_menu.id"/>
+															    <label :for=" 'checkbox-menu_id-' + user_menu.id">@{{ user_menu.title }}</label>
 															</div>
 														</p>
 													</li>

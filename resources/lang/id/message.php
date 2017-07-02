@@ -20,6 +20,7 @@
       'cms_success_store_data_general' => 'Success store data.',
       'cms_success_store_data_system_access' => 'Success store data user system access.',
       'cms_success_store_data_navigation_access' => 'Success store data user navigation access.',
+      'cms_failed_store_data_privilage_access' => 'Failed store data user privilage access.',
 
       'cms_failed_store_data_general' => 'Failed store data.',
       'cms_failed_store_data_system_access' => 'Failed store data user system access.',
@@ -44,4 +45,6 @@
 
       'success_store_contact_us' => 'Success input contact us',
       'failed_store_contact_us' => 'Failed input contact us',
+      
+      'cms_failed_mail_exist' => 'Failed email already used',
   ];

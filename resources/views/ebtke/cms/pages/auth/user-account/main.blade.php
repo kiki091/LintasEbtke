@@ -36,7 +36,7 @@
 								<div class="news__list__detail__middle">
 									<div class="news__list__desc">
 										<div class="news__name">
-											<a href="#edit-data" class="title__name content__edit__hover" title="Edit Data">
+											<a href="#edit-data" class="title__name content__edit__hover" title="Edit Data" @click="editData(user_account.id)">
 												@{{ user_account.email }}
 											</a>
 										</div>

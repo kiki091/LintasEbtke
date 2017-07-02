@@ -42,5 +42,11 @@ interface Users
      */
     public function store($params);
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function edit($params);
+
 
 } 

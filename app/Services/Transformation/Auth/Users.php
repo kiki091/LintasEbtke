@@ -31,6 +31,19 @@ class Users
     }
 
     /**
+     * Get Single Data User For Edit Transformation
+     * @param $data
+     * @return array
+     */
+    public function getSingleUserEditTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setSingleUserEditTransform($data);
+    }
+
+    /**
      * Set Auth Session Transformation
      * @param $data
      * @return array
@@ -175,6 +188,22 @@ class Users
             
         }, $data);
 
+        return $dataTransform;
+    }
+
+    /**
+     * Set Single Data User For Edit Transformation
+     * @param $data
+     * @return array
+     */
+
+    protected function setSingleUserEditTransform($data)
+    {
+        $dataTransform['id']             =   isset($data['id']) ? $data['id'] : '';
+        $dataTransform['name']           =   isset($data['name']) ? $data['name'] : '';
+        $dataTransform['email']          =   isset($data['email']) ? $data['email'] : '';
+        $dataTransform['location_id']    =   isset($data['location_id']) ? $data['location_id'] : '';
+        
         return $dataTransform;
     }
 }

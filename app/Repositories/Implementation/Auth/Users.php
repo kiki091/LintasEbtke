@@ -8,6 +8,8 @@ use App\Repositories\Implementation\BaseImplementation;
 use App\Models\Auth\Users as UserModel;
 use App\Models\Auth\SystemLocation as SystemLocationModel;
 use App\Models\Auth\UserMenu as UserMenuModel;
+use App\Models\Auth\Role as RoleModel;
+use App\Models\Auth\UserMenu as UserMenuNavigationModel;
 use App\Custom\Facades\DataHelper;
 use App\Services\Transformation\Auth\Users as UserTransformation;
 use Cache;
@@ -20,18 +22,22 @@ class Users extends BaseImplementation implements UserInterface
 {
 
     protected $user;
+    protected $role;
     protected $userNavigation;
+    protected $userMenuNavigation;
     protected $userSystemLocation;
     protected $userTransformation;
 
     protected $message;
     protected $lastInsertId;
 
-    function __construct(UserModel $user, SystemLocationModel $userSystemLocation, UserMenuModel $userNavigation, UserTransformation $userTransformation)
+    function __construct(UserModel $user, SystemLocationModel $userSystemLocation, UserMenuModel $userNavigation, RoleModel $role, UserMenuNavigationModel $userMenuNavigation, UserTransformation $userTransformation)
     {
 
         $this->user = $user;
+        $this->role = $role;
         $this->userNavigation = $userNavigation;
+        $this->userMenuNavigation = $userMenuNavigation;
         $this->userSystemLocation = $userSystemLocation;
         $this->userTransformation = $userTransformation;
     }
@@ -236,6 +242,36 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
+     * Check email has use or not
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    protected function checkUserMail($data)
+    {
+        try {
+            
+            if(!$this->isEditMode($data)) {
+                $usersEmail = $this->user->email($data['email'])->first();
+
+                if($usersEmail['email'] == NULL) {
+
+                    return true;    
+                }
+                else{
+                    return false;
+                }
+            }
+
+            return true;
+
+        } catch (Exception $e) {
+            return $this->setResponse($e->getMessage(), false);
+        }
+    }
+
+    /**
      * Store Data
      * Warning: this function doesn't redis cache
      * @param array $params
@@ -248,23 +284,35 @@ class Users extends BaseImplementation implements UserInterface
 
             DB::beginTransaction();
 
-            if ($this->storeUserAccount($data) != true) {
-                DB::rollBack();
-                return $this->setResponse($this->message, false);
-            }
+            if($this->checkUserMail($data) == true) {
 
-            if ($this->storeUserSystemControl($data) != true) {
-                DB::rollBack();
-                return $this->setResponse($this->message, false);
-            }
+                if ($this->storeUserAccount($data) != true) {
+                    DB::rollBack();
+                    return $this->setResponse($this->message, false);
+                }
 
-            if ($this->storeUserNavigationControl($data) != true) {
-                DB::rollBack();
-                return $this->setResponse($this->message, false);
-            }
+                if ($this->storeUserSystemControl($data) != true) {
+                    DB::rollBack();
+                    return $this->setResponse($this->message, false);
+                }
 
-            DB::commit();
-            return $this->setResponse(trans('message.cms_success_store_data_general'), true);
+                if ($this->storeUserPrivilageControl($data) != true) {
+                    DB::rollBack();
+                    return $this->setResponse($this->message, false);
+                }
+
+                if ($this->storeUserNavigationControl($data) != true) {
+                    DB::rollBack();
+                    return $this->setResponse($this->message, false);
+                }
+
+                DB::commit();
+                return $this->setResponse(trans('message.cms_success_store_data_general'), true);
+
+            } else {
+                DB::rollBack();
+                return $this->setResponse(trans('message.cms_failed_mail_exist'), false);
+            }
 
         } catch (\Exception $e) {
             return $this->setResponse($e->getMessage(), false);
@@ -394,6 +442,42 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
+     * Store Data User Privilage Control Into Database
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+
+    protected function storeUserPrivilageControl($data)
+    {
+        try {
+
+            if(!isset($data['privilage_id']))
+                    return true;
+
+            if ($this->isEditMode($data)) {
+                $this->removeUserPrivilageControl($data['id']);
+            }
+
+            $finalData = [
+                "user_id" => $this->lastInsertId,
+                "privilage_id" => $data['privilage_id'],
+            ];
+                
+            if ($this->role->insert($finalData) != true) {
+                $this->message = trans('message.cms_failed_store_data_privilage_access');
+                return false;
+            }
+
+            return true;
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+    }
+
+    /**
      * Remove Data User System Control Into Database
      * @param $diningOfferId
      * @return bool
@@ -407,6 +491,19 @@ class Users extends BaseImplementation implements UserInterface
     }
 
     /**
+     * Remove Data User Privilage Control Into Database
+     * @param $diningOfferId
+     * @return bool
+     */
+    protected function removeUserPrivilageControl($id)
+    {
+        if (empty($id))
+            return false;
+
+        return $this->role->where('user_id', $id)->delete();
+    }
+
+    /**
      * Remove Data User Navigation Control
      * @param $diningOfferId
      * @return bool
@@ -417,6 +514,28 @@ class Users extends BaseImplementation implements UserInterface
             return false;
 
         return $this->userNavigation->where('user_id', $id)->delete();
+    }
+
+    /**
+     * Edit data user manager
+     * @param $diningOfferId
+     * @return bool
+     */
+
+    public function edit($data)
+    {
+        $params = [
+            'id' => $data['id'],
+        ];
+
+        $userData = $this->user($params, 'asc', 'array', true);
+        
+        $data['user'] = $this->userTransformation->getSingleUserEditTransform($userData);
+        $data['user_role'] = $this->role($params);
+        $data['system_location'] = $this->userSystemLocation($params);
+        $data['menu_navigation'] = $this->userMenuNavigation($params);
+
+        return $this->setResponse(trans('message.cms_success_get_data'), true, $data);
     }
 
     /**
@@ -441,6 +560,10 @@ class Users extends BaseImplementation implements UserInterface
             $user->orderBy($params['order'], $orderType);
         }
 
+        if(isset($params['email'])) {
+            $user->email($params['email']);
+        }
+
         if(!$user->count())
             return array();
 
@@ -450,6 +573,98 @@ class Users extends BaseImplementation implements UserInterface
                     return $user->get()->toArray();
                 } else {
                     return $user->first()->toArray();
+                }
+                break;
+        }
+    }
+
+
+    /**
+     * Get All Data User Role
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    
+    protected function role($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
+    {
+        $role = $this->role;
+
+        if(isset($params['id'])) {
+            $role = RoleModel::where('user_id', $params['id']);
+        }
+
+        if(!$role->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) {
+                    return $role->get()->toArray();
+                } else {
+                    return $role->first()->toArray();
+                }
+                break;
+        }
+    }
+
+
+    /**
+     * Get All Data System Location
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    
+    protected function userSystemLocation($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
+    {
+
+        $userSystemLocation = $this->userSystemLocation;
+
+        if(isset($params['id'])) {
+            $userSystemLocation = SystemLocationModel::where('user_id', $params['id']);
+        }
+
+        if(!$userSystemLocation->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) {
+                    return $userSystemLocation->get()->toArray();
+                } else {
+                    return $userSystemLocation->first()->toArray();
+                }
+                break;
+        }
+    }
+
+
+    /**
+     * Get All Data Menu Navigation
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    
+    protected function userMenuNavigation($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
+    {
+
+        $userMenuNavigation = $this->userMenuNavigation;
+
+        if(isset($params['id'])) {
+            $userMenuNavigation = UserMenuNavigationModel::where('user_id', $params['id']);
+        }
+
+        if(!$userMenuNavigation->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) {
+                    return $userMenuNavigation->get()->toArray();
+                } else {
+                    return $userMenuNavigation->first()->toArray();
                 }
                 break;
         }

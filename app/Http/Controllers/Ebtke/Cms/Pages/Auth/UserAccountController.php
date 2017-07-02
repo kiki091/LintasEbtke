@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Services\Bridge\Auth\Users as UserAccountServices;
 use App\Services\Bridge\Auth\MenuNavigation as MenuNavigationServices;
+use App\Services\Bridge\Auth\Privilage as PrivilageServices;
+use App\Services\Bridge\Auth\System as SystemServices;
 use App\Services\Api\Response as ResponseService;
 use App\Custom\DataHelper;
 
@@ -18,13 +20,17 @@ class UserAccountController extends CmsBaseController
 {
     protected $response;
     protected $userAccount;
+    protected $privilage;
+    protected $system;
     protected $menuNavigation;
     protected $validationMessage = '';
 
-    public function __construct(UserAccountServices $userAccount, MenuNavigationServices $menuNavigation, ResponseService $response)
+    public function __construct(UserAccountServices $userAccount, PrivilageServices $privilage, SystemServices $system, MenuNavigationServices $menuNavigation, ResponseService $response)
     {
         $this->response = $response;
         $this->userAccount = $userAccount;
+        $this->privilage = $privilage;
+        $this->system = $system;
         $this->menuNavigation = $menuNavigation;
     }
 
@@ -54,18 +60,10 @@ class UserAccountController extends CmsBaseController
     public function getData(Request $request)
     {
         $data['user_account'] = $this->userAccount->getData();
+        $data['user_role'] = $this->privilage->getData();
+        $data['system_location'] = $this->system->getData();
         $data['menu_navigation'] = $this->menuNavigation->getData();
-        return $this->response->setResponse(trans('success_get_data'), true, $data);
-    }
-
-    /**
-     * Change Status Of User Account
-     * @return string
-     */
-
-    public function changeStatus(Request $request)
-    {
-        return $this->userAccount->changeStatus($request->except(['_token']));
+        return $this->response->setResponse(trans('message.cms_success_get_data'), true, $data);
     }
 
     /**
@@ -89,6 +87,26 @@ class UserAccountController extends CmsBaseController
     }
 
     /**
+     * Change Status Of User Account
+     * @return string
+     */
+
+    public function changeStatus(Request $request)
+    {
+        return $this->userAccount->changeStatus($request->except(['_token']));
+    }
+
+    /**
+     * Edit Data Of User Account
+     * @return string
+     */
+
+    public function edit(Request $request)
+    {
+        return $this->userAccount->edit($request->except(['_token']));
+    }
+
+    /**
      * Validation Store 
      * @return array
      */
@@ -102,6 +120,7 @@ class UserAccountController extends CmsBaseController
             'menu_id'            => 'required',
             'location_id'        => 'required',
             'system_id'          => 'required',
+            'privilage_id'       => 'required',
         ];
 
         if ($this->isEditMode($request->input())) 
