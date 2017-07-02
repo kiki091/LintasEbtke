@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Auth\Users;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,18 +15,16 @@ class UserRegistrationEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $name;
-    public $email;
+    public $user;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(array $payload)
+    public function __construct(Users $user)
     {
-        $this->name  = $payload['name'];
-        $this->email  = $payload['email'];
+        $this->user = $user;
     }
 
     /**
@@ -35,6 +34,12 @@ class UserRegistrationEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new PrivateChannel('registration');
     }
+/*
+    public function broadcastWith() {
+        return [
+          'email' => $this->post->email,
+        ];
+    }*/
 }

@@ -12,6 +12,7 @@ use App\Models\Auth\Role as RoleModel;
 use App\Models\Auth\UserMenu as UserMenuNavigationModel;
 use App\Custom\Facades\DataHelper;
 use App\Services\Transformation\Auth\Users as UserTransformation;
+use App\Events\UserRegistrationEvent;
 use Cache;
 use Session;
 use DB;
@@ -234,7 +235,8 @@ class Users extends BaseImplementation implements UserInterface
 
                 // Generate event for notification user registration
                 
-                event(new UserRegistrationEvent($data));
+                //event(new UserRegistrationEvent($data));
+                broadcast(new UserRegistrationEvent($data['email']))->toOthers();
             }
             
             return $save;

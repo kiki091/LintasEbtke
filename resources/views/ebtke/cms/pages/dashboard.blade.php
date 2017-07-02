@@ -21,4 +21,5 @@
 	    	pushNotif(true, msg.name + '('+ msg.email +') baru saja mendaftar')
 	  	});
 	</script> -->
+	
 @endsection
