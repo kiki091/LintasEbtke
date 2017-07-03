@@ -163,59 +163,6 @@
         ]
     },
     {
-        "name": "nikic/php-parser",
-        "version": "v3.0.5",
-        "version_normalized": "3.0.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nikic/PHP-Parser.git",
-            "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
-            "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
-            "shasum": ""
-        },
-        "require": {
-            "ext-tokenizer": "*",
-            "php": ">=5.5"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0|~5.0"
-        },
-        "time": "2017-03-05 18:23:57",
-        "bin": [
-            "bin/php-parse"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "PhpParser\\": "lib/PhpParser"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Nikita Popov"
-            }
-        ],
-        "description": "A PHP parser written in PHP",
-        "keywords": [
-            "parser",
-            "php"
-        ]
-    },
-    {
         "name": "jakub-onderka/php-console-highlighter",
         "version": "v0.3.2",
         "version_normalized": "0.3.2.0",
@@ -1514,59 +1461,6 @@
             "csprng",
             "pseudorandom",
             "random"
-        ]
-    },
-    {
-        "name": "lord/laroute",
-        "version": "v2.4.4",
-        "version_normalized": "2.4.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/aaronlord/laroute.git",
-            "reference": "2adee9daa5491f1ad7b953fc01df36ebc7294c3e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/aaronlord/laroute/zipball/2adee9daa5491f1ad7b953fc01df36ebc7294c3e",
-            "reference": "2adee9daa5491f1ad7b953fc01df36ebc7294c3e",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/console": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "dev-master",
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2017-02-08 11:05:52",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Lord\\Laroute\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Aaron Lord",
-                "email": "hello@aaronlord.is"
-            }
-        ],
-        "description": "Access Laravels URL/Route helper functions, from JavaScript.",
-        "keywords": [
-            "javascript",
-            "laravel",
-            "routes",
-            "routing"
         ]
     },
     {
@@ -3801,90 +3695,6 @@
         ]
     },
     {
-        "name": "phpunit/phpunit",
-        "version": "5.7.20",
-        "version_normalized": "5.7.20.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-            "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-            "shasum": ""
-        },
-        "require": {
-            "ext-dom": "*",
-            "ext-json": "*",
-            "ext-libxml": "*",
-            "ext-mbstring": "*",
-            "ext-xml": "*",
-            "myclabs/deep-copy": "~1.3",
-            "php": "^5.6 || ^7.0",
-            "phpspec/prophecy": "^1.6.2",
-            "phpunit/php-code-coverage": "^4.0.4",
-            "phpunit/php-file-iterator": "~1.4",
-            "phpunit/php-text-template": "~1.2",
-            "phpunit/php-timer": "^1.0.6",
-            "phpunit/phpunit-mock-objects": "^3.2",
-            "sebastian/comparator": "^1.2.4",
-            "sebastian/diff": "^1.4.3",
-            "sebastian/environment": "^1.3.4 || ^2.0",
-            "sebastian/exporter": "~2.0",
-            "sebastian/global-state": "^1.1",
-            "sebastian/object-enumerator": "~2.0",
-            "sebastian/resource-operations": "~1.0",
-            "sebastian/version": "~1.0.3|~2.0",
-            "symfony/yaml": "~2.1|~3.0"
-        },
-        "conflict": {
-            "phpdocumentor/reflection-docblock": "3.0.2"
-        },
-        "require-dev": {
-            "ext-pdo": "*"
-        },
-        "suggest": {
-            "ext-xdebug": "*",
-            "phpunit/php-invoker": "~1.1"
-        },
-        "time": "2017-05-22 07:42:55",
-        "bin": [
-            "phpunit"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.7.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sebastian@phpunit.de",
-                "role": "lead"
-            }
-        ],
-        "description": "The PHP Unit Testing framework.",
-        "homepage": "https://phpunit.de/",
-        "keywords": [
-            "phpunit",
-            "testing",
-            "xunit"
-        ]
-    },
-    {
         "name": "symfony/polyfill-mbstring",
         "version": "v1.4.0",
         "version_normalized": "1.4.0.0",
@@ -4026,18 +3836,64 @@
         ]
     },
     {
-        "name": "laravel/framework",
-        "version": "v5.4.27",
-        "version_normalized": "5.4.27.0",
+        "name": "pusher/pusher-php-server",
+        "version": "2.6.4",
+        "version_normalized": "2.6.4.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404"
+            "url": "https://github.com/pusher/pusher-http-php.git",
+            "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/66f5e1b37cbd66e730ea18850ded6dc0ad570404",
-            "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404",
+            "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+            "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4"
+        },
+        "time": "2017-06-06 16:41:17",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Library for interacting with the Pusher REST API",
+        "homepage": "https://github.com/pusher/pusher-php-server",
+        "keywords": [
+            "events",
+            "php-pusher-server",
+            "publish",
+            "pusher",
+            "realtime",
+            "rest",
+            "trigger"
+        ]
+    },
+    {
+        "name": "laravel/framework",
+        "version": "v5.4.28",
+        "version_normalized": "5.4.28.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "442511fc62121085d184355e4f964c88942bbecb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/442511fc62121085d184355e4f964c88942bbecb",
+            "reference": "442511fc62121085d184355e4f964c88942bbecb",
             "shasum": ""
         },
         "require": {
@@ -4122,7 +3978,7 @@
             "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
             "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
         },
-        "time": "2017-06-15 19:08:25",
+        "time": "2017-06-30 13:43:07",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4157,18 +4013,208 @@
         ]
     },
     {
-        "name": "psy/psysh",
-        "version": "v0.8.7",
-        "version_normalized": "0.8.7.0",
+        "name": "lord/laroute",
+        "version": "2.4.5",
+        "version_normalized": "2.4.5.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50"
+            "url": "https://github.com/aaronlord/laroute.git",
+            "reference": "342af22147de90e02d5104447b7c5aea056b5548"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
-            "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
+            "url": "https://api.github.com/repos/aaronlord/laroute/zipball/342af22147de90e02d5104447b7c5aea056b5548",
+            "reference": "342af22147de90e02d5104447b7c5aea056b5548",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "illuminate/console": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "dev-master",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2017-06-29 09:34:21",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Lord\\Laroute\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Lord",
+                "email": "hello@aaronlord.is"
+            }
+        ],
+        "description": "Access Laravels URL/Route helper functions, from JavaScript.",
+        "keywords": [
+            "javascript",
+            "laravel",
+            "routes",
+            "routing"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit",
+        "version": "5.7.21",
+        "version_normalized": "5.7.21.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/phpunit.git",
+            "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b91adfb64264ddec5a2dee9851f354aa66327db",
+            "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-json": "*",
+            "ext-libxml": "*",
+            "ext-mbstring": "*",
+            "ext-xml": "*",
+            "myclabs/deep-copy": "~1.3",
+            "php": "^5.6 || ^7.0",
+            "phpspec/prophecy": "^1.6.2",
+            "phpunit/php-code-coverage": "^4.0.4",
+            "phpunit/php-file-iterator": "~1.4",
+            "phpunit/php-text-template": "~1.2",
+            "phpunit/php-timer": "^1.0.6",
+            "phpunit/phpunit-mock-objects": "^3.2",
+            "sebastian/comparator": "^1.2.4",
+            "sebastian/diff": "^1.4.3",
+            "sebastian/environment": "^1.3.4 || ^2.0",
+            "sebastian/exporter": "~2.0",
+            "sebastian/global-state": "^1.1",
+            "sebastian/object-enumerator": "~2.0",
+            "sebastian/resource-operations": "~1.0",
+            "sebastian/version": "~1.0.3|~2.0",
+            "symfony/yaml": "~2.1|~3.0"
+        },
+        "conflict": {
+            "phpdocumentor/reflection-docblock": "3.0.2"
+        },
+        "require-dev": {
+            "ext-pdo": "*"
+        },
+        "suggest": {
+            "ext-xdebug": "*",
+            "phpunit/php-invoker": "~1.1"
+        },
+        "time": "2017-06-21 08:11:54",
+        "bin": [
+            "phpunit"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.7.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "The PHP Unit Testing framework.",
+        "homepage": "https://phpunit.de/",
+        "keywords": [
+            "phpunit",
+            "testing",
+            "xunit"
+        ]
+    },
+    {
+        "name": "nikic/php-parser",
+        "version": "v3.0.6",
+        "version_normalized": "3.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/PHP-Parser.git",
+            "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0808939f81c1347a3c8a82a5925385a08074b0f1",
+            "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0|~5.0"
+        },
+        "time": "2017-06-28 20:53:48",
+        "bin": [
+            "bin/php-parse"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpParser\\": "lib/PhpParser"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
+        ]
+    },
+    {
+        "name": "psy/psysh",
+        "version": "v0.8.8",
+        "version_normalized": "0.8.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bobthecow/psysh.git",
+            "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
+            "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
             "shasum": ""
         },
         "require": {
@@ -4192,7 +4238,7 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2017-06-20 12:51:31",
+        "time": "2017-06-24 06:16:19",
         "bin": [
             "bin/psysh"
         ],
@@ -4229,52 +4275,6 @@
             "console",
             "interactive",
             "shell"
-        ]
-    },
-    {
-        "name": "pusher/pusher-php-server",
-        "version": "2.6.4",
-        "version_normalized": "2.6.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pusher/pusher-http-php.git",
-            "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
-            "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "php": ">=5.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4"
-        },
-        "time": "2017-06-06 16:41:17",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "lib/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Library for interacting with the Pusher REST API",
-        "homepage": "https://github.com/pusher/pusher-php-server",
-        "keywords": [
-            "events",
-            "php-pusher-server",
-            "publish",
-            "pusher",
-            "realtime",
-            "rest",
-            "trigger"
         ]
     }
 ]
