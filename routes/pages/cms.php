@@ -30,6 +30,20 @@ Route::group(['middleware' => ['web']], function ()
 
 				Route::get('/', 'Ebtke\Cms\Pages\DashboardController@index')->name('CmsDashboardPage');
 
+				// ROUTE NEWS
+
+				Route::group(['prefix' => 'news'], function () {
+
+					Route::get('/', 'Ebtke\Cms\Pages\NewsController@index')->name('CmsNewsIndex');
+					Route::get('data', 'Ebtke\Cms\Pages\NewsController@getData')->name('CmsNewsGetData');
+					Route::post('store', 'Ebtke\Cms\Pages\NewsController@store')->name('CmsNewsStoreData');
+					Route::post('edit', 'Ebtke\Cms\Pages\NewsController@edit')->name('CmsNewsEditData');
+					Route::post('change-status', 'Ebtke\Cms\Pages\NewsController@changeStatus')->name('CmsNewsChangeStatus');
+					Route::post('delete', 'Ebtke\Cms\Pages\NewsController@delete')->name('CmsNewsDeleteData');
+					Route::post('order', 'Ebtke\Cms\Pages\NewsController@order')->name('CmsNewsOrderData');
+					Route::post('edit-slider', 'Ebtke\Cms\Pages\NewsController@editImageSlider')->name('CmsNewsEditImageSlider');
+					Route::post('delete-slider', 'Ebtke\Cms\Pages\NewsController@deleteImageSlider')->name('CmsNewsDeleteImageSlider');
+				});
 			});
 
 			// ACCOUNT MANAGEMENT ROUTE

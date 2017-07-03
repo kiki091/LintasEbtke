@@ -37,3 +37,14 @@ function menuUserAccount()
     	initUserAccount()
     });
 }
+
+// JAVASCRIPT NEWS CONTENT MANAGER
+
+function menuNews()
+{
+    $('.right_col').load(laroute.route('CmsNewsIndex', []), function()
+    {console.log("masuk")
+        initNewsContent()
+    });
+}
+

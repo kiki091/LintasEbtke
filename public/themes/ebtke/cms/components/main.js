@@ -1,6 +1,7 @@
 $(document).ready(function(){
     datePicker();
     cardAccordion();
+    wizardSlide();
 });
 
 /* BUTTON SHOW CARD PHOTO UPLOADER */
@@ -407,4 +408,61 @@ function notify(){
   $(document).on('click', '.notifyjs-foo-base .no', function() {
     $(this).trigger('notify-hide');
   });
+}
+
+function wizardSlide(){
+
+    $('#menu').append('<li class="slide-line"></li>');
+
+    $(document).on('click', '#menu li a', function () {
+        /* slide tab wizard */
+        var $this = $(this).parent('.wizard--tab--li'),
+        offset = $this.offset(),
+        offsetBody = $('#box').offset();
+
+        TweenMax.to($('#menu .slide-line'), 0.35, {
+            css:{
+                width: $this.outerWidth()+'px',
+                left: (offset.left-offsetBody.left)+'px'
+            },
+            ease:Power2.easeInOut,
+
+        });
+
+        /* tab wizard */
+        $(this).parent().addClass("active__tab");
+        $(this).parent().siblings().removeClass("active__tab");
+        $('#menu li a').parent().addClass('inactive__tab');
+
+        var tab = $(this).attr("href");
+        $('.active__tab').removeClass('inactive__tab');
+        $(".content__tab").not(tab).removeClass('active__content');
+        $(tab).addClass('active__content');
+
+        /* hide next & prev button when on last and first element */
+        if($('.firstTab').is(':not(.inactive__tab)')) {
+          $('#prev-button').hide();
+          $('#next-button').show();
+        } else if($('.lastTab').is(':not(.inactive__tab)')) {
+          $('#next-button').hide();
+          $('#prev-button').show();
+        } else {
+          $('#next-button').show();
+          $('#prev-button').show();
+        }
+
+        return false;
+    });
+
+    var items = $('#menu li a');
+    var currentItem = items.filter('.active__tab');
+    items.first().trigger("click");
+  
+    $(document).on('click', '#next-button', function() {
+        items.parent('.active__tab').next().find('a').trigger("click");
+    });
+
+    $(document).on('click', '#prev-button', function() {
+        items.parent('.active__tab').prev().find('a').trigger("click");
+    });
 }

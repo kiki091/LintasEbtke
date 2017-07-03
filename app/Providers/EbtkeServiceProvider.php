@@ -30,6 +30,8 @@ class EbtkeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // FRONT
+
         $this->app->bind('App\Repositories\Contracts\Front\MainBanner', 'App\Repositories\Implementation\Front\MainBanner');
         $this->app->bind('App\Repositories\Contracts\Front\ContactUs', 'App\Repositories\Implementation\Front\ContactUs');
         $this->app->bind('App\Repositories\Contracts\Front\News', 'App\Repositories\Implementation\Front\News');
@@ -43,6 +45,10 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\Event', 'App\Repositories\Implementation\Front\Event');
         $this->app->bind('App\Repositories\Contracts\Front\Industri', 'App\Repositories\Implementation\Front\Industri');
 
+        // CMS
+
+        $this->app->bind('App\Repositories\Contracts\Cms\News', 'App\Repositories\Implementation\Cms\News');
+
     }
 
     /**
@@ -53,6 +59,8 @@ class EbtkeServiceProvider extends ServiceProvider
     public function provides()
     {
         return array(
+
+            // FRONT
             
             'App\Repositories\Contracts\Front\MainBanner',
             'App\Repositories\Contracts\Front\ContactUs',
@@ -66,6 +74,10 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\GreenPagesCategory',
             'App\Repositories\Contracts\Front\Event',
             'App\Repositories\Contracts\Front\Industri',
+
+            // CMS
+
+            'App\Repositories\Contracts\Cms\News',
         );
     }
 }

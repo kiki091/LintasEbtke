@@ -52,6 +52,14 @@ class News extends BaseModel
         return $this->belongsTo('App\Models\Tag', 'tag_id', 'id')->with('translation');
     }
 
+    /**
+     * @return mixed
+     */
+    public function news_images()
+    {
+        return $this->hasMany('App\Models\NewsImages', 'news_id', 'id');
+    }
+
     /***************** Scope *****************/
 
     /**
@@ -74,7 +82,7 @@ class News extends BaseModel
     /**
      * @param $query
      */
-    public function scopeId($query, $params = '')
+    public function scopeId($query, $params)
     {
         return $query->where('id', $params);
     }

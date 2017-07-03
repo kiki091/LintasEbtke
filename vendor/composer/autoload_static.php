@@ -17,6 +17,7 @@ class ComposerStaticInit51d6152efef0b2db1c079df87b5785d7
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '0a3fb554b9fcbf198e86d7945ee667ad' => __DIR__ . '/../..' . '/app/Custom/Helper.php',
         '1086202982095137670b21b1988e96d5' => __DIR__ . '/../..' . '/app/Services/Assets/default.php',
+        'c83ba7a73605e56d64b15455469438a8' => __DIR__ . '/../..' . '/app/Services/Assets/dimension.php',
         '2a7b115a820943449acb55ac922a420c' => __DIR__ . '/../..' . '/app/Services/Assets/main.php',
     );
 

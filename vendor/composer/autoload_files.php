@@ -16,5 +16,6 @@ return array(
     'e7223560d890eab89cda23685e711e2c' => $vendorDir . '/psy/psysh/src/Psy/functions.php',
     '0a3fb554b9fcbf198e86d7945ee667ad' => $baseDir . '/app/Custom/Helper.php',
     '1086202982095137670b21b1988e96d5' => $baseDir . '/app/Services/Assets/default.php',
+    'c83ba7a73605e56d64b15455469438a8' => $baseDir . '/app/Services/Assets/dimension.php',
     '2a7b115a820943449acb55ac922a420c' => $baseDir . '/app/Services/Assets/main.php',
 );

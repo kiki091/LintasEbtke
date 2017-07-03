@@ -33,3 +33,6 @@
 <script src="{{ asset('themes/ebtke/cms/pages/auth/menu-navigation.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/sub-menu-navigation.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/auth/user-account.js') }}"></script>
+
+<!-- Javascript CONTENT MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/news.js') }}"></script>

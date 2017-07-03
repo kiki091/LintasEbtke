@@ -307,29 +307,39 @@ function mainGeneral(){
 // INIT FUNCTION MENU GROUP ACCOUNT MANAGEMENT CMS
 function initMenuGroup()
 {
-    mainGeneral()
+    mainGeneral();
     crudMenuGroup();
 }
 
 // INIT FUNCTION MENU NAVIGATION ACCOUNT MANAGEMENT CMS
 function initMenuNavigation()
 {
-    mainGeneral()
+    mainGeneral();
     crudMenuNavigation();
 }
 
 // INIT FUNCTION SUB MENU NAVIGATION ACCOUNT MANAGEMENT CMS
 function initSubMenuNavigation()
 {
-    mainGeneral()
+    mainGeneral();
     crudSubMenuNavigation();
 }
 
 // INIT FUNCTION USER ACCOUNT MANAGEMENT CMS
 function initUserAccount()
 {
-    mainGeneral()
+    mainGeneral();
     crudUserAccount();
+    buttonClickOpen();
+    buttonClickClose();
+}
+
+// INIT FUNCTION NEWS CONTENT MANAGER CMS
+function initNewsContent()
+{
+    mainGeneral();
+    wizardSlide();
+    crudNewsContent();
     buttonClickOpen();
     buttonClickClose();
 }
