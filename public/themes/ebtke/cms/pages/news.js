@@ -41,6 +41,7 @@ function crudNewsContent() {
             filename_edit: {0: '', 1:'', 2:'', 3: ''},
             images_edit: {0: '', 1:'', 2:'', 3: ''},
             image_big_preview: '',
+            last_language_key: '',
 
             form_add_title: "News Content Manager",
             news_related_id: [],
@@ -440,7 +441,6 @@ function crudNewsContent() {
 
         mounted: function () {
             this.fetchData();
-            this.sortable()
         }
 
     });

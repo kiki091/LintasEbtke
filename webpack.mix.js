@@ -105,6 +105,7 @@ mix.scripts([
 	'public/js/bower_components/hold-on/HoldOn.min.js',
 	'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
     'public/js/bower_components/notifyjs/dist/notify.js',
+    'public/js/bower_components/gsap/src/minified/TweenMax.min.js',
     'public/js/bower_components/pnotify/dist/pnotify.js',
     'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js',
 ], 'public/themes/ebtke/cms/build/js/plugins.js');

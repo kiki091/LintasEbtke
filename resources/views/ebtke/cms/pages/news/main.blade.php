@@ -31,7 +31,7 @@
     </modal>
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<!-- Include form -->
-    	{{--@include('ebtke.cms.pages.news.partials.form')--}}
+    	@include('ebtke.cms.pages.news.partials.form')
     	<!-- / End include form -->
 		<div class="main__content__layer">
 			<div class="content__top flex-between">

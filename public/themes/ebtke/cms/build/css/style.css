@@ -17458,6 +17458,150 @@ input, textarea, select {
     transform: rotate(180deg);
     transition: all .3s;
 }
+
+.form--wizard--tab {
+    border-bottom: 1px solid #F3F4F6; 
+}
+.form--wizard--tab .wizard--tab--ul {
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fbfbfb; 
+}
+.form--wizard--tab .wizard--tab--ul .wizard--tab--li {
+    width: 100px;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; 
+}
+.form--wizard--tab .wizard--tab--ul .wizard--tab--li .wizard--tab--link {
+    font-size: 12px;
+    position: relative; 
+}
+.form--wizard--tab .wizard--tab--ul .wizard--tab--li .wizard--tab--link:hover {
+    color: #44C7F4; 
+}
+.form--wizard--tab .wizard--tab--ul .wizard--tab--li .empty--lang:after {
+    content: "";
+    background: url(../../svg/ico-notif-lang.svg) no-repeat;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -8px;
+    top: -4px; 
+}
+.form--wizard--tab .wizard--tab--ul .wizard--tab--li.active__tab a {
+    color: #44C7F4;
+    transition: all .3s; 
+}
+.content__tab {
+    display: none !important; 
+}
+.content__tab.active__content {
+    display: block !important;
+    animation: fadeIn 2s; 
+}
+
+.content__tab2 {
+    display: none !important; 
+}
+.content__tab2.active__content2 {
+    display: block !important;
+    animation: fadeIn 2s; 
+}
+
+.content__tab3 {
+    display: none !important; 
+}
+.content__tab3.active__content3 {
+    display: block !important;
+    animation: fadeIn 2s; 
+}
+
+.wizard-no-tab .wizard__content__tab {
+    display: none !important; 
+}
+.wizard-no-tab .wizard__content__tab.wizard__active__content {
+    display: block !important;
+    animation: fadeIn 2s; 
+}
+
+
+/* BUTTON WIZARD */
+.btn__wizard__prev {
+    padding: 0 !important;
+    width: 26px;
+    height: 29px;
+    margin-right: 10px;
+    background-color: #f0f0f0 !important;
+    position: relative; 
+}
+.btn__wizard__prev:before {
+    content: "\003C";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2px;
+    bottom: 0;
+    margin: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #9B9B9B; 
+}
+.btn__wizard__prev:hover {
+    border: 1px solid #f0f0f0; 
+}
+
+/* END BUTTON WIZARD */
+.btn__form, .btn__wizard__next, .btn__wizard__prev {
+  background: #9FBFCB;
+  border: 1px solid transparent;
+  padding: 0 17px;
+  height: 25px;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: "brandon_medium";
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all .3s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; 
+}
+.btn__form:hover, .btn__wizard__next:hover, .btn__wizard__prev:hover {
+    background: #7ea9b9; 
+}
+
+.new__form__field .field__icon .field__icon__img {
+    position: absolute;
+    width: 16px;
+    height: 12px;
+    top: 10px;
+    margin: auto 3px auto 4px;
+}
+.new__form__field .field__icon {
+    position: relative;
+}
+.new__form__field .field__icon input {
+    width: 100%;
+    padding-left: 22px;
+}
+/* FLAG ICON */
+.ico-flag-en {
+  background: url(../../svg/flag/ico-flag-english.svg) no-repeat; }
+
+.ico-flag-id {
+  background: url(../../svg/flag/ico-flag-indonesia.svg) no-repeat; }
+
 /* This is a compiled file, you should be editing the file in the templates directory */
 .pace {
   -webkit-pointer-events: none;
