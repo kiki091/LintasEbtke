@@ -17297,7 +17297,7 @@ input, textarea, select {
     width: inherit;
     height: inherit;
     position: relative;
-    background: url(/themes/cms/svg/ico-upload.svg) 65% 65% no-repeat;
+    background: url(/themes/ebtke/cms/svg/ico-upload.svg) 65% 65% no-repeat;
     cursor: pointer;
     transition: all .2s;
 }
@@ -17356,6 +17356,10 @@ input, textarea, select {
     border-radius: 100%;
     background-color: #DE6060;
     border: 1px solid #DE6060;
+}
+
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__remove:before {
+    content: '';
 }
 
 .upload__img .upload__img__remove:before{
@@ -17602,6 +17606,243 @@ input, textarea, select {
 .ico-flag-id {
   background: url(../../svg/flag/ico-flag-indonesia.svg) no-repeat; }
 
+.form__photo__uploader {
+    background-color: #F6F8F9;
+    padding: 10px;
+}
+
+.form__photo__uploader small {
+    font-size: 11px;
+}
+.form__photo__uploader small span {
+    color: #627F8F;
+}
+.flex-align-center {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.form__photo__uploader .form__photo__uploader__ul {
+    margin: 10px 0;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li:last-child {
+    margin-right: 0px;
+}
+
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li {
+    width: 135px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1), 0px 0px 2px 0px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    margin-right: 10px;
+    position: relative !important;
+    top: 0px !important;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li:first-child:before {
+    content: "";
+    background: url(../../svg/ico-tip.svg) no-repeat;
+    top: -7px;
+    left: 30%;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-size: 22px;
+    transform: rotate(135deg);
+    z-index: 0;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__handle {
+    position: relative;
+    cursor: move;
+    display: inline-block;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__handle svg {
+    transform: rotate(90deg);
+    margin-left: 5px;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img {
+    width: 60px;
+    height: 60px;
+}
+.form__photo__uploader.single__image .form__photo__uploader__li .form__photo__group .upload__img {
+    width: 80px !important;
+    height: 80px !important;
+}
+.upload__img {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e6e8ec;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__label {
+    background: url(../../svg/ico-upload.svg) center no-repeat;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__show__preview {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background: url(../../svg/ico-see-preview.svg) center no-repeat;
+    background-size: 11px;
+    width: 12px;
+    height: 12px;
+    color: #fff;
+    font-size: 10px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+    margin: auto;
+    border-radius: 100%;
+    background-color: #44C7F4;
+    border: 1px solid #44C7F4;
+    transition: all .3s;
+}
+
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__remove {
+    opacity: 0;
+    visibility: hidden;
+    background: none;
+    background-color: #DE6060;
+    border: 1px solid #DE6060;
+    transition: all .3s;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .form__photo__title {
+    display: block;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid #e6e8ec;
+    margin-top: 3px;
+    padding: 2px 0;
+}
+
+.form__photo__uploader.single__image .form__photo__placeholder {
+    width: 102px;
+    height: 125px;
+}
+.form__photo__uploader .form__photo__placeholder {
+    width: 135px;
+    height: 128px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px dashed;
+    border-radius: 5px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.form__photo__uploader .form__photo__placeholder i {
+    font-style: normal;
+    font-size: 38px;
+    display: block;
+    line-height: 0;
+    position: relative;
+    top: 10px;
+    transition: all .4s ease-in-out;
+}
+.form__photo__uploader .form__photo__placeholder span {
+    font-size: 15px;
+    display: block;
+    position: relative;
+    bottom: 0px;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+.img__preview__overlay {
+    position: fixed;
+    z-index: 99;
+    display: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.img__preview__popup {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+}
+.img__preview__popup .img__preview__popup__wrapper {
+    position: absolute;
+    width: 600px;
+    height: auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1), 0px 0px 2px 0px rgba(0, 0, 0, 0.16);
+}
+.img__preview__popup .img__preview__popup__wrapper .img__preview__big__close {
+    position: absolute;
+    background-size: 12px;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    font-size: 18px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    right: -11px;
+    top: -11px;
+    border-radius: 100%;
+    background-color: #DE6060;
+    border: 1px solid #DE6060;
+}
+.img__preview__popup .img__preview__popup__wrapper img.upload__img__preview__big {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    /* padding: 40px 0; */
+    margin: 0 auto;
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__remove {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    background-color: #DE6060;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
 /* This is a compiled file, you should be editing the file in the templates directory */
 .pace {
   -webkit-pointer-events: none;

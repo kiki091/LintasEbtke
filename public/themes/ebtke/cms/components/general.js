@@ -342,4 +342,5 @@ function initNewsContent()
     crudNewsContent();
     buttonClickOpen();
     buttonClickClose();
+    replaceToCkEditor();
 }

@@ -553,46 +553,6 @@ class News extends BaseImplementation implements NewsInterface
         }
     }
 
-    /**
-     * Get All Data 
-     * Warning: this function doesn't redis cache
-     * @param array $params
-     * @return array
-     */
-    protected function news($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
-    {
-        $news = $this->news->with(['translation', 'translations', 'related', 'news_images']);
-
-        if(isset($params['limit_data'])) {
-            $news->take($params['limit_data']);
-        }
-
-        if(isset($params['is_active'])) {
-            $news->isActive($params['is_active']);
-        }
-
-        if(isset($params['order_by'])) {
-            $news->orderBy($params['order_by'], $orderType);
-        }
-
-        if(!$news->count())
-            return array();
-
-        switch ($returnType) {
-            case 'array':
-                if(!$returnSingle) 
-                {
-                    return $news->get()->toArray();
-                } 
-                else 
-                {
-                    return $news->first()->toArray();
-                }
-
-            break;
-        }
-    }
-
 
     /**
      * Edit Image Slider
@@ -649,6 +609,46 @@ class News extends BaseImplementation implements NewsInterface
 
         } catch (\Exception $e) {
             return $this->setResponse($e->getMessage(), false);
+        }
+    }
+
+    /**
+     * Get All Data 
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    protected function news($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+    {
+        $news = $this->news->with(['translation', 'translations', 'related', 'news_images']);
+
+        if(isset($params['limit_data'])) {
+            $news->take($params['limit_data']);
+        }
+
+        if(isset($params['is_active'])) {
+            $news->isActive($params['is_active']);
+        }
+
+        if(isset($params['order_by'])) {
+            $news->orderBy($params['order_by'], $orderType);
+        }
+
+        if(!$news->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) 
+                {
+                    return $news->get()->toArray();
+                } 
+                else 
+                {
+                    return $news->first()->toArray();
+                }
+
+            break;
         }
     }
 

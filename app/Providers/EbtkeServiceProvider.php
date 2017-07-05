@@ -48,6 +48,7 @@ class EbtkeServiceProvider extends ServiceProvider
         // CMS
 
         $this->app->bind('App\Repositories\Contracts\Cms\News', 'App\Repositories\Implementation\Cms\News');
+        $this->app->bind('App\Repositories\Contracts\Cms\Tags', 'App\Repositories\Implementation\Cms\Tags');
 
     }
 
@@ -78,6 +79,7 @@ class EbtkeServiceProvider extends ServiceProvider
             // CMS
 
             'App\Repositories\Contracts\Cms\News',
+            'App\Repositories\Contracts\Cms\Tags',
         );
     }
 }

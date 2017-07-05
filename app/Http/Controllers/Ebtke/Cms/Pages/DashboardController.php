@@ -31,7 +31,7 @@ class DashboardController extends CmsBaseController
         JavaScript::put([
             'supported_language' => $this->setSuportedLanguage(),
             'supported_language_keys' => $this->setSuportedLanguageKey(),
-            'lintas_default_language' => config('app.locale'),
+            'lintas_default_language' => 'id',
             'app_domain' => env('ACCOUNT_DOMAIN_PREFIX'),
             'token' => csrf_token(),
         ]);

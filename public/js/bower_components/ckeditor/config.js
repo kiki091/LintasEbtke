@@ -27,9 +27,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// config.bodyClass = 'custom__css';
 	config.contentsCss = [
-		'../../../themes/cms/css/ckeditor_custom_style.css',
-		'../../../themes/cms/css/style.css',
-		'../../../themes/front/css/custom.css'
+		'../../../themes/ebtke/cms/css/ckeditor_custom_style.css'
 	];
 	// config.stylesSet = 'my_styles';
 

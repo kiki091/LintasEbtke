@@ -42,6 +42,7 @@ function crudNewsContent() {
             images_edit: {0: '', 1:'', 2:'', 3: ''},
             image_big_preview: '',
             last_language_key: '',
+            image: '',
 
             form_add_title: "News Content Manager",
             news_related_id: [],
@@ -49,6 +50,7 @@ function crudNewsContent() {
             edit: false,
             showModal: false,
             responseData: {},
+            image_big_preview: ''
         },
         filters: {
             strSlug: function(data) {
@@ -58,6 +60,69 @@ function crudNewsContent() {
         },
 
         methods: {
+
+            onImageChange: function(element, e) {
+                var files = e.target.files || e.dataTransfer.files
+
+                if (!files.length)
+                    return;
+
+                this.models[element] = files[0]
+                this.createImage(files[0], element);
+            },
+
+            createImage: function(file, setterTo) {
+                var image = new Image();
+                var reader = new FileReader();
+                var vm = this;
+
+                reader.onload = function (e) {
+                    vm[setterTo] = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            },
+
+            removeImage: function (variable) {
+                this[variable] = '';
+                this.models[variable] = ''
+            },
+
+            onImageSliderChange: function(element, index, e) {
+
+                var files = e.target.files || e.dataTransfer.files
+
+                if (!files.length) {
+                    return;
+                }
+
+                this.models[element][index] = files[0];
+                this.createImageSlider(files[0], element, index);
+            },
+
+            createImageSlider: function(file, setterTo, index) {
+                var image = new Image();
+                var reader = new FileReader();
+                var vm = this;
+
+                reader.onload = function (e) {
+                    vm[setterTo][index] = e.target.result
+                };
+                reader.readAsDataURL(file);
+            },
+
+            previewImage: function (image_url) {
+                this.image_big_preview = image_url
+            },
+
+            removeImageSlider: function (element, index) {
+                this[element][index] = '';
+                this.models[element][index] = ''
+            },
+
+            removeImageWrapper: function(item) {
+                this.removeImageSlider('filename', item)
+                this.default_total_detail_image.$remove(item);
+            },
 
             showElementByDefaultLang: function(langId) {
                 return this.lintas_default_language == langId

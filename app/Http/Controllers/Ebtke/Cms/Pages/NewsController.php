@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ebtke\Cms\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Custom\DataHelper;
+use App\Services\Bridge\Cms\Tags as TagsServices;
 use App\Services\Bridge\Cms\News as NewsServices;
 use App\Services\Api\Response as ResponseService;
 
@@ -14,12 +15,14 @@ use Response;
 
 class NewsController extends CmsBaseController
 {
+    protected $tags;
     protected $news;
     protected $response;
     protected $validationMessage = '';
 
-    public function __construct(NewsServices $news,ResponseService $response)
+    public function __construct(TagsServices $tags, NewsServices $news,ResponseService $response)
     {
+        $this->tags = $tags;
         $this->news = $news;
         $this->response = $response;
     }
@@ -49,6 +52,7 @@ class NewsController extends CmsBaseController
 
     public function getData(Request $request)
     {
+        $data['tags'] = $this->tags->getData();
         $data['news'] = $this->news->getData();
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
     }
