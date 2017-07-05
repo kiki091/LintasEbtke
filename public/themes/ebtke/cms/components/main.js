@@ -2,6 +2,7 @@ $(document).ready(function(){
     datePicker();
     cardAccordion();
     wizardSlide();
+    vue();
 });
 
 /* BUTTON SHOW CARD PHOTO UPLOADER */
@@ -466,3 +467,34 @@ function wizardSlide(){
         items.parent('.active__tab').prev().find('a').trigger("click");
     });
 }
+
+ function vue(){
+
+
+    //select dropdown custom directive
+    Vue.directive('select', {
+        twoWay: true,
+        priority: 1000,
+
+        params: ['options'],
+
+        bind: function () {
+            var self = this
+            $(this.el)
+            .select2({
+                data: this.params.options,
+                minimumResultsForSearch: -1
+            })
+            .on('change', function () {
+                self.set(this.value)
+            })
+        },
+        update: function (value) {
+            $(this.el).val(value).trigger('change')
+        },
+        unbind: function () {
+            $(this.el).off().select2('destroy')
+        }
+    })
+
+ }

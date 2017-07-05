@@ -83,8 +83,7 @@ function crudNewsContent() {
             },
 
             removeImage: function (variable) {
-                this[variable] = '';
-                this.models[variable] = ''
+                this[variable] = ''
             },
 
             onImageSliderChange: function(element, index, e) {
@@ -95,7 +94,7 @@ function crudNewsContent() {
                     return;
                 }
 
-                this.models[element][index] = files[0];
+                this.filename[index] = files[0];
                 this.createImageSlider(files[0], element, index);
             },
 
@@ -115,13 +114,14 @@ function crudNewsContent() {
             },
 
             removeImageSlider: function (element, index) {
-                this[element][index] = '';
-                this.models[element][index] = ''
+                this[element][index] = ''
             },
 
             removeImageWrapper: function(item) {
                 this.removeImageSlider('filename', item)
-                this.default_total_detail_image.$remove(item);
+                //Vue.delete(this.default_total_detail_image, item);
+                console.log(item)
+                this.default_total_detail_image.splice(item,1)
             },
 
             showElementByDefaultLang: function(langId) {

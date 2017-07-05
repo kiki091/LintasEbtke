@@ -72,7 +72,7 @@
 							</div>
 
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey) && edit == false" >
-								<div class="new__form__field full-width">
+								<div class="new__form__field " style="width: 500px;">
 									<label>Slider Image</label>
 									<div class="form__photo__uploader single__image">
 										<small>Drop <span><b>Main image</b></span> in this area. Sort images by "draging and droping" in the desired position</small>
@@ -98,7 +98,7 @@
 															<span class="form__photo__title">Images Slider</span>
 														</div>
 													</div>
-													<a href="javascript:void(0);" class="form__photo__remove" v-if="index != 0" @click="removeImageWrapper(detailImage)">&times;</a>
+													<a href="javascript:void(0);" class="form__photo__remove" @click="removeImageWrapper(index)">&times;</a>
 												</li>
 											</ul>
 

@@ -17634,7 +17634,7 @@ input, textarea, select {
 }
 
 .form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li {
-    width: 135px;
+    width: 100px;
     padding: 10px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1), 0px 0px 2px 0px rgba(0, 0, 0, 0.16);
     background-color: #fff;
@@ -17709,6 +17709,7 @@ input, textarea, select {
     background-color: #44C7F4;
     border: 1px solid #44C7F4;
     transition: all .3s;
+    margin-bottom: 5px;
 }
 
 .form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__remove {
@@ -17843,6 +17844,25 @@ input, textarea, select {
     -ms-flex-pack: center;
     justify-content: center;
 }
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img:hover .upload__img__remove {
+    opacity: 1;
+    visibility: visible; 
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img .upload__img__show__preview:hover {
+    background-color: #14b9f1; 
+}
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__group .upload__img:hover .upload__img__show__preview {
+    opacity: 1;
+    visibility: visible; 
+}
+.form__photo__uploader .form__photo__placeholder:hover i {
+      top: 0px; 
+  }
+
+.form__photo__uploader .form__photo__placeholder:hover span {
+      bottom: -15px;
+      opacity: 1; 
+  }
 /* This is a compiled file, you should be editing the file in the templates directory */
 .pace {
   -webkit-pointer-events: none;
