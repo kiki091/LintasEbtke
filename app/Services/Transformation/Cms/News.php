@@ -120,6 +120,8 @@ class News
 
         $dataTransform['total_detail_image'] = isset($data['news_images']) ? $this->setDefaultTotalDetailImage($data['news_images']) : [];
         $dataTransform['news_images'] = isset($data['news_images']) ? $this->populateImagesForEdit($data['news_images'], 'filename') : [];
+
+        return $dataTransform;
     }
 
     /**
@@ -186,6 +188,7 @@ class News
 
             $returnValue = [];
             foreach ($allData as $key => $item) {
+
                 if($singleData['id'] != $item['id']) {
                     $returnValue[] = [
                         "id" => $item['id'],
@@ -213,6 +216,7 @@ class News
 
         $returnValue= [];
         foreach ($relatedData as $key => $item) {
+
             $returnValue[] = $item['news_related_id'];
             $this->relatedData[$item['news_related_id']] = $item;
         }

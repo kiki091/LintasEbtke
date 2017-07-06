@@ -23,8 +23,8 @@ class DataHelper {
     {
         $userInfo = Session::get('user_info');
 
-        if (isset($userInfo['id'])) {
-            return $userInfo['id'];
+        if (isset($userInfo['user_id'])) {
+            return $userInfo['user_id'];
         }
 
         return false;

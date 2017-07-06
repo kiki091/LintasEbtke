@@ -12,6 +12,8 @@ use App\Services\Api\Response as ResponseService;
 use Validator;
 use ValidatesRequests;
 use Response;
+use Session;
+use Auth;
 
 class NewsController extends CmsBaseController
 {

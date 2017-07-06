@@ -27,4 +27,15 @@ class NewsRelated extends BaseModel
     {
         return $this->belongsTo('App\Models\News', 'news_related_id', 'id')->with('translation');
     }
+
+
+    /***************** Scope *****************/
+
+    /**
+     * @param $query
+     */
+    public function scopeId($query, $params)
+    {
+        return $query->where('news_id', $params);
+    }
 }

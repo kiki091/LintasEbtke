@@ -10,8 +10,7 @@ class NewsImages extends BaseModel
     public $timestamps = false;
 
     protected $fillable = [
-        'filename',
-        'news_id'
+        'filename'
     ];
 
     protected $guarded = [];

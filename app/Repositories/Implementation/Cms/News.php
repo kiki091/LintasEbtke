@@ -9,8 +9,10 @@ use App\Models\NewsTrans as NewsTransModels;
 use App\Models\NewsRelated as NewsRelatedModels;
 use App\Models\NewsImages as NewsImagesModels;
 use App\Services\Transformation\Cms\News as NewsTransformation;
+use App\Custom\DataHelper;
 use LaravelLocalization;
 use Cache;
+use Auth;
 use Session;
 use DB;
 
@@ -140,7 +142,8 @@ class News extends BaseImplementation implements NewsInterface
 
             $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
             $store->is_active   = true;
-            $store->order       = $this->news->max('order');
+            $store->total_view  = '0';
+            $store->order       = $this->news->max('order')+1;
             $store->tag_id      = isset($data['tag_id']) ? $data['tag_id'] : '';
             $store->created_at  = $this->mysqlDateTimeFormat();
             $store->created_by  = DataHelper::userId();
@@ -259,7 +262,7 @@ class News extends BaseImplementation implements NewsInterface
                 foreach ($data['filename'] as $key => $item) {
 
                     $finalData[] = [
-                        "filename" => $item->getClientOriginalName(),
+                        "filename" => $this->uniqueIdImagePrefix .'_'.$item->getClientOriginalName(),
                         "news_id" => $this->lastInsertId,
                         "created_at" => $this->mysqlDateTimeFormat(),
                         "updated_at" => $this->mysqlDateTimeFormat(),
@@ -399,11 +402,12 @@ class News extends BaseImplementation implements NewsInterface
     {
         $params = [
             "id" => isset($data['id']) ? $data['id'] : '',
+            "news_id"   => isset($data['id']) ? $data['id'] : ''
         ];
 
         $singleNewsData = $this->news($params, 'asc', 'array', true);
         $allNewsData = $this->news($params, 'asc', 'array', false);
-        $newsRelatedData = $this->newsRelated(['news_id' => $data['id']]);
+        $newsRelatedData = $this->newsRelated($params);
 
         return $this->setResponse(trans('message.cms_success_get_data'), true, $this->newsTransformation->getSingleForEditNewsTransform($singleNewsData, $newsRelatedData, $allNewsData));
     }
@@ -626,6 +630,10 @@ class News extends BaseImplementation implements NewsInterface
             $news->take($params['limit_data']);
         }
 
+        if(isset($params['id'])) {
+            $news->id($params['id']);
+        }
+
         if(isset($params['is_active'])) {
             $news->isActive($params['is_active']);
         }
@@ -649,6 +657,43 @@ class News extends BaseImplementation implements NewsInterface
                 }
 
             break;
+        }
+    }
+
+    /**
+     * Get All Data News Related
+     * Warning: this function doesn't redis cache
+     * @param array $params
+     * @return array
+     */
+    
+
+    protected function newsRelated($params = [], $orderType = 'desc', $returnType = 'array', $returnSingle = false)
+    {
+        $newsRelated = $this->newsRelated
+            ->with(['related_news']);
+
+        if(isset($params['news_id'])) {
+            $newsRelated->id($params['news_id']);
+        }
+
+        if(isset($params['order_by'])) {
+            $newsRelated->orderBy($params['order_by'], $orderType);
+        } else {
+            $newsRelated->orderBy('id', 'desc');
+        }
+
+        if(!$newsRelated->count())
+            return array();
+
+        switch ($returnType) {
+            case 'array':
+                if(!$returnSingle) {
+                    return $newsRelated->get()->toArray();
+                } else {
+                    return $newsRelated->first()->toArray();
+                }
+                break;
         }
     }
 

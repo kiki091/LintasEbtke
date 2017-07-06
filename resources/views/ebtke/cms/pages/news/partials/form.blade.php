@@ -120,6 +120,28 @@
 								</div>
 							</div>
 
+							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
+								<div class="new__form__field" style="width: 100%">
+									<label>You Migh Also Like</label>
+									<div class="field__icon">
+										<div class="">
+											<ul class="to_do">
+												<li v-for="news_related_id in responseData.news">
+													<p>
+														<div class="checkbox icheck-primary">
+														    <input class="checkbox__data" type="checkbox" name="news_related_id[]" :id=" 'checkbox-news_related_id-' + news_related_id.id" :value="news_related_id.id"/>
+														    <label :for=" 'checkbox-news_related_id-' + news_related_id.id">@{{ news_related_id.title }}</label>
+														</div>
+													</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="form--error--message--left" id="form--error--message--news_related_id"></div>
+
+								</div>
+							</div>
+
 							<div class="create__form__row">
 								<div class="create__form__row">
 									<div class="new__form__field full-width" style="width: 500px;">

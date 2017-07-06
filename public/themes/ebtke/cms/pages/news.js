@@ -20,13 +20,13 @@ function crudNewsContent() {
                 
                 language_selected : [],
                 all_language : false,
-                title : lintas.supported_language_keys,
-                slug : lintas.supported_language_keys,
-                introduction : lintas.supported_language_keys,
-                description : lintas.supported_language_keys,
-                meta_title : lintas.supported_language_keys,
-                meta_keyword : lintas.supported_language_keys,
-                meta_description : lintas.supported_language_keys,
+                title : {"en":"","id":""},
+                slug : {"en":"","id":""},
+                introduction : {"en":"","id":""},
+                description : {"en":"","id":""},
+                meta_title : {"en":"","id":""},
+                meta_keyword : {"en":"","id":""},
+                meta_description : {"en":"","id":""},
                 tag_id : '',
             },
             delete_payload: {
@@ -231,10 +231,7 @@ function crudNewsContent() {
                         }
                     },
                     complete: function(response){
-                        setTimeout(function(){
-                            hideLoading()
-                        }, 3000);
-                        
+                        hideLoading()
                     }
 
                 };
@@ -307,7 +304,7 @@ function crudNewsContent() {
 
                     response = response.data
                     if (response.status) {
-                        this.models = response.data.user;
+                        this.models = response.data
                         this.thumbnail = response.data.thumbnail_url
                         this.filename = response.data.filename_url
                         this.default_total_detail_image = []
