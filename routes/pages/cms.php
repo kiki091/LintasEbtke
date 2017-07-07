@@ -41,6 +41,7 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('change-status', 'Ebtke\Cms\Pages\NewsController@changeStatus')->name('CmsNewsChangeStatus');
 					Route::post('delete', 'Ebtke\Cms\Pages\NewsController@delete')->name('CmsNewsDeleteData');
 					Route::post('order', 'Ebtke\Cms\Pages\NewsController@order')->name('CmsNewsOrderData');
+					Route::post('order-images-slider', 'Ebtke\Cms\Pages\NewsController@orderImageSlider')->name('CmsNewsOrderDataImageSlider');
 					Route::post('edit-slider', 'Ebtke\Cms\Pages\NewsController@editImageSlider')->name('CmsNewsEditImageSlider');
 					Route::post('delete-slider', 'Ebtke\Cms\Pages\NewsController@deleteImageSlider')->name('CmsNewsDeleteImageSlider');
 				});

@@ -394,4 +394,5 @@ function initNewsContent()
     buttonClickOpen();
     buttonClickClose();
     replaceToCkEditor();
+    dragPhoto();
 }

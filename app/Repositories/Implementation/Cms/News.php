@@ -378,7 +378,7 @@ class News extends BaseImplementation implements NewsInterface
         if(!empty($file)) {
             if ($file->isValid()) {
 
-                $filename = $file->getClientOriginalName();
+                $filename = $this->uniqueIdImagePrefix . '_' .$file->getClientOriginalName();
 
                 if (! $file->move('./' . NEWS_BANNER_DIRECTORY, $filename)) {
                     $this->message = trans('message.cms_offer_upload_image_detail_failed');

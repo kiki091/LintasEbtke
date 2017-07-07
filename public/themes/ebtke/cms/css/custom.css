@@ -5250,3 +5250,17 @@ input, textarea, select {
     margin: 8px 8px 8px 13px;
     transition: all .3s;
 }
+
+.form__photo__uploader .form__photo__uploader__ul .form__photo__uploader__li .form__photo__remove__server {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 13px;
+    color: #fff;
+    background-color: #DE6060;
+}

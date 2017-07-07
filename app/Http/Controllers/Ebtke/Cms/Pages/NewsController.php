@@ -117,6 +117,17 @@ class NewsController extends CmsBaseController
     }
 
     /**
+     * Ordering Image Slider
+     * @param Request $request
+     * @return mixed
+     */
+    public function orderImageSlider(Request $request)
+    {
+
+        return true;
+    }
+
+    /**
      * Edit Image Slider 
      * @param Request $request
      */
@@ -132,7 +143,7 @@ class NewsController extends CmsBaseController
 
         } else {
             //TODO: case pass
-            return $this->news->editImageSlider($request->except(['_token', 'is_edit']));
+            return $this->news->editImageSlider($request->except(['_token', 'filename_edit']));
         }
         
     }

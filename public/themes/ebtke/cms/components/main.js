@@ -3,6 +3,7 @@ $(document).ready(function(){
     cardAccordion();
     wizardSlide();
     vue();
+    dragPhoto()
 });
 
 /* BUTTON SHOW CARD PHOTO UPLOADER */

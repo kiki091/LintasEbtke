@@ -231,10 +231,6 @@ function crudNewsContent() {
 
                     dataType: "json",
 
-                    beforeSerialize: function(form, options) {
-                        for (instance in CKEDITOR.instances)
-                            CKEDITOR.instances[instance].updateElement();
-                    },
                     beforeSend: function(){
                         showLoading(true)
                         vm.clearErrorMessage()
@@ -328,9 +324,7 @@ function crudNewsContent() {
                     form.append(key, payload[key])
                 }
 
-                this.resetForm()
-
-                var domain  = laroute.route('CmsNewsEditImageSlider', []);
+                var domain  = laroute.route('CmsNewsEditData', []);
                 this.$http.post(domain, form).then(function(response) {
                     response = response.data
                     if (response.status) {
@@ -416,7 +410,9 @@ function crudNewsContent() {
                     response = response.data
 
                     if (response.status) {
-                        this.total_detail_image.$remove(index)
+                        //this.total_detail_image.$remove(index)
+
+                        this.total_detail_image.splice(index,1)
                     }
 
                     pushNotif(response.status, response.message)
@@ -443,6 +439,9 @@ function crudNewsContent() {
                 this.models['language_selected'] = [];
                 this.thumbnail = '';
                 this.filename = {0: '', 1:'', 2:'', 3: ''};
+                this.filename_edit = {0: '', 1:'', 2:'', 3: ''};
+
+                this.images_edit = {0: '', 1:'', 2:'', 3: ''},
                 this.news_images = [];
                 this.news_related_id = [];
                 this.default_total_detail_image = [0];
@@ -506,6 +505,50 @@ function crudNewsContent() {
                 });
             },
 
+            sortableImages: function() {
+                var vm = this;
+
+                setTimeout(function(){
+
+                    $('.photo-sortable').each(function(){
+                        Sortable.create(this, {
+                            draggable: 'li.sort-item-images-slider',
+                            ghostClass: "sort-ghost",
+                            handle: '.handle',
+                            animation: 300,
+                            onUpdate: function(evt) {
+                                vm.reorderImages();
+                            },
+                            onChange: function(evt) {
+                                vm.reorderImages();
+                            }
+                        });
+                        console.log('ready for order images...')
+                    });
+
+                }, 5000);
+
+            },
+
+            reorderImages: function() {
+                //get id list
+                var ids = document.getElementsByClassName('sort-item-images-slider'),
+                    image_id  = [].map.call(ids, function(input) {
+                        return input.getAttribute('data-image_id');
+                    });
+
+                var domain  = laroute.route('CmsNewsOrderDataImageSlider', []);
+
+                var payload = {image_id: image_id, id: this.id, _token:token };
+
+                this.$http.post(domain, payload).then(function(response) {
+                    if (response.data.status == false) {
+                        this.fetchData()
+                        pushNotif(response.status, response.message);
+                    }
+                });
+            },
+
             importTemplate: function(id, supportedLangKey) {
                 try {
                     switch(id) {
@@ -537,7 +580,6 @@ function crudNewsContent() {
 
         mounted: function () {
             this.fetchData();
-            this.sortable()
         }
 
     });
