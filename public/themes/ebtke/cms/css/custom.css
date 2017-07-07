@@ -799,7 +799,7 @@ a:focus {
 }
 .nav.side-menu>li.current-page,
 .nav.side-menu>li.active {
-    border-right: 5px solid #1ABB9C
+    border-right: 5px solid #5a738e
 }
 .nav li.current-page {
     background: rgba(255, 255, 255, 0.05)
@@ -4814,23 +4814,6 @@ input, textarea, select {
     margin-top: 15px;
 }
 
-.btn__form, .btn__wizard__next, .btn__wizard__prev {
-    background: #5a738e;
-    border: 1px solid transparent;
-    padding: 0 17px;
-    height: 25px;
-    color: #ffffff;
-    font-size: 11px;
-    font-family: "brandon_medium";
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    transition: all .3s;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
 #loading-img-percent {
     display: none; 
 }
@@ -4861,76 +4844,6 @@ input, textarea, select {
     position: absolute;
     transform: rotate(180deg);
     transition: all .3s;
-}
-
-.form--wizard--tab {
-    border-bottom: 1px solid #F3F4F6; 
-}
-.form--wizard--tab .wizard--tab--ul {
-    display: -ms-flexbox;
-    display: flex;
-    background-color: #fbfbfb; 
-}
-.form--wizard--tab .wizard--tab--ul .wizard--tab--li {
-    width: 100px;
-    height: 40px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center; 
-}
-.form--wizard--tab .wizard--tab--ul .wizard--tab--li .wizard--tab--link {
-    font-size: 12px;
-    position: relative; 
-}
-.form--wizard--tab .wizard--tab--ul .wizard--tab--li .wizard--tab--link:hover {
-    color: #44C7F4; 
-}
-.form--wizard--tab .wizard--tab--ul .wizard--tab--li .empty--lang:after {
-    content: "";
-    background: url(../../svg/ico-notif-lang.svg) no-repeat;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    right: -8px;
-    top: -4px; 
-}
-.form--wizard--tab .wizard--tab--ul .wizard--tab--li.active__tab a {
-    color: #44C7F4;
-    transition: all .3s; 
-}
-.content__tab {
-    display: none !important; 
-}
-.content__tab.active__content {
-    display: block !important;
-    animation: fadeIn 2s; 
-}
-
-.content__tab2 {
-    display: none !important; 
-}
-.content__tab2.active__content2 {
-    display: block !important;
-    animation: fadeIn 2s; 
-}
-
-.content__tab3 {
-    display: none !important; 
-}
-.content__tab3.active__content3 {
-    display: block !important;
-    animation: fadeIn 2s; 
-}
-
-.wizard-no-tab .wizard__content__tab {
-    display: none !important; 
-}
-.wizard-no-tab .wizard__content__tab.wizard__active__content {
-    display: block !important;
-    animation: fadeIn 2s; 
 }
 
 
@@ -4966,7 +4879,7 @@ input, textarea, select {
 
 /* END BUTTON WIZARD */
 .btn__form, .btn__wizard__next, .btn__wizard__prev {
-  background: #9FBFCB;
+  background: #5a738e;
   border: 1px solid transparent;
   padding: 0 17px;
   height: 25px;
@@ -5263,3 +5176,77 @@ input, textarea, select {
       bottom: -15px;
       opacity: 1; 
   }
+
+  #menu li.slide-line, #menu2 li.slide-line, #menu3 li.slide-line {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: none #44C7F4;
+    position: absolute;
+    width: 9%;
+    height: 2px;
+    left: 10px;
+    bottom: 0;
+    z-index: 0;
+}
+
+/** Wizard tab new **/
+
+.wizard--tab {
+    border-bottom: 1px solid #F3F4F6;
+    position: relative;
+}
+
+.wizard--tab .wizard--tab--ul {
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #F7F7F7;
+    margin: 0;
+}
+
+.wizard--tab .wizard--tab--ul .wizard--tab--li {
+    width: 100px;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.wizard--tab .wizard--tab--ul .wizard--tab--li.active__tab a {
+    color: #5a738e;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.wizard--tab .wizard--tab--ul .wizard--tab--li .wizard--tab--link {
+    font-size: 12px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.5);
+}
+#menu li.slide-line, #menu2 li.slide-line, #menu3 li.slide-line {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: none #5a738e;
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    left: 10px;
+    bottom: 0;
+    z-index: 0;
+}
+
+.btn__action__list {
+    position: relative;
+    margin: 8px 8px 8px 13px;
+    transition: all .3s;
+}
+
+.btn__delete {
+    position: relative;
+    margin: 8px 8px 8px 13px;
+    transition: all .3s;
+}

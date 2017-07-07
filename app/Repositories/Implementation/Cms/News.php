@@ -55,7 +55,7 @@ class News extends BaseImplementation implements NewsInterface
             "order_by" => 'order',
         ];
 
-        $newsData = $this->news($params, 'desc', 'array', false);
+        $newsData = $this->news($params, 'asc', 'array', false);
 
         return $this->newsTransformation->getNewsCmsTransform($newsData);
     }
@@ -136,17 +136,19 @@ class News extends BaseImplementation implements NewsInterface
                 if (!empty($data['thumbnail'])) {
                     $store->thumbnail       = $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName();
                 }
+
                 $store->updated_at = $this->mysqlDateTimeFormat();
 
+            } else {
+            
+                $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
+                $store->is_active   = true;
+                $store->total_view  = '0';
+                $store->order       = $this->news->max('order')+1;
+                $store->tag_id      = isset($data['tag_id']) ? $data['tag_id'] : '';
+                $store->created_at  = $this->mysqlDateTimeFormat();
+                $store->created_by  = DataHelper::userId();
             }
-
-            $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
-            $store->is_active   = true;
-            $store->total_view  = '0';
-            $store->order       = $this->news->max('order')+1;
-            $store->tag_id      = isset($data['tag_id']) ? $data['tag_id'] : '';
-            $store->created_at  = $this->mysqlDateTimeFormat();
-            $store->created_by  = DataHelper::userId();
 
             if($save = $store->save())
             {
@@ -300,7 +302,7 @@ class News extends BaseImplementation implements NewsInterface
 
             } else {
                 //TODO: Edit Mode
-                if (!empty($data['thumbnail'])) {
+                if (isset($data['thumbnail']) && !empty($data['thumbnail'])) {
                     if (!$this->thumbnailUploader($data)) {
                         return false;
                     }
@@ -406,10 +408,25 @@ class News extends BaseImplementation implements NewsInterface
         ];
 
         $singleNewsData = $this->news($params, 'asc', 'array', true);
-        $allNewsData = $this->news($params, 'asc', 'array', false);
+        $allNewsData = $this->getNewsData([]);
         $newsRelatedData = $this->newsRelated($params);
 
         return $this->setResponse(trans('message.cms_success_get_data'), true, $this->newsTransformation->getSingleForEditNewsTransform($singleNewsData, $newsRelatedData, $allNewsData));
+    }
+
+    /**
+     * Get News Data
+     * @param $params
+     */
+    public function getNewsData()
+    {
+        $params = [
+            "is_active" => true
+        ];
+
+        $primaryData = $this->news($params);
+
+        return $this->newsTransformation->getNewsCmsTransform($primaryData);
     }
 
     /**
@@ -524,7 +541,7 @@ class News extends BaseImplementation implements NewsInterface
             }
 
             DB::commit();
-            return $this->setResponse(trans('message.cms_success_remove_data'), true);
+            return $this->setResponse(trans('message.cms_success_delete_data_general'), true);
 
         } catch (\Exception $e) {
             DB::rollback();
@@ -548,7 +565,7 @@ class News extends BaseImplementation implements NewsInterface
             if ($delete)
                 return true;
 
-            $this->message = trans('message.cms_failed_remove_data');
+            $this->message = trans('message.cms_failed_delete_data_general');
             return false;
 
         } catch (\Exception $e) {
@@ -581,7 +598,7 @@ class News extends BaseImplementation implements NewsInterface
             }
 
             DB::commit();
-            return $this->setResponse(trans('message.cms_success_update_image_slider'), true);
+            return $this->setResponse(trans('message.cms_update_image_slider_success'), true);
 
         } catch (\Exception $e) {
             return $this->setResponse($e->getMessage(), false);
@@ -605,11 +622,11 @@ class News extends BaseImplementation implements NewsInterface
             if($this->newsImages->where('id', $data['id'])->delete()) {
 
                 DB::commit();
-                return $this->setResponse(trans('message.cms_success_remove_data'), true);
+                return $this->setResponse(trans('message.cms_success_delete_data_general'), true);
             }
 
             DB::rollBack();
-            return $this->setResponse(trans('message.cms_failed_remove_data'), false);
+            return $this->setResponse(trans('message.cms_failed_delete_data_general'), false);
 
         } catch (\Exception $e) {
             return $this->setResponse($e->getMessage(), false);
@@ -674,13 +691,7 @@ class News extends BaseImplementation implements NewsInterface
             ->with(['related_news']);
 
         if(isset($params['news_id'])) {
-            $newsRelated->id($params['news_id']);
-        }
-
-        if(isset($params['order_by'])) {
-            $newsRelated->orderBy($params['order_by'], $orderType);
-        } else {
-            $newsRelated->orderBy('id', 'desc');
+            $newsRelated->newsId($params['news_id']);
         }
 
         if(!$newsRelated->count())

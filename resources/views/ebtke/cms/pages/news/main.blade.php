@@ -7,28 +7,27 @@
 		    </div>
 		</div>
 	</div>
-	<modal :show.sync="showModal">
-        <div class="popup__mask__alert">
-            <div class="popup__wrapper__alert">
-                <div class="popup__layer__alert">
-                    <div class="alert__message__wrapper">
-                        <div class="alert__message">
-                            <img src="{{ asset('themes/ebtke/cms/images/logo-alert.png') }}" alt="">
-                            <h3>Alert!</h3>
-                            <label>Are you sure that you want to delete this?</label>
-                        </div>
-                        <div class="alert__message__btn">
-                            <div class="new__form__btn">
-                                <a href="#" class="btn__form__reset" @click.prevent="closeDeleteModal">Cancel</a>
-                                <a href="#" class="btn__form__create" @click="deleteData(delete_payload.id)">Confirm</a>
-                            </div>
-                        </div>
-                        <button class="alert__message__close" @click.prevent="closeDeleteModal"></button>
+    <div v-if="showModal == true" class="popup__mask__alert">
+        <div class="popup__wrapper__alert">
+            <div class="popup__layer__alert">
+                <div class="alert__message__wrapper">
+                    <div class="alert__message">
+                        <img src="{{ asset('themes/ebtke/cms/images/logo-alert.png') }}" alt="">
+                        <h3>Alert!</h3>
+                        <label>Are you sure that you want to delete this?</label>
                     </div>
+                    <div class="alert__message__btn">
+                        <div class="new__form__btn">
+                            <a href="#" class="btn__form__reset" @click.prevent="closeDeleteModal">Cancel</a>
+                            <a href="#" class="btn__form__create" @click="deleteData(delete_payload.id)">Confirm</a>
+                        </div>
+                    </div>
+                    <button class="alert__message__close" @click.prevent="closeDeleteModal"></button>
                 </div>
             </div>
         </div>
-    </modal>
+    </div>
+    
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<!-- Include form -->
     	@include('ebtke.cms.pages.news.partials.form')
@@ -69,6 +68,12 @@
 										<input class="switch-input" id="check_1" type="checkbox" :checked="news.is_active == true" @change="changeStatus(news.id)"/>
                                     	<span class="switch-label" data-on="Active" data-off="Inactive"></span> <span class="switch-handle"></span>
 									</label>
+									<a href="javascript:void(0)" class="btn__action__list" @click="editImageSlider(news.id)">
+										<i class="fa fa-image fa-lg"></i>
+									</a>
+									<a href="#" class="btn__delete" @click="showDeleteModal(news.id)">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </a>
 								</div>
 							</div>
 						</div>

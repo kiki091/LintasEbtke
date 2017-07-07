@@ -1,24 +1,26 @@
-<form action="{{ route('CmsNewsStoreData') }}" method="POST" id="NewsContentManagementFrom" enctype="multipart/form-data" @submit.prevent>
+<form action="{{ route('CmsNewsStoreData') }}" method="POST" id="NewsContentManagementFrom" class="form" enctype="multipart/form-data" @submit.prevent>
 	<div class="main__content__form__layer" id="toggle-form-content" style="display: none;">
 		<div class="create__form__wrapper">
 			<div class="form--top flex-between">
 				<div class="form__title">@{{ form_add_title }}</div>
 				<div class="form--top__btn">
-					<a href="#" class="btn__add__cancel" @click="resetForm">Cancel</a>
+					<a href="#" class="btn__add__cancel" @click="clearCkEditor">Cancel</a>
 				</div>
 			</div>
 			<!-- FORM WIZARD -->
-			<div class="form--wizard--tab" id="box">
-				<ul class="wizard--tab--ul" id="menu">
-					<li class="wizard--tab--li " v-for="(supportedLang, supportedLangKey, index) in supported_language" v-bind:class="{'firstTab': !index, 'lastTab': supportedLangKey == last_language_key}">
-						<a :href="'#lang-'+supportedLangKey" class="wizard--tab--link">@{{ supportedLang.name }}</a>
-					</li>
-				</ul>
-			</div>
+			<div class="wizard--tab" id="menu">
+                <ul class="wizard--tab--ul" >
+                    <li class="wizard--tab--li" v-for="(supportedLang, supportedLangKey, index) in supported_language" :class="last_language_key == supportedLangKey? 'lastTab': ( !index ? 'firstTab active__tab' : 'inactive__tab')">
+                        <a :href="'#lang-'+supportedLangKey" class="wizard--tab--link">@{{ supportedLang.name }}</a>
+
+                    </li>
+                   
+                </ul>
+            </div>
 			<div class="form--mid">
 
 				<!-- LANGUAGE ENGLISH -->
-				<div class="create__form content__tab" v-for="(supportedLang, supportedLangKey, index) in supported_language" :id="'lang-'+supportedLangKey" v-bind:class="{'active__content': !index }">
+				<div class="create__form content__tab" v-for="(supportedLang, supportedLangKey, index) in supported_language" :class="!index ? 'active__content' : ''" :id="'lang-'+supportedLangKey">
 					<div class="form__group__row">
 						<div class="create__form__row">
 							<span class="form__group__title">General Information<a href="javascript:void(0);" class="style__accordion" :data-accordion="'form-accordion-'+supportedLangKey+'-1'"><i>@include('ebtke.cms.svg-logo.ico-expand-arrow')</i></a></span>
@@ -120,7 +122,7 @@
 								</div>
 							</div>
 
-							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
+							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey) && edit == false">
 								<div class="new__form__field" style="width: 100%">
 									<label>You Migh Also Like</label>
 									<div class="field__icon">
@@ -130,6 +132,28 @@
 													<p>
 														<div class="checkbox icheck-primary">
 														    <input class="checkbox__data" type="checkbox" name="news_related_id[]" :id=" 'checkbox-news_related_id-' + news_related_id.id" :value="news_related_id.id"/>
+														    <label :for=" 'checkbox-news_related_id-' + news_related_id.id">@{{ news_related_id.title }}</label>
+														</div>
+													</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="form--error--message--left" id="form--error--message--news_related_id"></div>
+
+								</div>
+							</div>
+
+							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey) && edit == true">
+								<div class="new__form__field" style="width: 100%">
+									<label>You Migh Also Like</label>
+									<div class="field__icon">
+										<div class="">
+											<ul class="to_do">
+												<li v-for="news_related_id in news_related_id">
+													<p>
+														<div class="checkbox icheck-primary">
+														    <input class="checkbox__data" type="checkbox" name="news_related_id[]" :id=" 'checkbox-news_related_id-' + news_related_id.id" :value="news_related_id.id" :checked="news_related_id.is_checked == true"/>
 														    <label :for=" 'checkbox-news_related_id-' + news_related_id.id">@{{ news_related_id.title }}</label>
 														</div>
 													</p>
@@ -200,8 +224,8 @@
 				<div class="create__form">
 					<div class="create__form__row flex-between">
 						<div class="new__form__btn">
-							<a href="#" class="btn__wizard__prev" id="prev-button" type="submit"></a>
-							<a href="#" class="btn__wizard__next" id="next-button" type="submit">Next</a>
+							<a href="#" class="btn__wizard__prev prev-button" id="" type="submit"></a>
+							<a href="#" class="btn__wizard__next next-button" id="" type="submit">Next</a>
 						</div>
 						<div class="new__form__btn">
 							{{ csrf_field() }}

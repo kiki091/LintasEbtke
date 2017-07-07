@@ -28,6 +28,7 @@ function crudNewsContent() {
                 meta_keyword : {"en":"","id":""},
                 meta_description : {"en":"","id":""},
                 tag_id : '',
+                news_related_id: [],
             },
             delete_payload: {
               id: ''
@@ -132,10 +133,10 @@ function crudNewsContent() {
                 this.default_total_detail_image.splice(this.default_total_detail_image.length + 1, 0, {});
             },
 
-            showDeleteModal: function(id, sectionDelete) {
+            showDeleteModal: function(id) {
+
                 this.showModal = true;
                 this.delete_payload.id = id;
-                this.sectionDelete = sectionDelete
 
                 $('.popup__mask__alert').addClass('is-visible');
 
@@ -168,33 +169,12 @@ function crudNewsContent() {
                         pushNotif(response.status, response.message)
                     }
                 })
-            },
 
-            changeStatus: function(id) {
-                var payload = []
-                payload['id'] = id
-                payload['_token'] = token
 
-                var form = new FormData();
-
-                for (var key in payload) {
-                    form.append(key, payload[key])
+                for (var supported_lang in this.supported_language) {
+                    this.last_language_key = supported_lang
                 }
 
-                var domain  = laroute.route('CmsNewsChangeStatus', []);
-
-                this.$http.post(domain, form).then(function(response) {
-                    response = response.data
-                    if (response.status == false) {
-                        this.fetchData()
-                        pushNotif(response.status,response.message);
-                    }
-                    else{
-
-                        this.fetchData()
-                        pushNotif(response.status,response.message);
-                    }
-                })
             },
 
             storeData: function(event) {
@@ -204,6 +184,10 @@ function crudNewsContent() {
 
                     dataType: "json",
 
+                    beforeSerialize: function(form, options) {
+                        for (instance in CKEDITOR.instances)
+                            CKEDITOR.instances[instance].updateElement();
+                    },
                     beforeSend: function(){
                         showLoading(true)
                         vm.clearErrorMessage()
@@ -247,6 +231,10 @@ function crudNewsContent() {
 
                     dataType: "json",
 
+                    beforeSerialize: function(form, options) {
+                        for (instance in CKEDITOR.instances)
+                            CKEDITOR.instances[instance].updateElement();
+                    },
                     beforeSend: function(){
                         showLoading(true)
                         vm.clearErrorMessage()
@@ -307,14 +295,19 @@ function crudNewsContent() {
                         this.models = response.data
                         this.thumbnail = response.data.thumbnail_url
                         this.filename = response.data.filename_url
-                        this.default_total_detail_image = []
                         this.news_related_id = response.data.news_related_id
+                        this.default_total_detail_image = []
+
+                        /*$.each(response.data.news, function(index, key) {
+                            document.getElementById("checkbox-news_related_id-"+key.id).checked = true;
+                        });*/
 
                         this.form_add_title = "Edit News Content Manager"
                         $('.btn__add').click()
 
                         destroyInstanceCkEditor()
                         replaceToCkEditor()
+                        scrollTop()
 
                     } else {
                         pushNotif(response.status,response.message)
@@ -353,6 +346,33 @@ function crudNewsContent() {
 
                     } else {
                         pushNotif(response.status, response.message)
+                    }
+                })
+            },
+
+            changeStatus: function(id) {
+                var payload = []
+                payload['id'] = id
+                payload['_token'] = token
+
+                var form = new FormData();
+
+                for (var key in payload) {
+                    form.append(key, payload[key])
+                }
+
+                var domain  = laroute.route('CmsNewsChangeStatus', []);
+
+                this.$http.post(domain, form).then(function(response) {
+                    response = response.data
+                    if (response.status == false) {
+                        this.fetchData()
+                        pushNotif(response.status,response.message);
+                    }
+                    else{
+
+                        this.fetchData()
+                        pushNotif(response.status,response.message);
                     }
                 })
             },
@@ -403,7 +423,7 @@ function crudNewsContent() {
                 })
             },
 
-            resetForm: function() {
+            resetForm: function(setEditToFalse) {
 
                 for (var supported_lang in this.supported_language) {
                     this.models.title[supported_lang] = ''
@@ -420,9 +440,10 @@ function crudNewsContent() {
                 this.models.id = ''
                 this.models.tag_id = ''
 
-                this.models['language_selected'] = []
+                this.models['language_selected'] = [];
                 this.thumbnail = '';
                 this.filename = {0: '', 1:'', 2:'', 3: ''};
+                this.news_images = [];
                 this.news_related_id = [];
                 this.default_total_detail_image = [0];
                 this.total_detail_image = [0];
@@ -435,8 +456,12 @@ function crudNewsContent() {
 
                 $('select').prop('selectedIndex', 0);
                 $('textarea').val('');
+                $('.ckeditor').val('');
 
                 this.edit = false
+
+                destroyInstanceCkEditor()
+                replaceToCkEditor()
 
                 $('.checkbox__data').removeAttr('checked');
             },
@@ -474,6 +499,9 @@ function crudNewsContent() {
                     if (response.data.status == false) {
                         this.fetchData()
                         pushNotif(response.status, response.message);
+                    } else {
+                        this.fetchData()
+                        pushNotif(response.status, response.message);
                     }
                 });
             },
@@ -499,10 +527,17 @@ function crudNewsContent() {
                 $(".form--error--message--left").text('')
             },
 
+            clearCkEditor: function() {
+                destroyInstanceCkEditor()
+                replaceToCkEditor()
+                this.resetForm(true)
+            },
+
         },
 
         mounted: function () {
             this.fetchData();
+            this.sortable()
         }
 
     });

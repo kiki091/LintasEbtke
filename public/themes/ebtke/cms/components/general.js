@@ -119,43 +119,94 @@ function property() {
     notify();
 
 }
+$(document).ready(function() {
 
-function setupCKEDITOR(){
-	$(document).ready(function(){
+    //vue component modal
+    Vue.component('modal', {
+        template: '#modal-template',
+        props: ['show']
+    });
+    //end vue component modal
 
-		Vue.directive('rich-editor', {
-	        twoWay: true,
-	        /*bind: function () {
-	            Vue.nextTick(this.setupEditor.bind(this));
-	        },*/
-	        bind: function () {
-	            var self = this;
-	            CKEDITOR.replace(this.el.id);
-	            CKEDITOR.instances[this.el.id].setData(this);
-	            CKEDITOR.instances[this.el.id].on('change', function () {
-	                self.set(CKEDITOR.instances[self.el.id].getData());
-	            });
-	        },
-	        setupEditor: function () {
-	            // if (!document.contains(this.el))
-	            //    return Vue.nextTick(this.bind.bind(this));
-	            var vm = this;
-	            CKEDITOR.replace(this.el.id);
-	            CKEDITOR.instances[this.el.id].on('change', function () {
-	                vm.set(CKEDITOR.instances[vm.el.id].getData());
-	            });
-	        },
-	        update: function (value) {
-	            if (!CKEDITOR.instances[this.el.id])
-	                return Vue.nextTick(this.update.bind(this, value));
-	            CKEDITOR.instances[this.el.id].setData(value);
-	        },
-	        unbind: function () {
-	            CKEDITOR.instances[this.el.id].destroy();
-	        }
-	    })
-	});
-}
+    //for url
+    var url      = window.location.href; 
+    var split_url = lintas.href_url.split('#');
+
+    if(split_url[1])
+    {
+        var vue_action = split_url[1].split('_');
+        if(vue_action[0])        
+        { 
+            //set sidebar active and open toggle
+            $("#" + vue_action[0]).parent().parent().parent().addClass("open");
+            $("#" + vue_action[0]).parent().addClass("active__accordion__item");
+            //end set sidebar active
+            window[vue_action[1]]();
+        }
+    }
+    //end url
+    
+    //select dropdown custom directive
+    Vue.directive('select', {
+        twoWay: true,
+        priority: 1000,
+
+        params: ['options'],
+
+        bind: function () {
+            var self = this
+            $(this.el)
+            .select2({
+                data: this.params.options,
+                minimumResultsForSearch: -1
+            })
+            .on('change', function () {
+                self.set(this.value)
+            })
+        },
+        update: function (value) {
+            $(this.el).val(value).trigger('change')
+        },
+        unbind: function () {
+            $(this.el).off().select2('destroy')
+        }
+    })
+    //end select dropdown custom directive
+    
+    //ckeditor custom directive
+    Vue.directive('rich-editor', {
+        twoWay: true,
+        /*bind: function () {
+            Vue.nextTick(this.setupEditor.bind(this));
+        },*/
+        bind: function () {
+            var self = this;
+            CKEDITOR.replace(this.el.id);
+            CKEDITOR.instances[this.el.id].setData(this);
+            CKEDITOR.instances[this.el.id].on('change', function () {
+                self.set(CKEDITOR.instances[self.el.id].getData());
+            });
+        },
+        setupEditor: function () {
+            // if (!document.contains(this.el))
+            //    return Vue.nextTick(this.bind.bind(this));
+            var vm = this;
+            CKEDITOR.replace(this.el.id);
+            CKEDITOR.instances[this.el.id].on('change', function () {
+                vm.set(CKEDITOR.instances[vm.el.id].getData());
+            });
+        },
+        update: function (value) {
+            if (!CKEDITOR.instances[this.el.id])
+                return Vue.nextTick(this.update.bind(this, value));
+            CKEDITOR.instances[this.el.id].setData(value);
+        },
+        unbind: function () {
+            CKEDITOR.instances[this.el.id].destroy();
+        }
+    })
+//end ckeditor custom directive
+})
 
 function pushNotifValidation(status, title, message, autoHide, position)
 {

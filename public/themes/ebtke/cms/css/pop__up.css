@@ -95,11 +95,11 @@
     margin-left: 10px;
 }
 .btn__form__reset, .btn__form__create {
-    background: #F3F4F6;
+    background: #5a738e;
     border: 1px solid #e6e7ea;
     padding: 0 20px;
     height: 25px;
-    color: #9B9B9B;
+    color: #f7f7f7;
     font-family: "brandon_medium";
     text-transform: uppercase;
     letter-spacing: 0.3px;

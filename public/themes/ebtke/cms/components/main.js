@@ -413,60 +413,62 @@ function notify(){
 
 function wizardSlide(){
 
-    $('#menu').append('<li class="slide-line"></li>');
+  $('.wizard--tab ul').append('<li class="slide-line"></li>');
 
-    $(document).on('click', '#menu li a', function () {
-        /* slide tab wizard */
-        var $this = $(this).parent('.wizard--tab--li'),
-        offset = $this.offset(),
-        offsetBody = $('#box').offset();
+  $(document).on('click', '.wizard--tab li a', function () {
+    /* slide tab wizard */
+    var $this = $(this).parent('li'),
+    offset = $this.offset(),
+    offsetBody = $('.wizard--tab').offset();
 
-        TweenMax.to($('#menu .slide-line'), 0.35, {
-            css:{
-                width: $this.outerWidth()+'px',
-                left: (offset.left-offsetBody.left)+'px'
-            },
-            ease:Power2.easeInOut,
+    TweenMax.to($(this).parents('ul').find('.slide-line'), 0.35, {
+      css:{
+        width: $this.outerWidth()+'px',
+        left: (offset.left-offsetBody.left)+'px'
+      },
+      ease:Power2.easeInOut,
 
-        });
-
-        /* tab wizard */
-        $(this).parent().addClass("active__tab");
-        $(this).parent().siblings().removeClass("active__tab");
-        $('#menu li a').parent().addClass('inactive__tab');
-
-        var tab = $(this).attr("href");
-        $('.active__tab').removeClass('inactive__tab');
-        $(".content__tab").not(tab).removeClass('active__content');
-        $(tab).addClass('active__content');
-
-        /* hide next & prev button when on last and first element */
-        if($('.firstTab').is(':not(.inactive__tab)')) {
-          $('#prev-button').hide();
-          $('#next-button').show();
-        } else if($('.lastTab').is(':not(.inactive__tab)')) {
-          $('#next-button').hide();
-          $('#prev-button').show();
-        } else {
-          $('#next-button').show();
-          $('#prev-button').show();
-        }
-
-        return false;
     });
 
-    var items = $('#menu li a');
-    var currentItem = items.filter('.active__tab');
-    items.first().trigger("click");
+    /* tab wizard */
+    $(this).parent().addClass("active__tab");
+    $(this).parent().siblings().removeClass("active__tab");
+    $('.wizard--tab li a').parent().addClass('inactive__tab');
+
+    var tab = $(this).attr("href");
+    $('.active__tab').removeClass('inactive__tab');
+    $(".content__tab").not(tab).removeClass('active__content');
+    $(tab).addClass('active__content');
+
+    /* hide next & prev button when on last and first element */
+    if($('.firstTab').is(':not(.inactive__tab)')) {
+      $(this).parents('.form').find('.prev-button').addClass('disabled');
+      $(this).parents('.form').find('.next-button').removeClass('disabled');
+    } else if($('.lastTab').is(':not(.inactive__tab)')) {
+      $(this).parents('.form').find('.next-button').addClass('disabled');
+      $(this).parents('.form').find('.prev-button').removeClass('disabled');
+    } else {
+      $(this).parents('.form').find('.next-button').removeClass('disabled');
+      $(this).parents('.form').find('.prev-button').removeClass('disabled');
+    }
+
+    return false;
+  });
+
+  setTimeout(function() {
+    $('#menu li').first().find('a').trigger('click');
+  }, 500);
   
-    $(document).on('click', '#next-button', function() {
-        items.parent('.active__tab').next().find('a').trigger("click");
-    });
-
-    $(document).on('click', '#prev-button', function() {
-        items.parent('.active__tab').prev().find('a').trigger("click");
-    });
+  $(document).on('click', '.next-button', function() {
+    $(this).parents('.form').find('.active__tab').next().find('a').trigger("click");
+    // $(this).toggle($('.content__tab:last').is(':not(.active__content)'));
+  });
+  $(document).on('click', '.prev-button', function() {
+    $(this).parents('.form').find('.active__tab').prev().find('a').trigger("click");
+    // $(this).toggle($('.content__tab:first').is(':not(.active__content)'));
+  });
 }
+/* ====== END WIZARD TAB ====== */
 
  function vue(){
 

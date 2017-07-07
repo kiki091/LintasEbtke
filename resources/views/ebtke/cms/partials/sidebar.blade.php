@@ -2,7 +2,7 @@
 	<div class="left_col scroll-view">
     	<div class="navbar nav_title">
       <center>
-          <img style="opacity: 0.5;" src="{{ asset('themes/ebtke/front/images/loader.png') }}" class="img-responsive">
+          <img style="opacity: 0.5;margin-top: 3%;" src="{{ asset('themes/ebtke/front/images/loader.png') }}" class="img-responsive">
       </center>
           <a href="#" class="site_title"><span>LINTAS EBTKE</span></a>
     	</div>

@@ -13,6 +13,8 @@ use JavaScript;
 use Auth;
 use Session;
 use Validator;
+use Symfony\Component\VarDumper\Cloner\Data;
+use URL;
 
 class DashboardController extends CmsBaseController
 {
@@ -29,6 +31,7 @@ class DashboardController extends CmsBaseController
         $this->userPrivilege = $userPrivilege;
 
         JavaScript::put([
+            'href_url' => URL::current(),
             'supported_language' => $this->setSuportedLanguage(),
             'supported_language_keys' => $this->setSuportedLanguageKey(),
             'lintas_default_language' => 'id',

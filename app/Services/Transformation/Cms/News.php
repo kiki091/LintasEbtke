@@ -187,6 +187,7 @@ class News
             $relatedDataForInArray = $this->singleTransformRelatedDataJustRelatedId($relatedData);
 
             $returnValue = [];
+            
             foreach ($allData as $key => $item) {
 
                 if($singleData['id'] != $item['id']) {
@@ -197,6 +198,9 @@ class News
                     ];
                 }
             }
+            usort($returnValue, function($a, $b) {
+                return $a['id'] - $b['id'];
+            });
 
             return $returnValue;
 
