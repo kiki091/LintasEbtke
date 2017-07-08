@@ -191,12 +191,13 @@ class News extends BaseImplementation implements NewsInterface
      * @param array $params
      * @return array
      */
-    protected function news($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
+    protected function news($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
     {
         $news = $this->news
             ->with('translation')
             ->with('translations')
             ->with('tags')
+            ->with('news_images')
             ->with('related');
 
         if(isset($params['slug']) && $params['slug']) {
@@ -218,6 +219,8 @@ class News extends BaseImplementation implements NewsInterface
         }
 
         if(isset($params['order_by'])) {
+            $news->orderBy($params['order_by'], $orderType);
+        } else {
             $news->orderBy('order', $orderType);
         }
 

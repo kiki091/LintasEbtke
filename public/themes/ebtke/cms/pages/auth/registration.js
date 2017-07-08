@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     function resetForm() {
 
-    	$('#fullname').val('')
+    	$('#name').val('')
     	$('#email').val('')
     	$('#password').val('')
     	$('#confirm_password').val('')

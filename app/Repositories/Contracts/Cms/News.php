@@ -61,6 +61,4 @@ interface News
      */
     public function deleteImageSlider($params);
 
-
-
 }

@@ -51,15 +51,17 @@
               |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
             -->
+            @if(isset($detail_news['image_slider']) && !empty($detail_news['image_slider']))
             <div class="col-md-12">
                 <div class="w3-content w3-display-container">
-                    <img class="mySlides" src="{{ $detail_news['thumbnail_url'] or '' }}" style="width:100%">
-
+                    @foreach($detail_news['image_slider'] as $key=> $image_slider)
+                    <img class="mySlides" src="{{ $image_slider['filename_url'] or '' }}" style="width:100%">
+                    @endforeach
                     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                 </div>
             </div>
-
+            @endif
             
     	</div>
     </div>

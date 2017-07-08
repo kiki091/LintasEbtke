@@ -19,4 +19,11 @@ class EventImages extends BaseModel
 
     protected $guarded = [];
 
+    /**
+     * @param $query
+     */
+    public function scopeId($query, $params)
+    {
+        return $query->where('id', $params);
+    }
 }

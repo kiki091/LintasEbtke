@@ -7,8 +7,10 @@ use App\Http\Controllers\CmsController;
 use App\Services\Api\Response as ResponseService;
 use Illuminate\Routing\Route;
 
+use JavaScript;
 use Auth;
 use Session;
+use URL;
 
 class MainController extends CmsController
 {
@@ -19,6 +21,12 @@ class MainController extends CmsController
     public function __construct( ResponseService $response)
     {
         $this->response = $response;
+
+        JavaScript::put([
+            'href_url' => URL::current(),
+            'app_domain' => env('ACCOUNT_DOMAIN_PREFIX'),
+            'token' => csrf_token(),
+        ]);
     }
 
 

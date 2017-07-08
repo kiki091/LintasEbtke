@@ -110,6 +110,24 @@ class News
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
 
         $dataTransform['related']   = $this->getYouMighAlsoLike($data['related']);
+        $dataTransform['image_slider']  = $this->getNewsImageSlider($data['news_images']);
+
+        return $dataTransform;
+    }
+
+    /**
+     * Set Image Slider
+     * @param $data
+     * @return array
+     */
+
+    protected function getNewsImageSlider($data)
+    {
+        $dataTransform = array_map(function($data) {
+            return [
+                'filename_url'  => isset($data['filename']) ? asset(NEWS_BANNER_DIRECTORY.rawurlencode($data['filename'])) : '',
+            ];
+        }, $data);
 
         return $dataTransform;
     }

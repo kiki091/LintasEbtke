@@ -1,5 +1,7 @@
 $(document).ready(function(){
     datePicker();
+    timePicker();
+    datetimePicker();
     cardAccordion();
     wizardSlide();
     vue();
@@ -28,21 +30,23 @@ $(document).on('click', '.img__preview__big__close', function(){
 
 function datePicker(){
     /* DATE TIME PICKER SOTR*/
-    $('#sotrdatepicker').datepicker({
+    /*$('.datepicker').datepicker({
         language: 'en',
         dateFormat: 'dd MM yyyy',
         navTitles: {days: 'MM <i>yyyy</i>'},
         autoClose: true,
-        toggleSelected: false
-    });
+        toggleSelected: false,
+        minDate: new Date
+    }).focus();*/
     $(document).on('click',".datepick", function(){
         $(this).datepicker({
             language: 'en',
             dateFormat: 'dd-mm-yyyy',
             navTitles: {days: 'MM <i>yyyy</i>'},
             autoClose: true,
-            toggleSelected: false
-        });
+            toggleSelected: false,
+            minDate: new Date
+        }).focus();
     });
     $(document).on('click', '.date-icon', function(){
         $(this).parent('.input-icon').find('.datepick').datepicker({
@@ -50,7 +54,8 @@ function datePicker(){
             dateFormat: 'dd-mm-yyyy',
             navTitles: {days: 'MM <i>yyyy</i>'},
             autoClose: true,
-            toggleSelected: false
+            toggleSelected: false,
+            minDate: new Date
         }).focus();
     });
     /* DATE PICKER DISABLE BEFORE TODAY*/
@@ -62,7 +67,7 @@ function datePicker(){
             autoClose: true,
             toggleSelected: false,
             minDate: new Date
-        });
+        }).focus();
     });
     $(document).on('click', '.date-disabled-icon', function(){
         $(this).parent('.input-icon').find('.datepick-disable-before-today').datepicker({
@@ -76,17 +81,125 @@ function datePicker(){
     });
 
     /* HIDE DATEPICKER WHEN CONTAINER SCORLLING */
-    $(".main_container").scroll(function() {
+    $(".main__content__layer").scroll(function() {
         $(this).find('.datepick').datepicker('hide');
         $(this).find('.datepick').blur();  
-    });
-    $(".main_container").scroll(function() {
-        $(this).find('.datepick-disable-before-today').datepicker('hide');
-        $(this).find('.datepick-disable-before-today').blur();  
     });
 
 }
 
+
+function timePicker(){
+
+    $('.timepick').clockpicker({
+        placement: 'bottom',
+        align: 'left',
+        autoclose: true,
+        'default': 'now'
+    });
+
+    /* HIDE DATEPICKER WHEN CONTAINER SCORLLING */
+    var tmPckr = $('.timepick')
+    $(".container__main").scroll(function() {
+        tmPckr.clockpicker('hide');
+        tmPckr.blur();  
+    });
+}
+
+// datetimepicker
+function datetimePicker() {
+    $(document).on('click',".datetimepicker.datetime.start", function() {
+        jQuery(this).datetimepicker({
+            format:'d/m/Y H:i',
+            lang:'en',
+            minDate: new Date,
+            allowTimes:[
+                '8:30', '9:00', '9:30', '10:00', '10:30','11:00', '11:30', '12:00', '12:30', 
+                '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'
+            ],
+            onShow:function(ct){
+                this.setOptions({
+                    maxDate:jQuery('.datetimepicker.datetime.end').val()?jQuery('.datetimepicker.datetime.end').val():false
+                });
+            }
+        });
+    });
+
+    // $(document).on('click', '#date-icon-start', function(){
+
+    //     var data = $(this).siblings('#input-icon-start').find('#date_start')
+    //     console.log(data)
+    //     jQuery(data).datetimepicker({
+    //         format:'d/m/Y H:i',
+    //         lang:'en',
+    //         minDate: new Date,
+    //         allowTimes:[
+    //             '8:30', '9:00', '9:30', '10:00', '10:30','11:00', '11:30', '12:00', '12:30', 
+    //             '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'
+    //         ],
+    //         onShow:function(ct){
+    //             this.setOptions({
+    //                 maxDate:jQuery('.datetimepicker.datetime.end').val()?jQuery('.datetimepicker.datetime.end').val():false
+    //             });
+    //         }
+    //     });
+    // });
+
+    var logic = function( currentDateTime ){    
+        var fromStartTime = jQuery('.datetimepicker.datetime.start').val()?jQuery('.datetimepicker.datetime.start').val():false
+        this.setOptions({
+            minDate:jQuery('.datetimepicker.datetime.start').val()?jQuery('.datetimepicker.datetime.start').val():false
+        });
+
+        if(fromStartTime.length > 0){
+
+            var dateTimeStart = jQuery('.datetimepicker.datetime.start').val();
+            dateTimeStart = dateTimeStart.substr(0, 10);
+            var dateTimeEnd = jQuery('.datetimepicker.datetime.end').val();
+            dateTimeEnd = dateTimeEnd.substr(0, 10);
+            // console.log(dateTimeStart+"  "+dateTimeEnd);
+
+            if( dateTimeStart == dateTimeEnd ){
+                var timeFront = fromStartTime.substr(fromStartTime.lastIndexOf(':') - 2);
+                timeFront = timeFront.substr(0, 2);
+                var timeBack = fromStartTime.substr(fromStartTime.lastIndexOf(':') + 1);
+                timeBack = timeBack.substr(0, 1)+2;
+                // console.log(timeFront+":"+timeBack);
+                this.setOptions({
+                    minTime:timeFront+":"+timeBack
+                });
+            }else{
+                this.setOptions({
+                    minTime:'0'
+                });
+            }
+
+        }    
+    };
+
+    $(document).on('click',".datetimepicker.datetime.end", function() {
+        jQuery(this).datetimepicker({
+            format:'d/m/Y H:i',
+            lang:'en',
+            minDate: new Date,
+            allowTimes:[
+                '8:30', '9:00', '9:30', '10:00', '10:30','11:00', '11:30', '12:00', '12:30', 
+                '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'
+            ],
+            onChangeDateTime:logic,
+            onShow:logic
+        });
+    });
+
+    $(".input--date").click(function(){
+        if($(this).hasClass("green")){
+            $(".xdsoft_datetimepicker").addClass("green"); }
+        if($(this).hasClass("red")){
+            $(".xdsoft_datetimepicker").addClass("red"); }
+        if($(this).hasClass("purple")){
+            $(".xdsoft_datetimepicker").addClass("purple"); }
+    });
+}
 /* =================== ACCORDION ========================== */
 function cardAccordion(){
   	$(document).on('click', '.style__accordion', function(){

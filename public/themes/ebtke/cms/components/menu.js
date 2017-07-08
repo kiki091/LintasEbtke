@@ -43,8 +43,18 @@ function menuUserAccount()
 function menuNews()
 {
     $('.right_col').load(laroute.route('CmsNewsIndex', []), function()
-    {console.log("masuk")
+    {
         initNewsContent()
+    });
+}
+
+// JAVASCRIPT EVENT CONTENT MANAGER
+
+function menuEvent()
+{console.log("masuk")
+    $('.right_col').load(laroute.route('CmsEventIndex', []), function()
+    {
+        initEventContent()
     });
 }
 

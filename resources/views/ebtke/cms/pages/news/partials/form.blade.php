@@ -204,7 +204,7 @@
 									<div class="new__form__field" style="width: 500px;">
 										<label>Meta Description</label>
 										<textarea v-model="models.meta_description[supportedLangKey]" :name="'meta_description['+supportedLangKey+']'" :id="'meta_description['+supportedLangKey+']'" style="margin: 0px; width: 500px; height: 125px;"></textarea>
-										<div class="form--error--message" :id="'form--error--message--meta_title_'+supportedLangKey"></div>
+										<div class="form--error--message" :id="'form--error--message--meta_description_'+supportedLangKey"></div>
 									</div>
 								</div>
 								<div class="create__form__row form--media">

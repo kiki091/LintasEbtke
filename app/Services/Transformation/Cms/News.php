@@ -86,7 +86,7 @@ class News
                 $finalData[] = [
                     "locale"                => $value,
                     "title"                 => isset($data['title'][$value]) ? $data['title'][$value] : '',
-                    "slug"                  => isset($data['slug'][$value]) ? $data['slug'][$value] : '',
+                    "slug"                  => isset($data['slug'][$value]) ? str_slug($data['slug'][$value]) : '',
                     "introduction"          => isset($data['introduction'][$value]) ? $data['introduction'][$value] : '',
                     "description"           => isset($data['description'][$value]) ? $data['description'][$value] : '',
                     "meta_title"            => isset($data['meta_title'][$value]) ? $data['meta_title'][$value] : '',

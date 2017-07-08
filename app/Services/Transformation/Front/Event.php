@@ -72,6 +72,25 @@ class Event
         $dataTransform['created_at_home'] = isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '';
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
 
+        $dataTransform['image_slider']  = $this->getEventImageSlider($data['event_images']);
+
+        return $dataTransform;
+    }
+
+    /**
+     * Set Image Slider
+     * @param $data
+     * @return array
+     */
+
+    protected function getEventImageSlider($data)
+    {
+        $dataTransform = array_map(function($data) {
+            return [
+                'filename_url'  => isset($data['filename']) ? asset(EVENT_IMAGES_DIRECTORY.rawurlencode($data['filename'])) : '',
+            ];
+        }, $data);
+
         return $dataTransform;
     }
 

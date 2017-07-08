@@ -38,10 +38,9 @@
                       			<input type="password" class="form-control" placeholder="Password" name="password" required="required" />
                     		</div>
 
-                            <div class="form-group">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        			            <button class="btn btn-primary submit" type="submit">Log in</button>
-        			            <a class="reset_pass" href="#">Lost your password?</a>
+                        <div class="form-group">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        			            <button class="full-width btn btn-primary submit" type="submit">Log in</button>
         			        </div>
 
         			        <div class="clearfix"></div>
@@ -115,6 +114,7 @@
         	<div class="clearfix"></div>
         	<div id="notif-group" class="tabbed_notifications"></div>
     	</div>
+      @include('ebtke.front.partials.vars')
     	@include('ebtke.cms.partials.js_footer')
     	<script src="{{ asset('themes/ebtke/cms/pages/auth/registration.js') }}"></script>
 	</body>

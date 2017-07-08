@@ -45,6 +45,23 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('edit-slider', 'Ebtke\Cms\Pages\NewsController@editImageSlider')->name('CmsNewsEditImageSlider');
 					Route::post('delete-slider', 'Ebtke\Cms\Pages\NewsController@deleteImageSlider')->name('CmsNewsDeleteImageSlider');
 				});
+
+				// ROUTE ENENT
+
+				Route::group(['prefix' => 'event'], function () {
+
+					Route::get('/', 'Ebtke\Cms\Pages\EventController@index')->name('CmsEventIndex');
+					Route::get('data', 'Ebtke\Cms\Pages\EventController@getData')->name('CmsEventGetData');
+
+					Route::post('store', 'Ebtke\Cms\Pages\EventController@store')->name('CmsEventStoreData');
+					Route::post('edit', 'Ebtke\Cms\Pages\EventController@edit')->name('CmsEventEditData');
+					Route::post('change-status', 'Ebtke\Cms\Pages\EventController@changeStatus')->name('CmsEventChangeStatus');
+					Route::post('delete', 'Ebtke\Cms\Pages\EventController@delete')->name('CmsEventDeleteData');
+					Route::post('order', 'Ebtke\Cms\Pages\EventController@order')->name('CmsEventOrderData');
+					Route::post('order-images-slider', 'Ebtke\Cms\Pages\EventController@orderImageSlider')->name('CmsEventOrderDataImageSlider');
+					Route::post('edit-slider', 'Ebtke\Cms\Pages\EventController@editImageSlider')->name('CmsEventEditImageSlider');
+					Route::post('delete-slider', 'Ebtke\Cms\Pages\EventController@deleteImageSlider')->name('CmsEventDeleteImageSlider');
+				});
 			});
 
 			// ACCOUNT MANAGEMENT ROUTE

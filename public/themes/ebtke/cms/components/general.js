@@ -351,6 +351,7 @@ function scrollTop()
 function mainGeneral(){
     scrollTop();
     datePicker();
+    datetimePicker();
     setSelectedFolder();
     notify();
 }
@@ -391,6 +392,18 @@ function initNewsContent()
     mainGeneral();
     wizardSlide();
     crudNewsContent();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+    dragPhoto();
+}
+
+// INIT FUNCTION EVENT CONTENT MANAGER CMS
+function initEventContent()
+{
+    mainGeneral();
+    wizardSlide();
+    crudEventContent();
     buttonClickOpen();
     buttonClickClose();
     replaceToCkEditor();
