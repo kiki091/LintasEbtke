@@ -46,7 +46,8 @@ class News extends BaseImplementation implements NewsInterface
 
         $params = [
             "is_active" => true,
-            "limit_data" => isset($data['limit']) ? $data['limit'] : '',
+            "limit_data" => '4',
+            "order" => 'order'
         ];
 
         $newsData = $this->news($params, 'desc', 'array', false);
@@ -214,8 +215,8 @@ class News extends BaseImplementation implements NewsInterface
             $news->isActive($params['is_active']);
         }
 
-        if(isset($params['limit'])) {
-            $news->take($params['limit']);
+        if(isset($params['limit_data'])) {
+            $news->take($params['limit_data'],0);
         }
 
         if(isset($params['order_by'])) {

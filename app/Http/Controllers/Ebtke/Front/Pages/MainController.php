@@ -36,7 +36,7 @@ class MainController extends FrontController
 
     public function index(Request $request)
     {
-        $data['latest_news'] = $this->news->getNewsHome(["limit" => 4]);
+        $data['latest_news'] = $this->news->getNewsHome();
         $data['main_banner'] = $this->mainBanner->getMainBanner(["key" => self::MAIN_BANNER_KEY]);
         $data['history'] = $this->company->getCompanyHistory(["key" => self::REDIS_COMPANY_HISTORY]);
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_LANDING_KEY]);
