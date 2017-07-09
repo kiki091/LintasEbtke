@@ -349,6 +349,7 @@ class Event extends BaseImplementation implements EventInterface
 
         return $this->setResponse(trans('message.cms_success_get_data'), true, $this->eventTransformation->getSingleForEditEventTransform($singleEventData));
     }
+    
     /**
      * Change Status
      * @param $params

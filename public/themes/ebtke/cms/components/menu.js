@@ -51,10 +51,20 @@ function menuNews()
 // JAVASCRIPT EVENT CONTENT MANAGER
 
 function menuEvent()
-{console.log("masuk")
+{
     $('.right_col').load(laroute.route('CmsEventIndex', []), function()
     {
         initEventContent()
+    });
+}
+
+// JAVASCRIPT COMPANY HISTORY CONTENT MANAGER
+
+function menuLintasHistory()
+{
+    $('.right_col').load(laroute.route('CompanyHistoryIndex', []), function()
+    {
+        initCompanyHistory()
     });
 }
 

@@ -5,7 +5,8 @@ $(document).ready(function(){
     cardAccordion();
     wizardSlide();
     vue();
-    dragPhoto()
+    dragPhoto();
+    checkAllLanguage();
 });
 
 /* BUTTON SHOW CARD PHOTO UPLOADER */
@@ -614,3 +615,9 @@ function wizardSlide(){
     })
 
  }
+
+function checkAllLanguage(){
+  $('.check-item-all').change(function () {
+    $(this).parents('.check-item-wrapper').find('.check-item').prop('checked', $(this).prop("checked"));
+  });
+}

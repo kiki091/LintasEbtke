@@ -17802,7 +17802,7 @@ input, textarea, select {
 .wizard--tab .wizard--tab--ul {
     display: -ms-flexbox;
     display: flex;
-    background-color: #F7F7F7;
+    background-color: #EEEEEE;
     margin: 0;
 }
 
@@ -17916,6 +17916,87 @@ input, textarea, select {
     display: block;
     margin: 0;
     white-space: nowrap;
+}
+
+.checkbox--group {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.checkbox--group .form--checkbox__wrapper {
+    padding-right: 30px;
+}
+
+.form--checkbox__wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.form--checkbox__wrapper .checkbox--input {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.form--checkbox__wrapper .checkbox--label {
+    font-size: 12px;
+    color: #4a4a4a;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    cursor: pointer;
+    transition: all .2s;
+    padding-left: 20px;
+}
+
+.form--checkbox__wrapper .checkbox--input + .checkbox--label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: sub;
+    border: 1px solid #D5D5D5;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    transform: translateX(-20px);
+    top: 3px;
+    text-align: center;
+}
+
+.form--checkbox__wrapper .checkbox--input:disabled + .checkbox--label {
+    color: #aaa;
+}
+
+.form--checkbox__wrapper .checkbox--input:disabled:not(:checked) + .checkbox--label:before, .form--checkbox__wrapper .checkbox--input:disabled:checked + .checkbox--label:before {
+    border-color: #bbb;
+    background-color: #ddd;
+}
+
+.form--checkbox__wrapper .checkbox--input:checked + .checkbox--label:before {
+    border: 1px solid #627F8F;
+}
+
+.form--checkbox__wrapper .checkbox--input:disabled:checked + .checkbox--label:after {
+    color: #999;
+}
+
+.form--checkbox__wrapper .checkbox--input:checked + .checkbox--label:after {
+    position: absolute;
+    content: "";
+    margin: auto;
+    background: url(../../svg/ico-check.svg) top center no-repeat;
+    background-size: 17px 16px;
+    width: 17px;
+    height: 16px;
+    top: 0px;
+    left: 1px;
+    transform: translateX(0px);
 }
 .popup__mask__alert.is-visible, .popup--changepass.is-visible {
     opacity: 1;

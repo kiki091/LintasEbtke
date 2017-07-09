@@ -409,3 +409,16 @@ function initEventContent()
     replaceToCkEditor();
     dragPhoto();
 }
+
+// INIT FUNCTION COMPANY HISTORY CONTENT MANAGER CMS
+function initCompanyHistory()
+{
+    mainGeneral();
+    wizardSlide();
+    crudCompanyHistory();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+    dragPhoto();
+    checkAllLanguage();
+}

@@ -50,6 +50,8 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Cms\News', 'App\Repositories\Implementation\Cms\News');
         $this->app->bind('App\Repositories\Contracts\Cms\Tags', 'App\Repositories\Implementation\Cms\Tags');
         $this->app->bind('App\Repositories\Contracts\Cms\Event', 'App\Repositories\Implementation\Cms\Event');
+        $this->app->bind('App\Repositories\Contracts\Cms\CompanyHistory', 'App\Repositories\Implementation\Cms\CompanyHistory');
+        $this->app->bind('App\Repositories\Contracts\Cms\MainBanner', 'App\Repositories\Implementation\Cms\MainBanner');
 
     }
 
@@ -83,6 +85,8 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Cms\News',
             'App\Repositories\Contracts\Cms\Tags',
             'App\Repositories\Contracts\Cms\Event',
+            'App\Repositories\Contracts\Cms\CompanyHistory',
+            'App\Repositories\Contracts\Cms\MainBanner',
         );
     }
 }

@@ -78,7 +78,7 @@ class News extends BaseImplementation implements NewsInterface
                 return $this->setResponse($this->message, false);
             }
             
-            if(!$this->storeDatTranslation($data) == true)
+            if(!$this->storeDataTranslation($data) == true)
             {
                 DB::rollBack();
                 return $this->setResponse($this->message, false);
@@ -168,7 +168,7 @@ class News extends BaseImplementation implements NewsInterface
      * @param $data
      */
 
-    protected function storeDatTranslation($data)
+    protected function storeDataTranslation($data)
     {
         if ($this->isEditMode($data)) {
             $this->removeDatTranslation($data['id']);

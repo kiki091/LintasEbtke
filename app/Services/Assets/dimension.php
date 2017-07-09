@@ -2,6 +2,13 @@
 
 namespace App\Services\Assets;
 
+/**
+ * MAIN BANNER IMAGES DIMENSION
+ */
+if(!defined('MAIN_BANNER_IMAGES_SIZE')) define('MAIN_BANNER_IMAGES_SIZE', 1000);
+
+if(!defined('MAIN_BANNER_WIDTH')) define('MAIN_BANNER_WIDTH', 1920);
+if(!defined('MAIN_BANNER_HEIGHT')) define('MAIN_BANNER_HEIGHT', 763);
 
 /**
  * NEWS IMAGES DIMENSION
@@ -24,3 +31,9 @@ if(!defined('EVENT_THUMBNAIL_HEIGHT')) define('EVENT_THUMBNAIL_HEIGHT', 305);
 
 if(!defined('EVENT_IMAGES_WIDTH')) define('EVENT_IMAGES_WIDTH', 930);
 if(!defined('EVENT_IMAGES_HEIGHT')) define('EVENT_IMAGES_HEIGHT', 493);
+
+
+/**
+ * COMPANY HISTORY FILE SIZE
+ */
+if(!defined('COMPANY_HISTORY_SIZE')) define('COMPANY_HISTORY_SIZE', 12000);

@@ -62,6 +62,26 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('edit-slider', 'Ebtke\Cms\Pages\EventController@editImageSlider')->name('CmsEventEditImageSlider');
 					Route::post('delete-slider', 'Ebtke\Cms\Pages\EventController@deleteImageSlider')->name('CmsEventDeleteImageSlider');
 				});
+
+				// ROUTE COMPANY
+
+				Route::group(['prefix' => 'company'], function () {
+
+
+					// ROUTE COMPANY HISTORY
+					Route::group(['prefix' => 'history'], function () {
+
+						Route::get('/', 'Ebtke\Cms\Pages\CompanyHistoryController@index')->name('CompanyHistoryIndex');
+						Route::get('data', 'Ebtke\Cms\Pages\CompanyHistoryController@getData')->name('CompanyHistoryGetData');
+						Route::post('store', 'Ebtke\Cms\Pages\CompanyHistoryController@store')->name('CompanyHistoryStoreData');
+						Route::post('edit', 'Ebtke\Cms\Pages\CompanyHistoryController@edit')->name('CompanyHistoryEditData');
+
+						Route::post('store-banner', 'Ebtke\Cms\Pages\CompanyHistoryController@storeBanner')->name('CompanyHistoryStoreBannerImages');
+						Route::post('edit-banner', 'Ebtke\Cms\Pages\CompanyHistoryController@editBanner')->name('CompanyHistoryEditBanner');
+					});
+
+				});
+
 			});
 
 			// ACCOUNT MANAGEMENT ROUTE

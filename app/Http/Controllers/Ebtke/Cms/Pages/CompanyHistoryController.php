@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ebtke\Cms\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Custom\DataHelper;
+use App\Services\Bridge\Cms\MainBanner as MainBannerServices;
 use App\Services\Bridge\Cms\CompanyHistory as CompanyHistoryServices;
 use App\Services\Api\Response as ResponseService;
 
@@ -17,13 +18,17 @@ use Auth;
 class CompanyHistoryController extends CmsBaseController
 {
 
-    protected $event;
+    protected $mainBanner;
+    protected $companyHistory;
     protected $response;
     protected $validationMessage = '';
 
-    public function __construct(CompanyHistoryServices $event,ResponseService $response)
+    const BANNER_KEY = 'banner:company:history';
+
+    public function __construct(MainBannerServices $mainBanner, CompanyHistoryServices $companyHistory,ResponseService $response)
     {
-        $this->event = $event;
+        $this->mainBanner = $mainBanner;
+        $this->companyHistory = $companyHistory;
         $this->response = $response;
     }
 
@@ -33,7 +38,7 @@ class CompanyHistoryController extends CmsBaseController
      */
     public function index(Request $request)
     {
-        $blade = self::URL_BLADE_CMS. '.event.main';
+        $blade = self::URL_BLADE_CMS. '.company.history.main';
         
         if(view()->exists($blade)) {
         
@@ -52,7 +57,9 @@ class CompanyHistoryController extends CmsBaseController
 
     public function getData(Request $request)
     {
-        $data['event'] = $this->event->getData();
+        $data['main_banner'] = $this->mainBanner->getData(['key'=>self::BANNER_KEY]);
+        $data['company_history'] = $this->companyHistory->getData();
+        
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
     }
 
@@ -62,7 +69,7 @@ class CompanyHistoryController extends CmsBaseController
      */
 
     public function store(Request $request)
-    {//dd($request->all());
+    {
         $validator = Validator::make($request->all(), $this->validationStore($request));
 
         if ($validator->fails()) {
@@ -71,7 +78,27 @@ class CompanyHistoryController extends CmsBaseController
 
         } else {
             //TODO: case pass
-            return $this->event->store($request->except(['_token']));
+            return $this->companyHistory->store($request->except(['_token']));
+        }
+
+    }
+
+    /**
+     * Store Data
+     * @param Request $request
+     */
+
+    public function storeBanner(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->validationStoreBanner($request));
+
+        if ($validator->fails()) {
+            //TODO: case fail
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
+
+        } else {
+            //TODO: case pass
+            return $this->mainBanner->store($request->except(['_token']), self::BANNER_KEY);
         }
 
     }
@@ -82,77 +109,16 @@ class CompanyHistoryController extends CmsBaseController
      */
     public function edit(Request $request)
     {
-        return $this->event->edit($request->except(['_token']));
+        return $this->companyHistory->edit($request->except(['_token']));
     }
 
     /**
-     * Change Status Data
+     * Edit Main Banner
      * @param Request $request
      */
-    public function changeStatus(Request $request)
+    public function editBanner(Request $request)
     {
-        return $this->event->changeStatus($request->except(['_token']));
-    }
-
-    /**
-     * Delete Data
-     * @param Request $request
-     */
-    public function delete(Request $request)
-    {
-        return $this->event->delete($request->except(['_token']));
-    }
-
-    /**
-     * Ordering
-     * @param Request $request
-     * @return mixed
-     */
-    public function order(Request $request)
-    {
-        return $this->event->order($request->input('list_order'));
-    }
-
-    /**
-     * Ordering Image Slider
-     * @param Request $request
-     * @return mixed
-     */
-    public function orderImageSlider(Request $request)
-    {
-
-        return true;
-    }
-
-    /**
-     * Edit Image Slider 
-     * @param Request $request
-     */
-
-    public function editImageSlider(Request $request)
-    {
-        
-        $validator = Validator::make($request->all(), $this->validateEditImageSlider($request));
-
-        if ($validator->fails()) {
-            //TODO: case fail
-            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
-
-        } else {
-            //TODO: case pass
-            return $this->event->editImageSlider($request->except(['_token', 'filename_edit']));
-        }
-        
-    }
-
-    /**
-     * Delete Image Slider
-     * @param Request $request
-     * @return mixed
-     */
-    public function deleteImageSlider(Request $request)
-    {
-        return $this->event->deleteImageSlider($request->except('_token'));
+        return $this->mainBanner->edit($request->except(['_token']));
     }
 
     /**
@@ -165,25 +131,18 @@ class CompanyHistoryController extends CmsBaseController
             'title.*'               => 'required',
             'slug.*'                => 'required',
             'introduction.*'        => 'required',
-            'description.*'         => 'required',
+            'description_left.*'    => 'required',
+            'description_right.*'   => 'required',
             'meta_title.*'          => 'required',
             'meta_keyword.*'        => 'required',
             'meta_description.*'    => 'required',
-            'event_related_id.*'    => 'required',
-            'date_start'            => 'required',
-            'date_end'              => 'required',
-            'thumbnail'             => 'required|dimensions:width='.EVENT_THUMBNAIL_WIDTH.',height='.EVENT_THUMBNAIL_HEIGHT.'|max:'. EVENT_IMAGES_SIZE .'|mimes:jpeg,jpg',
-            'filename.*'            => 'required|dimensions:width='.EVENT_IMAGES_WIDTH.',height='.EVENT_IMAGES_HEIGHT.'|max:'. EVENT_IMAGES_SIZE .'|mimes:jpeg,jpg',
+            'file'                  => 'required|max:'. COMPANY_HISTORY_SIZE .'|mimes:pdf,doc,docx,xls,xlsx',
         ];
 
         if ($this->isEditMode($request->input())) {
 
-            if (is_null($request->file('thumbnail'))) {
-                unset($rules['thumbnail']);
-            }
-
-            if (is_null($request->file('filename.*'))) {
-                unset($rules['filename.*']);
+            if (is_null($request->file('file'))) {
+                unset($rules['file']);
             }
         }
 
@@ -191,19 +150,25 @@ class CompanyHistoryController extends CmsBaseController
     }
 
     /**
-     * Validate Edit Slider Image 
+     * Validation Store Landing Offers
+     * @return array
      */
-
-    
-    private function validateEditImageSlider($request = array())
+    private function validationStoreBanner($request = array())
     {
         $rules = [
-            'filename.*'                => 'required|dimensions:width='.EVENT_IMAGES_WIDTH.',height='.EVENT_IMAGES_HEIGHT.'|max:'. EVENT_IMAGES_SIZE .'|mimes:jpeg,jpg',
+            'filename'                  => 'required|dimensions:width='.MAIN_BANNER_WIDTH.',height='.MAIN_BANNER_HEIGHT.'|max:'. MAIN_BANNER_IMAGES_SIZE .'|mimes:jpeg,jpg',
         ];
+
+        if ($this->isEditMode($request->input())) {
+
+            if (is_null($request->file('filename'))) {
+                unset($rules['filename']);
+            }
+        }
 
         return $rules;
     }
-    
+
     /**
      * Check is edit mode or no
      * @param $data

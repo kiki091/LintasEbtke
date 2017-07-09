@@ -37,3 +37,5 @@
 <!-- Javascript CONTENT MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/news.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/event.js') }}"></script>
+<!-- Javascript COMPANY MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/company-history.js') }}"></script>
