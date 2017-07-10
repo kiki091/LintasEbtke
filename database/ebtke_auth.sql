@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke_auth
+-- Host: 127.0.0.1    Database: ebtke_auth
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -73,7 +73,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (1,'News','news','menuNews()',1,0,1,NULL,NULL),(2,'Event','event','menuEvent()',1,0,1,NULL,NULL),(3,'Lintas History','lintas-history','menuLintasHistory()',2,0,1,NULL,NULL),(4,'Vision and Mission','vision-and-mission','menuVisionMission()',2,0,1,NULL,NULL),(5,'Organization Structure','organization-structure','menuOrganizationStructure()',2,0,1,NULL,NULL),(6,'Lintas Of Scope','lintas-of-scope','menuLintasScope()',2,0,1,NULL,NULL),(7,'Procedure','procedure','menuProcedure()',3,0,1,NULL,NULL),(8,'Potentials','potentials','menuPotentials()',3,1,1,NULL,NULL),(9,'Green Pages','green-pages','menuGreenPages()',3,0,1,NULL,NULL),(10,'Renewable Energy','renewable-energi','menuRenewableEnergi()',4,1,1,NULL,NULL),(11,'Geothermal','geothermal','menuGeothermal()',4,0,1,NULL,NULL),(12,'Bio Energy','bio-energi','menuBioEnergi()',4,0,1,NULL,'2017-06-29 02:08:01'),(13,'Others','others','menuOthers()',4,0,1,NULL,NULL),(14,'Tools','tools','menuTools()',5,0,1,NULL,NULL),(15,'White Papers','white-papers','menuWhitePapers()',5,0,1,NULL,NULL),(16,'Publications','publications','menuPublications()',5,0,1,NULL,NULL),(17,'Feasibility Studies','feasibility-studies','menuFeasibilityStudies()',5,0,1,NULL,NULL),(18,'NREEC Institution','nreec-institution','menuNreecInstitution()',6,0,1,NULL,NULL),(19,'NREEC Resources','nreec-resources','menuNreecResources()',6,0,1,NULL,NULL),(20,'NREEC Events','nreec-events','menuNreecEvents()',6,0,1,NULL,NULL);
+INSERT INTO `menu` VALUES (1,'News','news','menuNews()',1,0,1,NULL,NULL),(2,'Event','event','menuEvent()',1,0,1,NULL,NULL),(3,'Lintas History','lintas-history','menuLintasHistory()',2,0,1,NULL,NULL),(4,'Vision and Mission','vision-and-mission','menuVisionMission()',2,0,1,NULL,NULL),(5,'Organization Structure','organization-structure','menuOrganizationStructure()',2,0,1,NULL,NULL),(6,'Lintas Of Scope','lintas-of-scope','menuLintasScope()',2,0,1,NULL,NULL),(7,'Procedure','procedure','menuProcedure()',3,0,1,NULL,NULL),(8,'Potentials','potentials','menuPotentials()',3,1,1,NULL,NULL),(9,'Green Pages','green-pages-category','menuGreenPagesCategory()',3,0,1,NULL,NULL),(10,'Renewable Energy','renewable-energi','menuRenewableEnergi()',4,1,1,NULL,NULL),(11,'Geothermal','geothermal','menuGeothermal()',4,0,1,NULL,NULL),(12,'Bio Energy','bio-energi','menuBioEnergi()',4,0,1,NULL,'2017-06-29 02:08:01'),(13,'Others','others','menuOthers()',4,0,1,NULL,NULL),(14,'Tools','tools','menuTools()',5,0,1,NULL,NULL),(15,'White Papers','white-papers','menuWhitePapers()',5,0,1,NULL,NULL),(16,'Publications','publications','menuPublications()',5,0,1,NULL,NULL),(17,'Feasibility Studies','feasibility-studies','menuFeasibilityStudies()',5,0,1,NULL,NULL),(18,'NREEC Institution','nreec-institution','menuNreecInstitution()',6,0,1,NULL,NULL),(19,'NREEC Resources','nreec-resources','menuNreecResources()',6,0,1,NULL,NULL),(20,'NREEC Events','nreec-events','menuNreecEvents()',6,0,1,NULL,NULL);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,7 +162,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (2,1),(16,1),(1,2);
+INSERT INTO `role` VALUES (1,2),(2,1),(16,1);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +316,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','sheqbo@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','KBt38AhibBVNAcGTsGnwfEuknFrxbDxke9h0Gerrel2zg5dxTVB9R7Adz8YT',1,2,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(16,'kiki','kiki@gmail.com','$2y$10$DrIa21Ru0w4QrD05nV6b4O0G8PQoJVC5gq1kazqoOWyF0Ea15jTma','jckWXnh6SDSa3oBMWcdODN9G2j60S1igfbP3tJDwZ9VfTcsWao0qRS5ScyQV',1,1,'2017-07-01 20:17:35','2017-07-01 20:39:49');
+INSERT INTO `users` VALUES (1,'admin','sheqbo@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','cbOIFZ3Z7g1fq3srFzk1aNpslSLbXPOIMvwoRiD1iReOu77I1MukWR8HTLRe',1,2,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(16,'kiki','kiki@gmail.com','$2y$10$DrIa21Ru0w4QrD05nV6b4O0G8PQoJVC5gq1kazqoOWyF0Ea15jTma','jckWXnh6SDSa3oBMWcdODN9G2j60S1igfbP3tJDwZ9VfTcsWao0qRS5ScyQV',1,1,'2017-07-01 20:17:35','2017-07-01 20:39:49');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -329,4 +329,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-02 12:17:23
+-- Dump completed on 2017-07-10 18:22:48

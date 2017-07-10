@@ -76,7 +76,7 @@
                 <div id="green__pages__list">
                 @foreach($landing as $key=> $val_landing)
                 <div class="col-md-3 green__pages {{ $val_landing['slug_category'] }}" data-cat="{{ $val_landing['slug_category'] }}">
-                    <div id="margin__centered" class="border__gray column sog-tile">
+                    <div class="border__gray sog-tile col-md-12">
                         <div style="height: 320px;">
                             <div class="photo-bg" style="background-image:url({{ $val_landing['thumbnail_url'] }}) "></div>
                             <div class="tile-text">

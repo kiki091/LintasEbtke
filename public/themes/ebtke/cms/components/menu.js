@@ -68,3 +68,13 @@ function menuLintasHistory()
     });
 }
 
+
+// JAVASCRIPT GREEN PAGES CONTENT MANAGER
+
+function menuGreenPagesCategory()
+{
+    $('.right_col').load(laroute.route('GreenPagesCategoryIndex', []), function()
+    {
+        initGreenPagesCategory()
+    });
+}

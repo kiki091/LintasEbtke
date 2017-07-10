@@ -422,3 +422,14 @@ function initCompanyHistory()
     dragPhoto();
     checkAllLanguage();
 }
+
+// INIT FUNCTION COMPANY HISTORY CONTENT MANAGER CMS
+function initGreenPagesCategory()
+{
+    mainGeneral();
+    wizardSlide();
+    crudGreenPagesCategory();
+    buttonClickOpen();
+    buttonClickClose();
+    checkAllLanguage();
+}

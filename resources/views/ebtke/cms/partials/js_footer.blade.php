@@ -39,3 +39,6 @@
 <script src="{{ asset('themes/ebtke/cms/pages/event.js') }}"></script>
 <!-- Javascript COMPANY MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/company-history.js') }}"></script>
+<!-- Javascript INVESTMENT SERVICES MANAGEMENT SYSTEM -->
+	<!-- Javascript GREEN PAGES CATRGORY MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/green-pages-category.js') }}"></script>

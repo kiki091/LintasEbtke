@@ -82,6 +82,26 @@ Route::group(['middleware' => ['web']], function ()
 
 				});
 
+				// ROUTE INVESTMENT SERVICES
+				
+				Route::group(['prefix' => 'investment-services'], function () {
+
+					// ROUTE GREEN PAGES
+					Route::group(['prefix' => 'green-pages'], function () {
+
+						Route::group(['prefix' => 'category'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\GreenPagesCategoryController@index')->name('GreenPagesCategoryIndex');
+							Route::get('data', 'Ebtke\Cms\Pages\GreenPagesCategoryController@getData')->name('GreenPagesCategoryGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\GreenPagesCategoryController@store')->name('GreenPagesCategoryStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\GreenPagesCategoryController@edit')->name('GreenPagesCategoryEditData');
+							Route::post('change-status', 'Ebtke\Cms\Pages\GreenPagesCategoryController@changeStatus')->name('GreenPagesCategoryChangeStatus');
+							Route::post('delete', 'Ebtke\Cms\Pages\GreenPagesCategoryController@delete')->name('GreenPagesCategoryDeleteData');
+							Route::post('order', 'Ebtke\Cms\Pages\GreenPagesCategoryController@order')->name('GreenPagesCategoryOrderData');
+						});
+					});
+				});
+
 			});
 
 			// ACCOUNT MANAGEMENT ROUTE

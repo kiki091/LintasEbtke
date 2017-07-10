@@ -10339,6 +10339,7 @@ iframe {
     cursor: pointer;
     font-weight: 800;
     font-size: 11px;
+    text-transform: uppercase;
     font-family: "Raleway Webfont";
 }
 
