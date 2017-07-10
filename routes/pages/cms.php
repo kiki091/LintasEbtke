@@ -99,6 +99,20 @@ Route::group(['middleware' => ['web']], function ()
 							Route::post('delete', 'Ebtke\Cms\Pages\GreenPagesCategoryController@delete')->name('GreenPagesCategoryDeleteData');
 							Route::post('order', 'Ebtke\Cms\Pages\GreenPagesCategoryController@order')->name('GreenPagesCategoryOrderData');
 						});
+
+						Route::group(['prefix' => 'index'], function () {
+							Route::get('/', 'Ebtke\Cms\Pages\GreenPagesController@index')->name('GreenPagesIndex');
+							Route::get('data', 'Ebtke\Cms\Pages\GreenPagesController@getData')->name('GreenPagesGetData');
+
+							Route::post('store', 'Ebtke\Cms\Pages\GreenPagesController@store')->name('GreenPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\GreenPagesController@edit')->name('GreenPagesEditData');
+							Route::post('change-status', 'Ebtke\Cms\Pages\GreenPagesController@changeStatus')->name('GreenPagesChangeStatus');
+							Route::post('delete', 'Ebtke\Cms\Pages\GreenPagesController@delete')->name('GreenPagesDeleteData');
+							Route::post('order', 'Ebtke\Cms\Pages\GreenPagesController@order')->name('GreenPagesOrderData');
+							Route::post('order-images-slider', 'Ebtke\Cms\Pages\GreenPagesController@orderImageSlider')->name('GreenPagesOrderDataImageSlider');
+							Route::post('edit-slider', 'Ebtke\Cms\Pages\GreenPagesController@editImageSlider')->name('GreenPagesEditImageSlider');
+							Route::post('delete-slider', 'Ebtke\Cms\Pages\GreenPagesController@deleteImageSlider')->name('GreenPagesDeleteImageSlider');
+						});
 					});
 				});
 

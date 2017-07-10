@@ -423,7 +423,7 @@ function initCompanyHistory()
     checkAllLanguage();
 }
 
-// INIT FUNCTION COMPANY HISTORY CONTENT MANAGER CMS
+// INIT FUNCTION GREEN PAGES CONTENT MANAGER CMS
 function initGreenPagesCategory()
 {
     mainGeneral();
@@ -432,4 +432,16 @@ function initGreenPagesCategory()
     buttonClickOpen();
     buttonClickClose();
     checkAllLanguage();
+}
+
+// INIT FUNCTION GREEN PAGES CONTENT MANAGER CMS
+function menuGreenPages()
+{
+    mainGeneral();
+    wizardSlide();
+    crudGreenPages();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+    dragPhoto();
 }
