@@ -39,42 +39,42 @@
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Office Name</label>
-									<input v-model="models.office_name" :name="'office_name'" type="text" id="office_name" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.office_name" name="office_name" type="text" id="office_name" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--office_name"></div>
 								</div>
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Phone Number</label>
-									<input v-model="models.phone_number" :name="'phone_number'" type="text" id="phone_number" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.phone_number" name="phone_number" type="text" id="phone_number" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--phone_number"></div>
 								</div>
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Fax Number</label>
-									<input v-model="models.fax_number" :name="'fax_number'" type="text" id="fax_number" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.fax_number" name="fax_number" type="text" id="fax_number" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--fax_number"></div>
 								</div>
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Email</label>
-									<input v-model="models.email" :name="'email'" type="email" id="email" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.email" name="email" type="email" id="email" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--email"></div>
 								</div>
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Postal Code</label>
-									<input v-model="models.postal_code" :name="'postal_code'" type="text" id="postal_code" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.postal_code" name="postal_code" type="text" id="postal_code" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--postal_code"></div>
 								</div>
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
 									<label>Website</label>
-									<input v-model="models.website" :name="'website'" type="url" id="website" class="new__form__input__field" placeholder="Enter the office name here">
+									<input v-model="models.website" name="website" type="url" id="website" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--website"></div>
 								</div>
 							</div>

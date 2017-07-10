@@ -75,7 +75,7 @@ class GreenPages extends BaseModel
     /**
      * @param $query
      */
-    public function scopeId($query, $id)
+    public function scopeId($query, $params)
     {
         return $query->where('id', $params);
     }

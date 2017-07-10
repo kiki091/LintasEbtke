@@ -435,7 +435,7 @@ function initGreenPagesCategory()
 }
 
 // INIT FUNCTION GREEN PAGES CONTENT MANAGER CMS
-function menuGreenPages()
+function initGreenPages()
 {
     mainGeneral();
     wizardSlide();

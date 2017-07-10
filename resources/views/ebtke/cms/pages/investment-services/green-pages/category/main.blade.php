@@ -29,6 +29,9 @@
     </div>
     
     <div class="col-md-12 col-sm-12 col-xs-12">
+    	
+    	
+    	@include('ebtke.cms.pages.investment-services.green-pages.folder')
     	<!-- Include form -->
     	@include('ebtke.cms.pages.investment-services.green-pages.category.partials.form')
     	<!-- / End include form -->

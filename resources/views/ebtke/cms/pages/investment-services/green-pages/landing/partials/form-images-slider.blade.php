@@ -1,4 +1,4 @@
-<form action="{{ route('CmsEventEditImageSlider') }}" method="POST" id="EventImageSliderFrom" enctype="multipart/form-data" files="true" @submit.prevent>
+<form action="{{ route('GreenPagesEditImageSlider') }}" method="POST" id="GreenPagesImageSliderFrom" enctype="multipart/form-data" files="true" @submit.prevent>
 	<div class="main__content__form__layer" id="toggle-form-photo-uploader-content" style="display: none;">
 		<div class="create__form__wrapper">
 			<div class="form--top flex-between">

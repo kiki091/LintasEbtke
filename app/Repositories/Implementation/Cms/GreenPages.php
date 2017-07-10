@@ -126,7 +126,7 @@ class GreenPages extends BaseImplementation implements GreenPagesInterface
             if ($this->isEditMode($data)) {
                 $store          = $this->greenPages->find($data['id']);
 
-                if (!empty($data['thumbnail'])) {
+                if (isset($data['thumbnail']) && !empty($data['thumbnail'])) {
                     $store->thumbnail       = $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName();
                 }
                 
@@ -134,20 +134,21 @@ class GreenPages extends BaseImplementation implements GreenPagesInterface
 
             } else {
             
-                $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
-                $store->office_name             = isset($data['office_name']) ? $data['office_name'] : '';
-                $store->slug                    = isset($data['slug']) ? str_slug($data['slug']) : '';
-                $store->phone_number            = isset($data['phone_number']) ? $data['phone_number'] : '';
-                $store->fax_number              = isset($data['fax_number']) ? $data['fax_number'] : '';
-                $store->email                   = isset($data['email']) ? $data['email'] : '';
-                $store->postal_code             = isset($data['postal_code']) ? $data['postal_code'] : '';
-                $store->website                 = isset($data['website']) ? $data['website'] : '';
-                $store->green_pages_category_id = isset($data['green_pages_category_id']) ? $data['green_pages_category_id'] : '';
                 $store->is_active               = true;
                 $store->order                   = $this->greenPages->max('order')+1;
                 $store->created_at              = $this->mysqlDateTimeFormat();
                 $store->created_by              = DataHelper::userId();
             }
+
+            $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
+            $store->office_name             = isset($data['office_name']) ? $data['office_name'] : '';
+            $store->slug                    = isset($data['slug']) ? $data['slug'] : '';
+            $store->phone_number            = isset($data['phone_number']) ? $data['phone_number'] : '';
+            $store->fax_number              = isset($data['fax_number']) ? $data['fax_number'] : '';
+            $store->email                   = isset($data['email']) ? $data['email'] : '';
+            $store->postal_code             = isset($data['postal_code']) ? $data['postal_code'] : '';
+            $store->website                 = isset($data['website']) ? $data['website'] : '';
+            $store->green_pages_category_id = isset($data['green_pages_category_id']) ? $data['green_pages_category_id'] : '';
 
             if($save = $store->save())
             {

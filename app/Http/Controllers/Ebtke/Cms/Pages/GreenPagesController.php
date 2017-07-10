@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ebtke\Cms\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Custom\DataHelper;
+use App\Services\Bridge\Cms\GreenPagesCategory as GreenPagesCategoryServices;
 use App\Services\Bridge\Cms\GreenPages as GreenPagesServices;
 use App\Services\Api\Response as ResponseService;
 
@@ -18,12 +19,14 @@ class GreenPagesController extends CmsBaseController
 {
 
     protected $greenPages;
+    protected $greenPagesCategory;
     protected $response;
     protected $validationMessage = '';
 
-    public function __construct(GreenPagesServices $greenPages,ResponseService $response)
+    public function __construct(GreenPagesCategoryServices $greenPagesCategory, GreenPagesServices $greenPages,ResponseService $response)
     {
         $this->greenPages = $greenPages;
+        $this->greenPagesCategory = $greenPagesCategory;
         $this->response = $response;
     }
 
@@ -52,6 +55,7 @@ class GreenPagesController extends CmsBaseController
 
     public function getData(Request $request)
     {
+        $data['category'] = $this->greenPagesCategory->getData();
         $data['green_pages'] = $this->greenPages->getData();
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
     }
@@ -71,7 +75,7 @@ class GreenPagesController extends CmsBaseController
 
         } else {
             //TODO: case pass
-            return $this->greenPages->store($request->except(['_token']));
+            return $this->greenPages->store($request->except(['_token','filename_url']));
         }
 
     }
@@ -163,7 +167,6 @@ class GreenPagesController extends CmsBaseController
     {
         $rules = [
             'office_name'               => 'required',
-            'slug'                      => 'required',
             'phone_number'              => 'required',
             'fax_number'                => 'required',
             'email'                     => 'required',

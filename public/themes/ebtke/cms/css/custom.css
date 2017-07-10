@@ -5398,3 +5398,54 @@ input, textarea, select {
     left: 1px;
     transform: translateX(0px);
 }
+
+.folder--nav {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 15px 1%;
+    position: relative;
+    z-index: 0;
+}
+
+.folder--nav .folder--nav--link.folder--selected {
+    cursor: default;
+    pointer-events: none;
+}
+
+.folder--nav .folder--nav--link {
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    visibility: visible;
+    margin-right: 15px;
+    background-color: white;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05);
+    transition: all .2s;
+}
+
+.folder--nav .folder--nav--link i {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 12px;
+    visibility: visible;
+    height: 50px;
+    background-color: #eeeeee;
+    color: #5a738e;
+    transition: all .2s;
+}
+
+.folder--nav .folder--nav--link .folder--nav--link--span {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 18px 40px 18px 15px;
+    font-size: 14px;
+}
+
+.folder--nav .folder--nav--link.folder--selected i {
+    background-color: #5a738e;
+    color: #fff;
+}

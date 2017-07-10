@@ -30,6 +30,8 @@
     
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<!-- Include form -->
+
+    	@include('ebtke.cms.pages.investment-services.green-pages.folder')
     	@include('ebtke.cms.pages.investment-services.green-pages.landing.partials.form')
     	@include('ebtke.cms.pages.investment-services.green-pages.landing.partials.form-images-slider')
     	<!-- / End include form -->
@@ -39,7 +41,7 @@
 					<h2>@{{ form_add_title }}</h2>
 				</div>
 				<div class="content__btn">
-					<a href="#" class="btn__add" id="toggle-form">Add Event</a>
+					<a href="#" class="btn__add" id="toggle-form">Add Pages</a>
 		       	</div>
 		    </div>
 		    <div class="content__bottom">
@@ -59,7 +61,7 @@
 									<div class="news__list__desc">
 										<div class="news__name">
 											<a href="#edit-data" class="title__name content__edit__hover" title="Edit Data" @click="editData(green_pages.id)">
-												@{{ green_pages.title }}
+												@{{ green_pages.office_name }}
 											</a>
 										</div>
 									</div>

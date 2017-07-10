@@ -17,10 +17,9 @@ function crudGreenPages() {
         data: {
 
             models: {
-                
+                id: '',
                 language_selected : [],
                 all_language : false,
-                title : {"en":"","id":""},
                 address : {"en":"","id":""},
                 introduction : {"en":"","id":""},
                 description : {"en":"","id":""},
@@ -331,7 +330,7 @@ function crudGreenPages() {
                         this.id = response.data.id
                         this.filename_edit = response.data.filename_url
                         this.total_detail_image = response.data.total_detail_image
-                        this.images_edit = response.data.event_images
+                        this.images_edit = response.data.green_pages_images
 
                         this.form_add_title = "Edit Image Slider Green Pages Manager"
                         this.default_total_detail_image = [];
@@ -420,8 +419,7 @@ function crudGreenPages() {
             resetForm: function(setEditToFalse) {
 
                 for (var supported_lang in this.supported_language) {
-                    this.models.title[supported_lang] = ''
-                    this.models.slug[supported_lang] = ''
+                    this.models.address[supported_lang] = ''
                     this.models.introduction[supported_lang] = ''
                     this.models.description[supported_lang] = ''
                     this.models.meta_title[supported_lang] = ''
@@ -432,8 +430,15 @@ function crudGreenPages() {
                 this.models.language_selected = [this.lintas_default_language]
 
                 this.models.id = ''
-                this.models.date_start = ''
-                this.models.date_end = ''
+                this.models.email = ''
+                this.models.fax_number = ''
+                this.models.green_pages_category_id = ''
+                this.models.phone_number = ''
+                this.models.postal_code = ''
+                this.models.slug = ''
+                this.models.website = ''
+                this.models.office_name = ''
+
 
                 this.models['language_selected'] = [];
                 this.thumbnail = '';
@@ -441,7 +446,7 @@ function crudGreenPages() {
                 this.filename_edit = {0: '', 1:'', 2:'', 3: ''};
 
                 this.images_edit = {0: '', 1:'', 2:'', 3: ''},
-                this.event_images = [];
+                this.green_pages_images = [];
                 this.default_total_detail_image = [0];
                 this.total_detail_image = [0];
                 this.id = ''

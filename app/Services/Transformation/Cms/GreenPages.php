@@ -55,17 +55,16 @@ class GreenPages
      */
     protected function setGreenPagesCmsTransform($data)
     {
-        
+    
 
         $dataTransform = array_map(function($data) {
 
             return [
                 
                 'id'            => isset($data['id']) ? $data['id'] : '',
-                'title'         => isset($data['translation']['title']) ? $data['translation']['title'] : '',
+                'office_name'   => isset($data['office_name']) ? $data['office_name'] : '',
+                'email'         => isset($data['email']) ? $data['email'] : '',
                 'is_active'     => isset($data['is_active']) ? $data['is_active'] : false,
-                'date_start'    => isset($data['date_start']) ? Carbon::parse($data['date_start'])->toDayDateTimeString() : '',
-                'date_end'      => isset($data['date_end']) ? Carbon::parse($data['date_end'])->toDayDateTimeString() : '',
                 'thumbnail_url' => isset($data['thumbnail']) ? asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '',
             ];
         },$data);
@@ -144,7 +143,6 @@ class GreenPages
 
             $returnValue = [];
             foreach ($data as $value) {
-                $returnValue['title'][$value['locale']] = $value['title'];
                 $returnValue['address'][$value['locale']] = $value['address'];
                 $returnValue['introduction'][$value['locale']] = $value['introduction'];
                 $returnValue['description'][$value['locale']] = $value['description'];
