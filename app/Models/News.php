@@ -41,7 +41,7 @@ class News extends BaseModel
      */
     public function related()
     {
-        return $this->hasMany('App\Models\NewsRelated', 'news_id', 'id')->with('related_news')->take('3')->orderBy('id', 'asc');
+        return $this->hasMany('App\Models\NewsRelated', 'news_id', 'id')->with('related_news')->take('3')->orderBy('news_related_id', 'random');
     }
 
     /**

@@ -62,7 +62,7 @@
                 </li>
                 <li>
                     <a href="#">{{ trans('navigation/sub_menu.potentials') }}</a>
-                    <ul>
+                    <ul style="display: table;">
                         <li>
                             <a href="{{ route('InvestmentServicesPotentialsGeothermalLanding') }}">
                                 {{ trans('navigation/sub_menu.gheotermal') }}

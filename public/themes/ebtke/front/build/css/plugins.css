@@ -14422,8 +14422,8 @@ nav{width:100%;}
 #cssmenu ul ul li,#cssmenu li:hover > ul > li{height: 60px;padding: 10px;}
 #cssmenu ul li a,#cssmenu ul ul li a{width:100%;border-bottom:0}
 #cssmenu > ul > li{float:none}
-#cssmenu ul ul li a{padding-left:25px}
-#cssmenu ul ul li{background:#333!important;}
+#cssmenu ul ul li a{padding-left:25px;padding-bottom: 20px;}
+#cssmenu ul ul li{background:#333!important;display: inline-table;}
 #cssmenu ul ul li:hover{background:#363636!important}
 #cssmenu ul ul ul li a{padding-left:35px}
 #cssmenu ul ul li a{color:#ddd;background:none}
