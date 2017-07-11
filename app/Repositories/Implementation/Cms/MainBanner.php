@@ -102,13 +102,14 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
 
             } else {
 
-                $store->key                  = isset($key) ? $key : '';
                 $store->is_active            = true;
                 $store->order                = $this->mainBanner->max('order')+1;
                 $store->created_by           = DataHelper::userId();
                 $store->created_at           = $this->mysqlDateTimeFormat();
-                $store->filename             = isset($data['filename']) ? $this->uniqueIdImagePrefix . '_' .$data['filename']->getClientOriginalName() : '';
             }
+            
+            $store->key                  = isset($key) ? $key : '';
+            $store->filename             = isset($data['filename']) ? $this->uniqueIdImagePrefix . '_' .$data['filename']->getClientOriginalName() : '';
 
             if($save = $store->save()) {
                 $this->lastInsertId = $store->id;

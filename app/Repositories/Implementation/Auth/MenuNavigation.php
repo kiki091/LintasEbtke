@@ -101,6 +101,8 @@ class MenuNavigation extends BaseImplementation implements MenuNavigationInterfa
 
         if(isset($params['order'])) {
             $menuNavigation->orderBy($params['order'], $orderType);
+        } else {
+            $menuNavigation->orderBy('order', 'asc');
         }
 
 

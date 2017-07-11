@@ -115,11 +115,12 @@ class CompanyHistory extends BaseImplementation implements CompanyHistoryInterfa
 
             } else {
             
-                $store->file   = isset($data['file']) ? $this->uniqueIdImagePrefix . '_' .$data['file']->getClientOriginalName() : '';
                 $store->downloaded  = '0';
                 $store->created_at  = $this->mysqlDateTimeFormat();
                 $store->created_by  = DataHelper::userId();
             }
+            
+            $store->file   = isset($data['file']) ? $this->uniqueIdImagePrefix . '_' .$data['file']->getClientOriginalName() : '';
 
             if($save = $store->save())
             {

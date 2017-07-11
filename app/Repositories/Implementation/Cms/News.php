@@ -141,14 +141,15 @@ class News extends BaseImplementation implements NewsInterface
 
             } else {
             
-                $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
                 $store->is_active   = true;
                 $store->total_view  = '0';
                 $store->order       = $this->news->max('order')+1;
-                $store->tag_id      = isset($data['tag_id']) ? $data['tag_id'] : '';
                 $store->created_at  = $this->mysqlDateTimeFormat();
                 $store->created_by  = DataHelper::userId();
             }
+            
+            $store->tag_id      = isset($data['tag_id']) ? $data['tag_id'] : '';
+            $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
 
             if($save = $store->save())
             {

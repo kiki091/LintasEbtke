@@ -341,16 +341,18 @@ class Users extends BaseImplementation implements UserInterface
 
             if ($this->isEditMode($data)) {
                 $store          = $this->user->find($data['id']);
+            } else {
+                $store->is_active  = true;
             }
 
             $store->name        = isset($data['name']) ? $data['name'] : '';
             $store->email       = isset($data['email']) ? $data['email'] : '';
-            $store->password    = Hash::make($data['confirm_password']);
-            $store->location_id = isset($data['location_id']) ? $data['location_id'] : '';
 
-            if (!$this->isEditMode($data)) {
-                $store->is_active  = true;
+            if(!empty($data['confirm_password'] && !empty($data['password']))) {
+                $store->password    = Hash::make($data['confirm_password']);
             }
+
+            $store->location_id = isset($data['location_id']) ? $data['location_id'] : '';
 
             if($save = $store->save()) {
                 $this->lastInsertId = $store->id;

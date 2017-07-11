@@ -30,7 +30,7 @@ class UserMenu extends Model
 
     public function menu()
     {
-        return $this->belongsTo('App\Models\Auth\Menu', 'menu_id', 'id')->with('menu_group')->with('sub_menu');
+        return $this->belongsTo('App\Models\Auth\Menu', 'menu_id', 'id')->orderBy('order','asc')->with('menu_group')->with('sub_menu');
     }
 
     /**

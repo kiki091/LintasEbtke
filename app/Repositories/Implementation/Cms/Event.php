@@ -137,15 +137,17 @@ class Event extends BaseImplementation implements EventInterface
 
             } else {
             
-                $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
                 $store->is_active   = true;
                 $store->total_view  = '0';
                 $store->order       = $this->event->max('order')+1;
-                $store->date_start  = isset($data['date_start']) ? Carbon::parse($data['date_start'])->toDateString() : '';
-                $store->date_end    = isset($data['date_end']) ? Carbon::parse($data['date_end'])->toDateString() : '';
+                
                 $store->created_at  = $this->mysqlDateTimeFormat();
                 $store->created_by  = DataHelper::userId();
             }
+            
+            $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
+            $store->date_start  = isset($data['date_start']) ? Carbon::parse($data['date_start'])->toDateString() : '';
+            $store->date_end    = isset($data['date_end']) ? Carbon::parse($data['date_end'])->toDateString() : '';
 
             if($save = $store->save())
             {

@@ -44,6 +44,14 @@ class InvestmentServices extends BaseModel
         return $this->hasMany('App\Models\InvestmentServicesRelated', 'investment_services_id', 'id')->with('related_investment_services');
     }
 
+    /**
+     * @return mixed
+     */
+    public function images()
+    {
+        return $this->hasMany('App\Models\InvestmentServicesImages', 'investment_services_id', 'id');
+    }
+
     /***************** Scope *****************/
 
     /**
