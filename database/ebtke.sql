@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
--- Host: 127.0.0.1    Database: ebtke
+-- Host: localhost    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.16-MariaDB
+-- Server version	5.7.18-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -38,7 +38,7 @@ CREATE TABLE `company_history` (
 
 LOCK TABLES `company_history` WRITE;
 /*!40000 ALTER TABLE `company_history` DISABLE KEYS */;
-INSERT INTO `company_history` VALUES (1,'SEKILAS-TENTANG-LINTAS-EBTKE.pdf',NULL,NULL,'2017-07-08 10:40:00');
+INSERT INTO `company_history` VALUES (1,'company__history__lintas__ebtke5964f312237e5_SEKILAS-TENTANG-LINTAS-EBTKE.pdf',NULL,NULL,'2017-07-11 15:47:30');
 /*!40000 ALTER TABLE `company_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `company_history_trans` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_company_history_trans_1_idx` (`company_history_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `company_history_trans` (
 
 LOCK TABLES `company_history_trans` WRITE;
 /*!40000 ALTER TABLE `company_history_trans` DISABLE KEYS */;
-INSERT INTO `company_history_trans` VALUES (3,'id','Apa itu lintas ?','apa-itu-lintas','<p>LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.</p>','<p>S ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat. Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE.</p><p>Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana.</p>','<p>Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.</p><p>Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-08 10:40:00','2017-07-08 10:40:00',1),(4,'en','Whats is lintas ?','whats-is-lintas','<p>LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.</p>','<p>I n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.</p><p>Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately..</p>','<p>It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.</p><p>Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-08 10:40:00','2017-07-08 10:40:00',1);
+INSERT INTO `company_history_trans` VALUES (7,'id','Apa itu lintas ?','pa-itu-lintas','<p>LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.</p>','<p>S ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat. Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE.</p><p>Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana.</p>','<p>Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.</p><p>Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 15:47:30','2017-07-11 15:47:30',1),(8,'en','Whats is lintas ?','hats-is-lintas','<p>LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.</p>','<p>I n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.</p><p>Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately..</p>','<p>It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.</p><p>Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 15:47:30','2017-07-11 15:47:30',1);
 /*!40000 ALTER TABLE `company_history_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1301,7 +1301,7 @@ CREATE TABLE `white_paper` (
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1310,7 +1310,7 @@ CREATE TABLE `white_paper` (
 
 LOCK TABLES `white_paper` WRITE;
 /*!40000 ALTER TABLE `white_paper` DISABLE KEYS */;
-INSERT INTO `white_paper` VALUES (1,'white_papers__lintas__ebtke5964b61f504cf_invisible_apps.JPG','white_papers__lintas__ebtke_invisible_apps.pdf',NULL,NULL,1,1,'2017-06-14 17:33:43','2017-07-11 11:45:58',1);
+INSERT INTO `white_paper` VALUES (1,'white_papers__lintas__ebtke5964b61f504cf_invisible_apps.JPG','white_papers__lintas__ebtke_invisible_apps.pdf',NULL,NULL,1,1,'2017-06-14 17:33:43','2017-07-11 11:45:58',1),(2,'white_papers__lintas__ebtke5964e47562b07_505x377.jpg','white_papers__lintas__ebtke5964e47562b07_doc1.pdf',0,0,1,2,'2017-07-11 14:45:09','2017-07-11 14:45:09',1);
 /*!40000 ALTER TABLE `white_paper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1337,7 +1337,7 @@ CREATE TABLE `white_paper_trans` (
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_1_idx` (`white_paper_id`),
   CONSTRAINT `fk_1` FOREIGN KEY (`white_paper_id`) REFERENCES `white_paper` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1346,7 +1346,7 @@ CREATE TABLE `white_paper_trans` (
 
 LOCK TABLES `white_paper_trans` WRITE;
 /*!40000 ALTER TABLE `white_paper_trans` DISABLE KEYS */;
-INSERT INTO `white_paper_trans` VALUES (7,'id','Kedatangan Aplikasi Yang Memungkinkan edit','kedatangan-aplikasi-yang-memungkinkan-edit','<p>Akui saja, kita telah menjadi budak layar kita sendiri, beberapa bahkan berbicara tentang &#39;generasi layar&#39; dan mereka benar.<br /><br />Dengan perangkat baru yang beredar di pasaran seperti jam tangan pintar dan Apple TV, waktu layar kita meningkat setiap hari. Tapi seberapa cerdas dan menjadi layar ini? Mari kita ceritakan semuanya tentang itu!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27'),(8,'en','The arrival of the Invisible Apps','the-arrival-of-the-invisible-apps','<p>Admit it, we have become slaves of our own screens, some even speak of the &#39;screen generation&#39; and they are right.<br /><br />With the new devices that are out on the market such as smart watches and Apple TV&rsquo;s, our screen time increases every day. But how intelligent are and become these screens? Let us tell you all about it!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27');
+INSERT INTO `white_paper_trans` VALUES (7,'id','Kedatangan Aplikasi Yang Memungkinkan edit','kedatangan-aplikasi-yang-memungkinkan-edit','<p>Akui saja, kita telah menjadi budak layar kita sendiri, beberapa bahkan berbicara tentang &#39;generasi layar&#39; dan mereka benar.<br /><br />Dengan perangkat baru yang beredar di pasaran seperti jam tangan pintar dan Apple TV, waktu layar kita meningkat setiap hari. Tapi seberapa cerdas dan menjadi layar ini? Mari kita ceritakan semuanya tentang itu!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27'),(8,'en','The arrival of the Invisible Apps','the-arrival-of-the-invisible-apps','<p>Admit it, we have become slaves of our own screens, some even speak of the &#39;screen generation&#39; and they are right.<br /><br />With the new devices that are out on the market such as smart watches and Apple TV&rsquo;s, our screen time increases every day. But how intelligent are and become these screens? Let us tell you all about it!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27'),(9,'id','Title Indonesian','itle-ndonesian','<p>Description&nbsp;<b>(Indonesian)</b></p>','Meta Title','Meta Keyword','Meta Description',2,'2017-07-11 14:45:09','2017-07-11 14:45:09'),(10,'en','Title English','itle-nglish','<p>Description&nbsp;<b>(English)</b></p>','Meta Title','Meta Keyword','Meta Description',2,'2017-07-11 14:45:09','2017-07-11 14:45:09');
 /*!40000 ALTER TABLE `white_paper_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1359,4 +1359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 18:46:29
+-- Dump completed on 2017-07-11 23:33:28
