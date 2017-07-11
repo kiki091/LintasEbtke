@@ -61,6 +61,7 @@ function crudWhitePapers() {
                 meta_title : {"en":"","id":""},
                 meta_keyword : {"en":"","id":""},
                 meta_description : {"en":"","id":""},
+                file: '',
             },
             delete_payload: {
               id: ''
@@ -68,6 +69,7 @@ function crudWhitePapers() {
             supported_language: lintas.supported_language,
             lintas_default_language: lintas.lintas_default_language,
             thumbnail : '',
+            file: '',
             last_language_key: '',
             image: '',
 
@@ -223,6 +225,8 @@ function crudWhitePapers() {
                     if (response.status) {
                         this.models = response.data
                         this.thumbnail = response.data.thumbnail_url
+                        this.file = response.data.file_url
+
 
                         this.form_add_title = "Edit White Papers Content Manager"
                         $('.btn__add').click()
@@ -301,7 +305,9 @@ function crudWhitePapers() {
                 this.models.id = ''
 
                 this.models['language_selected'] = [];
+                this.thumbnail_url = '';
                 this.thumbnail = '';
+                this.file_url = ''
                 this.file = ''
                 this.id = ''
 

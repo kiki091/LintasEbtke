@@ -5449,3 +5449,40 @@ input, textarea, select {
     background-color: #5a738e;
     color: #fff;
 }
+
+.custom__file__upload {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.custom__file__upload .upload__file__input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.custom__file__upload .upload__file__placeholder {
+    width: 500px;
+    padding-right: 120px;
+}
+
+.custom__file__upload .upload__file__button {
+    height: 23px;
+    padding: 0 15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #9FBFCB;
+    color: #ffffff;
+    font-family: "brandon_bold";
+    font-size: 11px;
+    text-transform: uppercase;
+    transition: all .3s;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    position: absolute;
+    right: 3px;
+    cursor: pointer;
+}

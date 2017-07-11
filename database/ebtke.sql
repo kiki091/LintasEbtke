@@ -1310,7 +1310,7 @@ CREATE TABLE `white_paper` (
 
 LOCK TABLES `white_paper` WRITE;
 /*!40000 ALTER TABLE `white_paper` DISABLE KEYS */;
-INSERT INTO `white_paper` VALUES (1,'white_papers__lintas__ebtke5964b61f504cf_invisible_apps.JPG','',NULL,NULL,0,1,'2017-06-14 17:33:43','2017-07-11 11:27:27',1);
+INSERT INTO `white_paper` VALUES (1,'white_papers__lintas__ebtke5964b61f504cf_invisible_apps.JPG','white_papers__lintas__ebtke_invisible_apps.pdf',NULL,NULL,1,1,'2017-06-14 17:33:43','2017-07-11 11:45:58',1);
 /*!40000 ALTER TABLE `white_paper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1359,4 +1359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 18:30:15
+-- Dump completed on 2017-07-11 18:46:29

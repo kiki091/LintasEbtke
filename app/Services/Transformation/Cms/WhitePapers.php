@@ -114,7 +114,8 @@ class WhitePapers
         $dataTransform = $this->setTranslationForEditData($data['translations']);
         $dataTransform['id'] = isset($data['id']) ? $data['id'] : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(PAPERS_IMAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : [];
-        $dataTransform['file'] = isset($data['file']) ? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['thumbnail'])) : [];
+        //$dataTransform['file_url'] = isset($data['file']) ? asset(PAPERS_FILE_DIRECTORY.rawurlencode($data['file'])) : [];
+        $dataTransform['file'] = isset($data['file']) ? $data['file'] : [];
 
         return $dataTransform;
     }

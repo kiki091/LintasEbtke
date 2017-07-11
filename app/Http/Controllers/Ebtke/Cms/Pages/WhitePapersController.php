@@ -129,7 +129,7 @@ class WhitePapersController extends CmsBaseController
             'meta_description.*'    => 'required',
             'event_related_id.*'    => 'required',
             'thumbnail'             => 'required|dimensions:width='.WHITE_PAPERS_THUMBNAIL_WIDTH.',height='.WHITE_PAPERS_THUMBNAIL_HEIGHT.'|max:'. WHITE_PAPERS_IMAGES_SIZE .'|mimes:jpeg,jpg',
-            'file'                  => 'required|max:'. WHITE_PAPERS_FILE_SIZE .'|mimes:pdf,doc,docx,ppt,xls,xlxs',
+            'file'                  => 'required|max:'. WHITE_PAPERS_FILE_UPLOAD_SIZE .'|mimes:pdf,doc,docx,ppt,xls,xlxs',
         ];
 
         if ($this->isEditMode($request->input())) {
