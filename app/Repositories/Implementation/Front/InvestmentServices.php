@@ -85,6 +85,7 @@ class InvestmentServices extends BaseImplementation implements InvestmentService
         $investmentServices = $this->investmentServices
             ->with('translation')
             ->with('translations')
+            ->with('images')
             ->with('related');
 
         if(isset($params['slug']) && $params['slug']) {

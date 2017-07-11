@@ -86,6 +86,20 @@ Route::group(['middleware' => ['web']], function ()
 				
 				Route::group(['prefix' => 'investment-services'], function () {
 
+					// ROUTE SERVICES
+					Route::group(['prefix' => 'services'], function () {
+
+						Route::get('/', 'Ebtke\Cms\Pages\InvestmentServicesController@index')->name('InvestmentServicesIndex');
+						Route::get('data', 'Ebtke\Cms\Pages\InvestmentServicesController@getData')->name('InvestmentServicesGetData');
+						Route::post('store', 'Ebtke\Cms\Pages\InvestmentServicesController@store')->name('InvestmentServicesStoreData');
+						Route::post('edit', 'Ebtke\Cms\Pages\InvestmentServicesController@edit')->name('InvestmentServicesEditData');
+						Route::post('change-status', 'Ebtke\Cms\Pages\InvestmentServicesController@changeStatus')->name('InvestmentServicesChangeStatus');
+						Route::post('delete', 'Ebtke\Cms\Pages\InvestmentServicesController@delete')->name('InvestmentServicesDeleteData');
+						Route::post('order', 'Ebtke\Cms\Pages\InvestmentServicesController@order')->name('InvestmentServicesOrderData');
+						Route::post('edit-slider', 'Ebtke\Cms\Pages\InvestmentServicesController@editImageSlider')->name('InvestmentServicesEditImageSlider');
+						Route::post('delete-slider', 'Ebtke\Cms\Pages\InvestmentServicesController@deleteImageSlider')->name('InvestmentServicesDeleteImageSlider');
+					});
+
 					// ROUTE GREEN PAGES
 					Route::group(['prefix' => 'green-pages'], function () {
 

@@ -75,10 +75,36 @@ class InvestmentServices
         $dataTransform['created_at_home'] = isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '';
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
 
+        $dataTransform['slider_images']   = $this->getInvestmentServicesImageSlider($data['images']);
         $dataTransform['related']   = $this->getYouMighAlsoLike($data['related']);
 
         return $dataTransform;
     }
+
+
+    /**
+     * Set Image Slider
+     * @param $data
+     * @return array
+     */
+
+    protected function getInvestmentServicesImageSlider($data)
+    {
+        $dataTransform = array_map(function($data) {
+            return [
+                'filename_url'  => isset($data['filename']) ? asset(INVESTMENT_SERVICES_DIRECTORY.rawurlencode($data['filename'])) : '',
+            ];
+        }, $data);
+
+        return $dataTransform;
+    }
+
+
+    /**
+     * Set You Migh Also Like
+     * @param $data
+     * @return array
+     */
 
     protected function getYouMighAlsoLike($data) 
     {

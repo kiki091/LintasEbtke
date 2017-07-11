@@ -27,4 +27,14 @@ class InvestmentServicesRelated extends BaseModel
     {
         return $this->belongsTo('App\Models\InvestmentServices', 'investment_services_related_id', 'id')->with('translation');
     }
+
+
+
+    /**
+     * @param $query
+     */
+    public function scopeInvestmentId($query, $params)
+    {
+        return $query->where('investment_services_id', $params);
+    }
 }

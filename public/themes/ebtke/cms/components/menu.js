@@ -89,3 +89,15 @@ function menuGreenPages()
         initGreenPages()
     });
 }
+
+
+
+// JAVASCRIPT INVESTMENT SERVICES CONTENT MANAGER
+
+function menuInvestmentServices()
+{
+    $('.right_col').load(laroute.route('InvestmentServicesIndex', []), function()
+    {
+        initInvestmentServices()
+    });
+}

@@ -445,3 +445,15 @@ function initGreenPages()
     replaceToCkEditor();
     dragPhoto();
 }
+
+// INIT FUNCTION INVESTMENT SERVICES CONTENT MANAGER CMS
+function initInvestmentServices()
+{
+    mainGeneral();
+    wizardSlide();
+    crudInvestmentServices();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+    dragPhoto();
+}
