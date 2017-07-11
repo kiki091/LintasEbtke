@@ -91,6 +91,26 @@ class GreenPages
         $dataTransform['meta_description'] = isset($data['translation']['meta_description']) ? $data['translation']['meta_description'] : '';
         $dataTransform['created_at_home'] = isset($data['created_at']) ? date('M d, Y', strtotime($data['created_at'])) : '';
         $dataTransform['days_ago'] = isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '';
+        
+        $dataTransform['slider_images']   = $this->getGreenPagesImageSlider($data['images']);
+
+        return $dataTransform;
+    }
+
+
+    /**
+     * Set Image Slider
+     * @param $data
+     * @return array
+     */
+
+    protected function getGreenPagesImageSlider($data)
+    {
+        $dataTransform = array_map(function($data) {
+            return [
+                'filename_url'  => isset($data['filename']) ? asset(INVESTMENT_SERVICES_GREEN_PAGES_DIRECTORY.rawurlencode($data['filename'])) : '',
+            ];
+        }, $data);
 
         return $dataTransform;
     }
