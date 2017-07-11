@@ -7,6 +7,7 @@ use App\Repositories\Implementation\BaseImplementation;
 use App\Models\WhitePaper as WhitePapersModels;
 use App\Models\WhitePaperTrans as WhitePapersTransModels;
 use App\Services\Transformation\Cms\WhitePapers as WhitePapersTransformation;
+use App\Custom\DataHelper;
 use LaravelLocalization;
 use Cache;
 use Session;

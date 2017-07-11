@@ -5449,32 +5449,25 @@ input, textarea, select {
     background-color: #5a738e;
     color: #fff;
 }
-
 .custom__file__upload {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.custom__file__upload .upload__file__input {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .custom__file__upload .upload__file__input {
     visibility: hidden;
-    position: absolute;
-}
-
-.custom__file__upload .upload__file__placeholder {
+    position: absolute; }
+  .custom__file__upload .upload__file__placeholder {
     width: 500px;
-    padding-right: 120px;
-}
-
-.custom__file__upload .upload__file__button {
+    padding-right: 120px; }
+  .custom__file__upload .upload__file__button {
     height: 23px;
     padding: 0 15px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #9FBFCB;
+    background-color: #5a738e;
     color: #ffffff;
     font-family: "brandon_bold";
     font-size: 11px;
@@ -5484,5 +5477,6 @@ input, textarea, select {
     border: 1px solid transparent;
     position: absolute;
     right: 3px;
-    cursor: pointer;
-}
+    cursor: pointer; }
+    .custom__file__upload .upload__file__button:hover {
+      background: #88b0be; }

@@ -9,6 +9,18 @@ $(document).ready(function(){
     checkAllLanguage();
 });
 
+function uploadFile(){
+    $(document).on('change', '.upload__file__input', function () {
+        var fileName = $(this).val().replace('C:\\fakepath\\', '');
+        // $(this).parents('.custom-file-upload').find('.upload__file__placeholder').val(fileName);
+        $(this).parents('.custom__file__upload').find('.upload__file__placeholder').val(fileName);
+    });
+}
+function resetUploadFile(){
+    $('input[type="file"]').val('');
+    $('.upload__file__placeholder').val('');
+}
+
 /* BUTTON SHOW CARD PHOTO UPLOADER */
 $(document).on('click', '.upload__img__show__preview', function(){
     var id = $(this).attr('id');

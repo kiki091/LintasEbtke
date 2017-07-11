@@ -58,7 +58,7 @@
 									<div class="form--error--message--left" id="form--error--message--thumbnail"></div>
 									<!-- upload tip -->
 									<div class="upload__tip">
-										<span><b>Upload Tip: </b>Please upload high resolution photo only with format of *jpeg. (With maximum width of {{ NEWS_THUMBNAIL_WIDTH }} x {{ NEWS_THUMBNAIL_HEIGHT }} px on landscape)</span>
+										<span><b>Upload Tip: </b>Please upload high resolution photo only with format of *jpeg. (With maximum width of {{ WHITE_PAPERS_THUMBNAIL_WIDTH }} x {{ WHITE_PAPERS_THUMBNAIL_HEIGHT }} px on potret)</span>
 									</div>
 								</div>
 							</div>
@@ -67,12 +67,12 @@
                                 <div class="new__form__field width-auto upload__image">
                                     <label>Upload Downloadable File</label>
                                     <div class="custom__file__upload">
-                                        <input type="file" class="upload__file__input" id="file"  name="file" />
-                                        <input type="text" id="upload-file-placeholder" class="upload__file__placeholder" placeholder="No file selected" readonly="readonly" v-if="edit == false">
-                                        <input type="text" id="upload-file-placeholder-old" v-model="models.file" class="upload__file__placeholder" placeholder="" readonly="readonly" v-if="edit == true">
-                                        <label for="file" class="upload__file__button">CHOOSE FILE</label>
-                                    </div>
-                                    <div class="form--error--message" id="form--error--message--file"></div>
+                                    <input type="file" class="upload__file__input" id="file_download"  name="file" />
+                                    <input type="text" id="upload-file-placeholder" class="upload__file__placeholder" placeholder="No file selected" readonly="readonly" v-if="edit == false">
+                                    <input type="text" id="upload-file-placeholder-old" v-model="models.file" class="upload__file__placeholder" placeholder="" readonly="readonly" v-if="edit == true">
+                                    <label for="file_download" class="upload__file__button">CHOOSE FILE</label>
+                                </div>
+                                    <div class="form--error--message--left" id="form--error--message--file"></div>
                                 </div>
                             </div>
 

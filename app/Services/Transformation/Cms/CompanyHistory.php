@@ -65,6 +65,7 @@ class CompanyHistory
                 'id'            => isset($data['id']) ? $data['id'] : '',
                 'title'         => isset($data['translation']['title']) ? $data['translation']['title'] : '',
                 'file_url' => isset($data['file']) ? asset(COMPANY_HISTORY_FILE_DIRECTORY.rawurlencode($data['file'])) : '',
+                'file_name'      => isset($data['file']) ? $data['file'] : '',
             ];
         },$data);
         
@@ -117,6 +118,7 @@ class CompanyHistory
         $dataTransform = $this->setTranslationForEditData($data['translations']);
         $dataTransform['id'] = isset($data['id']) ? $data['id'] : '';
         $dataTransform['file_url'] = isset($data['file']) ? asset(COMPANY_HISTORY_FILE_DIRECTORY.rawurlencode($data['file'])) : [];
+        $dataTransform['file_name'] = isset($data['file']) ? $data['file'] : '';
 
         return $dataTransform;
     }

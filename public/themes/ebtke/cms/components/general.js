@@ -421,6 +421,7 @@ function initCompanyHistory()
     replaceToCkEditor();
     dragPhoto();
     checkAllLanguage();
+    uploadFile();
 }
 
 // INIT FUNCTION GREEN PAGES CONTENT MANAGER CMS
@@ -468,4 +469,5 @@ function initWhitePapers()
     buttonClickClose();
     replaceToCkEditor();
     dragPhoto();
+    uploadFile();
 }

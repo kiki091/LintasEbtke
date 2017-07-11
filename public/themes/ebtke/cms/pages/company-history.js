@@ -28,6 +28,7 @@ function crudCompanyHistory() {
                 meta_title : {"en":"","id":""},
                 meta_keyword : {"en":"","id":""},
                 meta_description : {"en":"","id":""},
+                file: '',
             },
             banner: {
                 language_selected : [],
@@ -227,7 +228,7 @@ function crudCompanyHistory() {
                     response = response.data
                     if (response.status) {
                         this.models = response.data
-                        this.file = response.data.file_url
+                        this.models.file = response.data.file_name
 
                         this.form_add_title = "Edit Company History Manager"
                         $('#toggle-form-content').slideDown(400)
