@@ -79,7 +79,6 @@ function menuGreenPagesCategory()
     });
 }
 
-
 // JAVASCRIPT GREEN PAGES CONTENT MANAGER
 
 function menuGreenPages()
@@ -90,8 +89,6 @@ function menuGreenPages()
     });
 }
 
-
-
 // JAVASCRIPT INVESTMENT SERVICES CONTENT MANAGER
 
 function menuInvestmentServices()
@@ -99,5 +96,15 @@ function menuInvestmentServices()
     $('.right_col').load(laroute.route('InvestmentServicesIndex', []), function()
     {
         initInvestmentServices()
+    });
+}
+
+// JAVASCRIPT WHITE PAPERS CONTENT MANAGER
+
+function menuWhitePapers()
+{
+    $('.right_col').load(laroute.route('WhitePapersIndex', []), function()
+    {
+        initWhitePapers()
     });
 }

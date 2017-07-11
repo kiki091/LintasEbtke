@@ -54,7 +54,7 @@ function crudInvestmentServices() {
         },
         filters: {
             strSlug: function(data) {
-                return data.replace(/\/| /g, "-")
+                return data.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
             }
 
         },

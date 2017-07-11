@@ -130,6 +130,26 @@ Route::group(['middleware' => ['web']], function ()
 					});
 				});
 
+				// ROUTE RESOURCES
+				
+				Route::group(['prefix' => 'resources'], function () {
+
+					// ROUTE WHITE PAPERS
+					
+					Route::group(['prefix' => 'white-papers'], function () {
+
+						Route::get('/', 'Ebtke\Cms\Pages\WhitePapersController@index')->name('WhitePapersIndex');
+						Route::get('data', 'Ebtke\Cms\Pages\WhitePapersController@getData')->name('WhitePapersGetData');
+
+						Route::post('store', 'Ebtke\Cms\Pages\WhitePapersController@store')->name('WhitePapersStoreData');
+						Route::post('edit', 'Ebtke\Cms\Pages\WhitePapersController@edit')->name('WhitePapersEditData');
+						Route::post('change-status', 'Ebtke\Cms\Pages\WhitePapersController@changeStatus')->name('WhitePapersChangeStatus');
+						Route::post('delete', 'Ebtke\Cms\Pages\WhitePapersController@delete')->name('WhitePapersDeleteData');
+						Route::post('order', 'Ebtke\Cms\Pages\WhitePapersController@order')->name('WhitePapersOrderData');
+
+					});
+				});
+
 			});
 
 			// ACCOUNT MANAGEMENT ROUTE

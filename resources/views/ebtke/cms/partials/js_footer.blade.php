@@ -44,3 +44,5 @@
 <!-- Javascript GREEN PAGES CATRGORY MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages-category.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages.js') }}"></script>
+<!-- Javascript RESOURCES WHITE PAPERS MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/white-papers.js') }}"></script>

@@ -380,7 +380,7 @@ CREATE TABLE `green_pages_images` (
   PRIMARY KEY (`id`),
   KEY `fk_green_pges_images_1_idx` (`green_pges_id`),
   CONSTRAINT `fk_green_pges_images_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -389,7 +389,7 @@ CREATE TABLE `green_pages_images` (
 
 LOCK TABLES `green_pages_images` WRITE;
 /*!40000 ALTER TABLE `green_pages_images` DISABLE KEYS */;
-INSERT INTO `green_pages_images` VALUES (1,'greenpages__lintas__ebtke5963a287cd64b_930x493.jpg',1,'2017-07-10 15:51:35','2017-07-10 15:51:35');
+INSERT INTO `green_pages_images` VALUES (1,'greenpages__lintas__ebtke5963a287cd64b_930x493.jpg',1,'2017-07-10 15:51:35','2017-07-10 15:51:35'),(5,'greenpages__lintas__ebtke5964a1a909364_930x493.jpg',1,'2017-07-11 10:00:09','2017-07-11 10:00:09');
 /*!40000 ALTER TABLE `green_pages_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1295,8 +1295,8 @@ CREATE TABLE `white_paper` (
   `file` varchar(150) DEFAULT NULL,
   `downloaded` int(10) DEFAULT NULL,
   `rating` int(10) DEFAULT NULL,
-  `user_ip` varchar(100) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
+  `order` int(3) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(5) DEFAULT NULL,
@@ -1310,7 +1310,7 @@ CREATE TABLE `white_paper` (
 
 LOCK TABLES `white_paper` WRITE;
 /*!40000 ALTER TABLE `white_paper` DISABLE KEYS */;
-INSERT INTO `white_paper` VALUES (1,'invisible_apps.JPG','invisible-apps.pdf',NULL,NULL,NULL,1,'2017-06-14 17:33:43','2017-06-14 17:33:43',1);
+INSERT INTO `white_paper` VALUES (1,'white_papers__lintas__ebtke5964b61f504cf_invisible_apps.JPG','',NULL,NULL,0,1,'2017-06-14 17:33:43','2017-07-11 11:27:27',1);
 /*!40000 ALTER TABLE `white_paper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1323,18 +1323,21 @@ DROP TABLE IF EXISTS `white_paper_trans`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `white_paper_trans` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `locale` varchar(2) DEFAULT NULL,
-  `title` varchar(100) DEFAULT NULL,
+  `locale` varchar(2) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `slug` varchar(150) DEFAULT NULL,
   `description` text,
-  `white_paper_id` int(10) DEFAULT NULL,
+  `meta_title` varchar(100) DEFAULT NULL,
+  `meta_keyword` varchar(100) DEFAULT NULL,
+  `meta_description` text,
+  `white_paper_id` int(10) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_1_idx` (`white_paper_id`),
   CONSTRAINT `fk_1` FOREIGN KEY (`white_paper_id`) REFERENCES `white_paper` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1343,7 +1346,7 @@ CREATE TABLE `white_paper_trans` (
 
 LOCK TABLES `white_paper_trans` WRITE;
 /*!40000 ALTER TABLE `white_paper_trans` DISABLE KEYS */;
-INSERT INTO `white_paper_trans` VALUES (1,'en','The arrival of the Invisible Apps ','invisible-apps','<p>Admit it, we have become slaves of our own screens, some even speak of the \'screen generation\' and they are right. <br>\r\n<br>\r\nWith the new devices that are out on the market such as smart watches and Apple TV’s, our screen time increases every day. But how intelligent are and become these screens? Let us tell you all about it! </p>',1,'2017-06-14 05:41:43','2017-06-14 05:41:43'),(2,'id','Kedatangan Aplikasi Yang Memungkinkan','kedatangan-aplikasi-yang-memungkinkan','\r\n<p> Akui saja, kita telah menjadi budak layar kita sendiri, beberapa bahkan berbicara tentang \'generasi layar\' dan mereka benar. <br>\r\n<br>\r\nDengan perangkat baru yang beredar di pasaran seperti jam tangan pintar dan Apple TV, waktu layar kita meningkat setiap hari. Tapi seberapa cerdas dan menjadi layar ini? Mari kita ceritakan semuanya tentang itu! </p>',1,'2017-06-14 11:42:35','2017-06-14 11:42:35');
+INSERT INTO `white_paper_trans` VALUES (7,'id','Kedatangan Aplikasi Yang Memungkinkan edit','kedatangan-aplikasi-yang-memungkinkan-edit','<p>Akui saja, kita telah menjadi budak layar kita sendiri, beberapa bahkan berbicara tentang &#39;generasi layar&#39; dan mereka benar.<br /><br />Dengan perangkat baru yang beredar di pasaran seperti jam tangan pintar dan Apple TV, waktu layar kita meningkat setiap hari. Tapi seberapa cerdas dan menjadi layar ini? Mari kita ceritakan semuanya tentang itu!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27'),(8,'en','The arrival of the Invisible Apps','the-arrival-of-the-invisible-apps','<p>Admit it, we have become slaves of our own screens, some even speak of the &#39;screen generation&#39; and they are right.<br /><br />With the new devices that are out on the market such as smart watches and Apple TV&rsquo;s, our screen time increases every day. But how intelligent are and become these screens? Let us tell you all about it!</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 11:27:27','2017-07-11 11:27:27');
 /*!40000 ALTER TABLE `white_paper_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1356,4 +1359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 16:58:28
+-- Dump completed on 2017-07-11 18:30:15

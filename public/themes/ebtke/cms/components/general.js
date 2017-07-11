@@ -457,3 +457,15 @@ function initInvestmentServices()
     replaceToCkEditor();
     dragPhoto();
 }
+
+// INIT FUNCTION WHITE PAPERS CONTENT MANAGER CMS
+function initWhitePapers()
+{
+    mainGeneral();
+    wizardSlide();
+    crudWhitePapers();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+    dragPhoto();
+}
