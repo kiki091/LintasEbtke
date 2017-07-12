@@ -67,3 +67,7 @@ define('RENEWABLE_PAGES_DIRECTORY', 'bin/db/images/information_services/renewabl
 
 define('BANNER_INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/banner/');
 define('INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable_energi/industry/');
+
+// CONSULTING SERVICES
+
+define('BANNER_CONSULTING_SERVICES_DIRECTORY', 'bin/db/images/consulting_services/');

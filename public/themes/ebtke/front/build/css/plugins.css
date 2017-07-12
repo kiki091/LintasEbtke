@@ -10601,6 +10601,111 @@ ul li.data__table_industri:before {
     margin: 0 auto;
 }
 
+.customer_services {
+    padding-right: 10px;
+    float: left;
+    text-align: left;
+    padding: 20.5px 0;
+    position: relative;
+    width: 100%;
+}
+.customer_services h2 {
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.customer_services p {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 23px;
+    line-height: 5.2;
+    font-weight: 700;
+}
+
+.mail_services {
+    padding-right: 10px;
+    float: left;
+    text-align: left;
+    padding: 20.5px 0;
+    position: relative;
+}
+
+.mail_services h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mail_services p {
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+}
+
+.information_services {
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+}
+
+.mail_to {
+    align-items: center;
+}
+
+.mail_to svg {
+    float: left;
+    max-width: 100%;
+}
+
+@media screen and (min-width:1200px) {
+
+    p.description {
+        color: #2b2b30;
+        font-size: 26px;
+        font-weight: normal;
+        line-height: 1.33;
+    }
+    .mail_to p {
+        text-align: center;
+        padding-top: 15px;
+        font-size: 23px;
+        line-height: 5.2;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    p.description {
+        color: #2b2b30;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.33;
+    }
+    .mail_to p {
+        text-align: center;
+        padding-top: 15px;
+        font-size: 20px;
+        line-height: 3.2;
+        font-weight: 700;
+    }
+}
+
+.border__row {
+    border-bottom: 1px #eeeeee solid;
+    padding-bottom: 20px;
+}
 /* W3.CSS 4.04 Apr 2017 by Jan Egil and Borge Refsnes */
 .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}

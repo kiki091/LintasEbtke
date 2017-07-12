@@ -147,6 +147,14 @@ Route::group(['middleware' => ['web']], function ()
 				});
 			});
 
+			// CONSULTING SERVICES
+			
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.consulting_services')], function () {
+				
+				Route::get('/', 'Ebtke\Front\Pages\ConsultingServicesController@landing')->name('ConsultingServices');
+				
+			});
+
 		});
 
 	});

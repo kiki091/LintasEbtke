@@ -33,4 +33,5 @@
 		'information_services'				=> 'layanan-informasi',
 		'renewable_energi'					=> 'energi-terbarukan',
 		'industry'							=> 'industri',
+		'consulting_services'				=> 'layanan-konsultasi',
 	];

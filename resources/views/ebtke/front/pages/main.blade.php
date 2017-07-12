@@ -112,7 +112,7 @@
       		</p>
     	</div>
     	<div class="one_quarter pull-right">
-    		<a class="btn" href="#">
+    		<a class="btn" href="#our-services">
     			{{ trans('global_page.global_page_lable_link_cta') }} 
     			<span class="fa fa-arrow-right"></span>
     		</a>
@@ -140,7 +140,7 @@
 	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="{{ route('ConsultingServices') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Consulting-Services.png') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -148,7 +148,7 @@
 		            		{{ trans('pages/main_page.title_consulting_services') }}
 		            	</p>
 		            	<p>
-			            	<a href="#">
+			            	<a href="{{ route('ConsultingServices') }}">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>
@@ -284,7 +284,7 @@
 	      	</li>
 	      	<li>
 	        	<figure>
-	        		<a class="overlay" href="#">
+	        		<a class="overlay" href="http://modi.minerba.esdm.go.id" target="_blank">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'kpi-dashboard2y.png') }}" alt="">
 	        		</a>
 		          	<figcaption class="inspace-30 center">
@@ -292,7 +292,7 @@
 		            		{{ trans('pages/main_page.title_dashboards') }}
 		            	</p>
 		            	<p>
-			            	<a href="#">
+			            	<a href="http://modi.minerba.esdm.go.id" target="_blank">
 			            		{{ trans('global_page.global_page_lable_visit_here') }} 
 			            	</a>
 		            	</p>
