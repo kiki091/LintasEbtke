@@ -8,6 +8,62 @@ $(document).ready(function(){
     dragPhoto();
     checkAllLanguage();
 });
+/* =============================== MASONRY ================================*/
+function masonry(delay)
+{
+  if(delay==0) {
+    $('.grid').masonry({
+      "itemSelector": ".navigation_access",
+      percentPosition: true
+    });
+  }
+  else {
+    setTimeout(function() {
+      $('.grid').masonry({
+        "itemSelector": ".navigation_access",
+        percentPosition: true
+      });
+    }, delay);
+  }
+
+  /* masonry for admin account */
+  // var masonryUpdate = function() {
+  //   setTimeout(function() {
+  //     $('.grid').masonry({
+  //       "itemSelector": ".navigation_access",
+  //       percentPosition: true
+  //     });
+  //   }, delay);
+  // }
+  // $(document).on('click', masonryUpdate);
+  // // $(document).mousemove(masonryUpdate);
+  // $(document).ajaxComplete(masonryUpdate);
+  /*--------------------------*/
+}
+function masonryAdminPrivilege(delays){
+
+  setTimeout(function() {
+    $('.grid-check').masonry({
+      "itemSelector": ".navigation_access-check",
+      percentPosition: true
+    });
+  }, delays);
+
+  /* masonry for admin account */
+  var masonryUpdate = function() {
+    setTimeout(function() {
+      $('.grid-check').masonry({
+        "itemSelector": ".navigation_access-check",
+        percentPosition: true
+      });
+    }, delays);
+  }
+  $(document).on('click', masonryUpdate);
+  // $(document).mousemove(masonryUpdate);
+  $(document).ajaxComplete(masonryUpdate);
+  /*--------------------------*/
+}
+/* ================================== END =====================================*/
 
 function uploadFile(){
     $(document).on('change', '.upload__file__input', function () {

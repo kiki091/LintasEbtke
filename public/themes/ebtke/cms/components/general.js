@@ -384,6 +384,7 @@ function initUserAccount()
     crudUserAccount();
     buttonClickOpen();
     buttonClickClose();
+    masonry(2500)
 }
 
 // INIT FUNCTION NEWS CONTENT MANAGER CMS
