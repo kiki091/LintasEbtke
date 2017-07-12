@@ -93,7 +93,7 @@ mix.styles([
     'public/js/bower_components/iCheck/skins/flat/flat.css',
     'public/js/bower_components/hold-on/HoldOn.min.css',
     'public/js/bower_components/sweetalert/dist/sweetalert.css',
-    'public/js/bower_components/icheck-bootstrap/icheck-bootstrap.min.css',
+    'public/js/bower_components/icheck-bootstrap/icheck-bootstrap.css',
     'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.min.css',
     'public/js/bower_components/air-datepicker-master/dist/css/datepicker.css',
     'public/js/bower_components/bootstrap-clockpicker/bootstrap-clockpicker.css',

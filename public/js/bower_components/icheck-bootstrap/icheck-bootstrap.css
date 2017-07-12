@@ -42,8 +42,8 @@
     position: absolute;
     width: 22px;
     height: 22px;
-    border: 1px solid #D3CFC8;
-    border-radius: 0px;
+    border: 1px solid #8b889c;
+    border-radius: 5px;
     margin-left: -29px;
 }
 
@@ -67,7 +67,7 @@
     height: 22px;
     line-height: 20px;
     border: 1px solid #000;
-    border-radius: 0px;
+    border-radius: 5px;
     background-color: #000;
     text-align: center;
     margin-left: -29px;

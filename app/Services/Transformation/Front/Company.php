@@ -63,6 +63,9 @@ class Company
         $dataTransform['introduction'] = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['description_left'] = isset($data['translation']['description_left']) ? $data['translation']['description_left'] : '';
         $dataTransform['description_right'] = isset($data['translation']['description_right']) ? $data['translation']['description_right'] : '';
+        $dataTransform['meta_title'] = isset($data['translation']['meta_title']) ? $data['translation']['meta_title'] : '';
+        $dataTransform['meta_keyword'] = isset($data['translation']['meta_keyword']) ? $data['translation']['meta_keyword'] : '';
+        $dataTransform['meta_description'] = isset($data['translation']['meta_description']) ? $data['translation']['meta_description'] : '';
 
         return $dataTransform;
     }

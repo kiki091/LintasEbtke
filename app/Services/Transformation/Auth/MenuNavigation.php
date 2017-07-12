@@ -25,21 +25,29 @@ class MenuNavigation
 
     protected function setMenuNavigationCmsTransform($data)
     {
+
         $dataTransform = array_map(function($data) {
 
             return [
 
                 'id'            => isset($data['id']) ? $data['id'] : '',
-                'title'         => isset($data['title']) ? $data['title'] : '',
+                'title'         => isset($data['display_name']) ? $data['display_name'] : '',
                 'slug'          => isset($data['slug']) ? $data['slug'] : '',
                 'url'           => isset($data['url']) ? $data['url'] : '',
                 'have_sub_menu' => isset($data['have_sub_menu']) ? $data['have_sub_menu'] : '',
                 'is_active'     => isset($data['is_active']) ? $data['is_active'] : '',
+                'menu_group'    => isset($data['menu_group']['title']) ? $data['menu_group']['title'] : '',
             ];
 
         },$data);
 
-        return $dataTransform;
+        $finalData = [];
+        foreach ($dataTransform as $item) {
+            $finalData[$item['menu_group']][] = $item;
+
+        }
+
+        return $finalData;
     }
 
 }

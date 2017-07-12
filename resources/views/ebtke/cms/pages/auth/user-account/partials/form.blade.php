@@ -118,15 +118,15 @@
 									<div class="new__form__field" style="width: 100%">
 										<label>Navigation Access</label>
 										<div class="field__icon">
-											<div class="">
+											<div class="navigation_access" v-for="(key_menu, key) in responseData.menu_navigation">
+												<p>@{{key}}</p>
 												<ul class="to_do">
-													<li v-for="user_menu in responseData.menu_navigation">
-														<p>
-															<div class="checkbox icheck-primary">
-															    <input class="checkbox__data" type="checkbox" name="menu_id[]" :id=" 'checkbox-menu_id-' + user_menu.id" :value="user_menu.id"/>
-															    <label :for=" 'checkbox-menu_id-' + user_menu.id">@{{ user_menu.title }}</label>
-															</div>
-														</p>
+													<li v-for="user_menu in key_menu">
+														
+														<div class="checkbox icheck-primary">
+															<input class="checkbox__data" type="checkbox" name="menu_id[]" :id=" 'checkbox-menu_id-' + user_menu.id" :value="user_menu.id"/>
+															<label :for=" 'checkbox-menu_id-' + user_menu.id">@{{ user_menu.title }}</label>
+														</div>
 													</li>
 												</ul>
 											</div>

@@ -27,10 +27,12 @@
                     <a href='{{ route('CompanyVisionMission') }}'>{{ trans('navigation/sub_menu.vision_mission') }}</a>
                     
                 </li>
+                {{--
                 <li>
                     <a href='{{ route('CompanyOrganization') }}'>{{ trans('navigation/sub_menu.organization_structure') }}</a>
                     
                 </li>
+                --}}
                 <li>
                     <a href='{{ route('CompanyScope') }}'>{{ trans('navigation/sub_menu.lintas_scope') }}</a>
                     
