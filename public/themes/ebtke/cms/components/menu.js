@@ -108,3 +108,53 @@ function menuWhitePapers()
         initWhitePapers()
     });
 }
+
+// JAVASCRIPT SEO HOME PAGES CONTENT MANAGER
+
+function seoHomePages()
+{
+    $('.right_col').load(laroute.route('SeoHomePage', []), function()
+    {
+        initSeoHomePages()
+    });
+}
+
+// JAVASCRIPT SEO VISION MISSION PAGES CONTENT MANAGER
+
+function seoVisionMission()
+{
+    $('.right_col').load(laroute.route('SeoVisionMission', []), function()
+    {
+        initSeoVisionMission()
+    });
+}
+
+// JAVASCRIPT SEO LINTAS OF SCOPE PAGES CONTENT MANAGER
+
+function seoLintasOfScope()
+{
+    $('.right_col').load(laroute.route('SeoLintasOfScope', []), function()
+    {
+        initSeoLintasOfScope()
+    });
+}
+
+// JAVASCRIPT SEO INVESTMENT SERVICES PROCEDURE CONTENT MANAGER
+
+function seoInvestmentProcedure()
+{
+    $('.right_col').load(laroute.route('SeoServicesProcedure', []), function()
+    {
+        initSeoServicesProcedure()
+    });
+}
+
+// JAVASCRIPT SEO GREEN PAGES CONTENT MANAGER
+
+function seoGreenPages()
+{
+    $('.right_col').load(laroute.route('SeoGreenPages', []), function()
+    {
+        initSeoGreenPages()
+    });
+}

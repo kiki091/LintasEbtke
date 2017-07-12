@@ -46,3 +46,9 @@
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages.js') }}"></script>
 <!-- Javascript RESOURCES WHITE PAPERS MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/white-papers.js') }}"></script>
+<!-- Javascript SEO MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/seo/home-pages.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/seo/scope-of-services.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/seo/vision-mission.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/seo/investment-services-procedure.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/seo/green-pages.js') }}"></script>

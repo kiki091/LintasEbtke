@@ -30,6 +30,57 @@ Route::group(['middleware' => ['web']], function ()
 
 				Route::get('/', 'Ebtke\Cms\Pages\DashboardController@index')->name('CmsDashboardPage');
 
+				// SEO ROUTE CMS
+
+				Route::group(['prefix' => 'seo'], function () {
+
+					Route::group(['prefix' => 'home-pages'], function () {
+
+						Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoHomePagesController@index')->name('SeoHomePage');
+						Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoHomePagesController@getData')->name('SeoHomePageGetData');
+						Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoHomePagesController@store')->name('SeoHomePageStoreData');
+						Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoHomePagesController@edit')->name('SeoHomePageEditData');
+					});
+
+					Route::group(['prefix' => 'company'], function () {
+
+						Route::group(['prefix' => 'vision-mission'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoVisionMissionController@index')->name('SeoVisionMission');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoVisionMissionController@getData')->name('SeoVisionMissionGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoVisionMissionController@store')->name('SeoVisionMissionStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoVisionMissionController@edit')->name('SeoVisionMissionEditData');
+						});
+
+						Route::group(['prefix' => 'lintas-of-scope'], function () {
+							
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoLintasOfScopeController@index')->name('SeoLintasOfScope');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoLintasOfScopeController@getData')->name('SeoLintasOfScopeGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoLintasOfScopeController@store')->name('SeoLintasOfScopeStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoLintasOfScopeController@edit')->name('SeoLintasOfScopeEditData');
+						});
+					});
+
+					Route::group(['prefix' => 'investment-services'], function () {
+
+						Route::group(['prefix' => 'procedure'], function () {
+							
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoServicesProcedureController@index')->name('SeoServicesProcedure');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoServicesProcedureController@getData')->name('SeoServicesProcedureGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoServicesProcedureController@store')->name('SeoServicesProcedureStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoServicesProcedureController@edit')->name('SeoServicesProcedureEditData');
+						});
+
+						Route::group(['prefix' => 'green-pages'], function () {
+							
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@index')->name('SeoGreenPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@getData')->name('SeoGreenPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@store')->name('SeoGreenPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@edit')->name('SeoGreenPagesEditData');
+						});
+					});
+				});
+
 				// ROUTE NEWS
 
 				Route::group(['prefix' => 'news'], function () {

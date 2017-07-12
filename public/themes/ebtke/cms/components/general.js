@@ -471,3 +471,58 @@ function initWhitePapers()
     dragPhoto();
     uploadFile();
 }
+
+// INIT FUNCTION SEO HOME PAGES CONTENT MANAGER CMS
+function initSeoHomePages()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoHomePages();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION SEO VISION MISSION PAGES CONTENT MANAGER CMS
+function initSeoVisionMission()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoVisionMission();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION LINTAS OF SCOPE PAGES CONTENT MANAGER CMS
+function initSeoLintasOfScope()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoLintasOfScope();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION INVESTMENT SERVICES PROCEDURE CONTENT MANAGER CMS
+function initSeoServicesProcedure()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoServicesProcedure();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION GREEN PAGES CONTENT MANAGER CMS
+function initSeoGreenPages()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoGreenPages();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}

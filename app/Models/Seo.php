@@ -41,7 +41,7 @@ class Seo extends BaseModel
     /**
      * @param $query
      */
-    public function scopeKey($query, $params)
+    public function scopeIsKey($query, $params)
     {
         return $query->where('key', $params);
     }
