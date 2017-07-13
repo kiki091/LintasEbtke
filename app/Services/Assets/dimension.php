@@ -7,8 +7,8 @@ namespace App\Services\Assets;
  */
 if(!defined('MAIN_BANNER_IMAGES_SIZE')) define('MAIN_BANNER_IMAGES_SIZE', 1000);
 
-if(!defined('MAIN_BANNER_WIDTH')) define('MAIN_BANNER_WIDTH', 1920);
-if(!defined('MAIN_BANNER_HEIGHT')) define('MAIN_BANNER_HEIGHT', 763);
+if(!defined('MAIN_BANNER_WIDTH')) define('MAIN_BANNER_WIDTH', 1244);
+if(!defined('MAIN_BANNER_HEIGHT')) define('MAIN_BANNER_HEIGHT', 829);
 
 /**
  * NEWS IMAGES DIMENSION

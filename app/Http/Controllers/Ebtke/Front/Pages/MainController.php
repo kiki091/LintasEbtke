@@ -20,7 +20,7 @@ class MainController extends FrontController
     protected $response;
 
     const MAIN_BANNER_KEY = 'landing';
-    const SEO_LANDING_KEY = 'landing';
+    const SEO_LANDING_KEY = 'home:pages';
     const REDIS_COMPANY_HISTORY = 'history';
 
     public function __construct(CompanyServices $company, NewsServices $news, MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)

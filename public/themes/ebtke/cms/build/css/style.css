@@ -18189,6 +18189,10 @@ input, textarea, select {
     -ms-flex-pack: center;
     justify-content: center;
 }
+.popup__mask__alert .popup__wrapper__alert .popup__layer__alert .alert__message__wrapper .alert__message__btn .new__form__btn a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
 .new__form__btn {
     display: -ms-flexbox;
     display: flex;

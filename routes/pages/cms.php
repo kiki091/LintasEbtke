@@ -130,6 +130,20 @@ Route::group(['middleware' => ['web']], function ()
 					});
 				});
 
+
+				// MAIN BANNER ROUTE CMS
+
+				Route::group(['prefix' => 'main-banner'], function () {
+
+					Route::get('/', 'Ebtke\Cms\Pages\MainBannerController@index')->name('CmsMainBannerIndex');
+					Route::get('data', 'Ebtke\Cms\Pages\MainBannerController@getData')->name('CmsMainBannerGetData');
+					Route::post('store', 'Ebtke\Cms\Pages\MainBannerController@store')->name('CmsMainBannerStoreData');
+					Route::post('edit', 'Ebtke\Cms\Pages\MainBannerController@edit')->name('CmsMainBannerEditData');
+					Route::post('change-status', 'Ebtke\Cms\Pages\MainBannerController@changeStatus')->name('CmsMainBannerChangeStatus');
+					Route::post('delete', 'Ebtke\Cms\Pages\MainBannerController@delete')->name('CmsMainBannerDeleteData');
+					Route::post('order', 'Ebtke\Cms\Pages\MainBannerController@order')->name('CmsMainBannerOrderData');
+				});
+
 				// ROUTE NEWS
 
 				Route::group(['prefix' => 'news'], function () {

@@ -57,3 +57,5 @@
 <script src="{{ asset('themes/ebtke/cms/pages/seo/renewable-industri.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/seo/tools.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/seo/white-papers.js') }}"></script>
+<!-- Javascript MAIN BANNER MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/main-banner.js') }}"></script>

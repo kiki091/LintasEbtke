@@ -51,7 +51,7 @@ class MainBanner extends BaseModel
     /**
      * @param $query
      */
-    public function scopeKey($query, $params = '')
+    public function scopeKey($query, $params)
     {
         return $query->where('key', $params);
     }

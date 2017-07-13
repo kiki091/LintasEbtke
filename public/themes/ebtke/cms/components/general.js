@@ -582,3 +582,13 @@ function initSeoWhitePaper()
     buttonClickClose();
     replaceToCkEditor();
 }
+
+// INIT FUNCTION MAIN BANNER CONTENT MANAGER CMS
+function initMainBanner()
+{
+    mainGeneral();
+    wizardSlide();
+    crudMainBanner();
+    buttonClickOpen();
+    buttonClickClose();
+}

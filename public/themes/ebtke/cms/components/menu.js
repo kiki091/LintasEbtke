@@ -210,3 +210,13 @@ function seoWhitePapers()
         initSeoWhitePaper()
     });
 }
+
+// JAVASCRIPT SEO MAIN BANNER PAGES CONTENT MANAGER
+
+function menuMainBanner()
+{
+    $('.right_col').load(laroute.route('CmsMainBannerIndex', []), function()
+    {
+        initMainBanner()
+    });
+}

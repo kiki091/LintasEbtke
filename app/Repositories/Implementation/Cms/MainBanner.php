@@ -41,7 +41,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             "banner_key" => $data['key']
         ];
 
-        $mainBannerData = $this->mainBanner($params, 'asc', 'array', true);
+        $mainBannerData = $this->mainBanner($params, 'desc', 'array', true);
         
         return $this->mainBannerTransformation->getMainBannerCmsTransform($mainBannerData);
     }
@@ -97,8 +97,9 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
                 if (!empty($data['filename'])) {
                     
                     $store->filename      = isset($data['filename']) ? $this->uniqueIdImagePrefix . '_' . $data['filename']->getClientOriginalName() : '';
-                    $store->created_at    = $this->mysqlDateTimeFormat();
                 }
+
+                $store->updated_at         = $this->mysqlDateTimeFormat();
 
             } else {
 
@@ -109,7 +110,11 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             }
             
             $store->key                  = isset($key) ? $key : '';
-            $store->filename             = isset($data['filename']) ? $this->uniqueIdImagePrefix . '_' .$data['filename']->getClientOriginalName() : '';
+
+            if (!empty($data['filename'])) {
+                    
+                $store->filename      = isset($data['filename']) ? $this->uniqueIdImagePrefix . '_' . $data['filename']->getClientOriginalName() : '';
+            }
 
             if($save = $store->save()) {
                 $this->lastInsertId = $store->id;
@@ -225,7 +230,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             ];
             $mainBannerData = $this->getSingleMainBanner($params);
 
-            if (!$this->removeMainBannerFiles($mainBannerData['image_url'])) {
+            if (!$this->removeMainBannerFiles($mainBannerData['filename_url'])) {
                 DB::rollback();
                 return $this->setResponse($this->message, false);
             }

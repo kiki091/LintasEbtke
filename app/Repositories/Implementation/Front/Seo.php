@@ -66,7 +66,7 @@ class Seo extends BaseImplementation implements SeoInterface
             ->with('translations');
 
         if(isset($params['key'])) {
-            $seo->key($params['key']);
+            $seo->isKey($params['key']);
         }
 
         if(isset($params['limit_data'])) {

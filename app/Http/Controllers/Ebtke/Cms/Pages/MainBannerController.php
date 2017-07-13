@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Ebtke\Cms\Pages\Seo;
+namespace App\Http\Controllers\Ebtke\Cms\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Custom\DataHelper;
-use App\Services\Bridge\Cms\Seo as SeoServices;
+use App\Services\Bridge\Cms\MainBanner as MainBannerServices;
 use App\Services\Api\Response as ResponseService;
 
 use Validator;
@@ -14,28 +14,27 @@ use Response;
 use Session;
 use Auth;
 
-class SeoRenewableIndustriController extends CmsBaseController
+class MainBannerController extends CmsBaseController
 {
-
-    protected $seo;
+    protected $mainBanner;
     protected $response;
     protected $validationMessage = '';
 
-    const SEO_KEY = 'seo:renewable-energy:industri';
+    const BANNER_KEY = 'banner:landing';
 
-    public function __construct(SeoServices $seo,ResponseService $response)
+    public function __construct(MainBannerServices $mainBanner,ResponseService $response)
     {
-        $this->seo = $seo;
+        $this->mainBanner = $mainBanner;
         $this->response = $response;
     }
 
     /**
-     * Index Of Event
+     * Index Of News
      * @return string
      */
     public function index(Request $request)
     {
-        $blade = self::URL_BLADE_CMS. '.seo.renewable-energy.industri.main';
+        $blade = self::URL_BLADE_CMS. '.main-banner.main';
         
         if(view()->exists($blade)) {
         
@@ -54,8 +53,7 @@ class SeoRenewableIndustriController extends CmsBaseController
 
     public function getData(Request $request)
     {
-        $data['seo'] = $this->seo->getData(['key'=>self::SEO_KEY]);
-        
+        $data['main_banner'] = $this->mainBanner->getData(['key' => self::BANNER_KEY]);
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
     }
 
@@ -74,7 +72,7 @@ class SeoRenewableIndustriController extends CmsBaseController
 
         } else {
             //TODO: case pass
-            return $this->seo->store($request->except(['_token']),self::SEO_KEY);
+            return $this->mainBanner->store($request->except(['_token','filename_url']),self::BANNER_KEY);
         }
 
     }
@@ -85,7 +83,35 @@ class SeoRenewableIndustriController extends CmsBaseController
      */
     public function edit(Request $request)
     {
-        return $this->seo->edit($request->except(['_token']));
+        return $this->mainBanner->edit($request->except(['_token']));
+    }
+
+    /**
+     * Change Status Data
+     * @param Request $request
+     */
+    public function changeStatus(Request $request)
+    {
+        return $this->mainBanner->changeStatus($request->except(['_token']));
+    }
+
+    /**
+     * Delete Data
+     * @param Request $request
+     */
+    public function delete(Request $request)
+    {
+        return $this->mainBanner->delete($request->except(['_token']));
+    }
+
+    /**
+     * Ordering
+     * @param Request $request
+     * @return mixed
+     */
+    public function order(Request $request)
+    {
+        return $this->mainBanner->order($request->input('list_order'));
     }
 
     /**
@@ -95,14 +121,20 @@ class SeoRenewableIndustriController extends CmsBaseController
     private function validationStore($request = array())
     {
         $rules = [
-            'meta_title.*'          => 'required',
-            'meta_keyword.*'        => 'required',
-            'meta_description.*'    => 'required',
+            'title.*'                   => 'required',
+            'filename'                  => 'required|dimensions:width='.MAIN_BANNER_WIDTH.',height='.MAIN_BANNER_HEIGHT.'|max:'. MAIN_BANNER_IMAGES_SIZE .'|mimes:jpeg,jpg',
         ];
+
+        if ($this->isEditMode($request->input())) {
+
+            if (is_null($request->file('filename'))) {
+                unset($rules['filename']);
+            }
+        }
 
         return $rules;
     }
-
+    
     /**
      * Check is edit mode or no
      * @param $data
@@ -112,4 +144,5 @@ class SeoRenewableIndustriController extends CmsBaseController
     {
         return isset($data['id']) && !empty($data['id']) ? true : false;
     }
+
 }
