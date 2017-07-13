@@ -158,3 +158,55 @@ function seoGreenPages()
         initSeoGreenPages()
     });
 }
+
+
+
+// JAVASCRIPT SEO NEWS LANDING PAGES CONTENT MANAGER
+
+function seoNews()
+{
+    $('.right_col').load(laroute.route('SeoNewsPages', []), function()
+    {
+        initSeoNewsPages()
+    });
+}
+
+// JAVASCRIPT SEO EVENTS LANDING PAGES CONTENT MANAGER
+
+function seoEvents()
+{
+    $('.right_col').load(laroute.route('SeoEventPages', []), function()
+    {
+        initSeoEventPages()
+    });
+}
+
+// JAVASCRIPT SEO RENEWABLE INDUSTRI PAGES CONTENT MANAGER
+
+function seoIndustry()
+{
+    $('.right_col').load(laroute.route('SeoRenewableIndustriPages', []), function()
+    {
+        initSeoRenewableIndustri()
+    });
+}
+
+// JAVASCRIPT SEO TOOLS PAGES CONTENT MANAGER
+
+function seoTools()
+{
+    $('.right_col').load(laroute.route('SeoToolsPages', []), function()
+    {
+        initSeoTools()
+    });
+}
+
+// JAVASCRIPT SEO WHITE PAPERS PAGES CONTENT MANAGER
+
+function seoWhitePapers()
+{
+    $('.right_col').load(laroute.route('SeoWhitePaperPages', []), function()
+    {
+        initSeoWhitePaper()
+    });
+}

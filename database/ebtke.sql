@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke
+-- Host: 127.0.0.1    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1051,7 +1051,7 @@ CREATE TABLE `seo` (
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1060,7 +1060,7 @@ CREATE TABLE `seo` (
 
 LOCK TABLES `seo` WRITE;
 /*!40000 ALTER TABLE `seo` DISABLE KEYS */;
-INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',NULL,1),(2,'seo:company:organization-structure','2017-06-07 10:15:33',NULL,1),(3,'seo:company:history','2017-06-07 10:15:33',NULL,1),(4,'seo:company:vision-mission','2017-06-07 10:15:33',NULL,1),(5,'seo:company:scope-of-services','2017-06-07 10:15:33',NULL,1),(6,'seo:white-paper:landing','2017-06-07 10:15:33',NULL,1),(7,'seo:home:pages','2017-07-12 15:22:21','2017-07-12 15:26:09',1),(8,'seo:investment-services:procedure','2017-07-12 16:22:15','2017-07-12 16:22:15',1),(9,'seo:investment-services:green-pages','2017-07-12 16:22:46','2017-07-12 16:22:46',1);
+INSERT INTO `seo` VALUES (1,'seo:landing:news','2017-06-07 10:15:33',NULL,1),(2,'seo:company:organization-structure','2017-06-07 10:15:33',NULL,1),(3,'seo:company:history','2017-06-07 10:15:33',NULL,1),(4,'seo:company:vision-mission','2017-06-07 10:15:33',NULL,1),(5,'seo:company:scope-of-services','2017-06-07 10:15:33',NULL,1),(6,'seo:white-paper:landing','2017-06-07 10:15:33',NULL,1),(7,'seo:home:pages','2017-07-12 15:22:21','2017-07-12 15:26:09',1),(8,'seo:investment-services:procedure','2017-07-12 16:22:15','2017-07-12 16:22:15',1),(9,'seo:investment-services:green-pages','2017-07-12 16:22:46','2017-07-12 16:22:46',1),(11,'seo:landing:event','2017-07-13 05:04:17','2017-07-13 05:04:17',1),(12,'seo:renewable-energy:industri','2017-07-13 06:03:49','2017-07-13 06:03:49',1),(13,'seo:resources:tools','2017-07-13 12:01:43','2017-07-13 12:01:43',1),(14,'seo:resources:white-papers','2017-07-13 12:02:39','2017-07-13 12:02:39',1);
 /*!40000 ALTER TABLE `seo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1083,7 +1083,7 @@ CREATE TABLE `seo_trans` (
   PRIMARY KEY (`id`),
   KEY `fk_seo_trans_1_idx` (`seo_id`),
   CONSTRAINT `fk_seo_trans_1` FOREIGN KEY (`seo_id`) REFERENCES `seo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1092,7 +1092,7 @@ CREATE TABLE `seo_trans` (
 
 LOCK TABLES `seo_trans` WRITE;
 /*!40000 ALTER TABLE `seo_trans` DISABLE KEYS */;
-INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(7,'id','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(8,'en','LINTAS scope of works','LINTAS scope of works','LINTAS scope of works',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(9,'id','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(10,'en','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(11,'en','white papers','white papers','white papers',6,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(12,'id','kertas putih','kertas putih','kertas putih',6,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(17,'id','Lintas EBTKE Kementrian ESDM','EBTKE, ESDM, Lintas, Kementrian ESDM','Lintas EBTKE Kementrian ESDM',7,'2017-07-12 15:26:09','2017-07-12 15:26:09'),(18,'en','Lintas EBTKE Kementrian ESDM','EBTKE, ESDM, Lintas, Kementrian ESDM','Lintas EBTKE Kementrian ESDM',7,'2017-07-12 15:26:09','2017-07-12 15:26:09'),(19,'id','Meta Title','Meta Keyword','Meta Description',8,'2017-07-12 16:22:15','2017-07-12 16:22:15'),(20,'en','Meta Title','Meta Keyword','Meta Description',8,'2017-07-12 16:22:15','2017-07-12 16:22:15'),(21,'id','Meta Title','Meta Keyword','Meta Description',9,'2017-07-12 16:22:46','2017-07-12 16:22:46'),(22,'en','Meta Title','Meta Keyword','Meta Description',9,'2017-07-12 16:22:46','2017-07-12 16:22:46');
+INSERT INTO `seo_trans` VALUES (1,'id','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan','Berita dan Kegiatan','Kementerian ESDM Republik Indonesia | Berita dan Kegiatan',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(2,'en','Ministry ESDM Republic Of Indonesia | Event And News','Event And News','Ministry ESDM Republic Of Indonesia | Event And News',1,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(3,'en','Organization Structure','Organization Structure','Organization Structure',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(4,'id','Struktur Organisasi','Struktur Organisasi','Struktur Organisasi',2,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(5,'en','Company History','Company History','Company History',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(6,'id','Sejarah Perusahaan','Sejarah Perusahaan','Sejarah Perusahaan',3,'2017-06-07 07:39:45','2017-06-07 07:39:45'),(7,'id','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS','Cakupan pelayanan LINTAS',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(8,'en','LINTAS scope of works','LINTAS scope of works','LINTAS scope of works',5,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(9,'id','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia','Menjadi gerbang energi bersih di Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(10,'en','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia','Gateway to clean energy in Indonesia - Lintas energi bersih Indonesia',4,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(11,'en','white papers','white papers','white papers',6,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(12,'id','kertas putih','kertas putih','kertas putih',6,'2017-06-14 11:36:24','2017-06-14 11:36:24'),(17,'id','Lintas EBTKE Kementrian ESDM','EBTKE, ESDM, Lintas, Kementrian ESDM','Lintas EBTKE Kementrian ESDM',7,'2017-07-12 15:26:09','2017-07-12 15:26:09'),(18,'en','Lintas EBTKE Kementrian ESDM','EBTKE, ESDM, Lintas, Kementrian ESDM','Lintas EBTKE Kementrian ESDM',7,'2017-07-12 15:26:09','2017-07-12 15:26:09'),(19,'id','Meta Title','Meta Keyword','Meta Description',8,'2017-07-12 16:22:15','2017-07-12 16:22:15'),(20,'en','Meta Title','Meta Keyword','Meta Description',8,'2017-07-12 16:22:15','2017-07-12 16:22:15'),(21,'id','Meta Title','Meta Keyword','Meta Description',9,'2017-07-12 16:22:46','2017-07-12 16:22:46'),(22,'en','Meta Title','Meta Keyword','Meta Description',9,'2017-07-12 16:22:46','2017-07-12 16:22:46'),(27,'id','SEO LANDING EVENT','SEO LANDING EVENT','SEO LANDING EVENT',11,'2017-07-13 05:04:17','2017-07-13 05:04:17'),(28,'en','SEO LANDING EVENT','SEO LANDING EVENT','SEO LANDING EVENT',11,'2017-07-13 05:04:17','2017-07-13 05:04:17'),(29,'id','SEO RENEWABLE INDUSTRI','SEO RENEWABLE INDUSTRI','SEO RENEWABLE INDUSTRI',12,'2017-07-13 06:03:49','2017-07-13 06:03:49'),(30,'en','SEO RENEWABLE INDUSTRI','SEO RENEWABLE INDUSTRI','SEO RENEWABLE INDUSTRI',12,'2017-07-13 06:03:49','2017-07-13 06:03:49'),(31,'id','SEO TOOLS','SEO TOOLS','SEO TOOLS',13,'2017-07-13 12:01:43','2017-07-13 12:01:43'),(32,'en','SEO TOOLS','SEO TOOLS','SEO TOOLS',13,'2017-07-13 12:01:43','2017-07-13 12:01:43'),(33,'id','SEO WHITE PAPERS','SEO WHITE PAPERS','SEO WHITE PAPERS',14,'2017-07-13 12:02:39','2017-07-13 12:02:39'),(34,'en','SEO WHITE PAPERS','SEO WHITE PAPERS','SEO WHITE PAPERS',14,'2017-07-13 12:02:39','2017-07-13 12:02:39');
 /*!40000 ALTER TABLE `seo_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1360,4 +1360,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-12 23:33:42
+-- Dump completed on 2017-07-13 19:07:18

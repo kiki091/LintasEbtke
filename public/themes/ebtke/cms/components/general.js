@@ -527,3 +527,58 @@ function initSeoGreenPages()
     buttonClickClose();
     replaceToCkEditor();
 }
+
+// INIT FUNCTION EVENTS LANDING CONTENT MANAGER CMS
+function initSeoNewsPages()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoNewsPages();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION EVENTS LANDING CONTENT MANAGER CMS
+function initSeoEventPages()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoEventPages();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION RENEWABLE INDUSTRI CONTENT MANAGER CMS
+function initSeoRenewableIndustri()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoRenewableIndustri();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION TOOLS CONTENT MANAGER CMS
+function initSeoTools()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoTools();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+// INIT FUNCTION WHITE PAPERS CONTENT MANAGER CMS
+function initSeoWhitePaper()
+{
+    mainGeneral();
+    wizardSlide();
+    crudSeoWhitePaper();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}

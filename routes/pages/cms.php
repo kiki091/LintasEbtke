@@ -79,6 +79,55 @@ Route::group(['middleware' => ['web']], function ()
 							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@edit')->name('SeoGreenPagesEditData');
 						});
 					});
+
+					Route::group(['prefix' => 'news-and-event'], function () {
+
+						Route::group(['prefix' => 'news-landing'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoNewsController@index')->name('SeoNewsPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoNewsController@getData')->name('SeoNewsPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoNewsController@store')->name('SeoNewsPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoNewsController@edit')->name('SeoNewsPagesEditData');
+						});
+
+						Route::group(['prefix' => 'events-landing'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoEventController@index')->name('SeoEventPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoEventController@getData')->name('SeoEventPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoEventController@store')->name('SeoEventPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoEventController@edit')->name('SeoEventPagesEditData');
+						});
+					});
+
+					Route::group(['prefix' => 'renewable-energy'], function () {
+
+						Route::group(['prefix' => 'industri'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@index')->name('SeoRenewableIndustriPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@getData')->name('SeoRenewableIndustriPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@store')->name('SeoRenewableIndustriPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@edit')->name('SeoRenewableIndustriPagesEditData');
+						});
+					});
+
+					Route::group(['prefix' => 'resources'], function () {
+
+						Route::group(['prefix' => 'tools'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoToolsController@index')->name('SeoToolsPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoToolsController@getData')->name('SeoToolsPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoToolsController@store')->name('SeoToolsPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoToolsController@edit')->name('SeoToolsPagesEditData');
+						});
+
+						Route::group(['prefix' => 'white-papers'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\Seo\SeoWhitePaperController@index')->name('SeoWhitePaperPages');
+							Route::get('data', 'Ebtke\Cms\Pages\Seo\SeoWhitePaperController@getData')->name('SeoWhitePaperPagesGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoWhitePaperController@store')->name('SeoWhitePaperPagesStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoWhitePaperController@edit')->name('SeoWhitePaperPagesEditData');
+						});
+					});
 				});
 
 				// ROUTE NEWS

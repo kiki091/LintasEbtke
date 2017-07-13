@@ -2,7 +2,7 @@
 	<div class="bg__gray">
 		<div class="page-title">
 			<div class="title_left">
-		        <h3>SEO LINTAS OF SCOPE </h3>
+		        <h3>SEO LANDING NEWS</h3>
 		        <p>CONTENT MANAGEMENT SYSTEM</p>
 		    </div>
 		</div>
@@ -10,7 +10,7 @@
     
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<!-- Include form -->
-    	@include('ebtke.cms.pages.seo.scope-services.partials.form')
+    	@include('ebtke.cms.pages.seo.news-and-event.news.partials.form')
     	<!-- / End include form -->
 
 		<div class="main__content__layer">

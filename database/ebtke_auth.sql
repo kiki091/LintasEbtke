@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: ebtke_auth
+-- Host: 127.0.0.1    Database: ebtke_auth
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -164,7 +164,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (2,1),(16,1),(1,2);
+INSERT INTO `role` VALUES (1,2),(2,1),(16,1);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +199,7 @@ CREATE TABLE `sub_menu` (
 
 LOCK TABLES `sub_menu` WRITE;
 /*!40000 ALTER TABLE `sub_menu` DISABLE KEYS */;
-INSERT INTO `sub_menu` VALUES (1,'Geothermal','sub-geothermal','subMenuGeothermal()',8,1,NULL,NULL),(2,'Bio Energy','sub-bio-energy','subMenuBioEnergy()',8,1,NULL,'2017-06-29 02:44:34'),(3,'Others','sub-others','subMenuOthers()',8,1,NULL,NULL),(4,'Energy Conservation','sub-energi-conservation','subMenuEnergiConservation()',8,1,NULL,NULL),(5,'Industry','sub-industry','subMenuIndustry()',10,1,NULL,NULL),(6,'Comercial Building','sub-comercial-building','subMenuComercialBuilding()',10,1,NULL,NULL),(7,'Transportation','sub-transportation','subMenuTransportation()',10,1,NULL,NULL),(8,'Residentials','sub-residentials','subMenuResidentials()',10,1,NULL,NULL),(10,'Seo Vision & Mission','seo-vision-mission','seoVisionMission()',29,1,NULL,NULL),(12,'Seo Lintas Of Scope','seo-lintas-of-scope','seoLintasOfScope()',29,1,NULL,NULL),(13,'Seo Procedure','seo-procedure','seoInvestmentProcedure()',31,1,NULL,NULL),(14,'Seo Green Pages','seo-green-pages','seoGreenPages()',31,1,NULL,NULL),(15,'Seo Industry','seo-industry','seoIndustry()',32,1,NULL,NULL),(16,'Seo Tools','seo-tools','seoTools()',33,1,NULL,NULL),(17,'Seo White Papers','seo-white-papers','seoWhitePapers',33,1,NULL,NULL),(18,'Seo News','seo-news','seoNews()',34,1,NULL,NULL),(19,'Seo Events','seo-events','seoEvents()',34,1,NULL,NULL);
+INSERT INTO `sub_menu` VALUES (1,'Geothermal','sub-geothermal','subMenuGeothermal()',8,1,NULL,NULL),(2,'Bio Energy','sub-bio-energy','subMenuBioEnergy()',8,1,NULL,'2017-06-29 02:44:34'),(3,'Others','sub-others','subMenuOthers()',8,1,NULL,NULL),(4,'Energy Conservation','sub-energi-conservation','subMenuEnergiConservation()',8,1,NULL,NULL),(5,'Industry','sub-industry','subMenuIndustry()',10,1,NULL,NULL),(6,'Comercial Building','sub-comercial-building','subMenuComercialBuilding()',10,1,NULL,NULL),(7,'Transportation','sub-transportation','subMenuTransportation()',10,1,NULL,NULL),(8,'Residentials','sub-residentials','subMenuResidentials()',10,1,NULL,NULL),(10,'Seo Vision & Mission','seo-vision-mission','seoVisionMission()',29,1,NULL,NULL),(12,'Seo Lintas Of Scope','seo-lintas-of-scope','seoLintasOfScope()',29,1,NULL,NULL),(13,'Seo Procedure','seo-procedure','seoInvestmentProcedure()',31,1,NULL,NULL),(14,'Seo Green Pages','seo-green-pages','seoGreenPages()',31,1,NULL,NULL),(15,'Seo Industry','seo-industry','seoIndustry()',32,1,NULL,NULL),(16,'Seo Tools','seo-tools','seoTools()',33,1,NULL,NULL),(17,'Seo White Papers','seo-white-papers','seoWhitePapers()',33,1,NULL,NULL),(18,'Seo News','seo-news','seoNews()',34,1,NULL,NULL),(19,'Seo Events','seo-events','seoEvents()',34,1,NULL,NULL);
 /*!40000 ALTER TABLE `sub_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -284,7 +284,7 @@ CREATE TABLE `user_menu` (
 
 LOCK TABLES `user_menu` WRITE;
 /*!40000 ALTER TABLE `user_menu` DISABLE KEYS */;
-INSERT INTO `user_menu` VALUES (152,1,29),(153,1,22),(154,1,31),(155,1,34),(156,1,32),(157,1,33),(158,1,12),(159,1,11),(160,1,13),(161,1,10),(162,1,2),(163,1,1),(164,1,17),(165,1,16),(166,1,14),(167,1,15),(168,1,9),(169,1,8),(170,1,7),(171,1,21),(172,1,3),(173,1,6),(174,1,5),(175,1,4),(176,1,20),(177,1,18),(178,1,19),(179,1,30),(21,2,1),(55,16,2),(56,16,1);
+INSERT INTO `user_menu` VALUES (21,2,1),(55,16,2),(56,16,1),(152,1,29),(153,1,22),(154,1,31),(155,1,34),(156,1,32),(157,1,33),(158,1,12),(159,1,11),(160,1,13),(161,1,10),(162,1,2),(163,1,1),(164,1,17),(165,1,16),(166,1,14),(167,1,15),(168,1,9),(169,1,8),(170,1,7),(171,1,21),(172,1,3),(173,1,6),(174,1,5),(175,1,4),(176,1,20),(177,1,18),(178,1,19),(179,1,30);
 /*!40000 ALTER TABLE `user_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -318,7 +318,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@lintas.go.id','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','raVCdoFVDRpwLsT3GY6A36r0Tb1MZoQCwqyvvVuvbTVc1Sl9MPFsT4eOtEuQ',1,2,'2017-05-04 09:58:53','2017-07-11 07:38:04'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(16,'kiki','kiki@gmail.com','$2y$10$DrIa21Ru0w4QrD05nV6b4O0G8PQoJVC5gq1kazqoOWyF0Ea15jTma','jckWXnh6SDSa3oBMWcdODN9G2j60S1igfbP3tJDwZ9VfTcsWao0qRS5ScyQV',1,1,'2017-07-01 20:17:35','2017-07-01 20:39:49');
+INSERT INTO `users` VALUES (1,'admin','admin@lintas.go.id','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','67G1yceCRQrdKOmd48E9QN2uVAGRjyWouW27vZWMjC4b64djCgLVECxxvD9b',1,2,'2017-05-04 09:58:53','2017-07-11 07:38:04'),(2,'user','user@gmail.com','$2y$10$jWqW0ETc23XTaaDtjktAw.XRvdet5BnBHauvmJLPBCWNfbyvI3YNy','YnEw3QD8hBmLhaRBgkTmvoZG7o0vWaAWIScxRJ1CeGgBR2bkhcPGvRMzbnjQ',1,1,'2017-05-04 09:58:53','2017-05-04 09:58:53'),(16,'kiki','kiki@gmail.com','$2y$10$DrIa21Ru0w4QrD05nV6b4O0G8PQoJVC5gq1kazqoOWyF0Ea15jTma','jckWXnh6SDSa3oBMWcdODN9G2j60S1igfbP3tJDwZ9VfTcsWao0qRS5ScyQV',1,1,'2017-07-01 20:17:35','2017-07-01 20:39:49');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -331,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-12 23:43:57
+-- Dump completed on 2017-07-13 19:06:51
