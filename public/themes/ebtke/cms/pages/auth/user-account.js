@@ -39,6 +39,7 @@ function crudUserAccount() {
             menu_id: [],
             form_add_title: "User Accounr Manager",
             id: '',
+            checkFunctions: [],
             edit: false,
             responseData: {},
         },
@@ -135,6 +136,7 @@ function crudUserAccount() {
             editData: function(id) {
 
                 this.edit = true
+                this.checkFunctions = []          
                 var payload = []
                 payload['id'] = id
                 payload['_token'] = token
@@ -156,7 +158,7 @@ function crudUserAccount() {
                         this.system_location = response.data.system_location
 
                         $.each(response.data.menu_navigation, function(index, key) {
-                            document.getElementById("checkbox-menu_id-"+key.menu_id).checked = true;
+                            document.getElementById("checkbox-"+key.menu_id).checked = true;
                         });
 
                         $.each(response.data.user_role, function(index, key) {
@@ -168,6 +170,8 @@ function crudUserAccount() {
                         });
 
                         this.form_add_title = "Edit User Accounr Manager"
+                        $('.grid-check').masonry('destroy');
+                        masonryAdminNavigation(2000);
                         $('.btn__add').click()
 
                     } else {

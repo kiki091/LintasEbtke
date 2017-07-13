@@ -5485,7 +5485,6 @@ input, textarea, select {
     width: 30%;
     margin: 0px auto;
     float: left;
-    min-height: 200px;
     display: table;
     margin: 10px;
     border: 1px #8b889c solid;
@@ -5502,8 +5501,54 @@ input, textarea, select {
 
 .navigation_access ul {
     display: inline-table;
-    min-height: 285px;
 }
 .navigation_access ul li{
     width: 100%;
 }
+
+.checkbox--grid__wrapper {
+  width: 100%;
+  display: inline-block; }
+  .checkbox--grid__wrapper .checkbox--grid {
+    padding: 5px 10px 5px 0;
+    float: left; }
+    .checkbox--grid__wrapper .checkbox--grid:after {
+      content: "";
+      clear: both; }
+  .checkbox--grid__wrapper .checkbox--grid--item {
+    border: 1px solid #9B9B9B;
+    width: 240px;
+    display: inline-block; }
+    .checkbox--grid__wrapper .checkbox--grid--item .checkbox--grid--item--top {
+      background: #F4F2EF;
+      border-bottom: 1px solid #9B9B9B;
+      padding: 1px 3px 1px 24px; }
+    .checkbox--grid__wrapper .checkbox--grid--item .checkbox--grid--item--bottom {
+      padding: 1px 3px 1px 24px;
+      border-bottom: 1px solid #9B9B9B; }
+      .checkbox--grid__wrapper .checkbox--grid--item .checkbox--grid--item--bottom:last-child {
+        border-bottom: 1px solid transparent; }
+    .checkbox--grid__wrapper .checkbox--grid--item .form--checkbox__wrapper {
+      padding: 5px;
+      top: 0px;
+      display: inline-block;
+      vertical-align: top; }
+      .checkbox--grid__wrapper .checkbox--grid--item .form--checkbox__wrapper .checkbox--input + .checkbox--label:before {
+        content: '';
+        transform: translateX(-21px);
+        position: absolute;
+        top: 10px; }
+      .checkbox--grid__wrapper .checkbox--grid--item .form--checkbox__wrapper .checkbox--input:checked + .checkbox--label:after {
+        content: "";
+        left: 5px;
+        top: 8px;
+        margin: 0;
+        transform: translateX(-21px); }
+  .checkbox--grid__wrapper .checkbox--label {
+    color: #4A4A4A;
+    padding-left: 0px; }
+
+/* END */
+/* CHECKBOX INSIDE FORM BOTTOM PART */
+.form--bot .form--checkbox__wrapper .checkbox--input:checked + .checkbox--label:after {
+  top: -1px; }

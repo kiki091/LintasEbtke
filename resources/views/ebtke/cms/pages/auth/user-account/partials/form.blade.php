@@ -117,6 +117,36 @@
 								<div class="create__form__row">
 									<div class="new__form__field" style="width: 100%">
 										<label>Navigation Access</label>
+
+										<div class="checkbox--grid__wrapper grid-check" >
+										<!-- item grid list -->
+											<div class="checkbox--grid grid--item-check" v-for="(key_menu, key) in responseData.menu_navigation">
+												<div class="checkbox--grid--item">
+													<div class="checkbox--grid--item--top admin--top--check">
+														<div class="form--checkbox__wrapper">
+															
+															<label :for="'checkbox-controller-'+key" class="checkbox--label">@{{ key }}</label>
+														</div>
+													</div>
+													
+													<div class="checkbox--grid--item--bottom" v-for="user_menu in key_menu">
+														<div class="form--checkbox__wrapper">
+															<input type="checkbox" :id="'checkbox-'+user_menu.id" class="checkbox--input" name="menu_id[]" :value="user_menu.id">
+															<label :for="'checkbox-'+user_menu.id" class="checkbox--label">@{{ user_menu.title }}</label>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="form--error--message--left" id="form--error--message--menu_id"></div>
+									</div>
+								</div>
+								{{--
+								<div class="create__form__row">
+									<div class="new__form__field" style="width: 100%">
+										<label>Navigation Access</label>
 										<div class="field__icon grid-check">
 											<div class="navigation_access-check">
 												<div class="navigation_access" v-for="(key_menu, key) in responseData.menu_navigation">
@@ -136,6 +166,7 @@
 										<div class="form--error--message--left" id="form--error--message--menu_id"></div>
 									</div>
 								</div>
+								--}}
 							</div>
 						</div>
 					</div>

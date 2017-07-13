@@ -13,14 +13,14 @@ function masonry(delay)
 {
   if(delay==0) {
     $('.grid').masonry({
-      "itemSelector": ".navigation_access",
+      "itemSelector": ".grid--item",
       percentPosition: true
     });
   }
   else {
     setTimeout(function() {
       $('.grid').masonry({
-        "itemSelector": ".navigation_access",
+        "itemSelector": ".grid--item",
         percentPosition: true
       });
     }, delay);
@@ -40,11 +40,11 @@ function masonry(delay)
   // $(document).ajaxComplete(masonryUpdate);
   /*--------------------------*/
 }
-function masonryAdminPrivilege(delays){
+function masonryAdminNavigation(delays){
 
   setTimeout(function() {
     $('.grid-check').masonry({
-      "itemSelector": ".navigation_access-check",
+      "itemSelector": ".grid--item-check",
       percentPosition: true
     });
   }, delays);
@@ -53,7 +53,7 @@ function masonryAdminPrivilege(delays){
   var masonryUpdate = function() {
     setTimeout(function() {
       $('.grid-check').masonry({
-        "itemSelector": ".navigation_access-check",
+        "itemSelector": ".grid--item-check",
         percentPosition: true
       });
     }, delays);
