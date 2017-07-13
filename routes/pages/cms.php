@@ -131,7 +131,8 @@ Route::group(['middleware' => ['web']], function ()
 				});
 
 
-				// MAIN BANNER ROUTE CMS
+				// MAIN BANNER ROUTE CMS 
+
 
 				Route::group(['prefix' => 'main-banner'], function () {
 
