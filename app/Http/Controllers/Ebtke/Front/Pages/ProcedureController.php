@@ -16,7 +16,7 @@ class ProcedureController extends FrontController
     protected $mainBanner;
     //protected $procedure;
     const SEO_INVESTMENT_SERVICES_BIO_ENERGY_KEY = 'potentials:bio-energy';
-    const SEO_INVESTMENT_SERVICES_PROCEDURE_KEY = 'investment-services-procesure:landing';
+    const SEO_INVESTMENT_SERVICES_PROCEDURE_KEY = 'investment-services:procedure';
     
 	public function __construct(MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)
     {

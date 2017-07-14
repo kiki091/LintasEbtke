@@ -61,15 +61,6 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get(LaravelLocalization::transRoute('routes.scope_of_services'), 'Ebtke\Front\Pages\CompanyController@scopeServices')->name('CompanyScope');
 			});
 
-			// WHITE PAPERS  ROUTE
-
-			Route::group(['prefix' => LaravelLocalization::transRoute('routes.papers')], function () {
-
-				Route::get('/', 'Ebtke\Front\Pages\WhitePaperController@landing')->name('WhitePapers');
-				Route::get('{slug}', 'Ebtke\Front\Pages\WhitePaperController@detail')->name('DetailWhitePapers');
-				
-			});
-
 			// INVESTMENT SERVICES ROUTE
 
 			Route::group(['prefix' => LaravelLocalization::transRoute('routes.investment_services')], function () {
@@ -119,13 +110,28 @@ Route::group(['middleware' => ['web']], function ()
 				Route::get(LaravelLocalization::transRoute('routes.investment_services_procedure'), 'Ebtke\Front\Pages\ProcedureController@landing')->name('InvestmentServicesProcedure');
 			});
 
-			// TOOLS ROUTE
-			Route::group(['prefix' => LaravelLocalization::transRoute('routes.tools')], function () {
+			// RESOURCES ROUTE
 
-				Route::get('/', 'Ebtke\Front\Pages\ToolsController@landing')->name('Tools');
-				Route::get('{slug}', 'Ebtke\Front\Pages\ToolsController@detail')->name('ToolsDetail');
-				
-				
+			Route::group(['prefix' => LaravelLocalization::transRoute('routes.resources')], function (){
+
+				// TOOLS ROUTE
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.tools')], function () {
+
+					Route::get('/', 'Ebtke\Front\Pages\ToolsController@landing')->name('Tools');
+					Route::get('{slug}', 'Ebtke\Front\Pages\ToolsController@detail')->name('ToolsDetail');
+					
+					
+				});
+
+
+				// WHITE PAPERS  ROUTE
+
+				Route::group(['prefix' => LaravelLocalization::transRoute('routes.papers')], function () {
+
+					Route::get('/', 'Ebtke\Front\Pages\WhitePaperController@landing')->name('WhitePapers');
+					Route::get('{slug}', 'Ebtke\Front\Pages\WhitePaperController@detail')->name('DetailWhitePapers');
+					
+				});
 			});
 
 			// INFORMATION SERVICES ROUTE

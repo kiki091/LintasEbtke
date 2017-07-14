@@ -109,6 +109,16 @@ function menuWhitePapers()
     });
 }
 
+// JAVASCRIPT WHITE PAPERS CONTENT MANAGER
+
+function menuTools()
+{
+    $('.right_col').load(laroute.route('ToolsIndex', []), function()
+    {
+        initResourceTools()
+    });
+}
+
 // JAVASCRIPT SEO HOME PAGES CONTENT MANAGER
 
 function seoHomePages()

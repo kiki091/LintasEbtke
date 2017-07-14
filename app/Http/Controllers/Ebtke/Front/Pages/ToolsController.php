@@ -15,7 +15,7 @@ class ToolsController extends FrontController
     protected $seo;
     protected $response;
 
-    const SEO_KEY = 'tools:landing';
+    const SEO_KEY = 'resources:tools';
     const REDIS_TOOLS_LANDING_KEY = 'landing';
 
     public function __construct(ToolsServices $tools, SeoServices $seo, ResponseService $response)

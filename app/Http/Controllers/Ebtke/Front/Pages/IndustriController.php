@@ -18,7 +18,7 @@ class IndustriController extends FrontController
     protected $seo;
     protected $response;
 
-    const SEO_KEY = 'landing:industri';
+    const SEO_KEY = 'renewable-energy:industri';
 
     public function __construct(IndustriServices $industri, SeoServices $seo, ResponseService $response)
     {

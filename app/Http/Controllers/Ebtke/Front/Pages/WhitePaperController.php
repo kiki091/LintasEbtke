@@ -15,7 +15,7 @@ class WhitePaperController extends FrontController
     protected $seo;
     protected $response;
 
-    const SEO_KEY = 'white-paper:landing';
+    const SEO_KEY = 'resources:white-papers';
 
     const PAPERS_LANDING_REDIS_KEY = 'all';
     const PAPERS_DOWNLOADED_REDIS_KEY = 'downloaded';

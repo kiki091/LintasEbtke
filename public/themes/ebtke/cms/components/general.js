@@ -474,6 +474,18 @@ function initWhitePapers()
     uploadFile();
 }
 
+
+// INIT FUNCTION TOOLS CONTENT MANAGER CMS
+function initResourceTools()
+{
+    mainGeneral();
+    wizardSlide();
+    crudResourceTools();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
 // INIT FUNCTION SEO HOME PAGES CONTENT MANAGER CMS
 function initSeoHomePages()
 {

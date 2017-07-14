@@ -263,6 +263,20 @@ Route::group(['middleware' => ['web']], function ()
 						Route::post('order', 'Ebtke\Cms\Pages\WhitePapersController@order')->name('WhitePapersOrderData');
 
 					});
+
+					// ROUTE TOOLS
+					
+					Route::group(['prefix' => 'tools'], function () {
+
+						Route::get('/', 'Ebtke\Cms\Pages\ToolsController@index')->name('ToolsIndex');
+						Route::get('data', 'Ebtke\Cms\Pages\ToolsController@getData')->name('ToolsGetData');
+						Route::post('store', 'Ebtke\Cms\Pages\ToolsController@store')->name('ToolsStoreData');
+						Route::post('edit', 'Ebtke\Cms\Pages\ToolsController@edit')->name('ToolsEditData');
+						Route::post('change-status', 'Ebtke\Cms\Pages\ToolsController@changeStatus')->name('ToolsChangeStatus');
+						Route::post('delete', 'Ebtke\Cms\Pages\ToolsController@delete')->name('ToolsDeleteData');
+						Route::post('order', 'Ebtke\Cms\Pages\ToolsController@order')->name('ToolsOrderData');
+
+					});
 				});
 
 			});

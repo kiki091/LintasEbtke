@@ -34,4 +34,5 @@
 		'renewable_energi'					=> 'energi-terbarukan',
 		'industry'							=> 'industri',
 		'consulting_services'				=> 'layanan-konsultasi',
+		'resources'							=> 'sumber-daya',
 	];

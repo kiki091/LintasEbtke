@@ -33,4 +33,5 @@
 		'renewable_energi'					=> 'renewable-energi',
 		'industry'							=> 'industry',
 		'consulting_services'				=> 'consulting-services',
+		'resources'							=> 'resources',
 	];

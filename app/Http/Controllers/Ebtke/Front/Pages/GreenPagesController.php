@@ -7,25 +7,21 @@ use App\Http\Controllers\FrontController;
 use App\Services\Bridge\Front\GreenPages as GreenPagesServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
 use App\Services\Api\Response as ResponseService;
-use App\Services\Bridge\Front\MainBanner as MainBannerServices;
 
 class GreenPagesController extends FrontController
 {
 
     protected $seo;
     protected $response;
-    protected $mainBanner;
     protected $greenPages;
 
 
-    const SEO_GREEN_PAGES_LANDING_KEY = 'green-pages:landing';
-    const MAIN_BANNER_GREEN_PAGES_KEY = 'green-pages:landing';
+    const SEO_GREEN_PAGES_LANDING_KEY = 'investment-services:green-pages';
 
-    public function __construct(GreenPagesServices $greenPages, MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)
+    public function __construct(GreenPagesServices $greenPages, SeoServices $seo, ResponseService $response)
     {
         $this->seo = $seo;
         $this->response = $response;
-        $this->mainBanner = $mainBanner;
         $this->greenPages = $greenPages;
 
     }
