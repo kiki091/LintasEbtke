@@ -484,6 +484,7 @@ function initResourceTools()
     buttonClickOpen();
     buttonClickClose();
     replaceToCkEditor();
+    uploadFile();
 }
 
 // INIT FUNCTION SEO HOME PAGES CONTENT MANAGER CMS

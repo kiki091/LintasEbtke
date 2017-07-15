@@ -46,6 +46,7 @@
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages.js') }}"></script>
 <!-- Javascript RESOURCES WHITE PAPERS MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/white-papers.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/tools.js') }}"></script>
 <!-- Javascript SEO MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/seo/home-pages.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/seo/scope-of-services.js') }}"></script>

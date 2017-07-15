@@ -50,7 +50,8 @@
                         <img src="{{ $tools_landing['thumbnail_url'] }}" class="img-responsive" alt="{{ $tools_landing['filename'] }}">         
                     </div>
                     <div class="col-lg-2 pull-right">
-                        <img src="{{ asset(TOOLS_IMAGES_DIRECTORY.'progress_download.jpg') }}" class="img-responsive">
+                        <!-- <img src="{{ asset(TOOLS_IMAGES_DIRECTORY.'progress_download.jpg') }}" class="img-responsive"> -->
+                        {{--
                         <p class="info__download">
                             {{ $tools_landing['is_rating'] }} 
                             {{ trans('global_page.rating') }}
@@ -59,11 +60,12 @@
                             {{ $tools_landing['is_downloaded'] }}
                             {{ trans('global_page.download') }}
                         </p>
+                        --}}
                     </div>
                     <div class="col-lg-7 pull-right">
-                        <p>{{ $tools_landing['description'] }}</p>
+                        <p>{!! $tools_landing['description'] !!}</p>
                         <p class="pull-left">
-                            <a href="{{ $tools_landing['file_url'] }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
+                            <a href="{{ $tools_landing['url'] }}" target="__blank" class="waves-effect waves-light btn--primary blue uppercase btn-readmore">
                                 {{ trans('global_page.download') }}
                             </a>
                         </p>

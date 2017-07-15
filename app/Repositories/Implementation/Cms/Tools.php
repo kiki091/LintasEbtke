@@ -96,10 +96,10 @@ class Tools extends BaseImplementation implements ToolsInterface
             }
 
             //TODO: FILE UPLOAD
-            if ($this->uploadFile($data) != true) {
+            /*if ($this->uploadFile($data) != true) {
                 DB::rollBack();
                 return $this->setResponse($this->message, false);
-            }
+            }*/
 
             DB::commit();
             return $this->setResponse(trans('message.cms_success_store_data_general'), true);
@@ -127,10 +127,6 @@ class Tools extends BaseImplementation implements ToolsInterface
                     $store->thumbnail       = $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName();
                 }
 
-                if (!empty($data['file_upload'])) {
-                    $store->file_upload       = $this->uniqueIdFilePrefix . '_' .$data['file_upload']->getClientOriginalName();
-                }
-
                 $store->updated_at = $this->mysqlDateTimeFormat();
 
             } else {
@@ -148,9 +144,12 @@ class Tools extends BaseImplementation implements ToolsInterface
             $store->tools_type      = isset($data['tools_type']) ? $data['tools_type'] : '';
             $store->platform        = isset($data['platform']) ? $data['platform'] : '';
             $store->manufacture     = isset($data['manufacture']) ? $data['manufacture'] : '';
+            $store->url     = isset($data['url']) ? $data['url'] : '';
             $store->file_size       = isset($data['file_size']) ? $data['file_size'] : '';
-            $store->thumbnail       = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
-            $store->file_upload     = isset($data['file_upload']) ? $this->uniqueIdImagePrefix . '_' .$data['file_upload']->getClientOriginalName() : '';
+
+            if (!empty($data['thumbnail'])) {
+                $store->thumbnail       = $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName();
+            }
 
             if($save = $store->save())
             {
@@ -282,62 +281,6 @@ class Tools extends BaseImplementation implements ToolsInterface
             return false;
         }
 
-    }
-
-    /**
-     * Upload Thumbnail
-     * @param $data
-     * @return bool
-     */
-    protected function uploadFile($data)
-    {
-        try {
-            if (!$this->isEditMode($data)) {
-
-                if ( !$this->fileUploader($data)) {
-                    return false;
-                }
-
-            } else {
-                //TODO: Edit Mode
-                if (isset($data['file_upload']) && !empty($data['file_upload'])) {
-                    if (!$this->fileUploader($data)) {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-
-        } catch (\Exception $e) {
-            $this->message = $e->getMessage();
-            return false;
-        }
-
-    }
-
-    /**
-     * Thumbnail Uploader
-     * @param $data
-     * @return bool
-     */
-    protected function fileUploader($data)
-    {
-        if ($data['file_upload']->isValid()) {
-
-            $filename = $this->uniqueIdImagePrefix . '_' .$data['file_upload']->getClientOriginalName();
-
-            if (! $data['file_upload']->move('./' . TOOLS_FILE_DIRECTORY, $filename)) {
-                $this->message = trans('message.cms_upload_thumbnail_failed');
-                return false;
-            }
-
-            return true;
-
-        } else {
-            $this->message = $data['file_upload']->getErrorMessage();
-            return false;
-        }
     }
 
     /**

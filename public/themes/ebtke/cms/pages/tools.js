@@ -27,7 +27,7 @@ function crudResourceTools() {
                 tools_type : '',
                 platform : '',
                 manufacture : '',
-                file_upload : '',
+                url : '',
                 file_size : '',
                 platform : '',
                 description : {"en":"","id":""},
@@ -42,7 +42,6 @@ function crudResourceTools() {
             supported_language: lintas.supported_language,
             lintas_default_language: lintas.lintas_default_language,
             thumbnail : '',
-            file_upload : '',
             filename: '',
             last_language_key: '',
             image: '',
@@ -199,7 +198,6 @@ function crudResourceTools() {
                     if (response.status) {
                         this.models = response.data
                         this.thumbnail = response.data.thumbnail_url
-                        this.file_upload = response.data.file_upload_url
                         this.tools_related_id = response.data.tools_related_id
 
                         this.form_add_title = "Edit Tools Content Manager"
@@ -264,7 +262,7 @@ function crudResourceTools() {
                 });
             },
 
-            resetForm: function(setEditToFalse) {
+            resetForm: function() {
 
                 for (var supported_lang in this.supported_language) {
                     this.models.description[supported_lang] = ''
@@ -283,13 +281,13 @@ function crudResourceTools() {
                 this.models.tools_type = ''
                 this.models.platform = ''
                 this.models.manufacture = ''
-                this.models.file_upload = ''
+                this.models.url = ''
                 this.models.file_size = ''
                 this.models.tools_related_id = [];
 
                 this.models['language_selected'] = [];
                 this.thumbnail = '';
-                this.file_upload = '';
+                this.url = '';
 
                 this.tools_related_id = [];
                 this.id = ''
@@ -314,11 +312,8 @@ function crudResourceTools() {
             importTemplate: function(id, supportedLangKey) {
                 try {
                     switch(id) {
-                        case 'template-introduction':
-                            CKEDITOR.instances['editor-' + supportedLangKey + '-1'].setData($('#' + id).html());
-                            break;
                         case 'template-description':
-                            CKEDITOR.instances['editor-' + supportedLangKey + '-2'].setData($('#' + id).html());
+                            CKEDITOR.instances['editor-' + supportedLangKey + '-1'].setData($('#' + id).html());
                             break;
                         default :
 

@@ -126,21 +126,21 @@ class ToolsController extends CmsBaseController
             'tools_type'        => 'required',
             'platform'          => 'required',
             'manufacture'       => 'required',
-            'file_upload'       => 'required|max:'. TOOLS_IMAGES_SIZE .'|mimes:exe',
+            'url'       => 'url',
             'file_size'         => 'required',
-            'thumbnail'         => 'required|dimensions:width='.TOOLS_THUMBNAIL_WIDTH.',height='.TOOLS_THUMBNAIL_HEIGHT.'|max:'. TOOLS_IMAGES_SIZE .'|mimes:jpeg,jpg',
+            'thumbnail'         => 'required|dimensions:width='.TOOLS_THUMBNAIL_WIDTH.',height='.TOOLS_THUMBNAIL_HEIGHT.'|max:'. TOOLS_IMAGES_SIZE .'|mimes:jpeg,jpg,png',
             'tools_related_id'  => 'required',
             'description.*'     => 'required',
         ];
 
         if ($this->isEditMode($request->input())) {
 
-            if (is_null($request->file('file_upload'))) {
-                unset($rules['file_upload']);
-            }
-
             if (is_null($request->file('thumbnail'))) {
                 unset($rules['thumbnail']);
+            }
+
+            if (is_null($request->file('tools_related_id'))) {
+                unset($rules['tools_related_id']);
             }
         }
 

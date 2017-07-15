@@ -121,7 +121,8 @@ class Tools extends BaseImplementation implements ToolsInterface
     {
         $tools = $this->tools
             ->with('translation')
-            ->with('translations');
+            ->with('translations')
+            ->with('related');
 
         if(isset($params['limit_data'])) {
             $tools->take($params['limit_data']);

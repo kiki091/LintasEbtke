@@ -111,7 +111,7 @@ class Tools
         $dataTransform = $this->setTranslationForEditData($data['translations']);
         $dataTransform['id'] = isset($data['id']) ? $data['id'] : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(TOOLS_IMAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : [];
-        $dataTransform['file_upload_url'] = isset($data['file_upload']) ? asset(TOOLS_FILE_DIRECTORY.rawurlencode($data['file_upload'])) : [];
+        $dataTransform['url'] = isset($data['url']) ? $data['url'] : '';
 
         $dataTransform['filename'] = isset($data['filename']) ? $data['filename'] : '';
         $dataTransform['slug'] = isset($data['slug']) ? $data['slug'] : '';

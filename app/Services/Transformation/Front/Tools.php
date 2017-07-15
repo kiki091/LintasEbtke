@@ -46,7 +46,7 @@ class Tools
                 'filename' => isset($data['filename']) ? $data['filename'] : '',
                 'description' => isset($data['translation']['description']) ? str_limit($data['translation']['description'],350) : '',
                 'slug' => isset($data['slug']) ? $data['slug'] : '',
-                'file_url' => isset($data['file_upload']) ? asset(TOOLS_FILE_DIRECTORY.rawurlencode($data['file_upload'])) : '',
+                'url' => isset($data['url']) ? $data['url']: '',
                 'is_downloaded' => isset($data['downloaded']) ? $data['downloaded'] : 0,
                 'is_rating' => isset($data['rating']) ? $data['rating'] : 0,
                 'tools_type' => isset($data['tools_type']) ? $data['tools_type'] : '',
@@ -66,7 +66,7 @@ class Tools
     {
         $dataTransform['filename'] = isset($data['filename'])? $data['filename'] : '';
         $dataTransform['description'] = isset($data['translation']['description'])? $data['translation']['description'] : '';
-        $dataTransform['file_url'] = isset($data['file_upload'])? asset(TOOLS_FILE_DIRECTORY.rawurlencode($data['file_upload'])) : '';
+        $dataTransform['url'] = isset($data['url'])? $data['url'] : '';
         $dataTransform['thumbnail_url'] = isset($data['thumbnail'])? asset(TOOLS_IMAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
         $dataTransform['is_rating'] = isset($data['rating'])? $data['rating'] : 0;
         $dataTransform['is_downloaded'] = isset($data['downloaded'])? $data['downloaded'] : 0;

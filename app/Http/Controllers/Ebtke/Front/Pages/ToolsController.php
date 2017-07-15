@@ -16,7 +16,6 @@ class ToolsController extends FrontController
     protected $response;
 
     const SEO_KEY = 'resources:tools';
-    const REDIS_TOOLS_LANDING_KEY = 'landing';
 
     public function __construct(ToolsServices $tools, SeoServices $seo, ResponseService $response)
     {
@@ -31,7 +30,7 @@ class ToolsController extends FrontController
     {
         
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
-        $data['tools_landing'] = $this->tools->getData(["key" => self::REDIS_TOOLS_LANDING_KEY]);
+        $data['tools_landing'] = $this->tools->getData();
 
         $blade = self::URL_BLADE_FRONT_SITE. '.tools.landing';
         

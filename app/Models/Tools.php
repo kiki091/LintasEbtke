@@ -34,6 +34,14 @@ class Tools extends BaseModel
         return $this->belongsTo('App\Models\ToolsTrans', 'id', 'tools_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
 
+    /**
+     * @return mixed
+     */
+    public function related()
+    {
+        return $this->hasMany('App\Models\ToolsRelated', 'tools_id', 'id')->with('related_tools')->take('3')->orderBy('tools_related_id', 'random');
+    }
+
     /***************** Scope *****************/
 
 
