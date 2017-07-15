@@ -71,3 +71,7 @@ define('INDUSTRI_PAGES_DIRECTORY', 'bin/db/images/information_services/renewable
 // CONSULTING SERVICES
 
 define('BANNER_CONSULTING_SERVICES_DIRECTORY', 'bin/db/images/consulting_services/');
+
+// ENERGY CONSERVATION
+
+define('ENERGY_CONSERVATION_DIRECTORY', 'bin/db/images/investment_services/potentials/energy_conservation/');

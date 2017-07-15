@@ -221,12 +221,32 @@ function seoWhitePapers()
     });
 }
 
-// JAVASCRIPT SEO MAIN BANNER PAGES CONTENT MANAGER
+// JAVASCRIPT MAIN BANNER PAGES CONTENT MANAGER
 
 function menuMainBanner()
 {
     $('.right_col').load(laroute.route('CmsMainBannerIndex', []), function()
     {
         initMainBanner()
+    });
+}
+
+// JAVASCRIPT CONTACT US PAGES CONTENT MANAGER
+
+function menuContactUs()
+{
+    $('.right_col').load(laroute.route('CmsContactUsIndex', []), function()
+    {
+        initContactUs()
+    });
+}
+
+// JAVASCRIPT INDUSTRY PAGES CONTENT MANAGER
+
+function subMenuIndustry()
+{
+    $('.right_col').load(laroute.route('CmsIndustryIndex', []), function()
+    {
+        initMenuIndustry()
     });
 }

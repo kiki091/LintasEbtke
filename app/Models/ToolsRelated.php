@@ -34,7 +34,7 @@ class ToolsRelated extends BaseModel
     /**
      * @param $query
      */
-    public function scopeToolsId($query, $params = true)
+    public function scopeToolsId($query, $params)
     {
         return $query->where('tools_id', $params);
     }

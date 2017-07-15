@@ -26,7 +26,7 @@
     	<div class="row">
     		<div class="col-md-12">
               <h3 class="latestnews__title text-center">
-                  {{ trans('pages/investment_services_page.title')}} {{ trans('pages/investment_services_page.potentials.energy_conservation')}}
+                   {{ trans('pages/investment_services_page.potentials.energy_conservation')}}
               </h3>
   			      <div class="wrapper">
                   <center><div id="map"></div></center>

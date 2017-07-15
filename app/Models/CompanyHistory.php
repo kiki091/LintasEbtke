@@ -35,7 +35,7 @@ class CompanyHistory extends BaseModel
     /**
      * @param $query
      */
-    public function scopeId($query, $params = '')
+    public function scopeId($query, $params)
     {
         return $query->where('id', $params);
     }

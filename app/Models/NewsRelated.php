@@ -34,7 +34,7 @@ class NewsRelated extends BaseModel
     /**
      * @param $query
      */
-    public function scopeNewsId($query, $params = true)
+    public function scopeNewsId($query, $params)
     {
         return $query->where('news_id', $params);
     }

@@ -92,7 +92,8 @@ Route::group(['middleware' => ['web']], function ()
 
 					// ENERGY CONSERVATION ROUTE
 
-					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_conservation'), 'Ebtke\Front\Pages\EnergyConservationController@maps')->name('InvestmentServicesPotentialsEnergyConservation');
+					Route::get(LaravelLocalization::transRoute('routes.investment_potentials_conservation'), 'Ebtke\Front\Pages\EnergyConservationController@landing')->name('InvestmentServicesPotentialsEnergyConservation');
+					Route::get('maps_data', 'Ebtke\Front\Pages\EnergyConservationController@maps')->name('InvestmentServicesPotentialsEnergyConservationMapsData');
 				});
 
 				// Green Pages

@@ -7,6 +7,8 @@ $(document).ready(function(){
     vue();
     dragPhoto();
     checkAllLanguage();
+    masonry();
+    masonryAdminNavigation();
 });
 /* =============================== MASONRY ================================*/
 function masonry(delay)

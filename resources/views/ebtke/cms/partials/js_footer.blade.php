@@ -47,6 +47,8 @@
 <!-- Javascript RESOURCES WHITE PAPERS MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/white-papers.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/tools.js') }}"></script>
+<!-- Javascript INFORMATION SERVICES INDUSTRY MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/industri.js') }}"></script>
 <!-- Javascript SEO MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/seo/home-pages.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/seo/scope-of-services.js') }}"></script>
@@ -60,3 +62,5 @@
 <script src="{{ asset('themes/ebtke/cms/pages/seo/white-papers.js') }}"></script>
 <!-- Javascript MAIN BANNER MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/main-banner.js') }}"></script>
+<!-- Javascript CONTACT US MANAGEMENT SYSTEM -->
+<script src="{{ asset('themes/ebtke/cms/pages/message/contact-us.js') }}"></script>

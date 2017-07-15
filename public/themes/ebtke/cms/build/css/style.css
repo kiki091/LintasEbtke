@@ -17942,6 +17942,10 @@ input, textarea, select {
     -moz-appearance: none;
     -ms-appearance: none;
 }
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
 
 .form--checkbox__wrapper .checkbox--label {
     font-size: 12px;
@@ -18152,6 +18156,46 @@ input, textarea, select {
 /* CHECKBOX INSIDE FORM BOTTOM PART */
 .form--bot .form--checkbox__wrapper .checkbox--input:checked + .checkbox--label:after {
   top: -1px; }
+
+table.table__style {
+    width: 100%;
+    border: 1px solid #F0F0F0;
+    border-top: 1px solid transparent;
+}
+
+table.table__style tr th:first-child, table.table__style tr td:first-child {
+    text-align: center;
+    border-left: 1px solid transparent;
+}
+
+.contact_us_table .table__style td, .contact_us_table .table__style th {
+    text-align: left;
+}
+
+.contact_us_table .table__style th {
+    font-size: 18px;
+    color: #627F8F;
+}
+
+table.table__style tr th, table.table__style tr td {
+    font-size: 12px;
+    color: #9B9B9B;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #F0F0F0;
+    border-top: 1px solid transparent;
+}
+
+table.table__style tr th {
+    font-size: 14px !important;
+    padding: 15px 10px !important;
+    color: #627F8F;
+    font-family: "harriet_regular";
+    font-weight: normal;
+}
+.contact_us_table .table__style td, .contact_us_table .table__style th {
+    text-align: left;
+}
 .popup__mask__alert.is-visible, .popup--changepass.is-visible {
     opacity: 1;
     visibility: visible;

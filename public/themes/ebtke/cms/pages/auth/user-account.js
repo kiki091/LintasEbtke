@@ -133,6 +133,11 @@ function crudUserAccount() {
                 $("#UserAccountManagementFrom").submit();
             },
 
+            showForm: function(event) {
+                $('.grid-check').masonry('destroy');
+                masonryAdminNavigation(2000);
+            },
+
             editData: function(id) {
 
                 this.edit = true

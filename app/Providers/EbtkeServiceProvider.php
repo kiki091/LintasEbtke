@@ -44,6 +44,7 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\GreenPagesCategory', 'App\Repositories\Implementation\Front\GreenPagesCategory');
         $this->app->bind('App\Repositories\Contracts\Front\Event', 'App\Repositories\Implementation\Front\Event');
         $this->app->bind('App\Repositories\Contracts\Front\Industri', 'App\Repositories\Implementation\Front\Industri');
+        $this->app->bind('App\Repositories\Contracts\Front\EnergyConservation', 'App\Repositories\Implementation\Front\EnergyConservation');
 
         // CMS
 
@@ -57,10 +58,14 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Cms\InvestmentServices', 'App\Repositories\Implementation\Cms\InvestmentServices');
         $this->app->bind('App\Repositories\Contracts\Cms\WhitePapers', 'App\Repositories\Implementation\Cms\WhitePapers');
         $this->app->bind('App\Repositories\Contracts\Cms\Tools', 'App\Repositories\Implementation\Cms\Tools');
+        $this->app->bind('App\Repositories\Contracts\Cms\Industry', 'App\Repositories\Implementation\Cms\Industry');
 
         // SEO CMS
         $this->app->bind('App\Repositories\Contracts\Cms\Seo', 'App\Repositories\Implementation\Cms\Seo');
 
+
+        // MESSAGE CMS
+        $this->app->bind('App\Repositories\Contracts\Cms\ContactUs', 'App\Repositories\Implementation\Cms\ContactUs');
 
     }
 
@@ -87,7 +92,7 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\GreenPagesCategory',
             'App\Repositories\Contracts\Front\Event',
             'App\Repositories\Contracts\Front\Industri',
-            'App\Repositories\Contracts\Front\Event',
+            'App\Repositories\Contracts\Front\EnergyConservation',
 
             // CMS
 
@@ -101,10 +106,15 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Cms\InvestmentServices',
             'App\Repositories\Contracts\Cms\WhitePapers',
             'App\Repositories\Contracts\Cms\Tools',
+            'App\Repositories\Contracts\Cms\Industry',
 
             // Seo
 
             'App\Repositories\Contracts\Cms\Seo',
+
+            // Message
+
+            'App\Repositories\Contracts\Cms\ContactUs',
         );
     }
 }

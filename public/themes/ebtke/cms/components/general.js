@@ -385,7 +385,7 @@ function initUserAccount()
     buttonClickOpen();
     buttonClickClose();
     masonry(2500);
-    masonryAdminNavigation(200);
+    masonryAdminNavigation(2500);
 }
 
 // INIT FUNCTION NEWS CONTENT MANAGER CMS
@@ -605,4 +605,24 @@ function initMainBanner()
     crudMainBanner();
     buttonClickOpen();
     buttonClickClose();
+}
+
+// INIT FUNCTION CONTACT US CONTENT MANAGER CMS
+function initContactUs()
+{
+    mainGeneral();
+    crudContactUs();
+    buttonClickOpen();
+    buttonClickClose();
+}
+
+// INIT FUNCTION INDUSTRY CONTENT MANAGER CMS
+function initMenuIndustry()
+{
+    mainGeneral();
+    wizardSlide();
+    crudMenuIndustry();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
 }

@@ -23,5 +23,11 @@ class ContactUs extends BaseModel
 
     protected $guarded = [];
 
-        
+    /**
+     * @param $query
+     */
+    public function scopeContactUsId($query, $params)
+    {
+        return $query->where('id', $params);
+    }
 }

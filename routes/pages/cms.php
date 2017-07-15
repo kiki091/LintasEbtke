@@ -145,6 +145,38 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('order', 'Ebtke\Cms\Pages\MainBannerController@order')->name('CmsMainBannerOrderData');
 				});
 
+				// CONTACT US ROUTE CMS 
+
+
+				Route::group(['prefix' => 'contact-us'], function () {
+
+					Route::get('/', 'Ebtke\Cms\Pages\Message\ContactUsController@index')->name('CmsContactUsIndex');
+					Route::get('data', 'Ebtke\Cms\Pages\Message\ContactUsController@getData')->name('CmsContactUsGetData');
+					Route::post('show', 'Ebtke\Cms\Pages\Message\ContactUsController@show')->name('CmsContactUsShowData');
+					Route::post('delete', 'Ebtke\Cms\Pages\Message\ContactUsController@delete')->name('CmsContactUsDeleteData');
+				});
+
+				// INFORMATION SERVICES ROUTE CMS 
+
+				Route::group(['prefix' => 'information-services'], function () {
+
+					// RENEWABLE ROUTE CMS 
+					Route::group(['prefix' => 'renewable-energy'], function () {
+
+						// INDUSTRY ROUTE CMS 
+						Route::group(['prefix' => 'industry'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\IndustryController@index')->name('CmsIndustryIndex');
+							Route::get('data', 'Ebtke\Cms\Pages\IndustryController@getData')->name('CmsIndustryGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\IndustryController@store')->name('CmsIndustryStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\IndustryController@edit')->name('CmsIndustryEditData');
+							Route::post('change-status', 'Ebtke\Cms\Pages\IndustryController@changeStatus')->name('CmsIndustryChangeStatus');
+							Route::post('delete', 'Ebtke\Cms\Pages\IndustryController@delete')->name('CmsIndustryDeleteData');
+							Route::post('order', 'Ebtke\Cms\Pages\IndustryController@order')->name('CmsIndustryOrderData');
+						});
+					});
+				});
+
 				// ROUTE NEWS
 
 				Route::group(['prefix' => 'news'], function () {

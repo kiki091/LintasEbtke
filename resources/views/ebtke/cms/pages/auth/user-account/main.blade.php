@@ -17,7 +17,7 @@
 					<h2>@{{ form_add_title }}</h2>
 				</div>
 				<div class="content__btn">
-					<a href="#" class="btn__add" id="toggle-form">Add User</a>
+					<a href="#" class="btn__add" id="toggle-form" @click="showForm">Add User</a>
 		       	</div>
 		    </div>
 		    <div class="content__bottom">
