@@ -49,18 +49,22 @@
 
 -->
 @if(isset($latest_news) && !empty($latest_news))
-<section id="desktop__content" class="bg-gray introduction__content">
+
+<section class="bg-gray introduction__content">
 	<div class="row">
-		@foreach($latest_news as $key=> $latest_news)
-			<div class="img__carousel col-md-3 padding__center">
-				<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
-				<a href="{{ route('detailNews',$latest_news['slug']) }}" class="services_item">
-					<p>{{ $latest_news['title'] or '' }}</p>
-				</a>
-			</div>
-		@endforeach
+		<div class="container">
+		    <div id="owl-partners" class="owl-carousel">
+		    	@foreach($latest_news as $key=> $latest_news)
+					<a href="{{ route('detailNews',$latest_news['slug']) }}" class="services_item">
+		        		<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
+						<p>{{ $latest_news['title'] or '' }}</p>
+					</a>
+				@endforeach
+		    </div>
+		</div>
 	</div>
 </section>
+
 @endif
 <!-- COMPANY PROFILE OVERVIEW -->
 

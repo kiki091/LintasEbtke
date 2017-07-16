@@ -58,6 +58,7 @@ class EnergyConservation
             return [
                 
                 'title'         => isset($data['translation']['title']) ? $data['translation']['title'] : '',
+                'slug'         => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
                 'thumbnail_url' => isset($data['thumbnail']) ? asset(ENERGY_CONSERVATION_DIRECTORY.rawurlencode($data['thumbnail'])) : '',
                 'introduction'  => isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '',
                 'days_ago'      =>  isset($data['created_at']) ? \Carbon\Carbon::createFromTimeStamp(strtotime($data['created_at']))->diffForHumans() : '',

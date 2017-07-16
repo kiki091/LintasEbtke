@@ -26,6 +26,7 @@ mix.styles([
     'public/themes/ebtke/front/css/gallery.css',
     'public/themes/ebtke/front/css/news.css',
     'public/themes/ebtke/front/css/font.css',
+    //'public/themes/ebtke/front/css/carousel.css',
     'public/themes/ebtke/front/css/owl.carousel.css',
     'public/themes/ebtke/front/css/owl.theme.css',
     'public/themes/ebtke/front/css/icomoon.css',
@@ -66,7 +67,7 @@ mix.scripts([
 mix.scripts([
 	//'public/themes/ebtke/front/js/jquery-jvectormap-2.0.3.min.js',
 	'public/themes/ebtke/front/js/jquery.slitslider.js',
-	'public/themes/ebtke/front/js/plugins-slider.js',
+	//'public/themes/ebtke/front/js/plugins-slider.js',
 	'public/themes/ebtke/front/js/owl.carousel.min.js',
 	'public/themes/ebtke/front/js/jquery.stellar.min.js',
 	'public/themes/ebtke/front/js/wow.min.js',

@@ -39,16 +39,47 @@ class EnergyConservationController extends FrontController
      */
     public function landing(Request $request)
     {
-        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.energy-conservation.maps';
+        
+        $data['energy_conservation'] = $this->energyConservation->getData();
+        
+        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.energy-conservation.landing';
         
         if(view()->exists($blade)) {
         
-            return view($blade);
+            return view($blade, $data);
 
         }
 
         return abort(404);
     }
+
+    /**
+     *
+     * Get Detail Data Potensi Energy Conservation
+     * @param array
+     * @return array
+     */
+    public function detail($slug)
+    {
+        $data['detail'] = $this->energyConservation->detail($slug);
+        
+        $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.potentials.energy-conservation.detail';
+        
+        if(view()->exists($blade)) {
+        
+            return view($blade, $data);
+
+        }
+
+        return abort(404);
+    }
+
+    /**
+     *
+     * Get Maps Data Potensi Energy Conservation
+     * @param array
+     * @return array
+     */
 
     public function maps(Request $request)
     {

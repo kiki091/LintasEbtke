@@ -78,6 +78,21 @@ Route::group(['middleware' => ['web']], function ()
 							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@store')->name('SeoGreenPagesStoreData');
 							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoGreenPagesController@edit')->name('SeoGreenPagesEditData');
 						});
+
+						Route::group(['prefix' => 'potentials'], function () {
+
+							Route::group(['prefix' => 'energy-conservation'], function () {
+
+								Route::get('/', 'Ebtke\Cms\Pages\EnergyConservationController@index')->name('CmsEnergyConservationIndex');
+								Route::get('data', 'Ebtke\Cms\Pages\EnergyConservationController@getData')->name('CmsEnergyConservationGetData');
+
+								Route::post('store', 'Ebtke\Cms\Pages\EnergyConservationController@store')->name('CmsEnergyConservationStoreData');
+								Route::post('edit', 'Ebtke\Cms\Pages\EnergyConservationController@edit')->name('CmsEnergyConservationEditData');
+								Route::post('change-status', 'Ebtke\Cms\Pages\EnergyConservationController@changeStatus')->name('CmsEnergyConservationChangeStatus');
+								Route::post('delete', 'Ebtke\Cms\Pages\EnergyConservationController@delete')->name('CmsEnergyConservationDeleteData');
+								Route::post('order', 'Ebtke\Cms\Pages\EnergyConservationController@order')->name('CmsEnergyConservationOrderData');
+							});
+						});
 					});
 
 					Route::group(['prefix' => 'news-and-event'], function () {

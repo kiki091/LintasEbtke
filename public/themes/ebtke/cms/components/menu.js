@@ -250,3 +250,13 @@ function subMenuIndustry()
         initMenuIndustry()
     });
 }
+
+// JAVASCRIPT ENERGY CONSERVATION PAGES CONTENT MANAGER
+
+function subMenuEnergiConservation()
+{
+    $('.right_col').load(laroute.route('CmsEnergyConservationIndex', []), function()
+    {
+        initMenuEnergiConservation()
+    });
+}

@@ -46,7 +46,7 @@ class News extends BaseImplementation implements NewsInterface
 
         $params = [
             "is_active" => true,
-            "limit_data" => '4',
+            "limit_data" => '10',
             "order" => 'order'
         ];
 

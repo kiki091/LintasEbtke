@@ -626,3 +626,14 @@ function initMenuIndustry()
     buttonClickClose();
     replaceToCkEditor();
 }
+
+// INIT FUNCTION ENERGY CONSERVATION CONTENT MANAGER CMS
+function initMenuEnergiConservation()
+{
+    mainGeneral();
+    wizardSlide();
+    crudEnergiConservation();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}

@@ -41,6 +41,7 @@
 <script src="{{ asset('themes/ebtke/cms/pages/company-history.js') }}"></script>
 <!-- Javascript INVESTMENT SERVICES MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/investment-services.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/energy-conservation.js') }}"></script>
 <!-- Javascript GREEN PAGES CATRGORY MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages-category.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/green-pages.js') }}"></script>
