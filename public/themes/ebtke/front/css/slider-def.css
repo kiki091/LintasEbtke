@@ -68,14 +68,14 @@
   animation:content-s 7.5s infinite;
 }
 .content-txt h1{
-  font-family:Intro;
+  font-family:'helvetica-neue';
   color:#fff;
   text-align:left;
   margin-left:30px;
   padding-bottom:10px;
 }
 .content-txt h2{
-  font-family:Quicksand;
+  font-family:'helvetica-neue';
   font-weight:normal;
   font-style:italic;
   color:#fff;

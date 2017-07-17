@@ -21,10 +21,10 @@
 				Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.
 			</p>',
 
-		'title_consulting_services' 	=> 'Layanan konsultasi',
-		'title_news_&_events' 			=> 'Berita dan Acara',
-		'title_investment_serrvices' 	=> 'Jasa Investasi',
-		'title_libraries' 				=> 'Perpustakaan',
+		'title_consulting_services' 	=> 'Layanan Konsultasi',
+		'title_news_&_events' 			=> 'Berita dan Kegiatan',
+		'title_investment_serrvices' 	=> 'Layanan Investasi',
+		'title_libraries' 				=> 'Layanan Informasi',
 		'title_tools' 					=> 'Alat / Aplikasi',
 		'title_green_page' 				=> 'Halaman Hijau',
 		'title_link_&_match' 			=> 'LINK AND MATCH',

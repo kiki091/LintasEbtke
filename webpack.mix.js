@@ -16,6 +16,7 @@ mix.styles([
     'public/themes/ebtke/front/css/bootstrap.css',
     'public/themes/ebtke/front/css/maps/jquery-jvectormap-2.0.3.css',
     'public/themes/ebtke/front/css/raleway-webfont.css',
+    'public/themes/ebtke/front/css/helvetica-webfont.css',
     'public/themes/ebtke/front/css/animate.min.css',
     'public/themes/ebtke/front/css/accordion.css',
     'public/themes/ebtke/front/css/loader.css',

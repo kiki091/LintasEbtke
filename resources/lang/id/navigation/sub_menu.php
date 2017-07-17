@@ -35,11 +35,11 @@
 
 		// Reneable Energy
 
-		'renewable_energi'			=> 'Energi Terbarukan ',
+		'renewable_energi'			=> 'Konservasi Energi ',
 		'industry'					=> 'Industri',
 		'commercial_building'		=> 'Bangunan komersial',
 		'transportation'			=> 'Transportasi',
-		'residentials'				=> 'Residentials',
+		'residentials'				=> 'Perumahan',
 
 		// Resources
 

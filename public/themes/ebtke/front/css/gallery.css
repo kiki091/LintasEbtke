@@ -58,7 +58,7 @@
 }
 
 .group-landing-instagram-item .group-landing-instagram-title-container h3 {
-    font-family: "Harriet Display",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     color: #fff;
@@ -66,7 +66,7 @@
     line-height: 21px;
 }
 .group-landing-instagram-item .group-landing-instagram-title-container h4 {
-    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;

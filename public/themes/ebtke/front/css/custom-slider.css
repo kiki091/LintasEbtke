@@ -175,7 +175,7 @@
 
 .demo-1 [data-icon]:after {
     content: attr(data-icon);
-    font-family: 'AnimalsNormal';
+    font-family: 'helvetica-neue';
 	color: #999;
 	text-shadow: 0 0 1px #999;
 	position: absolute;
@@ -234,7 +234,7 @@
 .demo-1 .sl-slide blockquote p:before {
 	color: #f0f0f0;
 	color: rgba(244,244,244,0.65);
-	font-family: "Bookman Old Style", Bookman, Garamond, serif;
+	font-family: "helvetica-neue", Bookman, Garamond, serif;
 	position: absolute;
 	line-height: 60px;
 	width: 75px;

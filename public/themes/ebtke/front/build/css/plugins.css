@@ -6,7 +6,7 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'helvetica-neue';
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -896,7 +896,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Raleway Webfont";
+  font-family: "helvetica-neue";
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -5864,7 +5864,7 @@ button.close {
   width: 20px;
   height: 20px;
   margin-top: -10px;
-  font-family: serif;
+  font-family: 'helvetica-neue';
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -6442,6 +6442,16 @@ svg {
   font-style: normal;
 }
 
+@font-face {
+	font-family: "helvetica-neue";
+	src: url('../../fonts/helvetica/HelveticaNeue.eot');
+	src: url('../../fonts/helvetica/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+	url('../../fonts/helvetica/HelveticaNeue.svg#Helvetica Neue') format('svg'),
+	url('../../fonts/helvetica/HelveticaNeue.woff') format('woff'),
+	url('../../fonts/helvetica/HelveticaNeue.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 @charset "UTF-8";/*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -6465,7 +6475,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	z-index: 99;
 }
 .ac-container label{
-	font-family: 'Raleway Webfont';
+	font-family: 'helvetica-neue';
 	padding: 3px 20px;
 	position: relative;
 	z-index: 20;
@@ -6993,7 +7003,7 @@ h1 {
     float: left;
 }
 .secondmenu_left li a {
-    font-family: 'helvetica77';
+    font-family: 'helvetica-neue';
     color: #FFFFFF;
     font-size: 10px;
     border-right: #FFFFFF solid 1px;
@@ -7062,7 +7072,7 @@ h1 {
   margin-bottom: 20px;
 }
 .navbar .yamm-content h5 {
-  font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+  font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -7091,7 +7101,7 @@ h1 {
   color: #fff100;
   font-size: 12px;
   display: block;
-  font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+  font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
   font-style: normal;
   font-weight: 500;
 }
@@ -7834,7 +7844,7 @@ h1 {
   font-size: 12px;
 }
 #content #blog-post .comment .reply {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "helvetica-neue", Helvetica, Arial, sans-serif;
 }
 #content #blog-post .comment.last {
   margin-bottom: 0;
@@ -8061,7 +8071,7 @@ h1 {
 }
 /* navbar */
 .navbar {
-  font-family: "Raleway Webfont";
+  font-family: "helvetica-neue";
   min-height: 70px;
   border: none;
   margin-bottom: 0px;
@@ -8245,7 +8255,7 @@ h1 {
 }
 
 .navbar-default .navbar-nav > li > a {
-  font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+  font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
   font-style: normal;
   font-weight: 500;
   /*line-height: 50px;*/
@@ -8320,7 +8330,7 @@ h1 {
 }
 /* scaffolding */
 body {
-  font-family: "Raleway Webfont";
+  font-family: "helvetica-neue";
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -8372,7 +8382,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: normal;
-  font-family: "Raleway Webfont";
+  font-family: "helvetica-neue";
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -8458,7 +8468,7 @@ label {
   border-top: solid 1px #eeeeee;
   padding-top: 20px;
   text-transform: uppercase;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "helvetica-neue", Helvetica, Arial, sans-serif;
 }
 .pager li {
   display: inline;
@@ -8486,7 +8496,7 @@ label {
 /* pagination */
 .pagination {
   margin: 20px 0;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "helvetica-neue", Helvetica, Arial, sans-serif;
   border-radius: 0;
 }
 .pagination > li > a,
@@ -8767,7 +8777,7 @@ style.css:424
 }
 
 .page-header h2 {
-    text-transform: uppercase; font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
+    text-transform: uppercase; font-family: "helvetica-neue"; font-style: normal; font-weight: 400;font-size: 34px; line-height: 42px;
 }
 
 .devider {
@@ -8775,7 +8785,7 @@ style.css:424
 }
 
 h3.subtitle {
-    font-family: "Raleway Webfont"; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
+    font-family: "helvetica-neue"; font-style: italic; font-weight: 400; font-size: 18px; line-height: 26px;
 }
 
 #home-introduction-content {
@@ -8815,11 +8825,11 @@ h3.subtitle {
 }
 
 .default-content p {
-    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
+    font-family: "helvetica-neue"; font-style: normal; font-weight: 400;font-size: 14px; line-height: 28px; color: #464646; text-align: justify;
 }
 
 .default-content p .first-letter {
-    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
+    font-family: "helvetica-neue"; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
 }
 
 .group-landing-news-item {
@@ -8853,7 +8863,7 @@ h3.subtitle {
 }
 
 .group-landing-news-item h2 {
-    font-family: "Harriet Display Medium",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -8869,7 +8879,7 @@ h3.subtitle {
 }
 
 #category-landing-pages p {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8921,7 +8931,7 @@ h3.subtitle {
 }
 
 #desktop-footer .desktop-footer-copywrite {
-    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-family: 'helvetica-neue',Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     color: #fff;
@@ -9014,7 +9024,7 @@ h3.subtitle {
     margin-top: 5px;
     position: relative;
     color: #464646;
-    font-family: 'dincond';
+    font-family: 'helvetica-neue';
     font-size: 28px;
     line-height: 90px;
     margin-bottom: 5px;
@@ -9024,7 +9034,7 @@ h3.subtitle {
     display: block;
     color: #b56e36;
     font-size: 15px;
-    font-family: 'helvetica77';
+    font-family: 'helvetica-neue';
     line-height: 14px;
 }
 
@@ -9067,7 +9077,7 @@ h3.subtitle {
 }
 
 #desktop-footer-logo-container p {
-    font-family: 'Handlee', cursive;
+    font-family: 'helvetica-neue', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -9100,7 +9110,7 @@ h3.subtitle {
 }
 
 #desktop-footer-mailing-list p {
-    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -9120,7 +9130,7 @@ h3.subtitle {
 }
 
 #desktop-footer-mailing-list-form input[type=text] {
-    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -9396,7 +9406,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 }
 
 .detail__contact__us p {
-    font-family: "Raleway Webfont";
+    font-family: "helvetica-neue";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -10015,7 +10025,7 @@ span.plush {
 
 .cd-tabs-content h3 {
     padding-bottom: 12px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -10025,7 +10035,7 @@ span.plush {
 
 .cd-tabs-content h5 {
     padding-bottom: 12px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -10340,7 +10350,7 @@ iframe {
     font-weight: 800;
     font-size: 11px;
     text-transform: uppercase;
-    font-family: "Raleway Webfont";
+    font-family: "helvetica-neue";
 }
 
 #filters li span.active {
@@ -10476,7 +10486,7 @@ transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 
 .banner--main-event .banner__content .banner__content__heading {
     font-size: 32px;
-    font-family: "Raleway Webfont", sans-serif;
+    font-family: "helvetica-neue", sans-serif;
     letter-spacing: 0.6px;
     margin-bottom: 0;
     line-height: 39px;
@@ -10488,7 +10498,7 @@ transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
     line-height: 14px;
     margin-top: 10px;
     letter-spacing: 0;
-    font-family: "Raleway Webfont";
+    font-family: "helvetica-neue";
     margin-bottom: 15px;
 }
 table.table--data-style {
@@ -10503,7 +10513,7 @@ table.table--data-style tr:nth-child(odd) {
 table.table--data-style .header {
     background-color: #555;
     color: #fff;
-    font-family: 'Raleway Webfont';
+    font-family: 'helvetica-neue';
     padding: 15px 15px;
     display: table-cell;
     text-align: left;
@@ -10649,7 +10659,7 @@ ul li.data__table_industri:before {
     line-height: 1.5;
     letter-spacing: 3px;
     text-align: center;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
 }
 
 .information_services {
@@ -10657,7 +10667,7 @@ ul li.data__table_industri:before {
     line-height: 1.5;
     letter-spacing: 3px;
     text-align: center;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
 }
 
 .mail_to {
@@ -10732,7 +10742,7 @@ ul li.data__table_industri:before {
     text-align: center;
     color: #2f2f2f;
     font-size: 16px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'helvetica-neue', 'sans-serif';
     font-weight: 300;
 }
 
@@ -10740,7 +10750,7 @@ ul li.data__table_industri:before {
     text-align: center;
     color: #2f2f2f;
     font-size: 16px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'helvetica-neue', 'sans-serif';
     font-weight: 300;
     text-decoration: none;
 }
@@ -10753,7 +10763,7 @@ ul li.data__table_industri:before {
 }
 
 .news ul li {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'helvetica-neue', 'sans-serif';
     font-weight: 300;
     color: #a9a9a9;
     font-size: 13px;
@@ -10776,7 +10786,7 @@ ul li.data__table_industri:before {
     line-height: 23px;
     color: #666666;
     font-size: 13px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'helvetica-neue', 'sans-serif';
     font-weight: 300;
 }
 
@@ -10887,7 +10897,7 @@ ul li.data__table_industri:before {
     transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
 }
 .planner-cta h3 {
-    font-family: "Harriet Display",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 26px;
@@ -10901,7 +10911,7 @@ ul li.data__table_industri:before {
     transition: all .3s cubic-bezier(.645,.045,.355,1) 0s;
 }
 .planner-cta p {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 13px;
@@ -10916,7 +10926,7 @@ ul li.data__table_industri:before {
 }
 
 .page-default-details-intro h4 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
@@ -11172,14 +11182,14 @@ ul li.data__table_industri:before {
   animation:content-s 7.5s infinite;
 }
 .content-txt h1{
-  font-family:Intro;
+  font-family:'helvetica-neue';
   color:#fff;
   text-align:left;
   margin-left:30px;
   padding-bottom:10px;
 }
 .content-txt h2{
-  font-family:Quicksand;
+  font-family:'helvetica-neue';
   font-weight:normal;
   font-style:italic;
   color:#fff;
@@ -11481,7 +11491,7 @@ ul li.data__table_industri:before {
 }
 
 .group-landing-instagram-item .group-landing-instagram-title-container h3 {
-    font-family: "Harriet Display",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     color: #fff;
@@ -11489,7 +11499,7 @@ ul li.data__table_industri:before {
     line-height: 21px;
 }
 .group-landing-instagram-item .group-landing-instagram-title-container h4 {
-    font-family: "Gotham A","Gotham B",Verdana,Geneva,sans-serif;
+    font-family: "helvetica-neue",Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -11583,7 +11593,7 @@ ul li.data__table_industri:before {
     position: relative; padding: 50px; width: 50%; display: block; float: left; min-height: 20px; box-sizing: border-box; padding-top: 0px;
 }
 .news_landing_grid h2 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     vertical-align: baseline;
@@ -11596,7 +11606,7 @@ ul li.data__table_industri:before {
 }
 
 .news_landing_grid p {
-	color: #626262; font-size: 14px; line-height: 24px; margin-top: 3%; text-align: center; font-family: 'Philosopher', sans-serif;
+	color: #626262; font-size: 14px; line-height: 24px; margin-top: 3%; text-align: center; font-family: 'helvetica-neue', sans-serif;
 }
 
 .news_landing_grid: after {
@@ -11604,7 +11614,7 @@ ul li.data__table_industri:before {
 }
 
 #content__bottom p {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -11682,7 +11692,7 @@ ul li.data__table_industri:before {
 }
 
 h3.footer__title {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: "helvetica-neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
     letter-spacing: .1em;
     margin-bottom: 10px;
@@ -11709,7 +11719,7 @@ h3.footer__title {
 }
 
 .brandon.medium, a.btn--primary, input[type='submit'].btn--primary, button.btn--primary {
-    font-family: 'brandon_grotesque-medium';
+    font-family: 'helvetica-neue';
 }
 
 h5.s15 {
@@ -11750,7 +11760,7 @@ ul:not(.browser-default) {
 }
 
 h3.semibold {
-    line-height: 26px;    font-family: 'proximanova-bold';    font-size: 24px;
+    line-height: 26px;    font-family: 'helvetica-neue';    font-size: 24px;
     font-weight: 400;
 }
 
@@ -11865,7 +11875,7 @@ p.news {
 }
 
 .semibold {
-    font-family: 'proximanova-semibold';
+    font-family: 'helvetica-neue';
 }
 
 small.s10 {
@@ -11907,11 +11917,11 @@ h3.latestnews {
     line-height: 60px;
     font-size: 27px;
     font-weight: 400;
-    font-family: 'proximanova-bold';
+    font-family: 'helvetica-neue';
 }
 
 h3.company__title {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -11920,7 +11930,7 @@ h3.company__title {
 }
 
 h3.latestnews__title {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -11932,7 +11942,7 @@ h3.latestnews__title {
     padding-bottom: 80px;
 }
 .page-default-details-intro {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
@@ -11962,7 +11972,7 @@ h3.latestnews__title {
 }
 
 .style--texteditor p {
-    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-family: 'helvetica-neue',Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -12032,7 +12042,7 @@ h3.latestnews__title {
     line-height:26px;
     font-size:20px;
     color:#333;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
 }
@@ -12052,14 +12062,14 @@ h3.latestnews__title {
     margin: 0 0 5px 0;
     font-size: 16px;
     line-height: 1.4;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 600;
 }
 .blog_post_content p {
     text-align: justify;
     margin: 0px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 16px;
@@ -12149,7 +12159,7 @@ h3.latestnews__title {
 }
 
 .detail-also-like-title h1 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
@@ -12167,7 +12177,7 @@ h3.latestnews__title {
     text-decoration: none;
 }
 #related__news h4 {
-    font-family: "Harriet Display Medium",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -12188,7 +12198,7 @@ h3.latestnews__title {
     display: inline-block;
     vertical-align: top;
     zoom: 1;
-    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-family: 'helvetica-neue',Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -12245,13 +12255,13 @@ h3.latestnews__title {
     line-height: 24px;
     font-size: 14px;
     color: #666;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
 }
 .widget_meta li a:hover {color:#333;text-decoration: none;}
 
 .widget_tags h3 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -12264,7 +12274,7 @@ h3.latestnews__title {
 }
 
 .widget_tags li a {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     display: block;
     padding: 9px 19px;
     font-size: 16px;
@@ -12310,14 +12320,14 @@ h3.latestnews__title {
 
 .default-after-content-text h1 {
     padding-bottom: 12px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
     line-height: 42px;
 }
 .default-after-content-text h3 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
@@ -12332,7 +12342,7 @@ h3.latestnews__title {
 
 .default-after-banner-text h1 {
     padding-bottom: 12px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
@@ -12340,7 +12350,7 @@ h3.latestnews__title {
 }
 
 .default-after-banner-text h3 {
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
@@ -12370,7 +12380,7 @@ h3.latestnews__title {
 
 .default-copy h1 {
     margin-bottom: 21px;
-    font-family: "Harriet Display Light",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
+    font-family: "helvetica-neue",TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
@@ -12380,7 +12390,7 @@ h3.latestnews__title {
     margin-top: 28px;
 }
 .default-copy p {
-    font-family: 'Open Sans',Verdana,Geneva,sans-serif;
+    font-family: 'helvetica-neue',Verdana,Geneva,sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -13849,7 +13859,7 @@ you can use the generic selector below, but it's slower:
 
 .demo-1 [data-icon]:after {
     content: attr(data-icon);
-    font-family: 'AnimalsNormal';
+    font-family: 'helvetica-neue';
 	color: #999;
 	text-shadow: 0 0 1px #999;
 	position: absolute;
@@ -13908,7 +13918,7 @@ you can use the generic selector below, but it's slower:
 .demo-1 .sl-slide blockquote p:before {
 	color: #f0f0f0;
 	color: rgba(244,244,244,0.65);
-	font-family: "Bookman Old Style", Bookman, Garamond, serif;
+	font-family: "helvetica-neue", Bookman, Garamond, serif;
 	position: absolute;
 	line-height: 60px;
 	width: 75px;
@@ -14709,7 +14719,7 @@ nav{position:relative;width:980px;margin:0 auto;}
 #cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{margin: 0px auto;border:0;list-style:none;line-height:2;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 #cssmenu:after,#cssmenu > ul:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
 #cssmenu #head-mobile{display:none}
-#cssmenu{border-bottom: 5px #fff100 solid;font-family:"Raleway Webfont";background:#333;display: inline-table;width: 100%;position: relative;z-index: 99;margin: 0px auto;max-height: 60px;}
+#cssmenu{border-bottom: 5px #fff100 solid;font-family:"helvetica-neue";background:#333;display: inline-table;width: 100%;position: relative;z-index: 99;margin: 0px auto;max-height: 60px;}
 #cssmenu > ul > li{float:left}
 #cssmenu > ul > li > a{padding:17px;font-size:10px;letter-spacing:1px;text-decoration:none;color:#ddd;font-weight:700;}
 #cssmenu > ul > li:hover > a,#cssmenu ul li.active a{color:#333}
