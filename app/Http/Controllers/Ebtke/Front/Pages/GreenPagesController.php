@@ -38,7 +38,7 @@ class GreenPagesController extends FrontController
     {
         
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_GREEN_PAGES_LANDING_KEY]);
-        $data['landing'] = $this->greenPages->getData(["key" => self::MAIN_BANNER_GREEN_PAGES_KEY]);
+        $data['landing'] = $this->greenPages->getData();
 
         $blade = self::URL_BLADE_FRONT_SITE. '.investment-services.green-pages.landing';
         
