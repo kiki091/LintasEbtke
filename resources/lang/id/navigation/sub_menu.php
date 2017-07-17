@@ -17,7 +17,7 @@
 		// News and Events
 
 		'news' 						=> 'Berita',
-		'events'					=> 'Acara',
+		'events'					=> 'Kegiatan',
 
 		// Investment Services
 
