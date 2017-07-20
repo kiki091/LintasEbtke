@@ -45,6 +45,13 @@
 							</div>
 							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
 								<div class="new__form__field">
+									<label>Slug</label>
+									<input :value="models.office_name | lowercase | strSlug" name="slug" type="text" id="slug" class="new__form__input__field" placeholder="Enter the slug here" readonly="readonly">
+									<div class="form--error--message--left" id="form--error--message--slug"></div>
+								</div>
+							</div>
+							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
+								<div class="new__form__field">
 									<label>Phone Number</label>
 									<input v-model="models.phone_number" name="phone_number" type="text" id="phone_number" class="new__form__input__field" placeholder="Enter the office name here">
 									<div class="form--error--message--left" id="form--error--message--phone_number"></div>

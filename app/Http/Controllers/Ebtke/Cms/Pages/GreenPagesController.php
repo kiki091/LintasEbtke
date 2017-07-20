@@ -67,7 +67,7 @@ class GreenPagesController extends CmsBaseController
 
     public function store(Request $request)
     {//dd($request->all());
-        $validator = Validator::make($request->all(), $this->validationStore($request));
+        /*$validator = Validator::make($request->all(), $this->validationStore($request));
 
         if ($validator->fails()) {
             //TODO: case fail
@@ -76,7 +76,8 @@ class GreenPagesController extends CmsBaseController
         } else {
             //TODO: case pass
             return $this->greenPages->store($request->except(['_token','filename_url']));
-        }
+        }*/
+        return $this->greenPages->store($request->except(['_token','filename_url']));
 
     }
 
@@ -167,6 +168,7 @@ class GreenPagesController extends CmsBaseController
     {
         $rules = [
             'office_name'               => 'required',
+            'slug'                      => 'required',
             'phone_number'              => 'required',
             'fax_number'                => 'required',
             'email'                     => 'required',
