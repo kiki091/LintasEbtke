@@ -59,6 +59,10 @@
             <a href='#'>{{ trans('navigation/menu.menu_investment_services')}}</a>
             <ul>
                 <li>
+                    <a href="{{ url('sipeda') }}" target="_blank">SIPEDA</a>
+                    
+                </li>
+                <li>
                     <a href="{{ route('InvestmentServicesProcedure') }}">{{ trans('navigation/sub_menu.procedure') }}</a>
                     
                 </li>

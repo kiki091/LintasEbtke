@@ -19,6 +19,12 @@ Route::group(['middleware' => ['web']], function ()
 		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize','localizationRedirect','localeSessionRedirect']], function ()
 		{
 
+			Route::group(array('prefix' => 'sipeda'), function () {
+				Route::get('/', function () {
+			        return view('ebtke.sipeda.main');
+			    });
+			});
+
 			Route::get('/', 'Ebtke\Front\Pages\MainController@index')->name('MainPage');
 
 			// CONTACT US
