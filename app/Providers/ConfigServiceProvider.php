@@ -7,7 +7,7 @@
 		{
 			config([
 				'laravellocalization.supportedLocales' => [
-					'id' => array( 'name' => 'Indonesian', 'script' => 'Latn', 'native' => 'Bahasa Indonesia' ),
+					'id' => array( 'name' => 'Indonesian', 'script' => 'Latn', 'native' => 'Bahasa' ),
 					'en'  => array( 'name' => 'English', 'script' => 'Latn', 'native' => 'English' ),
 					//'da'  => array( 'name' => 'Denmark', 'script' => 'Latn', 'native' => 'Denmark' ),
 				],

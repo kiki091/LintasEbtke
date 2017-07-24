@@ -38,7 +38,6 @@ class GreenPagesCategory extends BaseImplementation implements GreenPagesCategor
     {
 
         $params = [
-            "is_active" => true,
             "limit_data" => isset($data['limit']) ? $data['limit'] : '',
         ];
 

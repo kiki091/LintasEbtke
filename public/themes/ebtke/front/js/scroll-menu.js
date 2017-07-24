@@ -1,13 +1,13 @@
 
 jQuery("document").ready(function($){
 	
-	var nav = $('#navigation-menu');
+	var nav = $('#header__content');
 	
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
-			nav.addClass("f-nav");
+			nav.addClass("fix_menu");
 		} else {
-			nav.removeClass("f-nav");
+			nav.removeClass("fix_menu");
 		}
 	});
  

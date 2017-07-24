@@ -1439,7 +1439,7 @@ pre code {
     width: 1155px;
   }
   .container-menu {
-    width: 1155px;
+    width: 90%;
   }
   .container-menu-navigation {
     width: 95%;
@@ -3814,7 +3814,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   
   .navbar-header {
     float: left;
-    margin-top: 5%;
+    margin-top: 2%;
+    min-height: 70px;
   }
 }
 .navbar-collapse {
@@ -3923,7 +3924,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 #logo-header {
   height: 80%;
-  margin-top: -6%;
+  margin-top: -5%;
 }
 
 .navbar-brand:hover,

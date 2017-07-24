@@ -10825,13 +10825,13 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 jQuery("document").ready(function($){
 	
-	var nav = $('#navigation-menu');
+	var nav = $('#header__content');
 	
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
-			nav.addClass("f-nav");
+			nav.addClass("fix_menu");
 		} else {
-			nav.removeClass("f-nav");
+			nav.removeClass("fix_menu");
 		}
 	});
  
@@ -11533,3 +11533,18 @@ $(document).ready(function() {
         });
     });
 })(jQuery);
+
+
+jQuery("document").ready(function($){
+	
+	var nav = $('#header__content');
+	
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 50) {
+			nav.addClass("fix_menu");
+		} else {
+			nav.removeClass("fix_menu");
+		}
+	});
+ 
+});

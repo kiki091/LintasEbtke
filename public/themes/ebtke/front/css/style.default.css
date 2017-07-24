@@ -217,10 +217,15 @@ h1 {
   /*clear: both;*/
   border-top: solid 1px #9adacd;
   text-align: right;
+  display: inline-block;
+    position: relative;
+    float: right;
+    width: 50%;
 }
 .navbar #search .navbar-form {
-  float: right;
-  width: 300px;
+  width: 60%;
+  position: relative;
+  display: grid;
 }
 .navbar #search .navbar-form .input-group {
   display: table;

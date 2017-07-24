@@ -742,6 +742,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 .paragraph__language {
     margin-bottom: 1%;
     display: inline-flex;
+    padding: 12px;
 }
 .paragraph__language a {
     font-size: 11px;
@@ -757,14 +758,20 @@ span.title__language__selector {
     width: 130px;
 }
 .paragraph__navigation {
-    margin-bottom: 1%;
+    margin-bottom: 18px;
     display: inline-flex;
+    position: relative;
+    width: auto;
+    overflow-x: hidden;
+    display: flex;
+    margin-top: 18px;
+    line-height: 3;
 }
 .paragraph__navigation a {
     font-size: 11px;
     text-decoration: none;
     color: #2d2d2d;
-    padding: 5px;
+    padding: 7px;
 }
 
 .search-top {
@@ -1660,7 +1667,7 @@ iframe {
 
 #filters li span {
     display: block;
-    padding:15px 20px;       
+    padding:15px 16px;       
     text-decoration:none;
     color:#666;
     cursor: pointer;
@@ -1684,6 +1691,7 @@ iframe {
     display:none;
     float:left;
     overflow:hidden;
+    margin-top: 10px;
 }
  
 #portfoliolist .portfolio {

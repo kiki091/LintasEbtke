@@ -1439,7 +1439,7 @@ pre code {
     width: 1155px;
   }
   .container-menu {
-    width: 1155px;
+    width: 90%;
   }
   .container-menu-navigation {
     width: 95%;
@@ -3814,7 +3814,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   
   .navbar-header {
     float: left;
-    margin-top: 5%;
+    margin-top: 2%;
+    min-height: 70px;
   }
 }
 .navbar-collapse {
@@ -3923,7 +3924,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 #logo-header {
   height: 80%;
-  margin-top: -6%;
+  margin-top: -5%;
 }
 
 .navbar-brand:hover,
@@ -7120,10 +7121,15 @@ h1 {
   /*clear: both;*/
   border-top: solid 1px #9adacd;
   text-align: right;
+  display: inline-block;
+    position: relative;
+    float: right;
+    width: 50%;
 }
 .navbar #search .navbar-form {
-  float: right;
-  width: 300px;
+  width: 60%;
+  position: relative;
+  display: grid;
 }
 .navbar #search .navbar-form .input-group {
   display: table;
@@ -9425,6 +9431,7 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 .paragraph__language {
     margin-bottom: 1%;
     display: inline-flex;
+    padding: 12px;
 }
 .paragraph__language a {
     font-size: 11px;
@@ -9440,14 +9447,20 @@ span.title__language__selector {
     width: 130px;
 }
 .paragraph__navigation {
-    margin-bottom: 1%;
+    margin-bottom: 18px;
     display: inline-flex;
+    position: relative;
+    width: auto;
+    overflow-x: hidden;
+    display: flex;
+    margin-top: 18px;
+    line-height: 3;
 }
 .paragraph__navigation a {
     font-size: 11px;
     text-decoration: none;
     color: #2d2d2d;
-    padding: 5px;
+    padding: 7px;
 }
 
 .search-top {
@@ -10343,7 +10356,7 @@ iframe {
 
 #filters li span {
     display: block;
-    padding:15px 20px;       
+    padding:15px 16px;       
     text-decoration:none;
     color:#666;
     cursor: pointer;
@@ -10367,6 +10380,7 @@ iframe {
     display:none;
     float:left;
     overflow:hidden;
+    margin-top: 10px;
 }
  
 #portfoliolist .portfolio {
@@ -14450,11 +14464,33 @@ div#slider figure {
 		display: none;
 		visibility: hidden;
 	}
+
+	.fix_menu {
+		position: fixed;
+		z-index: 999;
+		left: 0;
+	    top: 0;
+	    width: 100%;
+	    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+	    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+	    -o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+	    transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+	    -webkit-box-shadow: 0 0 10px rgba(70,70,70,.2);
+	    box-shadow: 0 0 10px rgba(70,70,70,.2);
+	    background: #FFFFFF;
+	}
 }
 
 @media (max-width: 768px) {
+	.paragraph__navigation {
+		display: none;
+		visibility: hidden;
+	}
 	#logo__header__mobile {
 		width: 70%;
+	}
+	.navbar #search {
+		width: 100%;
 	}
 
 	#navbar-brand__mobile {
@@ -14730,13 +14766,13 @@ nav{position:relative;width:980px;margin:0 auto;}
 #cssmenu > ul > li.has-sub:hover > a:before{top:23px;height:0}
 #cssmenu ul ul{position:absolute;left:-9999px}
 #cssmenu ul ul li{height:0;-webkit-transition:all .25s ease;-ms-transition:all .25s ease;background:#333;transition:all .25s ease}
-#cssmenu ul ul li:hover{background: #63602e;}
+#cssmenu ul ul li:hover{background: rgb(153, 153, 153);}
 #cssmenu li:hover > ul{left:auto;}
 #cssmenu li:hover > ul > li{min-width:200px;min-height:60px;padding: 10px;    border-bottom: 1px #fff solid;}
 #cssmenu ul ul ul{margin-left:95%;top:0}
 #cssmenu ul ul li a{min-width: 125px;font-size:12px;text-decoration:none;color:#fff;font-weight:400;}
 #cssmenu ul ul li:last-child > a,#cssmenu ul ul li.last-item > a{border-bottom:0}
-#cssmenu ul ul li:hover > a,#cssmenu ul ul li a:hover{color:#fff}
+#cssmenu ul ul li:hover > a,#cssmenu ul ul li a:hover{color:#000}
 #cssmenu ul ul li.has-sub > a:after{position:absolute;top:16px;right:11px;width:8px;height:2px;display:block;background:#ddd;content:''}
 #cssmenu ul ul li.has-sub > a:before{position:absolute;top:13px;right:14px;display:block;width:2px;height:8px;background:#ddd;content:'';-webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease}
 #cssmenu ul ul > li.has-sub:hover > a:before{top:17px;height:0}

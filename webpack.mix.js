@@ -63,6 +63,7 @@ mix.scripts([
 	'public/themes/ebtke/front/js/front.js',
 	'public/themes/ebtke/front/js/myscript.js',
 	'public/themes/ebtke/front/js/menu.js',
+    'public/themes/ebtke/front/js/scroll-menu.js',
 ], 'public/themes/ebtke/front/build/js/plugins.js');
 
 mix.scripts([

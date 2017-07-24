@@ -65,17 +65,17 @@
                                 {{ trans('pages/green_page.all_cat') }}
                             </span>
                         </li>
-                        @foreach($landing as $key=> $val_cat)
+                        @foreach($category as $key=> $val_cat)
                         <li>
-                            <span class="filter" data-filter=".{{ $val_cat['slug_category'] }}">
-                                {{ $val_cat['category'] }}
+                            <span class="filter" data-filter=".{{ $val_cat['slug'] }}">
+                                {{ $val_cat['title'] }}
                             </span>
                         </li>
                         @endforeach
                 </ul>
                 <div id="green__pages__list">
                 @foreach($landing as $key=> $val_landing)
-                <div class="col-md-3 green__pages {{ $val_landing['slug_category'] }}" data-cat="{{ $val_landing['slug_category'] }}">
+                <div class="col-md-3 col-sm-3 col-xs-12 green__pages {{ $val_landing['slug_category'] }}" data-cat="{{ $val_landing['slug_category'] }}">
                     <div class="border__gray sog-tile col-md-12">
                         <div style="height: 320px;">
                             <div class="photo-bg" style="background-image:url({{ $val_landing['thumbnail_url'] }}) "></div>

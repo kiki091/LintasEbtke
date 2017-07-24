@@ -1,4 +1,4 @@
-<div class="navbar navbar-default yamm" role="navigation" id="navbar">
+<div id="header__content"  class="navbar navbar-default yamm" role="navigation" id="navbar">
     <div class="container-menu">
         <div class="navbar-header">
 
@@ -12,53 +12,50 @@
         <!--/.navbar-header -->
         <div id="search">
             
-            <form class="navbar-form" role="search">
-
-                <div class="col-md-12 pull-right">
-                <p id="desktop__content" class="paragraph__date">
-                    {{ EbtkeHelper::getDayNow() }}
-                </p>
-
-                <p id="desktop__content" class="paragraph__language">
-                    <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('id') }}">
-                        Bahasa Indonesia || 
-                    </a>
-                    <a rel="alternate" href="{{LaravelLocalization::getLocalizedURL('en') }}">
-                        English
-                    </a>
-
-                </p>
-                </div>
-                <div class="full__width col-md-12 pull-right no__padding__right">
-                        <!-- <div id="mobile__content" class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div> -->
-
-                        <div class="search-top clearfix  pull-right">
-                            <div class="col-md-10 col-lg-10 col-xs-10 offset-0">
-                                <input name="_search" type="text" placeholder="Pencarian" class="_search">
-                            </div>
-                            <div class="col-md-2 col-lg-2 col-xs-2 offset-0">
-                                <button class="fa fa-search pull-right"></button>
-                            </div>
-                        </div>
-
-                </div>
-                <div class="col-md-12 pull-right">
-                <p id="desktop__content" class="paragraph__navigation" style="margin-top: 5px">
-                    <a href="{{ route('login') }}">
-                        {{ trans('navigation/top_menu.menu_login') }}
-                    </a> || 
-                    <a href="{{ route('login') }}#signup">
-                    {{ trans('navigation/top_menu.menu_register') }}
-                    </a>
-                </p>
+            <form class="navbar-form  pull-left col-md-8" role="search">
+                <div class="search-top clearfix">
+                    <div class="col-md-10 col-lg-10 col-xs-10 offset-0">
+                        <input name="_search" type="text" placeholder="Pencarian" class="_search">
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xs-2 offset-0">
+                        <button class="fa fa-search pull-right"></button>
+                    </div>
                 </div>
             </form>
+            <div class="paragraph__navigation">
 
+                <a href="{{ route('login') }}">
+                    {{ trans('navigation/top_menu.menu_login') }} || 
+                </a> 
+                <a href="{{ route('login') }}#signup">
+                    {{ trans('navigation/top_menu.menu_register') }}
+                </a>
+                <div class="btn-group paragraph__language">
+                    @if(Request::segment(1) == "id")
+                    <button type="button" class="btn btn-default btn-xs">
+                        @include('ebtke.front.svg-icon.ico-flag-indonesia')
+                    </button>
+                    @else
+                    <button type="button" class="btn btn-default btn-xs">
+                        @include('ebtke.front.svg-icon.ico-flag-english')
+                    </button>
+                    @endif
+                    <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-expanded="true">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li>
+                                <a style="color: #2d2d2d" rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            
         </div>
     </div>
     <!-- DESKTOP NAVIGATION MENU -->
