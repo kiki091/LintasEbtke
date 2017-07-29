@@ -32,7 +32,7 @@ class SipedaPrivilegeChecker
      * @var array
      */
     protected $publicMethod = [
-        'App\Http\Controllers\Ebtke\Sipeda\DashboardController@index'
+        'App\Http\Controllers\Ebtke\Sipeda\AuthController@index'
     ];
 
     /**

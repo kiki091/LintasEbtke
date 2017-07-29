@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	@section('pageheadtitle')
-		User Account
+		SIPEDA LOGIN PAGES
 	@endsection
 	@include('ebtke.sipeda.partials.header')
 	<body class="login">
@@ -20,8 +20,8 @@
       		<div class="login_wrapper">
           		<div class="animate form login_form">
               		<section class="login_content">
-                  		<form role="form" method="POST" action="{{ route('authenticate') }}">
-                    		<h1>Login Form</h1>
+                  		<form role="form" method="POST" action="{{ route('sipeda_authenticate') }}">
+                    		<h1>Welcome Back !!</h1>
                         	@if (count($errors) > 0)
                               	@foreach ($errors->all() as $error)
                                   	<p class="form--error--message">{{ $error }}</p>
@@ -46,7 +46,7 @@
         			        <div class="clearfix"></div>
 
         			        <div class="separator">
-                        		<p class="change_link">New to site?
+                        		<p class="change_link">Does'n have accpont ?
                           			<a href="#signup" class="to_register"> Create Account </a>
                         		</p>
                         	</div>
@@ -64,7 +64,7 @@
 
           		<div id="register" class="animate form registration_form">
               		<section class="login_content">
-                  		<form method="POST" action="{{ route('registered') }}" id="UserFormRegistration">
+                  		<form method="POST" action="{{ route('sipeda_registered') }}" id="UserFormRegistration">
                     		<h1>Create Account</h1>
       			            <div class="form-group">
       			            	<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
@@ -97,7 +97,7 @@
                       			<input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm Password"/>
                     		</div>
                     		<div class="separator">
-                    			<p class="change_link pull-left">Already a member ?
+                    			<p class="change_link pull-left">Already have account ?
                         			<a href="#signin" class="to_register"> Log in </a>
                       			</p>
                               	<input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">

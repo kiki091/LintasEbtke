@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Ebtke\Sipeda;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use App\Http\Controllers\CmsBaseController;
+use App\Http\Controllers\SipedaBaseController;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use App\Services\Bridge\Auth\Sipeda\Perusahaan as UserServices;
-use App\Custom\Facades\DataHelper;
+use App\Services\Bridge\Sipeda\Perusahaan as UserServices;
+use App\Custom\SipedaDataHelper;
 use App\Custom\RouteMenuLocation;
 use App\Services\Api\Response as ResponseService;
 use Session;
@@ -17,7 +17,7 @@ use Validator;
 use ValidatesRequests;
 use Response;
 
-class AuthController extends MscBaseController
+class AuthController extends SipedaBaseController
 {
 	use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
@@ -52,7 +52,7 @@ class AuthController extends MscBaseController
     {
         //TODO: Validation Auth
         if (!$this->validationAuth($request->input())) {
-            return redirect(route('msc_login'))
+            return redirect(route('sipeda_login'))
                 ->withInput($request->only($this->loginUsername(), 'remember'))
                 ->withErrors($this->validationMessage);
         }
@@ -68,9 +68,9 @@ class AuthController extends MscBaseController
             return $this->sendLockoutResponse($request);
         }
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('sipeda')->attempt($credentials)) {
             //TODO: set session first
-            if ($this->user->setMscAuthSession()) {
+            if ($this->user->setSipedaAuthSession()) {
                 //TODO : redirect to dashboard
                return $this->manageRedirectAfterLogin();
             }
@@ -127,14 +127,14 @@ class AuthController extends MscBaseController
      */
     private function manageRedirectAfterLogin()
     {
-        $siswaInfo = MscDataHelper::siswaInfo();
+        $sipedaInfo = SipedaDataHelper::sipedaInfo();
 
-        if (isset($siswaInfo['nama_lengkap']) && !empty($siswaInfo['nama_lengkap'])) {
+        if (isset($sipedaInfo['nama_perusahaan']) && !empty($sipedaInfo['nama_perusahaan'])) {
             
-            return redirect('/'.str_slug($siswaInfo['nama_lengkap']));
+            return redirect('/dashboard');
         }
 
-        return redirect('/');
+        return redirect(route('sipeda_login'));
     }
 
     /**
@@ -203,10 +203,10 @@ class AuthController extends MscBaseController
      */
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('sipeda')->logout();
         Session::flush();
 
-        return redirect(route('msc_login'));
+        return redirect(route('sipeda_login'));
     }
 
 }

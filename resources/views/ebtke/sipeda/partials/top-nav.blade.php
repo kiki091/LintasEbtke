@@ -8,7 +8,7 @@
       		<ul class="nav navbar-nav navbar-right">
       			<li class="">
                   	<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    	{{ DataHelper::userEmail() }}
+                    	{{ SipedaDataHelper::sipedaEmail() }}
                     	<span class=" fa fa-angle-down"></span>
                  	 </a>
                   	<ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -42,7 +42,7 @@
                	</button>
                 <h4 class="modal-title" id="myModalLabel">CHANGE PASSWORD</h4>
             </div>
-            <form id="FormChangePassword" action="{{ route('ChangePassword') }}" method="POST">
+            <form id="FormChangePassword" action="{{ route('sipeda_chenge_password') }}" method="POST">
             <div class="modal-body">
                 <div class="x_panel">
                 	<div class="x_content">

@@ -171,6 +171,7 @@ return [
 
         App\Providers\EbtkeHelperServiceProvider::class,
         App\Providers\EbtkeServiceProvider::class,
+        App\Providers\SipedaServiceProvider::class,
 
         /*
          * Package Service Providers...

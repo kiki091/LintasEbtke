@@ -12,7 +12,7 @@ class SipedaDataHelper {
      */
     public static function sipedaInfo()
     {
-        return Session::get('sipeda_info');
+        return Session::get('sipeda_user_info');
     }
 
     /**
@@ -21,7 +21,7 @@ class SipedaDataHelper {
 
     public static function sipedaId()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
         if (isset($sipedaInfo['sipeda_id'])) {
             return $sipedaInfo['sipeda_id'];
@@ -35,7 +35,7 @@ class SipedaDataHelper {
      */
     public static function sipedaEmail()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
         if (isset($sipedaInfo['email'])) {
             return $sipedaInfo['email'];
@@ -50,10 +50,10 @@ class SipedaDataHelper {
 
     public static function sipedaName()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
-        if (isset($sipedaInfo['name'])) {
-            return $sipedaInfo['name'];
+        if (isset($sipedaInfo['nama_perusahaan'])) {
+            return $sipedaInfo['nama_perusahaan'];
         }
 
         return false;
@@ -64,7 +64,7 @@ class SipedaDataHelper {
      */
     public static function sipedaRole()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
         if (isset($sipedaInfo['sipeda_privilage'][0]['role_name'])) {
 
@@ -80,7 +80,7 @@ class SipedaDataHelper {
 
     public static function sipedaMenu()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
         if (isset($sipedaInfo['sipeda_menu'])) {
             return $sipedaInfo['sipeda_menu'];
@@ -95,7 +95,7 @@ class SipedaDataHelper {
 
     public static function sipedaLocation()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
 
         if (isset($sipedaInfo['sipeda_location']['slug'])) {
             return $sipedaInfo['sipeda_location']['slug'];
@@ -110,7 +110,7 @@ class SipedaDataHelper {
 
     public static function sipedaSystemLocation()
     {
-        $sipedaInfo = Session::get('sipeda_info');
+        $sipedaInfo = Session::get('sipeda_user_info');
         $sipedaInfo['default_system_location'] = self::DEFAULT_SYSTEM_LOCATION;
 
         if (isset($sipedaInfo['system_location'])) {
