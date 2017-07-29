@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'sipeda' => [
+            'driver' => 'session',
+            'provider' => 'sipeda',
+        ],
     ],
 
     /*
@@ -67,7 +72,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\Auth\Users::class,
+        ],
+
+        'sipeda' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Sipeda\Perusahaan::class,
         ],
 
         // 'users' => [
@@ -94,6 +104,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'sipeda' => [
+            'provider' => 'sipeda',
             'table' => 'password_resets',
             'expire' => 60,
         ],

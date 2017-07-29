@@ -127,3 +127,52 @@ mix.scripts([
 	'public/themes/ebtke/cms/js/custom.min.js',
 	'public/themes/ebtke/cms/js/nprogress.js',
 ], 'public/themes/ebtke/cms/build/js/core.js');
+
+/*
+ * Sipeda Style And Javascript Compiled
+ */
+
+
+mix.styles([
+    'public/themes/sipeda/cms/css/font-awesome.css',
+    'public/themes/sipeda/cms/css/bootstrap.css',
+    'public/themes/sipeda/cms/css/notify__custom.css',
+    'public/themes/sipeda/cms/css/nprogress.css',
+    'public/themes/sipeda/cms/css/animate.css',
+    'public/themes/sipeda/cms/css/custom.css',
+    'public/themes/sipeda/cms/css/pop__up.css',
+    'public/js/bower_components/pacejs/pace-theme-flash.css',
+    'public/js/bower_components/iCheck/skins/flat/flat.css',
+    'public/js/bower_components/hold-on/HoldOn.min.css',
+    'public/js/bower_components/sweetalert/dist/sweetalert.css',
+    'public/js/bower_components/icheck-bootstrap/icheck-bootstrap.css',
+    'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.min.css',
+    'public/js/bower_components/air-datepicker-master/dist/css/datepicker.css',
+    'public/js/bower_components/bootstrap-clockpicker/bootstrap-clockpicker.css',
+    'public/js/bower_components/datetimepicker/build/jquery.datetimepicker.min.css',
+], 'public/themes/sipeda/cms/build/css/style.css');
+
+
+mix.scripts([
+    'public/js/bower_components/jquery/dist/jquery.min.js',
+    'public/js/bower_components/jquery/dist/jquery-ui.js',
+    'public/js/bower_components/iCheck/icheck.min.js',
+    'public/js/bower_components/hold-on/HoldOn.min.js',
+    'public/js/bower_components/sweetalert/dist/sweetalert.min.js',
+    'public/js/bower_components/notifyjs/dist/notify.js',
+    'public/js/bower_components/gsap/src/minified/TweenMax.min.js',
+    'public/js/bower_components/pnotify/dist/pnotify.js',
+    'public/js/bower_components/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js',
+    'public/js/bower_components/air-datepicker-master/dist/js/datepicker.js',
+    'public/js/bower_components/bootstrap-clockpicker/bootstrap-clockpicker.js',
+    'public/js/bower_components/datetimepicker/build/jquery.datetimepicker.full.js',
+    'public/js/bower_components/masonry/dist/masonry.pkgd.js',
+], 'public/themes/sipeda/cms/build/js/plugins.js');
+
+mix.scripts([
+    'public/themes/sipeda/cms/js/bootstrap.min.js',
+    'public/js/bower_components/custom-file-input/custom-file-input.js',
+    //'public/js/bower_components/pacejs/pace.js',
+    'public/themes/sipeda/cms/js/custom.min.js',
+    'public/themes/sipeda/cms/js/nprogress.js',
+], 'public/themes/sipeda/cms/build/js/core.js');

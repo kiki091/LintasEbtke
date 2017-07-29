@@ -19,7 +19,7 @@ class Privilage extends Model
         'created_by'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['users'];
 
     public function role_user()
     {

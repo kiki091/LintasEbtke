@@ -14,6 +14,7 @@ use Session;
 class CmsBaseController extends Controller
 {
     const URL_BLADE_CMS = 'ebtke.cms.pages';
+    const URL_BLADE_SIPEDA = 'ebtke.sipeda.pages';
 
 	public function __construct()
     {

@@ -19,7 +19,7 @@ class MenuGroup extends Model
         'created_by'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['users'];
 
     /***************** Relationship *****************/
 

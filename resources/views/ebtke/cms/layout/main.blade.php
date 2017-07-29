@@ -24,7 +24,7 @@
             <div class="clearfix"></div>
             <div id="notif-group" class="tabbed_notifications"></div>
         </div>
-        @include('ebtke.front.partials.vars')
+        @include('ebtke.slots.vars')
         @include('ebtke.cms.partials.js_footer')
         
     </body>

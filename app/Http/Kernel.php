@@ -55,8 +55,10 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'sipeda' => \App\Http\Middleware\RedirectIfSipedaAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'user.privilege' => \App\Http\Middleware\UserPrivilege::class,
+        'sipeda.privilege' => \App\Http\Middleware\SipedaPrivilege::class,
         /**** OTHER MIDDLEWARE ****/
         'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,

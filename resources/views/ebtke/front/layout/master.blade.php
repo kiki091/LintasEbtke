@@ -41,7 +41,7 @@
 			@include('ebtke.front.partials.footer')
 		</div>
 		
-		@include('ebtke.front.partials.vars')
+		@include('ebtke.slots.vars')
 		@include('ebtke.front.partials.js_footer')
 			
 		@yield('scripts')

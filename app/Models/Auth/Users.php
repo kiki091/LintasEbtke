@@ -3,11 +3,12 @@
 namespace App\Models\Auth;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class User
  */
-class Users extends Model
+class Users extends Authenticatable
 {
     protected $connection = 'auth';
     protected $table = 'users';
@@ -33,7 +34,7 @@ class Users extends Model
         'password', 'remember_token',
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['users'];
 
     public function role()
     {

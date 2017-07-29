@@ -19,7 +19,7 @@ class SubMenu extends Model
         'created_by'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['users'];
 
 
     /***************** Relationship *****************/

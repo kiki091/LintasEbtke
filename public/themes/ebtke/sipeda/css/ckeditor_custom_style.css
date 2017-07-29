@@ -1,0 +1,14 @@
+.custom__css div{
+    /*font-size: 50px;*/
+}
+
+.cke_editable{
+    margin: 20px !important;
+    font-size: 13px;
+}
+.cke_editable p{
+    font-size: 13px;
+}
+.first-letter {
+    font-family: "Raleway Webfont"; font-style: normal; font-weight: 400; font-size: 58px; line-height: 56px; color: #464646; text-transform: uppercase; float: left; margin-right: 8px; margin-bottom: -4px;
+}

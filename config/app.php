@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\DataHelperServiceProvider::class,
+        App\Providers\SipedaDataHelperServiceProvider::class,
 
         /*
          * Custom Service Providers...

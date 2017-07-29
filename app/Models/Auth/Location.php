@@ -19,7 +19,7 @@ class Location extends Model
         'created_by'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['users'];
 
 
     /***************** Scope *****************/
