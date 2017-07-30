@@ -13,6 +13,7 @@ class Perusahaan extends Authenticatable
     protected $connection = 'sipeda';
     protected $table = 'perusahaan';
 
+    protected $guard = 'sipeda';
     public $timestamps = true;
 
     protected $fillable = [

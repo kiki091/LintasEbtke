@@ -18,6 +18,8 @@ class DashboardController extends SipedaBaseController
 {
     public function __construct()
     {
+        $this->middleware('sipeda');
+        
         JavaScript::put([
             'href_url' => URL::current(),
             'app_domain' => env('SIPEDA_DOMAIN_PREFIX'),

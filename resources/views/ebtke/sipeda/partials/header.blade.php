@@ -27,5 +27,6 @@
 
 <!-- Plugins -->
 <link href="{{ asset('themes/ebtke/sipeda/build/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('themes/ebtke/sipeda/build/css/plugins.css') }}" rel="stylesheet">
 <!-- Javascrip -->
 <script src="{{ asset('themes/ebtke/sipeda/build/js/plugins.js') }}"></script>

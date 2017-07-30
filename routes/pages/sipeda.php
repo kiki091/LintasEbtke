@@ -24,12 +24,22 @@ Route::group(['middleware' => ['web']], function ()
 		Route::post('change-password', 'Ebtke\Sipeda\AuthController@changePassword')->name('sipeda_chenge_password');
 		Route::get('logout', 'Ebtke\Sipeda\AuthController@logout')->name('sipeda_logout');
 
-		Route::group(['middleware' => ['auth', 'sipeda.privilege']], function (){
+		Route::group(['middleware' => ['sipeda', 'sipeda.privilege']], function (){
 
 			Route::group(['prefix' => 'dashboard'], function () {
 
 				Route::get('/', 'Ebtke\Sipeda\DashboardController@index')->name('sipeda_dashboard');
 
+				Route::group(['prefix' => 'capacity-building'], function () {
+
+					Route::get('/', 'Ebtke\Sipeda\CapacityBuildingController@index')->name('sipeda_capacity_building');
+					Route::get('data', 'Ebtke\Sipeda\CapacityBuildingController@getdata')->name('sipeda_capacity_building_data');
+					Route::post('store', 'Ebtke\Sipeda\CapacityBuildingController@store')->name('sipeda_capacity_building_store');
+					Route::post('edit', 'Ebtke\Sipeda\CapacityBuildingController@edit')->name('sipeda_capacity_building_edit');
+					Route::post('delete', 'Ebtke\Sipeda\CapacityBuildingController@delete')->name('sipeda_capacity_building_delete');
+					Route::post('publish', 'Ebtke\Sipeda\CapacityBuildingController@publish')->name('sipeda_capacity_building_publish');
+				});
+			});
 		});
 		
 	});

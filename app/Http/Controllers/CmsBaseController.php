@@ -18,7 +18,7 @@ class CmsBaseController extends Controller
 
 	public function __construct()
     {
-        if (Auth::check() == null) {
+        if (Auth::guard('users')->check() == null) {
            return redirect()->route('login');
         }
     }

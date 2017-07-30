@@ -52,7 +52,7 @@ class Users extends BaseImplementation implements UserInterface
     public function setAuthSession($params)
     {
 
-        $userInfo = Auth::user();
+        $userInfo = Auth::guard('users')->user();
 
         if (empty($userInfo)) {
            return false;

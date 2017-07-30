@@ -334,7 +334,7 @@ html , body{
 }
 .nav_menu {
     float: left;
-    background: #EDEDED;
+    background: #f6ee76;
     border-bottom: 1px solid #D9DEE4;
     margin-bottom: 10px;
     width: 100%;
@@ -368,7 +368,7 @@ body .container.body .right_col {
 .nav_title {
     width: 230px;
     float: left;
-    background: #ededed;
+    background: #f6ee76;
     border-radius: 0;
     height: 155px;
     border-right: 1px solid #D9DEE4;
@@ -498,7 +498,7 @@ body .container.body .right_col {
 .top_nav .nav .open>a,
 .top_nav .nav .open>a:focus,
 .top_nav .nav .open>a:hover {
-    background: #D9DEE4
+    background: #f6ee76
 }
 body {
     color: #73879C;

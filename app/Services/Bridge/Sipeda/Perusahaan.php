@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Bridge\Auth;
+namespace App\Services\Bridge\Sipeda;
 
 use App\Repositories\Contracts\Sipeda\Perusahaan as PerusahaanInterface;
 

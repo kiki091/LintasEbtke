@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 
-use LaravelLocalization;
 use JavaScript;
 use Auth;
 use Session;

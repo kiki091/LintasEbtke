@@ -72,11 +72,11 @@ return [
 
         'sipeda' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST_AUTH', '127.0.0.1'),
-            'database'  => env('DB_DATABASE_AUTH', 'forge'),
-            'username'  => env('DB_USERNAME_AUTH', 'forge'),
-            'password'  => env('DB_PASSWORD_AUTH', ''),
-            'port'      => env('DB_PORT_AUTH', '3306'),
+            'host'      => env('DB_HOST_SIPEDA', '127.0.0.1'),
+            'database'  => env('DB_DATABASE_SIPEDA', 'forge'),
+            'username'  => env('DB_USERNAME_SIPEDA', 'forge'),
+            'password'  => env('DB_PASSWORD_SIPEDA', ''),
+            'port'      => env('DB_PORT_SIPEDA', '3306'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

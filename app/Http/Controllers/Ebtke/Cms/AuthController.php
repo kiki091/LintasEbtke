@@ -49,7 +49,7 @@ class AuthController extends CmsBaseController
         }
 
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('users')->attempt($credentials)) {
             //TODO: set session first
 
             if ($this->user->setAuthSession()) {
@@ -185,7 +185,7 @@ class AuthController extends CmsBaseController
      */
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('users')->logout();
         Session::flush();
 
         return redirect(route('login'));

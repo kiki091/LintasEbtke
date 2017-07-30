@@ -43,7 +43,7 @@ class Perusahaan extends BaseImplementation implements UserInterface
            return false;
         }
 
-        $sipedaId = !empty($sipedaInfo) && isset($sipedaInfo['id']) ?  $sipedaInfo['id'] : '';
+        $userId = !empty($sipedaInfo) && isset($sipedaInfo['id']) ?  $sipedaInfo['id'] : '';
 
         $params = [
             'id' => $userId,

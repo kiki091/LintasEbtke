@@ -12,6 +12,7 @@ class PrivilagePerusahaan extends Model
     protected $connection = 'sipeda';
     protected $table = 'privilage_perusahaan';
 
+    protected $guard = 'sipeda';
     public $timestamps = true;
 
     protected $fillable = [

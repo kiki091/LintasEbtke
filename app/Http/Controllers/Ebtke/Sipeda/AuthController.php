@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\Services\Bridge\Sipeda\Perusahaan as UserServices;
 use App\Custom\SipedaDataHelper;
-use App\Custom\RouteMenuLocation;
 use App\Services\Api\Response as ResponseService;
 use Session;
 use Auth;
@@ -80,7 +79,7 @@ class AuthController extends SipedaBaseController
             $this->incrementLoginAttempts($request);
         }
 
-        return redirect(route('msc_login'))
+        return redirect(route('sipeda_login'))
             ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
@@ -131,7 +130,7 @@ class AuthController extends SipedaBaseController
 
         if (isset($sipedaInfo['nama_perusahaan']) && !empty($sipedaInfo['nama_perusahaan'])) {
             
-            return redirect('/dashboard');
+            return redirect(route('sipeda_dashboard'));
         }
 
         return redirect(route('sipeda_login'));

@@ -18,16 +18,16 @@ class SipedaPrivilege
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next, $guard = 'sipeda')
     {
         try {
-            $session            = Session::get('sipeda_info');
+            $session            = Session::get('sipeda_user_info');
 
             if (!isset($session['sipeda_privilage'][0]['role_name']) && empty($session['sipeda_privilage'][0]['role_name'])) {
                 return response()->json(['message' => 'No Privilege', 'status' => false]);
             }
 
-            $privilegeChecker   = new PrivilegeChecker($session['sipeda_privilage'][0]['role_name']);
+            $privilegeChecker   = new SipedaPrivilegeChecker($session['sipeda_privilage'][0]['role_name']);
 
             if (!$privilegeChecker->isAuthorized()) {
                 return response()->json(['message' => 'No Privilege', 'status' => false]);

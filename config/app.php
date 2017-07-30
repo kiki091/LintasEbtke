@@ -246,6 +246,7 @@ return [
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'RouteMenuLocation'=> App\Custom\Facades\RouteMenuLocation::class,
         'DataHelper'=> App\Custom\Facades\DataHelper::class,
+        'SipedaDataHelper'=> App\Custom\Facades\SipedaDataHelper::class,
         'JavaScript'=> Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
 
     ],
