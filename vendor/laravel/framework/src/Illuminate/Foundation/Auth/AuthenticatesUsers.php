@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait AuthenticatesUsers
 {
-    use RedirectsUsers;
+    use RedirectsUsers, ThrottlesLogins;
 
     /**
      * Show the application's login form.
@@ -145,18 +145,6 @@ trait AuthenticatesUsers
         return 'email';
     }
 
-    protected function isUsingThrottlesLoginsTrait()
-    {
-        return in_array(
-            ThrottlesLogins::class, class_uses_recursive(static::class)
-        );
-    }
-
-    protected function getFailedLoginMessage()
-    {
-        return trans('message.failed');
-    }
-
     /**
      * Log the user out of the application.
      *
@@ -167,9 +155,7 @@ trait AuthenticatesUsers
     {
         $this->guard()->logout();
 
-        $request->session()->flush();
-
-        $request->session()->regenerate();
+        $request->session()->invalidate();
 
         return redirect('/');
     }
