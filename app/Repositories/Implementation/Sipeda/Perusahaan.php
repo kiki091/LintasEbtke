@@ -64,6 +64,71 @@ class Perusahaan extends BaseImplementation implements UserInterface
         return $data;
     }
 
+    /**
+     * Registered User Account
+     * Warning: this function doesn't redis cache
+     * @param $params
+     * @return array
+     */
+    
+    public function registered($data)
+    {
+        try {
+            DB::beginTransaction();
+
+            if ($this->registeredUser($data)) {
+                //TODO: send mail first
+                DB::commit();
+                return $this->setResponse(trans('message.user_success_created'), true);
+            }
+
+            DB::rollBack();
+            return $this->setResponse(trans('message.user_failed_created'), false);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $this->setResponse($e->getMessage(), false);
+        }
+    }
+
+
+    /**
+     * Registration By User
+     * @param $data
+     */
+
+    protected function registeredUser($data)
+    {
+        try {
+
+            $store                          = $this->user;
+
+            $store->nama_perusahaan         = isset($data['nama_perusahaan']) ? $data['nama_perusahaan'] : '';
+            $store->email                   = isset($data['email']) ? $data['email'] : '';
+            $store->npwp                    = isset($data['npwp']) ? $data['npwp'] : '';
+            $store->pimpinan_perusahaan     = isset($data['pimpinan_perusahaan']) ? $data['pimpinan_perusahaan'] : '';
+            $store->kepemilikan_saham       = isset($data['kepemilikan_saham']) ? $data['kepemilikan_saham'] : '';
+            $store->pic_name                = isset($data['pic_name']) ? $data['pic_name'] : '';
+            $store->pic_phone_number        = isset($data['pic_phone_number']) ? $data['pic_phone_number'] : '';
+            $store->pic_email               = isset($data['pic_email']) ? $data['pic_email'] : '';
+            $store->is_active               = false;
+
+            if($save = $store->save()) {
+
+                // Generate event for notification user registration
+                
+                //event(new UserRegistrationEvent($data));
+                //broadcast(new UserRegistrationEvent($data['email']))->toOthers();
+            }
+            
+            return $save;
+
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
+        }
+
+    }
     
 
     /**

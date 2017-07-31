@@ -76,7 +76,7 @@
           			<a href="#job" class="to_proyek"> Log in </a>
         		</p>
                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-        		<button type="submit" id="submit__button" class="btn btn-primary submit pull-right">Register</button>
+        		<button type="submit" id="submit__button__registration" class="btn btn-primary submit pull-right">Register</button>
       		</div>
       	</form>
     </section>

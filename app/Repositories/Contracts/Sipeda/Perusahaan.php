@@ -12,4 +12,10 @@ interface Perusahaan
      */
     public function setSipedaAuthSession($params);
     
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function registered($params);
+    
 } 

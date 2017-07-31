@@ -25,4 +25,13 @@ class Perusahaan {
         return $this->user->setSipedaAuthSession($params);
     }
 
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function registered($params = array())
+    {
+        return $this->user->registered($params);
+    }
+
 } 

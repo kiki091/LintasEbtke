@@ -2,10 +2,10 @@ function logout() {
 
 	showLoading()
 
-	$.get(laroute.route('logout', []), function()
+	$.get(laroute.route('sipeda_logout', []), function()
     {
     	hideLoading()
-        $(location).prop('href', laroute.route('login', []));
+        $(location).prop('href', laroute.route('sipeda_logout', []));
     });
 
 }

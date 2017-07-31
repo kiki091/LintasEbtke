@@ -15,6 +15,8 @@ use Auth;
 use Validator;
 use ValidatesRequests;
 use Response;
+use JavaScript;
+use URL;
 
 class AuthController extends SipedaBaseController
 {
@@ -29,6 +31,12 @@ class AuthController extends SipedaBaseController
     {
         $this->user = $user;
         $this->response = $response;
+
+        JavaScript::put([
+            'href_url' => URL::current(),
+            'app_domain' => env('ACCOUNT_DOMAIN_PREFIX'),
+            'token' => csrf_token(),
+        ]);
     }
 
     public function index(Request $request)
@@ -137,6 +145,25 @@ class AuthController extends SipedaBaseController
     }
 
     /**
+     * Registered user
+     * @param Request $request
+     */
+
+    public function registered(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->validateRegistrationUser($request));
+
+        if ($validator->fails()) {
+            //TODO: case fail
+            return $this->response->setResponseErrorFormValidation($validator->messages(), false);
+
+        } else {
+            //TODO: case pass
+            return $this->user->registered($request->except(['_token']));
+        }
+    }
+
+    /**
      * Change Password
      * @param Request $request
      */
@@ -196,6 +223,26 @@ class AuthController extends SipedaBaseController
         );
     }
     
+
+    /**
+     * Validate Offers Dining
+     */
+    private function validateRegistrationUser($request = array())
+    {
+        $rules = [
+            'nama_perusahaan'             => 'required',
+            'email'                       => 'required|email',
+            'npwp'                        => 'required',
+            'pimpinan_perusahaan'         => 'required',
+            'kepemilikan_saham'           => 'required',
+            'pic_name'                    => 'required',
+            'pic_phone_number'            => 'required',
+            'pic_email'                   => 'required|email',
+        ];
+
+        return $rules;
+    }
+
     /**
      * Logout
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
