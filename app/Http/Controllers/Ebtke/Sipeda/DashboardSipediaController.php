@@ -14,7 +14,7 @@ use Validator;
 use Symfony\Component\VarDumper\Cloner\Data;
 use URL;
 
-class DashboardController extends SipedaBaseController
+class DashboardSipediaController extends SipedaBaseController
 {
     public function __construct()
     {

@@ -9,6 +9,7 @@
 		<div>
       		<a class="hiddenanchor" id="signup"></a>
       		<a class="hiddenanchor" id="signin"></a>
+          <a class="hiddenanchor" id="job"></a>
 
           <!-- 
             _    ___   ___ ___ _  _  __      _____ ____  _   ___ ___  
@@ -18,7 +19,7 @@
                                                                       
           -->
       		<div class="login_wrapper">
-          		<div class="animate form login_form">
+          		<div id="login" class="animate form login_form">
               		<section class="login_content">
                   		<form role="form" method="POST" action="{{ route('sipeda_authenticate') }}">
                     		<h1>Welcome Back !!</h1>
@@ -54,58 +55,7 @@
               		</section>
           		</div>
 
-            <!--
-              ___ ___ ___ ___ ___ _____ ___    _ _____ ___ ___  _  _  __      _____ ____  _   ___ ___  
-             | _ \ __/ __|_ _/ __|_   _| _ \  /_\_   _|_ _/ _ \| \| | \ \    / /_ _|_  / /_\ | _ \   \ 
-             |   / _| (_ || |\__ \ | | |   / / _ \| |  | | (_) | .` |  \ \/\/ / | | / / / _ \|   / |) |
-             |_|_\___\___|___|___/ |_| |_|_\/_/ \_\_| |___\___/|_|\_|   \_/\_/ |___/___/_/ \_\_|_\___/ 
-
-            -->
-
-          		<div id="register" class="animate form registration_form">
-              		<section class="login_content">
-                  		<form method="POST" action="{{ route('sipeda_registered') }}" id="UserFormRegistration">
-                    		<h1>Create Account</h1>
-      			            <div class="form-group">
-      			            	<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-                					Fullname <span class="required">*</span>
-                					<span id="form--error--message--name" class="form--error--message pull-right"></span>
-                				</label>
-      			                <input type="text" name="name" id="name" class="form-control" placeholder="Fullname"/>
-                              	
-      			            </div>
-                    		<div class="form-group">
-      			            	<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-                					Email <span class="required">*</span>
-                					<span id="form--error--message--email" class="form--error--message pull-right"></span>
-                				</label>
-                      			<input type="email" name="email" id="email" class="form-control" placeholder="Email"/>
-                              	
-                    		</div>
-                    		<div class="form-group">
-                    			<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-                					Password <span class="required">*</span>
-                					<span id="form--error--message--password" class="form--error--message pull-right"></span>
-                				</label>
-                      			<input type="password" name="password" id="password" class="form-control" placeholder="Password"/>
-                    		</div>
-                    		<div class="form-group">
-                    			<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-                					Confirm Password <span class="required">*</span>
-                					<span id="form--error--message--confirm_password" class="form--error--message pull-right"></span>
-                				</label>
-                      			<input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm Password"/>
-                    		</div>
-                    		<div class="separator">
-                    			<p class="change_link pull-left">Already have account ?
-                        			<a href="#signin" class="to_register"> Log in </a>
-                      			</p>
-                              	<input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-                      			<button type="submit" id="submit__button" class="btn btn-primary submit pull-right">Register</a>
-                    		</div>
-                  		</form>
-              		</section>
-          		</div>
+              @include('ebtke.sipeda.pages.auth.registration')
         	</div>
     	</div>
     	<div id="custom_notifications" class="custom-notifications dsp_none">
@@ -114,7 +64,7 @@
         	<div class="clearfix"></div>
         	<div id="notif-group" class="tabbed_notifications"></div>
     	</div>
-      @include('ebtke.front.partials.vars')
+      @include('ebtke.slots.vars')
     	@include('ebtke.sipeda.partials.js_footer')
     	<script src="{{ asset('themes/ebtke/sipeda/pages/auth/registration.js') }}"></script>
 	</body>

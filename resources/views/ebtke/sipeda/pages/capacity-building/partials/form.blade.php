@@ -10,7 +10,7 @@
 			<div class="form--mid">
 
 				<!-- LANGUAGE ENGLISH -->
-				<div class="create__form content__tab">
+				<div class="create__form">
 					<div class="form__group__row">
 						<div class="create__form__row">
 							<span class="form__group__title">General Information<a href="javascript:void(0);" class="style__accordion" data-accordion="form-accordion-1"><i>@include('ebtke.sipeda.svg-logo.ico-expand-arrow')</i></a></span>
@@ -128,16 +128,16 @@
 									<ul class="to_do">
 										<li>
 											<div class="radio icheck-primary">
-    											<input class="checkbox__data" type="radio" :value="1" name="sertifikasi_kompetensi" id=" sertifikasi_kompetensi" />
-											    <label for="sertifikasi_kompetensi">
+    											<input class="checkbox__data" type="radio" value="1" name="sertifikasi_kompetensi" id="sertifikasi_kompetensi_1" />
+											    <label for="sertifikasi_kompetensi_1">
 											    	Yes
 											    </label>
 											</div>
 										</li>
 										<li>
 											<div class="radio icheck-primary">
-    											<input class="checkbox__data" type="radio" :value="0" name="sertifikasi_kompetensi" id=" sertifikasi_kompetensi" />
-											    <label for="sertifikasi_kompetensi">
+    											<input class="checkbox__data" type="radio" value="0" name="sertifikasi_kompetensi" id="sertifikasi_kompetensi_2" />
+											    <label for="sertifikasi_kompetensi_2">
 											    	No
 											    </label>
 											</div>

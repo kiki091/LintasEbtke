@@ -21,7 +21,7 @@ class CapacityBuilding extends BaseImplementation implements CapacityBuildingInt
     protected $capacityBuilding;
     protected $capacityBuildingTransformation;
 
-    function __construct(CapacityBuilding $capacityBuilding, CapacityBuildingTransformation $capacityBuildingTransformation)
+    function __construct(CapacityBuildingModel $capacityBuilding, CapacityBuildingTransformation $capacityBuildingTransformation)
     {
 
         $this->capacityBuilding = $capacityBuilding;

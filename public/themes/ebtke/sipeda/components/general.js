@@ -364,3 +364,11 @@ function initMenuCapacityBuilding()
     buttonClickClose();
     replaceToCkEditor();
 }
+
+function initMenuProyekPowerProsedure()
+{
+    mainGeneral();
+    crudProyekPowerProsedure();
+    buttonClickOpen();
+    buttonClickClose();
+}

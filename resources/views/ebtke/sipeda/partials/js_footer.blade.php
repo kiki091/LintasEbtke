@@ -28,3 +28,4 @@
 <script src="{{ asset('themes/ebtke/sipeda/components/menu.js') }}"></script>
 <!-- JAVASCRIPT FOR CONTENT SIPEDA -->
 <script src="{{ asset('themes/ebtke/sipeda/pages/capacity-building.js') }}"></script>
+<script src="{{ asset('themes/ebtke/sipeda/pages/proyek-power-procedure.js') }}"></script>

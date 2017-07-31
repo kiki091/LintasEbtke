@@ -40,6 +40,11 @@
                                   </a>
                               </li>
                               <li>
+                                  <a href="javascript:void(0);" onclick="menuProyekPowerProsedure()">
+                                      Proyek Power Procedure
+                                  </a>
+                              </li>
+                              <li>
                                   <a href="javascript:void(0);" onclick="menuEnergiEfisiensi()">
                                       Energi Efisiensi
                                   </a>

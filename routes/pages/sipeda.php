@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web']], function ()
 
 			Route::group(['prefix' => 'dashboard'], function () {
 
-				Route::get('/', 'Ebtke\Sipeda\DashboardController@index')->name('sipeda_dashboard');
+				Route::get('/', 'Ebtke\Sipeda\DashboardSipediaController@index')->name('sipeda_dashboard');
 
 				Route::group(['prefix' => 'capacity-building'], function () {
 
@@ -38,6 +38,11 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('edit', 'Ebtke\Sipeda\CapacityBuildingController@edit')->name('sipeda_capacity_building_edit');
 					Route::post('delete', 'Ebtke\Sipeda\CapacityBuildingController@delete')->name('sipeda_capacity_building_delete');
 					Route::post('publish', 'Ebtke\Sipeda\CapacityBuildingController@publish')->name('sipeda_capacity_building_publish');
+				});
+
+				Route::group(['prefix' => 'proyek-power-procedure'], function () {
+
+					Route::get('/', 'Ebtke\Sipeda\ProyekPowerProsedureController@index')->name('sipeda_proyek_power_procedure');
 				});
 			});
 		});
