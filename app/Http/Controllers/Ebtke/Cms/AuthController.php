@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Ebtke\Cms;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 use App\Http\Controllers\CmsBaseController;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\Services\Bridge\Auth\Users as UserServices;
 use App\Custom\Facades\DataHelper;
 use App\Custom\RouteMenuLocation;
@@ -18,7 +19,7 @@ use Response;
 
 class AuthController extends CmsBaseController
 {
-	use AuthenticatesUsers, ThrottlesLogins;
+	use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $validationMessage = '';
     protected $validationChangePasswordForm = '';
@@ -70,6 +71,40 @@ class AuthController extends CmsBaseController
                 $this->username() => $this->getFailedLoginMessage(),
             ]);
 
+    }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'email';
+    }
+
+    /**
+     * Determine if the class is using the ThrottlesLogins trait.
+     *
+     * @return bool
+     */
+    protected function isUsingThrottlesLoginsTrait()
+    {
+        return in_array(
+            ThrottlesLogins::class, class_uses_recursive(static::class)
+        );
+    }
+
+    /**
+     * Get the failed login message.
+     *
+     * @return string
+     */
+    protected function getFailedLoginMessage()
+    {
+        return Lang::has('auth.failed')
+                ? Lang::get('auth.failed')
+                : 'These credentials do not match our records.';
     }
 
     /**
@@ -128,32 +163,6 @@ class AuthController extends CmsBaseController
             return $this->user->changePassword($request->except(['_token']));
         }
     }
-
-    /*
-
-    protected function isUsingThrottlesLoginsTrait()
-    {
-        return in_array(
-            ThrottlesLogins::class, class_uses_recursive(static::class)
-        );
-    }
-    
-    */
-
-    /**
-     * Get the failed login message.
-     *
-     * @return string
-     */
-
-    /**
-
-    protected function getFailedLoginMessage()
-    {
-        return trans('message.failed');
-    }
-
-    */
 
 
     /**

@@ -51,7 +51,7 @@ class CapacityBuildingController extends SipedaBaseController
      */
 
     public function getData(Request $request)
-    {
+    {dd("dfasfas");
         $data['capacity_building'] = $this->capacityBuilding->getData();
 
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
