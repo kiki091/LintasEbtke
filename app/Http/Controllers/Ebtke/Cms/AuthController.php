@@ -19,7 +19,7 @@ use Response;
 
 class AuthController extends CmsBaseController
 {
-	use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+	use AuthenticatesAndRegistersUsers;
 
     protected $validationMessage = '';
     protected $validationChangePasswordForm = '';
