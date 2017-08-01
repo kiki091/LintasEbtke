@@ -1,0 +1,29 @@
+{
+  "name": "vue-echarts",
+  "homepage": "https://github.com/Justineo/vue-echarts",
+  "authors": [
+    "Justineo <justice360@gmail.com>"
+  ],
+  "description": "ECharts component for Vue.js.",
+  "main": "dist/vue-echarts.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "ECharts",
+    "Vue.js"
+  ],
+  "license": "MIT",
+  "_release": "9a6d937dd2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9a6d937dd2179d23dc746be8fce59898ace2170e"
+  },
+  "_source": "https://github.com/Justineo/vue-echarts.git",
+  "_target": "*",
+  "_originalSource": "vue-echarts",
+  "_direct": true
+}

@@ -1,5 +1,6 @@
 process.env.DISABLE_NOTIFIER = true;
 var elixir = require('laravel-elixir');
+require('laravel-elixir-browserify-official');
 var gulp = require("gulp");
 
 var sipeda_style_path = './public/themes/ebtke/sipeda/css/';
