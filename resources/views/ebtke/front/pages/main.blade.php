@@ -48,7 +48,7 @@
   |___|_| \_| |_| |_| \_\\___/|____/ \___/ \____| |_| |___\___/|_| \_|
 
 -->
-@if(isset($latest_news) && !empty($latest_news))
+<!--@if(isset($latest_news) && !empty($latest_news))
 
 <section class="bg-gray introduction__content">
 	<div class="row">
@@ -103,9 +103,9 @@
     </div>
 </section>
 <!-- END MAIN BANNER -->
-<div class="wrapper row6 wow fadeInUp" data-wow-delay="0.3s">
+<!--<div class="wrapper row6 wow fadeInUp" data-wow-delay="0.3s">
 	<section id="cta" class="clear"> 
-    	<!-- ################################################################################################ -->
+    	 ################################################################################################ 
     	<div class="container">
     	<div class="three_quarter first">
       		<h2 class="heading">

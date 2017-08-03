@@ -6,7 +6,7 @@
 		<div class="page-title">
 			<div class="title_left">
 		        <h3>DASHBOARD </h3>
-		        <p>SIPEDA MANAGEMENT SYSTEM</p>
+		        <p>SIPEDIA MANAGEMENT SYSTEM</p>
 		    </div>
 		</div>
 	</div>

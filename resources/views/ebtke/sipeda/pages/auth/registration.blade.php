@@ -71,6 +71,22 @@
   				</label>
         		<input type="text" name="pic_email" id="pic_email" class="form-control" placeholder="Email "/>
       		</div>
+			<div class="form-group">
+          		<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
+  					Klasifikasi<span class="required">*</span>
+  					<!--<option id="form--error--message--pic_email" class="form--error--message pull-right"></option>-->
+  				</label>
+        		<select type="text" name="pic_email" id="pic_email" class="form-control" placeholder="Email "/>
+					<option value="volvo">IPP</option>
+					<option value="saab">Pabrikan</option>
+					<option value="mercedes">PLTS</option>
+<!--<option value="audi">Audi</option>-->
+				</select>
+			<div class="separator">
+				 <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+				 <input type="checkbox" name="checkbox" value="check"  /> I have read and agree to the Terms and Conditions and Privacy Policy
+				</form>
+			</div>
       		<div class="separator">
       			<p class="change_link pull-left">Already have account ?
           			<a href="#job" class="to_proyek"> Log in </a>

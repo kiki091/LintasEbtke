@@ -125,7 +125,7 @@ google.charts.setOnLoadCallback(function() {
 </div>
 <section class="page">
 	<h2 style="text-align: center; margin-bottom: 20px">
-        Data Rencana Investasi dan Realisasi di bidang EBTKE periode 212-2017   
+        Data Rencana Investasi dan Realisasi di bidang EBTKE periode 2012-2017   
     </h2>
 	<div class="container">
 		<div class="row">
