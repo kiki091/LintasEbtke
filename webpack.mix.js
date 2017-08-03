@@ -14,6 +14,8 @@ const { mix } = require('laravel-mix');
 // for plugin css
 mix.styles([
     'public/themes/ebtke/front/css/bootstrap.css',
+    'public/themes/ebtke/front/css/bootstrap-select.min.css',
+    'public/themes/ebtke/front/css/flag-icon.css',
     'public/themes/ebtke/front/css/maps/jquery-jvectormap-2.0.3.css',
     'public/themes/ebtke/front/css/raleway-webfont.css',
     'public/themes/ebtke/front/css/helvetica-webfont.css',
@@ -57,6 +59,7 @@ mix.scripts([
 	'public/js/maps/countrymap.js',
 	'public/themes/ebtke/front/js/modernizr.js',
 	'public/themes/ebtke/front/js/bootstrap.min.js',
+    'public/themes/ebtke/front/js/bootstrap-select.min.js',
 	'public/themes/ebtke/front/js/scroll-menu.js',
 	'public/themes/ebtke/front/js/respond.min.js',
 	'public/themes/ebtke/front/js/jquery.cookie.js',

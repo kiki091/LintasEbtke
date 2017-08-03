@@ -30,6 +30,8 @@
                 <a href="{{ route('login') }}#signup">
                     {{ trans('navigation/top_menu.menu_register') }}
                 </a>
+                
+
                 <div class="btn-group paragraph__language">
                     @if(Request::segment(1) == "id")
                     <button type="button" class="btn btn-default btn-xs">

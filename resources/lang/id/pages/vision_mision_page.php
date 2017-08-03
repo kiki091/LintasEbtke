@@ -33,7 +33,7 @@
 		'description_mission_4'		=> 'Promote clean energy in Indonesia',
 		'description_mission_5'		=> 'Provide integrated public service',
 
-		'mission_description'		=> 'As a one stop clean energy information centre, we consistently compile, structure and communicate all RE & EC relevant data and information. Professional marketing continuously enhances awareness about LINTAS’ services internally and publicly. A user friendly website, representative offices in major cities, a hotline service and engaging workshops & events function as customer friendly interfaces to the public and stakeholders. <b>Our goal</b> is to make access to relevant clean energy information and decision makers <b>easy and rewarding</b>.'
+		'mission_description'		=> 'As a one stop clean energy information centre, we consistently compile, structure and communicate all RE & EC relevant data and information. Professional marketing continuously enhances awareness about LINTAS’ services internally and publicly. A user friendly website, representative offices in major cities, a hotline service and engaging workshops & events function as customer friendly interfaces to the public and stakeholders. <b>Our goal</b> is to make access to relevant clean energy information and decision makers <b>easy and rewarding</b>.',
 
 		'title_challanges'			=> 'CHALLENGES',
 		'description_challanges'	=> '<h3>These current issues hinder the effective development of LINTAS:</h3>

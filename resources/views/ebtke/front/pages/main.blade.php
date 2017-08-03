@@ -72,12 +72,9 @@
 	<!-- Begin page header-->
     <div class="page-header-wrapper">
         <div class="container">
-            <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                <h2>{{ $history['title'] }}</h2>
+            <div class="page-header wow fadeInUp" data-wow-delay="0.3s">
+                <h3><b>WELCOME TO LINTAS</b></h3>
                 <hr/>
-                <h3 class="subtitle">
-                	{!! $history['introduction'] !!}
-                </h3>
             </div>
         </div>
     </div>
@@ -86,19 +83,30 @@
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				{!! $history['description_left'] !!}
+	    				{!! $history['introduction'] !!}
+	    				{!! substr($history['description_left'],0,300) !!}
 	    			</div>
+	    			
 	    		</div>
 	    	</div>
 
 	    	<div class="col-md-6">
 	    		<div id="home-introduction-content" class="skill-bar wow slideInRight" data-wow-delay="0.2s">
 	    			<div class="default-content">
-	    				{!! $history['description_right'] !!}
+	    				{!! substr($history['description_left'],300,500) !!}
 	    				
 	    			</div>
 	    		</div>
 	    	</div>
+			<div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 5px #eee solid; padding-bottom: 15px;">
+		    	<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1s">
+					<iframe style="width: 100%" height="315" src="https://www.youtube.com/embed/IdNsrnvxl94" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1s">
+					<img src="{{ asset('themes/ebtke/front/images/Image-01.jpg') }}" class="img-responsive" style="max-height: 315px;">
+				</div>
+
+			</div>
     	</div>
     </div>
 </section>
@@ -123,8 +131,8 @@
     	</div>
     	</div>
     	<!-- ################################################################################################ -->
-  	</section>
-</div>
+  	<!-- </section>
+</div> -->
 
 <!-- 
 
@@ -141,6 +149,12 @@
 	<div class="container">
 	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
 	    <!-- ################################################################################################ -->
+  		<h2 class="heading">
+  			<b>{{ trans('pages/main_page.title_we_do') }}</b>
+  		</h2>
+  		<p>
+  			{{ trans('pages/main_page.sub_desc_we_do') }}
+  		</p>
 	    <ul class="nospace group">
 	      	<li>
 	        	<figure>

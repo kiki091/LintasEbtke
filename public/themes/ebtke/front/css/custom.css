@@ -762,7 +762,6 @@ span.title__language__selector {
     display: inline-flex;
     position: relative;
     width: auto;
-    overflow-x: hidden;
     display: flex;
     margin-top: 18px;
     line-height: 3;
@@ -2256,4 +2255,106 @@ ul li.data__table_industri:before {
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
+}
+
+.langselector {
+    position: absolute;
+    top: 0;
+    right: 147px;
+    z-index: 3;
+}
+
+.containerfull {
+    width: 100%;
+    margin: auto;
+}
+
+.langselector .langselector__select {
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    background: rgba(0,0,0,.5);
+}
+
+.langselector .langselector__select span {
+    z-index: 3;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: .79px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.9);
+    padding: 7px 29px 7px 12px;
+}
+
+.langselector .langselector__select ul {
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    margin: 0;
+    background: rgba(0,0,0,.7);
+    transition: .3s ease;
+    width: 100%;
+}
+
+.langselector .langselector__select ul li {
+    color: #fff;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: .79px;
+}
+
+.langselector .langselector__select ul li a {
+    display: block;
+    padding: 8px 18px 8px 12px;
+}
+.langselector .langselector__select:after, form .input--date:after, form .input--error:after {
+    bottom: 0;
+    content: "";
+}
+.langselector .langselector__select:after {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    margin: auto;
+    width: 7px;
+    height: 7px;
+    background: url(../../svg/ico-down.svg) no-repeat;
+}
+.langselector .langselector__select.active:after {
+    background: url(../../svg/ico-up.svg) no-repeat;
+}
+
+.langselector .langselector__select.active, .subscribe-connect .form--subscribe .field input {
+    border-radius: 0;
+}
+
+.langselector .langselector__select {
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    background: rgba(0,0,0,.5);
+}
+
+.langselector .langselector__select.active ul {
+    opacity: 1;
+    visibility: visible;
+    top: 25px;
+    width: 100%;
+}
+
+.langselector .langselector__select ul li {
+    color: #fff;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: .79px;
+}
+
+.langselector .langselector__select.active ul {
+    opacity: 1;
+    visibility: visible;
+    top: 25px;
+    width: 100%;
 }
