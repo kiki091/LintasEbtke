@@ -93,6 +93,7 @@ google.charts.setOnLoadCallback(function() {
             isStacked: true,
             series: {
                 1: { targetAxisIndex: 1 },
+                2: { targetAxisIndex: 1 },
                 3: { targetAxisIndex: 1 }
             },
             vAxis: {
