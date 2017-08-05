@@ -100,9 +100,9 @@
 	    	</div>
 			<div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 5px #eee solid; padding-bottom: 15px;">
 		    	<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1s">
-					<iframe style="width: 100%" height="315" src="https://www.youtube.com/embed/IdNsrnvxl94" frameborder="0" allowfullscreen></iframe>
+					<iframe style="width: 100%" height="315" src="https://www.youtube.com/embed/IdNsrnvxl94" frameborder="0" class="img-responsive" style="max-height: 315px;" allowfullscreen></iframe>
 				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1s">
+				<div id="desktop__content" class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1s">
 					<img src="{{ asset('themes/ebtke/front/images/Image-01.jpg') }}" class="img-responsive" style="max-height: 315px;">
 				</div>
 
@@ -152,25 +152,25 @@
   		<h2 class="heading">
   			<b>{{ trans('pages/main_page.title_we_do') }}</b>
   		</h2>
+  		<div class="col-sm-6 col-sm-6 col-xs-12">
   		<p>
   			{{ trans('pages/main_page.sub_desc_we_do') }}
   		</p>
+  		</div>
 	    <ul class="nospace group">
 	      	<li>
 	        	<figure>
 	        		<a class="overlay" href="{{ route('ConsultingServices') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Consulting-Services.png') }}" alt="">
+	        			<div class="caption__bottom__services">
+			            	<p class="bold uppercase">
+			            		<a href="{{ route('ConsultingServices') }}">
+			            			{{ trans('pages/main_page.title_consulting_services') }}
+			            		</a>
+			            	</p>
+			          	</div>
 	        		</a>
-		          	<figcaption class="inspace-30 center">
-		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_consulting_services') }}
-		            	</p>
-		            	<p>
-			            	<a href="{{ route('ConsultingServices') }}">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
-		            	</p>
-		          	</figcaption>
+		          	
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -178,17 +178,13 @@
 	        		<a class="overlay" href="{{ route('landingNews') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'news&events.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_news_&_events') }}
+		            		<a href="{{ route('landingNews') }}">
+		            			{{ trans('pages/main_page.title_news_&_events') }}
+		            		</a>
 		            	</p>
-		            	
-		            	<p>
-			            	<a href="{{ route('landingNews') }}">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
-		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -196,17 +192,13 @@
 	        		<a class="overlay" href="{{ route('InvestmentServicesLanding') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Investment_services.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_investment_serrvices') }}
-		            	</p>
-		            	
-		            	<p>
 			            	<a href="{{ route('InvestmentServicesLanding') }}">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_investment_serrvices') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	    </ul>
@@ -216,16 +208,13 @@
 	        		<a class="overlay" href="#">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'libraries_lms.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_libraries') }}
-		            	</p>
-		            	<p>
 			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_libraries') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -233,16 +222,13 @@
 	        		<a class="overlay" href="{{ route('Tools') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'tools.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_tools') }}
-		            	</p>
-		            	<p>
 			            	<a href="{{ route('Tools') }}">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_tools') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -250,16 +236,13 @@
 	        		<a class="overlay" href="{{ route('InvestmentServicesGreenPages') }}">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'GreenPages.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_green_page') }}
-		            	</p>
-		            	<p>
 			            	<a href="{{ route('InvestmentServicesGreenPages') }}">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_green_page') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	    </ul>
@@ -269,17 +252,13 @@
 	        		<a class="overlay" href="#">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'matchlogo.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_link_&_match') }}
-		            	</p>
-		            	
-		            	<p>
 			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_link_&_match') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -287,17 +266,13 @@
 	        		<a class="overlay" href="#">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'resour.jpg') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_nrecc_resource') }}
-		            	</p>
-		            	
-		            	<p>
 			            	<a href="#">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_nrecc_resource') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	      	<li>
@@ -305,16 +280,13 @@
 	        		<a class="overlay" href="http://modi.minerba.esdm.go.id" target="_blank">
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'kpi-dashboard2y.png') }}" alt="">
 	        		</a>
-		          	<figcaption class="inspace-30 center">
+		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		{{ trans('pages/main_page.title_dashboards') }}
-		            	</p>
-		            	<p>
 			            	<a href="http://modi.minerba.esdm.go.id" target="_blank">
-			            		{{ trans('global_page.global_page_lable_visit_here') }} 
-			            	</a>
+		            			{{ trans('pages/main_page.title_dashboards') }}
+		            		</a>
 		            	</p>
-		          	</figcaption>
+		          	</div>
 	        	</figure>
 	      	</li>
 	    </ul>

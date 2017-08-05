@@ -3,7 +3,7 @@
 	return [
 		'title_news' => 'lATEST NEWS',
 		'title_we_do' => 'WHAT WE DO ?',
-		'sub_desc_we_do' => 'To full fill our vision and mission we provide the following services',
+		'sub_desc_we_do' => 'Lintas offers a range of services that makes the whole clean energy investment process cleaner and helps facilitate network and connection to other key players in the industry',
 		'title'  	=> 'Whats is lintas ?',
 		'introduction' 	=> 'LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.',
 		'introduction_left' => '<p>

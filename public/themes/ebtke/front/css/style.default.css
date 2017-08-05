@@ -213,15 +213,7 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
 }
-.navbar #search {
-  /*clear: both;*/
-  border-top: solid 1px #9adacd;
-  text-align: right;
-  display: inline-block;
-    position: relative;
-    float: right;
-    width: 50%;
-}
+
 .navbar #search .navbar-form {
   width: 60%;
   position: relative;
