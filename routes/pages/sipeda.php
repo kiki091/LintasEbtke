@@ -14,7 +14,9 @@
 
 Route::group(['middleware' => ['web']], function () 
 {
-	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('SIPEDA_DOMAIN_PREFIX')], function()
+	// 
+	//Route::group(['domain' => env('WORLD_WIDE_WEB') . env('SIPEDA_DOMAIN_PREFIX')], function()
+	Route::group(['prefix' =>'sipedia'], function()
 	{
 		Route::get('/', 'Ebtke\Sipeda\AuthController@index')->name('sipeda_login');
 		Route::get('register', 'Ebtke\Sipeda\AuthController@register')->name('sipeda_register');
