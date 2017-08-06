@@ -1,7 +1,6 @@
 /** Your theme modifications here **/
 
 /** Section Style Landing Page About **/
-@import url('https://fonts.googleapis.com/css?family=Courgette|Libre+Baskerville');
 
 .hide__element {
     display: none;
@@ -595,7 +594,7 @@ h3.subtitle {
 
 /* Latest */
 .latest ul li figure{border-color:#EBEBEB;}
-.latest a.overlay::before{background-color:rgba(0,0,0,.5);}
+.latest a.overlay::before{background-color:rgba(255, 241, 0, 0.84);}
 .latest a.overlay::after{color:#FFFFFF; background-color:#96AFAA;}
 .latest a.overlay:hover,a.overlay:focus {
     color: #348e7b;
