@@ -100,7 +100,7 @@
 	    	</div>
 			<div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom: 5px #eee solid; padding-bottom: 15px;">
 		    	<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1s">
-					<iframe style="width: 100%" height="315" src="https://www.youtube.com/embed/IdNsrnvxl94" frameborder="0" class="img-responsive" style="max-height: 315px;" allowfullscreen></iframe>
+					<iframe style="width: 100%" height="315" src="https://www.youtube.com/embed/IdNsrnvxl94" frameborder="0" class="iframe-responsive" style="max-height: 315px;" allowfullscreen></iframe>
 				</div>
 				<div id="desktop__content" class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1s">
 					<img src="{{ asset('themes/ebtke/front/images/Image-01.jpg') }}" class="img-responsive" style="max-height: 315px;">

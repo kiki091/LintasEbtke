@@ -6,6 +6,13 @@
     display: none;
     visibility: hidden;
 }
+.iframe-responsive {
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    margin: 0px auto;
+    margin-bottom: 2%;
+}
 #font-white {
     color: #FFFFFF;
 }
