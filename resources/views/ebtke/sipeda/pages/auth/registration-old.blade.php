@@ -1,3 +1,10 @@
+<!--
+  ___ ___ ___ ___ ___ _____ ___    _ _____ ___ ___  _  _  __      _____ ____  _   ___ ___  
+ | _ \ __/ __|_ _/ __|_   _| _ \  /_\_   _|_ _/ _ \| \| | \ \    / /_ _|_  / /_\ | _ \   \ 
+ |   / _| (_ || |\__ \ | | |   / / _ \| |  | | (_) | .` |  \ \/\/ / | | / / / _ \|   / |) |
+ |_|_\___\___|___|___/ |_| |_|_\/_/ \_\_| |___\___/|_|\_|   \_/\_/ |___/___/_/ \_\_|_\___/ 
+
+-->
 <div id="register" class="animate form registration_form">
 	<section class="login_content">
 		<form method="POST" action="{{ route('sipeda_registered') }}" id="UserFormRegistration">
@@ -15,7 +22,6 @@
   					<span id="form--error--message--email" class="form--error--message pull-right"></span>
   				</label>
         		<input type="email" name="email" id="email" class="form-control" placeholder="Email"/>
-        		Result: <span id="result"></span>
       		</div>
 
       		<div class="form-group">
@@ -67,50 +73,20 @@
       		</div>
 			<div class="form-group">
           		<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-  					Klasifikasi
+  					Klasifikasi<span class="required">*</span>
+  					<!--<option id="form--error--message--pic_email" class="form--error--message pull-right"></option>-->
   				</label>
-          		<ul class="to_do">
-            		<li>
-              			<p>
-			                <div class="checkbox icheck-primary">
-			                    <input class="checkbox__data" type="checkbox" name="volvo" id="volvo" value="1"/>
-			                    <label for="volvo">IPP</label>
-			                </div>
-              			</p>
-            		</li>
-		            <li>
-			            <p>
-			                <div class="checkbox icheck-primary">
-			                    <input class="checkbox__data" type="checkbox" name="saab" id="saab" value="1"/>
-			                    <label for="saab">Pabrikan</label>
-			                </div>
-			            </p>
-		            </li>
-		            <li>
-		              	<p>
-		                	<div class="checkbox icheck-primary">
-		                    	<input class="checkbox__data" type="checkbox" name="mercedes" id="mercedes" value="1"/>
-		                    	<label for="mercedes">PLTS</label>
-		                	</div>
-		              	</p>
-		            </li>
-          		</ul>
-            </div>
-            <div class="form-group">
-          		<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-  					
-  				<hr/>
-  				</label>
-  				<ul class="to_do">
-	              	<li>
-                  		<div class="checkbox icheck-primary">
-                      		<input class="checkbox__data" type="checkbox" name="agree" id="agree" value="1"/>
-                      		<label for="agree">I have read and agree to the Terms and Conditions and Privacy Policy</label>
-                      		<!-- Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy -->
-                  		</div>
-	              	</li>
-            	</ul>
-      		</div>
+        		<select type="text" name="pic_email" id="pic_email" class="form-control" placeholder="Email "/>
+					<option value="volvo">IPP</option>
+					<option value="saab">Pabrikan</option>
+					<option value="mercedes">PLTS</option>
+<!--<option value="audi">Audi</option>-->
+				</select>
+			<div class="separator">
+				 <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+				 <input type="checkbox" name="checkbox" value="check"  /> I have read and agree to the Terms and Conditions and Privacy Policy
+				</form>
+			</div>
       		<div class="separator">
       			<p class="change_link pull-left">Already have account ?
           			<a href="#job" class="to_proyek"> Log in </a>
@@ -121,3 +97,4 @@
       	</form>
     </section>
 </div>
+      	

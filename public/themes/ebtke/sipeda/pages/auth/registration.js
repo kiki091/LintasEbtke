@@ -1,4 +1,25 @@
 $(document).ready(function() {
+	var legalDomains = {
+	    "-yahoo.com": true,
+	    "-gmail.com": true,
+	    "-hotmail.com": true,
+	    "-msn.com": true
+	};
+
+	function validateEmailDomain(str) {
+	    var matches = str.match(/@(.*)$/);
+	    if (matches) {
+	        // matches[1] is the part after the @ sign in the email address
+	        if (("-" + matches[1]) in legalDomains) {
+	            // found the domain in the permitted list
+	            return(false);
+	        }
+	    }
+	    return(true);
+	}      
+	$("#email").on('keyup change', function() {
+    	$("#result").html(validateEmailDomain(this.value) ? '<span class="good">valid</span>':'<span class="bad">invalid</span>');
+	});
 
 	$('#UserFormRegistration').on('submit',function(event) {
 		event.preventDefault()
