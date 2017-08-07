@@ -12,11 +12,11 @@ use Auth;
 
 class BaseImplementation
 {
-    protected $currentLocation;
+    protected $currentSystemLocation;
 
     function __construct()
     {
-        $this->_init();
+        $this->currentSystemLocation = RouteMenuLocation::systemLocation();
     }
 
     /**

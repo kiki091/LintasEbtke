@@ -6,7 +6,7 @@ use Session;
 
 class DataHelper {
 
-    const DEFAULT_SYSTEM_LOCATION = 'CONTENT MANAGEMENT SYSTEM';
+    const DEFAULT_SYSTEM_LOCATION = 'cms';
     /**
      * Get User Info
      */

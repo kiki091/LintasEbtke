@@ -26,7 +26,7 @@ Route::group(['middleware' => ['web']], function ()
 
 		Route::group(['middleware' => ['auth', 'user.privilege']], function (){
 
-			Route::group(['prefix' => RouteMenuLocation::setMenuLocation()], function () {
+			Route::group(['prefix' => RouteMenuLocation::systemLocation()], function () {
 
 				Route::get('/', 'Ebtke\Cms\Pages\DashboardController@index')->name('CmsDashboardPage');
 

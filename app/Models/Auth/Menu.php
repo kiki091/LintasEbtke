@@ -29,6 +29,7 @@ class Menu extends Model
     {
         return $this->belongsTo('App\Models\Auth\MenuGroup', 'menu_group_id', 'id')->with('system_menu');
     }
+    
     public function sub_menu()
     {
         return $this->hasMany('App\Models\Auth\SubMenu', 'menu_id', 'id');

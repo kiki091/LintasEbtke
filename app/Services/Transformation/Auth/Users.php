@@ -57,7 +57,7 @@ class Users
         $dataTransform['user_menu']             = $this->setMenuUser($data['user_menu']);
         $dataTransform['user_location']         = $this->setUserLocation($data['location']);
         $dataTransform['system_location']       = $this->setSystemLocationUser($data['system_location']);
-        
+
         return $dataTransform;
     }
 

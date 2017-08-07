@@ -6,6 +6,7 @@ use LaravelLocalization;
 use Request;
 use App\Redis\MenuLocation as MenuLocationRedis;
 use App\Models\Auth\Location as LocationModels;
+use App\Models\Auth\System as SystemModels;
 use App\Models\Auth\Users as UsersModels;
 use App\Custom\Facades\DataHelper;
 use Cache;
@@ -18,7 +19,9 @@ class RouteMenuLocation {
     const DEFAULT_MENU = '/';
 	const DEFAULT_USER_MENU = 'user';
     const DEFAULT_ADMIN_MENU = 'admin';
+    const DEFAULT_SYSTEM_LOCATION = 'cms';
 
+    protected $systemLocationId = '';
 	/**
      * Set Menu Location
      * @return null
@@ -89,6 +92,58 @@ class RouteMenuLocation {
     {
         Session::forget('current_menu_location');
         Session::put('current_menu_location', $param);
+    }
+
+
+    /**
+     * Set System Location CMS
+     * @param $param
+     */
+    public function systemLocation()
+    {
+        $systemLocation = Request::segment(1);
+
+        $systemLocationCollection     = SystemModels::get()->toArray();
+        
+        if(empty($systemLocationCollection))
+            return null;
+
+        foreach ($systemLocationCollection as $key => $value) {
+           
+            if($value['slug'] == $systemLocation) {
+                $this->systemLocationId = $value['id'];
+                $isExists = true;
+                break;
+            }
+            $isExists = false;
+        }
+
+        if(!$isExists) {
+
+            Session::forget('current_system_location');
+            Session::forget('current_system_location_id');
+
+            $this->setSessionCurrentSystemLocation('', $this->systemLocationId);
+
+            return self::DEFAULT_SYSTEM_LOCATION;
+        }
+
+
+        $this->setSessionCurrentSystemLocation($systemLocation, $this->systemLocationId);
+
+        return $systemLocation;
+    }
+
+    /**
+     * Set Session Current Menu
+     * @param $param
+     */
+    public function setSessionCurrentSystemLocation($param, $id)
+    {
+        Session::forget('current_system_location');
+        Session::forget('current_system_location_id');
+        Session::put('current_system_location', $param);
+        Session::put('current_system_location_id', $id);
     }
 
 }

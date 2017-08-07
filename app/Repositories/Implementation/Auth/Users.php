@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Implementation\Auth;
 
-use App\Custom\RouteMenuLocation;
 use App\Repositories\Contracts\Auth\Users as UserInterface;
 use App\Repositories\Implementation\BaseImplementation;
 use App\Models\Auth\Users as UserModel;
@@ -13,6 +12,7 @@ use App\Models\Auth\UserMenu as UserMenuNavigationModel;
 use App\Custom\Facades\DataHelper;
 use App\Services\Transformation\Auth\Users as UserTransformation;
 //use App\Events\UserRegistrationEvent;
+use RouteMenuLocation;
 use Cache;
 use Session;
 use DB;
@@ -31,6 +31,8 @@ class Users extends BaseImplementation implements UserInterface
 
     protected $message;
     protected $lastInsertId;
+    protected $currentSystemLocation = '';
+    protected $currentSystemLocationId = '';
 
     function __construct(UserModel $user, SystemLocationModel $userSystemLocation, UserMenuModel $userNavigation, RoleModel $role, UserMenuNavigationModel $userMenuNavigation, UserTransformation $userTransformation)
     {
@@ -41,6 +43,8 @@ class Users extends BaseImplementation implements UserInterface
         $this->userMenuNavigation = $userMenuNavigation;
         $this->userSystemLocation = $userSystemLocation;
         $this->userTransformation = $userTransformation;
+        $this->currentSystemLocation = RouteMenuLocation::systemLocation();
+        $this->currentSystemLocationId = Session::get('current_system_location_id');
     }
 
 	/**
@@ -64,6 +68,7 @@ class Users extends BaseImplementation implements UserInterface
             'id' => $userId,
             'is_active' => true,
             'current_location_slug' => true,
+            'system_location_slug'  => $this->currentSystemLocation
         ];
 
         $userData = $this->user($params, 'asc', 'array', true);
@@ -91,6 +96,7 @@ class Users extends BaseImplementation implements UserInterface
     {
         $params = [
             'order'     => 'name',
+            'system_location_slug'  => Session::get('slug_system_menu')
         ];
 
         $userData = $this->user($params, 'asc', 'array', false);
@@ -556,6 +562,19 @@ class Users extends BaseImplementation implements UserInterface
     protected function user($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
     {
         $user = $this->user->with(['role','location','user_menu', 'system_location']);
+
+        if(isset($params['system_location_slug'])) {
+
+            $user->whereHas('user_menu.menu.menu_group.system_menu', function($q) use($params){
+
+                $q->slug($params['system_location_slug']);
+            });
+        }
+
+        // $user->whereHas('user_menu.menu.menu_group', function($q) use($params){
+
+        //     $q->id($this->currentSystemLocationId);
+        // });
 
         if(isset($params['id'])) {
             $user->userId($params['id']);
