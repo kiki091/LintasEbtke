@@ -1,9 +1,12 @@
 $(document).ready(function() {
+
+	$('#submit__button__registration').prop("disabled", true)
+
 	var legalDomains = {
-	    "-yahoo.com": true,
-	    "-gmail.com": true,
-	    "-hotmail.com": true,
-	    "-msn.com": true
+	    "yahoo.com": true,
+	    "gmail.com": true,
+	    "hotmail.com": true,
+	    "msn.com": true
 	};
 
 	function validateEmailDomain(str) {
@@ -19,7 +22,15 @@ $(document).ready(function() {
 	}      
 	$("#email").on('keyup change', function() {
     	$("#result").html(validateEmailDomain(this.value) ? '<span class="good">valid</span>':'<span class="bad">invalid</span>');
+
 	});
+
+	$('#check__agree').click(function() {
+
+		$('#submit__button__registration').prop("disabled", false)
+		$('#check__agree').prop("disabled", true)
+		
+	})
 
 	$('#UserFormRegistration').on('submit',function(event) {
 		event.preventDefault()
@@ -58,6 +69,7 @@ $(document).ready(function() {
 	                }
 	            } else {
 	                resetForm()
+	                $(location).prop('href', 'sipedia/success');
 	                pushNotif(data.status, data.message);
 	                $('#close__button').click();
 	            }

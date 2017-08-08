@@ -11,12 +11,19 @@
           	</div>
       		<div class="form-group">
           		<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
-  					Email <span class="required">*</span>
+  					Email <span class="required">*</span><span id="result"></span>
   					<span id="form--error--message--email" class="form--error--message pull-right"></span>
   				</label>
         		<input type="email" name="email" id="email" class="form-control" placeholder="Email"/>
-        		Result: <span id="result"></span>
       		</div>
+
+          <div class="form-group">
+              <label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
+            Password <span class="required">*</span><span id="result"></span>
+            <span id="form--error--message--email" class="form--error--message pull-right"></span>
+          </label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password"/>
+          </div>
 
       		<div class="form-group">
           		<label class="text__left control-label col-md-12 col-sm-12 col-xs-12">
@@ -73,15 +80,15 @@
             		<li>
               			<p>
 			                <div class="checkbox icheck-primary">
-			                    <input class="checkbox__data" type="checkbox" name="volvo" id="volvo" value="1"/>
-			                    <label for="volvo">IPP</label>
+			                    <input class="checkbox__data" type="checkbox" name="is_ipp" id="is_ipp" value="1"/>
+			                    <label for="is_ipp">IPP</label>
 			                </div>
               			</p>
             		</li>
 		            <li>
 			            <p>
 			                <div class="checkbox icheck-primary">
-			                    <input class="checkbox__data" type="checkbox" name="saab" id="saab" value="1"/>
+			                    <input class="checkbox__data" type="checkbox" name="is_pabrikan" id="saab" value="1"/>
 			                    <label for="saab">Pabrikan</label>
 			                </div>
 			            </p>
@@ -89,8 +96,8 @@
 		            <li>
 		              	<p>
 		                	<div class="checkbox icheck-primary">
-		                    	<input class="checkbox__data" type="checkbox" name="mercedes" id="mercedes" value="1"/>
-		                    	<label for="mercedes">PLTS</label>
+		                    	<input class="checkbox__data" type="checkbox" name="is_plts" id="is_plts" value="1"/>
+		                    	<label for="is_plts">PLTS</label>
 		                	</div>
 		              	</p>
 		            </li>
@@ -104,8 +111,8 @@
   				<ul class="to_do">
 	              	<li>
                   		<div class="checkbox icheck-primary">
-                      		<input class="checkbox__data" type="checkbox" name="agree" id="agree" value="1"/>
-                      		<label for="agree">I have read and agree to the Terms and Conditions and Privacy Policy</label>
+                      		<input class="checkbox__data" type="checkbox" name="agree" id="check__agree"/>
+                      		<label for="check__agree">I have read and agree to the Terms and Conditions and Privacy Policy</label>
                       		<!-- Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy -->
                   		</div>
 	              	</li>

@@ -26,6 +26,12 @@ Route::group(['middleware' => ['web']], function ()
 		Route::post('change-password', 'Ebtke\Sipeda\AuthController@changePassword')->name('sipeda_chenge_password');
 		Route::get('logout', 'Ebtke\Sipeda\AuthController@logout')->name('sipeda_logout');
 
+		Route::group(array('prefix' => 'success'), function () {
+			Route::get('/', function () {
+		        return view('ebtke.sipeda.pages.auth.success-notif');
+		    });
+		});
+
 		Route::group(['middleware' => ['sipeda', 'sipeda.privilege']], function (){
 
 			Route::group(['prefix' => 'dashboard'], function () {

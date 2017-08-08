@@ -105,6 +105,7 @@ class Perusahaan extends BaseImplementation implements UserInterface
 
             $store->nama_perusahaan         = isset($data['nama_perusahaan']) ? $data['nama_perusahaan'] : '';
             $store->email                   = isset($data['email']) ? $data['email'] : '';
+            $store->password                = isset($data['password']) ? Hash::make($data['password']) : '';
             $store->npwp                    = isset($data['npwp']) ? $data['npwp'] : '';
             $store->pimpinan_perusahaan     = isset($data['pimpinan_perusahaan']) ? $data['pimpinan_perusahaan'] : '';
             $store->kepemilikan_saham       = isset($data['kepemilikan_saham']) ? $data['kepemilikan_saham'] : '';
@@ -112,6 +113,9 @@ class Perusahaan extends BaseImplementation implements UserInterface
             $store->pic_phone_number        = isset($data['pic_phone_number']) ? $data['pic_phone_number'] : '';
             $store->pic_email               = isset($data['pic_email']) ? $data['pic_email'] : '';
             $store->is_active               = false;
+            $store->is_ipp                  = isset($data['is_ipp']) ? $data['is_ipp'] : false;
+            $store->is_pabrikan             = isset($data['is_pabrikan']) ? $data['is_pabrikan'] : false;
+            $store->is_plts                 = isset($data['is_plts']) ? $data['is_plts'] : false;
 
             if($save = $store->save()) {
 
