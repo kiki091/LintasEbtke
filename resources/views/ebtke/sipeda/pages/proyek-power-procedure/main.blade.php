@@ -2,7 +2,7 @@
 	<div class="bg__gray">
 		<div class="page-title">
 			<div class="title_left">
-		        <h3>PROYEK POWER PROCEDURE</h3>
+		        <h3>PROYEK POWER PRODUCER</h3>
 		        <p>SIPEDA MANAGEMENT SYSTEM</p>
 		    </div>
 		</div>
@@ -43,10 +43,23 @@
 		    </div>
 		    
 		    <div class="content__bottom">
-		    	<ul class="news__list sortable" id="sort">
-		    		
-				</ul>
-			</div>
+                <table class="table__style" align="center" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Proyek</th>
+                            <th>Kapasitas Terpasang</th>
+                            <th>COD</th>
+                        </tr>
+                        <tr v-for="(power_producer, index) in responseData.power_producer">
+                            <td>@{{ index+1 }}</td>
+                            <td>@{{ power_producer.nama_proyek }}</td>
+                            <td>@{{ power_producer.kapasitas_terpasang }}</td>
+                            <td>@{{ power_producer.cod }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
 		</div>
 

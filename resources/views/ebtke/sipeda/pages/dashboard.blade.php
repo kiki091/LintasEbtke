@@ -10,10 +10,10 @@
 		    </div>
 		</div>
 	</div>
-	<div id="c1"></div>
-	<script src="https://a.alipayobjects.com/g/datavis/g2/2.3.6/g2.js"></script>
+	<!-- <div id="c1"></div>
+	<script src="https://a.alipayobjects.com/g/datavis/g2/2.3.6/g2.js"></script> -->
 
-	<script>
+	<!-- <script>
       var data = [
         {genre: 'Sports', sold: 275},
         {genre: 'Strategy', sold: 115},
@@ -40,6 +40,6 @@
       chart.interval().position('genre*sold').color('genre')
       // Step 4: 渲染图表
       chart.render();
-    </script>
+    </script> -->
 @endsection
 

@@ -8,10 +8,10 @@ function menuCapacityBuilding()
     });
 }
 
-function menuProyekPowerProsedure()
+function menuProyekPowerProducer()
 {
-    $('.right_col').load(laroute.route('sipeda_proyek_power_procedure', []), function()
+    $('.right_col').load(laroute.route('sipeda_proyek_power_producer', []), function()
     {
-    	initMenuProyekPowerProsedure()
+    	initMenuProyekPowerProducer()
     });
 }

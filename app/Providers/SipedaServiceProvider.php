@@ -37,6 +37,7 @@ class SipedaServiceProvider extends ServiceProvider
 
         $this->app->bind('App\Repositories\Contracts\Sipeda\Perusahaan', 'App\Repositories\Implementation\Sipeda\Perusahaan');
         $this->app->bind('App\Repositories\Contracts\Sipeda\CapacityBuilding', 'App\Repositories\Implementation\Sipeda\CapacityBuilding');
+        $this->app->bind('App\Repositories\Contracts\Sipeda\ProyekPowerProducer', 'App\Repositories\Implementation\Sipeda\ProyekPowerProducer');
 
     }
 
@@ -51,6 +52,7 @@ class SipedaServiceProvider extends ServiceProvider
 
             'App\Repositories\Contracts\Sipeda\Perusahaan',
             'App\Repositories\Contracts\Sipeda\CapacityBuilding',
+            'App\Repositories\Contracts\Sipeda\ProyekPowerProducer',
         );
     }
 }

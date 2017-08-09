@@ -40,8 +40,8 @@
                                   </a>
                               </li>
                               <li>
-                                  <a href="javascript:void(0);" onclick="menuProyekPowerProsedure()">
-                                      Proyek Power Procedure
+                                  <a href="javascript:void(0);" onclick="menuProyekPowerProducer()">
+                                      Proyek Power Producer
                                   </a>
                               </li>
                               <li>

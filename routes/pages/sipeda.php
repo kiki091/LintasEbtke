@@ -48,9 +48,11 @@ Route::group(['middleware' => ['web']], function ()
 					Route::post('publish', 'Ebtke\Sipeda\CapacityBuildingController@publish')->name('sipeda_capacity_building_publish');
 				});
 
-				Route::group(['prefix' => 'proyek-power-procedure'], function () {
+				Route::group(['prefix' => 'proyek-power-producer'], function () {
 
-					Route::get('/', 'Ebtke\Sipeda\ProyekPowerProsedureController@index')->name('sipeda_proyek_power_procedure');
+					Route::get('/', 'Ebtke\Sipeda\ProyekPowerProducerController@index')->name('sipeda_proyek_power_producer');
+					Route::get('data', 'Ebtke\Sipeda\ProyekPowerProducerController@getdata')->name('sipeda_proyek_power_producer_data');
+					Route::post('store', 'Ebtke\Sipeda\ProyekPowerProducerController@store')->name('sipeda_proyek_power_producer_store');
 				});
 			});
 		});

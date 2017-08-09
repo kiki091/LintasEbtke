@@ -365,10 +365,10 @@ function initMenuCapacityBuilding()
     replaceToCkEditor();
 }
 
-function initMenuProyekPowerProsedure()
+function initMenuProyekPowerProducer()
 {
     mainGeneral();
-    crudProyekPowerProsedure();
+    crudProyekPowerProducer();
     buttonClickOpen();
     buttonClickClose();
 }
