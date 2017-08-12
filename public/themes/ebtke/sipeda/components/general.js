@@ -7,6 +7,30 @@ Vue.config.debug = true;
 Vue.http.headers.common['X-CSRF-TOKEN'] = $("#_token").attr("value");
 
 //vue custome directive sortable js https://github.com/RubaXa/Sortable
+Vue.directive('select', {
+    twoWay: true,
+    priority: 1000,
+
+    params: ['options'],
+
+    bind: function () {
+        var self = this
+        $(this.el)
+        .select2({
+            data: this.params.options,
+            minimumResultsForSearch: -1
+        })
+        .on('change', function () {
+            self.set(this.value)
+        })
+    },
+    update: function (value) {
+        $(this.el).val(value).trigger('change')
+    },
+    unbind: function () {
+        $(this.el).off().select2('destroy')
+    }
+})
 
 Vue.directive("sort", {
     bind: function(){
@@ -369,6 +393,30 @@ function initMenuProyekPowerProducer()
 {
     mainGeneral();
     crudProyekPowerProducer();
+    buttonClickOpen();
+    buttonClickClose();
+}
+
+function initMenuInvestasiPowerProducer()
+{
+    mainGeneral();
+    crudInvestasiPowerProducer();
+    buttonClickOpen();
+    buttonClickClose();
+}
+
+function initMenuInvestasiPabrikanAnekaEbt()
+{
+    mainGeneral();
+    crudInvestasiPabrikanAnekaEbt();
+    buttonClickOpen();
+    buttonClickClose();
+}
+
+function initMenuInvestasiPltsRooftop()
+{
+    mainGeneral();
+    crudInvestasiPltsRooftop();
     buttonClickOpen();
     buttonClickClose();
 }

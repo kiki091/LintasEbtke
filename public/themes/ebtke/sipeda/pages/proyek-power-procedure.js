@@ -19,7 +19,8 @@ function crudProyekPowerProducer() {
                 id : '',
                 nama_proyek : '',
                 jenis_pembangkit : '',
-                koordinat : '',
+                latitude : '',
+                longitude : '',
                 kapasitas_terpasang : '',
                 produksi_energi_tahunan : '',
                 sharing_equity : '',
@@ -34,11 +35,14 @@ function crudProyekPowerProducer() {
             delete_payload: {
               id: ''
             },
-            form_add_title: "Proyek Power Producer Content Manager",
+            form_add_title: "Proyek Power Producer",
             id: '',
             edit: false,
             showModal: false,
             responseData: {},
+            responseDataKabupaten: {},
+            responseDataKecamatan: {},
+            responseDataDesa: {},
         },
         filters: {
             strSlug: function(data) {
@@ -48,6 +52,20 @@ function crudProyekPowerProducer() {
         },
 
         methods: {
+
+            formatToNumber: function (element) 
+            {
+                if(element == 'kapasitas_terpasang') 
+                {
+                    val = $('#kapasitas_terpasang').val()
+                    
+                    this.models.kapasitas_terpasang = (val.replace(/[^\d\.]/g, "")).toString().replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")
+                } else {
+                    val = $('#produksi_energi_tahunan').val()
+                    
+                    this.models.produksi_energi_tahunan = (val.replace(/[^\d\.]/g, "")).toString().replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")
+                }
+            },
 
             fetchData: function() {
 
@@ -66,6 +84,90 @@ function crudProyekPowerProducer() {
                 for (var supported_lang in this.supported_language) {
                     this.last_language_key = supported_lang
                 }
+
+            },
+
+            showKabupaten: function() {
+                var payload = []
+                var provinsi_id = $('#provinsi__choise').val()
+
+                payload['provinsi_id'] = provinsi_id
+                payload['_token'] = token
+
+                var form = new FormData();
+
+                for (var key in payload) {
+                    form.append(key, payload[key])
+                }
+
+
+                var domain  = laroute.route('sipeda_proyek_power_producer_get_data_kabupaten', []);
+                
+                this.$http.post(domain, form).then(function(response) {
+
+                    response = response.data
+                    if (response.status) {
+                        this.responseDataKabupaten = response.data
+                    } else {
+                        pushNotif(response.status,response.message)
+                    }
+                })
+
+            },
+
+            showKecamatan: function() {
+                var payload = []
+                var kabupaten_id = $('#kabupaten__choise').val()
+
+                payload['kabupaten_id'] = kabupaten_id
+                payload['_token'] = token
+
+                var form = new FormData();
+
+                for (var key in payload) {
+                    form.append(key, payload[key])
+                }
+
+
+                var domain  = laroute.route('sipeda_proyek_power_producer_get_data_kecamatan', []);
+                
+                this.$http.post(domain, form).then(function(response) {
+
+                    response = response.data
+                    if (response.status) {
+                        this.responseDataKecamatan = response.data
+                    } else {
+                        pushNotif(response.status,response.message)
+                    }
+                })
+
+            },
+
+            showDesa: function() {
+                var payload = []
+                var kecamatan_id = $('#kecamatan__choise').val()
+
+                payload['kecamatan_id'] = kecamatan_id
+                payload['_token'] = token
+
+                var form = new FormData();
+
+                for (var key in payload) {
+                    form.append(key, payload[key])
+                }
+
+
+                var domain  = laroute.route('sipeda_proyek_power_producer_get_data_desa', []);
+                
+                this.$http.post(domain, form).then(function(response) {
+
+                    response = response.data
+                    if (response.status) {
+                        this.responseDataDesa = response.data
+                    } else {
+                        pushNotif(response.status,response.message)
+                    }
+                })
 
             },
 
@@ -122,7 +224,8 @@ function crudProyekPowerProducer() {
                 this.models.id = ''
                 this.models.nama_proyek = ''
                 this.models.jenis_pembangkit = ''
-                this.models.koordinat = ''
+                this.models.latitude = ''
+                this.models.longitude = ''
                 this.models.kapasitas_terpasang = ''
                 this.models.produksi_energi_tahunan = ''
                 this.models.sharing_equity = ''
@@ -136,7 +239,7 @@ function crudProyekPowerProducer() {
 
                 this.id = ''
 
-                this.form_add_title = "Proyek Power Producer Content Manager"
+                this.form_add_title = "Proyek Power Producer"
                 document.getElementById("sipeda_proyek_power_producer");
 
                 this.clearErrorMessage()

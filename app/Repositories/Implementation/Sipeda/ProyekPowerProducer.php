@@ -5,7 +5,8 @@ namespace App\Repositories\Implementation\Sipeda;
 use App\Repositories\Contracts\Sipeda\ProyekPowerProducer as ProyekPowerProducerInterface;
 use App\Repositories\Implementation\BaseImplementation;
 use App\Models\Sipeda\ProyekPowerProducer as ProyekPowerProducerModel;
-use App\Custom\SipedaDataHelper;
+use SipedaDataHelper;
+use Carbon\Carbon;
 use App\Services\Transformation\Sipeda\ProyekPowerProducer as ProyekPowerProducerTransformation;
 use Cache;
 use Session;
@@ -92,7 +93,8 @@ class ProyekPowerProducer extends BaseImplementation implements ProyekPowerProdu
 
             } else {
             
-                $store->created_at    = $this->mysqlDateTimeFormat();
+                $store->perusahaan_id           = SipedaDataHelper::sipedaId();
+                $store->created_at              = $this->mysqlDateTimeFormat();
             }
 
             $store->provinsi_id                 = isset($data['provinsi_id']) ? $data['provinsi_id'] : '';
@@ -101,12 +103,13 @@ class ProyekPowerProducer extends BaseImplementation implements ProyekPowerProdu
             $store->desa_id                     = isset($data['desa_id']) ? $data['desa_id'] : '';
             $store->nama_proyek                 = isset($data['nama_proyek']) ? $data['nama_proyek'] : '';
             $store->jenis_pembangkit            = isset($data['jenis_pembangkit']) ? $data['jenis_pembangkit'] : '';
-            $store->koordinat                   = isset($data['koordinat']) ? $data['koordinat'] : '';
+            $store->latitude                    = isset($data['latitude']) ? $data['latitude'] : '';
+            $store->longitude                   = isset($data['longitude']) ? $data['longitude'] : '';
             $store->kapasitas_terpasang         = isset($data['kapasitas_terpasang']) ? $data['kapasitas_terpasang'] : '';
             $store->produksi_energi_tahunan     = isset($data['produksi_energi_tahunan']) ? $data['produksi_energi_tahunan'] : '';
             $store->sharing_equity              = isset($data['sharing_equity']) ? $data['sharing_equity'] : '';
             $store->jenis_energy_primer         = isset($data['jenis_energy_primer']) ? $data['jenis_energy_primer'] : '';
-            $store->cod                         = isset($data['cod']) ? $data['cod'] : '';
+            $store->cod                         = isset($data['cod']) ? Carbon::parse($data['cod'])->toDateString() : '';
             $store->kontrak_pln                 = isset($data['kontrak_pln']) ? $data['kontrak_pln'] : '';
 
             if($save = $store->save())
@@ -130,7 +133,7 @@ class ProyekPowerProducer extends BaseImplementation implements ProyekPowerProdu
      */
     protected function proyekPowerProducer($params = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
     {
-        $proyekPowerProducer = $this->proyekPowerProducer;
+        $proyekPowerProducer = $this->proyekPowerProducer->with(['perusahaan']);
 
         if(isset($params['id'])) {
             $proyekPowerProducer->id($params['id']);

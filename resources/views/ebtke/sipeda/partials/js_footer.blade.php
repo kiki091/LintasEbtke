@@ -30,3 +30,6 @@
 <script src="{{ asset('themes/ebtke/sipeda/pages/auth/logout.js') }}"></script>
 <script src="{{ asset('themes/ebtke/sipeda/pages/capacity-building.js') }}"></script>
 <script src="{{ asset('themes/ebtke/sipeda/pages/proyek-power-procedure.js') }}"></script>
+<script src="{{ asset('themes/ebtke/sipeda/pages/investasi-power-procedure.js') }}"></script>
+<script src="{{ asset('themes/ebtke/sipeda/pages/investasi-pabrikan-aneka-ebt.js') }}"></script>
+<script src="{{ asset('themes/ebtke/sipeda/pages/investasi-plts-rooftop.js') }}"></script>

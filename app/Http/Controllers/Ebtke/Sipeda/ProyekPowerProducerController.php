@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Ebtke\Sipeda;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SipedaBaseController;
 use App\Custom\SipedaDataHelper;
+use App\Services\Bridge\Sipeda\Provinsi as ProvinsiServices;
+use App\Services\Bridge\Sipeda\Kabupaten as KabupatenServices;
+use App\Services\Bridge\Sipeda\Kecamatan as KecamatanServices;
+use App\Services\Bridge\Sipeda\Desa as DesaServices;
 use App\Services\Bridge\Sipeda\ProyekPowerProducer as ProyekPowerProducerServices;
 use App\Services\Api\Response as ResponseService;
 
@@ -19,11 +23,19 @@ class ProyekPowerProducerController extends SipedaBaseController
 
     protected $response;
     protected $validationMessage = '';
+    protected $provinsi;
+    protected $kabupaten;
+    protected $kecamatan;
+    protected $desa;
     protected $proyekPowerProducer;
 
-    public function __construct(ProyekPowerProducerServices $proyekPowerProducer,ResponseService $response)
+    public function __construct(ProvinsiServices $provinsi, KabupatenServices $kabupaten, KecamatanServices $kecamatan, DesaServices $desa, ProyekPowerProducerServices $proyekPowerProducer,ResponseService $response)
     {
         $this->response = $response;
+        $this->provinsi = $provinsi;
+        $this->kabupaten = $kabupaten;
+        $this->kecamatan = $kecamatan;
+        $this->desa = $desa;
         $this->proyekPowerProducer = $proyekPowerProducer;
     }
 
@@ -53,9 +65,43 @@ class ProyekPowerProducerController extends SipedaBaseController
 
     public function getData(Request $request)
     {
+        $data['provinsi'] = $this->provinsi->getData();
         $data['power_producer'] = $this->proyekPowerProducer->getData();
 
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);
+    }
+
+
+    /**
+     * Get Data Kabupaten
+     * @return string
+     */
+
+    public function getDataKabupaten(Request $request)
+    {
+        return $this->kabupaten->getDataByProvinsi($request->except(['_token']));
+    }
+
+
+    /**
+     * Get Data Kecamatan
+     * @return string
+     */
+
+    public function getDataKecamatan(Request $request)
+    {
+        return $this->kecamatan->getDataByKabupaten($request->except(['_token']));
+    }
+
+
+    /**
+     * Get Data Desa
+     * @return string
+     */
+
+    public function getDataDesa(Request $request)
+    {
+        return $this->desa->getDataByKecamatan($request->except(['_token']));
     }
 
     /**
@@ -88,7 +134,8 @@ class ProyekPowerProducerController extends SipedaBaseController
         $rules = [
             'nama_proyek'               => 'required',
             'jenis_pembangkit'          => 'required',
-            'koordinat'                 => 'required',
+            'latitude'                  => 'required',
+            'longitude'                 => 'required',
             'kapasitas_terpasang'       => 'required',
             'produksi_energi_tahunan'   => 'required',
             'sharing_equity'            => 'required',

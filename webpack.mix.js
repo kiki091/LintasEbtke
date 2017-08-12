@@ -121,6 +121,7 @@ mix.scripts([
     'public/js/bower_components/bootstrap-clockpicker/bootstrap-clockpicker.js',
     'public/js/bower_components/datetimepicker/build/jquery.datetimepicker.full.js',
     'public/js/bower_components/masonry/dist/masonry.pkgd.js',
+    'public/js/bower_components/select2/dist/js/select2.js',
 ], 'public/themes/ebtke/cms/build/js/plugins.js');
 
 mix.scripts([

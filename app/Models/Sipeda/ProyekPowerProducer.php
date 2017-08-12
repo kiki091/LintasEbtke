@@ -33,9 +33,15 @@ class ProyekPowerProducer  extends Model
 
     protected $guarded = ['sipeda'];
 
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    
+    public function perusahaan()
+    {
+        return $this->belongsTo('App\Models\Sipeda\Perusahaan', 'perusahaan_id', 'id');
+    }
     
     
     /***************** Scope *****************/

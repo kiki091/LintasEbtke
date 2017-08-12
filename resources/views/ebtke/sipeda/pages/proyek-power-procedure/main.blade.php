@@ -3,7 +3,7 @@
 		<div class="page-title">
 			<div class="title_left">
 		        <h3>PROYEK POWER PRODUCER</h3>
-		        <p>SIPEDA MANAGEMENT SYSTEM</p>
+		        <p>SIPEDIA MANAGEMENT SYSTEM</p>
 		    </div>
 		</div>
 	</div>
@@ -48,13 +48,20 @@
                         <tr>
                             <th>#</th>
                             <th>Nama Proyek</th>
+                            <th>Koordinat</th>
                             <th>Kapasitas Terpasang</th>
+                            <th>Rata rata Produksi Energi Listrik Tahunan</th>
                             <th>COD</th>
                         </tr>
                         <tr v-for="(power_producer, index) in responseData.power_producer">
                             <td>@{{ index+1 }}</td>
                             <td>@{{ power_producer.nama_proyek }}</td>
-                            <td>@{{ power_producer.kapasitas_terpasang }}</td>
+                            <td>
+                                <b>Latitude : </b>@{{ power_producer.latitude }}<br/>
+                                <b>Longitude : </b>@{{ power_producer.longitude }}
+                            </td>
+                            <td>@{{ power_producer.kapasitas_terpasang }} <b>kWh</b></td>
+                            <td>@{{ power_producer.produksi_energi_tahunan }} <b>kWh</b></td>
                             <td>@{{ power_producer.cod }}</td>
                         </tr>
                     </tbody>

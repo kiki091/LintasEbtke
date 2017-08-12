@@ -32,37 +32,37 @@
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Provinsi</label>
-									<select v-model="models.provinsi_id" name="provinsi_id">
-										<option value="1">Nusa Tenggara Timur</option>
-									</select>
-									<div class="form--error--message--left" id="form--error--message--request_topik"></div>
+										<select id="provinsi__choise" v-model="models.provinsi_id" name="provinsi_id" v-on:change="showKabupaten">
+											<option v-for="provinsi in responseData.provinsi" :value="provinsi.id" >@{{ provinsi.nama_provinsi }}</option>
+										</select>
+									<div class="form--error--message--left" id="form--error--message--provinsi_id"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Kabupaten</label>
-									<select v-model="models.kabupaten_id" name="kabupaten_id">
-										<option value="1">Kupang</option>	
+									<select id="kabupaten__choise" class="form-control" name="kabupaten_id" v-model="models.kabupaten_id" v-on:change="showKecamatan">
+									<option v-for="kabupaten in responseDataKabupaten" :value="kabupaten.id">@{{ kabupaten.nama_kabupaten }}</option>
 									</select>
-									<div class="form--error--message--left" id="form--error--message--request_topik"></div>
+									<div class="form--error--message--left" id="form--error--message--kabupaten_id"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Kecamatan</label>
-									<select v-model="models.kecamatan_id" name="kecamatan_id">
-										<option value="1">Kupang Tengah</option>
+									<select id="kecamatan__choise" v-model="models.kecamatan_id" name="kecamatan_id" v-on:change="showDesa">
+										<option v-for="kecamatan in responseDataKecamatan" :value="kecamatan.id">@{{ kecamatan.nama_kecamatan }}</option>
 									</select>
-									<div class="form--error--message--left" id="form--error--message--request_topik"></div>
+									<div class="form--error--message--left" id="form--error--message--kecamatan_id"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Desa</label>
-									<select v-model="models.desa_id" name="desa_id">
-										<option value="1">Oelpuah</option>
+									<select id="desa__choise" v-model="models.desa_id" name="desa_id">
+										<option v-for="desa in responseDataDesa" :value="desa.id">@{{ desa.nama_desa }}</option>
 									</select>
-									<div class="form--error--message--left" id="form--error--message--request_topik"></div>
+									<div class="form--error--message--left" id="form--error--message--desa_id"></div>
 								</div>
 							</div>
 						</div>
@@ -75,28 +75,43 @@
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Jenis Pembangkit</label>
-									<input name="jenis_pembangkit" v-model="models.jenis_pembangkit" type="text" id="jenis_pembangkit" class="new__form__input__field" placeholder="Enter the Jenis Pembangkit">
+									<select class="new__form__input__field" name="jenis_pembangkit" v-model="models.jenis_pembangkit">
+										<option value="PLTS">PLTS</option>
+										<option value="PLTMH">PLTMH</option>
+										<option value="PLTM">PLTM</option>
+										<option value="PLTB">PLTB</option>
+									</select>
+
 									<div class="form--error--message--left" id="form--error--message--jenis_pembangkit"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
-									<label>Koordinat (WGS 84)</label>
-									<input name="koordinat" v-model="models.koordinat" type="text" id="koordinat" class="new__form__input__field" placeholder="Enter the Koordinat">
-									<div class="form--error--message--left" id="form--error--message--koordinat"></div>
+									<label>Koordinat (latitude)</label>
+									<input name="latitude" v-model="models.latitude" type="text" id="latitude" class="new__form__input__field" placeholder="Enter the latitude">
+									<div class="form--error--message--left" id="form--error--message--latitude"></div>
+								</div>
+							</div>
+							<div class="create__form__row">
+								<div class="new__form__field">
+									<label>Koordinat (longitude)</label>
+									<input name="longitude" v-model="models.longitude" type="text" id="longitude" class="new__form__input__field" placeholder="Enter the longitude">
+									<div class="form--error--message--left" id="form--error--message--longitude"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Kapasitas Terpasang <b>(kW)</b></label>
-									<input name="kapasitas_terpasang" v-model="models.kapasitas_terpasang" type="text" id="kapasitas_terpasang" class="new__form__input__field" placeholder="Enter the Kapasitas Terpasang">
+									<input name="kapasitas_terpasang" v-model="models.kapasitas_terpasang" type="text" id="kapasitas_terpasang" class="new__form__input__field" placeholder="Enter the Kapasitas Terpasang" v-on:keyup="formatToNumber('kapasitas_terpasang')">
+									
 									<div class="form--error--message--left" id="form--error--message--kapasitas_terpasang"></div>
 								</div>
 							</div>
 							<div class="create__form__row">
 								<div class="new__form__field">
-									<label>Rata-rata Produksi Energi Listrik Tahunan</label>
-									<input name="produksi_energi_tahunan" v-model="models.produksi_energi_tahunan" type="text" id="produksi_energi_tahunan" class="new__form__input__field" placeholder="Enter the Rata-rata Produksi Energi Listrik">
+									<label>Rata-rata Produksi Energi Listrik Tahunan (kWh)</label>
+									<input name="produksi_energi_tahunan" v-model="models.produksi_energi_tahunan" type="text" id="produksi_energi_tahunan" class="new__form__input__field" placeholder="Enter the Rata-rata Produksi Energi Listrik" v-on:keyup="formatToNumber('produksi_energi_tahunan')">
+
 									<div class="form--error--message--left" id="form--error--message--produksi_energi_tahunan"></div>
 								</div>
 							</div>
@@ -110,7 +125,13 @@
 							<div class="create__form__row">
 								<div class="new__form__field">
 									<label>Jenis Energi Primer</label>
-									<input name="jenis_energy_primer" v-model="models.jenis_energy_primer" type="text" id="jenis_energy_primer" class="new__form__input__field" placeholder="Enter the Jenis Energi Primer">
+
+									<select class="new__form__input__field" name="jenis_energy_primer" v-model="models.jenis_energy_primer">
+										<option value="Energi Surya">Energi Surya</option>
+										<option value="Energi Hidro">Energi Hidro</option>
+										<option value="Energi Angin">Energi Angin</option>
+									</select>
+
 									<div class="form--error--message--left" id="form--error--message--jenis_energy_primer"></div>
 								</div>
 							</div>
@@ -119,7 +140,7 @@
 									<label>COD</label>
 									<div class="content__input__wrapper__form">
 										<div class="input-icon">
-											<input v-model="models.cod" name="cod" type="text" class="form-control datetimepicker datetime start" placeholder="COD">
+											<input v-model="models.cod" name="cod" type="text" class="form-control datepick" placeholder="COD">
 											<div class="icon__wrapper__form date-icon">
 		                                        <i class="ico-date"></i>
 		                                    </div>

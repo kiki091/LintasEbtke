@@ -23,8 +23,8 @@ class SipedaDataHelper {
     {
         $sipedaInfo = Session::get('sipeda_user_info');
 
-        if (isset($sipedaInfo['sipeda_id'])) {
-            return $sipedaInfo['sipeda_id'];
+        if (isset($sipedaInfo['user_id'])) {
+            return $sipedaInfo['user_id'];
         }
 
         return false;

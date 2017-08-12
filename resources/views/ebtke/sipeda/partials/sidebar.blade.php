@@ -31,42 +31,27 @@
                       <li>
                           <a>
                               <i class="fa fa-book"></i>
-                              Pages <span class="fa fa-chevron-down"></span>
+                              Data Entry <span class="fa fa-chevron-down"></span>
                           </a>
                           <ul class="nav child_menu">
-                              <li>
-                                  <a href="javascript:void(0);" onclick="menuCapacityBuilding()">
-                                      Capacity Building
-                                  </a>
-                              </li>
                               <li>
                                   <a href="javascript:void(0);" onclick="menuProyekPowerProducer()">
                                       Proyek Power Producer
                                   </a>
                               </li>
                               <li>
-                                  <a href="javascript:void(0);" onclick="menuEnergiEfisiensi()">
-                                      Energi Efisiensi
+                                  <a href="javascript:void(0);" onclick="menuInvestasiPowerProducer()">
+                                      Investasi Power Producer
                                   </a>
                               </li>
                               <li>
-                                  <a href="javascript:void(0);" onclick="menuEnergiTerbarukan()">
-                                      Energi Terbarukan
+                                  <a href="javascript:void(0);" onclick="menuInvestasiPabrikanAnekaEbt()">
+                                      Investasi Pabrikan Aneka EBT
                                   </a>
                               </li>
                               <li>
-                                  <a href="javascript:void(0);" onclick="menuKegiatanStudy()">
-                                      Kegiatan Study
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="javascript:void(0);" onclick="menuPotensiEnergiTerbarukan()">
-                                      Potensi Energi Terbarukan
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="javascript:void(0);" onclick="menuTechnicalAssistance()">
-                                      Technical Assistance
+                                  <a href="javascript:void(0);" onclick="menuInvestasiPltsRooftop()">
+                                      Investasi PLTS Rooflop
                                   </a>
                               </li>
                           </ul>

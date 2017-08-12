@@ -53,6 +53,36 @@ Route::group(['middleware' => ['web']], function ()
 					Route::get('/', 'Ebtke\Sipeda\ProyekPowerProducerController@index')->name('sipeda_proyek_power_producer');
 					Route::get('data', 'Ebtke\Sipeda\ProyekPowerProducerController@getdata')->name('sipeda_proyek_power_producer_data');
 					Route::post('store', 'Ebtke\Sipeda\ProyekPowerProducerController@store')->name('sipeda_proyek_power_producer_store');
+
+
+					Route::post('get-data-kabupaten', 'Ebtke\Sipeda\ProyekPowerProducerController@getDataKabupaten')->name('sipeda_proyek_power_producer_get_data_kabupaten');
+					Route::post('get-data-kecamatan', 'Ebtke\Sipeda\ProyekPowerProducerController@getDataKecamatan')->name('sipeda_proyek_power_producer_get_data_kecamatan');
+					Route::post('get-data-desa', 'Ebtke\Sipeda\ProyekPowerProducerController@getDataDesa')->name('sipeda_proyek_power_producer_get_data_desa');
+				});
+
+				Route::group(['prefix' => 'investasi-power-producer'], function () {
+
+					Route::get('/', 'Ebtke\Sipeda\InvestasiPowerProducerController@index')->name('sipeda_investasi_power_producer');
+					Route::get('data', 'Ebtke\Sipeda\InvestasiPowerProducerController@getdata')->name('sipeda_investasi_power_producer_data');
+					Route::post('store', 'Ebtke\Sipeda\InvestasiPowerProducerController@store')->name('sipeda_investasi_power_producer_store');
+				});
+
+				Route::group(['prefix' => 'investasi-pabrikan-aneka-ebt'], function () {
+
+					Route::get('/', 'Ebtke\Sipeda\InvestasiPabrikanAnekaEbtController@index')->name('sipeda_investasi_pabrikan_aneka_ebt');
+					Route::get('data', 'Ebtke\Sipeda\InvestasiPabrikanAnekaEbtController@getdata')->name('sipeda_investasi_pabrikan_aneka_ebt_data');
+					Route::post('store', 'Ebtke\Sipeda\InvestasiPabrikanAnekaEbtController@store')->name('sipeda_investasi_pabrikan_aneka_ebt_store');
+
+					Route::post('get-data-location', 'Ebtke\Sipeda\InvestasiPabrikanAnekaEbtController@getDataKabupatenByProvinsi')->name('sipeda_investasi_pabrikan_aneka_ebt_data_location');
+				});
+
+				Route::group(['prefix' => 'investasi-plts-rooftop'], function () {
+
+					Route::get('/', 'Ebtke\Sipeda\InvestasiPltsRooftopController@index')->name('sipeda_investasi_plts_rooftop');
+					Route::get('data', 'Ebtke\Sipeda\InvestasiPltsRooftopController@getdata')->name('sipeda_investasi_plts_rooftop_data');
+					Route::post('store', 'Ebtke\Sipeda\InvestasiPltsRooftopController@store')->name('sipeda_investasi_plts_rooftop_store');
+
+					Route::post('get-data-location', 'Ebtke\Sipeda\InvestasiPltsRooftopController@getDataKabupatenByProvinsi')->name('sipeda_investasi_plts_rooftop_data_location');
 				});
 			});
 		});
