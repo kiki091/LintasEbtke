@@ -8,6 +8,7 @@
 	return [
 
 		'download'						=> 'DOWNLOAD',
+		'welcome_lintas'				=> 'Welcome to LINTAS',
 		'rating'						=> 'RATING',
 		'download_pdf'					=> 'DOWNLOAD MANUAL PDF',
 		'footer_title_contact_us'		=> 'CONTACT US',

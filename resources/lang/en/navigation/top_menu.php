@@ -7,7 +7,7 @@
 
 	return [
 
-		'menu_home' 		=> 'HOME',
+		'menu_home' 		=> 'Home',
 		'menu_login'		=> 'Login',
 		'menu_register'		=> 'Register',
 	];

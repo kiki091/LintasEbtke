@@ -85,7 +85,7 @@
     <div class="page-header-wrapper">
         <div class="container">
             <div class="page-header wow fadeInUp" data-wow-delay="0.3s">
-                <h3><b>WELCOME TO LINTAS</b></h3>
+                <h3><b>{{ trans('global_page.welcome_lintas') }}</b></h3>
                 <hr/>
             </div>
         </div>
@@ -157,7 +157,7 @@
 
  -->
 
-<section id="desktop__content">
+<section id="">
 	<div class="container">
 	<div class="latest wow fadeInUp" data-wow-delay="0.3s"> 
 	    <!-- ################################################################################################ -->
@@ -176,7 +176,7 @@
 	        			<img src="{{ asset(SERVICES_IMAGES_DIRECTORY.'Consulting-Services.png') }}" alt="">
 	        			<div class="caption__bottom__services">
 			            	<p class="bold uppercase">
-			            		<a href="{{ route('ConsultingServices') }}">
+			            		<a class="mobile_desc" href="{{ route('ConsultingServices') }}">
 			            			{{ trans('pages/main_page.title_consulting_services') }}
 			            		</a>
 			            	</p>
@@ -192,7 +192,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-		            		<a href="{{ route('landingNews') }}">
+		            		<a class="mobile_desc" href="{{ route('landingNews') }}">
 		            			{{ trans('pages/main_page.title_news_&_events') }}
 		            		</a>
 		            	</p>
@@ -206,7 +206,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="{{ route('InvestmentServicesLanding') }}">
+			            	<a class="mobile_desc" href="{{ route('InvestmentServicesLanding') }}">
 		            			{{ trans('pages/main_page.title_investment_serrvices') }}
 		            		</a>
 		            	</p>
@@ -222,7 +222,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="#">
+			            	<a class="mobile_desc" href="#">
 		            			{{ trans('pages/main_page.title_libraries') }}
 		            		</a>
 		            	</p>
@@ -236,7 +236,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="{{ route('Tools') }}">
+			            	<a class="mobile_desc" href="{{ route('Tools') }}">
 		            			{{ trans('pages/main_page.title_tools') }}
 		            		</a>
 		            	</p>
@@ -250,7 +250,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="{{ route('InvestmentServicesGreenPages') }}">
+			            	<a class="mobile_desc" href="{{ route('InvestmentServicesGreenPages') }}">
 		            			{{ trans('pages/main_page.title_green_page') }}
 		            		</a>
 		            	</p>
@@ -266,7 +266,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="#">
+			            	<a class="mobile_desc" href="#">
 		            			{{ trans('pages/main_page.title_link_&_match') }}
 		            		</a>
 		            	</p>
@@ -280,7 +280,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="#">
+			            	<a class="mobile_desc" href="#">
 		            			{{ trans('pages/main_page.title_nrecc_resource') }}
 		            		</a>
 		            	</p>
@@ -294,7 +294,7 @@
 	        		</a>
 		          	<div class="caption__bottom__services">
 		            	<p class="bold uppercase">
-			            	<a href="http://modi.minerba.esdm.go.id" target="_blank">
+			            	<a class="mobile_desc" href="http://modi.minerba.esdm.go.id" target="_blank">
 		            			{{ trans('pages/main_page.title_dashboards') }}
 		            		</a>
 		            	</p>

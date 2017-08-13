@@ -1,7 +1,7 @@
 @extends('ebtke.front.layout.master')
 
 @section('pageheadtitle')
-    {{ $history['meta_title'] or '' }}| Kementerian ESDM Republik Indonesia
+    {{ $history['meta_title'] or '' }} | Kementerian ESDM Republik Indonesia
 @stop
 
 @section('seo')
@@ -72,13 +72,25 @@
 
             <div id="desktop__content" class="col-md-7">
                 <div class="landing-introduction-image">
-                    <div class="image-container image-loaded-version">
-                        <img src="{{ asset('themes/ebtke/front/images/banner_content.jpg') }}">
+
+                    <div style="display:none;margin:0 auto;" class="html5gallery" data-skin="gallery" data-width="480" data-height="272" data-resizemode="fill">
+                        <!-- Add Youtube video to Gallery -->
+                        <a href="https://www.youtube.com/watch?v=q3casuMcn5w">
+                            <img src="{{ asset(THUMBNAIL_YOUTUBE_IMAGE_DIRECTORY.'Renewable-Energy-Investment-2016.jpg' ) }}" alt="Global Trends in Renewable Energy Investment 2016">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=9X9_7NAW7eI">
+                            <img src="{{ asset(THUMBNAIL_YOUTUBE_IMAGE_DIRECTORY.'Top-10-Countries-Using-Maximum-Solar-Power.jpg' ) }}" alt="Top 10 Countries Using Maximum Solar Power">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=XSPvZ5_7rVw">
+                            <img src="{{ asset(THUMBNAIL_YOUTUBE_IMAGE_DIRECTORY.'Equis-Energy-in-Indonesia.jpg' ) }}" alt="Equis Energy in Indonesia">
+                        </a>
+    
                     </div>
+
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="">
+                <div class="landing-introduction-copy">
                     <div class="default-copy">
                         <p id="desktop__content">
                              

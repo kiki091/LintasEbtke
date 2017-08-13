@@ -7,11 +7,11 @@
 
 	return [
 		'language_selector'			=> 'Language Selector : ',
-		'menu_home'					=> 'HOME',
-		'menu_about_us'				=> 'ABOUT US',
-		'menu_news_and_event'		=> 'NEWS & EVENTS',
-		'menu_investment_services'	=> 'INVESTMENT SERVICES',
-		'menu_information_services'	=> 'INFORMATION SERVICES',
-		'menu_resource'				=> 'RESOURCES',
-		'menu_link'					=> 'LINK',
+		'menu_home'					=> 'Home',
+		'menu_about_us'				=> 'About Us',
+		'menu_news_and_event'		=> 'News & Events',
+		'menu_investment_services'	=> 'Investment Services',
+		'menu_information_services'	=> 'Information Services',
+		'menu_resource'				=> 'Resources',
+		'menu_link'					=> 'Link',
 	];

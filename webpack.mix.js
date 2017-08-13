@@ -17,7 +17,6 @@ mix.styles([
     'public/themes/ebtke/front/css/bootstrap-select.min.css',
     'public/themes/ebtke/front/css/flag-icon.css',
     'public/themes/ebtke/front/css/maps/jquery-jvectormap-2.0.3.css',
-    'public/themes/ebtke/front/css/raleway-webfont.css',
     'public/themes/ebtke/front/css/helvetica-webfont.css',
     'public/themes/ebtke/front/css/animate.min.css',
     'public/themes/ebtke/front/css/accordion.css',
@@ -28,7 +27,6 @@ mix.styles([
     'public/themes/ebtke/front/css/slider-def.css',
     'public/themes/ebtke/front/css/gallery.css',
     'public/themes/ebtke/front/css/news.css',
-    'public/themes/ebtke/front/css/font.css',
     //'public/themes/ebtke/front/css/carousel.css',
     'public/themes/ebtke/front/css/owl.carousel.css',
     'public/themes/ebtke/front/css/owl.theme.css',
@@ -67,6 +65,7 @@ mix.scripts([
 	'public/themes/ebtke/front/js/myscript.js',
 	'public/themes/ebtke/front/js/menu.js',
     'public/themes/ebtke/front/js/scroll-menu.js',
+    'public/themes/ebtke/front/js/html5gallery.js',
 ], 'public/themes/ebtke/front/build/js/plugins.js');
 
 mix.scripts([

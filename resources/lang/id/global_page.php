@@ -7,6 +7,7 @@
 
 	return [
 		'download'						=> 'UNDUH',
+		'welcome_lintas'				=> 'Selamat datang di LINTAS',
 		'rating'						=> 'RATING',
 		'download_pdf'					=> 'UNDUH PDF',
 		'footer_title_contact_us'		=> 'HUBUNGI KAMI',

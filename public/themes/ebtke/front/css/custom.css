@@ -694,11 +694,21 @@ h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:650px) {
     .latest{width:90%; max-width:none; padding:30px 0;}
-    .latest ul li{float:left; width:47%; margin:0 15px 30px 0;}
+    .latest ul li{float:left; width:100%; margin:0 15px 30px 0;}
     .latest ul li:last-child{margin:0;}
     .latest ul li figure{display:inline-block; border-width:0 1px 1px 1px;}
     /*.latest ul li figure img{width:100%;}*/
     .latest ul li figure figcaption{padding:15px 30px;}
+    .latest ul li a.mobile_desc {
+        text-decoration: none;
+        margin: 0px auto;
+        position: relative;
+        padding: 5px;
+        background: #ece13a;
+    }
+    .latest ul li a.mobile_desc:hover {
+        text-decoration: none;
+    }
 }
 /* Smartphone + Tablet
 --------------------------------------------------------------------------------------------------------------- */

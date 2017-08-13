@@ -7,11 +7,11 @@
 
 	return [
 		'language_selector'			=> 'Pilihan Bahasa : ',
-		'menu_home'					=> 'BERANDA',
-		'menu_about_us'				=> 'TENTANG KAMI',
-		'menu_news_and_event'		=> 'BERITA & KEGIATAN',
-		'menu_investment_services'	=> 'LAYANAN INVESTASI',
-		'menu_information_services'	=> 'LAYANAN INFORMASI',
-		'menu_resource'				=> 'SUMBER DAYA',
-		'menu_link'					=> 'TAUTAN',
+		'menu_home'					=> 'Beranda',
+		'menu_about_us'				=> 'Tentang Kami',
+		'menu_news_and_event'		=> 'Berita & Kegiatan',
+		'menu_investment_services'	=> 'Layanan Investasi',
+		'menu_information_services'	=> 'Layanan Informasi',
+		'menu_resource'				=> 'Sumber Daya',
+		'menu_link'					=> 'Tautan',
 	];

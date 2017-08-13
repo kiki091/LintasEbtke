@@ -14,6 +14,7 @@ namespace App\Services\Assets;
 
 define('LOGO_IMAGES_DIRECTORY', 'bin/db/images/logo/');
 define('MAIN_BANNER_TRANS_IMAGE_DIRECTORY', 'bin/db/images/banner/');
+define('THUMBNAIL_YOUTUBE_IMAGE_DIRECTORY', 'themes/ebtke/front/images/youtube-slider/');
 
 // Instagram Images Directory
 

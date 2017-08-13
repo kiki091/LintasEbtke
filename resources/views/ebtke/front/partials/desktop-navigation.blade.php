@@ -12,6 +12,20 @@
     <div id="head-mobile"></div>
     <div class="button"></div>
     <ul class="container">
+    
+        <li id="mobile__content">
+            <a href='#'>{{ trans('navigation/menu.language_selector')}}</a>
+            <ul>
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li>
+                    <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+                        {{ $properties['native'] }}
+                    </a>
+                    
+                </li>
+                @endforeach
+            </ul>
+        </li>
         <li>
             <a href='{{ route('MainPage') }}'>{{ trans('navigation/menu.menu_home')}}</a>
         </li>
@@ -181,19 +195,6 @@
                     <a href=''>{{ trans('navigation/sub_menu.nreec_events') }}</a>
                     
                 </li>
-            </ul>
-        </li>
-        <li id="mobile__content">
-            <a href='#'>{{ trans('navigation/menu.language_selector')}}</a>
-            <ul>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li>
-                    <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-                        {{ $properties['native'] }}
-                    </a>
-                    
-                </li>
-                @endforeach
             </ul>
         </li>
     </ul>

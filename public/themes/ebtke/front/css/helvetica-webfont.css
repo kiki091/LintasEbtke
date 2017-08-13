@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "helvetica-neue";
-	src: url('../../fonts/helvetica/HelveticaNeue.eot');
-	src: url('../../fonts/helvetica/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
-	url('../../fonts/helvetica/HelveticaNeue.svg#Helvetica Neue') format('svg'),
-	url('../../fonts/helvetica/HelveticaNeue.woff') format('woff'),
-	url('../../fonts/helvetica/HelveticaNeue.ttf') format('truetype');
+	src: url('../../fonts/helvetica-neue/HelveticaNeueLTStd76BoldItalic.eot');
+	src: url('../../fonts/helvetica-neue/HelveticaNeueLTStd76BoldItalic.eot?#iefix') format('embedded-opentype'),
+	url('../../fonts/helvetica-neue/HelveticaNeueLTStd76BoldItalic.svg#Helvetica Neue') format('svg'),
+	url('../../fonts/helvetica-neue/HelveticaNeueLTStd 55Roman.woff') format('woff'),
+	url('../../fonts/helvetica-neue/HelveticaNeueLTStd 55Roman.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }

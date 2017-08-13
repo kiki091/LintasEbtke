@@ -16,7 +16,7 @@ Route::group(['middleware' => ['web']], function ()
 {
 	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('APP_DOMAIN')], function()
 	{
-		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize','localizationRedirect','localeSessionRedirect']], function ()
+		Route::group(['prefix' => LaravelLocalization::setLocale()], function ()
 		{
 
 			Route::group(array('prefix' => 'sipeda'), function () {
