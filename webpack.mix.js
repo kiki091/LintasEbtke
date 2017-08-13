@@ -38,6 +38,7 @@ mix.styles([
     'public/js/bower_components/toastr/toastr.css',
     'public/js/bower_components/fullcalendar/dist/fullcalendar.min.css',
     'public/js/bower_components/fullcalendar/dist/print.css',
+    'public/js/bower_components/swiper/dist/css/swiper.css',
 ], 'public/themes/ebtke/front/build/css/plugins.css');
 
 
@@ -80,6 +81,7 @@ mix.scripts([
 	'public/themes/ebtke/front/js/theme.js',
 	'public/js/bower_components/moment/min/moment.min.js',
 	'public/js/bower_components/fullcalendar/dist/fullcalendar.min.js',
+    'public/js/bower_components/swiper/dist/js/swiper.js',
 ], 'public/themes/ebtke/front/build/js/animation.js');
 
 /**

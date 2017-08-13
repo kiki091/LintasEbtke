@@ -30,16 +30,13 @@
 		</div>
 		<!-- //PRELOADER -->
 
-		<div>
-
-			<!-- PAGE -->
-			@include('ebtke.front.partials.top-menu')
-			@include('ebtke.front.partials.menu')
-			
-			@yield('content')
-			@include('ebtke.front.partials.contact_us')
-			@include('ebtke.front.partials.footer')
-		</div>
+		<!-- PAGE -->
+		@include('ebtke.front.partials.top-menu')
+		@include('ebtke.front.partials.menu')
+		
+		@yield('content')
+		@include('ebtke.front.partials.contact_us')
+		@include('ebtke.front.partials.footer')
 		
 		@include('ebtke.slots.vars')
 		@include('ebtke.front.partials.js_footer')

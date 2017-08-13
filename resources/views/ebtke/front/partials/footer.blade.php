@@ -8,10 +8,10 @@
 -->
 
 <footer id="desktop-footer" class="visible-md">
-	<div id="desktop__content" class="top-footer">
+	<div id="" class="top-footer">
 		<div class="container">
 			<div class="row">
-				<div id="desktop__content" class="col-md-12">
+				<div id="" class="col-md-12">
 					<h3 class="footer__contact__us">
                     <b>{{ trans('global_page.footer_title_contact_us') }}</b>
                     </h3>

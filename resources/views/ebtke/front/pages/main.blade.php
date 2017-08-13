@@ -19,6 +19,7 @@
   |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
 -->
+{{--
 <section id="desktop image-slider">
 	<!-- Slider -->
     <div id="slider">
@@ -52,6 +53,8 @@
       	</div>
     </div>
 </section>
+--}}
+
 <!--
    ___ _   _ _____ ____   ___  ____  _   _  ____ _____ ___ ___  _   _
   |_ _| \ | |_   _|  _ \ / _ \|  _ \| | | |/ ___|_   _|_ _/ _ \| \ | |
@@ -60,23 +63,33 @@
   |___|_| \_| |_| |_| \_\\___/|____/ \___/ \____| |_| |___\___/|_| \_|
 
 -->
-<!--@if(isset($latest_news) && !empty($latest_news))
-
-<section class="bg-gray introduction__content">
-	<div class="row">
-		<div class="container">
-		    <div id="owl-partners" class="owl-carousel">
-		    	@foreach($latest_news as $key=> $latest_news)
-					<a href="{{ route('detailNews',$latest_news['slug']) }}" class="services_item">
-		        		<img src="{{ $latest_news['thumbnail_url'] or '' }}" class="img-responsive" alt="{{ $latest_news['title'] or '' }}">
-						<p>{{ $latest_news['title'] or '' }}</p>
-					</a>
-				@endforeach
-		    </div>
-		</div>
-	</div>
-</section>
-
+@if(isset($latest_news) && !empty($latest_news))
+<div class="swiper-container" style="height: 450px;">
+    <div class="parallax-bg" style="background-image:url({{ asset(MAIN_BANNER_TRANS_IMAGE_DIRECTORY.'home-slider.jpg') }})" data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+        	@foreach($latest_news as $key=> $latest_news)
+            <div class="swiper-slide">
+                <div class="subtitle" data-swiper-parallax="-200">
+                	
+                		{{ $latest_news['title'] or '' }}
+                </div>
+                <div class="text" data-swiper-parallax="-300">
+                    {!! $latest_news['introduction'] or '' !!}
+                    <p>
+	                    <a href="{{ route('detailNews',$latest_news['slug']) }}">
+	                    	{{ trans('global_page.global_page_lable_link_cta') }}
+	                    </a>
+                    </p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-white"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+</div>
 @endif
 <!-- COMPANY PROFILE OVERVIEW -->
 
@@ -309,3 +322,17 @@
 
 
 @endsection
+
+@section('scripts')
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        parallax: true,
+        speed: 600,
+    });
+</script>
+@stop
