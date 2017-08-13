@@ -5,6 +5,8 @@
   \__/_/ \_\_/_/ \_\___/\___|_|_\___|_|   |_|  
                                                
 -->
+<!-- Javascrip -->
+<script src="{{ asset('themes/ebtke/sipeda/build/js/plugins.js') }}"></script>
 <!-- jQuery Ajax Form -->
 <script type="text/javascript" src="{{ asset('themes/ebtke/sipeda/js/jquery.form.js') }}"></script>
 <!-- javascript compiled -->

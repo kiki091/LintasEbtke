@@ -40,6 +40,7 @@ elixir(function(mix) {
 	    'air-datepicker-master/dist/css/datepicker.css',
 	    'bootstrap-clockpicker/bootstrap-clockpicker.css',
 	    'datetimepicker/build/jquery.datetimepicker.min.css',
+	    'chosen/css/chosen.css',
     ], 'public/themes/ebtke/sipeda/build/css/plugins.css',sipeda_bower_path); 
 
 
@@ -58,6 +59,10 @@ elixir(function(mix) {
 	    'datetimepicker/build/jquery.datetimepicker.full.js',
 	    'masonry/dist/masonry.pkgd.js',
 	    'custom-file-input/custom-file-input.js',
+	    'chosen/js/mootools-yui-compressed.js',
+	    'chosen/js/mootools-more-1.4.0.1.js',
+	    'chosen/js/chosen.js',
+	    'chosen/js/Locale.en-US.Chosen.js',
     ], 'public/themes/ebtke/sipeda/build/js/plugins.js',sipeda_bower_path); 
 
 

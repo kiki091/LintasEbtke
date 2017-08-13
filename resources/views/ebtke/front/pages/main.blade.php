@@ -25,7 +25,6 @@
       	<div class="slides">
       		@foreach($main_banner as $key=> $val_banner)
 	        <div class="slider">
-	          	<div class="legend"></div>
 	          	<div class="content">
 	            	<div class="content-txt">
 	              		<h1>{{ $val_banner['title'] or '' }}</h1>
@@ -37,6 +36,19 @@
 	          	</div>
 	        </div>
 	        @endforeach
+      	</div>
+      	<div class="switch">
+        	<ul>
+        		@foreach($main_banner as $key=> $val)
+	        		@if($key == "0")
+		        	  	<li>
+		            		<div class="on"></div>
+		          		</li>
+	          		@else
+	          			<li></li>
+	          		@endif
+	        	@endforeach
+        	</ul>
       	</div>
     </div>
 </section>

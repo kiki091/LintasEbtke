@@ -4,7 +4,7 @@
       <center>
           <img style="opacity: 0.5;margin-top: 5%;width: 35%;" src="{{ asset('themes/ebtke/front/images/loader.png') }}" class="img-responsive">
       </center>
-          <a href="#" class="site_title"><span>SIPEDA EBTKE</span></a>
+          <a href="#" class="site_title"><span>SIPEDIA EBTKE</span></a>
     	</div>
 
     	<div class="clearfix"></div>

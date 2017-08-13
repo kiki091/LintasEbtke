@@ -12,8 +12,10 @@ nav{position:relative;width:980px;margin:0 auto;}
 #cssmenu > ul > li:hover > a,#cssmenu ul li.active a{color:#333}
 #cssmenu > ul > li:hover,#cssmenu ul li.active:hover,#cssmenu ul li.active,#cssmenu ul li.has-sub.active:hover{background:#fff100!important;-webkit-transition:background .3s ease;-ms-transition:background .3s ease;transition:background .3s ease;}
 #cssmenu > ul > li.has-sub > a{padding-right:30px}
-#cssmenu > ul > li.has-sub > a:after{position:absolute;top:27px;right:11px;width:8px;height:2px;display:block;background:#ddd;content:''}
-#cssmenu > ul > li.has-sub > a:before{position:absolute;top:24px;right:14px;display:block;width:2px;height:8px;background:#ddd;content:'';-webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease}
+/*#cssmenu > ul > li.has-sub > a:after{position:absolute;top:27px;right:11px;width:8px;height:2px;display:block;background:#ddd;content:''}
+*/
+/*#cssmenu > ul > li.has-sub > a:before{position:absolute;top:24px;right:14px;display:block;width:2px;height:8px;background:#ddd;content:'';-webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease}
+*/
 #cssmenu > ul > li.has-sub:hover > a:before{top:23px;height:0}
 #cssmenu ul ul{position:absolute;left:-9999px}
 #cssmenu ul ul li{height:0;-webkit-transition:all .25s ease;-ms-transition:all .25s ease;background:#ccc;transition:all .25s ease}
@@ -49,7 +51,8 @@ nav{width:100%;}
 #cssmenu ul ul li a{color:#ddd;background:none}
 #cssmenu ul ul li:hover > a,#cssmenu ul ul li.active > a{color:#333}
 #cssmenu ul ul,#cssmenu ul ul ul{position:relative;left:0;width:100%;margin:0;text-align:left}
-#cssmenu > ul > li.has-sub > a:after,#cssmenu > ul > li.has-sub > a:before,#cssmenu ul ul > li.has-sub > a:after,#cssmenu ul ul > li.has-sub > a:before{display:none}
+/*#cssmenu > ul > li.has-sub > a:after,#cssmenu > ul > li.has-sub > a:before,#cssmenu ul ul > li.has-sub > a:after,#cssmenu ul ul > li.has-sub > a:before{display:none}
+*/
 #cssmenu #head-mobile{display:table;padding:23px;color:#ddd;font-size:12px;font-weight:700}
 .button{width:55px;height:46px;position:absolute;right:0;top:0;cursor:pointer;z-index: 12399994;}
 .button:after{position:absolute;top:26px;right:20px;display:block;height:4px;width:20px;border-top:2px solid #dddddd;border-bottom:2px solid #dddddd;content:''}

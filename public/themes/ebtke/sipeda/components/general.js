@@ -108,6 +108,11 @@ Vue.directive("sort", {
 
 //end vue custome directive sortable js
 
+function choosenSelector()
+{
+    $$(".chosen-select").chosen({rtl: true});
+}
+
 function setSelectedFolder()
 {
     var CURRENT_SLUG = window.location.href.split("#")[1]
@@ -378,6 +383,7 @@ function mainGeneral(){
     datetimePicker();
     setSelectedFolder();
     notify();
+    choosenSelector();
 }
 
 function initMenuCapacityBuilding()

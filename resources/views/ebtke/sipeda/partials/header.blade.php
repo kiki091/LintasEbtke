@@ -21,12 +21,10 @@
 <meta property="og:description" content="Kementerian ESDM Republik Indonesia" />
 <meta property="og:image" content="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" />
 <meta property="og:type"  content="article" />
-<title>@yield('pageheadtitle' , 'SIPEDA | EBTKE')</title>
+<title>@yield('pageheadtitle' , 'SIPEDIA | EBTKE')</title>
 
 <meta id="_token" name="_token" value="{{ csrf_token() }}">
 
 <!-- Plugins -->
 <link href="{{ asset('themes/ebtke/sipeda/build/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('themes/ebtke/sipeda/build/css/plugins.css') }}" rel="stylesheet">
-<!-- Javascrip -->
-<script src="{{ asset('themes/ebtke/sipeda/build/js/plugins.js') }}"></script>
