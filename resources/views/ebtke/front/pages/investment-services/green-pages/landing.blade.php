@@ -50,9 +50,9 @@
             <div class="col-md-6">
                 <div class="default-after-banner-text">
                     <h1>{{ trans('pages/investment_services_page.green_pages') }}</h1>
-                    <!-- <h3>
-                        CONNECT WITH GREEN PROFILES
-                    </h3> -->
+                    <h3 class="subtitle">
+                        {{ trans('pages/green_page.introduction') }}
+                    </h3>
                 </div>
             </div>
             @if(isset($landing) && !empty($landing))

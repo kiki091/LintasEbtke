@@ -12,6 +12,6 @@
 */
 include __DIR__.'/pages/front.php';
 include __DIR__.'/pages/cms.php';
-include __DIR__.'/pages/sipeda.php';
+// include __DIR__.'/pages/sipeda.php';
 
 

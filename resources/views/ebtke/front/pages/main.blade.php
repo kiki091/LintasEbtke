@@ -19,7 +19,7 @@
   |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
 -->
-{{--
+
 <section id="desktop image-slider">
 	<!-- Slider -->
     <div id="slider">
@@ -53,7 +53,7 @@
       	</div>
     </div>
 </section>
---}}
+
 
 <!--
    ___ _   _ _____ ____   ___  ____  _   _  ____ _____ ___ ___  _   _
@@ -63,6 +63,7 @@
   |___|_| \_| |_| |_| \_\\___/|____/ \___/ \____| |_| |___\___/|_| \_|
 
 -->
+{{--
 @if(isset($latest_news) && !empty($latest_news))
 <div class="swiper-container" style="height: 450px;">
     <div class="parallax-bg" style="background-image:url({{ asset(MAIN_BANNER_TRANS_IMAGE_DIRECTORY.'home-slider.jpg') }})" data-swiper-parallax="-23%"></div>
@@ -91,6 +92,7 @@
     <div class="swiper-button-next swiper-button-white"></div>
 </div>
 @endif
+--}}
 <!-- COMPANY PROFILE OVERVIEW -->
 
 <section id="desktop company-overview" class="page">

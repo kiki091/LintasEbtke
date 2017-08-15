@@ -1,5 +1,5 @@
 <div id="header__content"  class="navbar navbar-default yamm" role="navigation" id="navbar">
-    <div class="container-menu">
+    <div class="container">
         <div class="navbar-header">
 
             <a id="navbar-brand__mobile" class="navbar-brand home" href="{{ route('MainPage') }}">
