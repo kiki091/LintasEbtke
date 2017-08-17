@@ -183,8 +183,7 @@ class AuthController extends CmsBaseController
 
             $user_location_slug = Session::get('slug_system_menu');
             
-            return redirect(route('CmsDashboardPage',$user_location_slug));
-            //return redirect()->route('CmsDashboardPage');
+            return redirect()->route('CmsDashboardPage');
         }
 
         return redirect(route('login'));
