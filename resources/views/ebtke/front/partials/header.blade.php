@@ -22,6 +22,7 @@
 <meta property="og:description" content="Kementerian ESDM Republik Indonesia" />
 <meta property="og:image" content="{{ asset(LOGO_IMAGES_DIRECTORY.'logo.png') }}" />
 <meta property="og:type"  content="article" />
+<meta name="google-site-verification" content="G21v_Kl9lcRErw_mYREKTKKVU7mv0qRsAAi485P7d5w" />
 
 @section('seo')
 	<meta name="title" content="Kementerian ESDM Republik Indonesia" />
