@@ -31,7 +31,7 @@ $(document).ready(function() {
 	
 	setTimeout(function(){
 		$('body').addClass('loaded');
-	}, 3000);
+	}, 1000);
 
 	var window_heigh = jQuery(window).height() - 150;
 
