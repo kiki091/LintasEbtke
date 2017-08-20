@@ -36,21 +36,6 @@ class EnergyConservation
     }
 
     /**
-     * Get Maps Data Transformation For Insert Translation
-     * @param $data
-     * @param $lastInsertId
-     * @return array|void
-     */
-
-    public function getMapsDataTranslation($data, $lastInsertId, $isEditMode) 
-    {
-        if(!is_array($data) || empty($data))
-            return array();
-
-        return $this->setMapsDataTranslation($data, $lastInsertId, $isEditMode);
-    }
-
-    /**
      * Get Data Transformation For Edit
      * @param $data
      * @param $lastInsertId
@@ -122,52 +107,6 @@ class EnergyConservation
 
 
     /**
-     * Set Maps Data Transformation For Insert
-     * @param $data
-     * @param $lastInsertId
-     * @return array|void
-     */
-    protected function setMapsDataTranslation($data, $lastInsertId, $isEditMode)
-    {
-        try {
-            
-            $finalData = [];
-            foreach ($data as $key => $value) {
-
-                $finalData[] = [
-                    "provinsi_id" => isset($data[$key]['provinsi_id']) ? $data[$key]['provinsi_id'] : '',
-                    "maps_category_id" => isset($data[$key]['maps_category_id']) ? $data[$key]['maps_category_id'] : '',
-                    
-                    "energy_conservation_id" => $lastInsertId,
-                    "created_at" => mysqlDateTimeFormat(),
-                    "created_by" => DataHelper::userId(),
-                    "updated_at" => mysqlDateTimeFormat(),
-                ];
-            }
-            
-            return $finalData;
-
-        } catch (\Exception $e) {
-            return [];
-        }
-    }
-
-    /**
-     * Set Data For Edit
-     * @param $data
-     */
-
-    protected function setSingleForEditEnergyConservationTransform($data)
-    {
-        $dataTransform = $this->setTranslationForEditData($data['translations']);
-        $dataTransform['id'] = isset($data['id']) ? $data['id'] : '';
-        $dataTransform['thumbnail_url'] = isset($data['thumbnail']) ? asset(ENERGY_CONSERVATION_DIRECTORY.rawurlencode($data['thumbnail'])) : [];
-        $dataTransform['maps_data'] = $this->getMapsData($data['maps_data']);
-
-        return $dataTransform;
-    }
-
-    /**
      * Set Translation for edit Data
      * @param $data
      */
@@ -194,16 +133,5 @@ class EnergyConservation
         } catch(\Exception $e) {
             return array();
         }
-    }
-
-    protected function getMapsData($data)
-    {
-        return array_map(function($data) {
-
-            return [
-                'provinsi_id' => isset($data['provinsi_id']) ? $data['provinsi_id'] : '',
-                'maps_category_id' => isset($data['maps_category_id']) ? $data['maps_category_id'] : '',
-            ];
-        },$data);
     }
 }

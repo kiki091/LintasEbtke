@@ -5,7 +5,7 @@ namespace App\Repositories\Implementation\Cms;
 use Illuminate\Http\Request;
 use App\Repositories\Implementation\BaseImplementation;
 use App\Repositories\Contracts\Cms\Province as ProvinceInterface;
-use App\Models\Provinsi as ProvinceModel;
+use App\Models\Province as ProvinceModel;
 use App\Services\Transformation\Cms\Province as ProvinceTransformation;
 use Cache;
 use Session;
@@ -22,19 +22,26 @@ class Province extends BaseImplementation implements ProvinceInterface
     protected $message;
     protected $lastInsertId;
 
+
     function __construct(ProvinceModel $province, ProvinceTransformation $provinceTransformation)
     {
         $this->province = $province;
         $this->provinceTransformation = $provinceTransformation;
     }
 
+    /** 
+     * Get data province
+     * @param $data
+     * @return array
+     */
+
     public function getData($data)
     {
         $params = [
-            "limit" => '10'
+            "is_active" => true
         ];
 
-        $provinceData = $this->province($params, 'desc', 'array', false);
+        $provinceData = $this->province($params, 'asc', 'array', false);
         
         return $this->provinceTransformation->getProvinceCmsTransform($provinceData);
     }
@@ -45,37 +52,35 @@ class Province extends BaseImplementation implements ProvinceInterface
      * @param array $params
      * @return array
      */
-    protected function province($params = array(), $orderType = 'desc', $returnType = 'array', $returnSingle = false)
+    protected function province($data = array(), $orderType = 'asc', $returnType = 'array', $returnSingle = false)
     {
 
-        $province = $this->province->with('pulau');
+        $province = $this->province;
 
-        if(isset($params['id'])) {
-            $province->id($params['id']);
+        if(isset($data['is_active'])) {
+            $province->isActive($data['is_active']);
+        }
+
+        if(isset($data['id'])) {
+            $province->id($data['id']);
         }
 
         if(isset($params['order_by'])) {
             $province->orderBy($params['order_by'], $orderType);
         } else {
-            $province->orderBy('created_at', $orderType);
+            $province->orderBy('id', $orderType);
         }
+
 
         if(!$province->count())
             return array();
 
-        switch ($returnType) {
-            case 'array':
-                if(!$returnSingle) 
-                {
-                    return $province->get()->toArray();
-                } 
-                else 
-                {
-                    return $province->first()->toArray();
-                }
-
-            break;
+        if(isset($data['id'])) 
+        {
+            return $province->first()->toArray();
         }
+        
+        return $province->get()->toArray();
     }
 
 

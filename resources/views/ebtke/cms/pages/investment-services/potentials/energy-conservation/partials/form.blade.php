@@ -92,42 +92,6 @@
 								</div>
 							</div>
 						</div>
-						<hr class="form__line">
-
-						<div class="form__group__row">
-							<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
-								<span class="form__group__title">Maps Data<a href="javascript:void(0);" class="style__accordion" :data-accordion="'form-accordion-'+supportedLangKey+'-2'"><i>@include('ebtke.cms.svg-logo.ico-expand-arrow')</i></a></span>
-							</div>
-
-							<div :id="'form-accordion-'+supportedLangKey+'-2'" v-if="showElementByDefaultLang(supportedLangKey)">
-								<div class="maps_data__wrapper" v-for="(maps_data, index) in models.maps_data">
-									<div class="create__form__row">
-										<div class="new__form__field">
-											<label>Province</label>
-											<select :name="'maps_data['+index+'][provinsi_id]'">
-												<option :value="province.id" v-for="province in responseData.province">@{{ province.title }}</option>
-											</select>
-										</div>
-
-										<div class="new__form__field">
-											<label>Maps Data</label>
-											<select :name="'maps_data['+index+'][maps_category_id]'">
-												<option :value="maps_category.id" v-for="maps_category in responseData.maps_category">@{{ maps_category.title }}</option>
-											</select>
-										</div>
-									</div>
-									<div class="create__form__row flex-end">
-										<a href="javascript:void(0);" v-if="index != 0" class="btn__delete" @click="removeMapsDataWrapper(maps_data, index)">
-											<i class="fa fa-trash fa-lg"></i>
-										</a>
-									</div>
-
-								</div>
-								<div class="create__form__row" v-if="showElementByDefaultLang(supportedLangKey)">
-									<a href="javascript:void(0);" class="add__link" @click="addMoreMapsData" v-if="default_total_maps_data.length + total_maps_data.length != 4">+ Add another maps data</a>
-								</div>
-							</div>
-						</div>
 
 						<hr class="form__line">
 

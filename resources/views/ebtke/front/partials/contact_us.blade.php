@@ -11,12 +11,8 @@
 <div id="desktop__content" class="ac-container">
 	<div>
 		<input class="ac" id="ac-1" name="accordion-1" type="checkbox" />
-		<label for="ac-1">Contact Us</label>
+		<label for="ac-1"><i class="fa fa-wechat"></i> Contact Us</label>
 		<article class="ac-small">
-			<!-- <p>
-				Tidak ada pihak yang sedang di tempat saat ini untuk menjawab panggilan anda. Mohon tinggalkan suatu pesan dan kami akan kembali kepada anda sesegera mungkin.
-			</p> -->
-			<hr/>
 			<form action="{{ route('StoreContactUs') }}" method="POST" id="form__contact__us" class="contact__us__form">
 				<div class="form-group">
 					<span class="form">Full Name</span>
@@ -28,12 +24,6 @@
 					<span class="form">Email</span>
 					<input type="text" class="form-control" name="email">
 					<span id="form--error--email" class="form--error--message"></span>
-				</div>
-
-				<div class="form-group">
-					<span class="form">Question</span>
-					<input type="text" class="form-control" name="question">
-					<span id="form--error--question" class="form--error--message"></span>
 				</div>
 				<div class="form-group">
 					<span class="form">Message</span>

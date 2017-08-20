@@ -22,6 +22,7 @@ class RouteMenuLocation {
     const DEFAULT_SYSTEM_LOCATION = 'cms';
 
     protected $systemLocationId = '';
+    protected $systemLocationName = '';
 	/**
      * Set Menu Location
      * @return null
@@ -101,9 +102,9 @@ class RouteMenuLocation {
      */
     public function systemLocation()
     {
-        $systemLocation = Request::segment(1);
+        $systemLocation = Request::segment(2);
 
-        $systemLocationCollection     = SystemModels::get()->toArray();
+        $systemLocationCollection     = SystemModels::orderBy('order', 'asc')->get()->toArray();
         
         if(empty($systemLocationCollection))
             return null;
@@ -112,6 +113,7 @@ class RouteMenuLocation {
            
             if($value['slug'] == $systemLocation) {
                 $this->systemLocationId = $value['id'];
+                $this->systemLocationName = $value['name'];
                 $isExists = true;
                 break;
             }
@@ -120,16 +122,10 @@ class RouteMenuLocation {
 
         if(!$isExists) {
 
-            Session::forget('current_system_location');
-            Session::forget('current_system_location_id');
-
-            $this->setSessionCurrentSystemLocation('', $this->systemLocationId);
-
             return self::DEFAULT_SYSTEM_LOCATION;
         }
 
-
-        $this->setSessionCurrentSystemLocation($systemLocation, $this->systemLocationId);
+        $this->setSessionCurrentSystemLocation($systemLocation, $this->systemLocationId, $this->systemLocationName);
 
         return $systemLocation;
     }
@@ -138,12 +134,15 @@ class RouteMenuLocation {
      * Set Session Current Menu
      * @param $param
      */
-    public function setSessionCurrentSystemLocation($param, $id)
+    public function setSessionCurrentSystemLocation($param, $id, $name)
     {
         Session::forget('current_system_location');
         Session::forget('current_system_location_id');
+        Session::forget('current_system_location_name');
+
         Session::put('current_system_location', $param);
         Session::put('current_system_location_id', $id);
+        Session::put('current_system_location_name', $name);
     }
 
 }

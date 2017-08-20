@@ -39,6 +39,7 @@ class EventController extends FrontController
     public function landing(Request $request)
     {
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_KEY]);
+        $data['event'] = $this->event->getEventByMonth();
         
         $blade = self::URL_BLADE_FRONT_SITE. '.event.landing';
         

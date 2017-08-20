@@ -28,17 +28,12 @@ function crudEnergiConservation() {
                 meta_title : {"en":"","id":""},
                 meta_keyword : {"en":"","id":""},
                 meta_description : {"en":"","id":""},
-                maps_data : [
-                    {provinsi_id: '',maps_category_id: ''}
-                ],
             },
             delete_payload: {
               id: ''
             },
             supported_language: lintas.supported_language,
             lintas_default_language: lintas.lintas_default_language,
-            default_total_maps_data : [0],
-            total_maps_data : [],
             thumbnail : '',
             last_language_key: '',
             image: '',
@@ -83,12 +78,6 @@ function crudEnergiConservation() {
                 this[variable] = ''
             },
 
-
-            removeMapsDataWrapper: function(item, index) {
-                this.models.maps_data.splice(item,1)
-                //Vue.delete(this.models.maps_data, item)
-            },
-
             showElementByDefaultLang: function(langId) {
                 return this.lintas_default_language == langId
             },
@@ -111,10 +100,6 @@ function crudEnergiConservation() {
                 setTimeout(function() {
                     $('.popup__mask__alert').removeClass('is-visible');
                 }, 300);
-            },
-
-            addMoreMapsData: function() {
-                this.models.maps_data.splice(this.models.maps_data.length + 1, 0, {provinsi_id: '',maps_category_id: ''});
             },
 
             fetchData: function() {
@@ -278,19 +263,12 @@ function crudEnergiConservation() {
                     this.models.meta_description[supported_lang] = ''
                 }
 
-                this.models.maps_data = [
-                    {provinsi_id: '',maps_category_id: ''}
-                ];
-
                 this.models.language_selected = [this.lintas_default_language]
 
                 this.models.id = ''
 
                 this.models['language_selected'] = [];
                 this.thumbnail = '';
-                this.maps_data = [];
-                this.default_total_maps_data = [0];
-                this.total_maps_data = [];
                 this.id = ''
 
                 this.form_add_title = "Energy Conservation Content Manager"

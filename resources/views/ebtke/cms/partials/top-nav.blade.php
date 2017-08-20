@@ -5,6 +5,21 @@
       		<div class="nav toggle">
         		<a id="menu_toggle"><i class="fa fa-bars"></i></a>
       		</div>
+            <div class="header__selector__dropdown">
+                <div class="dropdown__select__list" id="selector-dropdown">
+                    @php
+                        $systems = DataHelper::userSystemLocation();
+                    @endphp
+                    <span class="display__name">{{ Request::segment(2) }}</span>
+                    <ul class="dropdown__content">
+                        @if(isset($systems['system_location']) && is_array($systems['system_location']))
+                            @foreach($systems['system_location'] as $value)
+                                <li><a href="{{ url('admin/'.$value['system_slug']) }}" class="dropdown__content__link">{{ $value['system_name'] or '' }}</a></li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </div>
+            </div>
       		<ul class="nav navbar-nav navbar-right">
       			<li class="">
                   	<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

@@ -27,7 +27,7 @@ class SystemLocation extends Model
 
     public function system()
     {
-        return $this->belongsTo('App\Models\Auth\System', 'system_id', 'id');
+        return $this->belongsTo('App\Models\Auth\System', 'system_id', 'id')->orderBy('order', 'asc');
     }
 
     public function users()

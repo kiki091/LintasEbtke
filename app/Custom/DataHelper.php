@@ -109,16 +109,38 @@ class DataHelper {
      */
 
     public static function userSystemLocation()
-    {
+    {   
         $userInfo = Session::get('user_info');
-        $userInfo['default_system_location'] = self::DEFAULT_SYSTEM_LOCATION;
 
         if (isset($userInfo['system_location'])) {
 
-            
-            return $userInfo['system_location'];
+            return $userInfo;
         }
 
         return false;
+    }
+
+    /**
+     * Get Current System Id
+     * @return bool
+     */
+    public static function currentSystemId()
+    {
+        if(!Session::Has('current_system_location_id'))
+            return false;
+
+        return Session::get('current_system_location_id');
+    }
+
+    /**
+     * Get Current System Id
+     * @return bool
+     */
+    public static function currentSystemName()
+    {
+        if(!Session::Has('current_system_location_name'))
+            return false;
+
+        return Session::get('current_system_location_name');
     }
 }

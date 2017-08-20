@@ -251,6 +251,22 @@ function subMenuIndustry()
     });
 }
 
+function subMenuListCertifiedEnergy()
+{
+    $('.right_col').load(laroute.route('CmsListCertifiedEnergyPages', []), function()
+    {
+        initMenuListCertifiedEnergy()
+    });
+}
+
+function subMenuListAuditorEnergy()
+{
+    $('.right_col').load(laroute.route('CmsListAuditorEnergyPages', []), function()
+    {
+        initMenuListAuditorEnergy()
+    });
+}
+
 // JAVASCRIPT ENERGY CONSERVATION PAGES CONTENT MANAGER
 
 function subMenuEnergiConservation()

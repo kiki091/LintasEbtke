@@ -249,12 +249,17 @@ class News extends BaseImplementation implements NewsInterface
     public function addViewer($params)
     {
         try {
+
             $blogKey = 'news_detail_' . $params['slug'];
 
-            if (!Session::has($blogKey)) {
-                $this->news->where('slug', $params['slug'])->increment('total_view');
-                Session::put($blogKey, 1);
-            }
+            // if (!Session::has($blogKey)) {
+            //     $this->news->where('slug', $params['slug'])->increment('total_view');
+            //     Session::put($blogKey, 1);
+            // }
+            $this->news->whereHas('translation', function($q) use($params) {
+                $q->where('slug', $params['slug']);
+            })->increment('total_view');
+            
         } catch (\Exception $e) {
             $this->message = $e->getMessage();
             return false;

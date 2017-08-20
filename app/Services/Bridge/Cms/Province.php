@@ -22,5 +22,4 @@ class Province
     {
         return $this->province->getData($params);
     }
-
 }

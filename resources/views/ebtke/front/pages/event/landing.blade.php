@@ -33,14 +33,39 @@
                 <div id='calendar'></div>
             </div>
         </div>
-        <div style="display: none;" id="description__event" class="pull-right col-md-4">
-            <p id="title__event"></p>
-            <div id="introduction__event"></div>
-            <p>
-                <a id="link_url" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" target="__blank">
-                    {{ trans('global_page.global_page_lable_link_cta') }}
-                </a>
-            </p>
+        @if(!empty($event))
+        
+        <div id="description__event__landing" class="pull-right col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <p id="title__event_landing">ACARA DI BULAN INI</p>
+                @foreach($event as $key=> $value)
+                    @if($value['date_start']->format('m') == date('m') || $value['date_end']->format('m') == date('m'))
+                        <p id="subtitle__event_landing">{{ $value['title'] or '' }}</p>
+                        
+                        <div id="introduction__event_landing">
+                            {!! $value['introduction'] or '' !!}
+                        </div>
+                        <p>
+                            <a id="link_url_landing" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" target="__blank" href="{{ $value['event_url'] }}">
+                                {{ trans('global_page.global_page_lable_link_cta') }}
+                            </a>
+                        </p>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        @endif
+        <div style="display: none;" id="description__event" class="pull-right col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <p id="title__event_landing">ACARA LAINNYA</p>
+                <p id="title__event"></p>
+                <div id="introduction__event"></div>
+                <p>
+                    <a id="link_url" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" target="__blank">
+                        {{ trans('global_page.global_page_lable_link_cta') }}
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
 </section>

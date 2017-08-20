@@ -24,6 +24,16 @@ class Event
     }
 
     /**
+     * Get Data event By Month
+     * @param $params
+     * @return mixed
+     */
+    public function getEventByMonth($params = [])
+    {
+        return $this->event->getEventByMonth($params);
+    }
+
+    /**
      * Get Data event Home
      * @param $params
      * @return mixed

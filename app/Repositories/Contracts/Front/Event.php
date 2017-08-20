@@ -7,15 +7,22 @@ interface Event
 {
 
     /**
-     * Get Data Main Banner
+     * Get Data Event
      * @param $params
      * @return mixed
      */
     public function getData($params);
 
+    /**
+     * Get Data Event By Month
+     * @param $params
+     * @return mixed
+     */
+    public function getEventByMonth($params);
+
     
     /**
-     * Get Data Main Banner
+     * Get Detail Event
      * @param $params
      * @return mixed
      */

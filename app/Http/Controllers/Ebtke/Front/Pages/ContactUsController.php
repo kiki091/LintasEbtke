@@ -54,10 +54,9 @@ class ContactUsController extends FrontController
     private function validationStore($request = array())
     {
         $rules = [
-            'fullname'              => 'required',
+            'fullname'              => 'required|min:6|max:25',
             'email'                 => 'required|email',
-            'question'              => 'required',
-            'message'               => 'required',
+            'message'               => 'required|min:15',
         ];
 
         return $rules;

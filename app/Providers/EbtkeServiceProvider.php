@@ -61,7 +61,8 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Cms\Industry', 'App\Repositories\Implementation\Cms\Industry');
         $this->app->bind('App\Repositories\Contracts\Cms\EnergyConservation', 'App\Repositories\Implementation\Cms\EnergyConservation');
         $this->app->bind('App\Repositories\Contracts\Cms\Province', 'App\Repositories\Implementation\Cms\Province');
-        $this->app->bind('App\Repositories\Contracts\Cms\MapsCategory', 'App\Repositories\Implementation\Cms\MapsCategory');
+        $this->app->bind('App\Repositories\Contracts\Cms\ListCertifiedEnergy', 'App\Repositories\Implementation\Cms\ListCertifiedEnergy');
+        $this->app->bind('App\Repositories\Contracts\Cms\ListEnergyAuditor', 'App\Repositories\Implementation\Cms\ListEnergyAuditor');
 
         // SEO CMS
         $this->app->bind('App\Repositories\Contracts\Cms\Seo', 'App\Repositories\Implementation\Cms\Seo');
@@ -110,6 +111,9 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Cms\WhitePapers',
             'App\Repositories\Contracts\Cms\Tools',
             'App\Repositories\Contracts\Cms\Industry',
+            'App\Repositories\Contracts\Cms\Province',
+            'App\Repositories\Contracts\Cms\ListCertifiedEnergy',
+            'App\Repositories\Contracts\Cms\ListEnergyAuditor',
 
             // Seo
 

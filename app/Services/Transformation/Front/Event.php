@@ -5,7 +5,7 @@ namespace App\Services\Transformation\Front;
 class Event
 {
 	/**
-     * Get Main Banner Transformation
+     * Get Event Transformation
      * @param $data
      * @return array
      */
@@ -15,6 +15,18 @@ class Event
             return array();
 
         return $this->setEventTransform($data);
+    }
+    /**
+     * Get Event Transformation
+     * @param $data
+     * @return array
+     */
+    public function getEventByMonthTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setEventByMonthTransform($data);
     }
 
     public function getEventDetailTransform($data)
@@ -26,7 +38,7 @@ class Event
     }
 
     /**
-     * Set Main Banner Transformation
+     * Set Event Transformation
      * @param $data
      * @return array
      */
@@ -52,8 +64,38 @@ class Event
         return json_encode($dataTransform);
     }
 
+
     /**
-     * Set Main Banner Transformation
+     * Set Event Transformation
+     * @param $data
+     * @return array
+     */
+    protected function setEventByMonthTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        $dataTransform =  array_map(function($data)
+        {
+            return [
+                
+                'title' => isset($data['translation']['title']) ? $data['translation']['title'] : '',
+                'date_start' => isset($data['date_start']) ? \Carbon\Carbon::parse($data['date_start']) : '',
+                'date_end' => isset($data['date_end']) ? \Carbon\Carbon::parse($data['date_end']) : '',
+                'start' => isset($data['date_start']) ? date('c', strtotime($data['date_start'])) : '',
+                'end' => isset($data['date_end']) ? date('c', strtotime($data['date_end'])) : '',
+                'event_url' => isset($data['translation']['slug']) ? route('detailEvent',$data['translation']['slug']) : '',
+                'start_reformat' => isset($data['date_start']) ? $this->setReformatStartEndDate($data['date_start'], $data['date_end']) : '',
+
+                'introduction' => isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '',
+            ];
+        }, $data);
+        
+        return $dataTransform;
+    }
+
+    /**
+     * Set Event Transformation
      * @param $data
      * @return array
      */

@@ -28,6 +28,11 @@ class Event extends BaseImplementation implements EventInterface
     	$this->eventTransformation = $eventTransformation;
     }
 
+    /**
+     * Get Data Event
+     * @param $data
+     * @return Json array
+     */
     public function getData($data)
     {
 
@@ -42,6 +47,30 @@ class Event extends BaseImplementation implements EventInterface
         
     }
 
+
+    /**
+     * Get Data Event In This Month
+     * @param $data
+     * @return Json array
+     */
+
+    public function getEventByMonth($data)
+    {
+        $params = [
+            "is_active" => true,
+            "limit_data" => isset($data['limit']) ? $data['limit'] : '',
+        ];
+
+        $eventData = $this->event($params, 'desc', 'array', false);
+
+        return $this->eventTransformation->getEventByMonthTransform($eventData);
+    }
+
+    /**
+     * Get Detail Event 
+     * @param $data
+     * @return Json array
+     */
     public function getDetail($slug)
     {
 
@@ -50,6 +79,7 @@ class Event extends BaseImplementation implements EventInterface
         ];
 
         $eventData = $this->event($params, 'desc', 'array', true);
+        $addViewer = $this->addViewer($params);
 
         return $this->eventTransformation->getEventDetailTransform($eventData);
         
@@ -78,6 +108,12 @@ class Event extends BaseImplementation implements EventInterface
             $event->isActive($params['is_active']);
         }
 
+        // if(isset($params['is_month'])) {
+        //     dd(EventServices::where(DATE_FORMAT('date_start','%m'),'=', date('m'))->tosql());
+        //     EventServices::where( 'DATE_FORMAT(date_start,\'%m\'', '=', $params['is_month']);
+        //     //EventServices::orWhere( 'DATE_FORMAT(date_end,\'%m\'', date('m'));
+        // }
+
         if(isset($params['limit'])) {
             $event->take($params['limit']);
         }
@@ -101,6 +137,29 @@ class Event extends BaseImplementation implements EventInterface
                 }
 
             break;
+        }
+    }
+
+    /**
+     * @param $data
+     */
+    public function addViewer($params)
+    {
+        try {
+
+            $blogKey = 'event_detail_' . $params['slug'];
+
+            // if (!Session::has($blogKey)) {
+            //     $this->event->where('slug', $params['slug'])->increment('total_view');
+            //     Session::put($blogKey, 1);
+            // }
+            $this->event->whereHas('translation', function($q) use($params) {
+                $q->where('slug', $params['slug']);
+            })->increment('total_view');
+            
+        } catch (\Exception $e) {
+            $this->message = $e->getMessage();
+            return false;
         }
     }
 

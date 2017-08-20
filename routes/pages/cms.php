@@ -124,6 +124,7 @@ Route::group(['middleware' => ['web']], function ()
 							Route::post('store', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@store')->name('SeoRenewableIndustriPagesStoreData');
 							Route::post('edit', 'Ebtke\Cms\Pages\Seo\SeoRenewableIndustriController@edit')->name('SeoRenewableIndustriPagesEditData');
 						});
+
 					});
 
 					Route::group(['prefix' => 'resources'], function () {
@@ -189,6 +190,28 @@ Route::group(['middleware' => ['web']], function ()
 							Route::post('change-status', 'Ebtke\Cms\Pages\IndustryController@changeStatus')->name('CmsIndustryChangeStatus');
 							Route::post('delete', 'Ebtke\Cms\Pages\IndustryController@delete')->name('CmsIndustryDeleteData');
 							Route::post('order', 'Ebtke\Cms\Pages\IndustryController@order')->name('CmsIndustryOrderData');
+						});
+
+						Route::group(['prefix' => 'list-certified-energy'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@index')->name('CmsListCertifiedEnergyPages');
+							Route::get('data', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@getData')->name('CmsListCertifiedEnergyGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@store')->name('CmsListCertifiedEnergyStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@edit')->name('CmsListCertifiedEnergyEditData');
+							Route::post('change-status', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@changeStatus')->name('CmsListCertifiedEnergyChangeStatus');
+							Route::post('delete', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@delete')->name('CmsListCertifiedEnergyDeleteData');
+							Route::post('order', 'Ebtke\Cms\Pages\ListCertifiedEnergyController@order')->name('CmsListCertifiedEnergyOrderData');
+						});
+
+						Route::group(['prefix' => 'list-energy-auditor'], function () {
+
+							Route::get('/', 'Ebtke\Cms\Pages\ListEnergyAuditorController@index')->name('CmsListAuditorEnergyPages');
+							Route::get('data', 'Ebtke\Cms\Pages\ListEnergyAuditorController@getData')->name('CmsListAuditorEnergyGetData');
+							Route::post('store', 'Ebtke\Cms\Pages\ListEnergyAuditorController@store')->name('CmsListAuditorEnergyStoreData');
+							Route::post('edit', 'Ebtke\Cms\Pages\ListEnergyAuditorController@edit')->name('CmsListAuditorEnergyEditData');
+							Route::post('change-status', 'Ebtke\Cms\Pages\ListEnergyAuditorController@changeStatus')->name('CmsListAuditorEnergyChangeStatus');
+							Route::post('delete', 'Ebtke\Cms\Pages\ListEnergyAuditorController@delete')->name('CmsListAuditorEnergyDeleteData');
+							Route::post('order', 'Ebtke\Cms\Pages\ListEnergyAuditorController@order')->name('CmsListAuditorEnergyOrderData');
 						});
 					});
 				});

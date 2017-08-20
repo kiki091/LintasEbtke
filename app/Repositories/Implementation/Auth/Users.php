@@ -563,13 +563,10 @@ class Users extends BaseImplementation implements UserInterface
     {
         $user = $this->user->with(['role','location','user_menu', 'system_location']);
 
-        if(isset($params['system_location_slug'])) {
+        $user->whereHas('user_menu.menu.menu_group', function($q) use($params){
 
-            $user->whereHas('user_menu.menu.menu_group.system_menu', function($q) use($params){
-
-                $q->slug($params['system_location_slug']);
-            });
-        }
+            $q->where('is_active', true);
+        });
 
         // $user->whereHas('user_menu.menu.menu_group', function($q) use($params){
 

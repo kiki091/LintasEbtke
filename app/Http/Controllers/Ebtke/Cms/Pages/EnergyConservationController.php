@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CmsBaseController;
 use App\Custom\DataHelper;
 use App\Services\Bridge\Cms\Province as ProvinceServices;
-use App\Services\Bridge\Cms\MapsCategory as MapsCategoryServices;
 use App\Services\Bridge\Cms\EnergyConservation as EnergyConservationServices;
 use App\Services\Api\Response as ResponseService;
 
@@ -20,15 +19,13 @@ class EnergyConservationController extends CmsBaseController
 {
 
     protected $province;
-    protected $mapsCategory;
     protected $energyConservation;
     protected $response;
     protected $validationMessage = '';
 
-    public function __construct(ProvinceServices $province, MapsCategoryServices $mapsCategory, EnergyConservationServices $energyConservation,ResponseService $response)
+    public function __construct(ProvinceServices $province, EnergyConservationServices $energyConservation,ResponseService $response)
     {
         $this->province = $province;
-        $this->mapsCategory = $mapsCategory;
         $this->energyConservation = $energyConservation;
         $this->response = $response;
     }
@@ -59,7 +56,6 @@ class EnergyConservationController extends CmsBaseController
     public function getData(Request $request)
     {
         $data['province'] = $this->province->getData();
-        $data['maps_category'] = $this->mapsCategory->getData();
         $data['energy_conservation'] = $this->energyConservation->getData();
 
         return $this->response->setResponse(trans('message.success_get_data'), true, $data);

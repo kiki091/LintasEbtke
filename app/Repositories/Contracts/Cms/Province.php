@@ -12,5 +12,4 @@ interface Province
      */
     public function getData($params);
 
-
 }

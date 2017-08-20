@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
--- Host: 127.0.0.1    Database: ebtke
+-- Host: localhost    Database: ebtke
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.16-MariaDB
+-- Server version	5.7.19-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -38,7 +38,7 @@ CREATE TABLE `company_history` (
 
 LOCK TABLES `company_history` WRITE;
 /*!40000 ALTER TABLE `company_history` DISABLE KEYS */;
-INSERT INTO `company_history` VALUES (1,'company__history__lintas__ebtke5964f312237e5_SEKILAS-TENTANG-LINTAS-EBTKE.pdf',NULL,NULL,'2017-07-11 15:47:30');
+INSERT INTO `company_history` VALUES (1,'',NULL,NULL,'2017-08-03 17:31:10');
 /*!40000 ALTER TABLE `company_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `company_history_trans` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_company_history_trans_1_idx` (`company_history_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `company_history_trans` (
 
 LOCK TABLES `company_history_trans` WRITE;
 /*!40000 ALTER TABLE `company_history_trans` DISABLE KEYS */;
-INSERT INTO `company_history_trans` VALUES (7,'id','Apa itu lintas ?','pa-itu-lintas','<p>LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.</p>','<p><span class=\"first-letter\">S</span>ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat. Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE.</p><p>Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana.</p>','<p>Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.</p><p>Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 15:47:30','2017-07-11 15:47:30',1),(8,'en','Whats is lintas ?','hats-is-lintas','<p>LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.</p>','<p><span class=\"first-letter\">I</span>n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.</p><p>Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately..</p>','<p>It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.</p><p>Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-07-11 15:47:30','2017-07-11 15:47:30',1);
+INSERT INTO `company_history_trans` VALUES (9,'id','Apa itu lintas ?','pa-itu-lintas','<p><strong>Apa itu lintas ?&nbsp;</strong>LINTAS EBTKE adalah kepanjangan dari Layanan Informasi dan Investasi Energi Baru, Terbarukan dan Konservasi Energi.</p>','<p><span class=\"first-letter\">S</span>ecara umum, LINTAS EBTKE akan menjadi poros informasi EBTKE dimana sistem teknologi informasi yang diterapkan akan membantu pengunjung menemukan informasi yang dibutuhkannya dengan cepat. Selain itu, adanya kantor LINTAS EBTKE memungkinkan masyarakat untuk berkunjung dan melakukan konsultasi tatap muka dengan staf yang kompeten dan ditugaskan di LINTAS EBTKE.</p><p>Hanya sebagian kecil dari potensi energi terbarukan dan konservasi energi indonesia yang sudah dimanfaatkan. Untuk mengoptimalkan pemanfaatan potensi tersebut, perlu komunikasi dan kerjasama yang erat antar pemangku kepentingan sehingga kegiatan / proyek EBTKE dapat segera terlaksana.</p>','<p>Ditengarai masih adanya kebutuhan yang belum terpenuhi dari pemerintah daerah, industri, pengembangan proyek, univeersitas dan lembaga penelitian, investor, lembaga pembiayaan serta masyarakat umum akan informasi kebijakan dan penerapan EBTKE. Para pemangku kepentingan ini memerlukan informasi terbaik dan terkinimengenai peraturan yang berlaku, teknologi dan implementasinya, pendanaan dan investasi, kesempatan kerjasama, bahkan bantuan teknis untuk merencanakan penerapan EBTKE.</p><p>Informasi dari LINTAS EBTKE diharapkan dapat memfasilitasi kerjasama antar pemangku kepentingan ini agar pemanfaatan dan penerapan EBTKE dapat meningkat.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-08-03 17:31:10','2017-08-03 17:31:10',1),(10,'en','Whats is lintas ?','hats-is-lintas','<p>LINTAS EBTKE is an extension of the New and Renewable Energy Information and Investment Service and Energy Conservation.</p>','<p><span class=\"first-letter\">I</span>n general, LINTAS EBTKE will become the axis of EBTKE information where the information technology system applied will help the visitor find the information they need quickly. In addition, the EBTKE LINTAS office enables people to visit and conduct face-to-face consultations with competent staff and assigned to EBTKE Traffic.</p><p>Only a small part of Indonesia renewable energy potential and energy conservation have been utilized. To optimize the utilization of such potentials, communication and close cooperation between stakeholders is essential so that EBTKE activities / projects can be implemented immediately..</p>','<p>It is suspected that there are still unmet needs of local government, industry, project development, univeersitas and research institutes, investors, financial institutions and the general public for information policy and EBTKE implementation. These stakeholders need the best and most current information on the applicable regulations, technology and implementation, funding and investment, cooperation opportunities, and even technical assistance for planning the implementation of EBTKE.</p><p>Information from LINTAS EBTKE is expected to facilitate cooperation among these stakeholders so that the utilization and application of EBTKE can increase.</p>','Meta Title','Meta Keyword','Meta Description',1,'2017-08-03 17:31:10','2017-08-03 17:31:10',1);
 /*!40000 ALTER TABLE `company_history_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,7 @@ CREATE TABLE `contact_us` (
   `message` text NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `contact_us` (
 
 LOCK TABLES `contact_us` WRITE;
 /*!40000 ALTER TABLE `contact_us` DISABLE KEYS */;
-INSERT INTO `contact_us` VALUES (1,'Nama Lengkap','kiki@gmail.com','test','test','2017-06-22 16:31:51'),(2,'Nama Lengkap','admin@ayana.com','test','test','2017-06-22 17:05:29');
+INSERT INTO `contact_us` VALUES (1,'Nama Lengkap','kiki@gmail.com','test','test','2017-06-22 16:31:51'),(2,'Nama Lengkap','admin@ayana.com','test','test','2017-06-22 17:05:29'),(3,'kiki kurniawan','sheqbo@gmail.com','','asfasf adgfas asgas','2017-08-19 06:10:24');
 /*!40000 ALTER TABLE `contact_us` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,41 +135,6 @@ LOCK TABLES `energy_conservation` WRITE;
 /*!40000 ALTER TABLE `energy_conservation` DISABLE KEYS */;
 INSERT INTO `energy_conservation` VALUES (18,'energy_conservation__lintas__ebtke596b9de5bab01_692x381.jpg',1,2,'2017-07-16 10:20:14','2017-07-16 17:09:57',1);
 /*!40000 ALTER TABLE `energy_conservation` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `energy_conservation_maps`
---
-
-DROP TABLE IF EXISTS `energy_conservation_maps`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `energy_conservation_maps` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `provinsi_id` int(3) NOT NULL,
-  `energy_conservation_id` int(10) NOT NULL,
-  `maps_category_id` int(5) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `created_by` int(3) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_energy_conservation_maps_1_idx` (`energy_conservation_id`),
-  KEY `fk_energy_conservation_maps_2_idx` (`maps_category_id`),
-  KEY `fk_energy_conservation_maps_3_idx` (`provinsi_id`),
-  CONSTRAINT `fk_energy_conservation_maps_1` FOREIGN KEY (`energy_conservation_id`) REFERENCES `energy_conservation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_energy_conservation_maps_2` FOREIGN KEY (`maps_category_id`) REFERENCES `maps_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_energy_conservation_maps_3` FOREIGN KEY (`provinsi_id`) REFERENCES `provinsi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `energy_conservation_maps`
---
-
-LOCK TABLES `energy_conservation_maps` WRITE;
-/*!40000 ALTER TABLE `energy_conservation_maps` DISABLE KEYS */;
-INSERT INTO `energy_conservation_maps` VALUES (19,1,18,1,'2017-07-16 17:09:57','2017-07-16 17:09:57',1),(20,1,18,1,'2017-07-16 17:09:57','2017-07-16 17:09:57',1),(21,1,18,1,'2017-07-16 17:09:57','2017-07-16 17:09:57',1);
-/*!40000 ALTER TABLE `energy_conservation_maps` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -404,7 +369,7 @@ CREATE TABLE `green_pages` (
 
 LOCK TABLES `green_pages` WRITE;
 /*!40000 ALTER TABLE `green_pages` DISABLE KEYS */;
-INSERT INTO `green_pages` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,'2017-07-10 16:14:07',NULL,1),(2,'pt-enercon.jpg','PT ENERCON EQUIPMENT COMPANY','pt-enercon-equipment-company',1,2,'+62 21 7941182','+62 21 7941184','info@enercon.co.id',12740,'http://www.enercon.co.id',NULL,NULL,NULL,2);
+INSERT INTO `green_pages` VALUES (1,'pt-asia-pragon.png','PT. Asia Pragon','pt-asia-pragon',1,1,'+6222 6032953','+6222 6072077','office@asiaparagon.com',40184,'http://asiaparagon.com/ap/',NULL,'2017-07-10 16:14:07',NULL,1),(2,'greenpages__lintas__ebtke597631120ed77_pt-enercon.jpg','PT ENERCON EQUIPMENT COMPANY','-',1,2,'+62 21 7941182','+62 21 7941184','info@enercon.co.id',12740,'http://www.enercon.co.id',NULL,'2017-07-24 17:40:34',NULL,1);
 /*!40000 ALTER TABLE `green_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -517,7 +482,7 @@ CREATE TABLE `green_pages_trans` (
   PRIMARY KEY (`id`),
   KEY `fk_green_pges_trans_1_idx` (`green_pges_id`),
   CONSTRAINT `fk_green_pges_trans_1` FOREIGN KEY (`green_pges_id`) REFERENCES `green_pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -526,7 +491,7 @@ CREATE TABLE `green_pages_trans` (
 
 LOCK TABLES `green_pages_trans` WRITE;
 /*!40000 ALTER TABLE `green_pages_trans` DISABLE KEYS */;
-INSERT INTO `green_pages_trans` VALUES (3,'id','Gedung Aldevco Octagon II - 4th Floor\nJalan Warung Jati Barat Raya No. 75\nJakarta 12740, Indonesia\n','<b>PT ENERCON EQUIPMENT COMPANY</b> adalah sebuah perusahaan yang dapat membantu memberikan solusi-solusi berkaitan dengan permasalahan lingkungan dan efisiensi energi. PT ENERCON EQUIPMENT COMPANY fokus pada solusi-solusi yang ril dan inovatif dalam rangka menjawab permintaan yang terus meningkat berkaitan dengan pengurangan konsumsi energi dan polusi udara dalam sektor komersial dan industri di Indonesia. Perusahaan mempromosikan sistem manajemen lingkungan melalui penggunaan teknologi tinggi dan ramah lingkungan. Missi dari ENERCON adalah To successfully deliver the most effective energy management solution, by means of bringing clean, reliable and affordable energy technologies to Indonesia marketplace.','<p>\n<b>Produk/Jasa:</b><br/>\n1. Menyediakan jasa inspeksi dan mengidentifikasi potensi-potensi penghematan energi dan pengurangan polusi udara..<br/>\n2. Melakukan survey lengkap untuk menilai tingkat efisiensi energi yang sudah ada di suatu fasilitas industri dan sekaligus mengidentifikasi potensi-potensi masalah yang mungkin akan dihadapi serta solusinya.<br/>\n3. Membantu pembuatan proposal yang fokus pada solusi-solusi praktis tentang proyek efisiensi energi yang disertai dengan bahasan detil tentang biaya, analisa keuntungan dan keekonomiannya.<br/>\n4. Vendor dari beberapa peralatan yang berkaitan dengan Energi Saving, Compressed Air & Gas, Air Pollution Control, E-Power Systems, E-Controller and Energy Audit.<br/>\n</p>\n<p>\n<b>Rekam jejak:</b><br/>\n1. Telah melakukan pemasangan alat-alat teknologi-teknologi tinggi dan bersih di berbagai industri, seperti farmasi, makanan dan minuman, semen, pertambangan, otomotif dan lain-lain, seperti E-power systems, E-controller, dan sistem kompressor.<br/>\n\n2. Beberapa perusahaan yang pernah menjadi client ENERCON adalah: Aneka Tambang (Antam), Asahimas Flat Glass Tbk, Astra Daihatsu Motor, Astra Otopart Tbk, Coca Cola, Glaxo Welcome Indonesia, Gillette, Fahrenheit Pratapa Nirmala, Indomilk Group, Indah Kiat Pulp & Paper, Kalbe Farma, Kota Minyak Automation, Landsen Group, Mattel Indonesia, Medco LPG Kaji, Mekar Jaya Armana, Multistrada  Arah SaranaTbk, Mitra Karsa, New Armada, Panasonic, Pfizer Indonesia, Semen Batu Raja, Suzuki Indonesia, Sibelco, Sanggar Sarana Baja, United Tractor P E, Ultra Prima Artaboga dan lain-lain<br/>\n</p>','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY',2,NULL,NULL),(4,'en','Aldevco Octagon II Building - 4th Floor\nWarung Jati Barat Raya Street Number 75\nJakarta 12740, Indonesia','<b>PT ENERCON EQUIPMENT COMPANY</b> is a company that can help provide solutions related to environmental issues and energy efficiency. PT ENERCON EQUIPMENT COMPANY focuses on real and innovative solutions in response to the growing demand for reducing energy consumption and air pollution in the commercial and industrial sectors of Indonesia. The company promotes environmental management system through the use of high technology and environmentally friendly. The mission of ENERCON is to deliver the most effective energy management solution, by means of bringing clean, reliable and affordable energy technologies to the Indonesia marketplace.','<p>\n<b> Products / Services: </b> <br/>\n1. Provide inspection services and identify potential energy savings and air pollution reductions .. <br/>\n2. Conduct a full survey to assess the level of energy efficiency that already exists in an industrial facility and also to identify potential problems that may be faced and the solution. <br/>\n3. Assist in the creation of proposals that focus on practical solutions on energy efficiency projects with detailed discussion of costs, profit and economic analysis. <br/>\n4. Vendors of some equipment related to Energy Saving, Compressed Air & Gas, Air Pollution Control, E-Power Systems, E-Controller and Energy Audit. <br/>\n</p>\n<p>\n<b> Track record: </b> <br/>\n1. Has been installing high-tech and clean technology tools in various industries, such as pharmaceuticals, food and beverages, cement, mining, automotive and others, such as E-power systems, E-controllers, and compressor systems. < Br />\n\n2. Some of the companies that have been ENERCON clients are: Aneka Tambang (Antam), Asahimas Flat Glass Tbk, Astra Daihatsu Motor, Astra Otopart Tbk, Coca Cola, Glaxo Welcome Indonesia, Gillette, Fahrenheit Pratapa Nirmala, Indomilk Group, Indah Kiat Pulp & Paper, Kalbe Farma, City Oil Automation, Landsen Group, Mattel Indonesia, Medco LPG Kaji, Mekar Jaya Armana, Multistrada Directions SaranaTbk, Mitra Karsa, New Armada, Panasonic, Pfizer Indonesia, Semen Batu Raja, Suzuki Indonesia, Sibelco, Sanggar Sarana Baja , United Tractor PE, Ultra Prima Artaboga and others <br/>\n</p>','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY',2,NULL,NULL),(9,'id','<p>Jalan Kiwi No. 25 Andir - Bandung, West Java, Indonesia.&nbsp;edit</p>','<p><b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.</p>','<p><b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b></p><p>1. Business consultant, 2. Developer, 3. Construction, 4. Engineering Management Consultant, 5. Assessement Engineering, 6. Organic Farming</p><p>Proyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering.</p><p><b>Produk/Jasa:</b></p><p>(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan (2) Survei potensi energi terbarukan (3) Studi terkait RAN-GRK (4) Pengadaan dan pemasangan generator listrik (5) Pengadaan dan pemasangan EnMS (Energy Management System) (6) Audit energi di industri dan bangunan (7) Kajian akademis terhadap kebijakan dan aturan terkait energi (8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya</p><p><b>Rekam jejak:</b></p><p>Pengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p><p>1. Feasibility Study Industri PV (Photovoltaic), BPPT 2. Pengembangan nilai tambah di bidang energi alternatif 3. Survey Potensi Panasbumi Star Energi 4. Survey Potensi Panasbumi di Sulawesi 5. Studi Rencana &nbsp;Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change 6. Studi Kelayakan PLTMH Kabupaten Bantaeng 7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk) 8. Pemasanggan Lampu PJU tenaga surya di Maluku 9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam 10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang 11. PDT Sollar Cell Sulawesi 12. PDT Sollar Cell Jatim 13. PDT Sollar Cell Bali 14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai 15. Studi Kelayakan Kincir Angin di Pangkal Pinang 16. Studi Kelayakan Panasbumi di Aceh 17. Studi Kelayakan Panasbumi di Jaboi, Sabang 18. Studi Kelayakan Panasbumi di Sabang 19. Audit Energi Sektor Industri Kimia dan Makanan</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,'2017-07-10 16:14:07','2017-07-10 16:14:07'),(10,'en','<p>Kiwi Street No. 25 Andir - Bandung, West Java, Indonesia.</p>','<p><b>PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields.</p>','<p><b>PT ASIA PARAGON consists of several divisions which include: </b></p><p>1. Business consultant, 2. Developer, 3. Construction, 4. Engineering Management Consultants, 5. Assessment Engineering, 6. Organic Farming</p><p>Energy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering.</p><p><b>Products / Services: </b></p><p>(1) Feasibility study, development and construction of power plant from renewable energy (2) Survey of potential renewable energy (3) Related studies of RAN-GRK (4) Procurement and installation of electrical generators (5) Procurement and installation of EnMS (Energy Management System) (6) Energy audits in industries and buildings (7) Academic review of energy-related policies and rules (8) Procurement and installation of energy saving lamps and solar powered lamps</p><p><b>Track record: </b></p><p>The experiences of PT Asia Paragon related to the energy sector include:</p><p>1. Feasibility Study of PV Industry (Photovoltaic), BPPT 2. The development of added value in the field of alternative energy 3. Survey of Potential Star Energy Geothermal 4. Survey of Geothermal Potential in Sulawesi 5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change 6. Feasibility Study of PLTMH of Bantaeng Regency 7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk) 8. Pemasanggan PJU lamp solar power in Maluku 9. PUSRI, Feasibility Study of Power Station and Steam 10. Feasibility Study for Development of Electricity and Steam at Kujang Plant 11. PDT Sollar Cell Sulawesi 12. PDT Sollar Cell Jatim 13. PDT Sollar Cell Bali 14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency 15. Feasibility Study of Windmills in Pangkal Pinang 16. Feasibility Study of Geothermal in Aceh 17. Feasibility Study of Geothermal in Jaboi, Sabang 18. Feasibility Study of Geothermal in Sabang 19. Energy Audit of Chemical and Food Industry Sectors</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,'2017-07-10 16:14:07','2017-07-10 16:14:07');
+INSERT INTO `green_pages_trans` VALUES (9,'id','<p>Jalan Kiwi No. 25 Andir - Bandung, West Java, Indonesia.&nbsp;edit</p>','<p><b>PT ASIA PARAGON</b> adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan. PT ASIA PARAGON berbasis di Bandung dan Jakarta, didirikan pada tahun 2005 oleh sejumlah profesional muda yang sudah berpengalaman dalam menangani berbagai proyek baik nasional maupun internasional. PT ASIA PARAGON terus berinovasi dan menciptakan jaringan komunikasi dan kerjasama global dengan semua institusi nasional dan internasional juga dengan para ahli baik secara individual maupun kelembagaan dalam bidang terkait.</p>','<p><b>PT ASIA PARAGON terdiri dari beberapa divisi yang meliputi :</b></p><p>1. Business consultant, 2. Developer, 3. Construction, 4. Engineering Management Consultant, 5. Assessement Engineering, 6. Organic Farming</p><p>Proyek-proyek terkait dengan energi umumnya ditangani oleh divisi business consultant, engineering management consultant, construction dan assessment engineering.</p><p><b>Produk/Jasa:</b></p><p>(1) Studi kelayakan, pengembangan dan konstruksi pembangkit listrik dari energi terbarukan (2) Survei potensi energi terbarukan (3) Studi terkait RAN-GRK (4) Pengadaan dan pemasangan generator listrik (5) Pengadaan dan pemasangan EnMS (Energy Management System) (6) Audit energi di industri dan bangunan (7) Kajian akademis terhadap kebijakan dan aturan terkait energi (8) Pengadaaan dan pemasangan lampu hemat energi dan lampu tenaga surya</p><p><b>Rekam jejak:</b></p><p>Pengalaman-pengalaman PT Asia Paragon terkait dengan bidang energi di antaranya:</p><p>1. Feasibility Study Industri PV (Photovoltaic), BPPT 2. Pengembangan nilai tambah di bidang energi alternatif 3. Survey Potensi Panasbumi Star Energi 4. Survey Potensi Panasbumi di Sulawesi 5. Studi Rencana &nbsp;Aksi Nasional (RAN) Antisipasi Sektor Transportasi Menghadapi Climate Change 6. Studi Kelayakan PLTMH Kabupaten Bantaeng 7. Pemasangan Kincir Angin Untuk Pengairan di Garut (Cibolang dan Pameungpeuk) 8. Pemasanggan Lampu PJU tenaga surya di Maluku 9. PUSRI, Studi Kelayakan Pembangkit Listrik dan Steam 10. Studi Kelayakan untuk Pengembangan Tenaga Listrik dan Steam di Pabrik Kujang 11. PDT Sollar Cell Sulawesi 12. PDT Sollar Cell Jatim 13. PDT Sollar Cell Bali 14. Studi Kelayakan untuk PLTA Labuhan Bajo, Kabupaten Manggarai 15. Studi Kelayakan Kincir Angin di Pangkal Pinang 16. Studi Kelayakan Panasbumi di Aceh 17. Studi Kelayakan Panasbumi di Jaboi, Sabang 18. Studi Kelayakan Panasbumi di Sabang 19. Audit Energi Sektor Industri Kimia dan Makanan</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON adalah perusahaan yang bergerak dalam bidang energi, design, enginering, teknologi informasi, kontraktor umum dan perdagangan',1,'2017-07-10 16:14:07','2017-07-10 16:14:07'),(10,'en','<p>Kiwi Street No. 25 Andir - Bandung, West Java, Indonesia.</p>','<p><b>PT ASIA PARAGON </b> is a company engaged in energy, design, enginering, information technology, general contracting and trading. PT ASIA PARAGON is based in Bandung and Jakarta, established in 2005 by a number of young professionals who have experience in handling various projects both nationally and internationally. PT ASIA PARAGON continues to innovate and create a global communication and cooperation network with all national and international institutions as well as experts both individually and institutionally in related fields.</p>','<p><b>PT ASIA PARAGON consists of several divisions which include: </b></p><p>1. Business consultant, 2. Developer, 3. Construction, 4. Engineering Management Consultants, 5. Assessment Engineering, 6. Organic Farming</p><p>Energy-related projects are generally handled by business consultant divisions, engineering management consultants, construction and assessment engineering.</p><p><b>Products / Services: </b></p><p>(1) Feasibility study, development and construction of power plant from renewable energy (2) Survey of potential renewable energy (3) Related studies of RAN-GRK (4) Procurement and installation of electrical generators (5) Procurement and installation of EnMS (Energy Management System) (6) Energy audits in industries and buildings (7) Academic review of energy-related policies and rules (8) Procurement and installation of energy saving lamps and solar powered lamps</p><p><b>Track record: </b></p><p>The experiences of PT Asia Paragon related to the energy sector include:</p><p>1. Feasibility Study of PV Industry (Photovoltaic), BPPT 2. The development of added value in the field of alternative energy 3. Survey of Potential Star Energy Geothermal 4. Survey of Geothermal Potential in Sulawesi 5. National Action Plan Study (RAN) Transportation Transportation Anticipation Facing Climate Change 6. Feasibility Study of PLTMH of Bantaeng Regency 7. Installation of Windmills for Watering in Garut (Cibolang and Pameungpeuk) 8. Pemasanggan PJU lamp solar power in Maluku 9. PUSRI, Feasibility Study of Power Station and Steam 10. Feasibility Study for Development of Electricity and Steam at Kujang Plant 11. PDT Sollar Cell Sulawesi 12. PDT Sollar Cell Jatim 13. PDT Sollar Cell Bali 14. Feasibility Study for Labuhan Bajo Hydroelectric Power Plant, Manggarai Regency 15. Feasibility Study of Windmills in Pangkal Pinang 16. Feasibility Study of Geothermal in Aceh 17. Feasibility Study of Geothermal in Jaboi, Sabang 18. Feasibility Study of Geothermal in Sabang 19. Energy Audit of Chemical and Food Industry Sectors</p>','PT ASIA PARAGON','PT ASIA PARAGON','PT ASIA PARAGON is a company engaged in energy, design, enginering, information technology, general contracting and trading',1,'2017-07-10 16:14:07','2017-07-10 16:14:07'),(13,'id','<p>Gedung Aldevco Octagon II - 4th Floor Jalan Warung Jati Barat Raya No. 75 Jakarta 12740, Indonesia</p>','<p><b>PT ENERCON EQUIPMENT COMPANY</b> adalah sebuah perusahaan yang dapat membantu memberikan solusi-solusi berkaitan dengan permasalahan lingkungan dan efisiensi energi. PT ENERCON EQUIPMENT COMPANY fokus pada solusi-solusi yang ril dan inovatif dalam rangka menjawab permintaan yang terus meningkat berkaitan dengan pengurangan konsumsi energi dan polusi udara dalam sektor komersial dan industri di Indonesia. Perusahaan mempromosikan sistem manajemen lingkungan melalui penggunaan teknologi tinggi dan ramah lingkungan. Missi dari ENERCON adalah To successfully deliver the most effective energy management solution, by means of bringing clean, reliable and affordable energy technologies to Indonesia marketplace.</p>','<p><b>Produk/Jasa:</b><br />1. Menyediakan jasa inspeksi dan mengidentifikasi potensi-potensi penghematan energi dan pengurangan polusi udara..<br />2. Melakukan survey lengkap untuk menilai tingkat efisiensi energi yang sudah ada di suatu fasilitas industri dan sekaligus mengidentifikasi potensi-potensi masalah yang mungkin akan dihadapi serta solusinya.<br />3. Membantu pembuatan proposal yang fokus pada solusi-solusi praktis tentang proyek efisiensi energi yang disertai dengan bahasan detil tentang biaya, analisa keuntungan dan keekonomiannya.<br />4. Vendor dari beberapa peralatan yang berkaitan dengan Energi Saving, Compressed Air &amp; Gas, Air Pollution Control, E-Power Systems, E-Controller and Energy Audit.</p><p><b>Rekam jejak:</b><br />1. Telah melakukan pemasangan alat-alat teknologi-teknologi tinggi dan bersih di berbagai industri, seperti farmasi, makanan dan minuman, semen, pertambangan, otomotif dan lain-lain, seperti E-power systems, E-controller, dan sistem kompressor.<br />2. Beberapa perusahaan yang pernah menjadi client ENERCON adalah: Aneka Tambang (Antam), Asahimas Flat Glass Tbk, Astra Daihatsu Motor, Astra Otopart Tbk, Coca Cola, Glaxo Welcome Indonesia, Gillette, Fahrenheit Pratapa Nirmala, Indomilk Group, Indah Kiat Pulp &amp; Paper, Kalbe Farma, Kota Minyak Automation, Landsen Group, Mattel Indonesia, Medco LPG Kaji, Mekar Jaya Armana, Multistrada Arah SaranaTbk, Mitra Karsa, New Armada, Panasonic, Pfizer Indonesia, Semen Batu Raja, Suzuki Indonesia, Sibelco, Sanggar Sarana Baja, United Tractor P E, Ultra Prima Artaboga dan lain-lain</p>','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY',2,'2017-07-24 17:40:34','2017-07-24 17:40:34'),(14,'en','<p>Aldevco Octagon II Building - 4th Floor Warung Jati Barat Raya Street Number 75 Jakarta 12740, Indonesia</p>','<p><b>PT ENERCON EQUIPMENT COMPANY</b> is a company that can help provide solutions related to environmental issues and energy efficiency. PT ENERCON EQUIPMENT COMPANY focuses on real and innovative solutions in response to the growing demand for reducing energy consumption and air pollution in the commercial and industrial sectors of Indonesia. The company promotes environmental management system through the use of high technology and environmentally friendly. The mission of ENERCON is to deliver the most effective energy management solution, by means of bringing clean, reliable and affordable energy technologies to the Indonesia marketplace.</p>','<p><b>Products / Services: </b><br />1. Provide inspection services and identify potential energy savings and air pollution reductions ..<br />2. Conduct a full survey to assess the level of energy efficiency that already exists in an industrial facility and also to identify potential problems that may be faced and the solution.<br />3. Assist in the creation of proposals that focus on practical solutions on energy efficiency projects with detailed discussion of costs, profit and economic analysis.<br />4. Vendors of some equipment related to Energy Saving, Compressed Air &amp; Gas, Air Pollution Control, E-Power Systems, E-Controller and Energy Audit.</p><p><b>Track record: </b><br />1. Has been installing high-tech and clean technology tools in various industries, such as pharmaceuticals, food and beverages, cement, mining, automotive and others, such as E-power systems, E-controllers, and compressor systems. &lt; Br /&gt; 2. Some of the companies that have been ENERCON clients are: Aneka Tambang (Antam), Asahimas Flat Glass Tbk, Astra Daihatsu Motor, Astra Otopart Tbk, Coca Cola, Glaxo Welcome Indonesia, Gillette, Fahrenheit Pratapa Nirmala, Indomilk Group, Indah Kiat Pulp &amp; Paper, Kalbe Farma, City Oil Automation, Landsen Group, Mattel Indonesia, Medco LPG Kaji, Mekar Jaya Armana, Multistrada Directions SaranaTbk, Mitra Karsa, New Armada, Panasonic, Pfizer Indonesia, Semen Batu Raja, Suzuki Indonesia, Sibelco, Sanggar Sarana Baja , United Tractor PE, Ultra Prima Artaboga and others</p>','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY','PT ENERCON EQUIPMENT COMPANY',2,'2017-07-24 17:40:34','2017-07-24 17:40:34');
 /*!40000 ALTER TABLE `green_pages_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -546,7 +511,7 @@ CREATE TABLE `industri` (
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -555,7 +520,7 @@ CREATE TABLE `industri` (
 
 LOCK TABLES `industri` WRITE;
 /*!40000 ALTER TABLE `industri` DISABLE KEYS */;
-INSERT INTO `industri` VALUES (1,'peen2013.jpg',1,1,'2017-05-16 08:05:30','2017-05-16 08:05:30',1),(2,'industry__lintas__ebtke596a044fed279_peen2013.jpg',1,2,'2017-07-15 12:01:54','2017-07-15 12:02:23',1);
+INSERT INTO `industri` VALUES (1,'peen2013.jpg',1,1,'2017-05-16 08:05:30','2017-05-16 08:05:30',1);
 /*!40000 ALTER TABLE `industri` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -583,7 +548,7 @@ CREATE TABLE `industri_trans` (
   UNIQUE KEY `slug_UNIQUE` (`slug`),
   KEY `fk_industri_trans_1_idx` (`industri_id`),
   CONSTRAINT `fk_industri_trans_1` FOREIGN KEY (`industri_id`) REFERENCES `industri` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -592,7 +557,7 @@ CREATE TABLE `industri_trans` (
 
 LOCK TABLES `industri_trans` WRITE;
 /*!40000 ALTER TABLE `industri_trans` DISABLE KEYS */;
-INSERT INTO `industri_trans` VALUES (1,'id','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','pencapaian-pelaksanaan-manegemen-energi-di-industri-dan-bangunan-gedung','Database di bawah ini menyediakan daftar informasi lengkap Auditor Energi, Manajer Energi dan National Expert di Indonesia sebagai sumber informasi dan referensi yang bermanfaat.','<p>\n<b>Pelaporan Pelaksanaan Manajemen Energi di Industri dan Bangunan Gedung</b>\n</p>\n<p><span class=\"first-letter\">P</span>ada tahun 2015, tercatat sebanyak 66 industri/bangunan yang telah melaporkan pelaksanaan manajemen energi. Jumlah penghematan energi yang dihasilkan melalui pelaksanaan manajemen energi  adalah sebesar 180 Gjoule atau setara 50,158 GWh. Sehingga dari tahun 2012 hingga 2015 tercatat jumlah industri yang melapor adalah sebanyak 101 perusahaan dengan total penghematan energi mencapai 254 GJoule atau setara 70,570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Perusahaan</td>\n			<td class=\"header\">Sektor</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Industri Pupuk</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Industri Semen</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Ekspl Migas</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast pada toko di beberapa kota</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Kegiatan</td>\n			<td class=\"header\">Lokasi</td>\n			<td class=\"header\">Jadwal</td>\n		</tr>\n		<tr>\n			<td>\n				Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast\n			</td>\n			<td>Manado</td>\n			<td>6 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 Oktober 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Uji Petik dilaksanakan untuk mengetahui kesesuaian tingkat efisiensi energi lampu swabalast yang beredar di pasaran dibandingkan dalam SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Sampel uji petik berjumlah 20 (dua puluh) unit lampu untuk setiap tipe dan diambil dari toko, lokasi produksi, dan/atau di tempat penyimpanan barang milik Produsen Dalam Negeri atau Importir.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Berikut adalah dokumen Hasil Pengawasan Label Tanda Hemat Energi untuk Lampu Swabalast\n	</a>\n</p>','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','2017-05-16 08:05:30','2017-05-16 08:05:30',1),(2,'en','Achievement of Energy Management Implementation in Building Industry and Building','achivement-of-energy-management-implementation-in-building-industry-and-building','The database below provides a complete list of Energy Auditor, Energy Manager and National Expert information in Indonesia as a useful source of information and reference.','<p>\n<b>Reporting on the Implementation of Energy Management in Building Industry and Building</b>\n</p>\n<p><span class=\"first-letter\">I</span>n 2015, there were 66 industrial / building that has been reported on the implementation of energy management. The amount of energy savings generated through the implementation of energy management is 180 Gjoules or 50.158 GWh equivalent. So that from 2012 to 2015 recorded the number of industries that report is as many as 101 companies with a total energy savings of 254 GJoule or equivalent to 70.570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Company</td>\n			<td class=\"header\">Sector</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Fertilizer industry</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Cement Industry</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Oil and Gas Exports</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Supervise by taking samples of Swabalast lamp product test at stores in several cities</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Activities</td>\n			<td class=\"header\">Location</td>\n			<td class=\"header\">Schedule</td>\n		</tr>\n		<tr>\n			<td>\n				To supervise the test sampling ballasted lamp product\n			</td>\n			<td>Manado</td>\n			<td>6 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 October 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Pick test was conducted to determine the suitability of energy efficiency level of swabalast lamps on the market compared to SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Examples of quotation tests are 20 (twenty) light units for each type and taken from a shop, production site, and / or in the storage of goods owned by a Domestic Producer or Importer.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Here are the document Monitoring Results for the Energy Saving Label Signs ballasted lamp\n	</a>\n</p>','Achievement of Energy Management','Achievement of Energy Management Implementation in Building Industry and Building','Achievement of Energy Management Implementation in Building Industry and Building','2017-05-16 08:05:30','2017-05-16 08:05:30',1),(5,'id','Title Indonesian EDIT','itle-ndonesian','<p>Introduction&nbsp;<b>(Indonesian)</b></p>','<p>&nbsp;</p><p><label>Description&nbsp;<b>(Indonesian)</b></label></p><p><a id=\"cke_45\" title=\"Source\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_45_label\" aria-describedby=\"cke_45_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Source\')\" onkeydown=\"return CKEDITOR.tools.callFunction(34,event);\" onfocus=\"return CKEDITOR.tools.callFunction(35,event);\" onclick=\"CKEDITOR.tools.callFunction(36,this);return false;\">&nbsp;Source</a><a id=\"cke_47\" title=\"Bold (Ctrl+B)\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_47_label\" aria-describedby=\"cke_47_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Bold\')\" onkeydown=\"return CKEDITOR.tools.callFunction(37,event);\" onfocus=\"return CKEDITOR.tools.callFunction(38,event);\" onclick=\"CKEDITOR.tools.callFunction(39,this);return false;\">&nbsp;</a><a id=\"cke_48\" title=\"Italic (Ctrl+I)\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_48_label\" aria-describedby=\"cke_48_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Italic\')\" onkeydown=\"return CKEDITOR.tools.callFunction(40,event);\" onfocus=\"return CKEDITOR.tools.callFunction(41,event);\" onclick=\"CKEDITOR.tools.callFunction(42,this);return false;\">&nbsp;</a><a id=\"cke_50\" title=\"Insert/Remove Numbered List\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_50_label\" aria-describedby=\"cke_50_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Insert/Remove Numbered List\')\" onkeydown=\"return CKEDITOR.tools.callFunction(43,event);\" onfocus=\"return CKEDITOR.tools.callFunction(44,event);\" onclick=\"CKEDITOR.tools.callFunction(45,this);return false;\">&nbsp;</a><a id=\"cke_51\" title=\"Insert/Remove Bulleted List\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_51_label\" aria-describedby=\"cke_51_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Insert/Remove Bulleted List\')\" onkeydown=\"return CKEDITOR.tools.callFunction(46,event);\" onfocus=\"return CKEDITOR.tools.callFunction(47,event);\" onclick=\"CKEDITOR.tools.callFunction(48,this);return false;\">&nbsp;</a><a id=\"cke_52\" title=\"Decrease Indent\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_52_label\" aria-describedby=\"cke_52_description\" aria-haspopup=\"false\" aria-disabled=\"true\" href=\"javascript:void(\'Decrease Indent\')\" onkeydown=\"return CKEDITOR.tools.callFunction(49,event);\" onfocus=\"return CKEDITOR.tools.callFunction(50,event);\" onclick=\"CKEDITOR.tools.callFunction(51,this);return false;\">&nbsp;</a><a id=\"cke_53\" title=\"Increase Indent\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_53_label\" aria-describedby=\"cke_53_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Increase Indent\')\" onkeydown=\"return CKEDITOR.tools.callFunction(52,event);\" onfocus=\"return CKEDITOR.tools.callFunction(53,event);\" onclick=\"CKEDITOR.tools.callFunction(54,this);return false;\">&nbsp;</a><a id=\"cke_55\" title=\"Link (Ctrl+L)\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_55_label\" aria-describedby=\"cke_55_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Link\')\" onkeydown=\"return CKEDITOR.tools.callFunction(55,event);\" onfocus=\"return CKEDITOR.tools.callFunction(56,event);\" onclick=\"CKEDITOR.tools.callFunction(57,this);return false;\">&nbsp;</a><a id=\"cke_56\" title=\"Unlink\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_56_label\" aria-describedby=\"cke_56_description\" aria-haspopup=\"false\" aria-disabled=\"true\" href=\"javascript:void(\'Unlink\')\" onkeydown=\"return CKEDITOR.tools.callFunction(58,event);\" onfocus=\"return CKEDITOR.tools.callFunction(59,event);\" onclick=\"CKEDITOR.tools.callFunction(60,this);return false;\">&nbsp;</a><a id=\"cke_58\" title=\"Table\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_58_label\" aria-describedby=\"cke_58_description\" aria-haspopup=\"false\" href=\"javascript:void(\'Table\')\" onkeydown=\"return CKEDITOR.tools.callFunction(61,event);\" onfocus=\"return CKEDITOR.tools.callFunction(62,event);\" onclick=\"CKEDITOR.tools.callFunction(63,this);return false;\">&nbsp;</a><a id=\"cke_60\" title=\"About CKEditor\" tabindex=\"-1\" role=\"button\" aria-labelledby=\"cke_60_label\" aria-describedby=\"cke_60_description\" aria-haspopup=\"false\" href=\"javascript:void(\'About CKEditor\')\" onkeydown=\"return CKEDITOR.tools.callFunction(64,event);\" onfocus=\"return CKEDITOR.tools.callFunction(65,event);\" onclick=\"CKEDITOR.tools.callFunction(66,this);return false;\">&nbsp;</a></p>','Meta Title','Meta Keyword','Meta Description','2017-07-15 12:02:24','2017-07-15 12:02:24',2),(6,'en','Title English EDIT','itle-nglish','<p>Introduction&nbsp;<b>(English)</b></p>','<p>Description&nbsp;<b>(English)</b></p>','Meta Title','Meta Keyword','Meta Description','2017-07-15 12:02:24','2017-07-15 12:02:24',2);
+INSERT INTO `industri_trans` VALUES (1,'id','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','pencapaian-pelaksanaan-manegemen-energi-di-industri-dan-bangunan-gedung','Database di bawah ini menyediakan daftar informasi lengkap Auditor Energi, Manajer Energi dan National Expert di Indonesia sebagai sumber informasi dan referensi yang bermanfaat.','<p>\n<b>Pelaporan Pelaksanaan Manajemen Energi di Industri dan Bangunan Gedung</b>\n</p>\n<p><span class=\"first-letter\">P</span>ada tahun 2015, tercatat sebanyak 66 industri/bangunan yang telah melaporkan pelaksanaan manajemen energi. Jumlah penghematan energi yang dihasilkan melalui pelaksanaan manajemen energi  adalah sebesar 180 Gjoule atau setara 50,158 GWh. Sehingga dari tahun 2012 hingga 2015 tercatat jumlah industri yang melapor adalah sebanyak 101 perusahaan dengan total penghematan energi mencapai 254 GJoule atau setara 70,570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Perusahaan</td>\n			<td class=\"header\">Sektor</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Industri Pupuk</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Pembangkit Listrik</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Pertambangan</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Industri Semen</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Ekspl Migas</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast pada toko di beberapa kota</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Kegiatan</td>\n			<td class=\"header\">Lokasi</td>\n			<td class=\"header\">Jadwal</td>\n		</tr>\n		<tr>\n			<td>\n				Melakukan pengawasan  dengan pengambilan contoh uji produk Lampu Swabalast\n			</td>\n			<td>Manado</td>\n			<td>6 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 Mei 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 Juni 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 Agustus 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 Oktober 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Uji Petik dilaksanakan untuk mengetahui kesesuaian tingkat efisiensi energi lampu swabalast yang beredar di pasaran dibandingkan dalam SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Sampel uji petik berjumlah 20 (dua puluh) unit lampu untuk setiap tipe dan diambil dari toko, lokasi produksi, dan/atau di tempat penyimpanan barang milik Produsen Dalam Negeri atau Importir.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Berikut adalah dokumen Hasil Pengawasan Label Tanda Hemat Energi untuk Lampu Swabalast\n	</a>\n</p>','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','Pencapaian Pelaksanaan Manajemen Energi Di Industri Dan Bangunan Gedung','2017-05-16 08:05:30','2017-05-16 08:05:30',1),(2,'en','Achievement of Energy Management Implementation in Building Industry and Building','achivement-of-energy-management-implementation-in-building-industry-and-building','The database below provides a complete list of Energy Auditor, Energy Manager and National Expert information in Indonesia as a useful source of information and reference.','<p>\n<b>Reporting on the Implementation of Energy Management in Building Industry and Building</b>\n</p>\n<p><span class=\"first-letter\">I</span>n 2015, there were 66 industrial / building that has been reported on the implementation of energy management. The amount of energy savings generated through the implementation of energy management is 180 Gjoules or 50.158 GWh equivalent. So that from 2012 to 2015 recorded the number of industries that report is as many as 101 companies with a total energy savings of 254 GJoule or equivalent to 70.570 GWh.</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Company</td>\n			<td class=\"header\">Sector</td>\n		</tr>\n		<tr>\n			<td>PT. Pupuk Kujang</td>\n			<td>Fertilizer industry</td>\n		</tr>\n		<tr>\n			<td>PT.  Indonesia Power UPJP Bali – Pesanggrahan</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. YTL Jawa Timur</td>\n			<td>Power plants</td>\n		</tr>\n		<tr>\n			<td>PT. Adaro Indonesia</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Indo Tambangraya Megah</td>\n			<td>Mining</td>\n		</tr>\n		<tr>\n			<td>PT. Semen Indonesia (Persero) Tbk. Pabrik Tuban</td>\n			<td>Cement Industry</td>\n		</tr>\n		<tr>\n			<td>PT. Chevron Pacific Indonesia</td>\n			<td>Oil and Gas Exports</td>\n		</tr>\n	</tbody>\n</table>\n\n<p>Supervise by taking samples of Swabalast lamp product test at stores in several cities</p>\n\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"table--data-style\">\n	<tbody>\n		<tr>\n			<td class=\"header\">Activities</td>\n			<td class=\"header\">Location</td>\n			<td class=\"header\">Schedule</td>\n		</tr>\n		<tr>\n			<td>\n				To supervise the test sampling ballasted lamp product\n			</td>\n			<td>Manado</td>\n			<td>6 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Solo</td>\n			<td>20 May 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Medan</td>\n			<td>4 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Tangerang</td>\n			<td>25 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Cirebon</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bali</td>\n			<td>30 June 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Yogyakarta</td>\n			<td>12 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Batam</td>\n			<td>27 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bogor</td>\n			<td>28 August 2015</td>\n		</tr>\n		<tr>\n			<td></td>\n			<td>Bekasi</td>\n			<td>10 October 2015</td>\n		</tr>\n	</tbody>\n</table>\n<p>\n	<ul>\n		<li class=\"data__table_industri\">\n			<p>\n			Pick test was conducted to determine the suitability of energy efficiency level of swabalast lamps on the market compared to SDoC\n			</p>\n		</li>\n		<li class=\"data__table_industri\">\n			<p>\n			Examples of quotation tests are 20 (twenty) light units for each type and taken from a shop, production site, and / or in the storage of goods owned by a Domestic Producer or Importer.\n			</p>\n		</li>\n	</ul>\n</p>\n<p>\n	<a href=\"http://lintas.ebtke.esdm.go.id/lintasebtke/konservasi-energi/upload/files/Hasil%20Pengawasan%20Label%20Tanda%20Hemat%20Energi%20untuk%20Lampu%20Swabalast.docx\">\n		Here are the document Monitoring Results for the Energy Saving Label Signs ballasted lamp\n	</a>\n</p>','Achievement of Energy Management','Achievement of Energy Management Implementation in Building Industry and Building','Achievement of Energy Management Implementation in Building Industry and Building','2017-05-16 08:05:30','2017-05-16 08:05:30',1);
 /*!40000 ALTER TABLE `industri_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -723,6 +688,136 @@ INSERT INTO `investment_services_trans` VALUES (9,'id','POTENSI PENGHEMATAN ENER
 UNLOCK TABLES;
 
 --
+-- Table structure for table `list_certified_energy`
+--
+
+DROP TABLE IF EXISTS `list_certified_energy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `list_certified_energy` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(60) NOT NULL,
+  `company_name` varchar(70) NOT NULL,
+  `province_id` int(5) NOT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `order` int(4) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `created_by` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_certified_energy_1_idx` (`province_id`),
+  CONSTRAINT `fk_list_certified_energy_1` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list_certified_energy`
+--
+
+LOCK TABLES `list_certified_energy` WRITE;
+/*!40000 ALTER TABLE `list_certified_energy` DISABLE KEYS */;
+INSERT INTO `list_certified_energy` VALUES (1,'Fullname','Company Name',31,0,1,'2017-08-20','2017-08-20',1),(2,'Fullname 2','Company Name 2',13,1,2,'2017-08-20','2017-08-20',1);
+/*!40000 ALTER TABLE `list_certified_energy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `list_certified_energy_trans`
+--
+
+DROP TABLE IF EXISTS `list_certified_energy_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `list_certified_energy_trans` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) NOT NULL,
+  `sector` varchar(100) NOT NULL,
+  `sub_sector` varchar(100) NOT NULL,
+  `list_certified_energy_id` int(10) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_certified_energy_trans_1_idx` (`list_certified_energy_id`),
+  CONSTRAINT `fk_list_certified_energy_trans_1` FOREIGN KEY (`list_certified_energy_id`) REFERENCES `list_certified_energy` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list_certified_energy_trans`
+--
+
+LOCK TABLES `list_certified_energy_trans` WRITE;
+/*!40000 ALTER TABLE `list_certified_energy_trans` DISABLE KEYS */;
+INSERT INTO `list_certified_energy_trans` VALUES (1,'id','Sector (Indonesian)','Sub Sector (Indonesian)',1,'2017-08-20','2017-08-20'),(2,'en','Sector (English)','Sub Sector (English)',1,'2017-08-20','2017-08-20'),(3,'id','Sector (Indonesian)','Sub Sector (Indonesian)',2,'2017-08-20','2017-08-20'),(4,'en','Sector (English)','Sub Sector (English)',2,'2017-08-20','2017-08-20');
+/*!40000 ALTER TABLE `list_certified_energy_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `list_energy_auditor`
+--
+
+DROP TABLE IF EXISTS `list_energy_auditor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `list_energy_auditor` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(60) NOT NULL,
+  `company_name` varchar(70) NOT NULL,
+  `type_auditor` varchar(20) NOT NULL,
+  `province_id` int(5) NOT NULL,
+  `years` int(4) NOT NULL,
+  `is_active` tinyint(1) DEFAULT NULL,
+  `order` int(5) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `created_by` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_energy_auditor_1_idx` (`province_id`),
+  CONSTRAINT `fk_list_energy_auditor_1` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list_energy_auditor`
+--
+
+LOCK TABLES `list_energy_auditor` WRITE;
+/*!40000 ALTER TABLE `list_energy_auditor` DISABLE KEYS */;
+INSERT INTO `list_energy_auditor` VALUES (1,'Fullname','Company Name','internal',35,2015,0,1,'2017-08-20','2017-08-20',1),(2,'Fullname','Company Name 2','eksternal',31,2017,1,2,'2017-08-20','2017-08-20',1);
+/*!40000 ALTER TABLE `list_energy_auditor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `list_energy_auditor_trans`
+--
+
+DROP TABLE IF EXISTS `list_energy_auditor_trans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `list_energy_auditor_trans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locale` varchar(2) NOT NULL,
+  `sector` varchar(100) NOT NULL,
+  `sub_sector` varchar(100) NOT NULL,
+  `list_energy_auditor_id` int(10) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_list_energy_auditor_trans_1_idx` (`list_energy_auditor_id`),
+  CONSTRAINT `fk_list_energy_auditor_trans_1` FOREIGN KEY (`list_energy_auditor_id`) REFERENCES `list_energy_auditor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list_energy_auditor_trans`
+--
+
+LOCK TABLES `list_energy_auditor_trans` WRITE;
+/*!40000 ALTER TABLE `list_energy_auditor_trans` DISABLE KEYS */;
+INSERT INTO `list_energy_auditor_trans` VALUES (1,'id','Sector (Indonesian)','Sub Sector (Indonesian)',1,'2017-08-20','2017-08-20'),(2,'en','Sector (English)','Sub Sector (English)',1,'2017-08-20','2017-08-20'),(3,'id','Sector (Indonesian)','Sub Sector (Indonesian)',2,'2017-08-20','2017-08-20'),(4,'en','Sector (English)','Sub Sector (English)',2,'2017-08-20','2017-08-20');
+/*!40000 ALTER TABLE `list_energy_auditor_trans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `main_banner`
 --
 
@@ -748,7 +843,7 @@ CREATE TABLE `main_banner` (
 
 LOCK TABLES `main_banner` WRITE;
 /*!40000 ALTER TABLE `main_banner` DISABLE KEYS */;
-INSERT INTO `main_banner` VALUES (1,'banner:landing','filename_001.jpg',1,1,NULL,NULL,NULL),(2,'banner:landing','filename_002.jpg',1,1,NULL,NULL,NULL),(3,'banner:landing','filename_003.jpg',1,1,NULL,NULL,NULL),(4,'banner:landing','filename_004.jpg',1,1,NULL,NULL,NULL),(5,'banner:company:history','main_banner__lintas__ebtke5961b47c5bcde_1920x763.jpg',1,1,'2017-07-09 04:43:40','2017-07-09 04:43:40',NULL);
+INSERT INTO `main_banner` VALUES (1,'banner:landing','filename_001.jpg',1,1,NULL,NULL,NULL),(2,'banner:landing','filename_002.jpg',1,1,NULL,NULL,NULL),(3,'banner:landing','filename_003.jpg',1,1,NULL,NULL,NULL),(4,'banner:landing','filename_004.jpg',1,1,NULL,NULL,NULL),(5,'banner:company:history','main_banner__lintas__ebtke599588e5d3ce8_1244x829.jpg',1,1,'2017-07-09 04:43:40','2017-08-17 12:15:34',NULL);
 /*!40000 ALTER TABLE `main_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -769,7 +864,7 @@ CREATE TABLE `main_banner_trans` (
   PRIMARY KEY (`id`),
   KEY `fk_main_banner_trans_1_idx` (`main_banner_id`),
   CONSTRAINT `fk_main_banner_trans_1` FOREIGN KEY (`main_banner_id`) REFERENCES `main_banner` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -778,7 +873,7 @@ CREATE TABLE `main_banner_trans` (
 
 LOCK TABLES `main_banner_trans` WRITE;
 /*!40000 ALTER TABLE `main_banner_trans` DISABLE KEYS */;
-INSERT INTO `main_banner_trans` VALUES (1,'id','Potong 10 Persen Diharapkan Jadi Gaya Hidup Masyarakat',NULL,NULL,1),(2,'en','Cut 10 Percent Expected to Be a Community Lifestyle',NULL,NULL,1),(3,'id','Hemat Energi Upaya Mencapai Energi Berkeadilan',NULL,NULL,2),(4,'en','Save Energy Efforts to Achieve Energy Justice',NULL,NULL,2),(5,'id','Indonesia – Denmark Luncurkan Peta Potensi Angin',NULL,NULL,3),(6,'en','Indonesia - Denmark Launches Potential Wind Map',NULL,NULL,3),(7,'id','Pembangunan Infrastruktur EBTKE di Sumatera Barat',NULL,NULL,4),(8,'en','Infrastructure Development EBTKE in West Sumatra',NULL,NULL,4),(13,'id','Title main banner edit','2017-07-09 04:43:40','2017-07-09 04:43:40',5),(14,'en','Title main banner edit','2017-07-09 04:43:40','2017-07-09 04:43:40',5);
+INSERT INTO `main_banner_trans` VALUES (1,'id','Potong 10 Persen Diharapkan Jadi Gaya Hidup Masyarakat',NULL,NULL,1),(2,'en','Cut 10 Percent Expected to Be a Community Lifestyle',NULL,NULL,1),(3,'id','Hemat Energi Upaya Mencapai Energi Berkeadilan',NULL,NULL,2),(4,'en','Save Energy Efforts to Achieve Energy Justice',NULL,NULL,2),(5,'id','Indonesia – Denmark Luncurkan Peta Potensi Angin',NULL,NULL,3),(6,'en','Indonesia - Denmark Launches Potential Wind Map',NULL,NULL,3),(7,'id','Pembangunan Infrastruktur EBTKE di Sumatera Barat',NULL,NULL,4),(8,'en','Infrastructure Development EBTKE in West Sumatra',NULL,NULL,4),(19,'id','Title main banner edit','2017-08-17 12:15:34','2017-08-17 12:15:34',5),(20,'en','Title main banner edit','2017-08-17 12:15:34','2017-08-17 12:15:34',5);
 /*!40000 ALTER TABLE `main_banner_trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1134,63 +1229,32 @@ LOCK TABLES `potentials_region` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `provinsi`
+-- Table structure for table `province`
 --
 
-DROP TABLE IF EXISTS `provinsi`;
+DROP TABLE IF EXISTS `province`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `provinsi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(45) DEFAULT NULL,
-  `latitude` varchar(45) DEFAULT NULL,
-  `longitude` varchar(45) DEFAULT NULL,
-  `pulau_id` int(3) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `created_by` int(3) DEFAULT NULL,
+CREATE TABLE `province` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `latitude` decimal(10,10) DEFAULT NULL,
+  `longitude` decimal(10,10) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `created_by` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `provinsi`
+-- Dumping data for table `province`
 --
 
-LOCK TABLES `provinsi` WRITE;
-/*!40000 ALTER TABLE `provinsi` DISABLE KEYS */;
-INSERT INTO `provinsi` VALUES (1,'Jakarta','-6.174444','106.829444',1,NULL,NULL,NULL),(2,'Sulawesi Tengah','-1.244143','121.455000',2,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `provinsi` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pulau`
---
-
-DROP TABLE IF EXISTS `pulau`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pulau` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) NOT NULL,
-  `latitude` varchar(45) DEFAULT NULL,
-  `longitude` varchar(45) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `created_by` int(3) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `title_UNIQUE` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pulau`
---
-
-LOCK TABLES `pulau` WRITE;
-/*!40000 ALTER TABLE `pulau` DISABLE KEYS */;
-INSERT INTO `pulau` VALUES (1,'Pulau Jawa',NULL,NULL,NULL,NULL,NULL),(2,'Pulau Sulawesi',NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `pulau` ENABLE KEYS */;
+LOCK TABLES `province` WRITE;
+/*!40000 ALTER TABLE `province` DISABLE KEYS */;
+INSERT INTO `province` VALUES (11,'ACEH',NULL,NULL,NULL,NULL,NULL),(12,'SUMATERA UTARA',NULL,NULL,NULL,NULL,NULL),(13,'SUMATERA BARAT',NULL,NULL,NULL,NULL,NULL),(14,'RIAU',NULL,NULL,NULL,NULL,NULL),(15,'JAMBI',NULL,NULL,NULL,NULL,NULL),(16,'SUMATERA SELATAN',NULL,NULL,NULL,NULL,NULL),(17,'BENGKULU',NULL,NULL,NULL,NULL,NULL),(18,'LAMPUNG',NULL,NULL,NULL,NULL,NULL),(19,'KEPULAUAN BANGKA BELITUNG',NULL,NULL,NULL,NULL,NULL),(21,'KEPULAUAN RIAU',NULL,NULL,NULL,NULL,NULL),(31,'DKI JAKARTA',NULL,NULL,NULL,NULL,NULL),(32,'JAWA BARAT',NULL,NULL,NULL,NULL,NULL),(33,'JAWA TENGAH',NULL,NULL,NULL,NULL,NULL),(34,'DI YOGYAKARTA',NULL,NULL,NULL,NULL,NULL),(35,'JAWA TIMUR',NULL,NULL,NULL,NULL,NULL),(36,'BANTEN',NULL,NULL,NULL,NULL,NULL),(51,'BALI',NULL,NULL,NULL,NULL,NULL),(52,'NUSA TENGGARA BARAT',NULL,NULL,NULL,NULL,NULL),(53,'NUSA TENGGARA TIMUR',NULL,NULL,NULL,NULL,NULL),(61,'KALIMANTAN BARAT',NULL,NULL,NULL,NULL,NULL),(62,'KALIMANTAN TENGAH',NULL,NULL,NULL,NULL,NULL),(63,'KALIMANTAN SELATAN',NULL,NULL,NULL,NULL,NULL),(64,'KALIMANTAN TIMUR',NULL,NULL,NULL,NULL,NULL),(65,'KALIMANTAN UTARA',NULL,NULL,NULL,NULL,NULL),(71,'SULAWESI UTARA',NULL,NULL,NULL,NULL,NULL),(72,'SULAWESI TENGAH',NULL,NULL,NULL,NULL,NULL),(73,'SULAWESI SELATAN',NULL,NULL,NULL,NULL,NULL),(74,'SULAWESI TENGGARA',NULL,NULL,NULL,NULL,NULL),(75,'GORONTALO',NULL,NULL,NULL,NULL,NULL),(76,'SULAWESI BARAT',NULL,NULL,NULL,NULL,NULL),(81,'MALUKU',NULL,NULL,NULL,NULL,NULL),(82,'MALUKU UTARA',NULL,NULL,NULL,NULL,NULL),(91,'PAPUA BARAT',NULL,NULL,NULL,NULL,NULL),(94,'PAPUA',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `province` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1582,4 +1646,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-17 14:12:56
+-- Dump completed on 2017-08-20 21:40:17

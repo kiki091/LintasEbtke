@@ -627,6 +627,26 @@ function initMenuIndustry()
     replaceToCkEditor();
 }
 
+function initMenuListCertifiedEnergy()
+{
+    mainGeneral();
+    wizardSlide();
+    crudListCertifiedEnergy();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
+function initMenuListAuditorEnergy()
+{
+    mainGeneral();
+    wizardSlide();
+    crudListEnergyAuditor();
+    buttonClickOpen();
+    buttonClickClose();
+    replaceToCkEditor();
+}
+
 // INIT FUNCTION ENERGY CONSERVATION CONTENT MANAGER CMS
 function initMenuEnergiConservation()
 {

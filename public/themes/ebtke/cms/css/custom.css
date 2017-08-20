@@ -359,7 +359,7 @@ html , body{
     position: fixed
 }
 body .container.body .right_col {
-    background: #F7F7F7
+    background: #FFFFFF;
 }
 .nav-md .container.body .right_col {
     padding: 10px 0px 0;
@@ -3420,17 +3420,33 @@ a.hiddenanchor {
     display: none
 }
 .login_wrapper {
-    right: 0px;
-    margin: 0px auto;
-    margin-top: 5%;
-    max-width: 400px;
-    position: relative
+    width: 500px;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.login_form .login__header,
+.registration_form .login__header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.login_form .login__header img,
+.registration_form .login__header img {
+    height: 80px;
+    opacity: 0.5;
 }
 .registration_form,
 .login_form {
     position: absolute;
-    top: 0px;
-    width: 100%
+    width: 100%;
+    padding: 5%;
+    background: rgba(255, 255, 255, 0.82);
 }
 .registration_form {
     z-index: 21;
@@ -3490,9 +3506,14 @@ form:after {
     clear: both;
     visibility: hidden
 }
+hr.line__login {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid rgba(6, 7, 9, 0.11);
+}
 .login_content {
     margin: 0 auto;
-    padding: 25px 0 0;
     position: relative;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
@@ -4668,6 +4689,13 @@ h2 {
     margin: 5px 0 0 0;
 }
 
+.form--error--message-login {
+    font-size: 16px;
+    color: #DE6060;
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+}
+
 input, textarea, select {
     max-width: 100%;
     background-color: #fff;
@@ -4898,8 +4926,13 @@ input, textarea, select {
 }
 .btn__form:hover, .btn__wizard__next:hover, .btn__wizard__prev:hover {
     background: #7ea9b9; 
+    color: #FFFFFF;
 }
 
+.btn__add, .btn__add__cancel:hover {
+    background: #7ea9b9; 
+    color: #FFFFFF;
+}
 .new__form__field .field__icon .field__icon__img {
     position: absolute;
     width: 16px;
@@ -5595,4 +5628,85 @@ table.table__style tr th {
 }
 .contact_us_table .table__style td, .contact_us_table .table__style th {
     text-align: left;
+}
+
+.header__selector__dropdown {
+        float: left;
+    padding: 8px;
+}
+.dropdown__select__list {
+  margin-left: 0px;
+  position: relative; 
+}
+.dropdown__select__list.open .dropdown__content {
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+    transform: translateY(0px);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.dropdown__select__list .display__name {
+    font-family: "harriet_regular";
+    margin: 0;
+    line-height: 40px;
+    height: auto;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* display: block; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all .2s; 
+}
+.dropdown__select__list .display__name:hover {
+    color: #44C7F4; 
+}
+.dropdown__select__list .dropdown__content {
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #adb2bf;
+    margin: 1px 0px;
+    background: #FFFFFF;
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transform: translateY(-20px); 
+}
+.dropdown__select__list .dropdown__content:before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    width: 0px;
+    height: 0px;
+    margin-top: 3px;
+    border-bottom: 6px solid #adb2bf;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent; 
+}
+.dropdown__select__list .dropdown__content:after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    width: 0px;
+    height: 0px;
+    margin-top: 4px;
+    border-bottom: 6px solid white;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent; 
+}
+.dropdown__select__list .dropdown__content li {
+    border-bottom: 1px solid rgba(155, 155, 155, 0.2); 
+}
+.dropdown__select__list .dropdown__content li .dropdown__content__link {
+    font-size: 13px;
+    padding: 5px 15px;
+    display: block;
+    color: #9B9B9B; 
+}
+.dropdown__select__list .dropdown__content li .dropdown__content__link:hover {
+    color: #4A4A4A; 
 }

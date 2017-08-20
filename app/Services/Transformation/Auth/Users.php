@@ -90,20 +90,20 @@ class Users
     {
         $dataTransform = array_map(function($data) {
             return [
-                'menu_group'    => isset($data['menu']['menu_group']['title'])? $data['menu']['menu_group']['title'] : '',
-                'menu_group_icon'    => isset($data['menu']['menu_group']['icon'])? $data['menu']['menu_group']['icon'] : '',
-                'user_id'       => isset($data['user_id'])? $data['user_id'] : '',
-                'menu_id'       => isset($data['menu_id'])? $data['menu_id'] : '',
-                'title'         => isset($data['menu']['title'])? $data['menu']['title'] : '',
-                'slug'          => isset($data['menu']['slug'])? $data['menu']['slug'] : '',
-                'url'           => isset($data['menu']['url'])? $data['menu']['url'] : '',
-                'have_sub_menu' => isset($data['menu']['have_sub_menu'])? $data['menu']['have_sub_menu'] : '',
-                'sub_menu'      => $this->getSubMenu($data['menu']['sub_menu']),
+                'menu_group'        => isset($data['menu']['menu_group']['title'])? $data['menu']['menu_group']['title'] : '',
+                'menu_group_active' => isset($data['menu']['menu_group']['is_active'])? $data['menu']['menu_group']['is_active'] : false,
+                'menu_group_icon'   => isset($data['menu']['menu_group']['icon'])? $data['menu']['menu_group']['icon'] : '',
+                'user_id'           => isset($data['user_id'])? $data['user_id'] : '',
+                'menu_id'           => isset($data['menu_id'])? $data['menu_id'] : '',
+                'title'             => isset($data['menu']['title'])? $data['menu']['title'] : '',
+                'is_active'         => isset($data['menu']['is_active'])? $data['menu']['is_active'] : false,
+                'url'               => isset($data['menu']['url'])? $data['menu']['url'] : '',
+                'slug'              => isset($data['menu']['slug'])? $data['menu']['slug'] : '',
+                'have_sub_menu'     => isset($data['menu']['have_sub_menu'])? $data['menu']['have_sub_menu'] : '',
+                'sub_menu'          => isset($data['menu']['sub_menu']) ? $this->getSubMenu($data['menu']['sub_menu']) : [],
 
             ];
         }, $data);
-
-
 
         $finalData = [];
         foreach ($dataTransform as $item) {
@@ -127,6 +127,7 @@ class Users
             return [
                 'title_sub_menu'    => isset($data['title']) ? $data['title'] : '',
                 'slugh_sub_menu'    => isset($data['slug']) ? $data['slug'] : '',
+                'is_active'         => isset($data['is_active']) ? $data['is_active'] : '',
                 'url_sub_menu'      => isset($data['url']) ? $data['url'] : '',
 
             ];
@@ -183,7 +184,7 @@ class Users
                 'id'            => isset($data['id']) ? $data['id'] : '',
                 'name'          => isset($data['name']) ? $data['name'] : '',
                 'email'         => isset($data['email']) ? $data['email'] : '',
-                'is_active'     => isset($data['is_active']) ? $data['is_active'] : '',
+                'is_active'     => isset($data['is_active']) ? $data['is_active'] : false,
             ];
             
         }, $data);

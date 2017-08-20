@@ -34,10 +34,9 @@ class Province
             return [
                 
                 'id'            => isset($data['id']) ? $data['id'] : '',
-                'title'         => isset($data['title']) ? $data['title'] : '',
+                'name'          => isset($data['name']) ? $data['name'] : '',
                 'latitude'      => isset($data['latitude']) ? $data['latitude'] : '',
-                'longitude'      => isset($data['longitude']) ? $data['longitude'] : '',
-                'pulau_id'      => isset($data['pulau_id']) ? $data['pulau_id'] : '',
+                'longitude'     => isset($data['longitude']) ? $data['longitude'] : '',
             ];
         },$data);
         

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Models\BaseModel;
 
-class Pulau extends BaseModel
+class Province extends BaseModel
 {
-	protected $table = 'pulau';
+	protected $table = 'province';
     public $timestamps = false;
 
     protected $fillable = [
@@ -16,8 +16,20 @@ class Pulau extends BaseModel
 
     protected $guarded = [];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
     /***************** Scope *****************/
 
+    /**
+     * @param $query
+     */
+    public function scopeIsActive($query, $params = true)
+    {
+        return $query->where('is_active', $params);
+    }
+    
     /**
      * @param $query
      */

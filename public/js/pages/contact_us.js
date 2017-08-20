@@ -3,7 +3,6 @@ $(document).ready(function() {
 	$('#form__contact__us').submit(function(event) {
 
 		event.preventDefault();
-		$('#submit__form__contact__us').prop("disabled", true);
 
 		var url       = window.location.origin;
 		var domain    = $('#form__contact__us').attr('action');
@@ -27,13 +26,11 @@ $(document).ready(function() {
                             $("#form--error--" + key.replace(".", "_")).text(value)
                         });
 
-                        $('.submit__form__contact__us').prop("disabled", false);
+                        toastr.error('Please check your input required')
 
         			} else {
-
-                        $('.submit__form__contact__us').prop("disabled", false);
                         
-                        toastr.warning(data.message)
+                        toastr.error('Error, please check your input required')
                     }
 
         		} else {

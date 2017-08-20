@@ -50,6 +50,8 @@
 <script src="{{ asset('themes/ebtke/cms/pages/tools.js') }}"></script>
 <!-- Javascript INFORMATION SERVICES INDUSTRY MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/industri.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/list-certified-energy.js') }}"></script>
+<script src="{{ asset('themes/ebtke/cms/pages/list-energy-auditor.js') }}"></script>
 <!-- Javascript SEO MANAGEMENT SYSTEM -->
 <script src="{{ asset('themes/ebtke/cms/pages/seo/home-pages.js') }}"></script>
 <script src="{{ asset('themes/ebtke/cms/pages/seo/scope-of-services.js') }}"></script>

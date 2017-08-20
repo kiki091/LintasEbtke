@@ -6,7 +6,6 @@ use App\Repositories\Contracts\Cms\EnergyConservation as EnergyConservationInter
 use App\Repositories\Implementation\BaseImplementation;
 use App\Models\EnergyConservation as EnergyConservationModels;
 use App\Models\EnergyConservationTrans as EnergyConservationTransModels;
-use App\Models\EnergyConservationMaps as EnergyConservationMapsModels;
 use App\Services\Transformation\Cms\EnergyConservation as EnergyConservationTransformation;
 use App\Custom\DataHelper;
 use LaravelLocalization;
@@ -19,7 +18,6 @@ use DB;
 class EnergyConservation extends BaseImplementation implements EnergyConservationInterface
 {
     protected $energyConservation;
-    protected $energyConservationMaps;
     protected $energyConservationTrans;
     protected $energyConservationTransformation;
 
@@ -30,10 +28,9 @@ class EnergyConservation extends BaseImplementation implements EnergyConservatio
     const PREFIX_IMAGE_NAME = 'energy_conservation__lintas__ebtke';
 
 
-    function __construct(EnergyConservationModels $energyConservation, EnergyConservationTransModels $energyConservationTrans, EnergyConservationMapsModels $energyConservationMaps, EnergyConservationTransformation $energyConservationTransformation)
+    function __construct(EnergyConservationModels $energyConservation, EnergyConservationTransModels $energyConservationTrans, EnergyConservationTransformation $energyConservationTransformation)
     {
     	$this->energyConservation = $energyConservation;
-        $this->energyConservationMaps = $energyConservationMaps;
         $this->energyConservationTrans = $energyConservationTrans;
         $this->energyConservationTransformation = $energyConservationTransformation;
         $this->uniqueIdImagePrefix = uniqid(self::PREFIX_IMAGE_NAME);
@@ -78,12 +75,6 @@ class EnergyConservation extends BaseImplementation implements EnergyConservatio
             }
             
             if(!$this->storeDatTranslation($data) == true)
-            {
-                DB::rollBack();
-                return $this->setResponse($this->message, false);
-            }
-            
-            if(!$this->storeMapsData($data) == true)
             {
                 DB::rollBack();
                 return $this->setResponse($this->message, false);
@@ -173,36 +164,6 @@ class EnergyConservation extends BaseImplementation implements EnergyConservatio
             return false;
 
         return $this->energyConservationTrans->where('energy_conservation_id', $energyConservationId)->delete();
-    }
-
-    /**
-     * Store Maps Data
-     * @param $eventId
-     * @return bool
-     */
-
-    protected function storeMapsData($data)
-    {
-        if ($this->isEditMode($data)) {
-            $this->removeMapsData($data['id']);
-        }
-
-        $finalData = $this->energyConservationTransformation->getMapsDataTranslation($data['maps_data'], $this->lastInsertId, $this->isEditMode($data));
-
-        return $this->energyConservationMaps->insert($finalData);
-    }
-
-    /**
-     * Remove Maps Data by ID
-     * @param $eventId
-     * @return bool
-     */
-    protected function removeMapsData($energyConservationId)
-    {
-        if (empty($energyConservationId))
-            return false;
-
-        return $this->energyConservationMaps->where('energy_conservation_id', $energyConservationId)->delete();
     }
 
 

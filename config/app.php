@@ -162,13 +162,15 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        App\Providers\DataHelperServiceProvider::class,
-        App\Providers\SipedaDataHelperServiceProvider::class,
+        
 
         /*
          * Custom Service Providers...
          */
 
+        App\Providers\RouteMenuLocationServiceProvider::class,
+        App\Providers\SipedaDataHelperServiceProvider::class,
+        App\Providers\DataHelperServiceProvider::class,
         App\Providers\EbtkeHelperServiceProvider::class,
         App\Providers\EbtkeServiceProvider::class,
         App\Providers\SipedaServiceProvider::class,
@@ -180,7 +182,6 @@ return [
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-        App\Providers\RouteMenuLocationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -242,10 +243,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'EbtkeHelper'=> App\Custom\Facades\EbtkeHelper::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'RouteMenuLocation'=> App\Custom\Facades\RouteMenuLocation::class,
         'DataHelper'=> App\Custom\Facades\DataHelper::class,
+        'EbtkeHelper'=> App\Custom\Facades\EbtkeHelper::class,
         'SipedaDataHelper'=> App\Custom\Facades\SipedaDataHelper::class,
         'JavaScript'=> Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
 

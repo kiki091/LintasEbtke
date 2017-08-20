@@ -9,6 +9,7 @@ $(document).ready(function(){
     checkAllLanguage();
     masonry();
     masonryAdminNavigation();
+    selectorDropdownHeader();
 });
 /* =============================== MASONRY ================================*/
 function masonry(delay)
@@ -66,7 +67,17 @@ function masonryAdminNavigation(delays){
   /*--------------------------*/
 }
 /* ================================== END =====================================*/
+function selectorDropdownHeader(){
+  $('#selector-dropdown').on('click', function(){
+    console.log("masuk")
+    $(this).toggleClass('open');
+  });
 
+  $('#selector-dropdown').focusout(function() {
+    // all dropdowns
+    $('.dropdown__select__list').removeClass('open');
+  });
+}
 function uploadFile(){
     $(document).on('change', '.upload__file__input', function () {
         var fileName = $(this).val().replace('C:\\fakepath\\', '');
