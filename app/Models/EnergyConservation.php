@@ -33,14 +33,6 @@ class EnergyConservation extends BaseModel
         return $this->belongsTo('App\Models\EnergyConservationTrans', 'id', 'energy_conservation_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
 
-    /**
-     * @return mixed
-     */
-    public function maps_data()
-    {
-        return $this->hasMany('App\Models\EnergyConservationMaps', 'energy_conservation_id', 'id')->with('maps_category','province');
-    }
-
     /***************** Scope *****************/
 
     /**

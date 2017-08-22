@@ -156,7 +156,7 @@ class CompanyHistoryController extends CmsBaseController
     private function validationStoreBanner($request = array())
     {
         $rules = [
-            'filename'                  => 'required|dimensions:width='.MAIN_BANNER_WIDTH.',height='.MAIN_BANNER_HEIGHT.'|max:'. MAIN_BANNER_IMAGES_SIZE .'|mimes:jpeg,jpg',
+            'filename'                  => 'required|dimensions:width='.MAIN_BANNER_COMPANY_WIDTH.',height='.MAIN_BANNER_COMPANY_HEIGHT.'|max:'. MAIN_BANNER_IMAGES_SIZE .'|mimes:jpeg,jpg',
         ];
 
         if ($this->isEditMode($request->input())) {

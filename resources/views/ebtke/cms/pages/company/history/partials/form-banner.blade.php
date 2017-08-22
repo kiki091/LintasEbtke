@@ -43,7 +43,7 @@
 									<div class="form--error--message--left" id="form--error--message--filename"></div>
 									<!-- upload tip -->
 									<div class="upload__tip">
-										<span><b>Upload Tip: </b>Please upload high resolution photo only with format of *jpeg. (With maximum width of {{ MAIN_BANNER_WIDTH }} x {{ MAIN_BANNER_HEIGHT }} px on landscape)</span>
+										<span><b>Upload Tip: </b>Please upload high resolution photo only with format of *jpeg. (With width of {{ MAIN_BANNER_COMPANY_WIDTH }} x {{ MAIN_BANNER_COMPANY_HEIGHT }} px on landscape)</span>
 									</div>
 								</div>
 							</div>

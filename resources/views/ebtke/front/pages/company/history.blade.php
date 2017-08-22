@@ -26,7 +26,7 @@
         <div class="default-banner-image">
             @foreach($main_banner as $key=> $val)
             <div class="image-container image-loaded-version">
-                <img src="{{ $val['image_url'] }}">
+                <img class="img-responsive" src="{{ $val['image_url'] }}">
             </div>
             @endforeach
         </div>
