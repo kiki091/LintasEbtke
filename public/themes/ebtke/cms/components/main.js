@@ -192,7 +192,7 @@ function timePicker(){
 function datetimePicker() {
     $(document).on('click',".datetimepicker.datetime.start", function() {
         jQuery(this).datetimepicker({
-            format:'d/m/Y H:i',
+            format:'Y-m-d H:i:s',
             lang:'en',
             minDate: new Date,
             allowTimes:[
@@ -261,7 +261,7 @@ function datetimePicker() {
 
     $(document).on('click',".datetimepicker.datetime.end", function() {
         jQuery(this).datetimepicker({
-            format:'d/m/Y H:i',
+            format:'Y-m-d H:i:s',
             lang:'en',
             minDate: new Date,
             allowTimes:[

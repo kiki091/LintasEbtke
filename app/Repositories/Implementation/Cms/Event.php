@@ -129,14 +129,11 @@ class Event extends BaseImplementation implements EventInterface
                 if (!empty($data['thumbnail'])) {
                     $store->thumbnail       = $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName();
                 }
-
-                $store->date_start  = isset($data['date_start']) ? Carbon::parse($data['date_start'])->toDateTimeString() : '';
-                $store->date_end    = isset($data['date_end']) ? Carbon::parse($data['date_end'])->toDateTimeString() : '';
-                
                 $store->updated_at = $this->mysqlDateTimeFormat();
 
             } else {
             
+                $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
                 $store->is_active   = true;
                 $store->total_view  = '0';
                 $store->order       = $this->event->max('order')+1;
@@ -144,10 +141,8 @@ class Event extends BaseImplementation implements EventInterface
                 $store->created_at  = $this->mysqlDateTimeFormat();
                 $store->created_by  = DataHelper::userId();
             }
-            
-            $store->thumbnail   = isset($data['thumbnail']) ? $this->uniqueIdImagePrefix . '_' .$data['thumbnail']->getClientOriginalName() : '';
-            $store->date_start  = isset($data['date_start']) ? Carbon::parse($data['date_start'])->toDateString() : '';
-            $store->date_end    = isset($data['date_end']) ? Carbon::parse($data['date_end'])->toDateString() : '';
+            $store->date_start  = isset($data['date_start']) ? \Carbon\Carbon::parse($data['date_start'])->toDateTimeString() : '';
+            $store->date_end    = isset($data['date_end']) ? \Carbon\Carbon::parse($data['date_end'])->toDateTimeString() : '';
 
             if($save = $store->save())
             {
