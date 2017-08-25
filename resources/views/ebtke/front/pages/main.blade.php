@@ -38,6 +38,7 @@
 	        </div>
 	        @endforeach
       	</div>
+      	{{--
       	<div class="switch">
         	<ul>
         		@foreach($main_banner as $key=> $val)
@@ -51,6 +52,7 @@
 	        	@endforeach
         	</ul>
       	</div>
+      	--}}
     </div>
 </section>
 
