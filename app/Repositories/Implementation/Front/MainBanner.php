@@ -30,27 +30,14 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
 
     public function getMainBanner($data)
     {
-        if(!isset($data['key']))
-            return array();
+        $params = [
+            "is_active" => true,
+            "order_by"  => "order",
+        ];
 
+        $mainBannerData = $this->mainBanner($params);
 
-        $redisKey   = $this->generateRedisKeyLocationAndReferenceKey(MainBannerRedis::MAIN_BANNER, $data['key']);
-
-        $mainBanner = Cache::rememberForever($redisKey, function() use ($data, $redisKey)
-        {
-            $params = [
-                "key" => $this->generateBannerKeyFromRedisKey($redisKey),
-                "is_active" => true,
-                "limit_data" => isset($data['limit_data']) ? $data['limit_data'] : '',
-                "order_by"  => "order",
-            ];
-
-            $mainBannerData = $this->mainBanner($params);
-
-            return $this->mainBannerTransformation->getMainBannerTransform($mainBannerData);
-        });
-
-        return $mainBanner;
+        return $this->mainBannerTransformation->getMainBannerTransform($mainBannerData);
     }
 
     /**
