@@ -14,8 +14,7 @@
 
 Route::group(['middleware' => ['web']], function () 
 {
-	//Route::group(['domain' => env('WORLD_WIDE_WEB') . env('ACCOUNT_DOMAIN_PREFIX')], function()
-	Route::group(['prefix' => 'admin'], function ()
+	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('ACCOUNT_DOMAIN_PREFIX')], function()
 	{
 		Route::get('/', 'Ebtke\Cms\MainController@index')->name('login');
 		Route::get('register', 'Ebtke\Cms\AuthController@register')->name('register');

@@ -54,7 +54,7 @@ class Users extends Authenticatable
 
     public function system_location()
     {
-        return $this->hasMany('App\Models\Auth\SystemLocation', 'user_id', 'id')->with('system');
+        return $this->hasMany('App\Models\Auth\SystemLocation', 'user_id', 'id')->with('system')->orderBy('system_id', 'asc');
     }
 
 

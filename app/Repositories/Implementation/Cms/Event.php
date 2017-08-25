@@ -141,6 +141,7 @@ class Event extends BaseImplementation implements EventInterface
                 $store->created_at  = $this->mysqlDateTimeFormat();
                 $store->created_by  = DataHelper::userId();
             }
+            
             $store->date_start  = isset($data['date_start']) ? \Carbon\Carbon::parse($data['date_start'])->toDateTimeString() : '';
             $store->date_end    = isset($data['date_end']) ? \Carbon\Carbon::parse($data['date_end'])->toDateTimeString() : '';
 

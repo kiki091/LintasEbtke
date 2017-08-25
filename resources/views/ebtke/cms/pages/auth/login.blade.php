@@ -4,7 +4,7 @@
 		User Account
 	@endsection
 	@include('ebtke.cms.partials.header')
-	<body class="login" style="background-image: url({{ asset(BACKGROUND_LOGIN_CMS_DIRECTORY) }})">
+	<body class="login" style="background-size: cover; background-image: url({{ asset(BACKGROUND_LOGIN_CMS_DIRECTORY) }})">
 
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>

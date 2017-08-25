@@ -10,11 +10,11 @@
                     @php
                         $systems = DataHelper::userSystemLocation();
                     @endphp
-                    <span class="display__name">{{ Request::segment(2) }}</span>
+                    <span class="display__name">{{ Request::segment(1) }}</span>
                     <ul class="dropdown__content">
                         @if(isset($systems['system_location']) && is_array($systems['system_location']))
                             @foreach($systems['system_location'] as $value)
-                                <li><a href="{{ url('admin/'.$value['system_slug']) }}" class="dropdown__content__link">{{ $value['system_name'] or '' }}</a></li>
+                                <li><a href="{{ url('/'.$value['system_slug']) }}" class="dropdown__content__link">{{ $value['system_slug'] or '' }}</a></li>
                             @endforeach
                         @endif
                     </ul>

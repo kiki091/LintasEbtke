@@ -39,7 +39,18 @@ function crudMainBanner() {
         },
         filters: {
             strSlug: function(data) {
-                return data.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
+                data = data.replace(/^\s+|\s+$/g, ''); // trim
+                data = data.toLowerCase();
+
+                var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+                var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+                for (var i=0, l=from.length ; i<l ; i++) {
+                    data = data.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+                data = data.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                    .replace(/-+/g, '-'); // collapse dashes
+                return data;
             }
 
         },

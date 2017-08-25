@@ -20,80 +20,12 @@ class RouteMenuLocation {
 	const DEFAULT_USER_MENU = 'user';
     const DEFAULT_ADMIN_MENU = 'admin';
     const DEFAULT_SYSTEM_LOCATION = 'cms';
+    const DEFAULT_SYSTEM_LOCATION_NAME = 'CMS';
 
     protected $systemLocationId = '';
     protected $systemLocationName = '';
-	/**
-     * Set Menu Location
-     * @return null
-     */
-    public function setMenuLocation()
-    {
-        $menuLocation = Request::segment(1);
-
-        $redisKey                   = MenuLocationRedis::MENU_LOCATION;
-        $menuLocationCollection     = Cache::rememberForever($redisKey, function() {
-
-            return LocationModels::get()->toArray();
-
-        });
-        
-        if(empty($menuLocationCollection))
-            return null;
-
-        foreach ($menuLocationCollection as $key => $value) {
-           
-            if($value['slug'] == $menuLocation) {
-                $isExists = true;
-                break;
-            }
-            $isExists = false;
-        }
-
-        if(!$isExists) {
-
-            Session::forget('current_menu_location');
-
-            $this->setSessionCurrentMenuLocation('');
-
-            return self::DEFAULT_USER_MENU;
-        }
-
-
-        $this->setSessionCurrentMenuLocation($menuLocation);
-
-        return $menuLocation;
-
-    }
-
-    /**
-    * Get Session Menu Location List
-    * @return array
-    */
-    public function getSessionMenuLocationList()
-    {   
-        
-        $redisKey                   = MenuLocationRedis::MENU_LOCATION;
-        $menuLocationCollection     = Cache::rememberForever($redisKey, function() {
-
-            return LocationModels::get()->toArray();
-
-        });
-        
-        return $menuLocationCollection;
-                
-
-    }
-
-    /**
-     * Set Session Current Menu
-     * @param $param
-     */
-    public function setSessionCurrentMenuLocation($param)
-    {
-        Session::forget('current_menu_location');
-        Session::put('current_menu_location', $param);
-    }
+    protected $systemLocationSlug = '';
+    protected $isSpecific = false;
 
 
     /**
@@ -102,31 +34,36 @@ class RouteMenuLocation {
      */
     public function systemLocation()
     {
-        $systemLocation = Request::segment(2);
+        $systemLocation = Request::segment(1);
 
         $systemLocationCollection     = SystemModels::orderBy('order', 'asc')->get()->toArray();
         
         if(empty($systemLocationCollection))
             return null;
 
-        foreach ($systemLocationCollection as $key => $value) {
-           
-            if($value['slug'] == $systemLocation) {
-                $this->systemLocationId = $value['id'];
-                $this->systemLocationName = $value['name'];
-                $isExists = true;
-                break;
+        if (is_array($systemLocationCollection) && !empty($systemLocationCollection)) {
+            foreach ($systemLocationCollection as $key => $value) {
+               
+                if($value['slug'] == $systemLocation) {
+
+                    $this->isSpecific = true;
+                    $this->systemLocationId = $value['id'];
+                    $this->systemLocationName = $value['name'];
+                    $this->systemLocationSlug = isset($value['slug']) ?$value['slug']:'';
+                    break;
+                }
             }
-            $isExists = false;
         }
+        if (! $this->isSpecific) {
 
-        if(!$isExists) {
-
+            $this->setSessionCurrentSystemLocation(self::DEFAULT_SYSTEM_LOCATION, '1', self::DEFAULT_SYSTEM_LOCATION_NAME);
             return self::DEFAULT_SYSTEM_LOCATION;
+
+        } else {
+
+            $this->setSessionCurrentSystemLocation($this->systemLocationSlug, $this->systemLocationId, $this->systemLocationName);
+            
         }
-
-        $this->setSessionCurrentSystemLocation($systemLocation, $this->systemLocationId, $this->systemLocationName);
-
         return $systemLocation;
     }
 

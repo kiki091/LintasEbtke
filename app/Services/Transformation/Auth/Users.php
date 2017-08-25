@@ -91,7 +91,7 @@ class Users
         $dataTransform = array_map(function($data) {
             return [
                 'menu_group'        => isset($data['menu']['menu_group']['title'])? $data['menu']['menu_group']['title'] : '',
-                'menu_group_active' => isset($data['menu']['menu_group']['is_active'])? $data['menu']['menu_group']['is_active'] : false,
+                'system_menu'       => isset($data['menu']['menu_group']['system_menu']['slug'])? $data['menu']['menu_group']['system_menu']['slug'] : '',
                 'menu_group_icon'   => isset($data['menu']['menu_group']['icon'])? $data['menu']['menu_group']['icon'] : '',
                 'user_id'           => isset($data['user_id'])? $data['user_id'] : '',
                 'menu_id'           => isset($data['menu_id'])? $data['menu_id'] : '',
@@ -107,7 +107,7 @@ class Users
 
         $finalData = [];
         foreach ($dataTransform as $item) {
-            $finalData[$item['menu_group']][$item['menu_group_icon']][] = $item;
+            $finalData[$item['menu_group']][$item['menu_group_icon']][$item['system_menu']][] = $item;
 
         }
         

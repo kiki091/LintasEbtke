@@ -176,14 +176,14 @@ class AuthController extends CmsBaseController
         if (isset($userInfo['system_location']) && !empty($userInfo['system_location']))
         {
             foreach ($userInfo['system_location'] as $key => $value) {
-                $value['system_slug'];
+                $dataValue = $value['system_slug'];
             }
             Session::forget('slug_system_menu');
-            Session::put('slug_system_menu', $value['system_slug']);
+            Session::put('slug_system_menu', $dataValue);
 
             $user_location_slug = Session::get('slug_system_menu');
 
-            return redirect('admin/'.$user_location_slug );
+            return redirect('/'.$user_location_slug );
 
             //return redirect()->route('CmsDashboardPage');
         }

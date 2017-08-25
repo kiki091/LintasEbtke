@@ -111,6 +111,7 @@ class DataHelper {
     public static function userSystemLocation()
     {   
         $userInfo = Session::get('user_info');
+        $userInfo['system_name'] = Session::get('current_system_location_name');
 
         if (isset($userInfo['system_location'])) {
 
