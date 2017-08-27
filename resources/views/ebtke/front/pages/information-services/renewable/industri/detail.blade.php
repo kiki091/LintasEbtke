@@ -63,6 +63,26 @@
             
     	</div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <ul class="cd-tabs-navigation">
+                        <li>
+                            <a target="_blank" href="{{ route('CertifiedEnergy') }}">
+                                Certified Energy
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="{{ route('EnergyAuditor') }}">
+                                Energy Auditor
+                            </a>
+                        </li>
+                    </ul> <!-- cd-tabs-navigation -->
+                </nav>
+            </div>
+        </div>
+    </div>
     <div class="container style--texteditor">
 
         <div class="default-content">

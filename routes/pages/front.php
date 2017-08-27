@@ -159,6 +159,8 @@ Route::group(['middleware' => ['web']], function ()
 
 						Route::get('/', 'Ebtke\Front\Pages\IndustriController@landing')->name('IndusrtiLanding');
 						Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\IndustriController@detail')->name('IndusrtiDetail');
+						Route::get('certified-energy', 'Ebtke\Front\Pages\ListCertifiedEnergyController@landing')->name('CertifiedEnergy');
+						Route::get('energy-auditor', 'Ebtke\Front\Pages\ListEnergyAuditorController@landing')->name('EnergyAuditor');
 					});
 					
 				});

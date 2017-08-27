@@ -45,6 +45,8 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\Event', 'App\Repositories\Implementation\Front\Event');
         $this->app->bind('App\Repositories\Contracts\Front\Industri', 'App\Repositories\Implementation\Front\Industri');
         $this->app->bind('App\Repositories\Contracts\Front\EnergyConservation', 'App\Repositories\Implementation\Front\EnergyConservation');
+        $this->app->bind('App\Repositories\Contracts\Front\ListCertifiedEnergy', 'App\Repositories\Implementation\Front\ListCertifiedEnergy');
+        $this->app->bind('App\Repositories\Contracts\Front\ListEnergyAuditor', 'App\Repositories\Implementation\Front\ListEnergyAuditor');
 
         // CMS
 
@@ -97,6 +99,8 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\Event',
             'App\Repositories\Contracts\Front\Industri',
             'App\Repositories\Contracts\Front\EnergyConservation',
+            'App\Repositories\Contracts\Front\ListCertifiedEnergy',
+            'App\Repositories\Contracts\Front\ListEnergyAuditor',
 
             // CMS
 

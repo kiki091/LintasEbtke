@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Ebtke\Front\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
+use App\Services\Bridge\Front\ListCertifiedEnergy as ListCertifiedEnergyServices;
+use App\Services\Bridge\Front\ListEnergyAuditor as ListEnergyAuditorServices;
 use App\Services\Bridge\Front\Industri as IndustriServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
 use App\Services\Api\Response as ResponseService;
@@ -14,16 +16,20 @@ use JavaScript;
 class IndustriController extends FrontController
 {
 
-    protected $industri;
     protected $seo;
+    protected $industri;
+    protected $listEnergyAuditor;
+    protected $listCertifiedEnergy;
     protected $response;
 
     const SEO_KEY = 'renewable-energy:industri';
 
-    public function __construct(IndustriServices $industri, SeoServices $seo, ResponseService $response)
+    public function __construct(IndustriServices $industri, ListCertifiedEnergyServices $listCertifiedEnergy,ListEnergyAuditorServices $listEnergyAuditor, SeoServices $seo, ResponseService $response)
     {
-        $this->industri = $industri;
         $this->seo = $seo;
+        $this->industri = $industri;
+        $this->listEnergyAuditor = $listEnergyAuditor;
+        $this->listCertifiedEnergy = $listCertifiedEnergy;
         $this->response = $response;
     }
 
@@ -55,6 +61,8 @@ class IndustriController extends FrontController
     public function detail($slug)
     {
         $data['detail_industri'] = $this->industri->getDetail($slug);
+        $data['certified_energy'] = $this->listCertifiedEnergy->getData();
+        $data['energy_auditor'] = $this->listEnergyAuditor->getData();
         
         $blade = self::URL_BLADE_FRONT_SITE. '.information-services.renewable.industri.detail';
         
