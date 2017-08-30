@@ -117,8 +117,15 @@
 	#desktop__content {
 		display: block;
 	}
+	#desktop__tabel {
+		display: table-row;
+	}
 
 	#mobile__content {
+		display: none;
+		visibility: hidden;
+	}
+	#mobile__tabel{
 		display: none;
 		visibility: hidden;
 	}
@@ -171,9 +178,15 @@
 	#desktop__content {
 		display: none; visibility: hidden;
 	}
+	#desktop__tabel {
+		display: none; visibility: hidden;
+	}
 
 	#mobile__content {
 		display: block;
+	}
+	#mobile__tabel{
+		display: table-row;
 	}
 	.f-nav {
 		position: absolute;

@@ -121,6 +121,13 @@ h3.subtitle {
     position: relative;
 }
 
+.default-content h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .default-content:before {
 	display: table; content: ""; line-height: 0;
 }
@@ -1386,11 +1393,13 @@ span.plush {
   animation: cd-fade-in 0.5s;
 }
 .cd-tabs-content li p {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: #8493bf;
-  margin-bottom: 2em;
+    font-family: "helvetica-neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #464646;
+    text-align: justify;
 }
 @media only screen and (min-width: 768px) {
   .cd-tabs-content {
@@ -1409,8 +1418,7 @@ span.plush {
     min-height: 200px;
   }
   .cd-tabs-content li p {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 }
 
