@@ -31,6 +31,8 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
     public function getMainBanner($data)
     {
         $params = [
+            "key" => isset($data['key']) ? $data['key'] : '',
+            "limit_data" => isset($data['limit']) ? $data['limit'] : '',
             "is_active" => true,
             "order_by"  => "order",
         ];
@@ -53,7 +55,7 @@ class MainBanner extends BaseImplementation implements MainBannerInterface
             ->with('translations');
 
         if(isset($params['key'])) {
-            $mainBanner->key($params['key']);
+            $mainBanner->where('key', $params['key']);
         }
 
         if(isset($params['limit_data']) && !empty($params['limit_data'])) {

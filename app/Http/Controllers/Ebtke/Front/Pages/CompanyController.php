@@ -18,8 +18,8 @@ class CompanyController extends FrontController
     protected $response;
 
 
-    const MAIN_BANNER_COMPANY_HISTORY_KEY = 'company:history';
-    const MAIN_BANNER_COMPANY_SCOPE_OF_SERVICES = 'company:scope-of-services';
+    const MAIN_BANNER_COMPANY_HISTORY_KEY = 'banner:company:history';
+    const MAIN_BANNER_COMPANY_SCOPE_OF_SERVICES = 'banner:company:scope-of-services';
 
     const SEO_KEY_COMPANY_HISTORY = 'company:history';
     const SEO_KEY_COMPANY_VISION_AND_MISSION = 'company:vision-mission';
