@@ -34,7 +34,6 @@
                             <h3>
                                 {{ trans('pages/investment_services_page.potentials.energy_conservation.description')}}
                             </h3>
-                            <br/>
                             <hr/>
                       </div>
           			      <div class="wrapper">
@@ -42,12 +41,10 @@
                               <div class="row news">
                                   @if(!empty($energy_conservation))
                                       @foreach($energy_conservation as $key=> $energy_conservation)
-                                          <div class="col-md-6  text-left">
+                                          <div class="col-md-12  text-left">
                                               <img src="{{ $energy_conservation['thumbnail_url'] }}" class="img-responsive picsGall" alt="{{ $energy_conservation['title'] }}">
                                               <h3>
-                                                    <a href="{{ route('InvestmentServicesPotentialsEnergyConservationDetail',$energy_conservation['slug']) }}">
-                                                        {{ $energy_conservation['title'] or '' }}
-                                                    </a>
+                                                    {{ $energy_conservation['title'] or '' }}
                                               </h3>
                                               <ul>
                                                   <li>
@@ -57,9 +54,8 @@
                                               </ul>
                                               <p>
                                                   {!! $energy_conservation['introduction'] or '' !!}
-                                                  <a class="readMore" href="">
-                                                      <i class="fa fa-angle-right"></i>
-
+                                                  <a id="link_url_landing" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" href="{{ route('InvestmentServicesPotentialsEnergyConservationDetail',$energy_conservation['slug']) }}">
+                                                      {{ trans('global_page.global_page_lable_link_cta') }}
                                                   </a>
                                               </p>
                                               <hr class="hrNews">

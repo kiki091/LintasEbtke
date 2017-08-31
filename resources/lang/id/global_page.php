@@ -23,4 +23,5 @@
 		'footer_lable_email'	 		=> 'Email',
 		'you_migh_also_like'			=> 'Pilihan lain yang Anda akan suka',
 		'polular_tags'					=> '<b>Popular</b> Tags',
+		'view_map'	 					=> 'LIHAT PETA',
 	];

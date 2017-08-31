@@ -2106,8 +2106,8 @@ ul li.data__table_industri:before {
 }
 
 .picsGall {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 400px;
 }
 
 .news h3 {

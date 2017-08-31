@@ -24,4 +24,5 @@
 		'footer_lable_email' 			=> 'Email',
 		'you_migh_also_like'			=> 'You might also like',
 		'polular_tags'					=> '<b>Popular</b> Tags',
+		'view_map'	 					=> 'VIEW MAPS',
 	];

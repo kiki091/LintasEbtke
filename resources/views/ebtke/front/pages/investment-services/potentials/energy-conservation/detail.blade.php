@@ -25,15 +25,7 @@
 	<!-- Begin page header-->
     <div class="container detail--header default-large-banner-section">
         <div class="row">
-            <div id="desktop__content">
-                <a href="{{ route('MainPage') }}" class="breadcrumb text-gray">
-                    {{ trans('navigation/menu.menu_home')}}         
-                </a>
-                <a href="{{ route('InvestmentServicesPotentialsEnergyConservation') }}" class="breadcrumb text-gray">
-                    {{ trans('navigation/sub_menu.energy_conservation')}}
-                </a>
-                <a href="{{ route('InvestmentServicesPotentialsEnergyConservationDetail',$detail['slug']) }}" class="breadcrumb text-gray">{{ $detail['title'] or '' }}</a>
-            </div>
+            
             <div class="col-md-12">
                 <h3 class="latestnews__title text-center">
                     {{ $detail['title'] or '' }}
@@ -49,7 +41,9 @@
             -->
             <div class="col-md-12">
                 <div class="w3-content w3-display-container">
-                    <img class="mySlides" src="{{ $detail['thumbnail_url'] or '' }}" style="width:100%">
+                  <a href="http://geoportal.esdm.go.id/peng_umum/" target="_blank">
+                    <img class="mySlides" src="{{ asset(ENERGY_CONSERVATION_DIRECTORY.'peta.PNG') }}" style="width:100%">
+                  </a>
                 </div>
             </div>
             
@@ -58,6 +52,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="container">
+
                 <div class="col-md-3 container">
 
                     <div class="page-default-details-intro">
@@ -71,7 +66,7 @@
                         {!! $detail['description'] or '' !!}
                     </div>
                 </div>
-                <div id="desktop__content" class="col-md-2 container style--texteditor">
+                <div id="desktop__content" class="col-md-2 col-sm-4 col-xs-12 container style--texteditor">
 
                     <div id="desktop-map-button" class="center-version">
                         <h3>Energy Conservation</h3>
@@ -80,8 +75,8 @@
                             @include('ebtke.front.svg-icon.maps')
                         </div>
                     </div>
-                    <a href="#" class="planner-cta">
-                        <h4>Show data energy conservation</h4>
+                    <a href="http://geoportal.esdm.go.id/peng_umum/" target="_blank" class="planner-cta">
+                        <h4>{{ trans('pages/energy_conservation.show_maps_title') }}</h4>
                     </a>
                 </div>
             </div>

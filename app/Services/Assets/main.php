@@ -76,3 +76,5 @@ define('BANNER_CONSULTING_SERVICES_DIRECTORY', 'bin/db/images/consulting_service
 // ENERGY CONSERVATION
 
 define('ENERGY_CONSERVATION_DIRECTORY', 'bin/db/images/investment_services/potentials/energy_conservation/');
+define('GEOTHERMAL_IMAGES_DIRECTORY', 'bin/db/images/investment_services/potentials/geothermal/');
+define('BIO_ENERGI_IMAGES_DIRECTORY', 'bin/db/images/investment_services/potentials/bio-energi/');
