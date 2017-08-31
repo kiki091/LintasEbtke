@@ -37,9 +37,9 @@
 				<div class="content__title">
 					<h2>@{{ form_add_title }}</h2>
 				</div>
-				<div class="content__btn">
+				<!-- <div class="content__btn">
 					<a href="#" class="btn__add" id="toggle-form">Add Data</a>
-		       	</div>
+		       	</div> -->
 		    </div>
 		    <div class="content__bottom">
 		    	<ul class="news__list sortable" id="sort" v-sort>
