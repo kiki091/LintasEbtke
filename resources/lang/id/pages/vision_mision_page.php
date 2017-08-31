@@ -23,15 +23,19 @@
 
 
 		'title_vision'						=> 'OUR VISION',
-		'sub_title_vision'					=> '<b>THE gate to clean energy in Indonesia</b><br/><p>LINTAS collects and disseminates all available data from all sources and opens doors for any investment entities.  LINTAS is a one stop service centre for clean energy information and facilitation for all stakeholders. LINTAS’ work benefits all EBTKE’s directorates and becomes an indispensable tool.</p>',
+		'sub_title_vision'					=> '<b>GERBANG energi bersih di Indonesia</b><br/>
+						<p>- LINTAS mengumpulkan dan menyebarkan data yang tersedia dari semua sumber dan terbuka untuk setiap hal yang berhubungan dengan investasi
+						<br>- LINTAS adalah pusat layanan satu pintu untuk informasi energi bersih  dan fasilitas bagi semua pemangku kepentingan.
+						<br>- Kegiatan yang di lakukan oleh LINTAS bermanfaat bagi seluruh direktorat EBTKE dan menjadi unit yang sangat diperlukan.
+										<br><b>Indonesia’s future is green.</b></p>',
 
 		'title_mission'						=> 'OUR MISSION STATEMENT',
 
-		'description_mission_1'		=> 'Provide quality information and tools on clean energy',
-		'description_mission_2'		=> 'Facilitate contacts and interactions between investors and other stakeholders',
-		'description_mission_3'		=> 'Enhance cooperation with partners of EBTKE',
-		'description_mission_4'		=> 'Promote clean energy in Indonesia',
-		'description_mission_5'		=> 'Provide integrated public service',
+		'description_mission_1'		=> 'Menyajikan informasi yang berkualitas beserta alat dalam bidang energi bersih',
+		'description_mission_2'		=> 'Memfasilitasi konsultasi dan interaksi antara investor dan unit berkepentingan',
+		'description_mission_3'		=> 'Memperluas jaringan dan kerjasama dengan pihak lain dalam lingkup EBTKE',
+		'description_mission_4'		=> 'Mendukung energi bersih di Indonesia',
+		'description_mission_5'		=> 'Memberikan pelayanan publik terpadu',
 
 		'mission_description'		=> 'As a one stop clean energy information centre, we consistently compile, structure and communicate all RE & EC relevant data and information. Professional marketing continuously enhances awareness about LINTAS’ services internally and publicly. A user friendly website, representative offices in major cities, a hotline service and engaging workshops & events function as customer friendly interfaces to the public and stakeholders. <b>Our goal</b> is to make access to relevant clean energy information and decision makers <b>easy and rewarding</b>.'
 
