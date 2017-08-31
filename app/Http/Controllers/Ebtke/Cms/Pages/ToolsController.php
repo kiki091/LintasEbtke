@@ -129,7 +129,6 @@ class ToolsController extends CmsBaseController
             'url'       => 'url',
             'file_size'         => 'required',
             'thumbnail'         => 'required|dimensions:width='.TOOLS_THUMBNAIL_WIDTH.',height='.TOOLS_THUMBNAIL_HEIGHT.'|max:'. TOOLS_IMAGES_SIZE .'|mimes:jpeg,jpg,png',
-            'tools_related_id'  => 'required',
             'description.*'     => 'required',
         ];
 
