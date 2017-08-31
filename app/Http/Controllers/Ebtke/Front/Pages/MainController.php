@@ -19,7 +19,7 @@ class MainController extends FrontController
     protected $mainBanner;
     protected $response;
 
-    const MAIN_BANNER_KEY = 'landing';
+    const MAIN_BANNER_KEY = 'banner:landing';
     const SEO_LANDING_KEY = 'home:pages';
     const REDIS_COMPANY_HISTORY = 'history';
 
