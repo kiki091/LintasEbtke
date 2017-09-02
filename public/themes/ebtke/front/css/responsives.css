@@ -61,7 +61,9 @@
   	.content-txt {
     	top: 55%;
   	}
-
+  	.default-after-banner-text h3 {
+  		font-size: 1.3rem;
+  	}
   	.default-after-banner-text {
   		padding-top: 91px;
     	padding-bottom: 25px;

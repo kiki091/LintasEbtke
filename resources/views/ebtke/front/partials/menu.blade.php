@@ -25,8 +25,9 @@
             <div class="paragraph__navigation">
 
                 <a href="{{ route('login') }}">
-                    {{ trans('navigation/top_menu.menu_login') }} || 
+                    {{ trans('navigation/top_menu.menu_login') }}  
                 </a> 
+                <a>||</a>
                 <a href="{{ route('login') }}#signup">
                     {{ trans('navigation/top_menu.menu_register') }}
                 </a>

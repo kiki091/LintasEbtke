@@ -84,6 +84,7 @@ class GreenPages
         $dataTransform['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : '';
         $dataTransform['email'] = isset($data['email']) ? $data['email'] : '';
         $dataTransform['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : '';
+        $dataTransform['address'] = isset($data['translation']['address']) ? $data['translation']['address'] : '';
         $dataTransform['introduction'] = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['description'] = isset($data['translation']['description']) ? $data['translation']['description'] : '';
         $dataTransform['meta_title'] = isset($data['translation']['meta_title']) ? $data['translation']['meta_title'] : '';

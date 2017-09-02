@@ -35,4 +35,8 @@
 		'industry'							=> 'industri',
 		'consulting_services'				=> 'layanan-konsultasi',
 		'resources'							=> 'sumber-daya',
+		'link'								=> 'tautan',
+		'link_institution'					=> 'nrecc-Institusi',
+		'link_resources'					=> 'nrecc-sumber-daya',
+		'link_events'						=> 'nrecc-acara-dan-kegiatan',
 	];

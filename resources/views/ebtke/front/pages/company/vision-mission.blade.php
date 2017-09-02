@@ -10,28 +10,18 @@
 @stop
 
 @section('content')
+<!--
+   ____    _    _   _ _   _ _____ ____
+  | __ )  / \  | \ | | \ | | ____|  _ \
+  |  _ \ / _ \ |  \| |  \| |  _| | |_) |
+  | |_) / ___ \| |\  | |\  | |___|  _ <
+  |____/_/   \_\_| \_|_| \_|_____|_| \_\
 
-
-
+-->
+<div class="banner--main-event" style="height: 450px; background-image: url({{ asset('bin/db/images/company/vision-mission/filename_001.jpg') }});">
+    
+</div>
 <section id="desktop">
-    <!--
-       ____    _    _   _ _   _ _____ ____
-      | __ )  / \  | \ | | \ | | ____|  _ \
-      |  _ \ / _ \ |  \| |  \| |  _| | |_) |
-      | |_) / ___ \| |\  | |\  | |___|  _ <
-      |____/_/   \_\_| \_|_| \_|_____|_| \_\
-
-    -->
-    <div class="col-md-12">
-        <div class="row">
-        <div style="width: 100%; max-width: 100%;" class="w3-content w3-display-container">
-            <img class="mySlides" src="{{ asset('bin/db/images/company/vision-mission/filename_001.jpg') }}" style="width:100%">
-            
-            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-        </div>
-        </div>
-    </div>
     <!--
        ___ _   _ _____ ____   ___  ____  _   _  ____ _____ ___ ___  _   _
       |_ _| \ | |_   _|  _ \ / _ \|  _ \| | | |/ ___|_   _|_ _/ _ \| \ | |
@@ -53,25 +43,20 @@
                     <hr/>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
                 <h2>{!! trans('pages/vision_mision_page.title_vision') !!}</h2>
                 <h4>{!! trans('pages/vision_mision_page.sub_title_vision') !!}</h4>
                 
-                  {!! trans('pages/vision_mision_page.list_vision_1') !!}
-                  {!! trans('pages/vision_mision_page.list_vision_2') !!}
-                  {!! trans('pages/vision_mision_page.list_vision_3') !!}
-                
-            </div>
-            <hr/>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+                {!! trans('pages/vision_mision_page.list_vision_1') !!}
+                {!! trans('pages/vision_mision_page.list_vision_2') !!}
+                {!! trans('pages/vision_mision_page.list_vision_3') !!}
+                <hr/>
                 <h2>{!! trans('pages/vision_mision_page.title_mission') !!}</h2>
-                
-                  {!! trans('pages/vision_mision_page.list_mision_1') !!}
-                  {!! trans('pages/vision_mision_page.list_mision_2') !!}
-                  {!! trans('pages/vision_mision_page.list_mision_3') !!}
-                  {!! trans('pages/vision_mision_page.list_mision_4') !!}
-                  {!! trans('pages/vision_mision_page.list_mision_5') !!}
-                
+                {!! trans('pages/vision_mision_page.list_mision_1') !!}
+                {!! trans('pages/vision_mision_page.list_mision_2') !!}
+                {!! trans('pages/vision_mision_page.list_mision_3') !!}
+                {!! trans('pages/vision_mision_page.list_mision_4') !!}
+                {!! trans('pages/vision_mision_page.list_mision_5') !!}
             </div>
         </div>
     </div>

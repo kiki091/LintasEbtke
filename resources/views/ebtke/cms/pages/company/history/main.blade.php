@@ -20,6 +20,9 @@
 				<div class="content__title">
 					<h2>@{{ form_add_title_banner }}</h2>
 				</div>
+				<div class="content__btn">
+					<a href="#" class="btn__add" id="toggle-form-banner-image">Add Banner</a>
+		       	</div>
 		    </div>
 		    <div class="content__bottom">
 		    	<ul class="news__list sortable" id="sort" v-sort>

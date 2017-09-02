@@ -76,7 +76,7 @@
 
         <div class="default-content">
             {!! $detail['description'] or '' !!}
-        
+            {!! $detail['address'] or '' !!}
         </div>
     </div>
 

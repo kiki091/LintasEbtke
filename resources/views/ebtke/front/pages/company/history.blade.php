@@ -22,15 +22,16 @@
 
 <section id="desktop">
     @if(isset($main_banner) && !empty($main_banner))
-	<div class="default-banner-section visible-md visible-lg">
-        <div class="default-banner-image">
+    <div class="col-md-12">
+        <div class="row">
+        <div style="height: 350px; width: 100%; max-width: 100%;" class="w3-content w3-display-container">
             @foreach($main_banner as $key=> $val)
-            <div class="image-container image-loaded-version">
-                <img class="img-responsive" src="{{ $val['image_url'] }}">
-            </div>
+                <img style="height: 350px; width: 100%" class="mySlides" src="{{ $val['image_url'] }}" style="width:100%">
             @endforeach
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
         </div>
-        
+        </div>
     </div>
     @endif
 
@@ -92,9 +93,6 @@
             <div class="col-md-12">
                 <div class="landing-introduction-copy">
                     <div class="default-copy">
-                        <p id="desktop__content">
-                             
-                        </p>
                         {!! $history['description_right'] !!}
                         <p id="mobile__content">
                             <a href="{{ $history['file_url'] or '' }}" class="waves-effect waves-light btn--primary blue uppercase btn-readmore" target="__blank">
@@ -109,3 +107,25 @@
 </section>
 
 @endsection
+
+@section('scripts')
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+</script>
+@stop

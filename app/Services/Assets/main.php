@@ -78,3 +78,9 @@ define('BANNER_CONSULTING_SERVICES_DIRECTORY', 'bin/db/images/consulting_service
 define('ENERGY_CONSERVATION_DIRECTORY', 'bin/db/images/investment_services/potentials/energy_conservation/');
 define('GEOTHERMAL_IMAGES_DIRECTORY', 'bin/db/images/investment_services/potentials/geothermal/');
 define('BIO_ENERGI_IMAGES_DIRECTORY', 'bin/db/images/investment_services/potentials/bio-energi/');
+
+
+
+define('NRECC_INSTITUTION_IMAGES_DIRECTORY', 'bin/db/images/link/nrecc-institution/');
+define('NRECC_RESOURCES_IMAGES_DIRECTORY', 'bin/db/images/link/nrecc-resources/');
+define('NRECC_EVENTS_IMAGES_DIRECTORY', 'bin/db/images/link/nrecc-events/');

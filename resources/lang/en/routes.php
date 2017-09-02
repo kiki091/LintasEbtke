@@ -34,4 +34,8 @@
 		'industry'							=> 'industry',
 		'consulting_services'				=> 'consulting-services',
 		'resources'							=> 'resources',
+		'link'								=> 'link',
+		'link_institution'					=> 'nrecc-institution',
+		'link_resources'					=> 'nrecc-resources',
+		'link_events'						=> 'nrecc-events',
 	];

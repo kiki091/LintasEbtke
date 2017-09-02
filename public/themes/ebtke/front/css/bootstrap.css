@@ -4151,6 +4151,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
+  -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      -moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      -o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
 }
 .navbar-default .navbar-brand {
   color: #777;

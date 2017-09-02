@@ -25,7 +25,7 @@
 	<!-- Begin page header-->
     <div class="container">
     	<div class="row">
-    		<div class="col-md-8">
+    		<div class="col-md-8 col-sm-8 col-xs-12">
     			<div class="card__container padding20">
     				<h5 class="s15 uppercase margin0 brandon medium spacing1">
                         {{ trans('pages/news_page.title_news') }}             
@@ -60,7 +60,7 @@
     			</div>
     		</div>
             @if(isset($popular_news) && !empty($popular_news))
-    		<div id="desktop__content" class="col-md-4">
+    		<div id="desktop__content" class="col-md-4 col-sm-4 col-xs-12">
 	    		<div class="card__container padding20">
 	    			<h5 class="s15 uppercase margin0 brandon medium spacing1">
                         {{ trans('pages/news_page.title_popular_news') }}               

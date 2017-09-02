@@ -201,7 +201,7 @@ function crudMenuIndustry() {
                         this.thumbnail = response.data.thumbnail_url
 
                         this.form_add_title = "Edit Industry Content Manager"
-                        $('.btn__add').click()
+                        $('#toggle-form-content').slideDown('swing')
 
                         destroyInstanceCkEditor()
                         replaceToCkEditor()

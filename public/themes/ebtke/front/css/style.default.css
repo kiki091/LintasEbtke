@@ -1170,12 +1170,12 @@ h1 {
   border: none;
   margin-bottom: 0px;
   border-bottom: 1px solid transparent;
+  -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      -moz-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      -o-transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
+      transition: all .5s cubic-bezier(.645,.045,.355,1) 0s;
 }
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-  }
-}
+
 .navbar-collapse {
   max-height: 340px;
   overflow-x: hidden;
@@ -1313,10 +1313,6 @@ h1 {
   .navbar-text.navbar-right:last-child {
     margin-right: 0;
   }
-}
-.navbar-default {
-  background-color: #ffffff;
-  border-bottom-color: #e6e6e6;
 }
 .navbar-default .navbar-text {
   color: #777777;
