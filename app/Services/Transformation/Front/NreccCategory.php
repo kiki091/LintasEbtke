@@ -31,6 +31,19 @@ class NreccCategory
     }
 
     /**
+     * Get Detail NreccCategory With List Transformation
+     * @param $data
+     * @return array
+     */
+    public function getDetailNreccCategoryWithListInstitutionTransform($data)
+    {
+        if(!is_array($data) || empty($data))
+            return array();
+
+        return $this->setDetailNreccCategoryWithListInstitutionTransform($data);
+    }
+
+    /**
      * Set NreccCategory Transformation
      * @param $data
      * @return array
@@ -45,7 +58,7 @@ class NreccCategory
             return [
                 
                 'title'             => isset($data['translation']['title']) ? $data['translation']['title'] : '',
-                'slug'              => isset($data['translation']['slug']) ? route('detailEvent',$data['translation']['slug']) : '',
+                'slug'              => isset($data['translation']['slug']) ? $data['translation']['slug'] : '',
             ];
         }, $data);
         
@@ -100,6 +113,27 @@ class NreccCategory
             ];
         }, $data);
 
+        return $dataTransform;
+    }
+
+    /**
+     * Set Detail NreccCategory With List Institution Transformation
+     * @param $data
+     * @return array
+     */
+
+    protected function setDetailNreccCategoryWithListInstitutionTransform($data)
+    {
+
+        $dataTransform['id']                = isset($data['id']) ? $data['id'] : '';
+        $dataTransform['title']             = isset($data['translation']['title']) ? $data['translation']['title'] : '';
+        $dataTransform['description']       = isset($data['translation']['description']) ? $data['translation']['description'] : '';
+        $dataTransform['meta_title']        = isset($data['translation']['meta_title']) ? $data['translation']['meta_title'] : '';
+        $dataTransform['meta_keyword']      = isset($data['translation']['meta_keyword']) ? $data['translation']['meta_keyword'] : '';
+        $dataTransform['meta_description']  = isset($data['translation']['meta_description']) ? $data['translation']['meta_description'] : '';
+
+        $dataTransform['institution']       = isset($data['institution']) ?$this->getDataListInstitution($data['institution']) : '';
+        
         return $dataTransform;
     }
 }

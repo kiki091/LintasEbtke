@@ -76,7 +76,8 @@ class NreccInstitution extends BaseImplementation implements NreccInstitutionInt
     {
         $nreccInstitution = $this->nreccInstitution
             ->with('translation')
-            ->with('translations');
+            ->with('translations')
+            ->with('category');
 
         if(isset($params['slug']) && $params['slug']) {
             $nreccInstitution->whereHas('translation', function($q) use($params) {

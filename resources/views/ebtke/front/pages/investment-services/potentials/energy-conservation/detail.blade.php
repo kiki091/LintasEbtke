@@ -53,20 +53,20 @@
         <div class="row">
             <div class="container">
 
-                <div class="col-md-3 container">
+                <div class="col-md-3 col-sm-3 col-xs-12 container">
 
                     <div class="page-default-details-intro">
                         <h4>{!! $detail['introduction'] or '' !!}</h4>
                     
                     </div>
                 </div>
-                <div class="col-md-7 container style--texteditor">
+                <div class="col-md-7 col-sm-7 col-xs-12 container style--texteditor">
 
                     <div id="detail-content-container">
                         {!! $detail['description'] or '' !!}
                     </div>
                 </div>
-                <div id="desktop__content" class="col-md-2 col-sm-4 col-xs-12 container style--texteditor">
+                <div id="desktop__content" class="col-md-2 col-sm-2 col-xs-12 container style--texteditor">
 
                     <div id="desktop-map-button" class="center-version">
                         <h3>Energy Conservation</h3>

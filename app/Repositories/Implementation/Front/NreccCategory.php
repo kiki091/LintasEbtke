@@ -72,7 +72,7 @@ class NreccCategory extends BaseImplementation implements NreccCategoryInterface
      * @param $data
      * @return Json array
      */
-    public function getDetailDataWithListInstitution($data)
+    public function getDetailDataWithListInstitution($slug)
     {
 
         $params = [
@@ -81,9 +81,9 @@ class NreccCategory extends BaseImplementation implements NreccCategoryInterface
             "slug" => isset($slug) ? $slug : '',
         ];
 
-        $nreccCategoryData = $this->nreccCategory($params, 'desc', 'array', false);
+        $nreccCategoryData = $this->nreccCategory($params, 'desc', 'array', true);
 
-        return $this->nreccCategoryTransformation->getNreccCategoryWithListInstitutionTransform($nreccCategoryData);
+        return $this->nreccCategoryTransformation->getDetailNreccCategoryWithListInstitutionTransform($nreccCategoryData);
         
     }
 

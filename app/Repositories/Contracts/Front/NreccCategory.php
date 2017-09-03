@@ -20,4 +20,11 @@ interface NreccCategory
      */
     public function getDataWithListInstitution($params);
 
+    /**
+     * Get Data List
+     * @param $params
+     * @return mixed
+     */
+    public function getDetailDataWithListInstitution($slug);
+
 }

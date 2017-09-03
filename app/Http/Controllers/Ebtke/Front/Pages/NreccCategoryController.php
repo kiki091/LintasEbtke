@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
 use App\Services\Bridge\Front\NreccCategory as NreccCategoryServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
+use App\Services\Bridge\Front\MainBanner as MainBannerServices;
 use App\Services\Api\Response as ResponseService;
 
 class NreccCategoryController extends FrontController
@@ -43,6 +44,28 @@ class NreccCategoryController extends FrontController
         $data['nrecc_category'] = $this->nreccCategory->getData();
         $data['nrecc_category_institution'] = $this->nreccCategory->getDataWithListInstitution();
 
+        $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-institution.category';
+        
+        if(view()->exists($blade)) {
+        
+            return view($blade, $data);
+
+        }
+
+        return abort(404);
+    }
+
+    /**
+     *
+     * Get Index
+     * @param array
+     * @return array
+     */
+
+    public function detail($slug)
+    {
+        $data['nrecc_category_institution'] = $this->nreccCategory->getDetailDataWithListInstitution($slug);
+        dd($data);
         $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-institution.category';
         
         if(view()->exists($blade)) {

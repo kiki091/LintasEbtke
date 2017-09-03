@@ -32,4 +32,14 @@ class NreccCategory
     {
         return $this->nreccCategory->getDataWithListInstitution($params);
     }
+
+    /**
+     * Get List Data Institution
+     * @param $params
+     * @return mixed
+     */
+    public function getDetailDataWithListInstitution($slug)
+    {
+        return $this->nreccCategory->getDetailDataWithListInstitution($slug);
+    }
 }

@@ -83,6 +83,7 @@ mix.scripts([
 	'public/js/bower_components/moment/min/moment.min.js',
 	'public/js/bower_components/fullcalendar/dist/fullcalendar.min.js',
     'public/js/bower_components/swiper/dist/js/swiper.js',
+    'public/js/bower_components/masonry/dist/masonry.pkgd.js',
 ], 'public/themes/ebtke/front/build/js/animation.js');
 
 /**

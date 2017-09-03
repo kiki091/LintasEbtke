@@ -52,7 +52,7 @@
                             @if(!empty($nrecc_category))
                                 @foreach($nrecc_category as $key=> $nrecc_category)
                                     <li>
-                                        <a href="">
+                                        <a href="{{ route('NreccInstitutionCategoryIndex',$nrecc_category['slug']) }}">
                                             {{ $nrecc_category['title'] or '' }}
                                         </a>
                                     </li>

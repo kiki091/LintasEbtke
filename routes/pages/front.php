@@ -16,7 +16,7 @@ Route::group(['middleware' => ['web']], function ()
 {
 	Route::group(['domain' => env('WORLD_WIDE_WEB') . env('APP_DOMAIN')], function()
 	{
-		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize','localizationRedirect','localeSessionRedirect']], function ()
+		Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localizationRedirect','localeSessionRedirect']], function ()
 		{
 
 			Route::group(array('prefix' => 'sipeda'), function () {
@@ -180,8 +180,12 @@ Route::group(['middleware' => ['web']], function ()
 				
 				// NRECC INSTITUTION
 				Route::group(['prefix' => LaravelLocalization::transRoute('routes.link_institution')], function () {
+					
+					Route::group(['prefix' => LaravelLocalization::transRoute('routes.tags')], function () {
+						Route::get('{slug}', 'Ebtke\Front\Pages\NreccCategoryController@detail')->name('NreccInstitutionCategoryIndex');
+					});
+
 					Route::get('/', 'Ebtke\Front\Pages\NreccInstitutionController@landing')->name('NreccInstitution');
-					Route::get(LaravelLocalization::transRoute('routes.tags'), 'Ebtke\Front\Pages\NreccCategoryController@index')->name('NreccInstitutionCategoryIndex');
 					Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\NreccInstitutionController@detail')->name('NreccInstitutionDetail');
 				});
 

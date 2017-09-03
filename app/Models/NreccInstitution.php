@@ -37,6 +37,13 @@ class NreccInstitution extends BaseModel
     {
         return $this->belongsTo('App\Models\NreccInstitutionTrans', 'id', 'nrecc_institution_id')->where('locale', '=' , $this->getCurrentLocalize());
     }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\NreccCategory', 'nrecc_category_id', 'id')->with('translation');
+    }
 
     /***************** Scope *****************/
 

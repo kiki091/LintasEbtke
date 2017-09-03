@@ -66,8 +66,11 @@ class NreccInstitution
     protected function setNreccInstitutionDetailTransform($data)
     {
         $dataTransform['locale']            = isset($data['translation']['locale']) ? $data['translation']['locale'] : '';
+        $dataTransform['category_title']             = isset($data['category']['translation']['title']) ? $data['category']['translation']['title'] : '';
         $dataTransform['title']             = isset($data['translation']['title']) ? $data['translation']['title'] : '';
         $dataTransform['thumbnail_url']     = isset($data['thumbnail']) ? asset(NRECC_INSTITUTION_IMAGES_DIRECTORY.rawurlencode($data['thumbnail'])) : '';
+        $dataTransform['introduction_images_url']     = isset($data['introduction_images']) ? asset(NRECC_INSTITUTION_IMAGES_DIRECTORY.rawurlencode($data['introduction_images'])) : '';
+        $dataTransform['description_images_url']     = isset($data['description_images']) ? asset(NRECC_INSTITUTION_IMAGES_DIRECTORY.rawurlencode($data['description_images'])) : '';
         $dataTransform['slug']              = isset($data['translation']['slug']) ? $data['translation']['slug'] : '';
         $dataTransform['introduction']      = isset($data['translation']['introduction']) ? $data['translation']['introduction'] : '';
         $dataTransform['side_description']      = isset($data['translation']['side_description']) ? $data['translation']['side_description'] : '';
