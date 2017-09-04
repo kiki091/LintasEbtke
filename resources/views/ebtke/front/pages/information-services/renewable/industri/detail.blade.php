@@ -88,14 +88,14 @@
                 <ul class="cd-tabs-content">
                     <li data-content="Industri" class="selected">
                         <div class="default-content">
-                            {!! $detail_industri['introduction'] or '' !!}
                             {!! $detail_industri['description'] or '' !!}
                         
                         </div>
                     </li>
                     <li data-content="CertifiedEnergy">
                         <div class="default-content">
-                          <h3>List data Certified Energy</h3>
+                            <h3>List data Certified Energy</h3>
+                            <p>{!! $detail_industri['introduction'] or '' !!}</p>
                         </div>
                         <table cellpadding="0" cellspacing="0" class="table--data-style">
                             <tbody>
