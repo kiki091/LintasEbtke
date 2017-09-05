@@ -50,6 +50,7 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\NreccCategory', 'App\Repositories\Implementation\Front\NreccCategory');
         $this->app->bind('App\Repositories\Contracts\Front\NreccInstitution', 'App\Repositories\Implementation\Front\NreccInstitution');
         $this->app->bind('App\Repositories\Contracts\Front\NreccResources', 'App\Repositories\Implementation\Front\NreccResources');
+        $this->app->bind('App\Repositories\Contracts\Front\NreccEvents', 'App\Repositories\Implementation\Front\NreccEvents');
 
         // CMS
 
@@ -107,6 +108,7 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\NreccCategory',
             'App\Repositories\Contracts\Front\NreccInstitution',
             'App\Repositories\Contracts\Front\NreccResources',
+            'App\Repositories\Contracts\Front\NreccEvents',
 
             // CMS
 

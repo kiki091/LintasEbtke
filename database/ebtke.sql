@@ -877,10 +877,14 @@ CREATE TABLE IF NOT EXISTS `nrecc_event` (
   `date_end` date NOT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
   `order` int(3) DEFAULT NULL,
+  `total_view` int(10) DEFAULT NULL,
+  `nrecc_category_id` int(5) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(5) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_nrecc_event_nrecc_category` (`nrecc_category_id`),
+  CONSTRAINT `FK_nrecc_event_nrecc_category` FOREIGN KEY (`nrecc_category_id`) REFERENCES `nrecc_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ebtke.nrecc_event: ~0 rows (approximately)
@@ -888,12 +892,32 @@ DELETE FROM `nrecc_event`;
 /*!40000 ALTER TABLE `nrecc_event` DISABLE KEYS */;
 /*!40000 ALTER TABLE `nrecc_event` ENABLE KEYS */;
 
+-- Dumping structure for table ebtke.nrecc_event_images
+CREATE TABLE IF NOT EXISTS `nrecc_event_images` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(255) DEFAULT NULL,
+  `nrecc_event_id` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `FK_nrecc_event_images_nrecc_event` (`nrecc_event_id`),
+  CONSTRAINT `FK_nrecc_event_images_nrecc_event` FOREIGN KEY (`nrecc_event_id`) REFERENCES `nrecc_event` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table ebtke.nrecc_event_images: ~0 rows (approximately)
+DELETE FROM `nrecc_event_images`;
+/*!40000 ALTER TABLE `nrecc_event_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nrecc_event_images` ENABLE KEYS */;
+
 -- Dumping structure for table ebtke.nrecc_event_trans
 CREATE TABLE IF NOT EXISTS `nrecc_event_trans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `locale` varchar(2) NOT NULL,
+  `title` varchar(150) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `introduction` varchar(255) DEFAULT NULL,
+  `side_description` varchar(255) DEFAULT NULL,
   `description` text,
   `meta_title` varchar(255) NOT NULL,
   `meta_keyword` varchar(255) NOT NULL,
@@ -982,8 +1006,7 @@ INSERT INTO `nrecc_institution_trans` (`id`, `locale`, `slug`, `title`, `introdu
 CREATE TABLE IF NOT EXISTS `nrecc_resources` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `thumbnail` varchar(255) DEFAULT NULL,
-  `introduction_images` varchar(255) DEFAULT NULL,
-  `description_images` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
   `order` int(3) DEFAULT NULL,
   `total_view` int(10) DEFAULT NULL,
