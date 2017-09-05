@@ -49,6 +49,7 @@ class EbtkeServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\Front\ListEnergyAuditor', 'App\Repositories\Implementation\Front\ListEnergyAuditor');
         $this->app->bind('App\Repositories\Contracts\Front\NreccCategory', 'App\Repositories\Implementation\Front\NreccCategory');
         $this->app->bind('App\Repositories\Contracts\Front\NreccInstitution', 'App\Repositories\Implementation\Front\NreccInstitution');
+        $this->app->bind('App\Repositories\Contracts\Front\NreccResources', 'App\Repositories\Implementation\Front\NreccResources');
 
         // CMS
 
@@ -105,6 +106,7 @@ class EbtkeServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\Front\ListEnergyAuditor',
             'App\Repositories\Contracts\Front\NreccCategory',
             'App\Repositories\Contracts\Front\NreccInstitution',
+            'App\Repositories\Contracts\Front\NreccResources',
 
             // CMS
 

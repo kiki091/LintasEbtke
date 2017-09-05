@@ -3,11 +3,11 @@
 namespace App\Repositories\Contracts\Front;
 
 
-interface NreccInstitution
+interface NreccResources
 {
 
     /**
-     * Get Data Nrecc Institution
+     * Get Data Nrecc Resources
      * @param $params
      * @return mixed
      */
@@ -15,7 +15,7 @@ interface NreccInstitution
 
     
     /**
-     * Get Data Nrecc Institution
+     * Get Data Nrecc Resources
      * @param $params
      * @return mixed
      */
