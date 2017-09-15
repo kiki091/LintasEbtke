@@ -56,6 +56,7 @@ class NreccInstitution extends BaseImplementation implements NreccInstitutionInt
     {
 
         $params = [
+            "is_active" => true,
             "slug" => $slug,
         ];
 

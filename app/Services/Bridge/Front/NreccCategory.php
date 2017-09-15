@@ -28,9 +28,9 @@ class NreccCategory
      * @param $params
      * @return mixed
      */
-    public function getDataWithListInstitution($params = [])
+    public function getList($params = [])
     {
-        return $this->nreccCategory->getDataWithListInstitution($params);
+        return $this->nreccCategory->getList($params);
     }
 
     /**
@@ -38,8 +38,8 @@ class NreccCategory
      * @param $params
      * @return mixed
      */
-    public function getDetailDataWithListInstitution($slug)
+    public function getDetail($slug)
     {
-        return $this->nreccCategory->getDetailDataWithListInstitution($slug);
+        return $this->nreccCategory->getDetail($slug);
     }
 }

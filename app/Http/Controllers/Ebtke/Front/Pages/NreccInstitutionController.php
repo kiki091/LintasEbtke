@@ -46,7 +46,7 @@ class NreccInstitutionController extends FrontController
         $data['main_banner'] = $this->mainBanner->getMainBanner(["key" => self::BANNER_NRECC_INSTITUTION_KEY]);
         $data['nrecc_category'] = $this->nreccCategory->getData();
         $data['nrecc_institution'] = $this->nreccInstitution->getData();
-        $data['nrecc_category_institution'] = $this->nreccCategory->getDataWithListInstitution(['limit' => '2']);
+        $data['nrecc_category_institution'] = $this->nreccCategory->getList(['limit' => '2']);
 
         $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-institution.landing';
         

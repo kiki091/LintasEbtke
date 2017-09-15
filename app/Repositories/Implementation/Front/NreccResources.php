@@ -56,6 +56,7 @@ class NreccResources extends BaseImplementation implements NreccResourcesInterfa
     {
 
         $params = [
+            "is_active" => true,
             "slug" => $slug,
         ];
 

@@ -191,22 +191,14 @@ Route::group(['middleware' => ['web']], function ()
 
 				// NRECC RESOURCES
 				Route::group(['prefix' => LaravelLocalization::transRoute('routes.link_resources')], function () {
-					Route::group(['prefix' => LaravelLocalization::transRoute('routes.tags')], function () {
-						Route::get('{slug}', 'Ebtke\Front\Pages\NreccCategoryController@detail')->name('NreccResourcesCategoryIndex');
-					});
-
-					Route::get('/', 'Ebtke\Front\Pages\NreccInstitutionController@landing')->name('NreccResources');
-					Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\NreccInstitutionController@detail')->name('NreccResourcesDetail');
+					Route::get('/', 'Ebtke\Front\Pages\NreccResourcesController@landing')->name('NreccResources');
+					Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\NreccResourcesController@detail')->name('NreccResourcesDetail');
 				});
 
 				// NRECC EVENTS
 				Route::group(['prefix' => LaravelLocalization::transRoute('routes.link_events')], function () {
-					Route::group(['prefix' => LaravelLocalization::transRoute('routes.tags')], function () {
-						Route::get('{slug}', 'Ebtke\Front\Pages\NreccCategoryController@detail')->name('NreccResourcesCategoryIndex');
-					});
-
-					Route::get('/', 'Ebtke\Front\Pages\NreccInstitutionController@landing')->name('NreccEvents');
-					Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\NreccInstitutionController@detail')->name('NreccEventsDetail');
+					Route::get('/', 'Ebtke\Front\Pages\NreccEventsController@landing')->name('NreccEvents');
+					Route::get(LaravelLocalization::transRoute('routes.detail'), 'Ebtke\Front\Pages\NreccEventsController@detail')->name('NreccEventsDetail');
 				});
 				
 			});

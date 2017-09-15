@@ -52,7 +52,7 @@ class NreccCategory extends BaseImplementation implements NreccCategoryInterface
      * @param $data
      * @return Json array
      */
-    public function getDataWithListInstitution($data)
+    public function getList($data)
     {
 
         $params = [
@@ -72,7 +72,7 @@ class NreccCategory extends BaseImplementation implements NreccCategoryInterface
      * @param $data
      * @return Json array
      */
-    public function getDetailDataWithListInstitution($slug)
+    public function getDetail($slug)
     {
 
         $params = [

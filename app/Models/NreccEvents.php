@@ -39,14 +39,6 @@ class NreccEvents extends BaseModel
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
-     */
-    public function category()
-    {
-        return $this->belongsTo('App\Models\NreccCategory', 'nrecc_category_id', 'id')->with('translation');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function images()

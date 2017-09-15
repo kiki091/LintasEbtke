@@ -42,7 +42,7 @@ class NreccCategoryController extends FrontController
         $data['seo'] = $this->seo->getSeo(["key" => self::SEO_NRECC_INSTITUTION_KEY]);
         $data['main_banner'] = $this->mainBanner->getMainBanner(["key" => self::BANNER_NRECC_INSTITUTION_KEY]);
         $data['nrecc_category'] = $this->nreccCategory->getData();
-        $data['nrecc_category_institution'] = $this->nreccCategory->getDataWithListInstitution();
+        $data['nrecc_category_institution'] = $this->nreccCategory->getList();
 
         $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-institution.category';
         
@@ -64,7 +64,7 @@ class NreccCategoryController extends FrontController
 
     public function detail($slug)
     {
-        $data['nrecc_category_institution'] = $this->nreccCategory->getDetailDataWithListInstitution($slug);
+        $data['nrecc_category_institution'] = $this->nreccCategory->getDetail($slug);
         dd($data);
         $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-institution.category';
         

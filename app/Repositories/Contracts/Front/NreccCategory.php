@@ -18,13 +18,13 @@ interface NreccCategory
      * @param $params
      * @return mixed
      */
-    public function getDataWithListInstitution($params);
+    public function getList($params);
 
     /**
      * Get Data List
      * @param $params
      * @return mixed
      */
-    public function getDetailDataWithListInstitution($slug);
+    public function getDetail($slug);
 
 }

@@ -56,6 +56,7 @@ class NreccEvents extends BaseImplementation implements NreccEventsInterface
     {
 
         $params = [
+            "is_active" => true,
             "slug" => $slug,
         ];
 
@@ -77,7 +78,6 @@ class NreccEvents extends BaseImplementation implements NreccEventsInterface
         $nreccEvents = $this->nreccEvents
             ->with('translation')
             ->with('translations')
-            ->with('category')
             ->with('images');
 
         if(isset($params['slug']) && $params['slug']) {

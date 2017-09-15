@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Ebtke\Front\Pages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FrontController;
-use App\Services\Bridge\Front\NreccCategory as NreccCategoryServices;
 use App\Services\Bridge\Front\NreccResources as NreccResourcesServices;
 use App\Services\Bridge\Front\MainBanner as MainBannerServices;
 use App\Services\Bridge\Front\Seo as SeoServices;
@@ -19,15 +18,14 @@ class NreccResourcesController extends FrontController
     protected $nreccCategory;
     protected $nreccResources;
     
-    const SEO_NRECC_INSTITUTION_KEY = 'nrecc:institution';
-    const BANNER_NRECC_INSTITUTION_KEY = 'banner:nrecc:institution';
+    const SEO_NRECC_RESOURCES_KEY = 'nrecc:resources';
+    const BANNER_NRECC_RESOURCES_KEY = 'banner:nrecc:resources';
 
-	public function __construct(NreccResourcesServices $nreccResources, NreccCategoryServices $nreccCategory, MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)
+	public function __construct(NreccResourcesServices $nreccResources, MainBannerServices $mainBanner, SeoServices $seo, ResponseService $response)
     {
         $this->seo = $seo;
         $this->response = $response;
         $this->mainBanner = $mainBanner;
-        $this->nreccCategory = $nreccCategory;
         $this->nreccResources = $nreccResources;
 
     }
@@ -42,12 +40,10 @@ class NreccResourcesController extends FrontController
     public function landing(Request $request)
     {
         
-        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_NRECC_INSTITUTION_KEY]);
-        $data['main_banner'] = $this->mainBanner->getMainBanner(["key" => self::BANNER_NRECC_INSTITUTION_KEY]);
-        $data['nrecc_category'] = $this->nreccCategory->getData();
+        $data['seo'] = $this->seo->getSeo(["key" => self::SEO_NRECC_RESOURCES_KEY]);
+        $data['main_banner'] = $this->mainBanner->getMainBanner(["key" => self::BANNER_NRECC_RESOURCES_KEY]);
         $data['nrecc_resources'] = $this->nreccResources->getData();
-        $data['nrecc_category_resources'] = $this->nreccCategory->getDataWithListResources(['limit' => '2']);
-
+dd($data);
         $blade = self::URL_BLADE_FRONT_SITE. '.link.nrecc-resources.landing';
         
         if(view()->exists($blade)) {
